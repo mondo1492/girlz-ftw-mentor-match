@@ -13,7 +13,7 @@ class User < ApplicationRecord
     @user.validPw?(password) ? @user : nil
   end
 
-  def validPw(password)
+  def validPw?(password)
     BCrypt::Password.new(self.password_digest).is_password?(password)
   end
 
@@ -32,5 +32,5 @@ class User < ApplicationRecord
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64(16)
   end
-    
+
 end
