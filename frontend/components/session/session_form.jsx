@@ -9,9 +9,11 @@ class SessionForm extends React.Component {
         user: {
           username: "",
           password: ""
-        }
+        },
+        formType: this.props.formType
       };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.defaultUser = this.defaultUser.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -21,7 +23,8 @@ class SessionForm extends React.Component {
         user: {
           username: "",
           password: ""
-        }
+        },
+        formType: nextProps.formType
       });
     }
     if (nextProps.loggedIn) {
