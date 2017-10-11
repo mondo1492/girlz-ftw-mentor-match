@@ -13,7 +13,6 @@ class SessionForm extends React.Component {
         formType: this.props.formType
       };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.defaultUser = this.defaultUser.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
