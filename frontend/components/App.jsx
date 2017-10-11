@@ -1,9 +1,11 @@
 import React from 'react';
+import SessionContainer from './session/session_forms_container';
 
 const App = () => (
   <div>
     <header>
       <h1>Its WORKING!!!</h1>
+      <SessionContainer/>
     </header>
     <div id="all-content">
 
