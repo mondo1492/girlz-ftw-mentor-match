@@ -78,6 +78,7 @@ class SessionForm extends React.Component {
                 />
               <button onClick={this.handleSubmit}>{loginOrSignUp}</button>
               <div className="or">or</div>
+
             </form>
           </div>
       </div>
