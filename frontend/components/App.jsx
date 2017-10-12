@@ -1,13 +1,20 @@
 import React from 'react';
-import SessionContainer from './session/session_forms_container';
+import { Route, Link } from 'react-router-dom';
+import AdminPanel from './admin_panel'
+import MenteeApp from './MenteeApp'
+import MentorApp from './MentorApp'
+import Landing from './Landing'
 
 const App = () => (
   <div>
     <header>
-      <h1>Its WORKING!!!</h1>
-      <SessionContainer/>
+      <h1>Welcome to the Girlz FTW's application portal!</h1>
     </header>
     <div id="all-content">
+      <Route exact path="/" component={Landing}/>
+      <Route exact path="/admin_panel" component={AdminPanel}/>
+      <Route exact path="/mentee_app" component={MenteeApp}/>
+      <Route exact path="/mentor_app" component={MentorApp}/>
 
 
     </div>
