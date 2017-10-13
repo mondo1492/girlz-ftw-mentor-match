@@ -26,7 +26,6 @@ class MenteeApp extends React.Component {
       night_text: '',
       not_on_google_text: '',
       how_impact_text: '',
-      how_impact_text: '',
       no_discuss_text: '',
       extra_info_text: '',
     };
@@ -54,6 +53,7 @@ class MenteeApp extends React.Component {
             type="text"
             onChange={this.handleInputChange} />
         </label>
+        <br/>
         <label>
           <p className="asterix">*</p>Last Name:
           <input
@@ -61,6 +61,7 @@ class MenteeApp extends React.Component {
             type="text"
             onChange={this.handleInputChange} />
         </label>
+        <br/>
         <label>
           <p className="asterix">*</p>Age:
           <input
@@ -69,6 +70,7 @@ class MenteeApp extends React.Component {
             value={this.state.age}
             onChange={this.handleInputChange} />
         </label>
+        <br/>
         <label>
           <p className="asterix">*</p>Email:
           <input
@@ -77,6 +79,7 @@ class MenteeApp extends React.Component {
             value={this.state.email}
             onChange={this.handleInputChange} />
         </label>
+        <br/>
         <label>
           <p className="asterix">*</p>City:
           <input
@@ -85,6 +88,7 @@ class MenteeApp extends React.Component {
             value={this.state.city}
             onChange={this.handleInputChange} />
         </label>
+        <br/>
         <label>
           <p className="asterix">*</p>Country:
           <input
@@ -93,6 +97,7 @@ class MenteeApp extends React.Component {
             value={this.state.country}
             onChange={this.handleInputChange} />
         </label>
+        <br/>
         <label>
           <p className="asterix">*</p>Facebook:
           <input
@@ -101,6 +106,7 @@ class MenteeApp extends React.Component {
             value={this.state.facebook}
             onChange={this.handleInputChange} />
         </label>
+        <br/>
         <label>
           Phone:
           <input
@@ -109,6 +115,7 @@ class MenteeApp extends React.Component {
             value={this.state.phone}
             onChange={this.handleInputChange} />
         </label>
+        <br/>
         <label>
           High School:
           <input
@@ -117,6 +124,7 @@ class MenteeApp extends React.Component {
             value={this.state.high_school}
             onChange={this.handleInputChange} />
         </label>
+        <br/>
         <label>
           College:
           <input
@@ -125,6 +133,7 @@ class MenteeApp extends React.Component {
             value={this.state.college}
             onChange={this.handleInputChange} />
         </label>
+        <br/>
         <label>
           What is your major, or if not applicable, what do you intend to study?
           <input
@@ -133,6 +142,7 @@ class MenteeApp extends React.Component {
             value={this.state.major}
             onChange={this.handleInputChange} />
         </label>
+        <br/>
         <label>
           Employer:
           <input
@@ -141,70 +151,82 @@ class MenteeApp extends React.Component {
             value={this.state.employer}
             onChange={this.handleInputChange} />
         </label>
+        <br/>
         <label>
           <p className="asterix">*</p>How interested are you in career advice?
-          <select value={this.state.career_advice_rank} onChange={this.handleInputChange}>
-            <option value=0>Not at all</option>
-            <option value=1>Slightly</option>
-            <option value=2>Moderately</option>
-            <option value=3>Extremely</option>
+          <select name="career_advice_rank" value={this.state.career_advice_rank} onChange={this.handleInputChange}>
+            <option value="0">Not at all</option>
+            <option value="1">Slightly</option>
+            <option value="2">Moderately</option>
+            <option value="3">Extremely</option>
           </select>
         </label>
+        <br/>
         <label>
           <p className="asterix">*</p>How interested are you in personal advice?
-          <select value={this.state.personal_advice_rank} onChange={this.handleInputChange}>
-            <option value=0>Not at all</option>
-            <option value=1>Slightly</option>
-            <option value=2>Moderately</option>
-            <option value=3>Extremely</option>
+          <select name="personal_advice_rank" value={this.state.personal_advice_rank} onChange={this.handleInputChange}>
+            <option value="0">Not at all</option>
+            <option value="1">Slightly</option>
+            <option value="2">Moderately</option>
+            <option value="3">Extremely</option>
           </select>
         </label>
+        <br/>
         <label>
           <p className="asterix">*</p>How interested are you in finding motivation and inspiration from your mentor?
-          <select value={this.state.motivation_rank} onChange={this.handleInputChange}>
-            <option value=0>Not at all</option>
-            <option value=1>Slightly</option>
-            <option value=2>Moderately</option>
-            <option value=3>Extremely</option>
+          <select name="motivation_rank" value={this.state.motivation_rank} onChange={this.handleInputChange}>
+            <option value="0">Not at all</option>
+            <option value="1">Slightly</option>
+            <option value="2">Moderately</option>
+            <option value="3">Extremely</option>
           </select>
         </label>
+        <br/>
         <label>
           Would you prefer a mentor who had your major, or desired major?
-          <select value={this.state.share_major_rank} onChange={this.handleInputChange}>
-            <option value=0>Not at all</option>
-            <option value=1>Slightly</option>
-            <option value=2>Moderately</option>
-            <option value=3>Extremely</option>
+          <select name="share_major_rank" value={this.state.share_major_rank} onChange={this.handleInputChange}>
+            <option value="0">Not at all</option>
+            <option value="1">Slightly</option>
+            <option value="2">Moderately</option>
+            <option value="3">Extremely</option>
           </select>
         </label>
+        <br/>
         <label>
           Write the Instagram bio you wish you had.
           <textarea name="instagram_bio_text" value={this.state.instagram_bio_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
         </label>
+        <br/>
         <label>
           What's getting in the way of you having that dream Instagram bio?
           <textarea name="instagram_bio_why_not_text" value={this.state.instagram_bio_why_not_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
         </label>
+        <br/>
         <label>
           Describe your personality:
           <textarea name="personality_text" value={this.state.personality_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
         </label>
+        <br/>
         <label>
           What keeps you up at night?
           <textarea name="night_text" value={this.state.night_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
         </label>
+        <br/>
         <label>
           What's one thing about you that we can't Google?
           <textarea name="not_on_google_text" value={this.state.not_on_google_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
         </label>
+        <br/>
         <label>
           How do you aspire to make a positive impact on others?
           <textarea name="how_impact_text" value={this.state.how_impact_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
         </label>
+        <br/>
         <label>
           Are there any topics you would not feel comfortable discussing with your mentor?
           <textarea name="no_discuss_text" value={this.state.no_discuss_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
         </label>
+        <br/>
         <label>
           Is there anything else you'd like to add?
           <textarea name="extra_info_text" value={this.state.extra_info_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
