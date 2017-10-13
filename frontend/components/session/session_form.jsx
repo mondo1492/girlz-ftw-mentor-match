@@ -25,7 +25,6 @@ class SessionForm extends React.Component {
         }
       });
     }
-    console.log("NEXT PROPS", nextProps);
     if (nextProps.loggedIn) {
       this.props.resetErrors();
       this.props.history.push('/mentor_panel');
@@ -34,7 +33,6 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // const user = Object.assign({}, {formType: this.state.user});
     this.props.processForm(this.state);
   }
 
@@ -57,7 +55,6 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className="login-form-container">
         <div className="login-form-box">
