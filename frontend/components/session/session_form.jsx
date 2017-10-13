@@ -9,33 +9,33 @@ class SessionForm extends React.Component {
         user: {
           username: "",
           password: ""
-        },
-        formType: this.props.formType
+        }
       };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
+
     if (this.state.formType !== nextProps.formType) {
       this.props.resetErrors();
       this.setState({
         user: {
           username: "",
           password: ""
-        },
-        formType: nextProps.formType
+        }
       });
     }
+    console.log("NEXT PROPS", nextProps);
     if (nextProps.loggedIn) {
       this.props.resetErrors();
-      this.props.history.push('/');
+      this.props.history.push('/mentor_panel');
     }
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, {user: this.state.user});
-    this.props.processForm(user);
+    // const user = Object.assign({}, {formType: this.state.user});
+    this.props.processForm(this.state);
   }
 
   update(field) {
@@ -57,7 +57,7 @@ class SessionForm extends React.Component {
   }
 
   render() {
-    const loginOrSignUp = this.state.formType === 'login' ? 'Log in' : 'Sign up';
+    console.log(this.state);
     return (
       <div className="login-form-container">
         <div className="login-form-box">
@@ -76,9 +76,7 @@ class SessionForm extends React.Component {
                   className="login-input"
                   placeholder="Password"
                 />
-              <button onClick={this.handleSubmit}>{loginOrSignUp}</button>
-              <div className="or">or</div>
-
+              <button onClick={this.handleSubmit}>Login</button>
             </form>
           </div>
       </div>
@@ -86,4 +84,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm;
+export default withRouter(SessionForm);

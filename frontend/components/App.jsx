@@ -1,9 +1,11 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
-import AdminPanel from './admin_panel'
-import MenteeApp from './MenteeApp'
-import MentorApp from './MentorApp'
-import Landing from './Landing'
+import AdminPanel from './admin_panel';
+import MenteeApp from './MenteeApp';
+import MentorApp from './MentorApp';
+import Landing from './Landing';
+import MentorPanel from './MentorPanel';
+
 
 const App = () => (
   <div>
@@ -15,7 +17,7 @@ const App = () => (
       <Route exact path="/admin_panel" component={AdminPanel}/>
       <Route exact path="/mentee_app" component={MenteeApp}/>
       <Route exact path="/mentor_app" component={MentorApp}/>
-
+      <Route exact path="/mentor_panel" component={MentorPanel}/>
 
     </div>
   </div>
