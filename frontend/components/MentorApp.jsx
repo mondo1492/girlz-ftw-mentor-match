@@ -29,9 +29,12 @@ class MentorApp extends React.Component {
       not_on_google_text: '',
       how_impact_text: '',
       extra_info_text: '',
+      agree_terms: false,
+      agree_terms_bad_click: false,
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
   handleInputChange(event) {
@@ -44,9 +47,20 @@ class MentorApp extends React.Component {
     });
   }
 
+  handleFormSubmit(event) {
+    event.preventDefault();
+    if (this.state.agree_terms) {
+      console.log("success");
+    } else {
+      this.setState({agree_terms_bad_click: true}, () => {
+        console.log('failure');
+      });
+    }
+  }
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleFormSubmit}>
         <label>
           <p className="asterix">*</p>Username:
           <input
@@ -243,6 +257,20 @@ class MentorApp extends React.Component {
           Is there anything else you'd like to add?
           <textarea name="extra_info_text" value={this.state.extra_info_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
         </label>
+        <br/>
+        All mentors are required to set aside __ hours per month. Some other stuff that's needed.
+        Blah blah etc. All of our communications happen over Facebook groups,
+        so you must have a Facebook to be a GirlzFTW mentor.
+        <br/>
+        <label style={{color: this.state.agree_terms_bad_click ? 'red' : 'black'}}>
+          I have read and agree to these requirements.
+          <input
+            name="agree_terms"
+            type="checkbox"
+            value={this.state.agree_terms}
+            onChange={this.handleInputChange} />
+        </label>
+        <button type="submit">Apply</button>
       </form>
     );
   }
