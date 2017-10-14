@@ -5,3 +5,9 @@
 
 - mandatory checkbox at the end of the instructions "i've read this and agree to it"
 - make all incomplete fields show red text upon unsuccessful form submission
+Aaron:
+-----------
+Get modal and button for logging in on front page
+
+
+Ravi:
