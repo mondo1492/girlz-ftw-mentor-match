@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 const AdminPanel = () => (
   <div>
@@ -7,13 +9,17 @@ const AdminPanel = () => (
     </header>
 
     <button>Launch Applications</button>
-
+    <br/>
     <button>Generate Matches</button>
+    <br/>
 
-    <button>View Submitted Mentee Applications</button>
-
-    <button>View Submitted Mentor Applications</button>
-
+    <Link to="/current_mentors">View All Mentors</Link>
+    <br/>
+    <Link to="/current_mentees">View All Mentees</Link>
+    <br/>
+    <Link to="/unapproved_mentees">View Submitted Mentee Applications</Link>
+    <br/>
+    <Link to="/unapproved_mentors">View Submitted Mentor Applications</Link>
   </div>
 );
 
