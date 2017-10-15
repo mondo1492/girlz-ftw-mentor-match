@@ -2,7 +2,6 @@ import * as APIUtil from '../util/mentor_util'
 
 export const RECEIVE_MENTORS = 'RECEIVE_MENTORS';
 export const RECEIVE_MENTOR = 'RECEIVE_MENTOR';
-export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 export const REMOVE_MENTOR = "REMOVE_MENTOR";
 // export const REQUEST_MENTOR = 'REQUEST_MENTOR';
 

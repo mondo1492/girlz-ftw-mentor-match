@@ -2,7 +2,6 @@ import * as APIUtil from '../util/mentee_util'
 
 export const RECEIVE_MENTEES = 'RECEIVE_MENTEES';
 export const RECEIVE_MENTEE = 'RECEIVE_MENTEE';
-export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 export const REMOVE_MENTEE = "REMOVE_MENTEE";
 // export const REQUEST_MENTEE = 'REQUEST_MENTEE';
 

@@ -3,7 +3,11 @@ import React from 'react';
 class MentorApp extends React.Component {
   render() {
     return(
-      <h1>Mentor Panel</h1>
+      <div>
+        <h1>Mentor Panel</h1>
+
+        <p>You are an approved mentor!</p>
+      </div>
     );
   }
 }
