@@ -3,13 +3,13 @@ import { Route, Link } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute, AdminRoute } from '../util/route_util';
 
 import AdminPanel from './admin_panel';
-import MenteeApp from './MenteeApp';
+import MenteeApp from './mentees/MenteeApp';
 import MentorApp from './MentorApp';
 import Landing from './Landing';
 import MentorPanel from './MentorPanel';
 
 import CurrentMentees from './admin/CurrentMenteesContainer';
-import CurrentMentors from './admin/CurrentMentors';
+import CurrentMentors from './admin/CurrentMentorsContainer';
 import UnapprovedMentors from './admin/UnapprovedMentors';
 import UnapprovedMentees from './admin/UnapprovedMentees';
 
