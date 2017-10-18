@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute, AdminRoute } from '../util/route_util';
 
 import AdminPanel from './admin_panel';
 import MenteeApp from './MenteeApp';
