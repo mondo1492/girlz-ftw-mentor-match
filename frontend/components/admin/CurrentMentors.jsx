@@ -5,11 +5,11 @@ class CurrentMentors extends React.Component {
     return(
       <div>
         <h1>Current Mentor List</h1>
-          <ul>
-            {this.props.mentees.map(function(mentee){
-              return <li>{mentee}</li>;
-            })}
-          </ul>
+        <ul>
+          {this.props.mentees.map(function(mentee){
+            return <li>{mentee}</li>;
+          })}
+        </ul>
 
       </div>
     );

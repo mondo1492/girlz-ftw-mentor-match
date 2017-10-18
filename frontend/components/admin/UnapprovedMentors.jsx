@@ -10,7 +10,6 @@ class UnapprovedMentors extends React.Component {
             return <li>{mentor}</li>;
           })}
         </ul>
-        </ul>
 
       </div>
     );

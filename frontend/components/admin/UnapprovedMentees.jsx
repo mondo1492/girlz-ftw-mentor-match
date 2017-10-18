@@ -8,6 +8,7 @@ class UnapprovedMentees extends React.Component {
         <ul>
           {this.props.mentees.map(function(mentee){
             return <li>{mentee}</li>;
+          })}
         </ul>
 
       </div>

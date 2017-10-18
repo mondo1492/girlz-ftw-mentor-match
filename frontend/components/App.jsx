@@ -8,7 +8,7 @@ import MentorApp from './MentorApp';
 import Landing from './Landing';
 import MentorPanel from './MentorPanel';
 
-import CurrentMentees from './admin/CurrentMentees';
+import CurrentMentees from './admin/CurrentMenteesContainer';
 import CurrentMentors from './admin/CurrentMentors';
 import UnapprovedMentors from './admin/UnapprovedMentors';
 import UnapprovedMentees from './admin/UnapprovedMentees';

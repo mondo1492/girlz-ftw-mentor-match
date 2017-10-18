@@ -4,6 +4,6 @@ json.extract! mentee, :id, :approved, :status, :age, :city,
   :personal_advice_rank, :motivation_rank, :instagram_bio_text,
   :instagram_bio_why_not_text, :share_major_rank,
   :personal_advice_rank, :night_text, :not_on_google_text,
-  :how_impact_text, :no_discuss_text, :extra_info_text, :created_at
+  :how_impact_text, :no_discuss_text, :extra_info_text, :created_at, :user_id
 
 #UPDATE ABOVE WHEN GIVEN PROPER INFO
