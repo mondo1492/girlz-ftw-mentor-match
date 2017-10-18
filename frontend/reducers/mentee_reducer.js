@@ -9,7 +9,7 @@ import {
 } from '../actions/mentee_actions';
 
 const MenteeReducer = (state = {}, action) => {
-  Object.freeze(state)
+  Object.freeze(state);
   let newState = merge({}, state);
 
   switch(action.type) {
