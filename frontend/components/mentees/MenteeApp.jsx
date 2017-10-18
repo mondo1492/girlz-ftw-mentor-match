@@ -1,4 +1,5 @@
 import React from 'react';
+import merge from 'lodash/merge';
 
 class MenteeApp extends React.Component {
   constructor(props) {
@@ -50,6 +51,8 @@ class MenteeApp extends React.Component {
     event.preventDefault();
     if (this.state.agree_terms) {
       console.log("success");
+      this.props.createMentee(this.state).then(
+        () => this.props.history.push('/'));
     } else {
       this.setState({agree_terms_bad_click: true}, () => {
         console.log('failure');
