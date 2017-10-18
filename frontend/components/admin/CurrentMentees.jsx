@@ -28,7 +28,7 @@ class CurrentMentees extends React.Component {
         <h1>Current Mentee List</h1>
         <ul>
           {this.state.mentees.map(function(mentee){
-            return <li key={mentee.id}>{mentee.first_name}</li>;
+            return <li key={mentee.id}>{mentee.first_name} {mentee.last_name}</li>;
             })}
         </ul>
         <button onClick={this.update}>meow</button>

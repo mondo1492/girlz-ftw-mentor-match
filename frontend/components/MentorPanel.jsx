@@ -7,6 +7,7 @@ class MentorApp extends React.Component {
         <h1>Mentor Panel</h1>
 
         <p>You are an approved mentor!</p>
+        
       </div>
     );
   }

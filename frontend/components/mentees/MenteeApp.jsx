@@ -28,9 +28,12 @@ class MenteeApp extends React.Component {
       how_impact_text: '',
       no_discuss_text: '',
       extra_info_text: '',
+      agree_terms: false,
+      agree_terms_bad_click: false,
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
   handleInputChange(event) {
@@ -43,9 +46,20 @@ class MenteeApp extends React.Component {
     });
   }
 
+  handleFormSubmit(event) {
+    event.preventDefault();
+    if (this.state.agree_terms) {
+      console.log("success");
+    } else {
+      this.setState({agree_terms_bad_click: true}, () => {
+        console.log('failure');
+      });
+    }
+  }
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleFormSubmit}>
         <label>
           <p className="asterix">*</p>First Name:
           <input
@@ -231,6 +245,18 @@ class MenteeApp extends React.Component {
           Is there anything else you'd like to add?
           <textarea name="extra_info_text" value={this.state.extra_info_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
         </label>
+        <br/>
+        All mentees have certain requirements that Nicol will tell us later.
+        <br/>
+        <label style={{color: this.state.agree_terms_bad_click ? 'red' : 'black'}}>
+          I have read and agree to these requirements.
+          <input
+            name="agree_terms"
+            type="checkbox"
+            value={this.state.agree_terms}
+            onChange={this.handleInputChange} />
+        </label>
+        <button type="submit">Apply</button>
       </form>
     );
   }
