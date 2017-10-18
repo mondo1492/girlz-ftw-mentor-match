@@ -10,8 +10,8 @@ import MentorPanel from './MentorPanel';
 
 import CurrentMentees from './admin/CurrentMenteesContainer';
 import CurrentMentors from './admin/CurrentMentorsContainer';
-import UnapprovedMentors from './admin/UnapprovedMentors';
-import UnapprovedMentees from './admin/UnapprovedMentees';
+import UnapprovedMentors from './admin/UnapprovedMentorsContainer';
+import UnapprovedMentees from './admin/UnapprovedMenteesContainer';
 
 
 const App = () => (
