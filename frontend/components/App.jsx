@@ -23,13 +23,13 @@ const App = () => (
       <Route exact path="/" component={Landing}/>
       <Route exact path="/mentee_app" component={MenteeApp}/>
       <Route exact path="/mentor_app" component={MentorApp}/>
-      <Route exact path="/mentor_panel" component={MentorPanel}/>
+      <ProtectedRoute exact path="/mentor_panel" component={MentorPanel}/>
 
-      <Route exact path="/admin_panel" component={AdminPanel}/>
-      <Route exact path="/current_mentors" component={CurrentMentors}/>
-      <Route exact path="/current_mentees" component={CurrentMentees}/>
-      <Route exact path="/unapproved_mentors" component={UnapprovedMentors}/>
-      <Route exact path="/unapproved_mentees" component={UnapprovedMentees}/>
+      <AdminRoute exact path="/admin_panel" component={AdminPanel}/>
+      <AdminRoute exact path="/current_mentors" component={CurrentMentors}/>
+      <AdminRoute exact path="/current_mentees" component={CurrentMentees}/>
+      <AdminRoute exact path="/unapproved_mentors" component={UnapprovedMentors}/>
+      <AdminRoute exact path="/unapproved_mentees" component={UnapprovedMentees}/>
 
     </div>
   </div>
