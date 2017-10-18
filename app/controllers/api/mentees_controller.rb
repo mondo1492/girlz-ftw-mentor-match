@@ -1,8 +1,9 @@
 class Api::MenteesController < ApplicationController
-  before_action :require_signed_in
+  before_action :require_signed_in, except: [:create]
+  before_action :require_admin, only: [:destroy]
 
     def create
-      @mentee = Mentee.new(parsed_params)
+      @mentee = Mentee.new(mentee_params)
       @mentee.user_id = current_user.id
 
       if @mentee.save
@@ -13,7 +14,7 @@ class Api::MenteesController < ApplicationController
     end
 
     def index
-      @mentees = Mentee.where(user_id: current_user.id)
+      @mentees = Mentee.all
       render "api/mentees/index"
     end
 
@@ -26,6 +27,15 @@ class Api::MenteesController < ApplicationController
       @mentee = Mentee.find(params[:id])
       if @mentee.destroy
         render json: {}
+      else
+        render json: @mentee.errors.full_messages, status: 422
+      end
+    end
+
+    def update
+      @mentee = Mentee.find(params[:id])
+      if @mentee.update(mentee_params)
+        render "api/mentees/show"
       else
         render json: @mentee.errors.full_messages, status: 422
       end
