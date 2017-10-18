@@ -3,7 +3,7 @@ import { Route, Link } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute, AdminRoute } from '../util/route_util';
 
 import AdminPanel from './admin_panel';
-import MenteeApp from './MenteeApp';
+import MenteeApp from './mentees/MenteeAppContainer';
 import MentorApp from './MentorApp';
 import Landing from './Landing';
 import MentorPanel from './MentorPanel';

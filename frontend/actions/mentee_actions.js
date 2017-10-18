@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/mentee_util'
+import * as APIUtil from '../util/mentee_util';
 
 export const RECEIVE_MENTEES = 'RECEIVE_MENTEES';
 export const RECEIVE_MENTEE = 'RECEIVE_MENTEE';
