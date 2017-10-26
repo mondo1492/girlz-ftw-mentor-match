@@ -27,6 +27,7 @@ MVPS:
   - Should be able to assign mentees to mentors *or should they?*
 - Mentor Panel
   - view mentees and their info
+- Mentors & Mentees have to upload videos
 
 
 Lower priority:
@@ -46,3 +47,12 @@ Lower priority:
   - current mentee list
     - lists out mentees info
     - modal for mentee show?
+
+matching concept:
+  - have mentors & mentees rank each other, and then have algo match.
+  - potentially, mentors and mentees see only X options from which to rank
+
+
+
+thoughts:
+pop up box to confirm requirements upon submitting form
