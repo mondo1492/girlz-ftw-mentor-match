@@ -13,6 +13,7 @@ class UnapprovedMentees extends React.Component {
     };
     this.openModal = this.openModal.bind(this);
     this.approve = this.approve.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   componentWillMount() {
@@ -22,7 +23,7 @@ class UnapprovedMentees extends React.Component {
   componentWillReceiveProps(nextProps) {
     let unapprovedMentees = {};
     nextProps.mentees.forEach(function(mentee) {
-      if (!mentee.approved) {
+      if (mentee.tier === null) {
         unapprovedMentees[mentee.id] = mentee;
       }
     });
@@ -37,11 +38,26 @@ class UnapprovedMentees extends React.Component {
     this.setState({ isModalOpen: false });
   }
 
+  handleChange(e, mentee) {
+    let newMentee = mentee;
+    let newMentees = this.state.mentees;
+    let id = newMentee.id;
+    newMentee.tier = parseInt(e.target.value);
+    newMentees[id] = newMentee;
+    this.setState({ mentees: newMentees}, () => {
+    });
+  }
+
   approve(mentee) {
     let newMentee = mentee;
     let newMentees = this.state.mentees;
     let id = newMentee.id;
-    newMentee.approved = true;
+    newMentee.tier = mentee.tier
+    if (mentee.tier > 0 && mentee.tier < 4) {
+      newMentee.approved = true;
+    } else if (mentee.tier === 4) {
+      newMentee.approved = false;
+    }
     this.props.updateMentee(newMentee);
     delete newMentees[id];
     this.setState( { mentees: newMentees } );
@@ -57,16 +73,27 @@ class UnapprovedMentees extends React.Component {
           <MenteeShow mentee={this.state.mentee}/>
         </Modal>
 
-        <h1>Unapproved Mentee List</h1>
+        <h1>Unranked Mentee List</h1>
         <ul>
           {Object.keys(this.state.mentees).map((key) => (
              <li key={key}>
               <span onClick={() => this.openModal(this.state.mentees[key])} >
                 {this.state.mentees[key].first_name} {this.state.mentees[key].last_name}
               </span>
+
+              <select
+                onChange={(e) => {this.handleChange(e, this.state.mentees[key])}}
+              >
+                <option value='1'>1</option>
+                <option value='2'>2</option>
+                <option value='3'>3</option>
+                <option value='4'>4 - rejected</option>
+              </select>
+
               <button onClick={() => approve(this.state.mentees[key])}>
-                Approve!
+                Set Tier!
               </button>
+
               </li>
             ))}
         </ul>

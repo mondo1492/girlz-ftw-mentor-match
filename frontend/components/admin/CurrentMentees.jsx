@@ -59,9 +59,13 @@ class CurrentMentees extends React.Component {
               <span onClick={() => this.openModal(mentee)}>
                 {mentee.first_name} {mentee.last_name} {}
               </span>
-              - Mentor: {mentee.mentor_name}
+              - Mentor: {mentee.mentor_name} {}
+              - Tier: {mentee.tier}
             </li>
-            ))}
+          )).sort( (a,b) => {
+            return a.props.children[5] - b.props.children[5];
+            })
+          }
         </ul>
 
       </div>

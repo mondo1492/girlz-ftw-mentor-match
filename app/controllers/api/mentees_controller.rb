@@ -49,6 +49,7 @@ class Api::MenteesController < ApplicationController
         :personal_advice_rank, :motivation_rank, :instagram_bio_text,
         :instagram_bio_why_not_text, :share_major_rank,
         :personal_advice_rank, :night_text, :not_on_google_text,
-        :how_impact_text, :no_discuss_text, :extra_info_text, :user_id )
+        :how_impact_text, :no_discuss_text, :extra_info_text, :user_id,
+        :tier )
     end
 end
