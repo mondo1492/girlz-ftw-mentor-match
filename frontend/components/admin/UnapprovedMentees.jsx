@@ -1,5 +1,5 @@
 import React from 'react';
-// import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Modal from '../Modal'
 import MenteeShow from './MenteeShow'
 
@@ -50,6 +50,8 @@ class UnapprovedMentees extends React.Component {
     const approve = this.approve;
     return(
       <div>
+        <Link to='admin_panel'>Back to Admin Panel</Link>
+
         <Modal className="modal" isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
           <MenteeShow mentee={this.state.mentee}/>
         </Modal>
@@ -58,7 +60,7 @@ class UnapprovedMentees extends React.Component {
         <h1>Unapproved Mentee List</h1>
         <ul>
           {this.state.mentees.map( (mentee) => {
-            return <li> <span onClick={() => this.openModal(mentee)} key={mentee.id}>{mentee.first_name} {mentee.last_name}</span> <button onClick={() => approve(mentee.id)}>Approve!</button></li>;
+            return <li key={mentee.id}> <span onClick={() => this.openModal(mentee)} >{mentee.first_name} {mentee.last_name}</span> <button onClick={() => approve(mentee.id)}>Approve!</button></li>;
             })}
         </ul>
 

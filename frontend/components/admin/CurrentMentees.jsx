@@ -1,5 +1,5 @@
 import React from 'react';
-// import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Modal from '../Modal'
 import MenteeShow from './MenteeShow'
 
@@ -45,6 +45,8 @@ class CurrentMentees extends React.Component {
   render() {
     return(
       <div>
+        <Link to='admin_panel'>Back to Admin Panel</Link>
+
         <Modal className="modal" isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
           <MenteeShow mentee={this.state.mentee}/>
         </Modal>

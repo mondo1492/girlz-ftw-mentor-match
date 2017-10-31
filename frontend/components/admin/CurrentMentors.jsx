@@ -1,6 +1,8 @@
 import React from 'react';
 import Modal from '../Modal'
 import MentorShow from './MentorShow'
+import { Link } from 'react-router-dom';
+
 
 class CurrentMentors extends React.Component {
   constructor(props) {
@@ -44,6 +46,8 @@ class CurrentMentors extends React.Component {
   render() {
     return(
       <div>
+        <Link to='admin_panel'>Back to Admin Panel</Link>
+
         <Modal className="modal" isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
           <MentorShow mentor={this.state.mentor}/>
         </Modal>
