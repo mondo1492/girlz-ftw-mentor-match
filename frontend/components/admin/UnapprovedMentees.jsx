@@ -1,19 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Modal from '../Modal'
-import MenteeShow from './MenteeShow'
+import Modal from '../Modal';
+import MenteeShow from './MenteeShow';
+import merge from 'lodash/merge';
 
 
 class UnapprovedMentees extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mentees: [],
+      mentees: {},
       isModalOpen: false,
       mentee: null
-    }
+    };
     this.update = this.update.bind(this);
     this.openModal = this.openModal.bind(this);
+    this.approve = this.approve.bind(this);
   }
 
   componentWillMount() {
@@ -48,9 +50,7 @@ class UnapprovedMentees extends React.Component {
     let newMentees = this.state.mentees;
     let id = newMentee.id;
     newMentee.approved = true;
-    //api call here
     this.props.updateMentee(newMentee);
-
     delete newMentees[id];
     this.setState( { mentees: newMentees } );
   }
@@ -65,12 +65,18 @@ class UnapprovedMentees extends React.Component {
           <MenteeShow mentee={this.state.mentee}/>
         </Modal>
 
-
         <h1>Unapproved Mentee List</h1>
         <ul>
-          {this.state.mentees.map( (mentee) => {
-            return <li key={mentee.id}> <span onClick={() => this.openModal(mentee)} >{mentee.first_name} {mentee.last_name}</span> <button onClick={() => approve(mentee.id)}>Approve!</button></li>;
-            })}
+          {Object.keys(this.state.mentees).map((key) => (
+             <li key={key}>
+              <span onClick={() => this.openModal(this.state.mentees[key])} >
+                {this.state.mentees[key].first_name} {this.state.mentees[key].last_name}
+              </span>
+              <button onClick={() => approve(this.state.mentees[key])}>
+                Approve!
+              </button>
+              </li>
+            ))}
         </ul>
 
       </div>
