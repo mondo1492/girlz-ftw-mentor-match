@@ -55,7 +55,8 @@ class CurrentMentors extends React.Component {
         <h1>Current Mentor List</h1>
         <ul>
           {this.state.mentors.map( (mentor) => {
-            return <li onClick={() => this.openModal(mentor)} key={mentor.id}>{mentor.first_name} {mentor.last_name}</li>;
+            return <li onClick={() => this.openModal(mentor)} key={mentor.id}>
+              {mentor.first_name} {mentor.last_name} Mentees: {mentor.mentee_names}</li>;
             })}
         </ul>
 

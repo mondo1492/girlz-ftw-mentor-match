@@ -9,6 +9,10 @@ class User < ApplicationRecord
 
   has_many :mentees
 
+  def mentee_names
+    self.mentees.map { |mentee| "#{mentee.first_name} #{mentee.last_name}"}.join(", ")
+  end
+
   def self.find_by_credentials(username, password)
     @user = User.find_by_username(username)
     return nil unless @user
