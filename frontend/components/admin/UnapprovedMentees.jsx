@@ -49,22 +49,18 @@ class UnapprovedMentees extends React.Component {
   }
 
   approve(mentee) {
-    // if (mentee.tier === null) {
-    //   alert("don't be stupid");
-    // } else {
-      let newMentee = mentee;
-      let newMentees = this.state.mentees;
-      let id = newMentee.id;
-      newMentee.tier = mentee.tier
-      if (mentee.tier > 0 && mentee.tier < 4) {
-        newMentee.approved = true;
-      } else if (mentee.tier === 4) {
-        newMentee.approved = false;
-      }
-      this.props.updateMentee(newMentee);
-      delete newMentees[id];
-      this.setState( { mentees: newMentees } );
-    // }
+    let newMentee = mentee;
+    let newMentees = this.state.mentees;
+    let id = newMentee.id;
+    newMentee.tier = mentee.tier
+    if (mentee.tier > 0 && mentee.tier < 4) {
+      newMentee.approved = true;
+    } else if (mentee.tier === 4) {
+      newMentee.approved = false;
+    }
+    this.props.updateMentee(newMentee);
+    delete newMentees[id];
+    this.setState( { mentees: newMentees } );
   }
 
   render() {

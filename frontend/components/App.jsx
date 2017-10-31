@@ -16,6 +16,7 @@ import RejectedMentors from './admin/RejectedMentorsContainer';
 import RejectedMentees from './admin/RejectedMenteesContainer';
 
 
+// <iframe width="560" height="315" src="https://www.youtube.com/embed/ycAVwzDhmaU?autoplay=1" frameborder="0" allowfullscreen></iframe>
 const App = () => (
   <div>
     <header>
@@ -35,7 +36,6 @@ const App = () => (
       <AdminRoute exact path="/rejected_mentors" component={RejectedMentors}/>
 
     </div>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/ycAVwzDhmaU?autoplay=1" frameborder="0" allowfullscreen></iframe>
   </div>
 );
 
