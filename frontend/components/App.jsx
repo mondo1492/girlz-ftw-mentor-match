@@ -32,6 +32,7 @@ const App = () => (
       <AdminRoute exact path="/current_mentors" component={CurrentMentors}/>
       <AdminRoute exact path="/current_mentees" component={CurrentMentees}/>
       <AdminRoute exact path="/unapproved_mentors" component={UnapprovedMentors}/>
+      <AdminRoute exact path="/unapproved_mentees" component={UnapprovedMentees}/>
       <AdminRoute exact path="/rejected_mentees" component={RejectedMentees}/>
       <AdminRoute exact path="/rejected_mentors" component={RejectedMentors}/>
 

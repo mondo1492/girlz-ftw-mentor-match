@@ -52,7 +52,7 @@ class CurrentMentors extends React.Component {
           <MentorShow mentor={this.state.mentor}/>
         </Modal>
 
-        <h1>Current Mentor List</h1>
+        <h1>Approved Mentor List</h1>
         <ul>
           {this.state.mentors.map( (mentor) => (
             <li key={mentor.id}>

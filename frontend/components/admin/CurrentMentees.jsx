@@ -52,7 +52,7 @@ class CurrentMentees extends React.Component {
         </Modal>
 
 
-        <h1>Current Mentee List</h1>
+        <h1>Approved Mentee List</h1>
         <ul>
           {this.state.mentees.map( (mentee) => (
             <li key={mentee.id}>

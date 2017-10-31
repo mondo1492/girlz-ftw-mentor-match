@@ -23,7 +23,7 @@ class RejectedMentees extends React.Component {
   componentWillReceiveProps(nextProps) {
     let rejectedMentees = {};
     nextProps.mentees.forEach(function(mentee) {
-      if (mentee.approved === false) {
+      if (mentee.tier === 4) {
         rejectedMentees[mentee.id] = mentee;
       }
     });
