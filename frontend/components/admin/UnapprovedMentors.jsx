@@ -1,19 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Modal from '../Modal'
-import MentorShow from './MentorShow'
+import Modal from '../Modal';
+import MentorShow from './MentorShow';
 
 
 class UnapprovedMentors extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mentors: [],
+      mentors: {},
       isModalOpen: false,
       mentor: null
-    }
-    this.update = this.update.bind(this);
+    };
     this.openModal = this.openModal.bind(this);
+    this.approve = this.approve.bind(this);
   }
 
   componentWillMount() {
@@ -21,13 +21,13 @@ class UnapprovedMentors extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    let unapproved_mentors = [];
+    let unapprovedMentors = [];
     nextProps.mentors.forEach(function(mentor) {
       if (!mentor.approved) {
-        unapproved_mentors.push(mentor);
+        unapprovedMentors[mentor.id] = mentor;
       }
     });
-    this.setState( { mentors: unapproved_mentors } );
+    this.setState( { mentors: unapprovedMentors } );
   }
 
   openModal(mentor) {
@@ -38,12 +38,15 @@ class UnapprovedMentors extends React.Component {
     this.setState({ isModalOpen: false });
   }
 
-  update() {
-    this.forceUpdate();
-  }
-
-  approve(mentor_id) {
-    console.log(mentor_id);
+  approve(mentor) {
+    let newMentor = mentor;
+    let newMentors = this.state.mentors;
+    let id = newMentor.id;
+    newMentor.approved = true;
+    console.log(newMentor);
+    this.props.updateMentor(newMentor);
+    delete newMentors[id];
+    this.setState( { mentors: newMentors } );
   }
 
   render() {
@@ -58,9 +61,16 @@ class UnapprovedMentors extends React.Component {
 
         <h1>Unapproved Mentor List</h1>
         <ul>
-          {this.state.mentors.map( (mentor) => {
-            return <li key={mentor.id}> <span onClick={() => this.openModal(mentor)}>{mentor.first_name} {mentor.last_name}</span> <button onClick={() => approve(mentor.id)}>Approve!</button></li>;
-            })}
+          {Object.keys(this.state.mentors).map((key) => (
+             <li key={key}>
+              <span onClick={() => this.openModal(this.state.mentors[key])} >
+                {this.state.mentors[key].first_name} {this.state.mentors[key].last_name}
+              </span>
+              <button onClick={() => approve(this.state.mentors[key])}>
+                Approve!
+              </button>
+              </li>
+            ))}
         </ul>
 
       </div>

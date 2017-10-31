@@ -7,7 +7,7 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  has_many :mentees
+  # has_many :mentees
 
   def self.find_by_credentials(username, password)
     @user = User.find_by_username(username)

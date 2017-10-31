@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Modal from '../Modal';
 import MenteeShow from './MenteeShow';
-import merge from 'lodash/merge';
-
 
 class UnapprovedMentees extends React.Component {
   constructor(props) {
@@ -27,7 +25,6 @@ class UnapprovedMentees extends React.Component {
     nextProps.mentees.forEach(function(mentee) {
       if (!mentee.approved) {
         unapprovedMentees[mentee.id] = mentee;
-        // unapproved_mentees.push(mentee);
       }
     });
     this.setState( { mentees: unapprovedMentees } );
@@ -39,10 +36,6 @@ class UnapprovedMentees extends React.Component {
 
   closeModal() {
     this.setState({ isModalOpen: false });
-  }
-
-  update() {
-    this.forceUpdate();
   }
 
   approve(mentee) {

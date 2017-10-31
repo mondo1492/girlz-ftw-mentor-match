@@ -21,6 +21,14 @@ export const createMentor = mentor => (
   })
 );
 
+export const updateMentor = user => (
+  $.ajax({
+    method: 'PATCH',
+    url: `/api/users/${user.id}`,
+    data: {user}
+  })
+);
+
 export const deleteMentor = (mentor, success, error) => (
   $.ajax({
     method: 'DELETE',

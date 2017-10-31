@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/mentor_util'
+import * as APIUtil from '../util/mentor_util';
 
 export const RECEIVE_MENTORS = 'RECEIVE_MENTORS';
 export const RECEIVE_MENTOR = 'RECEIVE_MENTOR';
