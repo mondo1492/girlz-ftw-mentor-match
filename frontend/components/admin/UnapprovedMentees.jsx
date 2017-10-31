@@ -55,7 +55,7 @@ class UnapprovedMentees extends React.Component {
         </Modal>
 
 
-        <h1>Current Mentee List</h1>
+        <h1>Unapproved Mentee List</h1>
         <ul>
           {this.state.mentees.map( (mentee) => {
             return <li> <span onClick={() => this.openModal(mentee)} key={mentee.id}>{mentee.first_name} {mentee.last_name}</span> <button onClick={() => approve(mentee.id)}>Approve!</button></li>;
