@@ -1,5 +1,10 @@
 import React from 'react';
 import merge from 'lodash/merge';
+import Dropzone from 'react-dropzone';
+import request from 'superagent';
+
+const CLOUDINARY_UPLOAD_PRESET = 'girlzftw';
+const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/girlzftw/upload';
 
 class MenteeApp extends React.Component {
   constructor(props) {
@@ -31,10 +36,37 @@ class MenteeApp extends React.Component {
       extra_info_text: '',
       agree_terms: false,
       agree_terms_bad_click: false,
+      uploadedFileCloudinaryUrl: ''
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
+  }
+
+  onImageDrop(files) {
+    this.setState({
+      uploadedFile: files[0]
+    });
+
+    this.handleImageUpload(files[0]);
+  }
+
+  handleImageUpload(file) {
+    let upload = request.post(CLOUDINARY_UPLOAD_URL)
+                        .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
+                        .field('file', file);
+
+    upload.end((err, response) => {
+      if (err) {
+        console.error(err);
+      }
+
+      if (response.body.secure_url !== '') {
+        this.setState({
+          uploadedFileCloudinaryUrl: response.body.secure_url
+        });
+      }
+    });
   }
 
   handleInputChange(event) {
@@ -62,6 +94,15 @@ class MenteeApp extends React.Component {
 
   render() {
     return (
+      <div>
+        <div className="parental_form_disclaimer">
+          <p>***Before Filling Out Application, make sure to {}
+          {<a href="http://res.cloudinary.com/dluh2fsyd/image/upload/v1502571356/sandwhich_f7gbm3.png" download="Sushi">download</a>}
+          {} the parental form and have it signed by your parent/s (if you are under 18 years of age).
+          You will need to upload this document in order to submit your application.
+          </p>
+        </div>
+
       <form onSubmit={this.handleFormSubmit}>
         <label>
           <p className="asterix">*</p>First Name:
@@ -251,6 +292,21 @@ class MenteeApp extends React.Component {
         <br/>
         All mentees have certain requirements that Nicol will tell us later.
         <br/>
+        <div className="FileUpload">
+          {this.state.uploadedFileCloudinaryUrl === '' ?
+            <Dropzone
+              multiple={false}
+              accept="image/*"
+              onDrop={this.onImageDrop.bind(this)}>
+              <p>Drop an image or click to select a file to upload.</p>
+            </Dropzone>
+            :
+            <div>
+              <p>Parental Form Snapshot</p>
+              <img src={this.state.uploadedFileCloudinaryUrl} />
+            </div>
+          }
+        </div>
         <label style={{color: this.state.agree_terms_bad_click ? 'red' : 'black'}}>
           I have read and agree to these requirements.
           <input
@@ -259,8 +315,15 @@ class MenteeApp extends React.Component {
             value={this.state.agree_terms}
             onChange={this.handleInputChange} />
         </label>
+
         <button type="submit">Apply</button>
       </form>
+
+
+        <div>
+
+      </div>
+    </div>
     );
   }
 }
