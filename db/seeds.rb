@@ -35,21 +35,22 @@ end
 
 mentee_list = [
   [ false, true, 25, "Belmont", "USA", "Menteefirst", "MenteeLast", "facebook",
-  "some_email", 2, 1, 3],
+    "some_email", 2, 1, 3, 1],
   [ false, true, 25, "Belmont", "USA", "Menteesecond", "MenteeLast", "facebook",
-  "some_email", 2, 1, 3],
+  "some_email", 2, 1, 3, 1],
   [ false, true, 25, "Belmont", "USA", "Mentee3", "MenteeLast", "facebook",
-  "some_email", 2, 1, 3],
+  "some_email", 2, 1, 3, 1],
   [ true, true, 25, "Belmont", "USA", "Mentee4", "MenteeLast", "facebook",
-  "some_email", 2, 1, 3],
+  "some_email", 2, 1, 3, 1],
   [ true, true, 25, "Belmont", "USA", "Mentee5", "MenteeLast", "facebook",
-  "some_email", 2, 1, 3]
+  "some_email", 2, 1, 3, 1]
 ]
 mentee_list.each do |approved, status, age, city, country,
   first_name, last_name, facebook, email, career_advice_rank,
-  personal_advice_rank, motivation_rank|
+  personal_advice_rank, motivation_rank, user_id|
   Mentee.create!( approved: approved, status: status, age: age, city: city, country: country,
     first_name: first_name, last_name: last_name, facebook: facebook,
     email: email, motivation_rank: motivation_rank,
-    personal_advice_rank: personal_advice_rank, career_advice_rank: career_advice_rank)
+    personal_advice_rank: personal_advice_rank, career_advice_rank: career_advice_rank,
+  user_id: user_id)
 end
