@@ -22,6 +22,16 @@ user_list = [
   "some_email", 2, 1, 3],
   [ "admin", "adminpassword", true, true, true, 25, "Belmont", "USA", "adminfirst", "adminlast", "facebook",
   "some_email", 2, 1, 3],
+  [ "user6", "fakeuserpw", false, false, true, 25, "Belmont", "USA", "User", "6", "facebook",
+  "some_email", 2, 1, 3],
+  [ "user7", "fakeuserpw", false, false, true, 25, "Belmont", "USA", "User", "7", "facebook",
+  "some_email", 2, 1, 3],
+  [ "user8", "fakeuserpw", false, false, true, 25, "Belmont", "USA", "User", "8", "facebook",
+  "some_email", 2, 1, 3],
+  [ "user9", "fakeuserpw", false, false, true, 25, "Belmont", "USA", "User", "9", "facebook",
+  "some_email", 2, 1, 3],
+  [ "user10", "fakeuserpw", false, false, true, 25, "Belmont", "USA", "User", "10", "facebook",
+  "some_email", 2, 1, 3]
 ]
 user_list.each do |username, password, admin, approved, status, age, city, country,
   first_name, last_name, facebook, email, career_advice_rank,
