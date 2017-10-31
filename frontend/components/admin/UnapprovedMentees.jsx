@@ -11,7 +11,6 @@ class UnapprovedMentees extends React.Component {
       isModalOpen: false,
       mentee: null
     };
-    this.update = this.update.bind(this);
     this.openModal = this.openModal.bind(this);
     this.approve = this.approve.bind(this);
   }
