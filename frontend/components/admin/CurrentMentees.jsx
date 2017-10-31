@@ -54,10 +54,14 @@ class CurrentMentees extends React.Component {
 
         <h1>Current Mentee List</h1>
         <ul>
-          {this.state.mentees.map( (mentee) => {
-            return <li onClick={() => this.openModal(mentee)} key={mentee.id}>
-              {mentee.first_name} {mentee.last_name} Mentor: {mentee.mentor_name}</li>;
-            })}
+          {this.state.mentees.map( (mentee) => (
+            <li key={mentee.id}>
+              <span onClick={() => this.openModal(mentee)}>
+                {mentee.first_name} {mentee.last_name} {}
+              </span>
+              - Mentor: {mentee.mentor_name}
+            </li>
+            ))}
         </ul>
 
       </div>

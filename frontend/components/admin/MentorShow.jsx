@@ -29,6 +29,7 @@ class MentorShow extends React.Component {
         <p>Describe your personality: {mentor.personality_text}</p>
         <p>Why do you want to be a mentor: {mentor.why_mentor_text}</p>
         <p>Anything else you'd like to add: {mentor.extra_info_text}</p>
+        <p>Mentees: {mentor.mentee_names}</p>
 
       </div>
     );
