@@ -319,7 +319,6 @@ class MenteeApp extends React.Component {
         <button type="submit">Apply</button>
       </form>
 
-
         <div>
 
       </div>
