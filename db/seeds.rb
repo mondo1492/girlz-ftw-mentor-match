@@ -50,9 +50,9 @@ mentee_list = [
   "some_email", 2, 1, 3, 1],
   [ false, true, 25, "Belmont", "USA", "Mentee3", "MenteeLast", "facebook",
   "some_email", 2, 1, 3, 1],
-  [ true, true, 25, "Belmont", "USA", "Mentee4", "MenteeLast", "facebook",
+  [ false, true, 25, "Belmont", "USA", "Mentee4", "MenteeLast", "facebook",
   "some_email", 2, 1, 3, 1],
-  [ true, true, 25, "Belmont", "USA", "Mentee5", "MenteeLast", "facebook",
+  [ false, true, 25, "Belmont", "USA", "Mentee5", "MenteeLast", "facebook",
   "some_email", 2, 1, 3, 1]
 ]
 mentee_list.each do |approved, status, age, city, country,
