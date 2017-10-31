@@ -89,9 +89,9 @@ class UnapprovedMentees extends React.Component {
                 onChange={(e) => {this.handleChange(e, this.state.mentees[key])}}
               >
                 <option value='' hidden> -- select an option --</option>
-                <option value='1'>1</option>
-                <option value='2'>2</option>
-                <option value='3'>3</option>
+                <option value='1'>1 - Amazing</option>
+                <option value='2'>2 - Pretty good</option>
+                <option value='3'>3 - We'll see</option>
                 <option value='4'>4 - rejected</option>
               </select>
 
