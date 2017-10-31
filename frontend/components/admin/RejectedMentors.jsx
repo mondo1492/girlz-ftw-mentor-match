@@ -4,7 +4,7 @@ import Modal from '../Modal';
 import MentorShow from './MentorShow';
 
 
-class UnapprovedMentors extends React.Component {
+class RejectedMentors extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -14,7 +14,6 @@ class UnapprovedMentors extends React.Component {
     };
     this.openModal = this.openModal.bind(this);
     this.approve = this.approve.bind(this);
-    this.reject = this.reject.bind(this);
   }
 
   componentWillMount() {
@@ -22,13 +21,13 @@ class UnapprovedMentors extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    let unapprovedMentors = [];
+    let rejectedMentors = [];
     nextProps.mentors.forEach(function(mentor) {
-      if (mentor.approved === null) {
-        unapprovedMentors[mentor.id] = mentor;
+      if (!mentor.approved) {
+        rejectedMentors[mentor.id] = mentor;
       }
     });
-    this.setState( { mentors: unapprovedMentors } );
+    this.setState( { mentors: rejectedMentors } );
   }
 
   openModal(mentor) {
@@ -49,19 +48,8 @@ class UnapprovedMentors extends React.Component {
     this.setState( { mentors: newMentors } );
   }
 
-  reject(mentor) {
-    let newMentor = mentor;
-    let newMentors = this.state.mentors;
-    let id = newMentor.id;
-    newMentor.approved = false;
-    this.props.updateMentor(newMentor);
-    delete newMentors[id];
-    this.setState( { mentors: newMentors } );
-  }
-
   render() {
     const approve = this.approve;
-    const reject = this.reject;
     return(
       <div>
         <Link to='admin_panel'>Back to Admin Panel</Link>
@@ -70,7 +58,7 @@ class UnapprovedMentors extends React.Component {
           <MentorShow mentor={this.state.mentor}/>
         </Modal>
 
-        <h1>Unapproved Mentor List</h1>
+        <h1>Rejected Mentor List</h1>
         <ul>
           {Object.keys(this.state.mentors).map((key) => (
              <li key={key}>
@@ -79,9 +67,6 @@ class UnapprovedMentors extends React.Component {
               </span>
               <button onClick={() => approve(this.state.mentors[key])}>
                 Approve!
-              </button>
-              <button onClick={() => reject(this.state.mentors[key])}>
-                Reject!
               </button>
               </li>
             ))}
@@ -92,4 +77,4 @@ class UnapprovedMentors extends React.Component {
   }
 }
 
-export default UnapprovedMentors;
+export default RejectedMentors;
