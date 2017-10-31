@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import values from "lodash/values";
 import UnapprovedMentees from './UnapprovedMentees';
-import { fetchMentees } from '../../actions/mentee_actions';
+import { fetchMentees, updateMentee } from '../../actions/mentee_actions';
 // import { allMentees } from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
@@ -10,7 +10,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchMentees: () => dispatch(fetchMentees())
+  fetchMentees: () => dispatch(fetchMentees()),
+  updateMentee: (mentee) => dispatch(updateMentee(mentee))
 });
 
 export default connect(

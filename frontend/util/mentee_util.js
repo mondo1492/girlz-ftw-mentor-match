@@ -21,6 +21,14 @@ export const createMentee = mentee => (
   })
 );
 
+export const updateMentee = mentee => (
+  $.ajax({
+    method: 'PATCH',
+    url: `/api/mentees/${mentee.id}`,
+    data: {mentee}
+  })
+);
+
 export const deleteMentee = (mentee, success, error) => (
   $.ajax({
     method: 'DELETE',

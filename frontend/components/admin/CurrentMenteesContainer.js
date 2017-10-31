@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import values from "lodash/values";
 import CurrentMentees from './CurrentMentees';
-import { fetchMentees } from '../../actions/mentee_actions';
+import { fetchMentees, updateMentee } from '../../actions/mentee_actions';
 // import { allMentees } from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
