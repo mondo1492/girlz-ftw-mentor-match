@@ -36,6 +36,7 @@ Lower priority:
    - Should mentors have any choosing on this?
    - Ability to set self as full, ie not active
    - Add to column mentee capacity, if full, automatically set inactive
+   - update profile option (phone number, etc.)
 
 - Mentee app
   - parent consent form, dl/upload

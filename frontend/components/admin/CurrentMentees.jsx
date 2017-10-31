@@ -1,13 +1,19 @@
 import React from 'react';
 // import { withRouter } from 'react-router-dom';
+import Modal from '../Modal'
+import MenteeShow from './MenteeShow'
+
 
 class CurrentMentees extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      mentees: []
+      mentees: [],
+      isModalOpen: false,
+      mentee: null
     }
     this.update = this.update.bind(this);
+    this.openModal = this.openModal.bind(this);
   }
 
   componentWillMount() {
@@ -15,7 +21,21 @@ class CurrentMentees extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState( { mentees: nextProps.mentees } );
+    let approved_mentees = [];
+    nextProps.mentees.forEach(function(mentee) {
+      if (mentee.approved) {
+        approved_mentees.push(mentee);
+      }
+    });
+    this.setState( { mentees: approved_mentees } );
+  }
+
+  openModal(mentee) {
+    this.setState({ isModalOpen: true, mentee: mentee });
+  }
+
+  closeModal() {
+    this.setState({ isModalOpen: false });
   }
 
   update() {
@@ -25,13 +45,17 @@ class CurrentMentees extends React.Component {
   render() {
     return(
       <div>
+        <Modal className="modal" isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
+          <MenteeShow mentee={this.state.mentee}/>
+        </Modal>
+
+
         <h1>Current Mentee List</h1>
         <ul>
-          {this.state.mentees.map(function(mentee){
-            return <li key={mentee.id}>{mentee.first_name} {mentee.last_name}</li>;
+          {this.state.mentees.map( (mentee) => {
+            return <li onClick={() => this.openModal(mentee)} key={mentee.id}>{mentee.first_name} {mentee.last_name}</li>;
             })}
         </ul>
-        <button onClick={this.update}>meow</button>
 
       </div>
     );
