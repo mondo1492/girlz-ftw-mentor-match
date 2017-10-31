@@ -49,18 +49,22 @@ class UnapprovedMentees extends React.Component {
   }
 
   approve(mentee) {
-    let newMentee = mentee;
-    let newMentees = this.state.mentees;
-    let id = newMentee.id;
-    newMentee.tier = mentee.tier
-    if (mentee.tier > 0 && mentee.tier < 4) {
-      newMentee.approved = true;
-    } else if (mentee.tier === 4) {
-      newMentee.approved = false;
-    }
-    this.props.updateMentee(newMentee);
-    delete newMentees[id];
-    this.setState( { mentees: newMentees } );
+    // if (mentee.tier === null) {
+    //   alert("don't be stupid");
+    // } else {
+      let newMentee = mentee;
+      let newMentees = this.state.mentees;
+      let id = newMentee.id;
+      newMentee.tier = mentee.tier
+      if (mentee.tier > 0 && mentee.tier < 4) {
+        newMentee.approved = true;
+      } else if (mentee.tier === 4) {
+        newMentee.approved = false;
+      }
+      this.props.updateMentee(newMentee);
+      delete newMentees[id];
+      this.setState( { mentees: newMentees } );
+    // }
   }
 
   render() {
@@ -84,15 +88,19 @@ class UnapprovedMentees extends React.Component {
               <select
                 onChange={(e) => {this.handleChange(e, this.state.mentees[key])}}
               >
+                <option value='' hidden> -- select an option --</option>
                 <option value='1'>1</option>
                 <option value='2'>2</option>
                 <option value='3'>3</option>
                 <option value='4'>4 - rejected</option>
               </select>
 
-              <button onClick={() => approve(this.state.mentees[key])}>
-                Set Tier!
-              </button>
+              {this.state.mentees[key].tier !== null ?
+                <button onClick={() => approve(this.state.mentees[key])}>
+                  Set Tier!
+                </button>
+                : ""
+              }
 
               </li>
             ))}

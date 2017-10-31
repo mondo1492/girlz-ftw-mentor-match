@@ -6,10 +6,14 @@ class Modal extends React.Component {
        return null
 
      let modalStyle = {
-       position: 'absolute',
-       top: '30%',
-       left: '43%',
-       transform: 'translate(-50%, -50%)',
+       position: 'fixed',
+       top: '50px',
+       left: '50%',
+       maxWidth: '100%',
+       maxHeight: '70%',
+       overflowY: 'scroll',
+       padding: '20px',
+       transform: 'translate(-50%, 10px)',
        zIndex: '9999',
        background: '#fff'
      }
@@ -29,11 +33,13 @@ class Modal extends React.Component {
      }
 
      let backdropStyle = {
-       position: 'absolute',
-       width: '100%',
-       height: '100%',
+       position: 'fixed',
+      //  width: '100%',
+      //  height: '100%',
        top: '0px',
        left: '0px',
+       bottom: '0',
+       right: '0',
        zIndex: '9998',
        background: 'rgba(0, 0, 0, 0.5)'
      }
