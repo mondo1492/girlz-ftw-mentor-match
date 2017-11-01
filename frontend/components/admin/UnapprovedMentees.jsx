@@ -66,7 +66,7 @@ class UnapprovedMentees extends React.Component {
   render() {
     const approve = this.approve;
     return(
-      <div>
+      <div className="unapproved_container">
         <Link to='admin_panel'>Back to Admin Panel</Link>
 
         <Modal className="modal" isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
@@ -76,29 +76,33 @@ class UnapprovedMentees extends React.Component {
         <h1>Unranked Mentee List</h1>
         <ul>
           {Object.keys(this.state.mentees).map((key) => (
-             <li key={key}>
-              <span onClick={() => this.openModal(this.state.mentees[key])} >
-                {this.state.mentees[key].first_name} {this.state.mentees[key].last_name}
-              </span>
-
-              <select
-                onChange={(e) => {this.handleChange(e, this.state.mentees[key])}}
-              >
-                <option value='' hidden> -- select an option --</option>
-                <option value='1'>1 - Amazing</option>
-                <option value='2'>2 - Pretty good</option>
-                <option value='3'>3 - We'll see</option>
-                <option value='4'>4 - rejected</option>
-              </select>
-
-              {this.state.mentees[key].tier !== null ?
-                <button onClick={() => approve(this.state.mentees[key])}>
-                  Set Tier!
-                </button>
-                : ""
-              }
-
-              </li>
+            <div className="unapproved_box_container">
+              <div className="unapproved_box_left">
+                <p>Video Placeholder</p>
+              </div>
+              <div className="unapproved_box_right">
+                <h3>Name: {this.state.mentees[key].first_name} {this.state.mentees[key].last_name}</h3>
+                <h3>City: {this.state.mentees[key].city}</h3>
+                <span onClick={() => this.openModal(this.state.mentees[key])}>
+                  <h3>See Full Profile</h3>
+                </span>
+                <select
+                  onChange={(e) => {this.handleChange(e, this.state.mentees[key])}}
+                >
+                  <option value='' hidden> -- select an option --</option>
+                  <option value='1'>1 - Amazing</option>
+                  <option value='2'>2 - Pretty good</option>
+                  <option value='3'>3 - We'll see</option>
+                  <option value='4'>4 - rejected</option>
+                </select>
+                {this.state.mentees[key].tier !== null ?
+                  <button onClick={() => approve(this.state.mentees[key])}>
+                    Set Tier!
+                  </button>
+                  : ""
+                }
+              </div>
+            </div>
             ))}
         </ul>
 

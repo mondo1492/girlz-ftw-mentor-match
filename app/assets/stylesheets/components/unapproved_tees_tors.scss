@@ -1,0 +1,22 @@
+.unapproved_container {
+  padding-left: 40px;
+}
+
+.unapproved_box_container {
+  display: flex;
+  width: 600px;
+  justify-content: center;
+  flex-direction: row;
+  border: yellow 1px solid;
+}
+.unapproved_box_left {
+  // display: flex;
+  width: 60%;
+  height: 150px;
+  border: red 1px solid;
+}
+.unapproved_box_right{
+  // display: flex;
+  width: 100%;
+  border: green 1px solid;
+}

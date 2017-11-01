@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+ * {
+    font-family: sans-serif;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 50;
+  }
+
+@import './components/unapproved_tees_tors.scss';

@@ -12,11 +12,8 @@ import CurrentMentees from './admin/CurrentMenteesContainer';
 import CurrentMentors from './admin/CurrentMentorsContainer';
 import UnapprovedMentors from './admin/UnapprovedMentorsContainer';
 import UnapprovedMentees from './admin/UnapprovedMenteesContainer';
-import RejectedMentors from './admin/RejectedMentorsContainer';
-import RejectedMentees from './admin/RejectedMenteesContainer';
 
 
-// <iframe width="560" height="315" src="https://www.youtube.com/embed/ycAVwzDhmaU?autoplay=1" frameborder="0" allowfullscreen></iframe>
 const App = () => (
   <div>
     <header>
@@ -33,14 +30,13 @@ const App = () => (
       <AdminRoute exact path="/current_mentees" component={CurrentMentees}/>
       <AdminRoute exact path="/unapproved_mentors" component={UnapprovedMentors}/>
       <AdminRoute exact path="/unapproved_mentees" component={UnapprovedMentees}/>
-      <AdminRoute exact path="/rejected_mentees" component={RejectedMentees}/>
-      <AdminRoute exact path="/rejected_mentors" component={RejectedMentors}/>
 
     </div>
   </div>
 );
 
 export default App;
+// <iframe width="560" height="315" src="https://www.youtube.com/embed/ycAVwzDhmaU?autoplay=1" frameborder="0" allowfullscreen></iframe>
 
 // <Switch>
 //   // <Route exact path="/" component={  A } />
