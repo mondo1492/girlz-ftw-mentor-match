@@ -43,6 +43,7 @@ class CurrentMentees extends React.Component {
   }
 
   render() {
+    const mentorSelect = "meow";
     return(
       <div>
         <Link to='admin_panel'>Back to Admin Panel</Link>
@@ -59,7 +60,9 @@ class CurrentMentees extends React.Component {
               <span onClick={() => this.openModal(mentee)}>
                 {mentee.first_name} {mentee.last_name} {}
               </span>
-              - Mentor: {mentee.mentor_name} {}
+              - Mentor: {
+                mentee.mentor_name ? mentee.mentor_name : mentorSelect
+              } {}
               - Tier: {mentee.tier}
             </li>
           )).sort( (a,b) => {
