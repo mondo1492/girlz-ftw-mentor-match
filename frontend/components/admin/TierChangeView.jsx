@@ -6,15 +6,17 @@ class TierChangeView extends React.Component {
     super(props);
     this.state = {
       originalTier: null,
+      originalUserId: null,
       mentee: this.props.mentee,
       madeChange: false,
-      currentTier: this.props.mentee.tier
+      currentTier: this.props.mentee.tier,
+      submitted: false
     };
     this.handleChange = this.handleChange.bind(this);
   }
 
   componentWillMount() {
-    this.setState( { originalTier: this.props.mentee.tier } );
+    this.setState( { originalTier: this.props.mentee.tier, originalUserId: this.props.mentee.user_id } );
   }
 
   handleChange(e) {
@@ -22,20 +24,27 @@ class TierChangeView extends React.Component {
     if (this.state.originalTier.toString() === e.target.value) {
       newMentee.tier = this.state.originalTier;
       newMentee.approved = true;
+      newMentee.user_id = this.state.originalUserId;
     } else if (e.target.value === "4") {
       newMentee.tier = 4;
       newMentee.approved = false;
+      newMentee.user_id = null;
     } else {
       newMentee.tier = e.target.value;
       newMentee.approved = true;
+      newMentee.user_id = this.state.originalUserId;
     }
     this.setState({mentee: newMentee, madeChange: true});
   }
 
   handleSubmit() {
+    this.setState( { submitted: true });
     let newMenteeInfo = this.state.mentee;
-    this.props.updateMentee(newMenteeInfo);
-    this.props.updateStateWithNewTiers(newMenteeInfo);
+    this.props.updateMentee(newMenteeInfo).then(() => {
+      this.props.updateStateWithNewTiers(newMenteeInfo);
+    }, ()=> {
+    });
+
     this.props.closeModal();
   }
 

@@ -80,6 +80,7 @@ class CurrentMentees extends React.Component {
         newMentees.push(mentee);
       }
     });
+    this.props.fetchMentors();
     this.setState( { mentees: newMentees });
   }
 
@@ -96,7 +97,7 @@ class CurrentMentees extends React.Component {
           <MentorChangeView closeModal={this.closeModal} updateMentee={this.props.updateMentee} updateWithSelectedMentor = {this.updateWithSelectedMentor} mentee={this.state.mentee} mentors={this.state.mentors}></MentorChangeView>
         </Modal>
 
-        <Modal className="modal" isOpen={this.state.isModalThreeOpen} onClose={() => this.closeModal()}>
+        <Modal className="modal" isOpen={this.state.isModalThreeOpen}>
           <TierChangeView closeModal={this.closeModal} updateMentee={this.props.updateMentee} updateStateWithNewTiers = {this.updateStateWithNewTiers} mentee={this.state.mentee}></TierChangeView>
         </Modal>
 
