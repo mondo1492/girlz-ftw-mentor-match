@@ -10,21 +10,21 @@ Mentee.destroy_all
 
 
 user_list = [
-  [ "user1", "fakeuserpw", false, true, true, 25, "Belmont", "USA", "User", "1", "facebook",
+  [ "user1", "fakeuserpw", false, true, false, 25, "Belmont", "USA", "User", "1", "facebook",
   "some_email", 2, 1, 3],
-  [ "user2", "fakeuserpw", false, nil, true, 25, "Belmont", "USA", "User", "2", "facebook",
+  [ "user2", "fakeuserpw", false, nil, false, 25, "Belmont", "USA", "User", "2", "facebook",
   "some_email", 2, 1, 3],
-  [ "user3", "fakeuserpw", false, nil, true, 25, "Belmont", "USA", "User", "3", "facebook",
+  [ "user3", "fakeuserpw", false, nil, false, 25, "Belmont", "USA", "User", "3", "facebook",
   "some_email", 2, 1, 3],
-  [ "user4", "fakeuserpw", false, nil, true, 25, "Belmont", "USA", "User", "4", "facebook",
+  [ "user4", "fakeuserpw", false, nil, false, 25, "Belmont", "USA", "User", "4", "facebook",
   "some_email", 2, 1, 3],
-  [ "user5", "fakeuserpw", false, nil, true, 25, "Belmont", "USA", "User", "5", "facebook",
+  [ "user5", "fakeuserpw", false, nil, false, 25, "Belmont", "USA", "User", "5", "facebook",
   "some_email", 2, 1, 3],
   [ "admin", "adminpassword", true, true, true, 25, "Belmont", "USA", "adminfirst", "adminlast", "facebook",
   "some_email", 2, 1, 3],
-  [ "user6", "fakeuserpw", false, nil, true, 25, "Belmont", "USA", "User", "6", "facebook",
+  [ "user6", "fakeuserpw", false, nil, false, 25, "Belmont", "USA", "User", "6", "facebook",
   "some_email", 2, 1, 3],
-  [ "user7", "fakeuserpw", false, false, true, 25, "Belmont", "USA", "User", "7", "facebook",
+  [ "user7", "fakeuserpw", false, false, false, 25, "Belmont", "USA", "User", "7", "facebook",
   "some_email", 2, 1, 3],
   [ "user8", "fakeuserpw", false, false, true, 25, "Belmont", "USA", "User", "8", "facebook",
   "some_email", 2, 1, 3],
@@ -45,15 +45,15 @@ end
 
 mentee_list = [
   [ false, true, 25, "Belmont", "USA", "Menteefirst", "MenteeLast", "facebook",
-    "some_email", 2, 1, 3, 1],
+    "some_email", 2, 1, 3, nil],
   [ false, true, 25, "Belmont", "USA", "Menteesecond", "MenteeLast", "facebook",
-  "some_email", 2, 1, 3, 1],
+  "some_email", 2, 1, 3, nil],
   [ false, true, 25, "Belmont", "USA", "Mentee3", "MenteeLast", "facebook",
-  "some_email", 2, 1, 3, 1],
+  "some_email", 2, 1, 3, nil],
   [ false, true, 25, "Belmont", "USA", "Mentee4", "MenteeLast", "facebook",
-  "some_email", 2, 1, 3, 1],
+  "some_email", 2, 1, 3, nil],
   [ false, true, 25, "Belmont", "USA", "Mentee5", "MenteeLast", "facebook",
-  "some_email", 2, 1, 3, 1]
+  "some_email", 2, 1, 3, nil]
 ]
 mentee_list.each do |approved, status, age, city, country,
   first_name, last_name, facebook, email, career_advice_rank,
