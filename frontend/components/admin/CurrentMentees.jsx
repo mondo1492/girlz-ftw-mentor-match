@@ -4,6 +4,7 @@ import { confirmAlert } from 'react-confirm-alert';
 import Modal from '../Modal';
 import MenteeShow from './MenteeShow';
 import MentorChangeView from './MentorChangeView';
+import TierChangeView from './TierChangeView';
 
 
 class CurrentMentees extends React.Component {
@@ -14,6 +15,7 @@ class CurrentMentees extends React.Component {
       mentors: [],
       isModalOpen: false,
       isModalTwoOpen: false,
+      isModalThreeOpen: false,
       mentee: null,
       showDialog: false
     };
@@ -21,6 +23,7 @@ class CurrentMentees extends React.Component {
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.updateWithSelectedMentor = this.updateWithSelectedMentor.bind(this);
+    this.updateStateWithNewTiers = this.updateStateWithNewTiers.bind(this);
   }
 
   componentWillMount() {
@@ -55,14 +58,29 @@ class CurrentMentees extends React.Component {
     this.setState({ isModalTwoOpen: true, mentee: mentee});
   }
 
+  openModalThree(mentee) {
+    this.setState({ isModalThreeOpen: true, mentee: mentee});
+  }
+
   closeModal() {
-    this.setState({ isModalOpen: false, isModalTwoOpen: false });
+    this.setState({ isModalOpen: false, isModalTwoOpen: false, isModalThreeOpen: false });
   }
 
   updateWithSelectedMentor() {
-    console.log("WOAH");
     this.props.fetchMentors();
     this.setState( {isModalTwoOpen: false });
+  }
+
+  updateStateWithNewTiers(newMentee) {
+    let newMentees = [];
+    this.state.mentees.forEach((mentee) => {
+      if (newMentee.id === mentee.id) {
+        newMentees.push(newMentee);
+      } else {
+        newMentees.push(mentee);
+      }
+    });
+    this.setState( { mentees: newMentees });
   }
 
   render() {
@@ -76,6 +94,10 @@ class CurrentMentees extends React.Component {
 
         <Modal className="modal" isOpen={this.state.isModalTwoOpen} onClose={() => this.closeModal()}>
           <MentorChangeView closeModal={this.closeModal} updateMentee={this.props.updateMentee} updateWithSelectedMentor = {this.updateWithSelectedMentor} mentee={this.state.mentee} mentors={this.state.mentors}></MentorChangeView>
+        </Modal>
+
+        <Modal className="modal" isOpen={this.state.isModalThreeOpen} onClose={() => this.closeModal()}>
+          <TierChangeView closeModal={this.closeModal} updateMentee={this.props.updateMentee} updateStateWithNewTiers = {this.updateStateWithNewTiers} mentee={this.state.mentee}></TierChangeView>
         </Modal>
 
         <h1>Approved Mentee List</h1>
@@ -92,15 +114,20 @@ class CurrentMentees extends React.Component {
                 <span onClick={() => this.openModal(mentee)}>
                   {mentee.first_name}&nbsp;{ mentee.last_name}
                 </span>
-                <h4>{mentee.tier}</h4>
+                <div className="mentor_mentor_select">
+                  <h4>{mentee.tier}</h4>
+                    <button onClick={() => this.openModalThree(mentee)}>
+                      Change Tier?
+                    </button>
+                </div>
+
                 <div className="mentor_mentor_select">
                   <h4>{mentee.mentor_name === "" ? "No Mentor Yet" : mentee.mentor_name}</h4>
                   <button onClick={() => this.openModalTwo(mentee)}>
-                    {mentee.mentor_name === "" ? "Choose A Mentor?" : "Select A New Mentor?"}
+                    { mentee.mentor_name === "" ? "Choose A Mentor?" : "Select A New Mentor?"}
                   </button>
                 </div>
               </div>
-
             )).sort( (a,b) => {
               return a.props.children[5] - b.props.children[5];
               })
