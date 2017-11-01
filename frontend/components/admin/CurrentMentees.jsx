@@ -58,28 +58,31 @@ class CurrentMentees extends React.Component {
     console.log(e.target);
     let newMentee = mentee;
     let newMentees = this.state.mentees;
-    let id = newMentee.id;
+    let idx = newMentees.findIndex(oldMentee => oldMentee.id === mentee.id);
     let mentor_id = parseInt(e.target.value);
     mentee.mentor_id = mentor_id;
     let newMentor = this.state.mentors.find(mentor => mentor.id === mentor_id);
     // how can we add this mentee to the mentor's list of mentees? line below?
     // newMentor.mentees.push(mentee);
     this.props.updateMentee(newMentee);
-    newMentees[id] = newMentee;
-    this.setState( { mentees: newMentees} );
+    // this update doesn't work - check the rails server
+    // however, it DOES update state
+    newMentees[idx] = newMentee;
+    this.setState( { mentees: newMentees},
+    () => console.log(this.state));
   }
 
   render() {
     const mentorOptionList = this.state.mentors.map(mentor => (
-        <option value={`${mentor.id}`} key={mentor.id}>{mentor.first_name} {mentor.last_name}</option>
-    ));
+        <option value={`${mentor.id}`}
+            key={mentor.id}>{mentor.first_name} {mentor.last_name}</option>
+      ));
 
     const mentorSelect = (mentee) => (
       <select
         value={mentee.mentor_id}
         onChange={(e) => {
           if (confirm('Match this mentee to this mentor?')) {
-            console.log("here");
             this.handleChange(e, mentee);
           } else {
             console.log("im here", e.target.value);
