@@ -34,11 +34,6 @@ class TierChangeView extends React.Component {
   }
 
   handleSubmit() {
-    // let newMenteeInfo = this.state.mentee;
-    // this.props.updateMentee(newMenteeInfo).then(() => {
-    //   this.props.updateWithSelectedMentor(newMenteeInfo);
-    // }, ()=> {
-    // });
     let newMenteeInfo = this.state.mentee;
     this.props.updateMentee(newMenteeInfo);
     this.props.updateStateWithNewTiers(newMenteeInfo);
