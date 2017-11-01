@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171031230326) do
+ActiveRecord::Schema.define(version: 20171101003212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 20171031230326) do
     t.text "extra_info_text"
     t.integer "user_id"
     t.integer "tier"
+    t.string "youtube_url"
+    t.string "headshot_url"
   end
 
   create_table "users", force: :cascade do |t|
@@ -77,6 +79,8 @@ ActiveRecord::Schema.define(version: 20171031230326) do
     t.text "personality_text"
     t.text "why_mentor_text"
     t.text "extra_info_text"
+    t.string "youtube_url"
+    t.string "headshot_url"
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
