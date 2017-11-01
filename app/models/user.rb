@@ -13,6 +13,11 @@ class User < ApplicationRecord
     self.mentees.map { |mentee| "#{mentee.first_name} #{mentee.last_name}"}.join(", ")
   end
 
+
+    def mentee_count
+      self.mentees.count
+    end
+
   def self.find_by_credentials(username, password)
     @user = User.find_by_username(username)
     return nil unless @user
