@@ -74,6 +74,8 @@ class CurrentMentees extends React.Component {
 
   render() {
     const mentorOptionList = this.state.mentors.map(mentor => (
+      //hoping to do something here that makes a mentee's already given
+      //mentor selected by default
         <option value={`${mentor.id}`}
             key={mentor.id}>{mentor.first_name} {mentor.last_name}</option>
       ));
