@@ -2,7 +2,6 @@ import { connect } from 'react-redux';
 import values from "lodash/values";
 import RejectedMentors from './RejectedMentors';
 import { fetchMentors, updateMentor } from '../../actions/mentor_actions';
-// import { allMentors } from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
   mentors: values(state.mentors),

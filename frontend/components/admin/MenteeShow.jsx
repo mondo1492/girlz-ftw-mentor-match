@@ -4,12 +4,11 @@ class MenteeShow extends React.Component {
   constructor(props) {
     super(props);
   }
+
   render() {
-    console.log(this.props.mentee);
     const mentee = this.props.mentee;
     return(
       <div>
-
         <h1>{mentee.first_name} {mentee.last_name}</h1>
         <p>Facebook: {mentee.facebook}</p>
         <p>Email: {mentee.email}</p>
@@ -32,7 +31,6 @@ class MenteeShow extends React.Component {
         <p>Any topics you wouldn't feel comfortable discussing with your mentor: {mentee.no_discuss_text}</p>
         <p>Anything else you'd like to add: {mentee.extra_info_text}</p>
         <p>Mentor: {mentee.mentor_name}</p>
-
       </div>
     );
   }

@@ -53,7 +53,7 @@ class UnapprovedMentees extends React.Component {
     let newMentee = mentee;
     let newMentees = this.state.mentees;
     let id = newMentee.id;
-    newMentee.tier = mentee.tier
+    newMentee.tier = mentee.tier;
     if (mentee.tier > 0 && mentee.tier < 4) {
       newMentee.approved = true;
     } else if (mentee.tier === 4) {
@@ -91,7 +91,7 @@ class UnapprovedMentees extends React.Component {
                   <h3>See Full Profile</h3>
                 </span>
                 <select
-                  onChange={(e) => {this.handleChange(e, this.state.mentees[key])}}
+                  onChange={(e) => {this.handleChange(e, this.state.mentees[key]);}}
                 >
                   <option value='' hidden> -- select an option --</option>
                   <option value='1'>1 - Amazing</option>

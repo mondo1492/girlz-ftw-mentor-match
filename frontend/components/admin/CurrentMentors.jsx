@@ -1,6 +1,6 @@
 import React from 'react';
-import Modal from '../Modal'
-import MentorShow from './MentorShow'
+import Modal from '../Modal';
+import MentorShow from './MentorShow';
 import { Link } from 'react-router-dom';
 
 
@@ -11,7 +11,7 @@ class CurrentMentors extends React.Component {
       mentors: [],
       isModalOpen: false,
       mentor: null
-    }
+    };
     this.update = this.update.bind(this);
     this.openModal = this.openModal.bind(this);
   }

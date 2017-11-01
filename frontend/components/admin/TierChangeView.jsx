@@ -18,7 +18,6 @@ class TierChangeView extends React.Component {
   }
 
   handleChange(e) {
-    console.log(e.target.value);
     let newMentee = this.state.mentee;
     if (this.state.originalTier.toString() === e.target.value) {
       newMentee.tier = this.state.originalTier;

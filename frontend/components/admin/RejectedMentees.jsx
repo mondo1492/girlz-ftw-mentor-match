@@ -52,7 +52,7 @@ class RejectedMentees extends React.Component {
     let newMentee = mentee;
     let newMentees = this.state.mentees;
     let id = newMentee.id;
-    newMentee.tier = mentee.tier
+    newMentee.tier = mentee.tier;
     newMentee.approved = true;
     this.props.updateMentee(newMentee);
     delete newMentees[id];
@@ -78,7 +78,7 @@ class RejectedMentees extends React.Component {
               </span>
 
               <select
-                onChange={(e) => {this.handleChange(e, this.state.mentees[key])}}
+                onChange={(e) => {this.handleChange(e, this.state.mentees[key]);}}
               >
                 <option value='' hidden> -- select an option --</option>
                 <option value='1'>1 - Amazing</option>
