@@ -14,7 +14,7 @@ class Modal extends React.Component {
        overflowY: 'scroll',
        padding: '20px',
        transform: 'translate(-50%, 10px)',
-       zIndex: '9999',
+       zIndex: '1119999',
        background: '#fff'
      }
 

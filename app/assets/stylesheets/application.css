@@ -20,7 +20,7 @@
     margin: 0;
     padding: 0;
     position: relative;
-    z-index: 50;
+    /*z-index: 50;*/
   }
 
 @import './components/unapproved_tees_tors.scss';
