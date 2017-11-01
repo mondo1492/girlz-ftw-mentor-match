@@ -14,7 +14,7 @@ class Modal extends React.Component {
        overflowY: 'scroll',
        padding: '20px',
        transform: 'translate(-50%, 10px)',
-       zIndex: '1119999',
+       zIndex: '1001',
        background: '#fff'
      }
 
@@ -33,12 +33,14 @@ class Modal extends React.Component {
      }
 
      let backdropStyle = {
+       overflowY: 'hidden',
        position: 'fixed',
+
        top: '0px',
        left: '0px',
        bottom: '0',
        right: '0',
-       zIndex: '9998',
+       zIndex: '1000',
        background: 'rgba(0, 0, 0, 0.5)'
      }
 

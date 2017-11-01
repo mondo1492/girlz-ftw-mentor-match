@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Modal from '../Modal';
+import Modal from 'react-modal';
 import MenteeShow from './MenteeShow';
 
 class UnapprovedMentees extends React.Component {
@@ -12,6 +12,7 @@ class UnapprovedMentees extends React.Component {
       mentee: null
     };
     this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
     this.approve = this.approve.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
@@ -31,11 +32,11 @@ class UnapprovedMentees extends React.Component {
   }
 
   openModal(mentee) {
-    this.setState({ isModalOpen: true, mentee: mentee });
+    this.setState({ isModalOpen: true, mentee: mentee});
   }
 
   closeModal() {
-    this.setState({ isModalOpen: false });
+    this.setState({ isModalOpen: false});
   }
 
   handleChange(e, mentee) {
@@ -68,15 +69,18 @@ class UnapprovedMentees extends React.Component {
     return(
       <div className="unapproved_container">
         <Link to='admin_panel'>Back to Admin Panel</Link>
-
-        <Modal className="modal" isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
+        <Modal
+          className="modal"
+          isOpen={this.state.isModalOpen}
+          onRequestClose={() => this.closeModal()}
+          overlayClassName="modal-overlay">
           <MenteeShow mentee={this.state.mentee}/>
         </Modal>
 
         <h1>Unranked Mentee List</h1>
         <ul>
           {Object.keys(this.state.mentees).map((key) => (
-            <div className="unapproved_box_container">
+            <div key={key} className="unapproved_box_container">
               <div className="unapproved_box_left">
                 <p>Video Placeholder</p>
               </div>

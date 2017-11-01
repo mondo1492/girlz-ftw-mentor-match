@@ -24,3 +24,4 @@
   }
 
 @import './components/unapproved_tees_tors.scss';
+@import './specific_styling/modal';

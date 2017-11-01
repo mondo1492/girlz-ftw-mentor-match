@@ -10,13 +10,16 @@
   border: yellow 1px solid;
 }
 .unapproved_box_left {
-  // display: flex;
   width: 60%;
   height: 150px;
   border: red 1px solid;
 }
-.unapproved_box_right{
-  // display: flex;
+
+.unapproved_box_right {
   width: 100%;
   border: green 1px solid;
+}
+
+.ReactModal__Body--open {
+    overflow: hidden;
 }
