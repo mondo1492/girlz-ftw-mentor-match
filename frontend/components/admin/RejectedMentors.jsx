@@ -23,7 +23,7 @@ class RejectedMentors extends React.Component {
   componentWillReceiveProps(nextProps) {
     let rejectedMentors = [];
     nextProps.mentors.forEach(function(mentor) {
-      if (!mentor.approved) {
+      if (mentor.approved === false) {
         rejectedMentors[mentor.id] = mentor;
       }
     });
