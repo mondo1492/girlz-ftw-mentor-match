@@ -6,9 +6,9 @@ class MentorChangeView extends React.Component {
     super(props);
     this.state = {
       originalName: "",
-      original: 0,
-      currentMentor: this.props.mentee.mentor_name ? this.props.mentee.mentor_name : "No One",
-      selectedMentor: null, 
+      original: "",
+      originalMentor: this.props.mentee.mentor_name ? this.props.mentee.mentor_name : "No One",
+      selectedMentor: null,
       mentee: this.props.mentee,
       madeChange: false,
       mentorList: this.props.mentors
@@ -17,34 +17,45 @@ class MentorChangeView extends React.Component {
   }
   componentWillMount() {
     let name = "";
-    console.log(this.props.mentee.mentor_name);
+    // console.log(this.props.mentee.mentor_name);
     this.props.mentee.mentor_name ? name = this.props.mentee.mentor_name : name = "No One";
-    this.setState({orignal: this.props.mentee.user_id, originalName: name});
+    this.setState({original: this.props.mentee.user_id, originalName: name});
   }
 
   handleChange(e) {
-    let currentMentor = null;
+    let originalMentor = null;
+    let selectedMentor = null;
     let newMentee = this.state.mentee;
     if (this.state.original.toString() === e.target.value) {
       newMentee.user_id = this.state.original;
+      selectedMentor = this.state.originalMentor;
     } else if (e.target.value === 'none') {
       newMentee.user_id = null;
+      selectedMentor = null;
     } else {
       for (let i = 0; i < this.state.mentorList.length; i++) {
        if ((this.state.mentorList[i].id).toString() === e.target.value) {
-         currentMentor = this.state.mentorList[i];
+         selectedMentor = this.state.mentorList[i];
          break;
        }
      }
-      newMentee.user_id = currentMentor.id;
+      newMentee.user_id = selectedMentor.id;
     }
-    this.setState({mentee: newMentee, madeChange: true});
+    // console.log(selectedMentor.last_name);
+    this.setState({mentee: newMentee, selectedMentor: selectedMentor, madeChange: true});
   }
 
   handleSubmit() {
     let newMenteeInfo = this.state.mentee;
+    let newMentorInfo = this.state.selectedMentor;
+    if (newMentorInfo === null) {
+      newMentorInfo = this.state.originalMentor;
+      newMentorInfo.status = true;
+    } else {
+      newMentorInfo.status = false;
+    }
     this.props.updateMentee(newMenteeInfo).then(() => {
-      this.props.updateWithSelectedMentor(newMenteeInfo);
+      this.props.updateWithSelectedMentor(newMentorInfo);
     }, ()=> {
     });
   }
@@ -54,7 +65,7 @@ class MentorChangeView extends React.Component {
       <div>
         <h2>Select Or Change Current Mentor</h2>
         <div>
-          <h4>{this.state.mentee.first_name} is currently matched with {this.state.currentMentor}</h4>
+          <h4>{this.state.mentee.first_name} is currently matched with {this.state.originalMentor}</h4>
         </div>
           <h4>Match {this.state.mentee.first_name} with </h4>
             <select onChange={(e) => this.handleChange(e)}>
