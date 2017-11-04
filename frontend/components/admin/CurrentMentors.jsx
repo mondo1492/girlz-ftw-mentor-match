@@ -53,16 +53,24 @@ class CurrentMentors extends React.Component {
         </Modal>
 
         <h1>Approved Mentor List</h1>
-        <ul>
-          {this.state.mentors.map( (mentor) => (
-            <li key={mentor.id}>
-              <span onClick={() => this.openModal(mentor)}>
-                {mentor.first_name} {mentor.last_name}  {}
-              </span>
-              - Mentees: {mentor.mentee_names}
-            </li>
-            ))}
-        </ul>
+        <div className="current_mentors_container">
+          <ul>
+            <div className="current_mentors_list_item" key={0}>
+              <h4>Mentor</h4>
+              <h4>Status</h4>
+              <h4>Current Mentee/s</h4>
+            </div>
+            {this.state.mentors.map( (mentor) => (
+              <div className="current_mentors_list_item" key={mentor.id}>
+                <span onClick={() => this.openModal(mentor)}>
+                  {mentor.first_name}&nbsp;{mentor.last_name}  {}
+                </span>
+                <h4>{mentor.status ? "Has a Mentee": "Seeking Mentee"}</h4>
+                <h4>{mentor.mentee_names ? mentor.mentee_names : "N/A"}</h4>
+                </div>
+              ))}
+          </ul>
+        </div>
 
       </div>
     );

@@ -7,7 +7,8 @@ class MentorChangeView extends React.Component {
     this.state = {
       originalName: "",
       original: 0,
-      selectedMentor: this.props.mentee.mentor_name ? this.props.mentee.mentor_name : "No One",
+      currentMentor: this.props.mentee.mentor_name ? this.props.mentee.mentor_name : "No One",
+      selectedMentor: null, 
       mentee: this.props.mentee,
       madeChange: false,
       mentorList: this.props.mentors
@@ -21,8 +22,8 @@ class MentorChangeView extends React.Component {
     this.setState({orignal: this.props.mentee.user_id, originalName: name});
   }
 
-  handleChange(e, mentor) {
-    let selectedMentor = null;
+  handleChange(e) {
+    let currentMentor = null;
     let newMentee = this.state.mentee;
     if (this.state.original.toString() === e.target.value) {
       newMentee.user_id = this.state.original;
@@ -31,11 +32,11 @@ class MentorChangeView extends React.Component {
     } else {
       for (let i = 0; i < this.state.mentorList.length; i++) {
        if ((this.state.mentorList[i].id).toString() === e.target.value) {
-         selectedMentor = this.state.mentorList[i];
+         currentMentor = this.state.mentorList[i];
          break;
        }
      }
-      newMentee.user_id = selectedMentor.id;
+      newMentee.user_id = currentMentor.id;
     }
     this.setState({mentee: newMentee, madeChange: true});
   }
@@ -53,7 +54,7 @@ class MentorChangeView extends React.Component {
       <div>
         <h2>Select Or Change Current Mentor</h2>
         <div>
-          <h4>{this.state.mentee.first_name} is currently matched with {this.state.selectedMentor}</h4>
+          <h4>{this.state.mentee.first_name} is currently matched with {this.state.currentMentor}</h4>
         </div>
           <h4>Match {this.state.mentee.first_name} with </h4>
             <select onChange={(e) => this.handleChange(e)}>
