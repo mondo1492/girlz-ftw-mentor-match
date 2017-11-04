@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from 'react-bootstrap';
 
 class MentorApp extends React.Component {
   constructor(props) {
@@ -61,6 +62,7 @@ class MentorApp extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleFormSubmit}>
+        <Button bsStyle="success" bsSize="small">React Bootstrap</Button>
         <label>
           <p className="asterix">*</p>Username:
           <input
