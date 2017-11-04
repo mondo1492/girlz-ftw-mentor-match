@@ -162,43 +162,57 @@ class MentorApp extends React.Component {
             </Col>
           </FormGroup>
           <FormGroup>
-            <ControlLabel>Email *</ControlLabel>
-            <FormControl
-              id="formControlsEmail"
-              type="email"
-              name="email"
-              onChange={this.handleInputChange}
-            />
+            <Col componentClass={ControlLabel} sm={1}>
+              Email *
+            </Col>
+            <Col sm={3}>
+              <FormControl
+                id="formControlsEmail"
+                type="email"
+                name="email"
+                onChange={this.handleInputChange}
+              />
+            </Col>
           </FormGroup>
           <FormGroup>
-            <ControlLabel>Facebook *</ControlLabel>
-            <FormControl
-              id="formControlsFacebook"
-              type="text"
-              name="facebook"
-              placeholder="https://www.facebook.com/girlzftw"
-              onChange={this.handleInputChange}
-            />
+            <Col componentClass={ControlLabel} sm={1}>
+              Facebook *
+            </Col>
+            <Col sm={3}>
+              <FormControl
+                id="formControlsFacebook"
+                type="text"
+                name="facebook"
+                onChange={this.handleInputChange}
+              />
+            </Col>
           </FormGroup>
           <FormGroup>
-            <ControlLabel>LinkedIn *</ControlLabel>
-            <FormControl
-              id="formControlsLinkedIn"
-              type="text"
-              name="linkedin"
-              placeholder="https://www.facebook.com/girlzftw"
-              onChange={this.handleInputChange}
-            />
+            <Col componentClass={ControlLabel} sm={1}>
+              LinkedIn *
+            </Col>
+            <Col sm={3}>
+              <FormControl
+                id="formControlsLinkedIn"
+                type="text"
+                name="LinkedIn"
+                onChange={this.handleInputChange}
+              />
+            </Col>
           </FormGroup>
           <FormGroup>
-            <ControlLabel>Phone *</ControlLabel>
-            <FormControl
-              id="formControlsPhone"
-              type="text"
-              name="phone"
-              placeholder="8001234567"
-              onChange={this.handleInputChange}
-            />
+            <Col componentClass={ControlLabel} sm={1}>
+              Phone *
+            </Col>
+            <Col sm={3}>
+              <FormControl
+                id="formControlsPhone"
+                type="text"
+                name="phone"
+                placeholder="8001234567"
+                onChange={this.handleInputChange}
+              />
+            </Col>
           </FormGroup>
           <label>
             <p className="asterix">*</p>City:
