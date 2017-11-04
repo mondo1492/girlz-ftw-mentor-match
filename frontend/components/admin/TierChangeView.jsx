@@ -59,7 +59,6 @@ class TierChangeView extends React.Component {
           New Tier is
         </div>
         <select onChange={(e) => this.handleChange(e)}>
-          <option value='' hidden>Change Tier</option>
           <option value={`${this.state.originalTier}`}>Current Tier - {this.state.originalTier}</option>
           {this.state.originalTier.toString() === '1' ? "" : <option value='1'>1 - Amazing</option>}
           {this.state.originalTier.toString() === '2' ? "" : <option value='2'>2 - Pretty good</option>}
