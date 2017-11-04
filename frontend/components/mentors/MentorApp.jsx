@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Panel, FormControl, ControlLabel, FormGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Col, Form, Button, Panel, FormControl, ControlLabel, FormGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
 
 class MentorApp extends React.Component {
   constructor(props) {
@@ -14,6 +14,7 @@ class MentorApp extends React.Component {
       country: '',
       phone: '',
       facebook: '',
+      linkedin: '',
       email: '',
       high_school: '',
       college: '',
@@ -92,53 +93,73 @@ class MentorApp extends React.Component {
           Toggle Disclaimer
         </Button>
 
-        <form onSubmit={this.handleFormSubmit}>
+        <Form horizontal onSubmit={this.handleFormSubmit}>
           <FormGroup>
-            <ControlLabel>Username *</ControlLabel>
-            <FormControl
-              id="formControlsUsername"
-              type="text"
-              name="username"
-              placeholder=""
-              onChange={this.handleInputChange}
-            />
+            <Col componentClass={ControlLabel} sm={1}>
+              Username *
+            </Col>
+            <Col sm={3}>
+              <FormControl
+                id="formControlsUsername"
+                type="text"
+                name="username"
+                placeholder=""
+                onChange={this.handleInputChange}
+              />
+            </Col>
           </FormGroup>
           <FormGroup>
-            <ControlLabel>Password *</ControlLabel>
-            <FormControl
-              id="formControlsPassword"
-              type="password"
-              name="password"
-              placeholder=""
-              onChange={this.handleInputChange}
-            />
+            <Col componentClass={ControlLabel} sm={1}>
+              Password *
+            </Col>
+            <Col sm={3}>
+              <FormControl
+                id="formControlsPassword"
+                type="password"
+                name="password"
+                placeholder=""
+                onChange={this.handleInputChange}
+              />
+            </Col>
           </FormGroup>
           <FormGroup>
-            <ControlLabel>First Name *</ControlLabel>
-            <FormControl
-              id="formControlsFirstName"
-              type="text"
-              name="first_name"
-              onChange={this.handleInputChange}
-            />
+            <Col componentClass={ControlLabel} sm={1}>
+              First Name *
+            </Col>
+            <Col sm={3}>
+              <FormControl
+                id="formControlsFirstName"
+                type="text"
+                name="first_name"
+                onChange={this.handleInputChange}
+              />
+            </Col>
           </FormGroup>
           <FormGroup>
-            <ControlLabel>Last Name *</ControlLabel>
-            <FormControl
+            <Col componentClass={ControlLabel} sm={1}>
+              Last Name *
+            </Col>
+            <Col sm={3}>
+              <FormControl
               id="formControlsLastName"
               type="text"
               name="last_name"
               onChange={this.handleInputChange}
-            />
+              />
+            </Col>
           </FormGroup>
           <FormGroup>
-            <ControlLabel>Age *</ControlLabel>
-            <FormControl
-              id="formControlsAge"
-              type="number"
-              name="age"
-              onChange={this.handleInputChange}
-            />
+            <Col componentClass={ControlLabel} sm={1}>
+              Age *
+            </Col>
+            <Col sm={3}>
+              <FormControl
+                id="formControlsAge"
+                type="number"
+                name="age"
+                onChange={this.handleInputChange}
+              />
+            </Col>
           </FormGroup>
           <FormGroup>
             <ControlLabel>Email *</ControlLabel>
@@ -146,6 +167,36 @@ class MentorApp extends React.Component {
               id="formControlsEmail"
               type="email"
               name="email"
+              onChange={this.handleInputChange}
+            />
+          </FormGroup>
+          <FormGroup>
+            <ControlLabel>Facebook *</ControlLabel>
+            <FormControl
+              id="formControlsFacebook"
+              type="text"
+              name="facebook"
+              placeholder="https://www.facebook.com/girlzftw"
+              onChange={this.handleInputChange}
+            />
+          </FormGroup>
+          <FormGroup>
+            <ControlLabel>LinkedIn *</ControlLabel>
+            <FormControl
+              id="formControlsLinkedIn"
+              type="text"
+              name="linkedin"
+              placeholder="https://www.facebook.com/girlzftw"
+              onChange={this.handleInputChange}
+            />
+          </FormGroup>
+          <FormGroup>
+            <ControlLabel>Phone *</ControlLabel>
+            <FormControl
+              id="formControlsPhone"
+              type="text"
+              name="phone"
+              placeholder="8001234567"
               onChange={this.handleInputChange}
             />
           </FormGroup>
@@ -166,25 +217,6 @@ class MentorApp extends React.Component {
               value={this.state.country}
               onChange={this.handleInputChange} />
           </label>
-          <br/>
-          <label>
-            <p className="asterix">*</p>Facebook:
-            <input
-              name="facebook"
-              type="text"
-              value={this.state.facebook}
-              onChange={this.handleInputChange} />
-          </label>
-          <br/>
-          <label>
-            Phone:
-            <input
-              name="phone"
-              type="text"
-              value={this.state.phone}
-              onChange={this.handleInputChange} />
-          </label>
-          <br/>
           <label>
             High School:
             <input
@@ -315,7 +347,7 @@ class MentorApp extends React.Component {
               onChange={this.handleInputChange} />
           </label>
           <Button bsStyle="success" type="submit">Apply</Button>
-        </form>
+        </Form>
       </div>
     );
   }
