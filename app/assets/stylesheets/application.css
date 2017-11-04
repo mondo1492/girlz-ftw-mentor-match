@@ -19,8 +19,15 @@
     outline: none;
     margin: 0;
     padding: 0;
-    position: relative;
+    /*position: relative;*/
     /*z-index: 50;*/
+  }
+
+  .modal-container {
+    position: relative;
+  }
+  .modal-container .modal, .modal-container .modal-backdrop {
+    position: absolute;
   }
 
 @import './components/unapproved_tees_tors.scss';

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
-import Modal from '../Modal';
+// import Modal from '../Modal';
+import { Modal } from 'react-bootstrap';
 import MenteeShow from './MenteeShow';
 import MentorChangeView from './MentorChangeView';
 import TierChangeView from './TierChangeView';
@@ -67,9 +68,29 @@ class CurrentMentees extends React.Component {
     this.setState({ isModalOpen: false, isModalTwoOpen: false, isModalThreeOpen: false });
   }
 
-  updateWithSelectedMentor() {
+  updateWithSelectedMentor(newMentor) {
+    // let newMentors = [];
+    // this.state.mentors.forEach((mentor) => {
+    //   if (newMentor.id === mentor.id) {
+    //     newMentors.push(newMentor);
+    //   } else {
+    //     newMentors.push(mentor);
+    //   }
+    // });
+
+
     this.props.fetchMentors();
-    this.setState( {isModalTwoOpen: false });
+    this.setState({isModalTwoOpen: false });
+
+
+
+
+    ///fix this thing
+    // this.setState( {mentors: newMentors, isModalTwoOpen: false }).then(() => {
+    //   this.props.updateMentor(newMentor);
+    // }).then(()=>{
+    //   this.props.fetchMentors();
+    // });
   }
 
   updateStateWithNewTiers(newMentee) {
@@ -90,19 +111,19 @@ class CurrentMentees extends React.Component {
     return(
       <div>
         <Link to='admin_panel'>Back to Admin Panel</Link>
+        <div className='modal-container'>
+          <Modal className='modal' show={this.state.isModalOpen} onHide={() => this.closeModal()} onExit={() => this.closeModal()}>
+            <MenteeShow mentee={this.state.mentee}/>
+          </Modal>
 
-        <Modal className="modal" isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
-          <MenteeShow mentee={this.state.mentee}/>
-        </Modal>
+          <Modal className='modal' show={this.state.isModalTwoOpen} onHide={() => this.closeModal()} onExit={() => this.closeModal()}>
+            <MentorChangeView closeModal={this.closeModal} updateMentee={this.props.updateMentee} updateWithSelectedMentor = {this.updateWithSelectedMentor} mentee={this.state.mentee} mentors={this.state.mentors}></MentorChangeView>
+          </Modal>
 
-        <Modal className="modal" isOpen={this.state.isModalTwoOpen} onClose={() => this.closeModal()}>
-          <MentorChangeView closeModal={this.closeModal} updateMentee={this.props.updateMentee} updateWithSelectedMentor = {this.updateWithSelectedMentor} mentee={this.state.mentee} mentors={this.state.mentors}></MentorChangeView>
-        </Modal>
-
-        <Modal className="modal" isOpen={this.state.isModalThreeOpen}>
-          <TierChangeView closeModal={this.closeModal} updateMentee={this.props.updateMentee} updateStateWithNewTiers = {this.updateStateWithNewTiers} mentee={this.state.mentee}></TierChangeView>
-        </Modal>
-
+          <Modal className='modal' show={this.state.isModalThreeOpen}>
+            <TierChangeView closeModal={this.closeModal} updateMentee={this.props.updateMentee} updateStateWithNewTiers = {this.updateStateWithNewTiers} mentee={this.state.mentee}></TierChangeView>
+          </Modal>
+        </div>
         <h1>Approved Mentee List</h1>
         <div className="current_mentees_container">
           <ul>
