@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
 import MenteeShow from './MenteeShow';
-
+import { Button } from 'react-bootstrap';
 class UnapprovedMentees extends React.Component {
   constructor(props) {
     super(props);
@@ -100,9 +100,9 @@ class UnapprovedMentees extends React.Component {
                   <option value='4'>4 - rejected</option>
                 </select>
                 {this.state.mentees[key].tier !== null ?
-                  <button onClick={() => approve(this.state.mentees[key])}>
+                  <Button onClick={() => approve(this.state.mentees[key])}>
                     Set Tier!
-                  </button>
+                  </Button>
                   : ""
                 }
               </div>
