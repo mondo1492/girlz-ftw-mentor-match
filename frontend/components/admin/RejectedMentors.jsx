@@ -59,18 +59,27 @@ class RejectedMentors extends React.Component {
         </Modal>
 
         <h1>Rejected Mentor List</h1>
-        <Table responsive>
+        <Table responsive condensed>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Full Profile</th>
+            </tr>
+          </thead>
           <tbody>
           {Object.keys(this.state.mentors).map((key) => (
              <tr key={key}>
                <td>
-                <span onClick={() => this.openModal(this.state.mentors[key])} >
-                  {this.state.mentors[key].first_name} {this.state.mentors[key].last_name}
-                </span>
-                <Button bsStyle="success" onClick={() => approve(this.state.mentors[key])}>
-                  Approve!
-                </Button>
-              </td>
+                 {this.state.mentors[key].first_name} {this.state.mentors[key].last_name}
+               </td>
+               <td>
+                 <span onClick={() => this.openModal(this.state.mentors[key])} >
+                   Open Full Profile
+                 </span>
+                 <Button bsStyle="success" onClick={() => approve(this.state.mentors[key])}>
+                   Approve!
+                 </Button>
+               </td>
             </tr>
             ))}
           </tbody>
