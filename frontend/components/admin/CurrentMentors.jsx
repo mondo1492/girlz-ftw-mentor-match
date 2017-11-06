@@ -1,7 +1,7 @@
 import React from 'react';
-import Modal from '../Modal';
 import MentorShow from './MentorShow';
 import { Link } from 'react-router-dom';
+import { Table, Modal } from 'react-bootstrap';
 
 
 class CurrentMentors extends React.Component {
@@ -9,7 +9,7 @@ class CurrentMentors extends React.Component {
     super(props);
     this.state = {
       mentors: [],
-      isModalOpen: false,
+      showModal: false,
       mentor: null
     };
     this.update = this.update.bind(this);
@@ -35,42 +35,47 @@ class CurrentMentors extends React.Component {
   }
 
   openModal(mentor) {
-    this.setState({ isModalOpen: true, mentor: mentor });
+    this.setState({ showModal: true, mentor: mentor });
   }
 
   closeModal() {
-    this.setState({ isModalOpen: false });
+    this.setState({ showModal: false });
   }
 
 
   render() {
+    // <div className="current_mentors_container">
+    // </div>
     return(
       <div>
         <Link to='admin_panel'>Back to Admin Panel</Link>
 
-        <Modal className="modal" isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
+        <Modal className="modal" show={this.state.showModal} onHide={() => this.closeModal()}>
           <MentorShow mentor={this.state.mentor}/>
         </Modal>
 
         <h1>Approved Mentor List</h1>
-        <div className="current_mentors_container">
-          <ul>
-            <div className="current_mentors_list_item" key={0}>
-              <h4>Mentor</h4>
-              <h4>Status</h4>
-              <h4>Current Mentee/s</h4>
-            </div>
+
+        <Table responsive striped hover>
+          <thead>
+            <tr>
+              <th>Mentor</th>
+              <th>Status</th>
+              <th>Current Mentee</th>
+            </tr>
+          </thead>
+          <tbody>
             {this.state.mentors.map( (mentor) => (
-              <div className="current_mentors_list_item" key={mentor.id}>
-                <span onClick={() => this.openModal(mentor)}>
+              <tr className="current_mentors_list_item" key={mentor.id}>
+                <td onClick={() => this.openModal(mentor)}>
                   {mentor.first_name}&nbsp;{mentor.last_name}  {}
-                </span>
-                <h4>{mentor.status ? "Has a Mentee": "Seeking Mentee"}</h4>
-                <h4>{mentor.mentee_names ? mentor.mentee_names : "N/A"}</h4>
-                </div>
-              ))}
-          </ul>
-        </div>
+                </td>
+                <td>{mentor.status ? "Has a Mentee": "Seeking Mentee"}</td>
+                <td>{mentor.mentee_names ? mentor.mentee_names : "N/A"}</td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
 
       </div>
     );
