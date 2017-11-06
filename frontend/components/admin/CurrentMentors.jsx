@@ -62,16 +62,31 @@ class CurrentMentors extends React.Component {
               <th>Mentor</th>
               <th>Status</th>
               <th>Current Mentee</th>
+              <th>Full Profile</th>
             </tr>
           </thead>
           <tbody>
             {this.state.mentors.map( (mentor) => (
               <tr className="current_mentors_list_item" key={mentor.id}>
-                <td onClick={() => this.openModal(mentor)}>
+
+                <td>
                   {mentor.first_name}&nbsp;{mentor.last_name}  {}
                 </td>
-                <td>{mentor.status ? "Has a Mentee": "Seeking Mentee"}</td>
-                <td>{mentor.mentee_names ? mentor.mentee_names : "N/A"}</td>
+
+                <td>
+                  {mentor.status ? "Has a Mentee": "Seeking Mentee"}
+                </td>
+
+                <td>
+                  {mentor.mentee_names ? mentor.mentee_names : "N/A"}
+                </td>
+
+                <td
+                  className="generic_link"
+                  onClick={() => this.openModal(mentor)}>
+                  Full Profile
+                </td>
+
               </tr>
             ))}
           </tbody>

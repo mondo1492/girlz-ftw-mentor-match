@@ -81,11 +81,12 @@ class UnapprovedMentees extends React.Component {
 
         <Table responsive>
           <thead>
-            <th>Video</th>
-            <th>Name</th>
-            <th>City</th>
-            <th>Show Full Profile</th>
-            <th>Rank Mentee</th>
+            <tr>
+              <th>Video</th>
+              <th>Name</th>
+              <th>Show Full Profile</th>
+              <th>Rank Mentee</th>
+            </tr>
           </thead>
           <tbody>
             {Object.keys(this.state.mentees).map((key) => (
@@ -94,10 +95,11 @@ class UnapprovedMentees extends React.Component {
                   <td>Video Placeholder</td>
 
                   <td>{this.state.mentees[key].first_name} {this.state.mentees[key].last_name}</td>
-                  <td>{this.state.mentees[key].city}</td>
-                  <span onClick={() => this.openModal(this.state.mentees[key])}>
-                    <td>Full Profile</td>
-                  </span>
+                  <td>
+                    <span className="generic_link" onClick={() => this.openModal(this.state.mentees[key])}>
+                      Full Profile
+                    </span>
+                  </td>
                   <td>
                     <select
                       onChange={(e) => {this.handleChange(e, this.state.mentees[key]);}}

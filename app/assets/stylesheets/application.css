@@ -30,5 +30,15 @@
     position: absolute;
   }
 
+  .generic_link {
+    color: blue;
+    cursor:pointer;
+    text-decoration: underline;
+  }
+
+  .generic_link:hover {
+
+  }
+
 @import './components/unapproved_tees_tors.scss';
 @import './specific_styling/modal';

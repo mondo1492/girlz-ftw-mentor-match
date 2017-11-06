@@ -62,6 +62,7 @@ class RejectedMentors extends React.Component {
         <Table responsive condensed>
           <thead>
             <tr>
+              <th>Video</th>
               <th>Name</th>
               <th>Full Profile</th>
             </tr>
@@ -69,17 +70,28 @@ class RejectedMentors extends React.Component {
           <tbody>
           {Object.keys(this.state.mentors).map((key) => (
              <tr key={key}>
+               
+               <td>
+                 Video placeholder ayyy
+               </td>
+
                <td>
                  {this.state.mentors[key].first_name} {this.state.mentors[key].last_name}
                </td>
+
                <td>
-                 <span onClick={() => this.openModal(this.state.mentors[key])} >
+                 <span
+                   className="generic_link"
+                   onClick={() => this.openModal(this.state.mentors[key])} >
                    Open Full Profile
                  </span>
-                 <Button bsStyle="success" onClick={() => approve(this.state.mentors[key])}>
+                 <Button
+                   bsStyle="success"
+                   onClick={() => approve(this.state.mentors[key])}>
                    Approve!
                  </Button>
                </td>
+
             </tr>
             ))}
           </tbody>
