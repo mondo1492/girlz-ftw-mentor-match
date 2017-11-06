@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Modal from '../Modal';
+import { Modal, Button, Table } from 'react-bootstrap';
 import MenteeShow from './MenteeShow';
 
 class RejectedMentees extends React.Component {
@@ -65,37 +65,57 @@ class RejectedMentees extends React.Component {
       <div>
         <Link to='admin_panel'>Back to Admin Panel</Link>
 
-        <Modal className="modal" isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
+        <Modal className="modal" show={this.state.isModalOpen} onHide={() => this.closeModal()}>
           <MenteeShow mentee={this.state.mentee}/>
         </Modal>
 
         <h1>Rejected Mentee List</h1>
-        <ul>
-          {Object.keys(this.state.mentees).map((key) => (
-             <li key={key}>
-              <span onClick={() => this.openModal(this.state.mentees[key])} >
-                {this.state.mentees[key].first_name} {this.state.mentees[key].last_name}
-              </span>
+        <Table responsive>
+          <thead>
+            <tr>
+              <th>Video</th>
+              <th>Name</th>
+              <th>Full Profile</th>
+              <th>Rank Mentee</th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.keys(this.state.mentees).map((key) => (
+              <tr key={key}>
+                <td>Video placeholder ayyyy</td>
 
-              <select
-                onChange={(e) => {this.handleChange(e, this.state.mentees[key]);}}
-              >
-                <option value='' hidden> -- select an option --</option>
-                <option value='1'>1 - Amazing</option>
-                <option value='2'>2 - Pretty good</option>
-                <option value='3'>3 - We'll see</option>
-              </select>
+                <td>
+                  {this.state.mentees[key].first_name} {this.state.mentees[key].last_name}
+                </td>
 
-              {this.state.mentees[key].tier !== 4 ?
-                <button onClick={() => approve(this.state.mentees[key])}>
-                  Unreject & Set Tier!
-                </button>
-                : ""
-              }
+                <td>
+                  <span className="generic_link" onClick={() => this.openModal(this.state.mentees[key])} >
+                    Full Profile
+                  </span>
+                </td>
 
-              </li>
-            ))}
-        </ul>
+                <td>
+                  <select
+                    onChange={(e) => {this.handleChange(e, this.state.mentees[key]);}}
+                  >
+                    <option value='' hidden> -- select an option --</option>
+                    <option value='1'>1 - Amazing</option>
+                    <option value='2'>2 - Pretty good</option>
+                    <option value='3'>3 - We'll see</option>
+                  </select>
+
+                  {this.state.mentees[key].tier !== 4 ?
+                    <button onClick={() => approve(this.state.mentees[key])}>
+                      Unreject & Set Tier!
+                    </button>
+                    : ""
+                  }
+                </td>
+
+              </tr>
+              ))}
+          </tbody>
+        </Table>
 
       </div>
     );

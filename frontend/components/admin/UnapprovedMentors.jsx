@@ -72,12 +72,25 @@ class UnapprovedMentors extends React.Component {
 
         <h1>Unapproved Mentor List</h1>
         <Table responsive striped>
+          <thead>
+            <tr>
+              <th>Video</th>
+              <th>Name</th>
+              <th>Show Full Profile</th>
+            </tr>
+          </thead>
           <tbody>
             {Object.keys(this.state.mentors).map((key) => (
               <tr className="unapproved_box_container" key={key}>
                 <td>
-                  <span onClick={() => this.openModal(this.state.mentors[key])} >
-                    {this.state.mentors[key].first_name} {this.state.mentors[key].last_name}
+                  It's a video ayyy
+                </td>
+                <td>
+                  {this.state.mentors[key].first_name} {this.state.mentors[key].last_name}
+                </td>
+                <td>
+                  <span className="generic_link" onClick={() => this.openModal(this.state.mentors[key])} >
+                    Full Profile
                   </span>
                   <Button bsStyle="success" onClick={() => approve(this.state.mentors[key])}>
                     Approve!

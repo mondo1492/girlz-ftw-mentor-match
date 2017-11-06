@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
-import { Modal } from 'react-bootstrap';
+import { Modal, Table, Button } from 'react-bootstrap';
 import MenteeShow from './MenteeShow';
 import MentorChangeView from './MentorChangeView';
 import TierChangeView from './TierChangeView';
@@ -97,6 +97,7 @@ class CurrentMentees extends React.Component {
   }
 
   render() {
+    // TODO: permit exiting tierchange modal by clicking out of modal
     return(
       <div>
         <Link to='admin_panel'>Back to Admin Panel</Link>
@@ -114,39 +115,60 @@ class CurrentMentees extends React.Component {
           </Modal>
         </div>
         <h1>Approved Mentee List</h1>
-        <div className="current_mentees_container">
-          <ul>
-            <div className="current_mentees_list_item"
-              key={0}>
-              <h4>Mentee</h4>
-              <h4>Tier</h4>
-              <h4>Current Mentor</h4>
-            </div>
-            {this.state.mentees.map( (mentee) => (
-              <div className="current_mentees_list_item" key={mentee.id}>
-                <span onClick={() => this.openModal(mentee)}>
-                  {mentee.first_name}&nbsp;{ mentee.last_name}
-                </span>
-                <div className="mentor_mentor_select">
-                  <h4>{mentee.tier}</h4>
-                    <button onClick={() => this.openModalThree(mentee)}>
-                      Change Tier?
-                    </button>
-                </div>
 
-                <div className="mentor_mentor_select">
-                  <h4>{mentee.mentor_name === "" ? "No Mentor Yet" : mentee.mentor_name}</h4>
-                  <button onClick={() => this.openModalTwo(mentee)}>
+        <Table responsive>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Tier</th>
+              <th>Current Mentor</th>
+              <th>Full Profile</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {this.state.mentees.map( (mentee) => (
+              <tr key={mentee.id}>
+
+                <td>
+                  {mentee.first_name}&nbsp;{ mentee.last_name}
+                </td>
+
+                <td>
+                  {mentee.tier}
+                    <Button
+                      bsStyle="primary"
+                      bsSize="small"
+                      onClick={() => this.openModalThree(mentee)}>
+                      Change Tier?
+                    </Button>
+                </td>
+
+                <td>
+                  {mentee.mentor_name === "" ? "No Mentor Yet" : mentee.mentor_name}
+                  <Button
+                    bsStyle="primary"
+                    bsSize="small"
+                    onClick={() => this.openModalTwo(mentee)}>
                     { mentee.mentor_name === "" ? "Choose A Mentor?" : "Select A New Mentor?"}
-                  </button>
-                </div>
-              </div>
+                  </Button>
+                </td>
+
+                <td>
+                  <span
+                    className="generic_link"
+                    onClick={() => this.openModal(mentee)}>
+                    Full Profile
+                  </span>
+                </td>
+                
+              </tr>
             )).sort( (a,b) => {
               return a.props.children[5] - b.props.children[5];
               })
             }
-          </ul>
-        </div>
+          </tbody>
+        </Table>
       </div>
     );
   }
