@@ -23,7 +23,6 @@ class Logout extends React.Component {
   }
 
   render() {
-    console.log(this.props.loggedIn);
     let display = this.props.loggedIn ? this.button() : "";
     return (
       <div>
