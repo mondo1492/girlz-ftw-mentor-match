@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import MentorShow from './MentorShow';
-import { Modal, Table } from 'react-bootstrap';
+import { Modal, Table, Button } from 'react-bootstrap';
 
 
 class UnapprovedMentors extends React.Component {
@@ -74,17 +74,17 @@ class UnapprovedMentors extends React.Component {
         <Table responsive striped>
           <tbody>
             {Object.keys(this.state.mentors).map((key) => (
-              <tr key={key}>
+              <tr className="unapproved_box_container" key={key}>
                 <td>
                   <span onClick={() => this.openModal(this.state.mentors[key])} >
                     {this.state.mentors[key].first_name} {this.state.mentors[key].last_name}
                   </span>
-                  <button onClick={() => approve(this.state.mentors[key])}>
+                  <Button bsStyle="success" onClick={() => approve(this.state.mentors[key])}>
                     Approve!
-                  </button>
-                  <button onClick={() => reject(this.state.mentors[key])}>
+                  </Button>
+                  <Button bsStyle="danger" onClick={() => reject(this.state.mentors[key])}>
                     Reject!
-                  </button>
+                  </Button>
                 </td>
               </tr>
             ))}
