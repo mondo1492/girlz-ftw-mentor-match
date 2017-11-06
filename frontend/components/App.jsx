@@ -14,12 +14,14 @@ import UnapprovedMentors from './admin/UnapprovedMentorsContainer';
 import UnapprovedMentees from './admin/UnapprovedMenteesContainer';
 import RejectedMentors from './admin/RejectedMentorsContainer';
 import RejectedMentees from './admin/RejectedMenteesContainer';
+import Logout from './logout/LogoutContainer';
 
 
 const App = () => (
   <div>
     <header>
       <h1>Welcome to the Girlz FTW's application portal!</h1>
+      <Logout/>
     </header>
     <div id="all-content">
       <Route exact path="/" component={Landing}/>

@@ -84,7 +84,6 @@ class CurrentMentees extends React.Component {
   }
 
   updateStateWithNewTiers(newMentee) {
-    console.log("HIT UPDATED WITH NEW TIERS??");
     let newMentees = [];
     this.state.mentees.forEach((mentee) => {
       if (newMentee.id === mentee.id) {
