@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { confirmAlert } from 'react-confirm-alert';
-// import Modal from '../Modal';
 import { Modal } from 'react-bootstrap';
 import MenteeShow from './MenteeShow';
 import MentorChangeView from './MentorChangeView';
@@ -14,6 +13,8 @@ class CurrentMentees extends React.Component {
     this.state = {
       mentees: [],
       mentors: [],
+      allMentors: [],
+      currentMentor: null,
       isModalOpen: false,
       isModalTwoOpen: false,
       isModalThreeOpen: false,
@@ -36,6 +37,7 @@ class CurrentMentees extends React.Component {
     console.log("PRRRRRROOOPS");
     let approvedMentees = [];
     let openMentors = [];
+    let allMentors = [];
 
     nextProps.mentees.forEach(function(mentee) {
       if (mentee.approved) {
@@ -44,12 +46,13 @@ class CurrentMentees extends React.Component {
     });
 
     nextProps.mentors.forEach(function(mentor) {
+      allMentors.push(mentor);
       if (mentor.approved && !mentor.status && mentor.mentee_count <= 0) {
         openMentors.push(mentor);
       }
     });
 
-    this.setState( { mentees: approvedMentees, mentors: openMentors });
+    this.setState( { mentees: approvedMentees, mentors: openMentors, allMentors: allMentors });
   }
 
   openModal(mentee) {
@@ -68,29 +71,16 @@ class CurrentMentees extends React.Component {
     this.setState({ isModalOpen: false, isModalTwoOpen: false, isModalThreeOpen: false });
   }
 
-  updateWithSelectedMentor(newMentor) {
-    // let newMentors = [];
-    // this.state.mentors.forEach((mentor) => {
-    //   if (newMentor.id === mentor.id) {
-    //     newMentors.push(newMentor);
-    //   } else {
-    //     newMentors.push(mentor);
-    //   }
-    // });
+  updateWithSelectedMentor(previousMentor, newMentor) {
+    if (previousMentor && newMentor) {
+      this.props.updateMentor(previousMentor).then(()=> this.props.updateMentor(newMentor)).then(()=> this.props.fetchMentors());
+    } else if (!previousMentor && newMentor) {
+      this.props.updateMentor(newMentor).then(()=> this.props.fetchMentors());
+    } else {
+      this.props.updateMentor(previousMentor).then(()=> this.props.fetchMentors());
+    }
 
-
-    this.props.fetchMentors();
     this.setState({isModalTwoOpen: false });
-
-
-
-
-    ///fix this thing
-    // this.setState( {mentors: newMentors, isModalTwoOpen: false }).then(() => {
-    //   this.props.updateMentor(newMentor);
-    // }).then(()=>{
-    //   this.props.fetchMentors();
-    // });
   }
 
   updateStateWithNewTiers(newMentee) {
@@ -117,7 +107,7 @@ class CurrentMentees extends React.Component {
           </Modal>
 
           <Modal className='modal' show={this.state.isModalTwoOpen} onHide={() => this.closeModal()} onExit={() => this.closeModal()}>
-            <MentorChangeView closeModal={this.closeModal} updateMentee={this.props.updateMentee} updateWithSelectedMentor = {this.updateWithSelectedMentor} mentee={this.state.mentee} mentors={this.state.mentors}></MentorChangeView>
+            <MentorChangeView allMentors={this.state.allMentors} closeModal={this.closeModal} updateMentee={this.props.updateMentee} updateWithSelectedMentor = {this.updateWithSelectedMentor} mentee={this.state.mentee} mentors={this.state.mentors}></MentorChangeView>
           </Modal>
 
           <Modal className='modal' show={this.state.isModalThreeOpen}>

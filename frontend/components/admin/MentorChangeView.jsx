@@ -7,28 +7,39 @@ class MentorChangeView extends React.Component {
     this.state = {
       originalName: "",
       original: "",
+      allMentors: this.props.allMentors,
       originalMentor: this.props.mentee.mentor_name ? this.props.mentee.mentor_name : "No One",
       selectedMentor: null,
       mentee: this.props.mentee,
       madeChange: false,
+      fullOriginalMentor: null,
       mentorList: this.props.mentors
     };
     this.handleChange = this.handleChange.bind(this);
   }
+
   componentWillMount() {
     let name = "";
-    // console.log(this.props.mentee.mentor_name);
+    let fullOriginalMentor = null;
+    let originalId = this.props.mentee.user_id ? this.props.mentee.user_id : "";
     this.props.mentee.mentor_name ? name = this.props.mentee.mentor_name : name = "No One";
-    this.setState({original: this.props.mentee.user_id, originalName: name});
+    for (let i = 0; i < this.props.allMentors.length; i++) {
+     if ((this.props.allMentors[i].id) === this.props.mentee.user_id) {
+
+       fullOriginalMentor = this.props.allMentors[i];
+       break;
+     }
+   }
+    this.setState({original: originalId, originalName: name, fullOriginalMentor: fullOriginalMentor});
   }
 
   handleChange(e) {
     let originalMentor = null;
     let selectedMentor = null;
     let newMentee = this.state.mentee;
-    if (this.state.original.toString() === e.target.value) {
+    if ((this.state.original.toString()) === e.target.value) {
       newMentee.user_id = this.state.original;
-      selectedMentor = this.state.originalMentor;
+      selectedMentor = this.state.fullOriginalMentor;
     } else if (e.target.value === 'none') {
       newMentee.user_id = null;
       selectedMentor = null;
@@ -41,21 +52,24 @@ class MentorChangeView extends React.Component {
      }
       newMentee.user_id = selectedMentor.id;
     }
-    // console.log(selectedMentor.last_name);
     this.setState({mentee: newMentee, selectedMentor: selectedMentor, madeChange: true});
   }
 
   handleSubmit() {
     let newMenteeInfo = this.state.mentee;
-    let newMentorInfo = this.state.selectedMentor;
-    if (newMentorInfo === null) {
-      newMentorInfo = this.state.originalMentor;
-      newMentorInfo.status = true;
+    let prevMentor = this.state.fullOriginalMentor;
+    let postMentor = this.state.selectedMentor;
+    if (postMentor === null) {
+      prevMentor.status = false;
+      postMentor = null;
     } else {
-      newMentorInfo.status = false;
+      if (prevMentor !== null) {
+        prevMentor.status = false;
+      }
+      postMentor.status = true;
     }
     this.props.updateMentee(newMenteeInfo).then(() => {
-      this.props.updateWithSelectedMentor(newMentorInfo);
+      this.props.updateWithSelectedMentor(prevMentor, postMentor);
     }, ()=> {
     });
   }
