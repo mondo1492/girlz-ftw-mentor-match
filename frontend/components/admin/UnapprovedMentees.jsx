@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Modal from 'react-modal';
 import MenteeShow from './MenteeShow';
-import { Button } from 'react-bootstrap';
+import { Button, Modal, Table } from 'react-bootstrap';
+
 class UnapprovedMentees extends React.Component {
   constructor(props) {
     super(props);
@@ -71,44 +71,56 @@ class UnapprovedMentees extends React.Component {
         <Link to='admin_panel'>Back to Admin Panel</Link>
         <Modal
           className="modal"
-          isOpen={this.state.isModalOpen}
-          onRequestClose={() => this.closeModal()}
-          overlayClassName="modal-overlay">
+          show={this.state.isModalOpen}
+          onHide={() => this.closeModal()}
+          dialogClassName="modal-overlay">
           <MenteeShow mentee={this.state.mentee}/>
         </Modal>
 
         <h1>Unranked Mentee List</h1>
-        <ul>
-          {Object.keys(this.state.mentees).map((key) => (
-            <div key={key} className="unapproved_box_container">
-              <div className="unapproved_box_left">
-                <p>Video Placeholder</p>
-              </div>
-              <div className="unapproved_box_right">
-                <h3>Name: {this.state.mentees[key].first_name} {this.state.mentees[key].last_name}</h3>
-                <h3>City: {this.state.mentees[key].city}</h3>
-                <span onClick={() => this.openModal(this.state.mentees[key])}>
-                  <h3>See Full Profile</h3>
-                </span>
-                <select
-                  onChange={(e) => {this.handleChange(e, this.state.mentees[key]);}}
-                >
-                  <option value='' hidden> -- select an option --</option>
-                  <option value='1'>1 - Amazing</option>
-                  <option value='2'>2 - Pretty good</option>
-                  <option value='3'>3 - We'll see</option>
-                  <option value='4'>4 - rejected</option>
-                </select>
-                {this.state.mentees[key].tier !== null ?
-                  <Button onClick={() => approve(this.state.mentees[key])}>
-                    Set Tier!
-                  </Button>
-                  : ""
-                }
-              </div>
-            </div>
+
+        <Table responsive>
+          <thead>
+            <th>Video</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Show Full Profile</th>
+            <th>Rank Mentee</th>
+          </thead>
+          <tbody>
+            {Object.keys(this.state.mentees).map((key) => (
+              <tr key={key} className="unapproved_box_container">
+
+                  <td>Video Placeholder</td>
+
+                  <td>{this.state.mentees[key].first_name} {this.state.mentees[key].last_name}</td>
+                  <td>{this.state.mentees[key].city}</td>
+                  <span onClick={() => this.openModal(this.state.mentees[key])}>
+                    <td>Full Profile</td>
+                  </span>
+                  <td>
+                    <select
+                      onChange={(e) => {this.handleChange(e, this.state.mentees[key]);}}
+                      >
+                      <option value='' hidden> -- select an option --</option>
+                      <option value='1'>1 - Amazing</option>
+                      <option value='2'>2 - Pretty good</option>
+                      <option value='3'>3 - We'll see</option>
+                      <option value='4'>4 - rejected</option>
+                    </select>
+                    {this.state.mentees[key].tier !== null ?
+                      <Button onClick={() => approve(this.state.mentees[key])}>
+                        Set Tier!
+                      </Button>
+                      : ""
+                    }
+                  </td>
+
+
+              </tr>
             ))}
-        </ul>
+          </tbody>
+        </Table>
 
       </div>
     );

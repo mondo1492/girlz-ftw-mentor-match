@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Modal from '../Modal';
 import MentorShow from './MentorShow';
+import { Modal, Table } from 'react-bootstrap';
 
 
 class UnapprovedMentors extends React.Component {
@@ -66,26 +66,30 @@ class UnapprovedMentors extends React.Component {
       <div>
         <Link to='admin_panel'>Back to Admin Panel</Link>
 
-        <Modal className="modal" isOpen={this.state.isModalOpen} onClose={() => this.closeModal()}>
+        <Modal className="modal" show={this.state.isModalOpen} onHide={() => this.closeModal()}>
           <MentorShow mentor={this.state.mentor}/>
         </Modal>
 
         <h1>Unapproved Mentor List</h1>
-        <ul>
-          {Object.keys(this.state.mentors).map((key) => (
-             <li key={key}>
-              <span onClick={() => this.openModal(this.state.mentors[key])} >
-                {this.state.mentors[key].first_name} {this.state.mentors[key].last_name}
-              </span>
-              <button onClick={() => approve(this.state.mentors[key])}>
-                Approve!
-              </button>
-              <button onClick={() => reject(this.state.mentors[key])}>
-                Reject!
-              </button>
-              </li>
+        <Table responsive striped>
+          <tbody>
+            {Object.keys(this.state.mentors).map((key) => (
+              <tr key={key}>
+                <td>
+                  <span onClick={() => this.openModal(this.state.mentors[key])} >
+                    {this.state.mentors[key].first_name} {this.state.mentors[key].last_name}
+                  </span>
+                  <button onClick={() => approve(this.state.mentors[key])}>
+                    Approve!
+                  </button>
+                  <button onClick={() => reject(this.state.mentors[key])}>
+                    Reject!
+                  </button>
+                </td>
+              </tr>
             ))}
-        </ul>
+          </tbody>
+        </Table>
 
       </div>
     );
