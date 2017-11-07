@@ -9,7 +9,8 @@ class UnapprovedMentees extends React.Component {
     this.state = {
       mentees: {},
       isModalOpen: false,
-      mentee: null
+      mentee: null,
+      changedMentees: []
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -44,24 +45,29 @@ class UnapprovedMentees extends React.Component {
     let newMentees = this.state.mentees;
     let id = newMentee.id;
     newMentee.tier = parseInt(e.target.value);
+    if (newMentee.tier > 0 && newMentee.tier < 4) {
+      newMentee.approved = true;
+    } else if (newMentee.tier === 4) {
+      newMentee.approved = false;
+    }
     newMentees[id] = newMentee;
-    this.setState({ mentees: newMentees}, () => {
+
+    let newChangedMentees = this.state.changedMentees;
+    newChangedMentees.push(newMentee);
+
+    this.setState({ mentees: newMentees, changedMentees: newChangedMentees}, () => {
     });
   }
 
-  approve(mentee) {
-    let newMentee = mentee;
+  approve() {
     let newMentees = this.state.mentees;
-    let id = newMentee.id;
-    newMentee.tier = mentee.tier;
-    if (mentee.tier > 0 && mentee.tier < 4) {
-      newMentee.approved = true;
-    } else if (mentee.tier === 4) {
-      newMentee.approved = false;
-    }
-    this.props.updateMentee(newMentee);
-    delete newMentees[id];
-    this.setState( { mentees: newMentees } );
+
+    this.state.changedMentees.forEach( changedMentee => {
+      this.props.updateMentee(changedMentee);
+      delete newMentees[changedMentee.id];
+
+    });
+    this.setState({ mentees: newMentees });
   }
 
   render() {
@@ -78,6 +84,12 @@ class UnapprovedMentees extends React.Component {
         </Modal>
 
         <h1>Unranked Mentee List</h1>
+
+        <Button
+          bsStyle="success"
+          onClick={this.approve}>
+          Approve Changes
+        </Button>
 
         <Table responsive>
           <thead>
@@ -110,15 +122,6 @@ class UnapprovedMentees extends React.Component {
                       <option value='3'>3 - We'll see</option>
                       <option value='4'>4 - rejected</option>
                     </select>
-                    {this.state.mentees[key].tier !== null ?
-                      <Button onClick={() => approve(this.state.mentees[key])}>
-                        Set Tier!
-                      </Button>
-                      :
-                      <Button disabled>
-                        Set Tier!
-                      </Button>
-                    }
                   </td>
 
 
