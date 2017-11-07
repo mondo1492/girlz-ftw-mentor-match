@@ -2,6 +2,7 @@ import React from 'react';
 import merge from 'lodash/merge';
 import Dropzone from 'react-dropzone';
 import request from 'superagent';
+import { Button } from 'react-bootstrap';
 
 const CLOUDINARY_UPLOAD_PRESET = 'girlzftw';
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/girlzftw/upload';
@@ -82,12 +83,10 @@ class MenteeApp extends React.Component {
   handleFormSubmit(event) {
     event.preventDefault();
     if (this.state.agree_terms) {
-      console.log("success");
       this.props.createMentee(this.state).then(
         () => this.props.history.push('/'));
     } else {
       this.setState({agree_terms_bad_click: true}, () => {
-        console.log('failure');
       });
     }
   }
@@ -316,7 +315,9 @@ class MenteeApp extends React.Component {
             onChange={this.handleInputChange} />
         </label>
 
-        <button type="submit">Apply</button>
+
+        <Button
+           type="submit">Apply</Button>
       </form>
 
         <div>
