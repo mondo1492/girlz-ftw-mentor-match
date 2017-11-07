@@ -170,7 +170,8 @@ class CurrentMentees extends React.Component {
 
               </tr>
             )).sort( (a,b) => {
-              return a.props.children[5] - b.props.children[5];
+              console.log(a);
+              return a.props.children[1].props.children - b.props.children[1].props.children;
               })
             }
           </tbody>
