@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 
 
@@ -17,7 +18,7 @@ class Logout extends React.Component {
   button() {
     return(
       <div className="logout-button">
-        <button onClick={this.handleSubmit}>Logout</button>
+        <Button bsStyle="danger" onClick={this.handleSubmit}>Logout</Button>
       </div>
     );
   }

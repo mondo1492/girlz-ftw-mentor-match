@@ -105,10 +105,13 @@ class RejectedMentees extends React.Component {
                   </select>
 
                   {this.state.mentees[key].tier !== 4 ?
-                    <button onClick={() => approve(this.state.mentees[key])}>
+                    <Button bsStyle="success" onClick={() => approve(this.state.mentees[key])}>
                       Unreject & Set Tier!
-                    </button>
-                    : ""
+                    </Button>
+                    :
+                    <Button disabled>
+                      Unreject & Set Tier!
+                    </Button>
                   }
                 </td>
 

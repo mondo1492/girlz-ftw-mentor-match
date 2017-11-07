@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
+
 
 class TierChangeView extends React.Component {
   constructor(props) {
@@ -68,11 +70,11 @@ class TierChangeView extends React.Component {
         {(() => {
             switch(true) {
                 case this.state.mentee.tier.toString() === '4':
-                  return <button onClick={() => this.handleSubmit()}>Change Tier and Reject</button>;
+                  return <Button onClick={() => this.handleSubmit()}>Change Tier and Reject</Button>;
                 case this.state.madeChange && this.state.originalTier !== this.state.mentee.tier:
-                  return <button onClick={() => this.handleSubmit()}>Change Tier!!!</button> ;
+                  return <Button onClick={() => this.handleSubmit()}>Change Tier!!!</Button> ;
                 default:
-                  return <button onClick={() => this.props.closeModal()}>No thanks, I'll leave it as is</button>;
+                  return <Button onClick={() => this.props.closeModal()}>No thanks, I'll leave it as is</Button>;
             }
         })()}
       </div>

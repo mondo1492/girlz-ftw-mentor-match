@@ -121,7 +121,9 @@ class CurrentMentees extends React.Component {
             <tr>
               <th>Name</th>
               <th>Tier</th>
+              <th></th>
               <th>Current Mentor</th>
+              <th></th>
               <th>Full Profile</th>
             </tr>
           </thead>
@@ -134,18 +136,22 @@ class CurrentMentees extends React.Component {
                   {mentee.first_name}&nbsp;{ mentee.last_name}
                 </td>
 
-                <td>
+                <td className="tier_number">
                   {mentee.tier}
-                    <Button
-                      bsStyle="primary"
-                      bsSize="small"
-                      onClick={() => this.openModalThree(mentee)}>
-                      Change Tier?
-                    </Button>
+                </td>
+                <td>
+                  <Button
+                    bsStyle="primary"
+                    bsSize="small"
+                    onClick={() => this.openModalThree(mentee)}>
+                    Change Tier?
+                  </Button>
                 </td>
 
                 <td>
                   {mentee.mentor_name === "" ? "No Mentor Yet" : mentee.mentor_name}
+                </td>
+                <td>
                   <Button
                     bsStyle="primary"
                     bsSize="small"
@@ -161,7 +167,7 @@ class CurrentMentees extends React.Component {
                     Full Profile
                   </span>
                 </td>
-                
+
               </tr>
             )).sort( (a,b) => {
               return a.props.children[5] - b.props.children[5];

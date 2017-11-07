@@ -29,7 +29,7 @@ const App = () => (
       <Route exact path="/mentee_app" component={MenteeApp}/>
       <Route exact path="/mentor_app" component={MentorApp}/>
       <ProtectedRoute exact path="/mentor_panel" component={MentorPanel}/>
-      <ProtectedRoute path="/mentor_update" component={MentorUpdate}/>
+      <ProtectedRoute path="/mentor_panel/update" component={MentorUpdate}/>
 
       <AdminRoute exact path="/admin_panel" component={AdminPanel}/>
       <AdminRoute exact path="/current_mentors" component={CurrentMentors}/>

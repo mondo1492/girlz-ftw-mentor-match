@@ -9,7 +9,7 @@ class MentorApp extends React.Component {
 
         <p>You are an approved mentor!</p>
 
-        <Link to="mentor_update">Update Your Info</Link>
+        <Link to="mentor_panel/update">Update Your Info</Link>
 
       </div>
     );

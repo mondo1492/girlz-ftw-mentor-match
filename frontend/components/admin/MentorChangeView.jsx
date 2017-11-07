@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 class MentorChangeView extends React.Component {
   constructor(props) {
@@ -96,8 +97,8 @@ class MentorChangeView extends React.Component {
             </select>
             <h4>???</h4>
             {this.state.madeChange && this.state.original !== this.state.mentee.user_id ?
-              <button onClick={() => this.handleSubmit()}>SUBMIT!!!</button> :
-              <button onClick={() => this.props.closeModal()}>No thanks, I'll leave it as is</button>
+              <Button onClick={() => this.handleSubmit()}>SUBMIT!!!</Button> :
+              <Button onClick={() => this.props.closeModal()}>No thanks, I'll leave it as is</Button>
             }
       </div>
     );

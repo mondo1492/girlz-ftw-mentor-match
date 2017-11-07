@@ -114,7 +114,10 @@ class UnapprovedMentees extends React.Component {
                       <Button onClick={() => approve(this.state.mentees[key])}>
                         Set Tier!
                       </Button>
-                      : ""
+                      :
+                      <Button disabled>
+                        Set Tier!
+                      </Button>
                     }
                   </td>
 
