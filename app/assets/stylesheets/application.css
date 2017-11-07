@@ -42,3 +42,6 @@
 
 @import './components/unapproved_tees_tors.scss';
 @import './specific_styling/modal';
+@import './components/current_tees_tors.scss';
+@import './components/current_tors.scss';
+@import './components/admin_panel.scss';
