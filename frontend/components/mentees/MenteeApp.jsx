@@ -11,37 +11,76 @@ class MenteeApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      first_name: "",
-      last_name: "",
-      age: '',
-      city: '',
-      country: '',
-      phone: '',
-      facebook: '',
-      email: '',
-      high_school: '',
-      college: '',
-      employer: '',
-      major: '',
-      career_advice_rank: '',
-      personal_advice_rank: '',
-      motivation_rank: '',
-      instagram_bio_text: '',
-      instagram_bio_why_not_text: '',
-      share_major_rank: '',
-      personality_text: '',
-      night_text: '',
-      not_on_google_text: '',
-      how_impact_text: '',
-      no_discuss_text: '',
-      extra_info_text: '',
-      agree_terms: false,
+      first_name: "fakefirstname",
+      last_name: "fakelastname",
+      age: '1',
+      city: 'a',
+      country: 'a',
+      phone: '1234567890',
+      facebook: 'a',
+      email: 'aaron.mondshine@gmail.com',
+      high_school: 'a',
+      college: 'a',
+      employer: 'a',
+      major: 'a',
+      career_advice_rank: '1',
+      personal_advice_rank: '1',
+      motivation_rank: '1',
+      instagram_bio_text: 'a',
+      instagram_bio_why_not_text: 'a',
+      share_major_rank: '1',
+      personality_text: 'a',
+      night_text: 'a',
+      not_on_google_text: 'a',
+      how_impact_text: 'a',
+      no_discuss_text: 'a',
+      extra_info_text: 'a',
+      agree_terms: true,
       agree_terms_bad_click: false,
       uploadedFileCloudinaryUrl: ''
     };
+    // this.state = {
+    //   first_name: "",
+    //   last_name: "",
+    //   age: '',
+    //   city: '',
+    //   country: '',
+    //   phone: '',
+    //   facebook: '',
+    //   email: '',
+    //   high_school: '',
+    //   college: '',
+    //   employer: '',
+    //   major: '',
+    //   career_advice_rank: '',
+    //   personal_advice_rank: '',
+    //   motivation_rank: '',
+    //   instagram_bio_text: '',
+    //   instagram_bio_why_not_text: '',
+    //   share_major_rank: '',
+    //   personality_text: '',
+    //   night_text: '',
+    //   not_on_google_text: '',
+    //   how_impact_text: '',
+    //   no_discuss_text: '',
+    //   extra_info_text: '',
+    //   agree_terms: false,
+    //   agree_terms_bad_click: false,
+    //   uploadedFileCloudinaryUrl: ''
+    // };
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
+  }
+
+  makeid() {
+    let text = "";
+    let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for (let i = 0; i < 8; i++) {
+      text += possible.charAt(Math.floor(Math.random() * possible.length));
+    }
+    return text;
   }
 
   onImageDrop(files) {
@@ -108,6 +147,7 @@ class MenteeApp extends React.Component {
           <input
             name="first_name"
             type="text"
+            value={this.state.first_name}
             onChange={this.handleInputChange} />
         </label>
         <br/>
@@ -116,6 +156,7 @@ class MenteeApp extends React.Component {
           <input
             name="last_name"
             type="text"
+            value={this.state.last_name}
             onChange={this.handleInputChange} />
         </label>
         <br/>

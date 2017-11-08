@@ -95,6 +95,7 @@ class MentorApp extends React.Component {
           <input
             name="username"
             type="text"
+            value={this.state.username}
             onChange={this.handleInputChange} />
         </label>
         <br/>
@@ -103,6 +104,7 @@ class MentorApp extends React.Component {
           <input
             name="password"
             type="password"
+            value={this.state.password}
             onChange={this.handleInputChange} />
         </label>
         <br/>
@@ -111,6 +113,7 @@ class MentorApp extends React.Component {
           <input
             name="first_name"
             type="text"
+            value={this.state.first_name}
             onChange={this.handleInputChange} />
         </label>
         <br/>
@@ -119,6 +122,7 @@ class MentorApp extends React.Component {
           <input
             name="last_name"
             type="text"
+            value={this.state.last_name}
             onChange={this.handleInputChange} />
         </label>
         <br/>

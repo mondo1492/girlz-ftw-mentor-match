@@ -4,36 +4,67 @@ import { Col, Form, Button, Panel, FormControl, ControlLabel, FormGroup, ListGro
 class MentorApp extends React.Component {
   constructor(props) {
     super(props);
+    // this.state = {
+    //   username: "",
+    //   password: "",
+    //   first_name: "",
+    //   last_name: "",
+    //   age: '',
+    //   city: '',
+    //   country: '',
+    //   phone: '',
+    //   facebook: '',
+    //   linkedin: '',
+    //   email: '',
+    //   high_school: '',
+    //   college: '',
+    //   employer: '',
+    //   major: '',
+    //   career_advice_rank: '',
+    //   personal_advice_rank: '',
+    //   motivation_rank: '',
+    //   instagram_bio_text: '',
+    //   instagram_bio_why_not_text: '',
+    //   share_major_rank: '',
+    //   personality_text: '',
+    //   night_text: '',
+    //   not_on_google_text: '',
+    //   how_impact_text: '',
+    //   extra_info_text: '',
+    //   agree_terms: false,
+    //   agree_terms_bad_click: false,
+    //   disclaimer: true,
+    // };
     this.state = {
-      username: "",
-      password: "",
-      first_name: "",
-      last_name: "",
-      age: '',
-      city: '',
-      country: '',
-      phone: '',
-      facebook: '',
-      linkedin: '',
-      email: '',
-      high_school: '',
-      college: '',
-      employer: '',
-      major: '',
-      career_advice_rank: '',
-      personal_advice_rank: '',
-      motivation_rank: '',
-      instagram_bio_text: '',
-      instagram_bio_why_not_text: '',
-      share_major_rank: '',
-      personality_text: '',
-      night_text: '',
-      not_on_google_text: '',
-      how_impact_text: '',
-      extra_info_text: '',
-      agree_terms: false,
+      username: "fakeMentor1",
+      password: "fakepassword",
+      first_name: "A",
+      last_name: "B",
+      age: '1',
+      city: 'a',
+      country: 'a',
+      phone: '1234567890',
+      facebook: 'a',
+      linkedin: 'a',
+      email: 'amimecbeepbop@gmail.com',
+      high_school: 'a',
+      college: 'a',
+      employer: 'a',
+      major: 'a',
+      career_advice_rank: '1',
+      personal_advice_rank: '1',
+      motivation_rank: '1',
+      instagram_bio_text: '1',
+      instagram_bio_why_not_text: '1',
+      share_major_rank: '1',
+      personality_text: '1',
+      night_text: '1',
+      not_on_google_text: '1',
+      how_impact_text: '1',
+      extra_info_text: '1',
+      agree_terms: true,
       agree_terms_bad_click: false,
-      disclaimer: true,
+      disclaimer: false,
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -104,6 +135,7 @@ class MentorApp extends React.Component {
                 type="text"
                 name="username"
                 placeholder=""
+                value={this.state.username}
                 onChange={this.handleInputChange}
               />
             </Col>
@@ -118,6 +150,7 @@ class MentorApp extends React.Component {
                 type="password"
                 name="password"
                 placeholder=""
+                value={this.state.password}
                 onChange={this.handleInputChange}
               />
             </Col>
@@ -131,6 +164,7 @@ class MentorApp extends React.Component {
                 id="formControlsFirstName"
                 type="text"
                 name="first_name"
+                value={this.state.first_name}
                 onChange={this.handleInputChange}
               />
             </Col>
@@ -144,6 +178,7 @@ class MentorApp extends React.Component {
               id="formControlsLastName"
               type="text"
               name="last_name"
+              value={this.state.last_name}
               onChange={this.handleInputChange}
               />
             </Col>
@@ -157,6 +192,7 @@ class MentorApp extends React.Component {
                 id="formControlsAge"
                 type="number"
                 name="age"
+                value={this.state.age}
                 onChange={this.handleInputChange}
               />
             </Col>
@@ -170,6 +206,7 @@ class MentorApp extends React.Component {
                 id="formControlsEmail"
                 type="email"
                 name="email"
+                value={this.state.email}
                 onChange={this.handleInputChange}
               />
             </Col>
@@ -183,6 +220,7 @@ class MentorApp extends React.Component {
                 id="formControlsFacebook"
                 type="text"
                 name="facebook"
+                value={this.state.facebook}
                 onChange={this.handleInputChange}
               />
             </Col>
@@ -196,6 +234,7 @@ class MentorApp extends React.Component {
                 id="formControlsLinkedIn"
                 type="text"
                 name="LinkedIn"
+                value={this.state.linkedin}
                 onChange={this.handleInputChange}
               />
             </Col>
