@@ -31,6 +31,7 @@ MVPS:
 
 
 Lower priority:
+- 'remember me' for mentor panel
 - mailer
 - Mentor Panel - see your potential mentees and select them? Does this need to be thing? Ask nicol.
    - Should mentors have any choosing on this?

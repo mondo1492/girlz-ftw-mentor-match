@@ -6,7 +6,7 @@ class Api::MenteesController < ApplicationController
       @mentee = Mentee.new(mentee_params)
 
       if @mentee.save
-        MentorAppMailer.signup_success(@mentee).deliver_now
+        MentorAppMailer.signup_success(@mentee).deliver_now!
         render "api/mentees/show"
       else
         render json: @mentee.errors.full_messages, status: 422
