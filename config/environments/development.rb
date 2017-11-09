@@ -35,16 +35,27 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
 
 
+  # config.action_mailer.default_url_options = { :host => "localhost300" }
+  config.action_mailer.default_url_options = {
+  :host => '127.0.0.1',
+  :port => 3000
+}
+  config.action_mailer.delivery_method = :smtp
+
   config.action_mailer.default_options = {from: 'amimecbeepbop@gmail.com'}
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  address:              'smtp.gmail.com',
-  port:                 587,
-  user_name:            'amimecbeepbop@gmail.com',
-  password:             'idonthaveapw',
-  authentication:       'plain',
-  enable_starttls_auto: true  }
+    # :openssl_verify_mode => OpenSSL::SSL::VERIFY_NONE,
+    # :ssl => true,
+    :enable_starttls_auto => true,
+    :address              => 'smtp.gmail.com',
+    :port                 => 587,
+    :domain               => 'gmail.com',
+    :user_name            => 'amimecbeepbop@gmail.com',
+    :password             => 'idonthaveapw',
+    :authentication       => :plain
+  }
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
