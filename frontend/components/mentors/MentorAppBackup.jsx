@@ -1,83 +1,74 @@
 import React from 'react';
-import { Col, Form, Button, Panel, FormControl, ControlLabel,
-  FormGroup, ListGroup, ListGroupItem, Carousel, InputGroup } from 'react-bootstrap';
-import FontAwesome from 'react-fontawesome'
+import { Col, Form, Button, Panel, FormControl, ControlLabel, FormGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
 
 class MentorApp extends React.Component {
   constructor(props) {
     super(props);
-    //actual state below
-    this.state = {
-      username: "",
-      password: "",
-      first_name: "",
-      last_name: "",
-      age: '',
-      city: '',
-      country: '',
-      phone: '',
-      facebook: '',
-      linkedin: '',
-      email: '',
-      high_school: '',
-      college: '',
-      employer: '',
-      major: '',
-      career_advice_rank: '',
-      personal_advice_rank: '',
-      motivation_rank: '',
-      instagram_bio_text: '',
-      instagram_bio_why_not_text: '',
-      share_major_rank: '',
-      personality_text: '',
-      night_text: '',
-      not_on_google_text: '',
-      how_impact_text: '',
-      extra_info_text: '',
-      agree_terms: false,
-      agree_terms_bad_click: false,
-      disclaimer: true,
-      activeCarouselIndex: 0,
-      carouselDirection: null,
-    };
-    //test state below for quick form
     // this.state = {
-    //   username: "fakeMentor1",
-    //   password: "fakepassword",
-    //   first_name: "A",
-    //   last_name: "B",
-    //   age: '1',
-    //   city: 'a',
-    //   country: 'a',
-    //   phone: '1234567890',
-    //   facebook: 'a',
-    //   linkedin: 'a',
-    //   email: 'amimecbeepbop@gmail.com',
-    //   high_school: 'a',
-    //   college: 'a',
-    //   employer: 'a',
-    //   major: 'a',
-    //   career_advice_rank: '1',
-    //   personal_advice_rank: '1',
-    //   motivation_rank: '1',
-    //   instagram_bio_text: '1',
-    //   instagram_bio_why_not_text: '1',
-    //   share_major_rank: '1',
-    //   personality_text: '1',
-    //   night_text: '1',
-    //   not_on_google_text: '1',
-    //   how_impact_text: '1',
-    //   extra_info_text: '1',
-    //   agree_terms: true,
+    //   username: "",
+    //   password: "",
+    //   first_name: "",
+    //   last_name: "",
+    //   age: '',
+    //   city: '',
+    //   country: '',
+    //   phone: '',
+    //   facebook: '',
+    //   linkedin: '',
+    //   email: '',
+    //   high_school: '',
+    //   college: '',
+    //   employer: '',
+    //   major: '',
+    //   career_advice_rank: '',
+    //   personal_advice_rank: '',
+    //   motivation_rank: '',
+    //   instagram_bio_text: '',
+    //   instagram_bio_why_not_text: '',
+    //   share_major_rank: '',
+    //   personality_text: '',
+    //   night_text: '',
+    //   not_on_google_text: '',
+    //   how_impact_text: '',
+    //   extra_info_text: '',
+    //   agree_terms: false,
     //   agree_terms_bad_click: false,
     //   disclaimer: true,
-    //   activeCarouselIndex : 0,
-    //   carouselDirection: null,
     // };
+    this.state = {
+      username: "fakeMentor1",
+      password: "fakepassword",
+      first_name: "A",
+      last_name: "B",
+      age: '1',
+      city: 'a',
+      country: 'a',
+      phone: '1234567890',
+      facebook: 'a',
+      linkedin: 'a',
+      email: 'amimecbeepbop@gmail.com',
+      high_school: 'a',
+      college: 'a',
+      employer: 'a',
+      major: 'a',
+      career_advice_rank: '1',
+      personal_advice_rank: '1',
+      motivation_rank: '1',
+      instagram_bio_text: '1',
+      instagram_bio_why_not_text: '1',
+      share_major_rank: '1',
+      personality_text: '1',
+      night_text: '1',
+      not_on_google_text: '1',
+      how_impact_text: '1',
+      extra_info_text: '1',
+      agree_terms: true,
+      agree_terms_bad_click: false,
+      disclaimer: false,
+    };
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
-    this.handleCarouselSelect = this.handleCarouselSelect.bind(this);
   }
 
   handleInputChange(event) {
@@ -101,57 +92,37 @@ class MentorApp extends React.Component {
     }
   }
 
-  handleCarouselSelect(selectedIndex, e) {
-   console.log(`selected=${selectedIndex}, direction=${e.direction}`);
-   this.setState({
-     activeCarouselIndex: selectedIndex,
-     carouselDirection: e.direction,
-   });
- }
-
   render() {
     return (
       <div>
-        <Carousel
-          activeIndex={this.state.activeCarouselIndex}
-          direction={this.state.carouselDirection}
-          interval={null}
-          onSelect={this.handleCarouselSelect}
-          >
 
-          <Carousel.Item>
-              <h3>
-                Hello! Thank you for your interest in the GIRLZ, FTW mentorship program. We’re thrilled to read your application. Before you fill out our form, we’d like to let you in on a little secret. We’re not a regular mentorship program. We’re a community of girlz that are passionate about elevating and celebrating female voices around the world. We don’t expect our mentors to be THAT girl… you know, the one that always had her shit together and still always managed to blow dry her hair before school / work. We’re looking for real, passionate, #girlbosses that don’t pretend to be perfect, can hustle their way to their dreams, AND still manage to uplift others along the way.
-              </h3>
-          </Carousel.Item>
-          <Carousel.Item>
-            <h1>
-              What you should know before submitting your application:
-            </h1>
-          </Carousel.Item>
-          <Carousel.Item>
-            <h4>
+        <Panel collapsible expanded={this.state.disclaimer}>
+
+          <p>
+            Hello! Thank you for your interest in the GIRLZ, FTW mentorship program. We’re thrilled to read your application. Before you fill out our form, we’d like to let you in on a little secret. We’re not a regular mentorship program. We’re a community of girlz that are passionate about elevating and celebrating female voices around the world. We don’t expect our mentors to be THAT girl… you know, the one that always had her shit together and still always managed to blow dry her hair before school / work. We’re looking for real, passionate, #girlbosses that don’t pretend to be perfect, can hustle their way to their dreams, AND still manage to uplift others along the way.
+          </p>
+
+          <p>
+            What you should know before submitting your application:
+          </p>
+          <ListGroup>
+            <ListGroupItem>
               All of our communication once you join the program happens on Facebook. If you’re accepted as a mentor, you will be added to a Facebook group. This group will be the place where you can connect with other mentors and mentees in the program. We’ll use this group to provide support, encouragement, and advice for each other. You must have a Facebook page if you want to be a part of this program.
-            </h4>
-          </Carousel.Item>
-          <Carousel.Item>
-            <h4>
+            </ListGroupItem>
+            <ListGroupItem>
               Every month, we’ll host a call with all mentors and mentees. These calls take place on the first friday of every month. In these calls, we’ll have inspiring women talk to about how they got to where they are today. Each call will be structured differently but is meant to inspire, inform, and mobilize everyone on the call. This means you’ll probably be tapped to speak at one of these calls because we suspect you’re awesome! Attending these calls is mandatory. You can only miss up to 3 calls.
-            </h4>
-          </Carousel.Item>
-          <Carousel.Item>
-            <h4>
+            </ListGroupItem>
+            <ListGroupItem>
               You must be willing to commit at least 4 hours a month for a year. Sessions with your mentee should last 1 hour every other week. We suggest you prep for at least 30 minutes before each of your mentee calls. Lastly, you must allot 1 hour for the monthly virtual chats.
               We will be hosting a mentor training on X DATE. Attending this training is required if you want to be a part of the program.
-            </h4>
-          </Carousel.Item>
+            </ListGroupItem>
+          </ListGroup>
 
-        </Carousel>
+        </Panel>
 
-        <FontAwesome name='circle-o-notch' size='4x' spin
-          style={{ textShadow: '0 5px 0 rgba(0, 0, 0, 0.1)' }}
-          />
-
+        <Button bsStyle="warning" onClick={() => this.setState({ disclaimer: !this.state.disclaimer })}>
+          Toggle Disclaimer
+        </Button>
 
         <Form horizontal onSubmit={this.handleFormSubmit}>
           <FormGroup>
@@ -231,19 +202,13 @@ class MentorApp extends React.Component {
               Email *
             </Col>
             <Col sm={3}>
-              <InputGroup>
-                <InputGroup.Addon>
-                  <FontAwesome name='envelope-o'/>
-                </InputGroup.Addon>
-
-                <FormControl
-                  id="formControlsEmail"
-                  type="email"
-                  name="email"
-                  value={this.state.email}
-                  onChange={this.handleInputChange}
-                />
-              </InputGroup>
+              <FormControl
+                id="formControlsEmail"
+                type="email"
+                name="email"
+                value={this.state.email}
+                onChange={this.handleInputChange}
+              />
             </Col>
           </FormGroup>
           <FormGroup>
@@ -251,20 +216,13 @@ class MentorApp extends React.Component {
               Facebook *
             </Col>
             <Col sm={3}>
-              <InputGroup>
-                <InputGroup.Addon>
-                  <FontAwesome name='facebook'/>
-                  </InputGroup.Addon>
-
-                <FormControl
-                  id="formControlsFacebook"
-                  type="text"
-                  name="facebook"
-                  value={this.state.facebook}
-                  onChange={this.handleInputChange}
-                />
-              </InputGroup>
-              <html></html>
+              <FormControl
+                id="formControlsFacebook"
+                type="text"
+                name="facebook"
+                value={this.state.facebook}
+                onChange={this.handleInputChange}
+              />
             </Col>
           </FormGroup>
           <FormGroup>
@@ -272,18 +230,13 @@ class MentorApp extends React.Component {
               LinkedIn *
             </Col>
             <Col sm={3}>
-              <InputGroup>
-                <InputGroup.Addon>
-                  <FontAwesome name='linkedin'/>
-                  </InputGroup.Addon>
-                <FormControl
-                  id="formControlsLinkedIn"
-                  type="text"
-                  name="LinkedIn"
-                  value={this.state.linkedin}
-                  onChange={this.handleInputChange}
-                />
-              </InputGroup>
+              <FormControl
+                id="formControlsLinkedIn"
+                type="text"
+                name="LinkedIn"
+                value={this.state.linkedin}
+                onChange={this.handleInputChange}
+              />
             </Col>
           </FormGroup>
           <FormGroup>
