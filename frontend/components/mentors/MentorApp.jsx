@@ -169,6 +169,7 @@ class MentorApp extends React.Component {
               />
             </Col>
           </FormGroup>
+
           <FormGroup>
             <Col componentClass={ControlLabel} sm={1}>
               Password *
@@ -184,6 +185,7 @@ class MentorApp extends React.Component {
               />
             </Col>
           </FormGroup>
+
           <FormGroup>
             <Col componentClass={ControlLabel} sm={1}>
               First Name *
@@ -198,6 +200,7 @@ class MentorApp extends React.Component {
               />
             </Col>
           </FormGroup>
+
           <FormGroup>
             <Col componentClass={ControlLabel} sm={1}>
               Last Name *
@@ -212,6 +215,7 @@ class MentorApp extends React.Component {
               />
             </Col>
           </FormGroup>
+
           <FormGroup>
             <Col componentClass={ControlLabel} sm={1}>
               Age *
@@ -226,6 +230,7 @@ class MentorApp extends React.Component {
               />
             </Col>
           </FormGroup>
+
           <FormGroup>
             <Col componentClass={ControlLabel} sm={1}>
               Email *
@@ -246,6 +251,7 @@ class MentorApp extends React.Component {
               </InputGroup>
             </Col>
           </FormGroup>
+
           <FormGroup>
             <Col componentClass={ControlLabel} sm={1}>
               Facebook *
@@ -254,19 +260,20 @@ class MentorApp extends React.Component {
               <InputGroup>
                 <InputGroup.Addon>
                   <FontAwesome name='facebook'/>
-                  </InputGroup.Addon>
+                </InputGroup.Addon>
 
                 <FormControl
                   id="formControlsFacebook"
                   type="text"
                   name="facebook"
+                  placeholder="facebook.com/girlzftw"
                   value={this.state.facebook}
                   onChange={this.handleInputChange}
                 />
               </InputGroup>
-              <html></html>
             </Col>
           </FormGroup>
+
           <FormGroup>
             <Col componentClass={ControlLabel} sm={1}>
               LinkedIn *
@@ -275,7 +282,8 @@ class MentorApp extends React.Component {
               <InputGroup>
                 <InputGroup.Addon>
                   <FontAwesome name='linkedin'/>
-                  </InputGroup.Addon>
+                </InputGroup.Addon>
+
                 <FormControl
                   id="formControlsLinkedIn"
                   type="text"
@@ -286,20 +294,28 @@ class MentorApp extends React.Component {
               </InputGroup>
             </Col>
           </FormGroup>
+
           <FormGroup>
             <Col componentClass={ControlLabel} sm={1}>
               Phone *
             </Col>
             <Col sm={3}>
-              <FormControl
-                id="formControlsPhone"
-                type="text"
-                name="phone"
-                placeholder="8001234567"
-                onChange={this.handleInputChange}
-              />
+              <InputGroup>
+                <InputGroup.Addon>
+                  <FontAwesome name='phone'/>
+                </InputGroup.Addon>
+
+                <FormControl
+                  id="formControlsPhone"
+                  type="text"
+                  name="phone"
+                  placeholder="8001234567"
+                  onChange={this.handleInputChange}
+                />
+              </InputGroup>
             </Col>
           </FormGroup>
+
           <label>
             <p className="asterix">*</p>City:
             <input
