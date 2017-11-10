@@ -23,6 +23,8 @@ class MentorApp extends React.Component {
       college: '',
       employer: '',
       major: '',
+      why_mentor: "",
+      struggles: [],
       career_advice_rank: '',
       personal_advice_rank: '',
       motivation_rank: '',
@@ -57,6 +59,8 @@ class MentorApp extends React.Component {
     //   college: 'a',
     //   employer: 'a',
     //   major: 'a',
+    //   why_mentor: 'cuz',
+    //   struggles: [],
     //   career_advice_rank: '1',
     //   personal_advice_rank: '1',
     //   motivation_rank: '1',
@@ -81,8 +85,26 @@ class MentorApp extends React.Component {
   }
 
   handleInputChange(event) {
+    console.log(event.target.value);
+    console.log(event.target.type);
     const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
+    let value;
+    if (target.type === 'checkbox') {
+      value = target.checked;
+    } else if (target.type === 'select-multiple') {
+      value = this.state.struggles;
+
+      //if already selected, deselect
+      let idx = value.indexOf(target.value);
+      if (idx === -1) {
+        value.push(target.value)
+      } else {
+        delete value[idx];
+      }
+
+    } else {
+      value = target.value;
+    }
     const name = target.name;
 
     this.setState({
@@ -310,29 +332,150 @@ class MentorApp extends React.Component {
                   type="text"
                   name="phone"
                   placeholder="8001234567"
+                  value={this.state.phone}
                   onChange={this.handleInputChange}
                 />
               </InputGroup>
             </Col>
           </FormGroup>
 
-          <label>
-            <p className="asterix">*</p>City:
-            <input
-              name="city"
-              type="text"
-              value={this.state.city}
-              onChange={this.handleInputChange} />
-          </label>
-          <br/>
-          <label>
-            <p className="asterix">*</p>Country:
-            <input
-              name="country"
-              type="text"
-              value={this.state.country}
-              onChange={this.handleInputChange} />
-          </label>
+          <FormGroup>
+            <Col componentClass={ControlLabel} sm={1}>
+               Employer
+            </Col>
+            <Col sm={3}>
+              <InputGroup>
+                <InputGroup.Addon>
+                  <FontAwesome name='handshake-o'/>
+                </InputGroup.Addon>
+
+                <FormControl
+                  id="formControlsEmployer"
+                  type="text"
+                  name="employer"
+                  value={this.state.employer}
+                  onChange={this.handleInputChange}
+                />
+              </InputGroup>
+            </Col>
+          </FormGroup>
+
+          <FormGroup>
+            <Col componentClass={ControlLabel} sm={1}>
+               City
+            </Col>
+            <Col sm={3}>
+                <FormControl
+                  id="formControlsCity"
+                  type="text"
+                  name="city"
+                  value={this.state.city}
+                  onChange={this.handleInputChange}
+                />
+            </Col>
+          </FormGroup>
+
+          <FormGroup>
+            <Col componentClass={ControlLabel} sm={1}>
+               Country
+            </Col>
+            <Col sm={3}>
+                <FormControl
+                  id="formControlsCountry"
+                  type="text"
+                  name="country"
+                  value={this.state.country}
+                  onChange={this.handleInputChange}
+                />
+            </Col>
+          </FormGroup>
+          { // why do you want to be a mentor
+          }
+          <FormGroup>
+            <ControlLabel>
+               Why do you want to be a mentor?
+             </ControlLabel>
+             <br/>
+            <Col sm={3}>
+              <FormControl
+                componentClass="textarea"
+                id="formControlsCountry"
+                name="why_mentor"
+                value={this.state.why_mentor}
+                onChange={this.handleInputChange}
+              />
+            </Col>
+          </FormGroup>
+
+          <FormGroup>
+            <ControlLabel>
+               What was your major area in college?
+             </ControlLabel>
+             <br/>
+            <Col sm={3}>
+              <FormControl
+                componentClass="select"
+                id="formControlsMajor"
+                name="major"
+
+
+                onChange={this.handleInputChange}
+                defaultValue='default'
+              >
+                <option disabled value='default'>-- Select major area --</option>
+                <option value="International Relations and Political Science">
+                  International Relations and Political Science
+                </option>
+                <option value="Arts and Humanities">
+                  Arts and Humanities
+                </option>
+                <option value="Science, Technology, and Math">
+                  Science, Technology, and Math
+                </option>
+                <option value="Environment">
+                  Environment
+                </option>
+                <option value="Business">
+                  Business
+                </option>
+                <option value="Social Sciences">
+                  Social Sciences
+                </option>
+              </FormControl>
+            </Col>
+          </FormGroup>
+
+          <FormGroup>
+            <ControlLabel>
+               We all get in the way of our own success.
+               Which of the following have you struggled with and successfully conquered?
+             </ControlLabel>
+             <br/>
+            <Col sm={3}>
+              <FormControl
+                componentClass="select"
+                multiple
+                id="formControlsMajor"
+                name="struggles"
+                value={this.state.struggles}
+                onChange={this.handleInputChange}
+              >
+                <option value="Procrastination">
+                  Procrastination
+                </option>
+                <option value="Indecision">
+                  Indecision
+                </option>
+                <option value="Acting as a lone ranger / not delegating">
+                  Acting as a lone ranger / not delegating
+                </option>
+                <option value="Not saying no to projects that don't inspire you">
+                  Not saying no to projects that don't inspire you
+                </option>
+              </FormControl>
+            </Col>
+          </FormGroup>
+
           <label>
             High School:
             <input
@@ -360,14 +503,6 @@ class MentorApp extends React.Component {
               onChange={this.handleInputChange} />
           </label>
           <br/>
-          <label>
-            Employer:
-            <input
-              name="employer"
-              type="text"
-              value={this.state.employer}
-              onChange={this.handleInputChange} />
-          </label>
           <br/>
           <FormGroup>
             <ControlLabel>How interested are you in giving career advice? *</ControlLabel>
