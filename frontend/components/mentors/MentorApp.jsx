@@ -2,6 +2,9 @@ import React from 'react';
 import merge from 'lodash/merge';
 import { Col, Form, Button, Panel, FormControl, ControlLabel, FormGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
 import Page1 from './appPages/page1';
+import Page2 from './appPages/page2';
+import Page3 from './appPages/page3';
+import Page4 from './appPages/page4';
 
 class MentorApp extends React.Component {
   constructor(props) {
@@ -82,7 +85,7 @@ class MentorApp extends React.Component {
   }
 
   handleBack() {
-    if (this.state.page === 0) return;
+    if (this.state.page === 1) return;
     this.setState({page: this.state.page - 1});
   }
 
@@ -102,22 +105,20 @@ class MentorApp extends React.Component {
   }
 
   render() {
-    const statePage = this.state.page;
-    console.log(this.state);
     let page = (() => {
-      switch (statePage) {
+      switch (this.state.page) {
         case 1:
           return <Page1 handleInputChange={this.handleInputChange}/>
           break;
-        // case 2:
-        //   <Page2 handleInputChange={this.handleInputChange}/>
-        //   break;
-        // case 3:
-        //   <Page3 handleInputChange={this.handleInputChange}/>
-        //   break;
-        // case 4:
-        //   <Page4 handleInputChange={this.handleInputChange}/>
-        //   break;
+        case 2:
+          return <Page2 handleInputChange={this.handleInputChange}/>
+          break;
+        case 3:
+          return <Page3 handleInputChange={this.handleInputChange}/>
+          break;
+        case 4:
+          return <Page4 handleInputChange={this.handleInputChange}/>
+          break;
         // case 5:
         //   <Page5 handleInputChange={this.handleInputChange}/>
         //   break;

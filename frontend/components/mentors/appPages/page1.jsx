@@ -90,46 +90,6 @@ class Page1 extends React.Component {
                 />
             </Col>
           </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              Facebook *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsFacebook"
-                type="text"
-                name="facebook"
-                onChange={this.props.handleInputChange}
-                />
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              LinkedIn *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsLinkedIn"
-                type="text"
-                name="LinkedIn"
-                onChange={this.props.handleInputChange}
-                />
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              Phone *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsPhone"
-                type="text"
-                name="phone"
-                placeholder="8001234567"
-                onChange={this.props.handleInputChange}
-                />
-            </Col>
-          </FormGroup>
         </div>
       )
     }
