@@ -54515,10 +54515,492 @@ module.exports = Agent;
 
 /***/ }),
 /* 504 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-throw new Error("Module build failed: SyntaxError: Unexpected token, expected ; (97:5)\n\n\u001b[0m \u001b[90m  95 | \u001b[39m        \u001b[90m//   break;\u001b[39m\n \u001b[90m  96 | \u001b[39m      }\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  97 | \u001b[39m    }()\u001b[33m;\u001b[39m\n \u001b[90m     | \u001b[39m     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  98 | \u001b[39m\n \u001b[90m  99 | \u001b[39m    \u001b[36mreturn\u001b[39m (\n \u001b[90m 100 | \u001b[39m      \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n");
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactBootstrap = __webpack_require__(18);
+
+var _page = __webpack_require__(548);
+
+var _page2 = _interopRequireDefault(_page);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var MentorApp = function (_React$Component) {
+  _inherits(MentorApp, _React$Component);
+
+  function MentorApp(props) {
+    _classCallCheck(this, MentorApp);
+
+    var _this = _possibleConstructorReturn(this, (MentorApp.__proto__ || Object.getPrototypeOf(MentorApp)).call(this, props));
+
+    _this.state = {
+      username: "",
+      password: "",
+      first_name: "",
+      last_name: "",
+      age: '',
+      city: '',
+      country: '',
+      phone: '',
+      facebook: '',
+      linkedin: '',
+      email: '',
+      high_school: '',
+      college: '',
+      employer: '',
+      major: '',
+      career_advice_rank: '',
+      personal_advice_rank: '',
+      motivation_rank: '',
+      instagram_bio_text: '',
+      instagram_bio_why_not_text: '',
+      share_major_rank: '',
+      personality_text: '',
+      night_text: '',
+      not_on_google_text: '',
+      how_impact_text: '',
+      extra_info_text: '',
+      agree_terms: false,
+      agree_terms_bad_click: false,
+      disclaimer: true,
+      page: 1
+    };
+
+    _this.handleInputChange = _this.handleInputChange.bind(_this);
+    _this.handleFormSubmit = _this.handleFormSubmit.bind(_this);
+    _this.handleBack = _this.handleBack.bind(_this);
+    _this.handleNext = _this.handleNext.bind(_this);
+    return _this;
+  }
+
+  _createClass(MentorApp, [{
+    key: 'handleInputChange',
+    value: function handleInputChange(event) {
+      var target = event.target;
+      var value = target.type === 'checkbox' ? target.checked : target.value;
+      var name = target.name;
+
+      this.setState(_defineProperty({}, name, value));
+    }
+  }, {
+    key: 'handleFormSubmit',
+    value: function handleFormSubmit(event) {
+      event.preventDefault();
+      if (this.state.agree_terms) {
+        console.log("success");
+      } else {
+        this.setState({ agree_terms_bad_click: true }, function () {
+          console.log('failure');
+        });
+      }
+    }
+  }, {
+    key: 'handleBack',
+    value: function handleBack() {
+      if (this.state.page === 0) return;
+      this.setState({ page: this.state.page - 1 });
+    }
+  }, {
+    key: 'handleNext',
+    value: function handleNext() {
+      //validate inputs here
+      this.setState({ page: this.state.page + 1 });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var statePage = this.state.page;
+
+      var page = function () {
+        switch (statePage) {
+          case 1:
+            return _react2.default.createElement(_page2.default, { handleInputChange: _this2.handleInputChange });
+            break;
+          // case 2:
+          //   <Page2 handleInputChange={this.handleInputChange}/>
+          //   break;
+          // case 3:
+          //   <Page3 handleInputChange={this.handleInputChange}/>
+          //   break;
+          // case 4:
+          //   <Page4 handleInputChange={this.handleInputChange}/>
+          //   break;
+          // case 5:
+          //   <Page5 handleInputChange={this.handleInputChange}/>
+          //   break;
+        }
+      }();
+
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          _reactBootstrap.Panel,
+          { collapsible: true, expanded: this.state.disclaimer },
+          _react2.default.createElement(
+            'p',
+            null,
+            'Hello! Thank you for your interest in the GIRLZ, FTW mentorship program. We\u2019re thrilled to read your application. Before you fill out our form, we\u2019d like to let you in on a little secret. We\u2019re not a regular mentorship program. We\u2019re a community of girlz that are passionate about elevating and celebrating female voices around the world. We don\u2019t expect our mentors to be THAT girl\u2026 you know, the one that always had her shit together and still always managed to blow dry her hair before school / work. We\u2019re looking for real, passionate, #girlbosses that don\u2019t pretend to be perfect, can hustle their way to their dreams, AND still manage to uplift others along the way.'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'What you should know before submitting your application:'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.ListGroup,
+            null,
+            _react2.default.createElement(
+              _reactBootstrap.ListGroupItem,
+              null,
+              'All of our communication once you join the program happens on Facebook. If you\u2019re accepted as a mentor, you will be added to a Facebook group. This group will be the place where you can connect with other mentors and mentees in the program. We\u2019ll use this group to provide support, encouragement, and advice for each other. You must have a Facebook page if you want to be a part of this program.'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.ListGroupItem,
+              null,
+              'Every month, we\u2019ll host a call with all mentors and mentees. These calls take place on the first friday of every month. In these calls, we\u2019ll have inspiring women talk to about how they got to where they are today. Each call will be structured differently but is meant to inspire, inform, and mobilize everyone on the call. This means you\u2019ll probably be tapped to speak at one of these calls because we suspect you\u2019re awesome! Attending these calls is mandatory. You can only miss up to 3 calls.'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.ListGroupItem,
+              null,
+              'You must be willing to commit at least 4 hours a month for a year. Sessions with your mentee should last 1 hour every other week. We suggest you prep for at least 30 minutes before each of your mentee calls. Lastly, you must allot 1 hour for the monthly virtual chats. We will be hosting a mentor training on X DATE. Attending this training is required if you want to be a part of the program.'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Button,
+          { bsStyle: 'warning', onClick: function onClick() {
+              return _this2.setState({ disclaimer: !_this2.state.disclaimer });
+            } },
+          'Toggle Disclaimer'
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Form,
+          { horizontal: true, onSubmit: this.handleFormSubmit },
+          page,
+          _react2.default.createElement(
+            _reactBootstrap.Button,
+            { onClick: this.handleBack, className: 'btn-back' },
+            'Back'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Button,
+            { onClick: this.handleNext, className: 'btn-next' },
+            'Next'
+          ),
+          _react2.default.createElement(
+            'label',
+            null,
+            _react2.default.createElement(
+              'p',
+              { className: 'asterix' },
+              '*'
+            ),
+            'City:',
+            _react2.default.createElement('input', {
+              name: 'city',
+              type: 'text',
+              value: this.state.city,
+              onChange: this.handleInputChange })
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'label',
+            null,
+            _react2.default.createElement(
+              'p',
+              { className: 'asterix' },
+              '*'
+            ),
+            'Country:',
+            _react2.default.createElement('input', {
+              name: 'country',
+              type: 'text',
+              value: this.state.country,
+              onChange: this.handleInputChange })
+          ),
+          _react2.default.createElement(
+            'label',
+            null,
+            'High School:',
+            _react2.default.createElement('input', {
+              name: 'high_school',
+              type: 'text',
+              value: this.state.high_school,
+              onChange: this.handleInputChange })
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'label',
+            null,
+            'College:',
+            _react2.default.createElement('input', {
+              name: 'college',
+              type: 'text',
+              value: this.state.college,
+              onChange: this.handleInputChange })
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'label',
+            null,
+            'What was your major?',
+            _react2.default.createElement('input', {
+              name: 'major',
+              type: 'text',
+              value: this.state.major,
+              onChange: this.handleInputChange })
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'label',
+            null,
+            'Employer:',
+            _react2.default.createElement('input', {
+              name: 'employer',
+              type: 'text',
+              value: this.state.employer,
+              onChange: this.handleInputChange })
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            _reactBootstrap.FormGroup,
+            null,
+            _react2.default.createElement(
+              _reactBootstrap.ControlLabel,
+              null,
+              'How interested are you in giving career advice? *'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.FormControl,
+              {
+                componentClass: 'select',
+                placeholder: 'select',
+                id: 'formControlsCareer',
+                name: 'career_advice_rank',
+                value: this.state.career_advice_rank,
+                onChange: this.handleInputChange
+              },
+              _react2.default.createElement(
+                'option',
+                { value: '0' },
+                'Not at all'
+              ),
+              _react2.default.createElement(
+                'option',
+                { value: '1' },
+                'Slightly'
+              ),
+              _react2.default.createElement(
+                'option',
+                { value: '2' },
+                'Moderately'
+              ),
+              _react2.default.createElement(
+                'option',
+                { value: '3' },
+                'Extremely'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'label',
+            null,
+            _react2.default.createElement(
+              'p',
+              { className: 'asterix' },
+              '*'
+            ),
+            'How interested are you in giving personal advice?',
+            _react2.default.createElement(
+              'select',
+              { name: 'personal_advice_rank', value: this.state.personal_advice_rank, onChange: this.handleInputChange },
+              _react2.default.createElement(
+                'option',
+                { value: '0' },
+                'Not at all'
+              ),
+              _react2.default.createElement(
+                'option',
+                { value: '1' },
+                'Slightly'
+              ),
+              _react2.default.createElement(
+                'option',
+                { value: '2' },
+                'Moderately'
+              ),
+              _react2.default.createElement(
+                'option',
+                { value: '3' },
+                'Extremely'
+              )
+            )
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'label',
+            null,
+            _react2.default.createElement(
+              'p',
+              { className: 'asterix' },
+              '*'
+            ),
+            'How interested are you in providing motivation and inspiration for your mentees?',
+            _react2.default.createElement(
+              'select',
+              { name: 'motivation_rank', value: this.state.motivation_rank, onChange: this.handleInputChange },
+              _react2.default.createElement(
+                'option',
+                { value: '0' },
+                'Not at all'
+              ),
+              _react2.default.createElement(
+                'option',
+                { value: '1' },
+                'Slightly'
+              ),
+              _react2.default.createElement(
+                'option',
+                { value: '2' },
+                'Moderately'
+              ),
+              _react2.default.createElement(
+                'option',
+                { value: '3' },
+                'Extremely'
+              )
+            )
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'label',
+            null,
+            'Would you prefer a mentee who has or desires to pursue your major?',
+            _react2.default.createElement(
+              'select',
+              { name: 'share_major_rank', value: this.state.share_major_rank, onChange: this.handleInputChange },
+              _react2.default.createElement(
+                'option',
+                { value: '0' },
+                'Not at all'
+              ),
+              _react2.default.createElement(
+                'option',
+                { value: '1' },
+                'Slightly'
+              ),
+              _react2.default.createElement(
+                'option',
+                { value: '2' },
+                'Moderately'
+              ),
+              _react2.default.createElement(
+                'option',
+                { value: '3' },
+                'Extremely'
+              )
+            )
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'label',
+            null,
+            'Write the Instagram bio you wish you had.',
+            _react2.default.createElement('textarea', { name: 'instagram_bio_text', value: this.state.instagram_bio_text, onChange: this.handleInputChange, rows: '10', cols: '30' })
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'label',
+            null,
+            'What\'s getting in the way of you having that dream Instagram bio?',
+            _react2.default.createElement('textarea', { name: 'instagram_bio_why_not_text', value: this.state.instagram_bio_why_not_text, onChange: this.handleInputChange, rows: '10', cols: '30' })
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'label',
+            null,
+            'Describe your personality:',
+            _react2.default.createElement('textarea', { name: 'personality_text', value: this.state.personality_text, onChange: this.handleInputChange, rows: '10', cols: '30' })
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'label',
+            null,
+            'What keeps you up at night?',
+            _react2.default.createElement('textarea', { name: 'night_text', value: this.state.night_text, onChange: this.handleInputChange, rows: '10', cols: '30' })
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'label',
+            null,
+            'What\'s one thing about you that we can\'t Google?',
+            _react2.default.createElement('textarea', { name: 'not_on_google_text', value: this.state.not_on_google_text, onChange: this.handleInputChange, rows: '10', cols: '30' })
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'label',
+            null,
+            'How do you aspire to make a positive impact on others?',
+            _react2.default.createElement('textarea', { name: 'how_impact_text', value: this.state.how_impact_text, onChange: this.handleInputChange, rows: '10', cols: '30' })
+          ),
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'label',
+            null,
+            'Is there anything else you\'d like to add?',
+            _react2.default.createElement('textarea', { name: 'extra_info_text', value: this.state.extra_info_text, onChange: this.handleInputChange, rows: '10', cols: '30' })
+          ),
+          _react2.default.createElement('br', null),
+          'All mentors are required to set aside __ hours per month. Some other stuff that\'s needed. Blah blah etc. All of our communications happen over Facebook groups, so you must have a Facebook to be a GirlzFTW mentor.',
+          _react2.default.createElement('br', null),
+          _react2.default.createElement(
+            'label',
+            { style: { color: this.state.agree_terms_bad_click ? 'red' : 'black' } },
+            'I have read and agree to these requirements.',
+            _react2.default.createElement('input', {
+              name: 'agree_terms',
+              type: 'checkbox',
+              value: this.state.agree_terms,
+              onChange: this.handleInputChange })
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Button,
+            { bsStyle: 'success', type: 'submit' },
+            'Apply'
+          )
+        )
+      );
+    }
+  }]);
+
+  return MentorApp;
+}(_react2.default.Component);
+
+exports.default = MentorApp;
 
 /***/ }),
 /* 505 */
@@ -59462,6 +59944,231 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 }());
 
+
+/***/ }),
+/* 548 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactBootstrap = __webpack_require__(18);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Page1 = function (_React$Component) {
+  _inherits(Page1, _React$Component);
+
+  function Page1(props) {
+    _classCallCheck(this, Page1);
+
+    return _possibleConstructorReturn(this, (Page1.__proto__ || Object.getPrototypeOf(Page1)).call(this, props));
+  }
+
+  _createClass(Page1, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'Username *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsUsername',
+              type: 'text',
+              name: 'username',
+              placeholder: '',
+              onChange: this.props.handleInputChange
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'Password *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsPassword',
+              type: 'password',
+              name: 'password',
+              placeholder: '',
+              onChange: this.props.handleInputChange
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'First Name *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsFirstName',
+              type: 'text',
+              name: 'first_name',
+              onChange: this.props.handleInputChange
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'Last Name *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsLastName',
+              type: 'text',
+              name: 'last_name',
+              onChange: this.props.handleInputChange
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'Age *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsAge',
+              type: 'number',
+              name: 'age',
+              onChange: this.props.handleInputChange
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'Email *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsEmail',
+              type: 'email',
+              name: 'email',
+              onChange: this.props.handleInputChange
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'Facebook *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsFacebook',
+              type: 'text',
+              name: 'facebook',
+              onChange: this.props.handleInputChange
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'LinkedIn *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsLinkedIn',
+              type: 'text',
+              name: 'LinkedIn',
+              onChange: this.props.handleInputChange
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'Phone *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsPhone',
+              type: 'text',
+              name: 'phone',
+              placeholder: '8001234567',
+              onChange: this.props.handleInputChange
+            })
+          )
+        )
+      );
+    }
+  }]);
+
+  return Page1;
+}(_react2.default.Component);
+
+exports.default = Page1;
 
 /***/ })
 /******/ ]);

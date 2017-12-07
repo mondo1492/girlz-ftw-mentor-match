@@ -76,8 +76,10 @@ class MentorApp extends React.Component {
   }
 
   render() {
-    let page = () => {
-      switch (this.state.page) {
+    const statePage = this.state.page;
+
+    let page = (() => {
+      switch (statePage) {
         case 1:
           return <Page1 handleInputChange={this.handleInputChange}/>
           break;
@@ -94,7 +96,7 @@ class MentorApp extends React.Component {
         //   <Page5 handleInputChange={this.handleInputChange}/>
         //   break;
       }
-    }();
+    })();
 
     return (
       <div>
