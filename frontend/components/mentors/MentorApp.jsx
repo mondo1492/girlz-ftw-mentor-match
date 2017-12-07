@@ -1,4 +1,5 @@
 import React from 'react';
+import merge from 'lodash/merge';
 import { Col, Form, Button, Panel, FormControl, ControlLabel, FormGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
 import Page1 from './appPages/page1';
 
@@ -6,32 +7,41 @@ class MentorApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
-      password: "",
-      first_name: "",
-      last_name: "",
-      age: '',
-      city: '',
-      country: '',
-      phone: '',
-      facebook: '',
-      linkedin: '',
-      email: '',
-      high_school: '',
-      college: '',
-      employer: '',
-      major: '',
-      career_advice_rank: '',
-      personal_advice_rank: '',
-      motivation_rank: '',
-      instagram_bio_text: '',
-      instagram_bio_why_not_text: '',
-      share_major_rank: '',
-      personality_text: '',
-      night_text: '',
-      not_on_google_text: '',
-      how_impact_text: '',
-      extra_info_text: '',
+      "page_0": {
+        username: "",
+        password: "",
+        first_name: "",
+        last_name: "",
+        age: '',
+        email: '',
+        facebook: '',
+        linkedin: '',
+        phone: ''
+      },
+      1: {
+        city: '',
+        country: '',
+        high_school: '',
+        college: '',
+        employer: '',
+        major: '',
+      },
+      2: {
+        career_advice_rank: '',
+        personal_advice_rank: '',
+        motivation_rank: '',
+        instagram_bio_text: '',
+        instagram_bio_why_not_text: '',
+        share_major_rank: '',
+        industry: ''
+      },
+      3: {
+        personality_text: '',
+        night_text: '',
+        not_on_google_text: '',
+        how_impact_text: '',
+        extra_info_text: ''
+      },
       agree_terms: false,
       agree_terms_bad_click: false,
       disclaimer: true,
@@ -48,12 +58,18 @@ class MentorApp extends React.Component {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
-
+    let nextState = merge({}, {'page_0': this.state['page_0']}, {'page_0': {[name]: value}});
+    console.log(nextState);
+    console.log("MOE");
     this.setState({
-      [name]: value
+      "page_0": nextState["page_0"]
     });
   }
 
+  // handlePageChanges(pageNum, nextState) {
+  //   this.setState({pageNum: nextState});
+  //   });
+  // }
   handleFormSubmit(event) {
     event.preventDefault();
     if (this.state.agree_terms) {
@@ -70,14 +86,24 @@ class MentorApp extends React.Component {
     this.setState({page: this.state.page - 1});
   }
 
+  validate(pageNum) {
+    let pass = true;
+    for (const key of Object.keys(this.state[pageNum])) {
+      if (this.state[pageNum][key] === '') {
+        pass = false;
+      }
+    }
+    console.log(pass);
+  }
+
   handleNext() {
-    //validate inputs here
+    this.validate(this.state.page);
     this.setState({page: this.state.page + 1});
   }
 
   render() {
     const statePage = this.state.page;
-
+    console.log(this.state);
     let page = (() => {
       switch (statePage) {
         case 1:

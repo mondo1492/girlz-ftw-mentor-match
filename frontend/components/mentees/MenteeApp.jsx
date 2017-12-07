@@ -73,9 +73,11 @@ class MenteeApp extends React.Component {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
-
+    let nextState = merge({}, {'page_0': this.state['page_0']}, {'page_0': {[name]: value}});
+    console.log(nextState);
+    console.log("MOE");
     this.setState({
-      [name]: value
+      "page_0": nextState
     });
   }
 
