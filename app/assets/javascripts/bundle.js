@@ -52331,7 +52331,7 @@ var MentorApp = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (MentorApp.__proto__ || Object.getPrototypeOf(MentorApp)).call(this, props));
 
     _this.state = {
-      "page_0": {
+      0: {
         username: "",
         password: "",
         first_name: "",
@@ -52382,22 +52382,13 @@ var MentorApp = function (_React$Component) {
   _createClass(MentorApp, [{
     key: 'handleInputChange',
     value: function handleInputChange(event) {
+      var pageNum = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+
       var target = event.target;
       var value = target.type === 'checkbox' ? target.checked : target.value;
-      var name = target.name;
-      var nextState = (0, _merge2.default)({}, { 'page_0': this.state['page_0'] }, { 'page_0': _defineProperty({}, name, value) });
-      console.log(nextState);
-      console.log("MOE");
-      this.setState({
-        "page_0": nextState["page_0"]
-      });
+      var nextState = (0, _merge2.default)({}, { 0: this.state[0] }, { 0: _defineProperty({}, target.name, value) });
+      this.setState(_defineProperty({}, pageNum, nextState[0]));
     }
-
-    // handlePageChanges(pageNum, nextState) {
-    //   this.setState({pageNum: nextState});
-    //   });
-    // }
-
   }, {
     key: 'handleFormSubmit',
     value: function handleFormSubmit(event) {
@@ -52460,6 +52451,7 @@ var MentorApp = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
+      console.log(this.state);
       var page = function () {
         switch (_this2.state.page) {
           case 1:

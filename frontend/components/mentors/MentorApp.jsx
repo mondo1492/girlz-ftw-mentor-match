@@ -10,7 +10,7 @@ class MentorApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      "page_0": {
+      0: {
         username: "",
         password: "",
         first_name: "",
@@ -57,22 +57,15 @@ class MentorApp extends React.Component {
     this.handleNext = this.handleNext.bind(this);
   }
 
-  handleInputChange(event) {
+  handleInputChange(event, pageNum = 0) {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-    let nextState = merge({}, {'page_0': this.state['page_0']}, {'page_0': {[name]: value}});
-    console.log(nextState);
-    console.log("MOE");
+    let nextState = merge({}, {0: this.state[0]}, {0: {[target.name]: value}});
     this.setState({
-      "page_0": nextState["page_0"]
+      [pageNum]: nextState[0]
     });
   }
 
-  // handlePageChanges(pageNum, nextState) {
-  //   this.setState({pageNum: nextState});
-  //   });
-  // }
   handleFormSubmit(event) {
     event.preventDefault();
     if (this.state.agree_terms) {
@@ -105,6 +98,7 @@ class MentorApp extends React.Component {
   }
 
   render() {
+    console.log(this.state);
     let page = (() => {
       switch (this.state.page) {
         case 1:
