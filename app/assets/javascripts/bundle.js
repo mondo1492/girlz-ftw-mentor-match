@@ -54518,7 +54518,7 @@ module.exports = Agent;
 /***/ (function(module, exports) {
 
 "use strict";
-throw new Error("Module build failed: SyntaxError: Unexpected token (66:17)\n\n\u001b[0m \u001b[90m 64 | \u001b[39m\n \u001b[90m 65 | \u001b[39m  render() {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 66 | \u001b[39m    \u001b[36mconst\u001b[39m page \u001b[33m=\u001b[39m \u001b[36mswitch\u001b[39m (\u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mstate\u001b[33m.\u001b[39mpage) {\n \u001b[90m    | \u001b[39m                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 67 | \u001b[39m      \u001b[36mcase\u001b[39m \u001b[35m1\u001b[39m\u001b[33m:\u001b[39m\n \u001b[90m 68 | \u001b[39m        \u001b[33m<\u001b[39m\u001b[33mPage1\u001b[39m\u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\n \u001b[90m 69 | \u001b[39m        \u001b[36mbreak\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n");
+throw new Error("Module build failed: SyntaxError: Unexpected token, expected ; (97:5)\n\n\u001b[0m \u001b[90m  95 | \u001b[39m        \u001b[90m//   break;\u001b[39m\n \u001b[90m  96 | \u001b[39m      }\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  97 | \u001b[39m    }()\u001b[33m;\u001b[39m\n \u001b[90m     | \u001b[39m     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m  98 | \u001b[39m\n \u001b[90m  99 | \u001b[39m    \u001b[36mreturn\u001b[39m (\n \u001b[90m 100 | \u001b[39m      \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n");
 
 /***/ }),
 /* 505 */

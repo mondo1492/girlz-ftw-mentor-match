@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Form, Button, Panel, FormControl, ControlLabel, FormGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
+import Page1 from './appPages/page1';
 
 class MentorApp extends React.Component {
   constructor(props) {
@@ -39,6 +40,8 @@ class MentorApp extends React.Component {
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.handleBack = this.handleBack.bind(this);
+    this.handleNext = this.handleNext.bind(this);
   }
 
   handleInputChange(event) {
@@ -62,24 +65,36 @@ class MentorApp extends React.Component {
     }
   }
 
+  handleBack() {
+    if (this.state.page === 0) return;
+    this.setState({page: this.state.page - 1});
+  }
+
+  handleNext() {
+    //validate inputs here
+    this.setState({page: this.state.page + 1});
+  }
+
   render() {
-    const page = switch (this.state.page) {
-      case 1:
-        <Page1/>
-        break;
-      case 2:
-        <Page2/>
-        break;
-      case 3:
-        <Page3/>
-        break;
-      case 4:
-        <Page4/>
-        break;
-      case 5:
-        <Page5/>
-        break;
-    }
+    let page = () => {
+      switch (this.state.page) {
+        case 1:
+          return <Page1 handleInputChange={this.handleInputChange}/>
+          break;
+        // case 2:
+        //   <Page2 handleInputChange={this.handleInputChange}/>
+        //   break;
+        // case 3:
+        //   <Page3 handleInputChange={this.handleInputChange}/>
+        //   break;
+        // case 4:
+        //   <Page4 handleInputChange={this.handleInputChange}/>
+        //   break;
+        // case 5:
+        //   <Page5 handleInputChange={this.handleInputChange}/>
+        //   break;
+      }
+    }();
 
     return (
       <div>
@@ -116,126 +131,7 @@ class MentorApp extends React.Component {
           {page}
           <Button onClick={this.handleBack} className="btn-back">Back</Button>
           <Button onClick={this.handleNext} className="btn-next">Next</Button>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              Username *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsUsername"
-                type="text"
-                name="username"
-                placeholder=""
-                onChange={this.handleInputChange}
-              />
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              Password *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsPassword"
-                type="password"
-                name="password"
-                placeholder=""
-                onChange={this.handleInputChange}
-              />
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              First Name *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsFirstName"
-                type="text"
-                name="first_name"
-                onChange={this.handleInputChange}
-              />
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              Last Name *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-              id="formControlsLastName"
-              type="text"
-              name="last_name"
-              onChange={this.handleInputChange}
-              />
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              Age *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsAge"
-                type="number"
-                name="age"
-                onChange={this.handleInputChange}
-              />
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              Email *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsEmail"
-                type="email"
-                name="email"
-                onChange={this.handleInputChange}
-              />
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              Facebook *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsFacebook"
-                type="text"
-                name="facebook"
-                onChange={this.handleInputChange}
-              />
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              LinkedIn *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsLinkedIn"
-                type="text"
-                name="LinkedIn"
-                onChange={this.handleInputChange}
-              />
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              Phone *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsPhone"
-                type="text"
-                name="phone"
-                placeholder="8001234567"
-                onChange={this.handleInputChange}
-              />
-            </Col>
-          </FormGroup>
+
           <label>
             <p className="asterix">*</p>City:
             <input
