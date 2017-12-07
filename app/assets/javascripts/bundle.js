@@ -54536,6 +54536,18 @@ var _page = __webpack_require__(548);
 
 var _page2 = _interopRequireDefault(_page);
 
+var _page3 = __webpack_require__(549);
+
+var _page4 = _interopRequireDefault(_page3);
+
+var _page5 = __webpack_require__(550);
+
+var _page6 = _interopRequireDefault(_page5);
+
+var _page7 = __webpack_require__(551);
+
+var _page8 = _interopRequireDefault(_page7);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -54570,6 +54582,7 @@ var MentorApp = function (_React$Component) {
       college: '',
       employer: '',
       major: '',
+      industry: '',
       career_advice_rank: '',
       personal_advice_rank: '',
       motivation_rank: '',
@@ -54618,7 +54631,7 @@ var MentorApp = function (_React$Component) {
   }, {
     key: 'handleBack',
     value: function handleBack() {
-      if (this.state.page === 0) return;
+      if (this.state.page === 1) return;
       this.setState({ page: this.state.page - 1 });
     }
   }, {
@@ -54632,22 +54645,20 @@ var MentorApp = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      var statePage = this.state.page;
-
       var page = function () {
-        switch (statePage) {
+        switch (_this2.state.page) {
           case 1:
             return _react2.default.createElement(_page2.default, { handleInputChange: _this2.handleInputChange });
             break;
-          // case 2:
-          //   <Page2 handleInputChange={this.handleInputChange}/>
-          //   break;
-          // case 3:
-          //   <Page3 handleInputChange={this.handleInputChange}/>
-          //   break;
-          // case 4:
-          //   <Page4 handleInputChange={this.handleInputChange}/>
-          //   break;
+          case 2:
+            return _react2.default.createElement(_page4.default, { handleInputChange: _this2.handleInputChange });
+            break;
+          case 3:
+            return _react2.default.createElement(_page6.default, { handleInputChange: _this2.handleInputChange });
+            break;
+          case 4:
+            return _react2.default.createElement(_page8.default, { handleInputChange: _this2.handleInputChange });
+            break;
           // case 5:
           //   <Page5 handleInputChange={this.handleInputChange}/>
           //   break;
@@ -60102,6 +60113,437 @@ var Page1 = function (_React$Component) {
               onChange: this.props.handleInputChange
             })
           )
+        )
+      );
+    }
+  }]);
+
+  return Page1;
+}(_react2.default.Component);
+
+exports.default = Page1;
+
+/***/ }),
+/* 549 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactBootstrap = __webpack_require__(18);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Page2 = function (_React$Component) {
+  _inherits(Page2, _React$Component);
+
+  function Page2(props) {
+    _classCallCheck(this, Page2);
+
+    return _possibleConstructorReturn(this, (Page2.__proto__ || Object.getPrototypeOf(Page2)).call(this, props));
+  }
+
+  _createClass(Page2, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'Facebook *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsFacebook',
+              type: 'text',
+              name: 'facebook',
+              onChange: this.props.handleInputChange
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'LinkedIn *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsLinkedIn',
+              type: 'text',
+              name: 'LinkedIn',
+              onChange: this.props.handleInputChange
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'Phone *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsPhone',
+              type: 'text',
+              name: 'phone',
+              placeholder: '8001234567',
+              onChange: this.props.handleInputChange
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'City *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsCity',
+              type: 'text',
+              name: 'city',
+              onChange: this.props.handleInputChange
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'Country *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsCountry',
+              type: 'text',
+              name: 'country',
+              onChange: this.props.handleInputChange
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'Employer *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsEmployer',
+              type: 'text',
+              name: 'employer',
+              onChange: this.props.handleInputChange
+            })
+          )
+        )
+      );
+    }
+  }]);
+
+  return Page2;
+}(_react2.default.Component);
+
+exports.default = Page2;
+
+/***/ }),
+/* 550 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactBootstrap = __webpack_require__(18);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Page3 = function (_React$Component) {
+  _inherits(Page3, _React$Component);
+
+  function Page3(props) {
+    _classCallCheck(this, Page3);
+
+    return _possibleConstructorReturn(this, (Page3.__proto__ || Object.getPrototypeOf(Page3)).call(this, props));
+  }
+
+  _createClass(Page3, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.ControlLabel,
+            null,
+            'What was your college major? *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.FormControl,
+            {
+              componentClass: 'select',
+              placeholder: 'select',
+              id: 'formControlsMajor',
+              name: 'major',
+              onChange: this.handleInputChange
+            },
+            _react2.default.createElement(
+              'option',
+              { value: 'Science' },
+              'Science'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'Engineering' },
+              'Engineering'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'Communications, Marketing' },
+              'Communications, Marketing'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'Political Science, International Relations' },
+              'Political Science, International Relations'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'Finance, Economics' },
+              'Finance, Economics'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'Arts' },
+              'Arts'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.ControlLabel,
+            null,
+            'In which industry do you work? *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.FormControl,
+            {
+              componentClass: 'select',
+              placeholder: 'select',
+              id: 'formControlsIndustry',
+              name: 'industry',
+              onChange: this.handleInputChange
+            },
+            _react2.default.createElement(
+              'option',
+              { value: 'International Relations, Politics' },
+              'International Relations, Politics'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'Finance' },
+              'Finance'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'Accounting, Legal' },
+              'Accounting, Legal'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'Media' },
+              'Media'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'Technology' },
+              'Technology'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'Marketing' },
+              'Marketing'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'Performing Arts, Sports, Related Industries' },
+              'Performing Arts, Sports, Related Industries'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'Healthcare' },
+              'Healthcare'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'Education' },
+              'Education'
+            ),
+            _react2.default.createElement(
+              'option',
+              { value: 'Other' },
+              'Other'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'Password *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsPassword',
+              type: 'password',
+              name: 'password',
+              placeholder: '',
+              onChange: this.props.handleInputChange
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'First Name *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsFirstName',
+              type: 'text',
+              name: 'first_name',
+              onChange: this.props.handleInputChange
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'Last Name *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsLastName',
+              type: 'text',
+              name: 'last_name',
+              onChange: this.props.handleInputChange
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'Age *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsAge',
+              type: 'number',
+              name: 'age',
+              onChange: this.props.handleInputChange
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'Email *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsEmail',
+              type: 'email',
+              name: 'email',
+              onChange: this.props.handleInputChange
+            })
+          )
         ),
         _react2.default.createElement(
           _reactBootstrap.FormGroup,
@@ -60165,10 +60607,235 @@ var Page1 = function (_React$Component) {
     }
   }]);
 
-  return Page1;
+  return Page3;
 }(_react2.default.Component);
 
-exports.default = Page1;
+exports.default = Page3;
+
+/***/ }),
+/* 551 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactBootstrap = __webpack_require__(18);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Page4 = function (_React$Component) {
+  _inherits(Page4, _React$Component);
+
+  function Page4(props) {
+    _classCallCheck(this, Page4);
+
+    return _possibleConstructorReturn(this, (Page4.__proto__ || Object.getPrototypeOf(Page4)).call(this, props));
+  }
+
+  _createClass(Page4, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'Username *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsUsername',
+              type: 'text',
+              name: 'username',
+              placeholder: '',
+              onChange: this.props.handleInputChange
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'Password *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsPassword',
+              type: 'password',
+              name: 'password',
+              placeholder: '',
+              onChange: this.props.handleInputChange
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'First Name *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsFirstName',
+              type: 'text',
+              name: 'first_name',
+              onChange: this.props.handleInputChange
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'Last Name *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsLastName',
+              type: 'text',
+              name: 'last_name',
+              onChange: this.props.handleInputChange
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'Age *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsAge',
+              type: 'number',
+              name: 'age',
+              onChange: this.props.handleInputChange
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'Email *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsEmail',
+              type: 'email',
+              name: 'email',
+              onChange: this.props.handleInputChange
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'Facebook *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsFacebook',
+              type: 'text',
+              name: 'facebook',
+              onChange: this.props.handleInputChange
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'LinkedIn *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsLinkedIn',
+              type: 'text',
+              name: 'LinkedIn',
+              onChange: this.props.handleInputChange
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'Phone *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsPhone',
+              type: 'text',
+              name: 'phone',
+              placeholder: '8001234567',
+              onChange: this.props.handleInputChange
+            })
+          )
+        )
+      );
+    }
+  }]);
+
+  return Page4;
+}(_react2.default.Component);
+
+exports.default = Page4;
 
 /***/ })
 /******/ ]);
