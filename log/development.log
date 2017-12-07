@@ -1,0 +1,8 @@
+Started GET "/" for 127.0.0.1 at 2017-12-07 13:59:31 -0800
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 2059ms (Views: 2058.0ms | ActiveRecord: 0.0ms)
+
+

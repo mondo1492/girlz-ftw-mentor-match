@@ -34,6 +34,7 @@ class MentorApp extends React.Component {
       agree_terms: false,
       agree_terms_bad_click: false,
       disclaimer: true,
+      page: 1
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -62,6 +63,24 @@ class MentorApp extends React.Component {
   }
 
   render() {
+    const page = switch (this.state.page) {
+      case 1:
+        <Page1/>
+        break;
+      case 2:
+        <Page2/>
+        break;
+      case 3:
+        <Page3/>
+        break;
+      case 4:
+        <Page4/>
+        break;
+      case 5:
+        <Page5/>
+        break;
+    }
+
     return (
       <div>
 
@@ -94,6 +113,9 @@ class MentorApp extends React.Component {
         </Button>
 
         <Form horizontal onSubmit={this.handleFormSubmit}>
+          {page}
+          <Button onClick={this.handleBack} className="btn-back">Back</Button>
+          <Button onClick={this.handleNext} className="btn-next">Next</Button>
           <FormGroup>
             <Col componentClass={ControlLabel} sm={1}>
               Username *
