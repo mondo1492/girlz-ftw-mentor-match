@@ -1,6 +1,8 @@
 import React from 'react';
 import merge from 'lodash/merge';
 import { Col, Form, Button, Panel, FormControl, ControlLabel, FormGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
+import FontAwesome from 'react-fontawesome';
+
 import Page1 from './appPages/page1';
 import Page2 from './appPages/page2';
 import Page3 from './appPages/page3';

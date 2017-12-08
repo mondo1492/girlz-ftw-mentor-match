@@ -48972,6 +48972,12 @@ var _superagent = __webpack_require__(496);
 
 var _superagent2 = _interopRequireDefault(_superagent);
 
+var _reactFontawesome = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"react-fontawesome\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
+
+var _reactBootstrap = __webpack_require__(18);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -49076,14 +49082,11 @@ var MenteeApp = function (_React$Component) {
 
       event.preventDefault();
       if (this.state.agree_terms) {
-        console.log("success");
         this.props.createMentee(this.state).then(function () {
           return _this3.props.history.push('/');
         });
       } else {
-        this.setState({ agree_terms_bad_click: true }, function () {
-          console.log('failure');
-        });
+        this.setState({ agree_terms_bad_click: true }, function () {});
       }
     }
   }, {
@@ -49504,7 +49507,7 @@ var MenteeApp = function (_React$Component) {
               onChange: this.handleInputChange })
           ),
           _react2.default.createElement(
-            'button',
+            _reactBootstrap.Button,
             { type: 'submit' },
             'Apply'
           )
@@ -52296,6 +52299,10 @@ var _merge2 = _interopRequireDefault(_merge);
 
 var _reactBootstrap = __webpack_require__(18);
 
+var _reactFontawesome = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"react-fontawesome\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
+
 var _page = __webpack_require__(503);
 
 var _page2 = _interopRequireDefault(_page);
@@ -52576,6 +52583,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactBootstrap = __webpack_require__(18);
 
+var _reactFontawesome = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"react-fontawesome\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -52702,24 +52713,20 @@ var Page1 = function (_React$Component) {
           )
         ),
         _react2.default.createElement(
-          _reactBootstrap.FormGroup,
+          InputGroup,
           null,
           _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
-            'Email *'
+            InputGroup.Addon,
+            null,
+            _react2.default.createElement(_reactFontawesome2.default, { name: 'envelope-o' })
           ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 3 },
-            _react2.default.createElement(_reactBootstrap.FormControl, {
-              id: 'formControlsEmail',
-              type: 'email',
-              name: 'email',
-              value: this.props.page.email,
-              onChange: this.props.handleInputChange
-            })
-          )
+          _react2.default.createElement(_reactBootstrap.FormControl, {
+            id: 'formControlsEmail',
+            type: 'email',
+            name: 'email',
+            value: this.props.page.email,
+            onChange: this.props.handleInputChange
+          })
         )
       );
     }
@@ -52844,6 +52851,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(15);
 
+var _reactBootstrap = __webpack_require__(18);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -52956,7 +52965,7 @@ var SessionForm = function (_React$Component) {
               placeholder: 'Password'
             }),
             _react2.default.createElement(
-              'button',
+              _reactBootstrap.Button,
               { onClick: this.handleSubmit },
               'Login'
             )
@@ -54150,7 +54159,6 @@ var CurrentMentees = function (_React$Component) {
                 )
               );
             }).sort(function (a, b) {
-              console.log(a);
               return a.props.children[1].props.children - b.props.children[1].props.children;
             })
           )

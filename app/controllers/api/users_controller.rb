@@ -5,6 +5,7 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      MentorAppMailer.signup_success(@user).deliver_now
       login(@user)
       render "api/users/show"
     else

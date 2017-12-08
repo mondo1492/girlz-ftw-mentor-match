@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-
+import { Button } from 'react-bootstrap';
 
 class SessionForm extends React.Component {
   constructor(props) {
@@ -78,7 +78,7 @@ class SessionForm extends React.Component {
                   className="login-input"
                   placeholder="Password"
                 />
-              <button onClick={this.handleSubmit}>Login</button>
+              <Button onClick={this.handleSubmit}>Login</Button>
             </form>
           </div>
       </div>
