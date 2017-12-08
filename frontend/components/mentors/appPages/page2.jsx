@@ -18,6 +18,7 @@ class Page2 extends React.Component {
                 id="formControlsFacebook"
                 type="text"
                 name="facebook"
+                value={this.props.page.facebook}
                 onChange={this.props.handleInputChange}
                 />
             </Col>
@@ -30,7 +31,8 @@ class Page2 extends React.Component {
               <FormControl
                 id="formControlsLinkedIn"
                 type="text"
-                name="LinkedIn"
+                name="linkedin"
+                value={this.props.page.linkedin}
                 onChange={this.props.handleInputChange}
                 />
             </Col>
@@ -44,6 +46,7 @@ class Page2 extends React.Component {
                 id="formControlsPhone"
                 type="text"
                 name="phone"
+                value={this.props.page.phone}
                 placeholder="8001234567"
                 onChange={this.props.handleInputChange}
                 />
@@ -58,6 +61,7 @@ class Page2 extends React.Component {
                 id="formControlsCity"
                 type="text"
                 name="city"
+                value={this.props.page.city}
                 onChange={this.props.handleInputChange}
                 />
             </Col>
@@ -71,6 +75,7 @@ class Page2 extends React.Component {
                 id="formControlsCountry"
                 type="text"
                 name="country"
+                value={this.props.page.country}
                 onChange={this.props.handleInputChange}
                 />
             </Col>
@@ -84,6 +89,7 @@ class Page2 extends React.Component {
                 id="formControlsEmployer"
                 type="text"
                 name="employer"
+                value={this.props.page.employer}
                 onChange={this.props.handleInputChange}
                 />
             </Col>
