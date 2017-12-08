@@ -1,5 +1,7 @@
 import React from 'react';
-import { Col, Form, Button, Panel, FormControl, ControlLabel, FormGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Col, Form, Button, Panel, InputGroup, FormControl, ControlLabel, FormGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
+import FontAwesome from 'react-fontawesome';
+
 
 
 class Page2 extends React.Component {

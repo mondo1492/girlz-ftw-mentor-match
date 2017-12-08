@@ -83,18 +83,27 @@ class Page1 extends React.Component {
                 />
             </Col>
           </FormGroup>
-          <InputGroup>
-            <InputGroup.Addon>
-              <FontAwesome name='envelope-o'/>
-            </InputGroup.Addon>
-            <FormControl
-              id="formControlsEmail"
-              type="email"
-              name="email"
-              value={this.props.page.email}
-              onChange={this.props.handleInputChange}
-            />
-          </InputGroup>
+
+          <FormGroup>
+            <Col componentClass={ControlLabel} sm={1}>
+              Email *
+            </Col>
+            <Col sm={3}>
+              <InputGroup>
+                <InputGroup.Addon>
+                  <FontAwesome name='envelope-o'/>
+                </InputGroup.Addon>
+
+                <FormControl
+                  id="formControlsEmail"
+                  type="email"
+                  name="email"
+                  value={this.props.page.email}
+                  onChange={this.props.handleInputChange}
+                />
+              </InputGroup>
+            </Col>
+          </FormGroup>
         </div>
       )
     }

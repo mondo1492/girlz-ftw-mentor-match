@@ -59901,20 +59901,33 @@ var Page1 = function (_React$Component) {
           )
         ),
         _react2.default.createElement(
-          _reactBootstrap.InputGroup,
+          _reactBootstrap.FormGroup,
           null,
           _react2.default.createElement(
-            _reactBootstrap.InputGroup.Addon,
-            null,
-            _react2.default.createElement(_reactFontawesome2.default, { name: 'envelope-o' })
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'Email *'
           ),
-          _react2.default.createElement(_reactBootstrap.FormControl, {
-            id: 'formControlsEmail',
-            type: 'email',
-            name: 'email',
-            value: this.props.page.email,
-            onChange: this.props.handleInputChange
-          })
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(
+              _reactBootstrap.InputGroup,
+              null,
+              _react2.default.createElement(
+                _reactBootstrap.InputGroup.Addon,
+                null,
+                _react2.default.createElement(_reactFontawesome2.default, { name: 'envelope-o' })
+              ),
+              _react2.default.createElement(_reactBootstrap.FormControl, {
+                id: 'formControlsEmail',
+                type: 'email',
+                name: 'email',
+                value: this.props.page.email,
+                onChange: this.props.handleInputChange
+              })
+            )
+          )
         )
       );
     }
@@ -59943,6 +59956,10 @@ var _react = __webpack_require__(0);
 var _react2 = _interopRequireDefault(_react);
 
 var _reactBootstrap = __webpack_require__(18);
+
+var _reactFontawesome = __webpack_require__(552);
+
+var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -60109,6 +60126,10 @@ var _react = __webpack_require__(0);
 var _react2 = _interopRequireDefault(_react);
 
 var _reactBootstrap = __webpack_require__(18);
+
+var _reactFontawesome = __webpack_require__(552);
+
+var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -60432,6 +60453,10 @@ var _react = __webpack_require__(0);
 var _react2 = _interopRequireDefault(_react);
 
 var _reactBootstrap = __webpack_require__(18);
+
+var _reactFontawesome = __webpack_require__(552);
+
+var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
