@@ -51226,6 +51226,8 @@ var _reactFontawesome = __webpack_require__(552);
 
 var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
 
+var _reactBootstrap = __webpack_require__(18);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -51330,14 +51332,11 @@ var MenteeApp = function (_React$Component) {
 
       event.preventDefault();
       if (this.state.agree_terms) {
-        console.log("success");
         this.props.createMentee(this.state).then(function () {
           return _this3.props.history.push('/');
         });
       } else {
-        this.setState({ agree_terms_bad_click: true }, function () {
-          console.log('failure');
-        });
+        this.setState({ agree_terms_bad_click: true }, function () {});
       }
     }
   }, {
@@ -51758,7 +51757,7 @@ var MenteeApp = function (_React$Component) {
               onChange: this.handleInputChange })
           ),
           _react2.default.createElement(
-            'button',
+            _reactBootstrap.Button,
             { type: 'submit' },
             'Apply'
           )
@@ -55186,6 +55185,8 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(15);
 
+var _reactBootstrap = __webpack_require__(18);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -55298,7 +55299,7 @@ var SessionForm = function (_React$Component) {
               placeholder: 'Password'
             }),
             _react2.default.createElement(
-              'button',
+              _reactBootstrap.Button,
               { onClick: this.handleSubmit },
               'Login'
             )
@@ -56492,7 +56493,6 @@ var CurrentMentees = function (_React$Component) {
                 )
               );
             }).sort(function (a, b) {
-              console.log(a);
               return a.props.children[1].props.children - b.props.children[1].props.children;
             })
           )
