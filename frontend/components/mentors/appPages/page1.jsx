@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Form, Button, Panel, FormControl, ControlLabel, FormGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
+import FontAwesome from 'react-fontawesome';
 
 
 class Page1 extends React.Component {
@@ -77,19 +78,18 @@ class Page1 extends React.Component {
                 />
             </Col>
           </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              Email *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsEmail"
-                type="email"
-                name="email"
-                onChange={this.props.handleInputChange}
-                />
-            </Col>
-          </FormGroup>
+          <InputGroup>
+            <InputGroup.Addon>
+              <FontAwesome name='envelope-o'/>
+            </InputGroup.Addon>
+            <FormControl
+              id="formControlsEmail"
+              type="email"
+              name="email"
+              value={this.props.page.email}
+              onChange={this.props.handleInputChange}
+            />
+          </InputGroup>
         </div>
       )
     }

@@ -2,6 +2,7 @@ import React from 'react';
 import merge from 'lodash/merge';
 import Dropzone from 'react-dropzone';
 import request from 'superagent';
+import FontAwesome from 'react-fontawesome';
 
 const CLOUDINARY_UPLOAD_PRESET = 'girlzftw';
 const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/girlzftw/upload';
