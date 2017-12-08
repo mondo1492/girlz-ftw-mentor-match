@@ -54537,9 +54537,9 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _merge = __webpack_require__(60);
+var _merge3 = __webpack_require__(60);
 
-var _merge2 = _interopRequireDefault(_merge);
+var _merge4 = _interopRequireDefault(_merge3);
 
 var _reactBootstrap = __webpack_require__(18);
 
@@ -54583,20 +54583,22 @@ var MentorApp = function (_React$Component) {
 
     _this.state = {
       0: {
-        username: "",
-        password: "",
-        first_name: "",
-        last_name: "",
-        age: '',
-        email: ''
+        username: "Aaron",
+        password: "Meow",
+        first_name: "Aaron",
+        last_name: "Mondshine",
+        age: '2',
+        email: 'a'
       },
       1: {
+        facebook: '',
+        linkedin: '',
+        phone: '',
         city: '',
         country: '',
-        high_school: '',
-        college: '',
-        employer: '',
-        major: ''
+
+        employer: ''
+
       },
       2: {
         career_advice_rank: '',
@@ -54619,9 +54621,10 @@ var MentorApp = function (_React$Component) {
       disclaimer: true,
       page: 0,
 
-      facebook: '',
-      linkedin: '',
-      phone: ''
+      high_school: '',
+      college: '',
+      major: ''
+
     };
 
     _this.handleInputChange = _this.handleInputChange.bind(_this);
@@ -54634,12 +54637,12 @@ var MentorApp = function (_React$Component) {
   _createClass(MentorApp, [{
     key: 'handleInputChange',
     value: function handleInputChange(event) {
-      var pageNum = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+      var pageNum = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.state.page;
 
       var target = event.target;
       var value = target.type === 'checkbox' ? target.checked : target.value;
-      var nextState = (0, _merge2.default)({}, { 0: this.state[0] }, { 0: _defineProperty({}, target.name, value) });
-      this.setState(_defineProperty({}, pageNum, nextState[0]));
+      var nextState = (0, _merge4.default)({}, _defineProperty({}, pageNum, this.state[pageNum]), _defineProperty({}, pageNum, _defineProperty({}, target.name, value)));
+      this.setState(_defineProperty({}, pageNum, nextState[pageNum]));
     }
   }, {
     key: 'handleFormSubmit',
@@ -59999,6 +60002,7 @@ var Page2 = function (_React$Component) {
               id: 'formControlsFacebook',
               type: 'text',
               name: 'facebook',
+              value: this.props.page.facebook,
               onChange: this.props.handleInputChange
             })
           )
@@ -60017,7 +60021,8 @@ var Page2 = function (_React$Component) {
             _react2.default.createElement(_reactBootstrap.FormControl, {
               id: 'formControlsLinkedIn',
               type: 'text',
-              name: 'LinkedIn',
+              name: 'linkedin',
+              value: this.props.page.linkedin,
               onChange: this.props.handleInputChange
             })
           )
@@ -60037,6 +60042,7 @@ var Page2 = function (_React$Component) {
               id: 'formControlsPhone',
               type: 'text',
               name: 'phone',
+              value: this.props.page.phone,
               placeholder: '8001234567',
               onChange: this.props.handleInputChange
             })
@@ -60057,6 +60063,7 @@ var Page2 = function (_React$Component) {
               id: 'formControlsCity',
               type: 'text',
               name: 'city',
+              value: this.props.page.city,
               onChange: this.props.handleInputChange
             })
           )
@@ -60076,6 +60083,7 @@ var Page2 = function (_React$Component) {
               id: 'formControlsCountry',
               type: 'text',
               name: 'country',
+              value: this.props.page.country,
               onChange: this.props.handleInputChange
             })
           )
@@ -60095,6 +60103,7 @@ var Page2 = function (_React$Component) {
               id: 'formControlsEmployer',
               type: 'text',
               name: 'employer',
+              value: this.props.page.employer,
               onChange: this.props.handleInputChange
             })
           )

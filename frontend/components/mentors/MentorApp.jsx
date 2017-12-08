@@ -13,20 +13,22 @@ class MentorApp extends React.Component {
     super(props);
     this.state = {
       0: {
-        username: "",
-        password: "",
-        first_name: "",
-        last_name: "",
-        age: '',
-        email: ''
+        username: "Aaron",
+        password: "Meow",
+        first_name: "Aaron",
+        last_name: "Mondshine",
+        age: '2',
+        email: 'a'
       },
       1: {
+        facebook: '',
+        linkedin: '',
+        phone: '',
         city: '',
         country: '',
-        high_school: '',
-        college: '',
+
         employer: '',
-        major: '',
+
       },
       2: {
         career_advice_rank: '',
@@ -49,9 +51,10 @@ class MentorApp extends React.Component {
       disclaimer: true,
       page: 0,
 
-      facebook: '',
-      linkedin: '',
-      phone: ''
+      high_school: '',
+      college: '',
+      major: '',
+
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -60,12 +63,12 @@ class MentorApp extends React.Component {
     this.handleNext = this.handleNext.bind(this);
   }
 
-  handleInputChange(event, pageNum = 0) {
+  handleInputChange(event, pageNum = this.state.page) {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
-    let nextState = merge({}, {0: this.state[0]}, {0: {[target.name]: value}});
+    let nextState = merge({}, {[pageNum]: this.state[pageNum]}, {[pageNum]: {[target.name]: value}});
     this.setState({
-      [pageNum]: nextState[0]
+      [pageNum]: nextState[pageNum]
     });
   }
 
