@@ -52337,10 +52337,7 @@ var MentorApp = function (_React$Component) {
         first_name: "",
         last_name: "",
         age: '',
-        email: '',
-        facebook: '',
-        linkedin: '',
-        phone: ''
+        email: ''
       },
       1: {
         city: '',
@@ -52369,7 +52366,11 @@ var MentorApp = function (_React$Component) {
       agree_terms: false,
       agree_terms_bad_click: false,
       disclaimer: true,
-      page: 1
+      page: 0,
+
+      facebook: '',
+      linkedin: '',
+      phone: ''
     };
 
     _this.handleInputChange = _this.handleInputChange.bind(_this);
@@ -52404,22 +52405,22 @@ var MentorApp = function (_React$Component) {
   }, {
     key: 'handleBack',
     value: function handleBack() {
-      if (this.state.page === 1) return;
+      if (this.state.page === 0) return;
       this.setState({ page: this.state.page - 1 });
     }
   }, {
     key: 'validate',
-    value: function validate(pageNum) {
+    value: function validate() {
       var pass = true;
       var _iteratorNormalCompletion = true;
       var _didIteratorError = false;
       var _iteratorError = undefined;
 
       try {
-        for (var _iterator = Object.keys(this.state[pageNum])[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        for (var _iterator = Object.keys(this.state[this.state.page])[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
           var key = _step.value;
 
-          if (this.state[pageNum][key] === '') {
+          if (this.state[this.state.page][key] === '') {
             pass = false;
           }
         }
@@ -52438,8 +52439,16 @@ var MentorApp = function (_React$Component) {
         }
       }
 
-      console.log(pass);
+      return pass;
     }
+  }, {
+    key: 'allValidate',
+    value: function allValidate() {
+      return false;
+    }
+  }, {
+    key: 'badNext',
+    value: function badNext() {}
   }, {
     key: 'handleNext',
     value: function handleNext() {
@@ -52454,17 +52463,17 @@ var MentorApp = function (_React$Component) {
       console.log(this.state);
       var page = function () {
         switch (_this2.state.page) {
+          case 0:
+            return _react2.default.createElement(_page2.default, { handleInputChange: _this2.handleInputChange, page: _this2.state[0] });
+            break;
           case 1:
-            return _react2.default.createElement(_page2.default, { handleInputChange: _this2.handleInputChange });
+            return _react2.default.createElement(_page4.default, { handleInputChange: _this2.handleInputChange, page: _this2.state[1] });
             break;
           case 2:
-            return _react2.default.createElement(_page4.default, { handleInputChange: _this2.handleInputChange });
+            return _react2.default.createElement(_page6.default, { handleInputChange: _this2.handleInputChange, page: _this2.state[2] });
             break;
           case 3:
-            return _react2.default.createElement(_page6.default, { handleInputChange: _this2.handleInputChange });
-            break;
-          case 4:
-            return _react2.default.createElement(_page8.default, { handleInputChange: _this2.handleInputChange });
+            return _react2.default.createElement(_page8.default, { handleInputChange: _this2.handleInputChange, page: _this2.state[3] });
             break;
           // case 5:
           //   <Page5 handleInputChange={this.handleInputChange}/>
@@ -52524,292 +52533,20 @@ var MentorApp = function (_React$Component) {
             { onClick: this.handleBack, className: 'btn-back' },
             'Back'
           ),
-          _react2.default.createElement(
+          this.validate() ? _react2.default.createElement(
             _reactBootstrap.Button,
             { onClick: this.handleNext, className: 'btn-next' },
             'Next'
+          ) : _react2.default.createElement(
+            _reactBootstrap.Button,
+            { onClick: this.badNext, disabled: true, className: 'btn-next' },
+            'Next'
           ),
-          _react2.default.createElement(
-            'label',
-            null,
-            _react2.default.createElement(
-              'p',
-              { className: 'asterix' },
-              '*'
-            ),
-            'City:',
-            _react2.default.createElement('input', {
-              name: 'city',
-              type: 'text',
-              value: this.state.city,
-              onChange: this.handleInputChange })
-          ),
-          _react2.default.createElement('br', null),
-          _react2.default.createElement(
-            'label',
-            null,
-            _react2.default.createElement(
-              'p',
-              { className: 'asterix' },
-              '*'
-            ),
-            'Country:',
-            _react2.default.createElement('input', {
-              name: 'country',
-              type: 'text',
-              value: this.state.country,
-              onChange: this.handleInputChange })
-          ),
-          _react2.default.createElement(
-            'label',
-            null,
-            'High School:',
-            _react2.default.createElement('input', {
-              name: 'high_school',
-              type: 'text',
-              value: this.state.high_school,
-              onChange: this.handleInputChange })
-          ),
-          _react2.default.createElement('br', null),
-          _react2.default.createElement(
-            'label',
-            null,
-            'College:',
-            _react2.default.createElement('input', {
-              name: 'college',
-              type: 'text',
-              value: this.state.college,
-              onChange: this.handleInputChange })
-          ),
-          _react2.default.createElement('br', null),
-          _react2.default.createElement(
-            'label',
-            null,
-            'What was your major?',
-            _react2.default.createElement('input', {
-              name: 'major',
-              type: 'text',
-              value: this.state.major,
-              onChange: this.handleInputChange })
-          ),
-          _react2.default.createElement('br', null),
-          _react2.default.createElement(
-            'label',
-            null,
-            'Employer:',
-            _react2.default.createElement('input', {
-              name: 'employer',
-              type: 'text',
-              value: this.state.employer,
-              onChange: this.handleInputChange })
-          ),
-          _react2.default.createElement('br', null),
-          _react2.default.createElement(
-            _reactBootstrap.FormGroup,
-            null,
-            _react2.default.createElement(
-              _reactBootstrap.ControlLabel,
-              null,
-              'How interested are you in giving career advice? *'
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.FormControl,
-              {
-                componentClass: 'select',
-                placeholder: 'select',
-                id: 'formControlsCareer',
-                name: 'career_advice_rank',
-                value: this.state.career_advice_rank,
-                onChange: this.handleInputChange
-              },
-              _react2.default.createElement(
-                'option',
-                { value: '0' },
-                'Not at all'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '1' },
-                'Slightly'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '2' },
-                'Moderately'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '3' },
-                'Extremely'
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'label',
-            null,
-            _react2.default.createElement(
-              'p',
-              { className: 'asterix' },
-              '*'
-            ),
-            'How interested are you in giving personal advice?',
-            _react2.default.createElement(
-              'select',
-              { name: 'personal_advice_rank', value: this.state.personal_advice_rank, onChange: this.handleInputChange },
-              _react2.default.createElement(
-                'option',
-                { value: '0' },
-                'Not at all'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '1' },
-                'Slightly'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '2' },
-                'Moderately'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '3' },
-                'Extremely'
-              )
-            )
-          ),
-          _react2.default.createElement('br', null),
-          _react2.default.createElement(
-            'label',
-            null,
-            _react2.default.createElement(
-              'p',
-              { className: 'asterix' },
-              '*'
-            ),
-            'How interested are you in providing motivation and inspiration for your mentees?',
-            _react2.default.createElement(
-              'select',
-              { name: 'motivation_rank', value: this.state.motivation_rank, onChange: this.handleInputChange },
-              _react2.default.createElement(
-                'option',
-                { value: '0' },
-                'Not at all'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '1' },
-                'Slightly'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '2' },
-                'Moderately'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '3' },
-                'Extremely'
-              )
-            )
-          ),
-          _react2.default.createElement('br', null),
-          _react2.default.createElement(
-            'label',
-            null,
-            'Would you prefer a mentee who has or desires to pursue your major?',
-            _react2.default.createElement(
-              'select',
-              { name: 'share_major_rank', value: this.state.share_major_rank, onChange: this.handleInputChange },
-              _react2.default.createElement(
-                'option',
-                { value: '0' },
-                'Not at all'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '1' },
-                'Slightly'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '2' },
-                'Moderately'
-              ),
-              _react2.default.createElement(
-                'option',
-                { value: '3' },
-                'Extremely'
-              )
-            )
-          ),
-          _react2.default.createElement('br', null),
-          _react2.default.createElement(
-            'label',
-            null,
-            'Write the Instagram bio you wish you had.',
-            _react2.default.createElement('textarea', { name: 'instagram_bio_text', value: this.state.instagram_bio_text, onChange: this.handleInputChange, rows: '10', cols: '30' })
-          ),
-          _react2.default.createElement('br', null),
-          _react2.default.createElement(
-            'label',
-            null,
-            'What\'s getting in the way of you having that dream Instagram bio?',
-            _react2.default.createElement('textarea', { name: 'instagram_bio_why_not_text', value: this.state.instagram_bio_why_not_text, onChange: this.handleInputChange, rows: '10', cols: '30' })
-          ),
-          _react2.default.createElement('br', null),
-          _react2.default.createElement(
-            'label',
-            null,
-            'Describe your personality:',
-            _react2.default.createElement('textarea', { name: 'personality_text', value: this.state.personality_text, onChange: this.handleInputChange, rows: '10', cols: '30' })
-          ),
-          _react2.default.createElement('br', null),
-          _react2.default.createElement(
-            'label',
-            null,
-            'What keeps you up at night?',
-            _react2.default.createElement('textarea', { name: 'night_text', value: this.state.night_text, onChange: this.handleInputChange, rows: '10', cols: '30' })
-          ),
-          _react2.default.createElement('br', null),
-          _react2.default.createElement(
-            'label',
-            null,
-            'What\'s one thing about you that we can\'t Google?',
-            _react2.default.createElement('textarea', { name: 'not_on_google_text', value: this.state.not_on_google_text, onChange: this.handleInputChange, rows: '10', cols: '30' })
-          ),
-          _react2.default.createElement('br', null),
-          _react2.default.createElement(
-            'label',
-            null,
-            'How do you aspire to make a positive impact on others?',
-            _react2.default.createElement('textarea', { name: 'how_impact_text', value: this.state.how_impact_text, onChange: this.handleInputChange, rows: '10', cols: '30' })
-          ),
-          _react2.default.createElement('br', null),
-          _react2.default.createElement(
-            'label',
-            null,
-            'Is there anything else you\'d like to add?',
-            _react2.default.createElement('textarea', { name: 'extra_info_text', value: this.state.extra_info_text, onChange: this.handleInputChange, rows: '10', cols: '30' })
-          ),
-          _react2.default.createElement('br', null),
-          'All mentors are required to set aside __ hours per month. Some other stuff that\'s needed. Blah blah etc. All of our communications happen over Facebook groups, so you must have a Facebook to be a GirlzFTW mentor.',
-          _react2.default.createElement('br', null),
-          _react2.default.createElement(
-            'label',
-            { style: { color: this.state.agree_terms_bad_click ? 'red' : 'black' } },
-            'I have read and agree to these requirements.',
-            _react2.default.createElement('input', {
-              name: 'agree_terms',
-              type: 'checkbox',
-              value: this.state.agree_terms,
-              onChange: this.handleInputChange })
-          ),
-          _react2.default.createElement(
+          this.allValidate() ? _react2.default.createElement(
             _reactBootstrap.Button,
             { bsStyle: 'success', type: 'submit' },
             'Apply'
-          )
+          ) : ""
         )
       );
     }
@@ -52877,6 +52614,7 @@ var Page1 = function (_React$Component) {
               id: 'formControlsUsername',
               type: 'text',
               name: 'username',
+              value: this.props.page.username,
               placeholder: '',
               onChange: this.props.handleInputChange
             })
@@ -52897,6 +52635,7 @@ var Page1 = function (_React$Component) {
               id: 'formControlsPassword',
               type: 'password',
               name: 'password',
+              value: this.props.page.password,
               placeholder: '',
               onChange: this.props.handleInputChange
             })
@@ -52917,6 +52656,7 @@ var Page1 = function (_React$Component) {
               id: 'formControlsFirstName',
               type: 'text',
               name: 'first_name',
+              value: this.props.page.first_name,
               onChange: this.props.handleInputChange
             })
           )
@@ -52936,6 +52676,7 @@ var Page1 = function (_React$Component) {
               id: 'formControlsLastName',
               type: 'text',
               name: 'last_name',
+              value: this.props.page.last_name,
               onChange: this.props.handleInputChange
             })
           )
@@ -52954,6 +52695,7 @@ var Page1 = function (_React$Component) {
             _react2.default.createElement(_reactBootstrap.FormControl, {
               id: 'formControlsAge',
               type: 'number',
+              value: this.props.page.age,
               name: 'age',
               onChange: this.props.handleInputChange
             })
@@ -52974,6 +52716,7 @@ var Page1 = function (_React$Component) {
               id: 'formControlsEmail',
               type: 'email',
               name: 'email',
+              value: this.props.page.email,
               onChange: this.props.handleInputChange
             })
           )

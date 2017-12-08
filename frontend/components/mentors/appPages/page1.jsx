@@ -19,6 +19,7 @@ class Page1 extends React.Component {
                 id="formControlsUsername"
                 type="text"
                 name="username"
+                value={this.props.page.username}
                 placeholder=""
                 onChange={this.props.handleInputChange}
                 />
@@ -33,6 +34,7 @@ class Page1 extends React.Component {
                 id="formControlsPassword"
                 type="password"
                 name="password"
+                value={this.props.page.password}
                 placeholder=""
                 onChange={this.props.handleInputChange}
                 />
@@ -47,6 +49,7 @@ class Page1 extends React.Component {
                 id="formControlsFirstName"
                 type="text"
                 name="first_name"
+                value={this.props.page.first_name}
                 onChange={this.props.handleInputChange}
                 />
             </Col>
@@ -60,6 +63,7 @@ class Page1 extends React.Component {
                 id="formControlsLastName"
                 type="text"
                 name="last_name"
+                value={this.props.page.last_name}
                 onChange={this.props.handleInputChange}
                 />
             </Col>
@@ -72,6 +76,7 @@ class Page1 extends React.Component {
               <FormControl
                 id="formControlsAge"
                 type="number"
+                value={this.props.page.age}
                 name="age"
                 onChange={this.props.handleInputChange}
                 />
@@ -86,6 +91,7 @@ class Page1 extends React.Component {
                 id="formControlsEmail"
                 type="email"
                 name="email"
+                value={this.props.page.email}
                 onChange={this.props.handleInputChange}
                 />
             </Col>
