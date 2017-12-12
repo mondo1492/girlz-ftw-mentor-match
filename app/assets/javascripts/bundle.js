@@ -55520,7 +55520,7 @@ var Page3 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
-            _react2.default.createElement('textarea', (_React$createElement = { id: 'formControlsTextarea', className: 'form-control' }, _defineProperty(_React$createElement, 'id', 'job_description'), _defineProperty(_React$createElement, 'name', 'job_description'), _defineProperty(_React$createElement, 'onChange', this.props.handleInputChange), _React$createElement))
+            _react2.default.createElement('textarea', (_React$createElement = { id: 'formControlsTextarea', value: this.props.page.job_description, className: 'form-control' }, _defineProperty(_React$createElement, 'id', 'job_description'), _defineProperty(_React$createElement, 'name', 'job_description'), _defineProperty(_React$createElement, 'onChange', this.props.handleInputChange), _React$createElement))
           )
         )
       );

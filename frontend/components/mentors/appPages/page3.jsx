@@ -111,7 +111,7 @@ class Page3 extends React.Component {
           </Row>
           <Row>
             <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-              <textarea id='formControlsTextarea' className="form-control" id="job_description" name="job_description" onChange={this.props.handleInputChange}/>
+              <textarea id='formControlsTextarea' value={this.props.page.job_description} className="form-control" id="job_description" name="job_description" onChange={this.props.handleInputChange}/>
             </Col>
           </Row>
 
