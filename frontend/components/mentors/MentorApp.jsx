@@ -44,11 +44,26 @@ class MentorApp extends React.Component {
         how_impact_text: '',
         extra_info_text: ''
       },
+<<<<<<< HEAD
       career_advice_rank: '',
       personal_advice_rank: '',
       motivation_rank: '',
       instagram_bio_text: '',
       instagram_bio_why_not_text: '',
+=======
+      4: {
+        q1: '',
+        q2: '',
+        q3: '',
+        q4: '',
+        q5: '',
+        q6: '',
+        q7: '',
+        q8: '',
+        q9: '',
+        q10: ''
+      },
+>>>>>>> 789c9cf0c32a4a681baf2a77e858ef20bd48bf11
       agree_terms: false,
       agree_terms_bad_click: false,
       disclaimer: true,
