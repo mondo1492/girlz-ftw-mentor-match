@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Row, Col, Form, Button, Panel, InputGroup, FormControl, ControlLabel, FormGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Grid, Row, Col, Form, Radio, Button, Panel, InputGroup, FormControl, ControlLabel, FormGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 import Select from 'react-select';
 
@@ -34,27 +34,79 @@ class Page3 extends React.Component {
           </FormGroup>
 
           <FormGroup>
-          <ControlLabel>
-            What was your college major? *
-          </ControlLabel>
-          <Select
-            name="major"
-            value={this.props.page.major}
-            onChange={(value) => this.props.handleMultiChange(value, 'major')}
-            multi
-            delimiter="|"
-            simpleValue
-            joinValues
-            options={[
-              { value: 'Science', label: 'Science' },
-              { value: 'Engineering', label: 'Engineering' },
-              { value: 'Communcations, Marketing', label: 'Communcations, Marketing' },
-              { value: 'Political Science, International Relations', label: 'Political Science, International Relations' },
-              { value: 'Finance, Economics', label: 'Finance, Economics' },
-              { value: 'Liberal Arts', label: 'Liberal Arts' }
-            ]}
-          />
-        </FormGroup>
+            <ControlLabel>
+              What was your college major? *
+            </ControlLabel>
+            <Select
+              name="major"
+              value={this.props.page.major}
+              onChange={(value) => this.props.handleMultiChange(value, 'major')}
+              multi
+              delimiter="|"
+              simpleValue
+              joinValues
+              options={[
+                { value: 'Science', label: 'Science' },
+                { value: 'Engineering', label: 'Engineering' },
+                { value: 'Communcations, Marketing', label: 'Communcations, Marketing' },
+                { value: 'Political Science, International Relations', label: 'Political Science, International Relations' },
+                { value: 'Finance, Economics', label: 'Finance, Economics' },
+                { value: 'Liberal Arts', label: 'Liberal Arts' }
+              ]}
+            />
+          </FormGroup>
+
+          <FormGroup>
+            <ControlLabel>
+              How important is it to you that a mentee share your major? *
+            </ControlLabel>
+
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_major_rank"
+              value='0'
+              checked={this.props.page.share_major_rank === '0'}
+              inline
+              >
+              Not at all
+            </Radio>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_major_rank"
+              value='1'
+              checked={this.props.page.share_major_rank === '1'}
+              inline
+              >
+              A little
+            </Radio>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_major_rank"
+              value='2'
+              checked={this.props.page.share_major_rank === '2'}
+              inline
+              >
+              Moderately
+            </Radio>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_major_rank"
+              value='3'
+              checked={this.props.page.share_major_rank === '3'}
+              inline
+              >
+              Very
+            </Radio>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_major_rank"
+              value='4'
+              checked={this.props.page.share_major_rank === '4'}
+              inline
+              >
+              Extremely
+            </Radio>
+          </FormGroup>
 
 
           <FormGroup>
@@ -101,6 +153,58 @@ class Page3 extends React.Component {
               { value: 'Agriculture, Forestry, Fishing', label: 'Agriculture, Forestry, Fishing' }
             ]}
           />
+
+          <FormGroup>
+            <ControlLabel>
+              How important is it to you that a mentee would want to join your industry? *
+            </ControlLabel>
+
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_industry_rank"
+              value='0'
+              checked={this.props.page.share_industry_rank === '0'}
+              inline
+              >
+              Not at all
+            </Radio>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_industry_rank"
+              value='1'
+              checked={this.props.page.share_industry_rank === '1'}
+              inline
+              >
+              A little
+            </Radio>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_industry_rank"
+              value='2'
+              checked={this.props.page.share_industry_rank === '2'}
+              inline
+              >
+              Moderately
+            </Radio>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_industry_rank"
+              value='3'
+              checked={this.props.page.share_industry_rank === '3'}
+              inline
+              >
+              Very
+            </Radio>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_industry_rank"
+              value='4'
+              checked={this.props.page.share_industry_rank === '4'}
+              inline
+              >
+              Extremely
+            </Radio>
+          </FormGroup>
 
           <Row>
             <Col className="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">

@@ -64,7 +64,6 @@ class MentorApp extends React.Component {
       instagram_bio_text: '',
       major: '',
     };
-          console.log(this.state[2].major);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleMultiChange = this.handleMultiChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
