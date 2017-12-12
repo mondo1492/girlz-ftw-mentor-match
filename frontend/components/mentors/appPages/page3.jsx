@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Row, Col, Form, Button, Panel, InputGroup, FormControl, ControlLabel, FormGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Grid, Row, Col, Form, Radio, Button, Panel, InputGroup, FormControl, ControlLabel, FormGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 import Select from 'react-select';
 
@@ -57,25 +57,30 @@ class Page3 extends React.Component {
             />
           </Col>
         </FormGroup>
-        <FormGroup>
-          <Col componentClass={ControlLabel} sm={3}>
-            Employer *
-          </Col>
-          <Col sm={8}>
-            <InputGroup>
-              <InputGroup.Addon>
-                <FontAwesome name='handshake-o'/>
-              </InputGroup.Addon>
-              <FormControl
-                id="formControlsEmployer"
-                type="text"
-                name="employer"
-                value={this.props.page.employer}
-                onChange={this.props.handleInputChange}
-                />
-            </InputGroup>
-          </Col>
-        </FormGroup>
+
+
+
+
+
+          <FormGroup>
+            <Col componentClass={ControlLabel} sm={3}>
+              Employer *
+            </Col>
+            <Col sm={8}>
+              <InputGroup>
+                <InputGroup.Addon>
+                  <FontAwesome name='handshake-o'/>
+                </InputGroup.Addon>
+                <FormControl
+                  id="formControlsEmployer"
+                  type="text"
+                  name="employer"
+                  value={this.props.page.employer}
+                  onChange={this.props.handleInputChange}
+                  />
+              </InputGroup>
+            </Col>
+          </FormGroup>
 
         <FormGroup>
           <Col componentClass={ControlLabel} sm={3}>
@@ -105,14 +110,129 @@ class Page3 extends React.Component {
             />
           </Col>
         </FormGroup>
+
         <FormGroup >
-          <Col componentClass={ControlLabel} sm={3}>
-            Describe your job.
-          </Col>
-          <Col sm={8}>
-              <textarea style={{ height: 150 }} id='formControlsTextarea' value={this.props.page.job_description} className="form-control" id="job_description" name="job_description" onChange={this.props.handleInputChange}/>
+          <Col className='centerForm' componentClass={ControlLabel} sm={12}>
+            How important is it to you that a mentee share your major? *
           </Col>
         </FormGroup>
+
+        <FormGroup>
+          <Col className='centerForm' sm={12}>
+            <div>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_major_rank"
+              value='0'
+              checked={this.props.page.share_major_rank === '0'}
+              inline
+              >
+              Not at all
+            </Radio>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_major_rank"
+              value='1'
+              checked={this.props.page.share_major_rank === '1'}
+              inline
+              >
+              A little
+            </Radio>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_major_rank"
+              value='2'
+              checked={this.props.page.share_major_rank === '2'}
+              inline
+              >
+              Moderately
+            </Radio>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_major_rank"
+              value='3'
+              checked={this.props.page.share_major_rank === '3'}
+              inline
+              >
+              Very
+            </Radio>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_major_rank"
+              value='4'
+              checked={this.props.page.share_major_rank === '4'}
+              inline
+              >
+              Extremely
+            </Radio>
+            </div>
+          </Col>
+        </FormGroup>
+
+        <FormGroup >
+          <Col className='centerForm' componentClass={ControlLabel} sm={12}>
+              How important is it to you that a mentee would want to join your industry? *
+          </Col>
+        </FormGroup>
+
+          <FormGroup className='centerForm' sm={12}>
+            <div>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_industry_rank"
+              value='0'
+              checked={this.props.page.share_industry_rank === '0'}
+              inline
+              >
+              Not at all
+            </Radio>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_industry_rank"
+              value='1'
+              checked={this.props.page.share_industry_rank === '1'}
+              inline
+              >
+              A little
+            </Radio>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_industry_rank"
+              value='2'
+              checked={this.props.page.share_industry_rank === '2'}
+              inline
+              >
+              Moderately
+            </Radio>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_industry_rank"
+              value='3'
+              checked={this.props.page.share_industry_rank === '3'}
+              inline
+              >
+              Very
+            </Radio>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_industry_rank"
+              value='4'
+              checked={this.props.page.share_industry_rank === '4'}
+              inline
+              >
+              Extremely
+            </Radio>
+            </div>
+          </FormGroup>
+
+          <FormGroup>
+            <Col componentClass={ControlLabel} sm={3}>
+              Describe your job.
+            </Col>
+            <Col sm={8}>
+                <textarea style={{ height: 100 }} id='formControlsTextarea' value={this.props.page.job_description} className="form-control" id="job_description" name="job_description" onChange={this.props.handleInputChange}/>
+            </Col>
+          </FormGroup>
 
         </div>
       )

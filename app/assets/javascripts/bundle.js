@@ -55877,13 +55877,161 @@ var Page3 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
+            { className: 'centerForm', componentClass: _reactBootstrap.ControlLabel, sm: 12 },
+            'How important is it to you that a mentee share your major? *'
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { className: 'centerForm', sm: 12 },
+            _react2.default.createElement(
+              'div',
+              null,
+              _react2.default.createElement(
+                _reactBootstrap.Radio,
+                {
+                  onChange: this.props.handleInputChange,
+                  name: 'share_major_rank',
+                  value: '0',
+                  checked: this.props.page.share_major_rank === '0',
+                  inline: true
+                },
+                'Not at all'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.Radio,
+                {
+                  onChange: this.props.handleInputChange,
+                  name: 'share_major_rank',
+                  value: '1',
+                  checked: this.props.page.share_major_rank === '1',
+                  inline: true
+                },
+                'A little'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.Radio,
+                {
+                  onChange: this.props.handleInputChange,
+                  name: 'share_major_rank',
+                  value: '2',
+                  checked: this.props.page.share_major_rank === '2',
+                  inline: true
+                },
+                'Moderately'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.Radio,
+                {
+                  onChange: this.props.handleInputChange,
+                  name: 'share_major_rank',
+                  value: '3',
+                  checked: this.props.page.share_major_rank === '3',
+                  inline: true
+                },
+                'Very'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.Radio,
+                {
+                  onChange: this.props.handleInputChange,
+                  name: 'share_major_rank',
+                  value: '4',
+                  checked: this.props.page.share_major_rank === '4',
+                  inline: true
+                },
+                'Extremely'
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { className: 'centerForm', componentClass: _reactBootstrap.ControlLabel, sm: 12 },
+            'How important is it to you that a mentee would want to join your industry? *'
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          { className: 'centerForm', sm: 12 },
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+              _reactBootstrap.Radio,
+              {
+                onChange: this.props.handleInputChange,
+                name: 'share_industry_rank',
+                value: '0',
+                checked: this.props.page.share_industry_rank === '0',
+                inline: true
+              },
+              'Not at all'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Radio,
+              {
+                onChange: this.props.handleInputChange,
+                name: 'share_industry_rank',
+                value: '1',
+                checked: this.props.page.share_industry_rank === '1',
+                inline: true
+              },
+              'A little'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Radio,
+              {
+                onChange: this.props.handleInputChange,
+                name: 'share_industry_rank',
+                value: '2',
+                checked: this.props.page.share_industry_rank === '2',
+                inline: true
+              },
+              'Moderately'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Radio,
+              {
+                onChange: this.props.handleInputChange,
+                name: 'share_industry_rank',
+                value: '3',
+                checked: this.props.page.share_industry_rank === '3',
+                inline: true
+              },
+              'Very'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Radio,
+              {
+                onChange: this.props.handleInputChange,
+                name: 'share_industry_rank',
+                value: '4',
+                checked: this.props.page.share_industry_rank === '4',
+                inline: true
+              },
+              'Extremely'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
             { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
             'Describe your job.'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
             { sm: 8 },
-            _react2.default.createElement('textarea', (_React$createElement = { style: { height: 150 }, id: 'formControlsTextarea', value: this.props.page.job_description, className: 'form-control' }, _defineProperty(_React$createElement, 'id', 'job_description'), _defineProperty(_React$createElement, 'name', 'job_description'), _defineProperty(_React$createElement, 'onChange', this.props.handleInputChange), _React$createElement))
+            _react2.default.createElement('textarea', (_React$createElement = { style: { height: 100 }, id: 'formControlsTextarea', value: this.props.page.job_description, className: 'form-control' }, _defineProperty(_React$createElement, 'id', 'job_description'), _defineProperty(_React$createElement, 'name', 'job_description'), _defineProperty(_React$createElement, 'onChange', this.props.handleInputChange), _React$createElement))
           )
         )
       );
