@@ -67,9 +67,7 @@ class MentorApp extends React.Component {
 
   handleMultiChange(value, name, pageNum = this.state.page) {
     let nextState = merge({}, {[pageNum]: this.state[pageNum]}, {[pageNum]: {[name]: value}});
-    this.setState({ [pageNum]: nextState[pageNum] }, () => {
-      console.log(this.state);
-    });
+    this.setState({ [pageNum]: nextState[pageNum] });
   }
 
   handleInputChange(event, pageNum = this.state.page) {
