@@ -54781,11 +54781,8 @@ var MentorApp = function (_React$Component) {
         job_description: 'friggen sick'
       },
       3: {
-        personality_text: '',
-        night_text: '',
-        not_on_google_text: '',
-        how_impact_text: '',
-        extra_info_text: ''
+        unblock_methods: '',
+        provide: ''
       },
 
       4: {
@@ -54825,6 +54822,7 @@ var MentorApp = function (_React$Component) {
     value: function handleMultiChange(value, name) {
       var pageNum = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : this.state.page;
 
+      if (value.split("|").length === 4) return;
       var nextState = (0, _merge6.default)({}, _defineProperty({}, pageNum, this.state[pageNum]), _defineProperty({}, pageNum, _defineProperty({}, name, value)));
       this.setState(_defineProperty({}, pageNum, nextState[pageNum]));
     }
@@ -54927,7 +54925,10 @@ var MentorApp = function (_React$Component) {
               handleMultiChange: _this3.handleMultiChange, handleInputChange: _this3.handleInputChange, page: _this3.state[2] });
             break;
           case 3:
-            return _react2.default.createElement(_page8.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[3] });
+            return _react2.default.createElement(_page8.default, {
+              handleInputChange: _this3.handleInputChange,
+              handleMultiChange: _this3.handleMultiChange,
+              page: _this3.state[3] });
             break;
           case 4:
             return _react2.default.createElement(_page10.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[4] });
@@ -55403,7 +55404,7 @@ var Page3 = function (_React$Component) {
           _React$createElement;
 
       return _react2.default.createElement(
-        'div',
+        _reactBootstrap.Grid,
         null,
         _react2.default.createElement(
           _reactBootstrap.FormGroup,
@@ -55506,7 +55507,7 @@ var Page3 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
+            { className: 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
             _react2.default.createElement(
               'label',
               { 'text-align': 'left' },
@@ -55519,7 +55520,7 @@ var Page3 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
+            { className: 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
             _react2.default.createElement('textarea', (_React$createElement = { id: 'formControlsTextarea', value: this.props.page.job_description, className: 'form-control' }, _defineProperty(_React$createElement, 'id', 'job_description'), _defineProperty(_React$createElement, 'name', 'job_description'), _defineProperty(_React$createElement, 'onChange', this.props.handleInputChange), _React$createElement))
           )
         )
@@ -55555,6 +55556,10 @@ var _reactFontawesome = __webpack_require__(40);
 
 var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
 
+var _reactSelect = __webpack_require__(554);
+
+var _reactSelect2 = _interopRequireDefault(_reactSelect);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -55578,6 +55583,9 @@ var Page4 = function (_React$Component) {
   _createClass(Page4, [{
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
+      var maxOptions = [];
       return _react2.default.createElement(
         'div',
         null,
@@ -55586,180 +55594,35 @@ var Page4 = function (_React$Component) {
           null,
           'We all get in the way of our own success. Which of the following methods do you think you\u2019ve managed to get under control in order to unblock your road to success? (Select the top 3)'
         ),
+        _react2.default.createElement(_reactSelect2.default, {
+          name: 'unblock_methods',
+          value: this.props.page.unblock_methods,
+          onChange: function onChange(value) {
+            return _this2.props.handleMultiChange(value, 'unblock_methods');
+          },
+          multi: true,
+          delimiter: '|',
+          simpleValue: true,
+          joinValues: true,
+          options: [{ value: 'Procrastination', label: 'Procrastination' }, { value: 'Controlling life, people', label: 'Controlling life, people' }, { value: 'Indecision', label: 'Indecision' }, { value: 'Not saying \'yes\'; holding back; not being proactive in seeing opportunities', label: 'Not saying \'yes\'; holding back; not being proactive in seeing opportunities' }, { value: 'Wanting to be right', label: 'Wanting to be right' }, { value: 'Following the goals of other people', label: 'Following the goals of other people' }, { value: 'Acting as \'lone ranger\'; not delegating', label: 'Acting as \'lone ranger\'; not delegating' }, { value: 'Not saying \'no\' to projects that don\'t inspire you', label: 'Not saying \'no\' to projects that don\'t inspire you' }]
+        }),
         _react2.default.createElement(
-          _reactBootstrap.FormGroup,
+          'h2',
           null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
-            'Username *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 3 },
-            _react2.default.createElement(_reactBootstrap.FormControl, {
-              id: 'formControlsUsername',
-              type: 'text',
-              name: 'username',
-              placeholder: '',
-              onChange: this.props.handleInputChange
-            })
-          )
+          'What are you most excited to provide \\/ be for your mentee? (Select the top 3)'
         ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
-            'Password *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 3 },
-            _react2.default.createElement(_reactBootstrap.FormControl, {
-              id: 'formControlsPassword',
-              type: 'password',
-              name: 'password',
-              placeholder: '',
-              onChange: this.props.handleInputChange
-            })
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
-            'First Name *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 3 },
-            _react2.default.createElement(_reactBootstrap.FormControl, {
-              id: 'formControlsFirstName',
-              type: 'text',
-              name: 'first_name',
-              onChange: this.props.handleInputChange
-            })
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
-            'Last Name *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 3 },
-            _react2.default.createElement(_reactBootstrap.FormControl, {
-              id: 'formControlsLastName',
-              type: 'text',
-              name: 'last_name',
-              onChange: this.props.handleInputChange
-            })
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
-            'Age *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 3 },
-            _react2.default.createElement(_reactBootstrap.FormControl, {
-              id: 'formControlsAge',
-              type: 'number',
-              name: 'age',
-              onChange: this.props.handleInputChange
-            })
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
-            'Email *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 3 },
-            _react2.default.createElement(_reactBootstrap.FormControl, {
-              id: 'formControlsEmail',
-              type: 'email',
-              name: 'email',
-              onChange: this.props.handleInputChange
-            })
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
-            'Facebook *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 3 },
-            _react2.default.createElement(_reactBootstrap.FormControl, {
-              id: 'formControlsFacebook',
-              type: 'text',
-              name: 'facebook',
-              onChange: this.props.handleInputChange
-            })
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
-            'LinkedIn *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 3 },
-            _react2.default.createElement(_reactBootstrap.FormControl, {
-              id: 'formControlsLinkedIn',
-              type: 'text',
-              name: 'LinkedIn',
-              onChange: this.props.handleInputChange
-            })
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
-            'Phone *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 3 },
-            _react2.default.createElement(_reactBootstrap.FormControl, {
-              id: 'formControlsPhone',
-              type: 'text',
-              name: 'phone',
-              placeholder: '8001234567',
-              onChange: this.props.handleInputChange
-            })
-          )
-        )
+        _react2.default.createElement(_reactSelect2.default, {
+          name: 'provide',
+          value: this.props.page.provide,
+          onChange: function onChange(value) {
+            return _this2.props.handleMultiChange(value, 'provide');
+          },
+          multi: true,
+          delimiter: '|',
+          simpleValue: true,
+          joinValues: true,
+          options: [{ value: 'Challenge', label: 'Challenge' }, { value: 'Accountability', label: 'Accountability' }, { value: 'Sounding Board', label: 'Sounding Board' }, { value: 'Provide focus and direction', label: 'Provide focus and direction' }, { value: 'Inspiration', label: 'Inspiration' }, { value: 'Ideas, Innovation, and Strategy for new projects', label: 'Ideas, Innovation, and Strategy for new projects' }, { value: 'Confidence booster; provide validation', label: 'Confidence booster; provide validation' }, { value: 'Not saying \'no\' to projects that don\'t inspire you', label: 'Not saying \'no\' to projects that don\'t inspire you' }]
+        })
       );
     }
   }]);

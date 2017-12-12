@@ -1,6 +1,7 @@
 import React from 'react';
 import { Col, Form, Button, Panel, FormControl, InputGroup, ControlLabel, FormGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
+import Select from 'react-select';
 
 
 class Page4 extends React.Component {
@@ -11,6 +12,7 @@ class Page4 extends React.Component {
       }
     }
     render() {
+      const maxOptions = [];
       return(
         <div>
           <h2>We all get in the way of our own success.
@@ -18,126 +20,48 @@ class Page4 extends React.Component {
             to get under control in order to unblock your road to success?
             (Select the top 3)
           </h2>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              Username *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsUsername"
-                type="text"
-                name="username"
-                placeholder=""
-                onChange={this.props.handleInputChange}
-                />
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              Password *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsPassword"
-                type="password"
-                name="password"
-                placeholder=""
-                onChange={this.props.handleInputChange}
-                />
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              First Name *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsFirstName"
-                type="text"
-                name="first_name"
-                onChange={this.props.handleInputChange}
-                />
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              Last Name *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsLastName"
-                type="text"
-                name="last_name"
-                onChange={this.props.handleInputChange}
-                />
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              Age *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsAge"
-                type="number"
-                name="age"
-                onChange={this.props.handleInputChange}
-                />
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              Email *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsEmail"
-                type="email"
-                name="email"
-                onChange={this.props.handleInputChange}
-                />
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              Facebook *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsFacebook"
-                type="text"
-                name="facebook"
-                onChange={this.props.handleInputChange}
-                />
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              LinkedIn *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsLinkedIn"
-                type="text"
-                name="LinkedIn"
-                onChange={this.props.handleInputChange}
-                />
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              Phone *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsPhone"
-                type="text"
-                name="phone"
-                placeholder="8001234567"
-                onChange={this.props.handleInputChange}
-                />
-            </Col>
-          </FormGroup>
+          <Select
+            name="unblock_methods"
+            value={this.props.page.unblock_methods}
+            onChange={(value) => this.props.handleMultiChange(value, 'unblock_methods')}
+            multi
+            delimiter="|"
+            simpleValue
+            joinValues
+            options={[
+              { value: 'Procrastination', label: 'Procrastination' },
+              { value: 'Controlling life, people', label: 'Controlling life, people' },
+              { value: 'Indecision', label: 'Indecision' },
+              { value: 'Not saying \'yes\'; holding back; not being proactive in seeing opportunities', label: 'Not saying \'yes\'; holding back; not being proactive in seeing opportunities' },
+              { value: 'Wanting to be right', label: 'Wanting to be right' },
+              { value: 'Following the goals of other people', label: 'Following the goals of other people' },
+              { value: 'Acting as \'lone ranger\'; not delegating', label: 'Acting as \'lone ranger\'; not delegating' },
+              { value: 'Not saying \'no\' to projects that don\'t inspire you', label: 'Not saying \'no\' to projects that don\'t inspire you' },
+            ]}
+          />
+
+        <h2>What are you most excited to provide \/ be for your mentee?
+          (Select the top 3)
+          </h2>
+          <Select
+            name="provide"
+            value={this.props.page.provide}
+            onChange={(value) => this.props.handleMultiChange(value, 'provide')}
+            multi
+            delimiter="|"
+            simpleValue
+            joinValues
+            options={[
+              { value: 'Challenge', label: 'Challenge' },
+              { value: 'Accountability', label: 'Accountability' },
+              { value: 'Sounding Board', label: 'Sounding Board' },
+              { value: 'Provide focus and direction', label: 'Provide focus and direction' },
+              { value: 'Inspiration', label: 'Inspiration' },
+              { value: 'Ideas, Innovation, and Strategy for new projects', label: 'Ideas, Innovation, and Strategy for new projects' },
+              { value: 'Confidence booster; provide validation', label: 'Confidence booster; provide validation' },
+              { value: 'Not saying \'no\' to projects that don\'t inspire you', label: 'Not saying \'no\' to projects that don\'t inspire you' },
+            ]}
+          />
         </div>
       )
     }

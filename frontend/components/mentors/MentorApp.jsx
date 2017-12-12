@@ -39,11 +39,8 @@ class MentorApp extends React.Component {
         job_description: 'friggen sick',
       },
       3: {
-        personality_text: '',
-        night_text: '',
-        not_on_google_text: '',
-        how_impact_text: '',
-        extra_info_text: ''
+        unblock_methods: '',
+        provide: '',
       },
 
 
@@ -79,6 +76,7 @@ class MentorApp extends React.Component {
   }
 
   handleMultiChange(value, name, pageNum = this.state.page) {
+    if (value.split("|").length === 4) return;
     let nextState = merge({}, {[pageNum]: this.state[pageNum]}, {[pageNum]: {[name]: value}});
     this.setState({ [pageNum]: nextState[pageNum] });
   }
@@ -148,7 +146,10 @@ class MentorApp extends React.Component {
             handleMultiChange={this.handleMultiChange} handleInputChange={this.handleInputChange} page={this.state[2]}/>
           break;
         case 3:
-          return <Page4 handleInputChange={this.handleInputChange} page={this.state[3]}/>
+          return <Page4
+            handleInputChange={this.handleInputChange}
+            handleMultiChange={this.handleMultiChange}
+            page={this.state[3]}/>
           break;
         case 4:
           return <Page5 handleInputChange={this.handleInputChange} page={this.state[4]}/>
