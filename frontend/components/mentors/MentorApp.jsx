@@ -30,6 +30,7 @@ class MentorApp extends React.Component {
         employer: 'Yo mama',
       },
       2: {
+        major: '',
         career_advice_rank: '',
         personal_advice_rank: '',
         motivation_rank: '',
@@ -57,9 +58,17 @@ class MentorApp extends React.Component {
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleMultiChange = this.handleMultiChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleBack = this.handleBack.bind(this);
     this.handleNext = this.handleNext.bind(this);
+  }
+
+  handleMultiChange(value, name, pageNum = this.state.page) {
+    let nextState = merge({}, {[pageNum]: this.state[pageNum]}, {[pageNum]: {[name]: value}});
+    this.setState({ [pageNum]: nextState[pageNum] }, () => {
+      console.log(this.state);
+    });
   }
 
   handleInputChange(event, pageNum = this.state.page) {
@@ -125,7 +134,6 @@ class MentorApp extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     let page = (() => {
       switch (this.state.page) {
         case 0:
@@ -135,7 +143,8 @@ class MentorApp extends React.Component {
           return <Page2 handleInputChange={this.handleInputChange} page={this.state[1]}/>
           break;
         case 2:
-          return <Page3 handleInputChange={this.handleInputChange} page={this.state[2]}/>
+          return <Page3
+            handleMultiChange={this.handleMultiChange} handleInputChange={this.handleInputChange} page={this.state[2]}/>
           break;
         case 3:
           return <Page4 handleInputChange={this.handleInputChange} page={this.state[3]}/>

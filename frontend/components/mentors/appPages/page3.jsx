@@ -1,35 +1,58 @@
 import React from 'react';
 import { Col, Form, Button, Panel, InputGroup, FormControl, ControlLabel, FormGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
+import Select from 'react-select';
 
 
 class Page3 extends React.Component {
     constructor(props) {
       super(props);
     }
+
+    handleTest(something) {
+      console.log(something);
+    }
+
     render() {
+      // <FormControl
+      //   componentClass="select"
+      //   multiple
+      //   placeholder="select multiple if applicable"
+      //   id="formControlsMajor"
+      //   name="major"
+      //   onChange={this.props.handleInputChange}
+      //   >
+      //   <option value="Science">Science</option>
+      //   <option value="Engineering">Engineering</option>
+      //   <option value="Communications, Marketing">Communications, Marketing</option>
+      //   <option value="Political Science, International Relations">Political Science, International Relations</option>
+      //   <option value="Finance, Economics">Finance, Economics</option>
+      //   <option value="Arts">Arts</option>
+      // </FormControl>
       return(
         <div>
 
-          <FormGroup>
             <ControlLabel>
               What was your college major? *
             </ControlLabel>
-            <FormControl
-              componentClass="select"
-              placeholder="select"
-              id="formControlsMajor"
+
+            <Select
               name="major"
-              onChange={this.handleInputChange}
-            >
-              <option value="Science">Science</option>
-              <option value="Engineering">Engineering</option>
-              <option value="Communications, Marketing">Communications, Marketing</option>
-              <option value="Political Science, International Relations">Political Science, International Relations</option>
-              <option value="Finance, Economics">Finance, Economics</option>
-              <option value="Arts">Arts</option>
-            </FormControl>
-          </FormGroup>
+              value={this.props.page.major}
+              onChange={(value) => this.props.handleMultiChange(value, name)}
+              multi
+              delimiter="|"
+              simpleValue
+              joinValues
+              options={[
+                { value: 'Science', label: 'Science' },
+                { value: 'Engineering', label: 'Engineering' },
+                { value: 'Communcations, Marketing', label: 'Communcations, Marketing' },
+                { value: 'Political Science, International Relations', label: 'Political Science, International Relations' },
+                { value: 'Finance, Economics', label: 'Finance, Economics' },
+                { value: 'Liberal Arts', label: 'Liberal Arts' }
+              ]}
+            />
 
           <FormGroup>
             <ControlLabel>
