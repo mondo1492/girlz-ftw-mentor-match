@@ -66,9 +66,7 @@ class MentorApp extends React.Component {
 
   handleMultiChange(value, name, pageNum = this.state.page) {
     let nextState = merge({}, {[pageNum]: this.state[pageNum]}, {[pageNum]: {[name]: value}});
-    this.setState({ [pageNum]: nextState[pageNum] }, () => {
-      console.log(this.state);
-    });
+    this.setState({ [pageNum]: nextState[pageNum] });
   }
 
   handleInputChange(event, pageNum = this.state.page) {
@@ -78,17 +76,6 @@ class MentorApp extends React.Component {
     this.setState({
       [pageNum]: nextState[pageNum]
     });
-  }
-
-  handleFormSubmit(event) {
-    event.preventDefault();
-    if (this.state.agree_terms) {
-      console.log("success");
-    } else {
-      this.setState({agree_terms_bad_click: true}, () => {
-        console.log('failure');
-      });
-    }
   }
 
   handleFormSubmit(event) {

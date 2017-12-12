@@ -52541,14 +52541,10 @@ var MentorApp = function (_React$Component) {
   _createClass(MentorApp, [{
     key: 'handleMultiChange',
     value: function handleMultiChange(value, name) {
-      var _this2 = this;
-
       var pageNum = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : this.state.page;
 
       var nextState = (0, _merge6.default)({}, _defineProperty({}, pageNum, this.state[pageNum]), _defineProperty({}, pageNum, _defineProperty({}, name, value)));
-      this.setState(_defineProperty({}, pageNum, nextState[pageNum]), function () {
-        console.log(_this2.state);
-      });
+      this.setState(_defineProperty({}, pageNum, nextState[pageNum]));
     }
   }, {
     key: 'handleInputChange',
@@ -52563,26 +52559,14 @@ var MentorApp = function (_React$Component) {
   }, {
     key: 'handleFormSubmit',
     value: function handleFormSubmit(event) {
-      event.preventDefault();
-      if (this.state.agree_terms) {
-        console.log("success");
-      } else {
-        this.setState({ agree_terms_bad_click: true }, function () {
-          console.log('failure');
-        });
-      }
-    }
-  }, {
-    key: 'handleFormSubmit',
-    value: function handleFormSubmit(event) {
-      var _this3 = this;
+      var _this2 = this;
 
       event.preventDefault();
       if (this.state.agree_terms) {
         console.log("success");
 
         this.props.createMentor(this.state).then(function () {
-          return _this3.props.history.push('/');
+          return _this2.props.history.push('/');
         });
       } else {
         this.setState({ agree_terms_bad_click: true }, function () {
@@ -52646,25 +52630,25 @@ var MentorApp = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this4 = this;
+      var _this3 = this;
 
       var page = function () {
-        switch (_this4.state.page) {
+        switch (_this3.state.page) {
           case 0:
-            return _react2.default.createElement(_page2.default, { handleInputChange: _this4.handleInputChange, page: _this4.state[0] });
+            return _react2.default.createElement(_page2.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[0] });
             break;
           case 1:
-            return _react2.default.createElement(_page4.default, { handleInputChange: _this4.handleInputChange, page: _this4.state[1] });
+            return _react2.default.createElement(_page4.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[1] });
             break;
           case 2:
             return _react2.default.createElement(_page6.default, {
-              handleMultiChange: _this4.handleMultiChange, handleInputChange: _this4.handleInputChange, page: _this4.state[2] });
+              handleMultiChange: _this3.handleMultiChange, handleInputChange: _this3.handleInputChange, page: _this3.state[2] });
             break;
           case 3:
-            return _react2.default.createElement(_page8.default, { handleInputChange: _this4.handleInputChange, page: _this4.state[3] });
+            return _react2.default.createElement(_page8.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[3] });
             break;
           case 4:
-            return _react2.default.createElement(_page10.default, { handleInputChange: _this4.handleInputChange, page: _this4.state[4] });
+            return _react2.default.createElement(_page10.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[4] });
             break;
         }
       }();
@@ -52708,7 +52692,7 @@ var MentorApp = function (_React$Component) {
         _react2.default.createElement(
           _reactBootstrap.Button,
           { bsStyle: 'warning', onClick: function onClick() {
-              return _this4.setState({ disclaimer: !_this4.state.disclaimer });
+              return _this3.setState({ disclaimer: !_this3.state.disclaimer });
             } },
           'Toggle Disclaimer'
         ),
@@ -53216,30 +53200,10 @@ var Page3 = function (_React$Component) {
   }
 
   _createClass(Page3, [{
-    key: 'handleTest',
-    value: function handleTest(something) {
-      console.log(something);
-    }
-  }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
 
-      // <FormControl
-      //   componentClass="select"
-      //   multiple
-      //   placeholder="select multiple if applicable"
-      //   id="formControlsMajor"
-      //   name="major"
-      //   onChange={this.props.handleInputChange}
-      //   >
-      //   <option value="Science">Science</option>
-      //   <option value="Engineering">Engineering</option>
-      //   <option value="Communications, Marketing">Communications, Marketing</option>
-      //   <option value="Political Science, International Relations">Political Science, International Relations</option>
-      //   <option value="Finance, Economics">Finance, Economics</option>
-      //   <option value="Arts">Arts</option>
-      // </FormControl>
       return _react2.default.createElement(
         'div',
         null,
@@ -53252,7 +53216,7 @@ var Page3 = function (_React$Component) {
           name: 'major',
           value: this.props.page.major,
           onChange: function onChange(value) {
-            return _this2.props.handleMultiChange(value, name);
+            return _this2.props.handleMultiChange(value, 'major');
           },
           multi: true,
           delimiter: '|',
@@ -53261,228 +53225,22 @@ var Page3 = function (_React$Component) {
           options: [{ value: 'Science', label: 'Science' }, { value: 'Engineering', label: 'Engineering' }, { value: 'Communcations, Marketing', label: 'Communcations, Marketing' }, { value: 'Political Science, International Relations', label: 'Political Science, International Relations' }, { value: 'Finance, Economics', label: 'Finance, Economics' }, { value: 'Liberal Arts', label: 'Liberal Arts' }]
         }),
         _react2.default.createElement(
-          _reactBootstrap.FormGroup,
+          _reactBootstrap.ControlLabel,
           null,
-          _react2.default.createElement(
-            _reactBootstrap.ControlLabel,
-            null,
-            'In which industry do you work? *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.FormControl,
-            {
-              componentClass: 'select',
-              placeholder: 'select',
-              id: 'formControlsIndustry',
-              name: 'industry',
-              onChange: this.handleInputChange
-            },
-            _react2.default.createElement(
-              'option',
-              { value: 'International Relations, Politics' },
-              'International Relations, Politics'
-            ),
-            _react2.default.createElement(
-              'option',
-              { value: 'Finance' },
-              'Finance'
-            ),
-            _react2.default.createElement(
-              'option',
-              { value: 'Accounting, Legal' },
-              'Accounting, Legal'
-            ),
-            _react2.default.createElement(
-              'option',
-              { value: 'Media' },
-              'Media'
-            ),
-            _react2.default.createElement(
-              'option',
-              { value: 'Technology' },
-              'Technology'
-            ),
-            _react2.default.createElement(
-              'option',
-              { value: 'Marketing' },
-              'Marketing'
-            ),
-            _react2.default.createElement(
-              'option',
-              { value: 'Performing Arts, Sports, Related Industries' },
-              'Performing Arts, Sports, Related Industries'
-            ),
-            _react2.default.createElement(
-              'option',
-              { value: 'Healthcare' },
-              'Healthcare'
-            ),
-            _react2.default.createElement(
-              'option',
-              { value: 'Education' },
-              'Education'
-            ),
-            _react2.default.createElement(
-              'option',
-              { value: 'Other' },
-              'Other'
-            )
-          )
+          'In which industry do you work? *'
         ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
-            'Password *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 3 },
-            _react2.default.createElement(_reactBootstrap.FormControl, {
-              id: 'formControlsPassword',
-              type: 'password',
-              name: 'password',
-              placeholder: '',
-              onChange: this.props.handleInputChange
-            })
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
-            'First Name *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 3 },
-            _react2.default.createElement(_reactBootstrap.FormControl, {
-              id: 'formControlsFirstName',
-              type: 'text',
-              name: 'first_name',
-              onChange: this.props.handleInputChange
-            })
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
-            'Last Name *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 3 },
-            _react2.default.createElement(_reactBootstrap.FormControl, {
-              id: 'formControlsLastName',
-              type: 'text',
-              name: 'last_name',
-              onChange: this.props.handleInputChange
-            })
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
-            'Age *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 3 },
-            _react2.default.createElement(_reactBootstrap.FormControl, {
-              id: 'formControlsAge',
-              type: 'number',
-              name: 'age',
-              onChange: this.props.handleInputChange
-            })
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
-            'Email *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 3 },
-            _react2.default.createElement(_reactBootstrap.FormControl, {
-              id: 'formControlsEmail',
-              type: 'email',
-              name: 'email',
-              onChange: this.props.handleInputChange
-            })
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
-            'Facebook *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 3 },
-            _react2.default.createElement(_reactBootstrap.FormControl, {
-              id: 'formControlsFacebook',
-              type: 'text',
-              name: 'facebook',
-              onChange: this.props.handleInputChange
-            })
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
-            'LinkedIn *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 3 },
-            _react2.default.createElement(_reactBootstrap.FormControl, {
-              id: 'formControlsLinkedIn',
-              type: 'text',
-              name: 'LinkedIn',
-              onChange: this.props.handleInputChange
-            })
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
-            'Phone *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 3 },
-            _react2.default.createElement(_reactBootstrap.FormControl, {
-              id: 'formControlsPhone',
-              type: 'text',
-              name: 'phone',
-              placeholder: '8001234567',
-              onChange: this.props.handleInputChange
-            })
-          )
-        )
+        _react2.default.createElement(_reactSelect2.default, {
+          name: 'industry',
+          value: this.props.page.industry,
+          onChange: function onChange(value) {
+            return _this2.props.handleMultiChange(value, 'industry');
+          },
+          multi: true,
+          delimiter: '|',
+          simpleValue: true,
+          joinValues: true,
+          options: [{ value: 'International Relations, Politics', label: 'International Relations, Politics' }, { value: 'Finance', label: 'Finance' }, { value: 'Accounting, Legal', label: 'Accounting, Legal' }, { value: 'Media', label: 'Media' }, { value: 'Technology', label: 'Technology' }, { value: 'Marketing', label: 'Marketing' }, { value: 'Performing Arts, Sports, Related', label: 'Performing Arts, Sports, Related' }, { value: 'Healthcare', label: 'Healthcare' }, { value: 'Education', label: 'Education' }, { value: 'Agriculture, Forestry, Fishing', label: 'Agriculture, Forestry, Fishing' }]
+        })
       );
     }
   }]);
