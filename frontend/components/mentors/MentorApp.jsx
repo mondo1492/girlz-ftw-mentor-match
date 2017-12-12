@@ -46,6 +46,18 @@ class MentorApp extends React.Component {
         how_impact_text: '',
         extra_info_text: ''
       },
+      4: {
+        q1: '',
+        q2: '',
+        q3: '',
+        q4: '',
+        q5: '',
+        q6: '',
+        q7: '',
+        q8: '',
+        q9: '',
+        q10: ''
+      },
       agree_terms: false,
       agree_terms_bad_click: false,
       disclaimer: true,

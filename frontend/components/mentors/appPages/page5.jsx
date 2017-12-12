@@ -20,7 +20,7 @@ class Page5 extends React.Component {
             </Row>
             <Row>
               <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q1" name="q1" onChange={this.props.handleInputChange}/>
+                <textarea id='formControlsTextarea' className="form-control" id="q1" name="q1" value={this.props.page.q1} onChange={this.props.handleInputChange}/>
               </Col>
             </Row>
             <Row>
@@ -32,7 +32,7 @@ class Page5 extends React.Component {
             </Row>
             <Row>
               <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q2" name="q2" onChange={this.props.handleInputChange}/>
+                <textarea id='formControlsTextarea' className="form-control" id="q2" name="q2" value={this.props.page.q2} onChange={this.props.handleInputChange}/>
               </Col>
             </Row>
             <Row>
@@ -44,7 +44,7 @@ class Page5 extends React.Component {
             </Row>
             <Row>
               <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q3" name="q3" onChange={this.props.handleInputChange}/>
+                <textarea id='formControlsTextarea' className="form-control" id="q3" name="q3" value={this.props.page.q3} onChange={this.props.handleInputChange}/>
               </Col>
             </Row>
             <Row>
@@ -56,7 +56,7 @@ class Page5 extends React.Component {
             </Row>
             <Row>
               <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q4" name="q4" onChange={this.props.handleInputChange}/>
+                <textarea id='formControlsTextarea' className="form-control" id="q4" name="q4" value={this.props.page.q4} onChange={this.props.handleInputChange}/>
               </Col>
             </Row>
             <Row>
@@ -68,7 +68,7 @@ class Page5 extends React.Component {
             </Row>
             <Row>
               <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q5" name="q5" onChange={this.props.handleInputChange}/>
+                <textarea id='formControlsTextarea' className="form-control" id="q5" name="q5" value={this.props.page.q5} onChange={this.props.handleInputChange}/>
               </Col>
             </Row>
             <Row>
@@ -80,7 +80,7 @@ class Page5 extends React.Component {
             </Row>
             <Row>
               <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q6" name="q6" onChange={this.props.handleInputChange}/>
+                <textarea id='formControlsTextarea' className="form-control" id="q6" name="q6" value={this.props.page.q6} onChange={this.props.handleInputChange}/>
               </Col>
             </Row>
             <Row>
@@ -92,7 +92,7 @@ class Page5 extends React.Component {
             </Row>
             <Row>
               <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q7" name="q7" onChange={this.props.handleInputChange}/>
+                <textarea id='formControlsTextarea' className="form-control" id="q7" name="q7" value={this.props.page.q7} onChange={this.props.handleInputChange}/>
               </Col>
             </Row>
             <Row>
@@ -104,7 +104,7 @@ class Page5 extends React.Component {
             </Row>
             <Row>
               <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q8" name="q8" onChange={this.props.handleInputChange}/>
+                <textarea id='formControlsTextarea' className="form-control" id="q8" name="q8" value={this.props.page.q8} onChange={this.props.handleInputChange}/>
               </Col>
             </Row>
             <Row>
@@ -116,7 +116,7 @@ class Page5 extends React.Component {
             </Row>
             <Row>
               <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q9" name="q9" onChange={this.props.handleInputChange}/>
+                <textarea id='formControlsTextarea' className="form-control" id="q9" name="q9" value={this.props.page.q9} onChange={this.props.handleInputChange}/>
               </Col>
             </Row>
             <Row>
@@ -128,7 +128,7 @@ class Page5 extends React.Component {
             </Row>
             <Row>
               <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q10" name="q10" onChange={this.props.handleInputChange}/>
+                <textarea id='formControlsTextarea' className="form-control" id="q10" name="q10" value={this.props.page.q10} onChange={this.props.handleInputChange}/>
               </Col>
             </Row>
           </Grid>
