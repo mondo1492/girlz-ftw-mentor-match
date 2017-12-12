@@ -55585,7 +55585,6 @@ var Page4 = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      var maxOptions = [];
       return _react2.default.createElement(
         'div',
         null,
@@ -55609,7 +55608,7 @@ var Page4 = function (_React$Component) {
         _react2.default.createElement(
           'h2',
           null,
-          'What are you most excited to provide \\/ be for your mentee? (Select the top 3)'
+          'What are you most excited to provide be for your mentee? (Select the top 3)'
         ),
         _react2.default.createElement(_reactSelect2.default, {
           name: 'provide',

@@ -12,7 +12,6 @@ class Page4 extends React.Component {
       }
     }
     render() {
-      const maxOptions = [];
       return(
         <div>
           <h2>We all get in the way of our own success.
@@ -40,7 +39,7 @@ class Page4 extends React.Component {
             ]}
           />
 
-        <h2>What are you most excited to provide \/ be for your mentee?
+        <h2>What are you most excited to provide be for your mentee?
           (Select the top 3)
           </h2>
           <Select
