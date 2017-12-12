@@ -11,13 +11,13 @@ class Page3 extends React.Component {
 
     render() {
       return(
-        <Grid>
-
+        <div>
+          <h3 className='centerForm'>Some background questions</h3>
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
+            <Col componentClass={ControlLabel} sm={3}>
               College *
             </Col>
-            <Col sm={3}>
+            <Col sm={8}>
               <InputGroup>
                 <InputGroup.Addon>
                   <FontAwesome name='graduation-cap'/>
@@ -34,88 +34,87 @@ class Page3 extends React.Component {
           </FormGroup>
 
           <FormGroup>
-          <ControlLabel>
+          <Col componentClass={ControlLabel} sm={3}>
             What was your college major? *
-          </ControlLabel>
-          <Select
-            name="major"
-            value={this.props.page.major}
-            onChange={(value) => this.props.handleMultiChange(value, 'major')}
-            multi
-            delimiter="|"
-            simpleValue
-            joinValues
-            options={[
-              { value: 'Science', label: 'Science' },
-              { value: 'Engineering', label: 'Engineering' },
-              { value: 'Communcations, Marketing', label: 'Communcations, Marketing' },
-              { value: 'Political Science, International Relations', label: 'Political Science, International Relations' },
-              { value: 'Finance, Economics', label: 'Finance, Economics' },
-              { value: 'Liberal Arts', label: 'Liberal Arts' }
-            ]}
-          />
+          </Col>
+          <Col sm={8}>
+            <Select
+              name="major"
+              value={this.props.page.major}
+              onChange={(value) => this.props.handleMultiChange(value, 'major')}
+              multi
+              delimiter="|"
+              simpleValue
+              joinValues
+              options={[
+                { value: 'Science', label: 'Science' },
+                { value: 'Engineering', label: 'Engineering' },
+                { value: 'Communcations, Marketing', label: 'Communcations, Marketing' },
+                { value: 'Political Science, International Relations', label: 'Political Science, International Relations' },
+                { value: 'Finance, Economics', label: 'Finance, Economics' },
+                { value: 'Liberal Arts', label: 'Liberal Arts' }
+              ]}
+            />
+          </Col>
+        </FormGroup>
+        <FormGroup>
+          <Col componentClass={ControlLabel} sm={3}>
+            Employer *
+          </Col>
+          <Col sm={8}>
+            <InputGroup>
+              <InputGroup.Addon>
+                <FontAwesome name='handshake-o'/>
+              </InputGroup.Addon>
+              <FormControl
+                id="formControlsEmployer"
+                type="text"
+                name="employer"
+                value={this.props.page.employer}
+                onChange={this.props.handleInputChange}
+                />
+            </InputGroup>
+          </Col>
         </FormGroup>
 
-
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              Employer *
-            </Col>
-            <Col sm={3}>
-              <InputGroup>
-                <InputGroup.Addon>
-                  <FontAwesome name='handshake-o'/>
-                </InputGroup.Addon>
-                <FormControl
-                  id="formControlsEmployer"
-                  type="text"
-                  name="employer"
-                  value={this.props.page.employer}
-                  onChange={this.props.handleInputChange}
-                  />
-              </InputGroup>
-            </Col>
-          </FormGroup>
-
-          <ControlLabel>
+        <FormGroup>
+          <Col componentClass={ControlLabel} sm={3}>
             In which industry do you work? *
-          </ControlLabel>
-          <Select
-            name="industry"
-            value={this.props.page.industry}
-            onChange={(value) => this.props.handleMultiChange(value, 'industry')}
-            multi
-            delimiter="|"
-            simpleValue
-            joinValues
-            options={[
-              { value: 'International Relations, Politics', label: 'International Relations, Politics' },
-              { value: 'Finance', label: 'Finance' },
-              { value: 'Accounting, Legal', label: 'Accounting, Legal' },
-              { value: 'Media', label: 'Media' },
-              { value: 'Technology', label: 'Technology' },
-              { value: 'Marketing', label: 'Marketing' },
-              { value: 'Performing Arts, Sports, Related', label: 'Performing Arts, Sports, Related' },
-              { value: 'Healthcare', label: 'Healthcare' },
-              { value: 'Education', label: 'Education' },
-              { value: 'Agriculture, Forestry, Fishing', label: 'Agriculture, Forestry, Fishing' }
-            ]}
-          />
+          </Col>
+          <Col sm={8}>
+            <Select
+              name="industry"
+              value={this.props.page.industry}
+              onChange={(value) => this.props.handleMultiChange(value, 'industry')}
+              multi
+              delimiter="|"
+              simpleValue
+              joinValues
+              options={[
+                { value: 'International Relations, Politics', label: 'International Relations, Politics' },
+                { value: 'Finance', label: 'Finance' },
+                { value: 'Accounting, Legal', label: 'Accounting, Legal' },
+                { value: 'Media', label: 'Media' },
+                { value: 'Technology', label: 'Technology' },
+                { value: 'Marketing', label: 'Marketing' },
+                { value: 'Performing Arts, Sports, Related', label: 'Performing Arts, Sports, Related' },
+                { value: 'Healthcare', label: 'Healthcare' },
+                { value: 'Education', label: 'Education' },
+                { value: 'Agriculture, Forestry, Fishing', label: 'Agriculture, Forestry, Fishing' }
+              ]}
+            />
+          </Col>
+        </FormGroup>
+        <FormGroup >
+          <Col componentClass={ControlLabel} sm={3}>
+            Describe your job.
+          </Col>
+          <Col sm={8}>
+              <textarea style={{ height: 150 }} id='formControlsTextarea' value={this.props.page.job_description} className="form-control" id="job_description" name="job_description" onChange={this.props.handleInputChange}/>
+          </Col>
+        </FormGroup>
 
-          <Row>
-            <Col className="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <label text-align="left">
-                  Describe your job.
-                </label>
-            </Col>
-          </Row>
-          <Row>
-            <Col className="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-              <textarea id='formControlsTextarea' value={this.props.page.job_description} className="form-control" id="job_description" name="job_description" onChange={this.props.handleInputChange}/>
-            </Col>
-          </Row>
-
-        </Grid>
+        </div>
       )
     }
   }

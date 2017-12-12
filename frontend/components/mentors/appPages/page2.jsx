@@ -11,11 +11,12 @@ class Page2 extends React.Component {
     render() {
       return(
         <div>
+          <h3 className='centerForm'>Let's get connected!</h3>
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
+            <Col componentClass={ControlLabel} sm={3}>
               Facebook *
             </Col>
-            <Col sm={3}>
+            <Col sm={8}>
               <InputGroup>
                 <InputGroup.Addon>
                   <FontAwesome name='facebook'/>
@@ -32,10 +33,10 @@ class Page2 extends React.Component {
           </FormGroup>
 
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
+            <Col componentClass={ControlLabel} sm={3}>
               LinkedIn *
             </Col>
-            <Col sm={3}>
+            <Col sm={8}>
               <InputGroup>
                 <InputGroup.Addon>
                   <FontAwesome name='linkedin'/>
@@ -51,10 +52,10 @@ class Page2 extends React.Component {
             </Col>
           </FormGroup>
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
+            <Col componentClass={ControlLabel} sm={3}>
               Phone *
             </Col>
-            <Col sm={3}>
+            <Col sm={8}>
               <InputGroup>
                <InputGroup.Addon>
                  <FontAwesome name='phone'/>
@@ -71,10 +72,10 @@ class Page2 extends React.Component {
             </Col>
           </FormGroup>
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
+            <Col componentClass={ControlLabel} sm={3}>
               City *
             </Col>
-            <Col sm={3}>
+            <Col sm={8}>
               <FormControl
                 id="formControlsCity"
                 type="text"
@@ -85,10 +86,10 @@ class Page2 extends React.Component {
             </Col>
           </FormGroup>
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
+            <Col componentClass={ControlLabel} sm={3}>
               Country *
             </Col>
-            <Col sm={3}>
+            <Col sm={8}>
               <FormControl
                 id="formControlsCountry"
                 type="text"
