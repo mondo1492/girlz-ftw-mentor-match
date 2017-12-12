@@ -98,25 +98,6 @@ class Page2 extends React.Component {
                 />
             </Col>
           </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              Employer *
-            </Col>
-            <Col sm={3}>
-              <InputGroup>
-                <InputGroup.Addon>
-                  <FontAwesome name='handshake-o'/>
-                </InputGroup.Addon>
-                <FormControl
-                  id="formControlsEmployer"
-                  type="text"
-                  name="employer"
-                  value={this.props.page.employer}
-                  onChange={this.props.handleInputChange}
-                  />
-              </InputGroup>
-            </Col>
-          </FormGroup>
         </div>
       )
     }

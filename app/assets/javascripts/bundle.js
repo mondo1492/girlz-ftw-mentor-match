@@ -54765,18 +54765,16 @@ var MentorApp = function (_React$Component) {
         linkedin: 'link',
         phone: '1234567890',
         city: 'Belmont',
-        country: 'Albania',
-        employer: 'Yo mama'
+        country: 'Albania'
       },
       2: {
+        college: '',
         major: '',
-        career_advice_rank: '',
-        personal_advice_rank: '',
-        motivation_rank: '',
-        instagram_bio_text: '',
-        instagram_bio_why_not_text: '',
         share_major_rank: '',
-        industry: ''
+        employer: '',
+        industry: '',
+        share_industry_rank: '',
+        job_description: ''
       },
       3: {
         personality_text: '',
@@ -54785,6 +54783,11 @@ var MentorApp = function (_React$Component) {
         how_impact_text: '',
         extra_info_text: ''
       },
+      career_advice_rank: '',
+      personal_advice_rank: '',
+      motivation_rank: '',
+      instagram_bio_text: '',
+      instagram_bio_why_not_text: '',
       agree_terms: false,
       agree_terms_bad_click: false,
       disclaimer: true,
@@ -55360,35 +55363,6 @@ var Page2 = function (_React$Component) {
               onChange: this.props.handleInputChange
             })
           )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
-            'Employer *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 3 },
-            _react2.default.createElement(
-              _reactBootstrap.InputGroup,
-              null,
-              _react2.default.createElement(
-                _reactBootstrap.InputGroup.Addon,
-                null,
-                _react2.default.createElement(_reactFontawesome2.default, { name: 'handshake-o' })
-              ),
-              _react2.default.createElement(_reactBootstrap.FormControl, {
-                id: 'formControlsEmployer',
-                type: 'text',
-                name: 'employer',
-                value: this.props.page.employer,
-                onChange: this.props.handleInputChange
-              })
-            )
-          )
         )
       );
     }
@@ -55428,6 +55402,8 @@ var _reactSelect2 = _interopRequireDefault(_reactSelect);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -55446,28 +55422,91 @@ var Page3 = function (_React$Component) {
   _createClass(Page3, [{
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _this2 = this,
+          _React$createElement;
 
       return _react2.default.createElement(
         'div',
         null,
         _react2.default.createElement(
-          _reactBootstrap.ControlLabel,
+          _reactBootstrap.FormGroup,
           null,
-          'What was your college major? *'
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'College *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(
+              _reactBootstrap.InputGroup,
+              null,
+              _react2.default.createElement(
+                _reactBootstrap.InputGroup.Addon,
+                null,
+                _react2.default.createElement(_reactFontawesome2.default, { name: 'graduation-cap' })
+              ),
+              _react2.default.createElement(_reactBootstrap.FormControl, {
+                id: 'formControlsCollege',
+                type: 'text',
+                name: 'college',
+                value: this.props.page.college,
+                onChange: this.props.handleInputChange
+              })
+            )
+          )
         ),
-        _react2.default.createElement(_reactSelect2.default, {
-          name: 'major',
-          value: this.props.page.major,
-          onChange: function onChange(value) {
-            return _this2.props.handleMultiChange(value, 'major');
-          },
-          multi: true,
-          delimiter: '|',
-          simpleValue: true,
-          joinValues: true,
-          options: [{ value: 'Science', label: 'Science' }, { value: 'Engineering', label: 'Engineering' }, { value: 'Communcations, Marketing', label: 'Communcations, Marketing' }, { value: 'Political Science, International Relations', label: 'Political Science, International Relations' }, { value: 'Finance, Economics', label: 'Finance, Economics' }, { value: 'Liberal Arts', label: 'Liberal Arts' }]
-        }),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.ControlLabel,
+            null,
+            'What was your college major? *'
+          ),
+          _react2.default.createElement(_reactSelect2.default, {
+            name: 'major',
+            value: this.props.page.major,
+            onChange: function onChange(value) {
+              return _this2.props.handleMultiChange(value, 'major');
+            },
+            multi: true,
+            delimiter: '|',
+            simpleValue: true,
+            joinValues: true,
+            options: [{ value: 'Science', label: 'Science' }, { value: 'Engineering', label: 'Engineering' }, { value: 'Communcations, Marketing', label: 'Communcations, Marketing' }, { value: 'Political Science, International Relations', label: 'Political Science, International Relations' }, { value: 'Finance, Economics', label: 'Finance, Economics' }, { value: 'Liberal Arts', label: 'Liberal Arts' }]
+          })
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            'Employer *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 3 },
+            _react2.default.createElement(
+              _reactBootstrap.InputGroup,
+              null,
+              _react2.default.createElement(
+                _reactBootstrap.InputGroup.Addon,
+                null,
+                _react2.default.createElement(_reactFontawesome2.default, { name: 'handshake-o' })
+              ),
+              _react2.default.createElement(_reactBootstrap.FormControl, {
+                id: 'formControlsEmployer',
+                type: 'text',
+                name: 'employer',
+                value: this.props.page.employer,
+                onChange: this.props.handleInputChange
+              })
+            )
+          )
+        ),
         _react2.default.createElement(
           _reactBootstrap.ControlLabel,
           null,
@@ -55484,7 +55523,29 @@ var Page3 = function (_React$Component) {
           simpleValue: true,
           joinValues: true,
           options: [{ value: 'International Relations, Politics', label: 'International Relations, Politics' }, { value: 'Finance', label: 'Finance' }, { value: 'Accounting, Legal', label: 'Accounting, Legal' }, { value: 'Media', label: 'Media' }, { value: 'Technology', label: 'Technology' }, { value: 'Marketing', label: 'Marketing' }, { value: 'Performing Arts, Sports, Related', label: 'Performing Arts, Sports, Related' }, { value: 'Healthcare', label: 'Healthcare' }, { value: 'Education', label: 'Education' }, { value: 'Agriculture, Forestry, Fishing', label: 'Agriculture, Forestry, Fishing' }]
-        })
+        }),
+        _react2.default.createElement(
+          _reactBootstrap.Row,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
+            _react2.default.createElement(
+              'label',
+              { 'text-align': 'left' },
+              'Describe your job.'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Row,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
+            _react2.default.createElement('textarea', (_React$createElement = { id: 'formControlsTextarea', className: 'form-control' }, _defineProperty(_React$createElement, 'id', 'job_description'), _defineProperty(_React$createElement, 'name', 'job_description'), _defineProperty(_React$createElement, 'onChange', this.props.handleInputChange), _React$createElement))
+          )
+        )
       );
     }
   }]);
