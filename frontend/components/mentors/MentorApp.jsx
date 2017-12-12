@@ -49,7 +49,7 @@ class MentorApp extends React.Component {
       agree_terms: false,
       agree_terms_bad_click: false,
       disclaimer: true,
-      page: 4,
+      page: 0,
 
       high_school: '',
       college: '',
