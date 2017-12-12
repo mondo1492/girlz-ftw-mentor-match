@@ -16,6 +16,10 @@ class Page2 extends React.Component {
               Facebook *
             </Col>
             <Col sm={3}>
+              <InputGroup>
+                <InputGroup.Addon>
+                  <FontAwesome name='facebook'/>
+                </InputGroup.Addon>
               <FormControl
                 id="formControlsFacebook"
                 type="text"
@@ -23,20 +27,27 @@ class Page2 extends React.Component {
                 value={this.props.page.facebook}
                 onChange={this.props.handleInputChange}
                 />
+            </InputGroup>
             </Col>
           </FormGroup>
+
           <FormGroup>
             <Col componentClass={ControlLabel} sm={1}>
               LinkedIn *
             </Col>
             <Col sm={3}>
-              <FormControl
-                id="formControlsLinkedIn"
-                type="text"
-                name="linkedin"
-                value={this.props.page.linkedin}
-                onChange={this.props.handleInputChange}
-                />
+              <InputGroup>
+                <InputGroup.Addon>
+                  <FontAwesome name='linkedin'/>
+                </InputGroup.Addon>
+                <FormControl
+                  id="formControlsLinkedIn"
+                  type="text"
+                  name="linkedin"
+                  value={this.props.page.linkedin}
+                  onChange={this.props.handleInputChange}
+                  />
+              </InputGroup>
             </Col>
           </FormGroup>
           <FormGroup>
@@ -44,14 +55,19 @@ class Page2 extends React.Component {
               Phone *
             </Col>
             <Col sm={3}>
-              <FormControl
-                id="formControlsPhone"
-                type="text"
-                name="phone"
-                value={this.props.page.phone}
-                placeholder="8001234567"
-                onChange={this.props.handleInputChange}
-                />
+              <InputGroup>
+               <InputGroup.Addon>
+                 <FontAwesome name='phone'/>
+               </InputGroup.Addon>
+                <FormControl
+                  id="formControlsPhone"
+                  type="text"
+                  name="phone"
+                  value={this.props.page.phone}
+                  placeholder="8001234567"
+                  onChange={this.props.handleInputChange}
+                  />
+              </InputGroup>
             </Col>
           </FormGroup>
           <FormGroup>
@@ -87,13 +103,18 @@ class Page2 extends React.Component {
               Employer *
             </Col>
             <Col sm={3}>
-              <FormControl
-                id="formControlsEmployer"
-                type="text"
-                name="employer"
-                value={this.props.page.employer}
-                onChange={this.props.handleInputChange}
-                />
+              <InputGroup>
+                <InputGroup.Addon>
+                  <FontAwesome name='handshake-o'/>
+                </InputGroup.Addon>
+                <FormControl
+                  id="formControlsEmployer"
+                  type="text"
+                  name="employer"
+                  value={this.props.page.employer}
+                  onChange={this.props.handleInputChange}
+                  />
+              </InputGroup>
             </Col>
           </FormGroup>
         </div>

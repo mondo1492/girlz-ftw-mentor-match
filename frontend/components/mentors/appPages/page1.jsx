@@ -11,6 +11,9 @@ class Page1 extends React.Component {
     render() {
       return(
         <div>
+          <h2>Help us connect you with your ideal mentee.</h2>
+
+
           <FormGroup>
             <Col componentClass={ControlLabel} sm={1}>
               Username *
