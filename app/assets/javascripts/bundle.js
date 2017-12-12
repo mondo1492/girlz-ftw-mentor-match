@@ -52467,6 +52467,10 @@ var _page9 = __webpack_require__(511);
 
 var _page10 = _interopRequireDefault(_page9);
 
+var _page11 = __webpack_require__(555);
+
+var _page12 = _interopRequireDefault(_page11);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -52502,20 +52506,17 @@ var MentorApp = function (_React$Component) {
         country: 'Albania'
       },
       2: {
-        college: '',
+        college: 'stanvard',
         major: '',
         share_major_rank: '',
-        employer: '',
+        employer: 'googlebook',
         industry: '',
         share_industry_rank: '',
-        job_description: ''
+        job_description: 'friggen sick'
       },
       3: {
-        personality_text: '',
-        night_text: '',
-        not_on_google_text: '',
-        how_impact_text: '',
-        extra_info_text: ''
+        unblock_methods: '',
+        provide: ''
       },
       4: {
         q1: '',
@@ -52531,7 +52532,6 @@ var MentorApp = function (_React$Component) {
       },
       agree_terms: false,
       agree_terms_bad_click: false,
-      disclaimer: true,
       page: 0,
 
       instagram_bio_why_not_text: '',
@@ -52554,6 +52554,7 @@ var MentorApp = function (_React$Component) {
     value: function handleMultiChange(value, name) {
       var pageNum = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : this.state.page;
 
+      if (value.split("|").length === 4) return;
       var nextState = (0, _merge6.default)({}, _defineProperty({}, pageNum, this.state[pageNum]), _defineProperty({}, pageNum, _defineProperty({}, name, value)));
       this.setState(_defineProperty({}, pageNum, nextState[pageNum]));
     }
@@ -52656,13 +52657,17 @@ var MentorApp = function (_React$Component) {
               handleMultiChange: _this3.handleMultiChange, handleInputChange: _this3.handleInputChange, page: _this3.state[2] });
             break;
           case 3:
-            return _react2.default.createElement(_page8.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[3] });
+            return _react2.default.createElement(_page8.default, {
+              handleInputChange: _this3.handleInputChange,
+              handleMultiChange: _this3.handleMultiChange,
+              page: _this3.state[3] });
             break;
           case 4:
             return _react2.default.createElement(_page10.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[4] });
             break;
           case 5:
-            return _react2.default.createElement(Page6, { page: _this3.state[5] });
+            return _react2.default.createElement(_page12.default, {
+              page: _this3.state[5] });
             break;
         }
       }();
@@ -53153,7 +53158,7 @@ var Page3 = function (_React$Component) {
           _React$createElement;
 
       return _react2.default.createElement(
-        'div',
+        _reactBootstrap.Grid,
         null,
         _react2.default.createElement(
           _reactBootstrap.FormGroup,
@@ -53256,7 +53261,7 @@ var Page3 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
+            { className: 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
             _react2.default.createElement(
               'label',
               { 'text-align': 'left' },
@@ -53269,8 +53274,8 @@ var Page3 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
-            _react2.default.createElement('textarea', (_React$createElement = { id: 'formControlsTextarea', className: 'form-control' }, _defineProperty(_React$createElement, 'id', 'job_description'), _defineProperty(_React$createElement, 'name', 'job_description'), _defineProperty(_React$createElement, 'onChange', this.props.handleInputChange), _React$createElement))
+            { className: 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
+            _react2.default.createElement('textarea', (_React$createElement = { id: 'formControlsTextarea', value: this.props.page.job_description, className: 'form-control' }, _defineProperty(_React$createElement, 'id', 'job_description'), _defineProperty(_React$createElement, 'name', 'job_description'), _defineProperty(_React$createElement, 'onChange', this.props.handleInputChange), _React$createElement))
           )
         )
       );
@@ -56170,8 +56175,6 @@ var _reactSelect2 = _interopRequireDefault(_reactSelect);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -56190,101 +56193,45 @@ var Page4 = function (_React$Component) {
   _createClass(Page4, [{
     key: 'render',
     value: function render() {
-      var _this2 = this,
-          _React$createElement;
+      var _this2 = this;
 
       return _react2.default.createElement(
         'div',
         null,
         _react2.default.createElement(
-          _reactBootstrap.FormGroup,
+          'h2',
           null,
-          _react2.default.createElement(
-            _reactBootstrap.ControlLabel,
-            null,
-            'We all get in the way of our own success. Which of the following methods do you think you\u2019ve managed to get under control in order to unblock your road to success? (Select the top 3) (slider for all > top 3 rank > select)'
-          ),
-          _react2.default.createElement(_reactSelect2.default, {
-            name: 'major',
-            value: this.props.page.major,
-            onChange: function onChange(value) {
-              return _this2.props.handleMultiChange(value, 'major');
-            },
-            multi: true,
-            delimiter: '|',
-            simpleValue: true,
-            joinValues: true,
-            options: [{ value: 'Science', label: 'Science' }, { value: 'Engineering', label: 'Engineering' }, { value: 'Communcations, Marketing', label: 'Communcations, Marketing' }, { value: 'Political Science, International Relations', label: 'Political Science, International Relations' }, { value: 'Finance, Economics', label: 'Finance, Economics' }, { value: 'Liberal Arts', label: 'Liberal Arts' }]
-          })
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
-            'Employer *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 3 },
-            _react2.default.createElement(
-              _reactBootstrap.InputGroup,
-              null,
-              _react2.default.createElement(
-                _reactBootstrap.InputGroup.Addon,
-                null,
-                _react2.default.createElement(_reactFontawesome2.default, { name: 'handshake-o' })
-              ),
-              _react2.default.createElement(_reactBootstrap.FormControl, {
-                id: 'formControlsEmployer',
-                type: 'text',
-                name: 'employer',
-                value: this.props.page.employer,
-                onChange: this.props.handleInputChange
-              })
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.ControlLabel,
-          null,
-          'In which industry do you work? *'
+          'We all get in the way of our own success. Which of the following methods do you think you\u2019ve managed to get under control in order to unblock your road to success? (Select the top 3)'
         ),
         _react2.default.createElement(_reactSelect2.default, {
-          name: 'industry',
-          value: this.props.page.industry,
+          name: 'unblock_methods',
+          value: this.props.page.unblock_methods,
           onChange: function onChange(value) {
-            return _this2.props.handleMultiChange(value, 'industry');
+            return _this2.props.handleMultiChange(value, 'unblock_methods');
           },
           multi: true,
           delimiter: '|',
           simpleValue: true,
           joinValues: true,
-          options: [{ value: 'International Relations, Politics', label: 'International Relations, Politics' }, { value: 'Finance', label: 'Finance' }, { value: 'Accounting, Legal', label: 'Accounting, Legal' }, { value: 'Media', label: 'Media' }, { value: 'Technology', label: 'Technology' }, { value: 'Marketing', label: 'Marketing' }, { value: 'Performing Arts, Sports, Related', label: 'Performing Arts, Sports, Related' }, { value: 'Healthcare', label: 'Healthcare' }, { value: 'Education', label: 'Education' }, { value: 'Agriculture, Forestry, Fishing', label: 'Agriculture, Forestry, Fishing' }]
+          options: [{ value: 'Procrastination', label: 'Procrastination' }, { value: 'Controlling life, people', label: 'Controlling life, people' }, { value: 'Indecision', label: 'Indecision' }, { value: 'Not saying \'yes\'; holding back; not being proactive in seeing opportunities', label: 'Not saying \'yes\'; holding back; not being proactive in seeing opportunities' }, { value: 'Wanting to be right', label: 'Wanting to be right' }, { value: 'Following the goals of other people', label: 'Following the goals of other people' }, { value: 'Acting as \'lone ranger\'; not delegating', label: 'Acting as \'lone ranger\'; not delegating' }, { value: 'Not saying \'no\' to projects that don\'t inspire you', label: 'Not saying \'no\' to projects that don\'t inspire you' }]
         }),
         _react2.default.createElement(
-          _reactBootstrap.Row,
+          'h2',
           null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
-            _react2.default.createElement(
-              'label',
-              { 'text-align': 'left' },
-              'Describe your job.'
-            )
-          )
+          'What are you most excited to provide be for your mentee? (Select the top 3)'
         ),
-        _react2.default.createElement(
-          _reactBootstrap.Row,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
-            _react2.default.createElement('textarea', (_React$createElement = { id: 'formControlsTextarea', className: 'form-control' }, _defineProperty(_React$createElement, 'id', 'job_description'), _defineProperty(_React$createElement, 'name', 'job_description'), _defineProperty(_React$createElement, 'onChange', this.props.handleInputChange), _React$createElement))
-          )
-        )
+        _react2.default.createElement(_reactSelect2.default, {
+          name: 'provide',
+          value: this.props.page.provide,
+          onChange: function onChange(value) {
+            return _this2.props.handleMultiChange(value, 'provide');
+          },
+          multi: true,
+          delimiter: '|',
+          simpleValue: true,
+          joinValues: true,
+          options: [{ value: 'Challenge', label: 'Challenge' }, { value: 'Accountability', label: 'Accountability' }, { value: 'Sounding Board', label: 'Sounding Board' }, { value: 'Provide focus and direction', label: 'Provide focus and direction' }, { value: 'Inspiration', label: 'Inspiration' }, { value: 'Ideas, Innovation, and Strategy for new projects', label: 'Ideas, Innovation, and Strategy for new projects' }, { value: 'Confidence booster; provide validation', label: 'Confidence booster; provide validation' }, { value: 'Not saying \'no\' to projects that don\'t inspire you', label: 'Not saying \'no\' to projects that don\'t inspire you' }]
+        })
       );
     }
   }]);
@@ -61708,6 +61655,255 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 }());
 
+
+/***/ }),
+/* 555 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactBootstrap = __webpack_require__(14);
+
+var _reactFontawesome = __webpack_require__(39);
+
+var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Page6 = function (_React$Component) {
+  _inherits(Page6, _React$Component);
+
+  function Page6(props) {
+    _classCallCheck(this, Page6);
+
+    var _this = _possibleConstructorReturn(this, (Page6.__proto__ || Object.getPrototypeOf(Page6)).call(this, props));
+
+    _this.state = {
+      disclaimerOpen: true
+    };
+    return _this;
+  }
+
+  _createClass(Page6, [{
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      return _react2.default.createElement(
+        _reactBootstrap.Grid,
+        null,
+        _react2.default.createElement(
+          _reactBootstrap.Panel,
+          { collapsible: true, expanded: this.state.disclaimerOpen },
+          _react2.default.createElement(
+            'p',
+            null,
+            'Hello! Thank you for your interest in the GIRLZ, FTW mentorship program. We\u2019re thrilled to read your application. Before you fill out our form, we\u2019d like to let you in on a little secret. We\u2019re not a regular mentorship program. We\u2019re a community of girlz that are passionate about elevating and celebrating female voices around the world. We don\u2019t expect our mentors to be THAT girl\u2026 you know, the one that always had her shit together and still always managed to blow dry her hair before school / work. We\u2019re looking for real, passionate, #girlbosses that don\u2019t pretend to be perfect, can hustle their way to their dreams, AND still manage to uplift others along the way.'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'What you should know before submitting your application:'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.ListGroup,
+            null,
+            _react2.default.createElement(
+              _reactBootstrap.ListGroupItem,
+              null,
+              'All of our communication once you join the program happens on Facebook. If you\u2019re accepted as a mentor, you will be added to a Facebook group. This group will be the place where you can connect with other mentors and mentees in the program. We\u2019ll use this group to provide support, encouragement, and advice for each other. You must have a Facebook page if you want to be a part of this program.'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.ListGroupItem,
+              null,
+              'Every month, we\u2019ll host a call with all mentors and mentees. These calls take place on the first friday of every month. In these calls, we\u2019ll have inspiring women talk to about how they got to where they are today. Each call will be structured differently but is meant to inspire, inform, and mobilize everyone on the call. This means you\u2019ll probably be tapped to speak at one of these calls because we suspect you\u2019re awesome! Attending these calls is mandatory. You can only miss up to 3 calls.'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.ListGroupItem,
+              null,
+              'You must be willing to commit at least 4 hours a month for a year. Sessions with your mentee should last 1 hour every other week. We suggest you prep for at least 30 minutes before each of your mentee calls. Lastly, you must allot 1 hour for the monthly virtual chats. We will be hosting a mentor training on X DATE. Attending this training is required if you want to be a part of the program.'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Button,
+          { bsStyle: 'warning', onClick: function onClick() {
+              return _this2.setState({ disclaimerOpen: !_this2.state.disclaimerOpen });
+            } },
+          'Toggle Disclaimer'
+        )
+      );
+    }
+  }]);
+
+  return Page6;
+}(_react2.default.Component);
+
+exports.default = Page6;
+//
+// <label>
+//   <p className="asterix">*</p>City:
+//   <input
+//     name="city"
+//     type="text"
+//     value={this.state.city}
+//     onChange={this.handleInputChange} />
+// </label>
+// <br/>
+// <label>
+//   <p className="asterix">*</p>Country:
+//   <input
+//     name="country"
+//     type="text"
+//     value={this.state.country}
+//     onChange={this.handleInputChange} />
+// </label>
+// <label>
+//   High School:
+//   <input
+//     name="high_school"
+//     type="text"
+//     value={this.state.high_school}
+//     onChange={this.handleInputChange} />
+// </label>
+// <br/>
+// <label>
+//   College:
+//   <input
+//     name="college"
+//     type="text"
+//     value={this.state.college}
+//     onChange={this.handleInputChange} />
+// </label>
+// <br/>
+// <label>
+//   What was your major?
+//   <input
+//     name="major"
+//     type="text"
+//     value={this.state.major}
+//     onChange={this.handleInputChange} />
+// </label>
+// <br/>
+// <label>
+//   Employer:
+//   <input
+//     name="employer"
+//     type="text"
+//     value={this.state.employer}
+//     onChange={this.handleInputChange} />
+// </label>
+// <br/>
+// <FormGroup>
+//   <ControlLabel>How interested are you in giving career advice? *</ControlLabel>
+//   <FormControl
+//     componentClass="select"
+//     placeholder="select"
+//     id="formControlsCareer"
+//     name="career_advice_rank"
+//     value={this.state.career_advice_rank}
+//     onChange={this.handleInputChange}
+//   >
+//     <option value="0">Not at all</option>
+//     <option value="1">Slightly</option>
+//     <option value="2">Moderately</option>
+//     <option value="3">Extremely</option>
+//   </FormControl>
+// </FormGroup>
+// <label>
+//   <p className="asterix">*</p>How interested are you in giving personal advice?
+//   <select name="personal_advice_rank" value={this.state.personal_advice_rank} onChange={this.handleInputChange}>
+//     <option value="0">Not at all</option>
+//     <option value="1">Slightly</option>
+//     <option value="2">Moderately</option>
+//     <option value="3">Extremely</option>
+//   </select>
+// </label>
+// <br/>
+// <label>
+//   <p className="asterix">*</p>How interested are you in providing motivation and inspiration for your mentees?
+//   <select name="motivation_rank" value={this.state.motivation_rank} onChange={this.handleInputChange}>
+//     <option value="0">Not at all</option>
+//     <option value="1">Slightly</option>
+//     <option value="2">Moderately</option>
+//     <option value="3">Extremely</option>
+//   </select>
+// </label>
+// <br/>
+// <label>
+//   Would you prefer a mentee who has or desires to pursue your major?
+//   <select name="share_major_rank" value={this.state.share_major_rank} onChange={this.handleInputChange}>
+//     <option value="0">Not at all</option>
+//     <option value="1">Slightly</option>
+//     <option value="2">Moderately</option>
+//     <option value="3">Extremely</option>
+//   </select>
+// </label>
+// <br/>
+// <label>
+//   Write the Instagram bio you wish you had.
+//   <textarea name="instagram_bio_text" value={this.state.instagram_bio_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
+// </label>
+// <br/>
+// <label>
+//   What's getting in the way of you having that dream Instagram bio?
+//   <textarea name="instagram_bio_why_not_text" value={this.state.instagram_bio_why_not_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
+// </label>
+// <br/>
+// <label>
+//   Describe your personality:
+//   <textarea name="personality_text" value={this.state.personality_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
+// </label>
+// <br/>
+// <label>
+//   What keeps you up at night?
+//   <textarea name="night_text" value={this.state.night_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
+// </label>
+// <br/>
+// <label>
+//   What's one thing about you that we can't Google?
+//   <textarea name="not_on_google_text" value={this.state.not_on_google_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
+// </label>
+// <br/>
+// <label>
+//   How do you aspire to make a positive impact on others?
+//   <textarea name="how_impact_text" value={this.state.how_impact_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
+// </label>
+// <br/>
+// <label>
+//   Is there anything else you'd like to add?
+//   <textarea name="extra_info_text" value={this.state.extra_info_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
+// </label>
+// <br/>
+// All mentors are required to set aside __ hours per month. Some other stuff that's needed.
+// Blah blah etc. All of our communications happen over Facebook groups,
+// so you must have a Facebook to be a GirlzFTW mentor.
+// <br/>
+// <label style={{color: this.state.agree_terms_bad_click ? 'red' : 'black'}}>
+//   I have read and agree to these requirements.
+//   <input
+//     name="agree_terms"
+//     type="checkbox"
+//     value={this.state.agree_terms}
+//     onChange={this.handleInputChange} />
+// </label>
 
 /***/ })
 /******/ ]);

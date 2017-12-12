@@ -8,6 +8,7 @@ import Page2 from './appPages/page2';
 import Page3 from './appPages/page3';
 import Page4 from './appPages/page4';
 import Page5 from './appPages/page5';
+import Page6 from './appPages/page6';
 
 class MentorApp extends React.Component {
   constructor(props) {
@@ -29,20 +30,17 @@ class MentorApp extends React.Component {
         country: 'Albania',
       },
       2: {
-        college: '',
+        college: 'stanvard',
         major: '',
         share_major_rank: '',
-        employer: '',
+        employer: 'googlebook',
         industry: '',
         share_industry_rank: '',
-        job_description: '',
+        job_description: 'friggen sick',
       },
       3: {
-        personality_text: '',
-        night_text: '',
-        not_on_google_text: '',
-        how_impact_text: '',
-        extra_info_text: ''
+        unblock_methods: '',
+        provide: '',
       },
       4: {
         q1: '',
@@ -58,7 +56,6 @@ class MentorApp extends React.Component {
       },
       agree_terms: false,
       agree_terms_bad_click: false,
-      disclaimer: true,
       page: 0,
 
       instagram_bio_why_not_text: '',
@@ -76,6 +73,7 @@ class MentorApp extends React.Component {
   }
 
   handleMultiChange(value, name, pageNum = this.state.page) {
+    if (value.split("|").length === 4) return;
     let nextState = merge({}, {[pageNum]: this.state[pageNum]}, {[pageNum]: {[name]: value}});
     this.setState({ [pageNum]: nextState[pageNum] });
   }
@@ -145,13 +143,17 @@ class MentorApp extends React.Component {
             handleMultiChange={this.handleMultiChange} handleInputChange={this.handleInputChange} page={this.state[2]}/>
           break;
         case 3:
-          return <Page4 handleInputChange={this.handleInputChange} page={this.state[3]}/>
+          return <Page4
+            handleInputChange={this.handleInputChange}
+            handleMultiChange={this.handleMultiChange}
+            page={this.state[3]}/>
           break;
         case 4:
           return <Page5 handleInputChange={this.handleInputChange} page={this.state[4]}/>
           break;
         case 5:
-          return <Page6 page={this.state[5]}/>
+          return <Page6
+            page={this.state[5]}/>
           break;
       }
     })();
