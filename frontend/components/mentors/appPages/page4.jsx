@@ -1,143 +1,99 @@
 import React from 'react';
-import { Col, Form, Button, Panel, FormControl, InputGroup, ControlLabel, FormGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Grid, Row, Col, Form, Button, Panel, InputGroup, FormControl, ControlLabel, FormGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
+import Select from 'react-select';
 
 
 class Page4 extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {
-
-      }
     }
+
     render() {
       return(
         <div>
-          <h2>We all get in the way of our own success.
-            Which of the following methods do you think you’ve managed
-            to get under control in order to unblock your road to success?
-            (Select the top 3)
-          </h2>
+          <FormGroup>
+          <ControlLabel>
+            We all get in the way of our own success. Which of the following methods do you think you’ve managed to get under control in order to unblock your road to success? (Select the top 3) (slider for all > top 3 rank > select)
+          </ControlLabel>
+          <Select
+            name="major"
+            value={this.props.page.major}
+            onChange={(value) => this.props.handleMultiChange(value, 'major')}
+            multi
+            delimiter="|"
+            simpleValue
+            joinValues
+            options={[
+              { value: 'Science', label: 'Science' },
+              { value: 'Engineering', label: 'Engineering' },
+              { value: 'Communcations, Marketing', label: 'Communcations, Marketing' },
+              { value: 'Political Science, International Relations', label: 'Political Science, International Relations' },
+              { value: 'Finance, Economics', label: 'Finance, Economics' },
+              { value: 'Liberal Arts', label: 'Liberal Arts' }
+            ]}
+          />
+        </FormGroup>
+
+
           <FormGroup>
             <Col componentClass={ControlLabel} sm={1}>
-              Username *
+              Employer *
             </Col>
             <Col sm={3}>
-              <FormControl
-                id="formControlsUsername"
-                type="text"
-                name="username"
-                placeholder=""
-                onChange={this.props.handleInputChange}
-                />
+              <InputGroup>
+                <InputGroup.Addon>
+                  <FontAwesome name='handshake-o'/>
+                </InputGroup.Addon>
+                <FormControl
+                  id="formControlsEmployer"
+                  type="text"
+                  name="employer"
+                  value={this.props.page.employer}
+                  onChange={this.props.handleInputChange}
+                  />
+              </InputGroup>
             </Col>
           </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              Password *
+
+          <ControlLabel>
+            In which industry do you work? *
+          </ControlLabel>
+          <Select
+            name="industry"
+            value={this.props.page.industry}
+            onChange={(value) => this.props.handleMultiChange(value, 'industry')}
+            multi
+            delimiter="|"
+            simpleValue
+            joinValues
+            options={[
+              { value: 'International Relations, Politics', label: 'International Relations, Politics' },
+              { value: 'Finance', label: 'Finance' },
+              { value: 'Accounting, Legal', label: 'Accounting, Legal' },
+              { value: 'Media', label: 'Media' },
+              { value: 'Technology', label: 'Technology' },
+              { value: 'Marketing', label: 'Marketing' },
+              { value: 'Performing Arts, Sports, Related', label: 'Performing Arts, Sports, Related' },
+              { value: 'Healthcare', label: 'Healthcare' },
+              { value: 'Education', label: 'Education' },
+              { value: 'Agriculture, Forestry, Fishing', label: 'Agriculture, Forestry, Fishing' }
+            ]}
+          />
+
+          <Row>
+            <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
+                <label text-align="left">
+                  Describe your job.
+                </label>
             </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsPassword"
-                type="password"
-                name="password"
-                placeholder=""
-                onChange={this.props.handleInputChange}
-                />
+          </Row>
+          <Row>
+            <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
+              <textarea id='formControlsTextarea' className="form-control" id="job_description" name="job_description" onChange={this.props.handleInputChange}/>
             </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              First Name *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsFirstName"
-                type="text"
-                name="first_name"
-                onChange={this.props.handleInputChange}
-                />
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              Last Name *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsLastName"
-                type="text"
-                name="last_name"
-                onChange={this.props.handleInputChange}
-                />
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              Age *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsAge"
-                type="number"
-                name="age"
-                onChange={this.props.handleInputChange}
-                />
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              Email *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsEmail"
-                type="email"
-                name="email"
-                onChange={this.props.handleInputChange}
-                />
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              Facebook *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsFacebook"
-                type="text"
-                name="facebook"
-                onChange={this.props.handleInputChange}
-                />
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              LinkedIn *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsLinkedIn"
-                type="text"
-                name="LinkedIn"
-                onChange={this.props.handleInputChange}
-                />
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={1}>
-              Phone *
-            </Col>
-            <Col sm={3}>
-              <FormControl
-                id="formControlsPhone"
-                type="text"
-                name="phone"
-                placeholder="8001234567"
-                onChange={this.props.handleInputChange}
-                />
-            </Col>
-          </FormGroup>
+          </Row>
+
         </div>
       )
     }

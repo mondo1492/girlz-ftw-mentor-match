@@ -44,8 +44,6 @@ class MentorApp extends React.Component {
         how_impact_text: '',
         extra_info_text: ''
       },
-
-
       4: {
         q1: '',
         q2: '',
@@ -68,9 +66,8 @@ class MentorApp extends React.Component {
       college: '',
       instagram_bio_text: '',
       major: '',
-
     };
-
+          console.log(this.state[2].major);
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleMultiChange = this.handleMultiChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
