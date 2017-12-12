@@ -8,6 +8,7 @@ import Page2 from './appPages/page2';
 import Page3 from './appPages/page3';
 import Page4 from './appPages/page4';
 import Page5 from './appPages/page5';
+import Page6 from './appPages/page6';
 
 class MentorApp extends React.Component {
   constructor(props) {
@@ -29,13 +30,13 @@ class MentorApp extends React.Component {
         country: 'Albania',
       },
       2: {
-        college: '',
+        college: 'stanvard',
         major: '',
         share_major_rank: '',
-        employer: '',
+        employer: 'googlebook',
         industry: '',
         share_industry_rank: '',
-        job_description: '',
+        job_description: 'friggen sick',
       },
       3: {
         personality_text: '',
@@ -60,7 +61,6 @@ class MentorApp extends React.Component {
       },
       agree_terms: false,
       agree_terms_bad_click: false,
-      disclaimer: true,
       page: 0,
 
       instagram_bio_why_not_text: '',
@@ -154,7 +154,8 @@ class MentorApp extends React.Component {
           return <Page5 handleInputChange={this.handleInputChange} page={this.state[4]}/>
           break;
         case 5:
-          return <Page6 page={this.state[5]}/>
+          return <Page6
+            page={this.state[5]}/>
           break;
       }
     })();
