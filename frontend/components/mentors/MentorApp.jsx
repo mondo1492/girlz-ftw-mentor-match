@@ -44,13 +44,8 @@ class MentorApp extends React.Component {
         how_impact_text: '',
         extra_info_text: ''
       },
-<<<<<<< HEAD
-      career_advice_rank: '',
-      personal_advice_rank: '',
-      motivation_rank: '',
-      instagram_bio_text: '',
-      instagram_bio_why_not_text: '',
-=======
+
+
       4: {
         q1: '',
         q2: '',
@@ -63,14 +58,15 @@ class MentorApp extends React.Component {
         q9: '',
         q10: ''
       },
->>>>>>> 789c9cf0c32a4a681baf2a77e858ef20bd48bf11
       agree_terms: false,
       agree_terms_bad_click: false,
       disclaimer: true,
       page: 0,
 
+      instagram_bio_why_not_text: '',
       high_school: '',
       college: '',
+      instagram_bio_text: '',
       major: '',
 
     };
@@ -156,6 +152,9 @@ class MentorApp extends React.Component {
           break;
         case 4:
           return <Page5 handleInputChange={this.handleInputChange} page={this.state[4]}/>
+          break;
+        case 5:
+          return <Page6 page={this.state[5]}/>
           break;
       }
     })();
