@@ -7,6 +7,7 @@ import Page1 from './appPages/page1';
 import Page2 from './appPages/page2';
 import Page3 from './appPages/page3';
 import Page4 from './appPages/page4';
+import Page5 from './appPages/page5';
 
 class MentorApp extends React.Component {
   constructor(props) {
@@ -21,14 +22,12 @@ class MentorApp extends React.Component {
         email: 'a'
       },
       1: {
-        facebook: '',
-        linkedin: '',
-        phone: '',
-        city: '',
-        country: '',
-
-        employer: '',
-
+        facebook: 'fab',
+        linkedin: 'link',
+        phone: '1234567890',
+        city: 'Belmont',
+        country: 'Albania',
+        employer: 'Yo mama',
       },
       2: {
         major: '',
@@ -50,7 +49,7 @@ class MentorApp extends React.Component {
       agree_terms: false,
       agree_terms_bad_click: false,
       disclaimer: true,
-      page: 0,
+      page: 4,
 
       high_school: '',
       college: '',
@@ -83,6 +82,9 @@ class MentorApp extends React.Component {
     event.preventDefault();
     if (this.state.agree_terms) {
       console.log("success");
+
+      this.props.createMentor(this.state).then(
+        () => this.props.history.push('/'));
     } else {
       this.setState({agree_terms_bad_click: true}, () => {
         console.log('failure');
@@ -134,9 +136,9 @@ class MentorApp extends React.Component {
         case 3:
           return <Page4 handleInputChange={this.handleInputChange} page={this.state[3]}/>
           break;
-        // case 5:
-        //   <Page5 handleInputChange={this.handleInputChange}/>
-        //   break;
+        case 4:
+          return <Page5 handleInputChange={this.handleInputChange} page={this.state[4]}/>
+          break;
       }
     })();
 
@@ -174,10 +176,7 @@ class MentorApp extends React.Component {
         <Form horizontal onSubmit={this.handleFormSubmit}>
           {page}
           <Button onClick={this.handleBack} className="btn-back">Back</Button>
-          {this.validate() ?
-            <Button onClick={this.handleNext} className="btn-next">Next</Button> :
-            <Button onClick={this.badNext} disabled className="btn-next">Next</Button>
-          }
+          <Button onClick={this.handleNext} className="btn-next">Next</Button>
           {this.allValidate() ? <Button bsStyle="success" type="submit">Apply</Button> : ""}
         </Form>
       </div>
@@ -187,3 +186,8 @@ class MentorApp extends React.Component {
 
 
 export default MentorApp;
+//
+// {this.validate() ?
+//   <Button onClick={this.handleNext} className="btn-next">Next</Button> :
+//   <Button onClick={this.badNext} disabled className="btn-next">Next</Button>
+// }

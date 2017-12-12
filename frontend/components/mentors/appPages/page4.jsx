@@ -6,10 +6,18 @@ import FontAwesome from 'react-fontawesome';
 class Page4 extends React.Component {
     constructor(props) {
       super(props);
+      this.state = {
+
+      }
     }
     render() {
       return(
         <div>
+          <h2>We all get in the way of our own success.
+            Which of the following methods do you think you’ve managed
+            to get under control in order to unblock your road to success?
+            (Select the top 3)
+          </h2>
           <FormGroup>
             <Col componentClass={ControlLabel} sm={1}>
               Username *
