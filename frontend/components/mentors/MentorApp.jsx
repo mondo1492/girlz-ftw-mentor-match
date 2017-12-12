@@ -56,7 +56,7 @@ class MentorApp extends React.Component {
       },
       agree_terms: false,
       agree_terms_bad_click: false,
-      page: 2,
+      page: 3,
       gridStyle: 'col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8 centerForm',
       instagram_bio_why_not_text: '',
       high_school: '',

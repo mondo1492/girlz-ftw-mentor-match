@@ -55116,7 +55116,7 @@ var MentorApp = function (_React$Component) {
       },
       agree_terms: false,
       agree_terms_bad_click: false,
-      page: 2,
+      page: 3,
       gridStyle: 'col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8 centerForm',
       instagram_bio_why_not_text: '',
       high_school: '',
@@ -56371,39 +56371,71 @@ var Page4 = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(
-          'h2',
+          _reactBootstrap.FormGroup,
           null,
-          'We all get in the way of our own success. Which of the following methods do you think you\u2019ve managed to get under control in order to unblock your road to success? (Select the top 3)'
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 12 },
+            _react2.default.createElement(
+              'h4',
+              { className: 'centerText' },
+              'We all get in the way of our own success. Which of the following methods do you think you\u2019ve managed to get under control in order to unblock your road to success? (Select the top 3)'
+            )
+          )
         ),
-        _react2.default.createElement(_reactSelect2.default, {
-          name: 'unblock_methods',
-          value: this.props.page.unblock_methods,
-          onChange: function onChange(value) {
-            return _this2.props.handleMultiChange(value, 'unblock_methods');
-          },
-          multi: true,
-          delimiter: '|',
-          simpleValue: true,
-          joinValues: true,
-          options: [{ value: 'Procrastination', label: 'Procrastination' }, { value: 'Controlling life, people', label: 'Controlling life, people' }, { value: 'Indecision', label: 'Indecision' }, { value: 'Not saying \'yes\'; holding back; not being proactive in seeing opportunities', label: 'Not saying \'yes\'; holding back; not being proactive in seeing opportunities' }, { value: 'Wanting to be right', label: 'Wanting to be right' }, { value: 'Following the goals of other people', label: 'Following the goals of other people' }, { value: 'Acting as \'lone ranger\'; not delegating', label: 'Acting as \'lone ranger\'; not delegating' }, { value: 'Not saying \'no\' to projects that don\'t inspire you', label: 'Not saying \'no\' to projects that don\'t inspire you' }]
-        }),
         _react2.default.createElement(
-          'h2',
+          _reactBootstrap.FormGroup,
           null,
-          'What are you most excited to provide be for your mentee? (Select the top 3)'
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 12 },
+            _react2.default.createElement(_reactSelect2.default, {
+              name: 'unblock_methods',
+              value: this.props.page.unblock_methods,
+              onChange: function onChange(value) {
+                return _this2.props.handleMultiChange(value, 'unblock_methods');
+              },
+              multi: true,
+              delimiter: '|',
+              simpleValue: true,
+              joinValues: true,
+              options: [{ value: 'Procrastination', label: 'Procrastination' }, { value: 'Controlling life, people', label: 'Controlling life, people' }, { value: 'Indecision', label: 'Indecision' }, { value: 'Not saying \'yes\'; holding back; not being proactive in seeing opportunities', label: 'Not saying \'yes\'; holding back; not being proactive in seeing opportunities' }, { value: 'Wanting to be right', label: 'Wanting to be right' }, { value: 'Following the goals of other people', label: 'Following the goals of other people' }, { value: 'Acting as \'lone ranger\'; not delegating', label: 'Acting as \'lone ranger\'; not delegating' }, { value: 'Not saying \'no\' to projects that don\'t inspire you', label: 'Not saying \'no\' to projects that don\'t inspire you' }]
+            })
+          )
         ),
-        _react2.default.createElement(_reactSelect2.default, {
-          name: 'provide',
-          value: this.props.page.provide,
-          onChange: function onChange(value) {
-            return _this2.props.handleMultiChange(value, 'provide');
-          },
-          multi: true,
-          delimiter: '|',
-          simpleValue: true,
-          joinValues: true,
-          options: [{ value: 'Challenge', label: 'Challenge' }, { value: 'Accountability', label: 'Accountability' }, { value: 'Sounding Board', label: 'Sounding Board' }, { value: 'Provide focus and direction', label: 'Provide focus and direction' }, { value: 'Inspiration', label: 'Inspiration' }, { value: 'Ideas, Innovation, and Strategy for new projects', label: 'Ideas, Innovation, and Strategy for new projects' }, { value: 'Confidence booster; provide validation', label: 'Confidence booster; provide validation' }, { value: 'Not saying \'no\' to projects that don\'t inspire you', label: 'Not saying \'no\' to projects that don\'t inspire you' }]
-        })
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 12 },
+            _react2.default.createElement(
+              'h4',
+              { className: 'centerText' },
+              'What are you most excited to provide be for your mentee? (Select the top 3)'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 12 },
+            _react2.default.createElement(_reactSelect2.default, {
+              name: 'provide',
+              value: this.props.page.provide,
+              onChange: function onChange(value) {
+                return _this2.props.handleMultiChange(value, 'provide');
+              },
+              multi: true,
+              delimiter: '|',
+              simpleValue: true,
+              joinValues: true,
+              options: [{ value: 'Challenge', label: 'Challenge' }, { value: 'Accountability', label: 'Accountability' }, { value: 'Sounding Board', label: 'Sounding Board' }, { value: 'Provide focus and direction', label: 'Provide focus and direction' }, { value: 'Inspiration', label: 'Inspiration' }, { value: 'Ideas, Innovation, and Strategy for new projects', label: 'Ideas, Innovation, and Strategy for new projects' }, { value: 'Confidence booster; provide validation', label: 'Confidence booster; provide validation' }, { value: 'Not saying \'no\' to projects that don\'t inspire you', label: 'Not saying \'no\' to projects that don\'t inspire you' }]
+            })
+          )
+        )
       );
     }
   }]);
