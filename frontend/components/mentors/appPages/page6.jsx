@@ -10,127 +10,33 @@ class Page5 extends React.Component {
     render() {
       return(
           <Grid>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                  <label text-align="left">
-                    All of a sudden, you have no commitments or obligations
-                    tomorrow. How do you spend the day?
-                  </label>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q1" name="q1" onChange={this.props.handleInputChange}/>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                  <label text-align="left">
-                    Describe how you contribute to other’s growth and learning when you’re at your best. In what ways do you support others being at their best?
-                  </label>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q2" name="q2" onChange={this.props.handleInputChange}/>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                  <label text-align="left">
-                    What are you passionate about, and what have you done to pursue those passions?
-                  </label>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q3" name="q3" onChange={this.props.handleInputChange}/>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                  <label text-align="left">
-                    AIn your work and life experiences, what have you learned about people?
-                  </label>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q4" name="q4" onChange={this.props.handleInputChange}/>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                  <label text-align="left">
-                    What impact do you want to have in the world?
-                  </label>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q5" name="q5" onChange={this.props.handleInputChange}/>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                  <label text-align="left">
-                    What’s your greatest accomplishment?
-                  </label>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q6" name="q6" onChange={this.props.handleInputChange}/>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                  <label text-align="left">
-                    What changes are you noticing in your industry, community, or the world that need more attention?
-                  </label>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q7" name="q7" onChange={this.props.handleInputChange}/>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                  <label text-align="left">
-                    What are you struggling with in your career or a project?
-                  </label>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q8" name="q8" onChange={this.props.handleInputChange}/>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                  <label text-align="left">
-                    Tell us something about yourself that we can't Google.
-                  </label>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q9" name="q9" onChange={this.props.handleInputChange}/>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                  <label text-align="left">
-                    Why do you want to be a Girlz, FTW mentor?
-                  </label>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q10" name="q10" onChange={this.props.handleInputChange}/>
-              </Col>
-            </Row>
+            <Panel collapsible expanded={this.state.disclaimer}>
+
+              <p>
+                Hello! Thank you for your interest in the GIRLZ, FTW mentorship program. We’re thrilled to read your application. Before you fill out our form, we’d like to let you in on a little secret. We’re not a regular mentorship program. We’re a community of girlz that are passionate about elevating and celebrating female voices around the world. We don’t expect our mentors to be THAT girl… you know, the one that always had her shit together and still always managed to blow dry her hair before school / work. We’re looking for real, passionate, #girlbosses that don’t pretend to be perfect, can hustle their way to their dreams, AND still manage to uplift others along the way.
+              </p>
+
+              <p>
+                What you should know before submitting your application:
+              </p>
+              <ListGroup>
+                <ListGroupItem>
+                  All of our communication once you join the program happens on Facebook. If you’re accepted as a mentor, you will be added to a Facebook group. This group will be the place where you can connect with other mentors and mentees in the program. We’ll use this group to provide support, encouragement, and advice for each other. You must have a Facebook page if you want to be a part of this program.
+                </ListGroupItem>
+                <ListGroupItem>
+                  Every month, we’ll host a call with all mentors and mentees. These calls take place on the first friday of every month. In these calls, we’ll have inspiring women talk to about how they got to where they are today. Each call will be structured differently but is meant to inspire, inform, and mobilize everyone on the call. This means you’ll probably be tapped to speak at one of these calls because we suspect you’re awesome! Attending these calls is mandatory. You can only miss up to 3 calls.
+                </ListGroupItem>
+                <ListGroupItem>
+                  You must be willing to commit at least 4 hours a month for a year. Sessions with your mentee should last 1 hour every other week. We suggest you prep for at least 30 minutes before each of your mentee calls. Lastly, you must allot 1 hour for the monthly virtual chats.
+                  We will be hosting a mentor training on X DATE. Attending this training is required if you want to be a part of the program.
+                </ListGroupItem>
+              </ListGroup>
+
+            </Panel>
+
+            <Button bsStyle="warning" onClick={() => this.setState({ disclaimer: !this.state.disclaimer })}>
+              Toggle Disclaimer
+            </Button>
           </Grid>
       )
     }
