@@ -34,6 +34,7 @@ class Page5 extends React.Component {
       this.handleStop = this.handleStop.bind(this);
       this.play = this.play.bind(this);
 
+
     }
 
     componentDidMount(){
@@ -68,6 +69,23 @@ class Page5 extends React.Component {
 
       this.recordButton.onclick = this.toggleRecording;
       this.playButton.onclick = this.play;
+      this.OAUTH2_CLIENT_ID = '136481039092-luqsq4h1dm36t97ojkfu8tpb8qe22qul.apps.googleusercontent.com';
+      this.OAUTH2_SCOPES = [
+        'https://www.googleapis.com/auth/youtube'
+      ];
+
+      googleApiClientReady = () => {
+        gapi.auth.init( () => {
+          window.setTimeout( () => {
+            gapi.auth.authorize({
+              client_id: OAUTH2_CLIENT_ID,
+              scope: OAUTH2_SCOPES,
+              immediate: true
+            }, handleAuthResult);
+          }, 1);
+        });
+      }
+
     }
 
     handleSuccess(stream) {
@@ -149,20 +167,7 @@ class Page5 extends React.Component {
     play() {
       var superBuffer = new Blob(this.recordedBlobs, {type: 'video/webm'});
       this.recordedVideo.src = window.URL.createObjectURL(superBuffer);
-      // workaround for non-seekable video taken from
-      // https://bugs.chromium.org/p/chromium/issues/detail?id=642012#c23
-      this.recordedVideo.addEventListener('loadedmetadata', () => {
-        if (this.recordedVideo.duration === Infinity) {
-          this.recordedVideo.currentTime = 1e101;
-          this.recordedVideo.ontimeupdate = () => {
-            this.recordedVideo.currentTime = 0;
-            this.recordedVideo.ontimeupdate = () => {
-              delete this.recordedVideo.ontimeupdate;
-              this.recordedVideo.play();
-            };
-          };
-        }
-      });
+      this.recordedVideo.play();
     }
 
     render() {
