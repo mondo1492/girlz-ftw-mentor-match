@@ -6,281 +6,185 @@ import FontAwesome from 'react-fontawesome';
 class Page5 extends React.Component {
     constructor(props) {
       super(props);
+
+      // this.state = {
+      //   videoOptions: { mimeType: 'video/webm; codecs=vp9' },
+      //   mediaSteam: new MediaStream(),
+      //   mediaRecorder: new MediaRecord(mediaStream, options),
+      //   recordedChunks: [],
+      // }
+      // this.state.mediaRecorder.ondataavailable = handleDataAvailable;
+      let mediaSource = new MediaSource();
+      this.state = {
+        mediaSource: mediaSource,
+        mediaRecorder: null,
+      }
+      this.video = [];
+      this.button = [];
+      this.recordedBlobs = [];
+      this.state.mediaSource.addEventListener('sourceopen', this.handleSourceOpen, false);
+
+      this.handleSuccess = this.handleSuccess.bind(this);
+      this.handleError = this.handleError.bind(this);
+      this.handleSourceOpen = this.handleSourceOpen.bind(this);
+      this.handleDataAvailable = this.handleDataAvailable.bind(this);
+      this.toggleRecording = this.toggleRecording.bind(this);
+      this.stopRecording = this.stopRecording.bind(this);
+      this.startRecording = this.startRecording.bind(this);
+      this.handleStop = this.handleStop.bind(this);
+      this.play = this.play.bind(this);
+
     }
+
+    componentDidMount(){
+      this.gumVideo = this.video[0];
+      this.recordedVideo = this.video[1];
+      console.log(this.recordedVideo);
+      this.recordButton = this.button[0];
+      this.playButton = this.button[1];
+      this.uploadButton = this.button[2];
+
+      this.isSecureOrigin = location.protocol === 'https:' ||
+      location.hostname === 'localhost';
+      this.constraints = {
+        audio: true,
+        video: true
+      };
+      // window.isSecureContext could be used for Chrome
+      if (!this.isSecureOrigin) {
+        alert('getUserMedia() must be run from a secure origin: HTTPS or localhost.' +
+        '\n\nChanging protocol to HTTPS');
+        location.protocol = 'HTTPS';
+      }
+
+      this.recordedVideo.addEventListener('error', function(ev) {
+        console.error('MediaRecording.recordedMedia.error()');
+        alert('Your browser can not play\n\n' + recordedVideo.src
+        + '\n\n media clip. event: ' + JSON.stringify(ev));
+      }, true);
+
+      navigator.mediaDevices.getUserMedia(this.constraints).
+      then(this.handleSuccess).catch(this.handleError);
+
+      this.recordButton.onclick = this.toggleRecording;
+      this.playButton.onclick = this.play;
+    }
+
+    handleSuccess(stream) {
+      this.recordButton.disabled = false;
+      console.log('getUserMedia() got stream: ', stream);
+      window.stream = stream;
+      this.gumVideo.srcObject = stream;
+    }
+
+    handleError(error) {
+      console.log('navigator.getUserMedia error: ', error);
+    }
+
+
+    handleSourceOpen(event) {
+      console.log('MediaSource opened');
+    }
+
+    handleDataAvailable(event) {
+      if (event.data && event.data.size > 0) {
+        this.recordedBlobs.push(event.data);
+      }
+    }
+
+    handleStop(event) {
+      console.log('Recorder stopped: ', event);
+    }
+
+    toggleRecording() {
+      if (this.recordButton.textContent === 'Start Recording') {
+        this.startRecording();
+      } else {
+        this.stopRecording();
+        this.recordButton.textContent = 'Start Recording';
+        this.playButton.disabled = false;
+        // uploadButton.disabled = false;
+      }
+    }
+
+    startRecording() {
+      this.recordedBlobs = [];
+      var options = {mimeType: 'video/webm;codecs=vp9'};
+      if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+        console.log(options.mimeType + ' is not Supported');
+        options = {mimeType: 'video/webm;codecs=vp8'};
+        if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+          console.log(options.mimeType + ' is not Supported');
+          options = {mimeType: 'video/webm'};
+          if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+            console.log(options.mimeType + ' is not Supported');
+            options = {mimeType: ''};
+          }
+        }
+      }
+      try {
+        this.mediaRecorder = new MediaRecorder(window.stream, options);
+      } catch (e) {
+        console.error('Exception while creating MediaRecorder: ' + e);
+        alert('Exception while creating MediaRecorder: '
+          + e + '. mimeType: ' + options.mimeType);
+        return;
+      }
+      console.log('Created MediaRecorder', this.mediaRecorder, 'with options', options);
+      this.recordButton.textContent = 'Stop Recording';
+      this.playButton.disabled = true;
+      this.uploadButton.disabled = true;
+      this.mediaRecorder.onstop = this.handleStop;
+      this.mediaRecorder.ondataavailable = this.handleDataAvailable;
+      this.mediaRecorder.start(10); // collect 10ms of data
+      console.log('MediaRecorder started', this.mediaRecorder);
+    }
+
+    stopRecording() {
+      this.mediaRecorder.stop();
+      console.log('Recorded Blobs: ', this.recordedBlobs);
+      this.recordedVideo.controls = true;
+    }
+
+    play() {
+      var superBuffer = new Blob(this.recordedBlobs, {type: 'video/webm'});
+      this.recordedVideo.src = window.URL.createObjectURL(superBuffer);
+      // workaround for non-seekable video taken from
+      // https://bugs.chromium.org/p/chromium/issues/detail?id=642012#c23
+      this.recordedVideo.addEventListener('loadedmetadata', () => {
+        if (this.recordedVideo.duration === Infinity) {
+          this.recordedVideo.currentTime = 1e101;
+          this.recordedVideo.ontimeupdate = () => {
+            this.recordedVideo.currentTime = 0;
+            this.recordedVideo.ontimeupdate = () => {
+              delete this.recordedVideo.ontimeupdate;
+              this.recordedVideo.play();
+            };
+          };
+        }
+      });
+    }
+
     render() {
       return(
-          <Grid>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                  <label text-align="left">
-                    All of a sudden, you have no commitments or obligations
-                    tomorrow. How do you spend the day?
-                  </label>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q1" name="q1" value={this.props.page.q1} onChange={this.props.handleInputChange}/>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                  <label text-align="left">
-                    Describe how you contribute to other’s growth and learning when you’re at your best. In what ways do you support others being at their best?
-                  </label>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q2" name="q2" value={this.props.page.q2} onChange={this.props.handleInputChange}/>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                  <label text-align="left">
-                    What are you passionate about, and what have you done to pursue those passions?
-                  </label>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q3" name="q3" value={this.props.page.q3} onChange={this.props.handleInputChange}/>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                  <label text-align="left">
-                    AIn your work and life experiences, what have you learned about people?
-                  </label>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q4" name="q4" value={this.props.page.q4} onChange={this.props.handleInputChange}/>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                  <label text-align="left">
-                    What impact do you want to have in the world?
-                  </label>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q5" name="q5" value={this.props.page.q5} onChange={this.props.handleInputChange}/>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                  <label text-align="left">
-                    What’s your greatest accomplishment?
-                  </label>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q6" name="q6" value={this.props.page.q6} onChange={this.props.handleInputChange}/>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                  <label text-align="left">
-                    What changes are you noticing in your industry, community, or the world that need more attention?
-                  </label>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q7" name="q7" value={this.props.page.q7} onChange={this.props.handleInputChange}/>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                  <label text-align="left">
-                    What are you struggling with in your career or a project?
-                  </label>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q8" name="q8" value={this.props.page.q8} onChange={this.props.handleInputChange}/>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                  <label text-align="left">
-                    Tell us something about yourself that we can't Google.
-                  </label>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q9" name="q9" value={this.props.page.q9} onChange={this.props.handleInputChange}/>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                  <label text-align="left">
-                    Why do you want to be a Girlz, FTW mentor?
-                  </label>
-              </Col>
-            </Row>
-            <Row>
-              <Col class="col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4">
-                <textarea id='formControlsTextarea' className="form-control" id="q10" name="q10" value={this.props.page.q10} onChange={this.props.handleInputChange}/>
-              </Col>
-            </Row>
-          </Grid>
-      )
+        <div>
+          <video ref={(input) => {this.video[0] = input}} id="gum" autoPlay muted></video>
+          <video ref={(input) => {this.video[1] = input}} id="recorded" controls></video>
+
+          <div>
+            <button ref={(input) => {this.button[0] = input}} id="record" disabled>Start Recording</button>
+            <button ref={(input) => {this.button[1] = input}} id="play" disabled>Play</button>
+            <button
+              ref={(input) => {this.button[2] = input}}
+              onClick={this.upload}
+              id="upload" disabled
+              >
+              Upload to Youtube
+            </button>
+          </div>
+        </div>
+)
     }
   }
 
 export default Page5;
-//
-// <label>
-//   <p className="asterix">*</p>City:
-//   <input
-//     name="city"
-//     type="text"
-//     value={this.state.city}
-//     onChange={this.handleInputChange} />
-// </label>
-// <br/>
-// <label>
-//   <p className="asterix">*</p>Country:
-//   <input
-//     name="country"
-//     type="text"
-//     value={this.state.country}
-//     onChange={this.handleInputChange} />
-// </label>
-// <label>
-//   High School:
-//   <input
-//     name="high_school"
-//     type="text"
-//     value={this.state.high_school}
-//     onChange={this.handleInputChange} />
-// </label>
-// <br/>
-// <label>
-//   College:
-//   <input
-//     name="college"
-//     type="text"
-//     value={this.state.college}
-//     onChange={this.handleInputChange} />
-// </label>
-// <br/>
-// <label>
-//   What was your major?
-//   <input
-//     name="major"
-//     type="text"
-//     value={this.state.major}
-//     onChange={this.handleInputChange} />
-// </label>
-// <br/>
-// <label>
-//   Employer:
-//   <input
-//     name="employer"
-//     type="text"
-//     value={this.state.employer}
-//     onChange={this.handleInputChange} />
-// </label>
-// <br/>
-// <FormGroup>
-//   <ControlLabel>How interested are you in giving career advice? *</ControlLabel>
-//   <FormControl
-//     componentClass="select"
-//     placeholder="select"
-//     id="formControlsCareer"
-//     name="career_advice_rank"
-//     value={this.state.career_advice_rank}
-//     onChange={this.handleInputChange}
-//   >
-//     <option value="0">Not at all</option>
-//     <option value="1">Slightly</option>
-//     <option value="2">Moderately</option>
-//     <option value="3">Extremely</option>
-//   </FormControl>
-// </FormGroup>
-// <label>
-//   <p className="asterix">*</p>How interested are you in giving personal advice?
-//   <select name="personal_advice_rank" value={this.state.personal_advice_rank} onChange={this.handleInputChange}>
-//     <option value="0">Not at all</option>
-//     <option value="1">Slightly</option>
-//     <option value="2">Moderately</option>
-//     <option value="3">Extremely</option>
-//   </select>
-// </label>
-// <br/>
-// <label>
-//   <p className="asterix">*</p>How interested are you in providing motivation and inspiration for your mentees?
-//   <select name="motivation_rank" value={this.state.motivation_rank} onChange={this.handleInputChange}>
-//     <option value="0">Not at all</option>
-//     <option value="1">Slightly</option>
-//     <option value="2">Moderately</option>
-//     <option value="3">Extremely</option>
-//   </select>
-// </label>
-// <br/>
-// <label>
-//   Would you prefer a mentee who has or desires to pursue your major?
-//   <select name="share_major_rank" value={this.state.share_major_rank} onChange={this.handleInputChange}>
-//     <option value="0">Not at all</option>
-//     <option value="1">Slightly</option>
-//     <option value="2">Moderately</option>
-//     <option value="3">Extremely</option>
-//   </select>
-// </label>
-// <br/>
-// <label>
-//   Write the Instagram bio you wish you had.
-//   <textarea name="instagram_bio_text" value={this.state.instagram_bio_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-// </label>
-// <br/>
-// <label>
-//   What's getting in the way of you having that dream Instagram bio?
-//   <textarea name="instagram_bio_why_not_text" value={this.state.instagram_bio_why_not_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-// </label>
-// <br/>
-// <label>
-//   Describe your personality:
-//   <textarea name="personality_text" value={this.state.personality_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-// </label>
-// <br/>
-// <label>
-//   What keeps you up at night?
-//   <textarea name="night_text" value={this.state.night_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-// </label>
-// <br/>
-// <label>
-//   What's one thing about you that we can't Google?
-//   <textarea name="not_on_google_text" value={this.state.not_on_google_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-// </label>
-// <br/>
-// <label>
-//   How do you aspire to make a positive impact on others?
-//   <textarea name="how_impact_text" value={this.state.how_impact_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-// </label>
-// <br/>
-// <label>
-//   Is there anything else you'd like to add?
-//   <textarea name="extra_info_text" value={this.state.extra_info_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-// </label>
-// <br/>
-// All mentors are required to set aside __ hours per month. Some other stuff that's needed.
-// Blah blah etc. All of our communications happen over Facebook groups,
-// so you must have a Facebook to be a GirlzFTW mentor.
-// <br/>
-// <label style={{color: this.state.agree_terms_bad_click ? 'red' : 'black'}}>
-//   I have read and agree to these requirements.
-//   <input
-//     name="agree_terms"
-//     type="checkbox"
-//     value={this.state.agree_terms}
-//     onChange={this.handleInputChange} />
-// </label>

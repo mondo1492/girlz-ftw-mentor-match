@@ -56475,8 +56475,6 @@ var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -56489,235 +56487,214 @@ var Page5 = function (_React$Component) {
   function Page5(props) {
     _classCallCheck(this, Page5);
 
-    return _possibleConstructorReturn(this, (Page5.__proto__ || Object.getPrototypeOf(Page5)).call(this, props));
+    // this.state = {
+    //   videoOptions: { mimeType: 'video/webm; codecs=vp9' },
+    //   mediaSteam: new MediaStream(),
+    //   mediaRecorder: new MediaRecord(mediaStream, options),
+    //   recordedChunks: [],
+    // }
+    // this.state.mediaRecorder.ondataavailable = handleDataAvailable;
+    var _this = _possibleConstructorReturn(this, (Page5.__proto__ || Object.getPrototypeOf(Page5)).call(this, props));
+
+    var mediaSource = new MediaSource();
+    _this.state = {
+      mediaSource: mediaSource,
+      mediaRecorder: null
+    };
+    _this.video = [];
+    _this.button = [];
+    _this.recordedBlobs = [];
+    _this.state.mediaSource.addEventListener('sourceopen', _this.handleSourceOpen, false);
+
+    _this.handleSuccess = _this.handleSuccess.bind(_this);
+    _this.handleError = _this.handleError.bind(_this);
+    _this.handleSourceOpen = _this.handleSourceOpen.bind(_this);
+    _this.handleDataAvailable = _this.handleDataAvailable.bind(_this);
+    _this.toggleRecording = _this.toggleRecording.bind(_this);
+    _this.stopRecording = _this.stopRecording.bind(_this);
+    _this.startRecording = _this.startRecording.bind(_this);
+    _this.handleStop = _this.handleStop.bind(_this);
+    _this.play = _this.play.bind(_this);
+
+    return _this;
   }
 
   _createClass(Page5, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.gumVideo = this.video[0];
+      this.recordedVideo = this.video[1];
+      console.log(this.recordedVideo);
+      this.recordButton = this.button[0];
+      this.playButton = this.button[1];
+      this.uploadButton = this.button[2];
+
+      this.isSecureOrigin = location.protocol === 'https:' || location.hostname === 'localhost';
+      this.constraints = {
+        audio: true,
+        video: true
+      };
+      // window.isSecureContext could be used for Chrome
+      if (!this.isSecureOrigin) {
+        alert('getUserMedia() must be run from a secure origin: HTTPS or localhost.' + '\n\nChanging protocol to HTTPS');
+        location.protocol = 'HTTPS';
+      }
+
+      this.recordedVideo.addEventListener('error', function (ev) {
+        console.error('MediaRecording.recordedMedia.error()');
+        alert('Your browser can not play\n\n' + recordedVideo.src + '\n\n media clip. event: ' + JSON.stringify(ev));
+      }, true);
+
+      navigator.mediaDevices.getUserMedia(this.constraints).then(this.handleSuccess).catch(this.handleError);
+
+      this.recordButton.onclick = this.toggleRecording;
+      this.playButton.onclick = this.play;
+    }
+  }, {
+    key: 'handleSuccess',
+    value: function handleSuccess(stream) {
+      this.recordButton.disabled = false;
+      console.log('getUserMedia() got stream: ', stream);
+      window.stream = stream;
+      this.gumVideo.srcObject = stream;
+    }
+  }, {
+    key: 'handleError',
+    value: function handleError(error) {
+      console.log('navigator.getUserMedia error: ', error);
+    }
+  }, {
+    key: 'handleSourceOpen',
+    value: function handleSourceOpen(event) {
+      console.log('MediaSource opened');
+    }
+  }, {
+    key: 'handleDataAvailable',
+    value: function handleDataAvailable(event) {
+      if (event.data && event.data.size > 0) {
+        this.recordedBlobs.push(event.data);
+      }
+    }
+  }, {
+    key: 'handleStop',
+    value: function handleStop(event) {
+      console.log('Recorder stopped: ', event);
+    }
+  }, {
+    key: 'toggleRecording',
+    value: function toggleRecording() {
+      if (this.recordButton.textContent === 'Start Recording') {
+        this.startRecording();
+      } else {
+        this.stopRecording();
+        this.recordButton.textContent = 'Start Recording';
+        this.playButton.disabled = false;
+        // uploadButton.disabled = false;
+      }
+    }
+  }, {
+    key: 'startRecording',
+    value: function startRecording() {
+      this.recordedBlobs = [];
+      var options = { mimeType: 'video/webm;codecs=vp9' };
+      if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+        console.log(options.mimeType + ' is not Supported');
+        options = { mimeType: 'video/webm;codecs=vp8' };
+        if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+          console.log(options.mimeType + ' is not Supported');
+          options = { mimeType: 'video/webm' };
+          if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+            console.log(options.mimeType + ' is not Supported');
+            options = { mimeType: '' };
+          }
+        }
+      }
+      try {
+        this.mediaRecorder = new MediaRecorder(window.stream, options);
+      } catch (e) {
+        console.error('Exception while creating MediaRecorder: ' + e);
+        alert('Exception while creating MediaRecorder: ' + e + '. mimeType: ' + options.mimeType);
+        return;
+      }
+      console.log('Created MediaRecorder', this.mediaRecorder, 'with options', options);
+      this.recordButton.textContent = 'Stop Recording';
+      this.playButton.disabled = true;
+      this.uploadButton.disabled = true;
+      this.mediaRecorder.onstop = this.handleStop;
+      this.mediaRecorder.ondataavailable = this.handleDataAvailable;
+      this.mediaRecorder.start(10); // collect 10ms of data
+      console.log('MediaRecorder started', this.mediaRecorder);
+    }
+  }, {
+    key: 'stopRecording',
+    value: function stopRecording() {
+      this.mediaRecorder.stop();
+      console.log('Recorded Blobs: ', this.recordedBlobs);
+      this.recordedVideo.controls = true;
+    }
+  }, {
+    key: 'play',
+    value: function play() {
+      var _this2 = this;
+
+      var superBuffer = new Blob(this.recordedBlobs, { type: 'video/webm' });
+      this.recordedVideo.src = window.URL.createObjectURL(superBuffer);
+      // workaround for non-seekable video taken from
+      // https://bugs.chromium.org/p/chromium/issues/detail?id=642012#c23
+      this.recordedVideo.addEventListener('loadedmetadata', function () {
+        if (_this2.recordedVideo.duration === Infinity) {
+          _this2.recordedVideo.currentTime = 1e101;
+          _this2.recordedVideo.ontimeupdate = function () {
+            _this2.recordedVideo.currentTime = 0;
+            _this2.recordedVideo.ontimeupdate = function () {
+              delete _this2.recordedVideo.ontimeupdate;
+              _this2.recordedVideo.play();
+            };
+          };
+        }
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
-      var _React$createElement, _React$createElement2, _React$createElement3, _React$createElement4, _React$createElement5, _React$createElement6, _React$createElement7, _React$createElement8, _React$createElement9, _React$createElement10;
+      var _this3 = this;
 
       return _react2.default.createElement(
-        _reactBootstrap.Grid,
+        'div',
         null,
+        _react2.default.createElement('video', { ref: function ref(input) {
+            _this3.video[0] = input;
+          }, id: 'gum', autoPlay: true, muted: true }),
+        _react2.default.createElement('video', { ref: function ref(input) {
+            _this3.video[1] = input;
+          }, id: 'recorded', controls: true }),
         _react2.default.createElement(
-          _reactBootstrap.Row,
+          'div',
           null,
           _react2.default.createElement(
-            _reactBootstrap.Col,
-            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
-            _react2.default.createElement(
-              'label',
-              { 'text-align': 'left' },
-              'All of a sudden, you have no commitments or obligations tomorrow. How do you spend the day?'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.Row,
-          null,
+            'button',
+            { ref: function ref(input) {
+                _this3.button[0] = input;
+              }, id: 'record', disabled: true },
+            'Start Recording'
+          ),
           _react2.default.createElement(
-            _reactBootstrap.Col,
-            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
-            _react2.default.createElement('textarea', (_React$createElement = { id: 'formControlsTextarea', className: 'form-control' }, _defineProperty(_React$createElement, 'id', 'q1'), _defineProperty(_React$createElement, 'name', 'q1'), _defineProperty(_React$createElement, 'value', this.props.page.q1), _defineProperty(_React$createElement, 'onChange', this.props.handleInputChange), _React$createElement))
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.Row,
-          null,
+            'button',
+            { ref: function ref(input) {
+                _this3.button[1] = input;
+              }, id: 'play', disabled: true },
+            'Play'
+          ),
           _react2.default.createElement(
-            _reactBootstrap.Col,
-            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
-            _react2.default.createElement(
-              'label',
-              { 'text-align': 'left' },
-              'Describe how you contribute to other\u2019s growth and learning when you\u2019re at your best. In what ways do you support others being at their best?'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.Row,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
-            _react2.default.createElement('textarea', (_React$createElement2 = { id: 'formControlsTextarea', className: 'form-control' }, _defineProperty(_React$createElement2, 'id', 'q2'), _defineProperty(_React$createElement2, 'name', 'q2'), _defineProperty(_React$createElement2, 'value', this.props.page.q2), _defineProperty(_React$createElement2, 'onChange', this.props.handleInputChange), _React$createElement2))
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.Row,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
-            _react2.default.createElement(
-              'label',
-              { 'text-align': 'left' },
-              'What are you passionate about, and what have you done to pursue those passions?'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.Row,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
-            _react2.default.createElement('textarea', (_React$createElement3 = { id: 'formControlsTextarea', className: 'form-control' }, _defineProperty(_React$createElement3, 'id', 'q3'), _defineProperty(_React$createElement3, 'name', 'q3'), _defineProperty(_React$createElement3, 'value', this.props.page.q3), _defineProperty(_React$createElement3, 'onChange', this.props.handleInputChange), _React$createElement3))
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.Row,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
-            _react2.default.createElement(
-              'label',
-              { 'text-align': 'left' },
-              'AIn your work and life experiences, what have you learned about people?'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.Row,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
-            _react2.default.createElement('textarea', (_React$createElement4 = { id: 'formControlsTextarea', className: 'form-control' }, _defineProperty(_React$createElement4, 'id', 'q4'), _defineProperty(_React$createElement4, 'name', 'q4'), _defineProperty(_React$createElement4, 'value', this.props.page.q4), _defineProperty(_React$createElement4, 'onChange', this.props.handleInputChange), _React$createElement4))
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.Row,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
-            _react2.default.createElement(
-              'label',
-              { 'text-align': 'left' },
-              'What impact do you want to have in the world?'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.Row,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
-            _react2.default.createElement('textarea', (_React$createElement5 = { id: 'formControlsTextarea', className: 'form-control' }, _defineProperty(_React$createElement5, 'id', 'q5'), _defineProperty(_React$createElement5, 'name', 'q5'), _defineProperty(_React$createElement5, 'value', this.props.page.q5), _defineProperty(_React$createElement5, 'onChange', this.props.handleInputChange), _React$createElement5))
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.Row,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
-            _react2.default.createElement(
-              'label',
-              { 'text-align': 'left' },
-              'What\u2019s your greatest accomplishment?'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.Row,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
-            _react2.default.createElement('textarea', (_React$createElement6 = { id: 'formControlsTextarea', className: 'form-control' }, _defineProperty(_React$createElement6, 'id', 'q6'), _defineProperty(_React$createElement6, 'name', 'q6'), _defineProperty(_React$createElement6, 'value', this.props.page.q6), _defineProperty(_React$createElement6, 'onChange', this.props.handleInputChange), _React$createElement6))
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.Row,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
-            _react2.default.createElement(
-              'label',
-              { 'text-align': 'left' },
-              'What changes are you noticing in your industry, community, or the world that need more attention?'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.Row,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
-            _react2.default.createElement('textarea', (_React$createElement7 = { id: 'formControlsTextarea', className: 'form-control' }, _defineProperty(_React$createElement7, 'id', 'q7'), _defineProperty(_React$createElement7, 'name', 'q7'), _defineProperty(_React$createElement7, 'value', this.props.page.q7), _defineProperty(_React$createElement7, 'onChange', this.props.handleInputChange), _React$createElement7))
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.Row,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
-            _react2.default.createElement(
-              'label',
-              { 'text-align': 'left' },
-              'What are you struggling with in your career or a project?'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.Row,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
-            _react2.default.createElement('textarea', (_React$createElement8 = { id: 'formControlsTextarea', className: 'form-control' }, _defineProperty(_React$createElement8, 'id', 'q8'), _defineProperty(_React$createElement8, 'name', 'q8'), _defineProperty(_React$createElement8, 'value', this.props.page.q8), _defineProperty(_React$createElement8, 'onChange', this.props.handleInputChange), _React$createElement8))
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.Row,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
-            _react2.default.createElement(
-              'label',
-              { 'text-align': 'left' },
-              'Tell us something about yourself that we can\'t Google.'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.Row,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
-            _react2.default.createElement('textarea', (_React$createElement9 = { id: 'formControlsTextarea', className: 'form-control' }, _defineProperty(_React$createElement9, 'id', 'q9'), _defineProperty(_React$createElement9, 'name', 'q9'), _defineProperty(_React$createElement9, 'value', this.props.page.q9), _defineProperty(_React$createElement9, 'onChange', this.props.handleInputChange), _React$createElement9))
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.Row,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
-            _react2.default.createElement(
-              'label',
-              { 'text-align': 'left' },
-              'Why do you want to be a Girlz, FTW mentor?'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.Row,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { 'class': 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
-            _react2.default.createElement('textarea', (_React$createElement10 = { id: 'formControlsTextarea', className: 'form-control' }, _defineProperty(_React$createElement10, 'id', 'q10'), _defineProperty(_React$createElement10, 'name', 'q10'), _defineProperty(_React$createElement10, 'value', this.props.page.q10), _defineProperty(_React$createElement10, 'onChange', this.props.handleInputChange), _React$createElement10))
+            'button',
+            {
+              ref: function ref(input) {
+                _this3.button[2] = input;
+              },
+              onClick: this.upload,
+              id: 'upload', disabled: true
+            },
+            'Upload to Youtube'
           )
         )
       );
@@ -56728,153 +56705,6 @@ var Page5 = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Page5;
-//
-// <label>
-//   <p className="asterix">*</p>City:
-//   <input
-//     name="city"
-//     type="text"
-//     value={this.state.city}
-//     onChange={this.handleInputChange} />
-// </label>
-// <br/>
-// <label>
-//   <p className="asterix">*</p>Country:
-//   <input
-//     name="country"
-//     type="text"
-//     value={this.state.country}
-//     onChange={this.handleInputChange} />
-// </label>
-// <label>
-//   High School:
-//   <input
-//     name="high_school"
-//     type="text"
-//     value={this.state.high_school}
-//     onChange={this.handleInputChange} />
-// </label>
-// <br/>
-// <label>
-//   College:
-//   <input
-//     name="college"
-//     type="text"
-//     value={this.state.college}
-//     onChange={this.handleInputChange} />
-// </label>
-// <br/>
-// <label>
-//   What was your major?
-//   <input
-//     name="major"
-//     type="text"
-//     value={this.state.major}
-//     onChange={this.handleInputChange} />
-// </label>
-// <br/>
-// <label>
-//   Employer:
-//   <input
-//     name="employer"
-//     type="text"
-//     value={this.state.employer}
-//     onChange={this.handleInputChange} />
-// </label>
-// <br/>
-// <FormGroup>
-//   <ControlLabel>How interested are you in giving career advice? *</ControlLabel>
-//   <FormControl
-//     componentClass="select"
-//     placeholder="select"
-//     id="formControlsCareer"
-//     name="career_advice_rank"
-//     value={this.state.career_advice_rank}
-//     onChange={this.handleInputChange}
-//   >
-//     <option value="0">Not at all</option>
-//     <option value="1">Slightly</option>
-//     <option value="2">Moderately</option>
-//     <option value="3">Extremely</option>
-//   </FormControl>
-// </FormGroup>
-// <label>
-//   <p className="asterix">*</p>How interested are you in giving personal advice?
-//   <select name="personal_advice_rank" value={this.state.personal_advice_rank} onChange={this.handleInputChange}>
-//     <option value="0">Not at all</option>
-//     <option value="1">Slightly</option>
-//     <option value="2">Moderately</option>
-//     <option value="3">Extremely</option>
-//   </select>
-// </label>
-// <br/>
-// <label>
-//   <p className="asterix">*</p>How interested are you in providing motivation and inspiration for your mentees?
-//   <select name="motivation_rank" value={this.state.motivation_rank} onChange={this.handleInputChange}>
-//     <option value="0">Not at all</option>
-//     <option value="1">Slightly</option>
-//     <option value="2">Moderately</option>
-//     <option value="3">Extremely</option>
-//   </select>
-// </label>
-// <br/>
-// <label>
-//   Would you prefer a mentee who has or desires to pursue your major?
-//   <select name="share_major_rank" value={this.state.share_major_rank} onChange={this.handleInputChange}>
-//     <option value="0">Not at all</option>
-//     <option value="1">Slightly</option>
-//     <option value="2">Moderately</option>
-//     <option value="3">Extremely</option>
-//   </select>
-// </label>
-// <br/>
-// <label>
-//   Write the Instagram bio you wish you had.
-//   <textarea name="instagram_bio_text" value={this.state.instagram_bio_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-// </label>
-// <br/>
-// <label>
-//   What's getting in the way of you having that dream Instagram bio?
-//   <textarea name="instagram_bio_why_not_text" value={this.state.instagram_bio_why_not_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-// </label>
-// <br/>
-// <label>
-//   Describe your personality:
-//   <textarea name="personality_text" value={this.state.personality_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-// </label>
-// <br/>
-// <label>
-//   What keeps you up at night?
-//   <textarea name="night_text" value={this.state.night_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-// </label>
-// <br/>
-// <label>
-//   What's one thing about you that we can't Google?
-//   <textarea name="not_on_google_text" value={this.state.not_on_google_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-// </label>
-// <br/>
-// <label>
-//   How do you aspire to make a positive impact on others?
-//   <textarea name="how_impact_text" value={this.state.how_impact_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-// </label>
-// <br/>
-// <label>
-//   Is there anything else you'd like to add?
-//   <textarea name="extra_info_text" value={this.state.extra_info_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-// </label>
-// <br/>
-// All mentors are required to set aside __ hours per month. Some other stuff that's needed.
-// Blah blah etc. All of our communications happen over Facebook groups,
-// so you must have a Facebook to be a GirlzFTW mentor.
-// <br/>
-// <label style={{color: this.state.agree_terms_bad_click ? 'red' : 'black'}}>
-//   I have read and agree to these requirements.
-//   <input
-//     name="agree_terms"
-//     type="checkbox"
-//     value={this.state.agree_terms}
-//     onChange={this.handleInputChange} />
-// </label>
 
 /***/ }),
 /* 512 */
