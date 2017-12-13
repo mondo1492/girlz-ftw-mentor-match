@@ -55031,27 +55031,27 @@ var _reactFontawesome = __webpack_require__(31);
 
 var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
 
-var _page = __webpack_require__(506);
+var _page = __webpack_require__(508);
 
 var _page2 = _interopRequireDefault(_page);
 
-var _page3 = __webpack_require__(507);
+var _page3 = __webpack_require__(510);
 
 var _page4 = _interopRequireDefault(_page3);
 
-var _page5 = __webpack_require__(508);
+var _page5 = __webpack_require__(511);
 
 var _page6 = _interopRequireDefault(_page5);
 
-var _page7 = __webpack_require__(510);
+var _page7 = __webpack_require__(512);
 
 var _page8 = _interopRequireDefault(_page7);
 
-var _page9 = __webpack_require__(511);
+var _page9 = __webpack_require__(556);
 
 var _page10 = _interopRequireDefault(_page9);
 
-var _page11 = __webpack_require__(512);
+var _page11 = __webpack_require__(557);
 
 var _page12 = _interopRequireDefault(_page11);
 
@@ -55074,7 +55074,7 @@ var MentorApp = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (MentorApp.__proto__ || Object.getPrototypeOf(MentorApp)).call(this, props));
 
     _this.state = {
-      0: {
+      2: {
         username: "Aaron",
         password: "Meow",
         first_name: "Aaron",
@@ -55082,14 +55082,14 @@ var MentorApp = function (_React$Component) {
         age: '2',
         email: 'a'
       },
-      1: {
+      3: {
         facebook: 'fab',
         linkedin: 'link',
         phone: '1234567890',
         city: 'Belmont',
         country: 'Albania'
       },
-      2: {
+      4: {
         college: 'stanvard',
         major: '',
         share_major_rank: '',
@@ -55098,11 +55098,11 @@ var MentorApp = function (_React$Component) {
         share_industry_rank: '',
         job_description: 'friggen sick'
       },
-      3: {
+      5: {
         unblock_methods: '',
         provide: ''
       },
-      4: {
+      6: {
         q1: '',
         q2: '',
         q3: '',
@@ -55229,28 +55229,28 @@ var MentorApp = function (_React$Component) {
 
       var page = function () {
         switch (_this3.state.page) {
-          case 0:
-            return _react2.default.createElement(_page2.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[0] });
-            break;
-          case 1:
-            return _react2.default.createElement(_page4.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[1] });
-            break;
           case 2:
-            return _react2.default.createElement(_page6.default, {
-              handleMultiChange: _this3.handleMultiChange, handleInputChange: _this3.handleInputChange, page: _this3.state[2] });
+            return _react2.default.createElement(_page2.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[2] });
             break;
           case 3:
+            return _react2.default.createElement(_page4.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[3] });
+            break;
+          case 4:
+            return _react2.default.createElement(_page6.default, {
+              handleMultiChange: _this3.handleMultiChange, handleInputChange: _this3.handleInputChange, page: _this3.state[4] });
+            break;
+          case 5:
             return _react2.default.createElement(_page8.default, {
               handleInputChange: _this3.handleInputChange,
               handleMultiChange: _this3.handleMultiChange,
-              page: _this3.state[3] });
-            break;
-          case 4:
-            return _react2.default.createElement(_page10.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[4] });
-            break;
-          case 5:
-            return _react2.default.createElement(_page12.default, {
               page: _this3.state[5] });
+            break;
+          case 6:
+            return _react2.default.createElement(_page10.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[6] });
+            break;
+          case 7:
+            return _react2.default.createElement(_page12.default, {
+              page: _this3.state[7] });
             break;
         }
       }();
@@ -55324,7 +55324,9 @@ exports.default = {
 module.exports = exports['default'];
 
 /***/ }),
-/* 506 */
+/* 506 */,
+/* 507 */,
+/* 508 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -55354,19 +55356,19 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Page1 = function (_React$Component) {
-  _inherits(Page1, _React$Component);
+var Page3 = function (_React$Component) {
+  _inherits(Page3, _React$Component);
 
-  function Page1(props) {
-    _classCallCheck(this, Page1);
+  function Page3(props) {
+    _classCallCheck(this, Page3);
 
-    var _this = _possibleConstructorReturn(this, (Page1.__proto__ || Object.getPrototypeOf(Page1)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Page3.__proto__ || Object.getPrototypeOf(Page3)).call(this, props));
 
     _this.gridStyle = 'col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8';
     return _this;
   }
 
-  _createClass(Page1, [{
+  _createClass(Page3, [{
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -55506,533 +55508,6 @@ var Page1 = function (_React$Component) {
                 onChange: this.props.handleInputChange
               })
             )
-          )
-        )
-      );
-    }
-  }]);
-
-  return Page1;
-}(_react2.default.Component);
-
-exports.default = Page1;
-
-/***/ }),
-/* 507 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactBootstrap = __webpack_require__(12);
-
-var _reactFontawesome = __webpack_require__(31);
-
-var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Page2 = function (_React$Component) {
-  _inherits(Page2, _React$Component);
-
-  function Page2(props) {
-    _classCallCheck(this, Page2);
-
-    return _possibleConstructorReturn(this, (Page2.__proto__ || Object.getPrototypeOf(Page2)).call(this, props));
-  }
-
-  _createClass(Page2, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'h3',
-          { className: 'centerForm pageCaption' },
-          'Let\'s get connected!'
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'Facebook *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 8 },
-            _react2.default.createElement(
-              _reactBootstrap.InputGroup,
-              null,
-              _react2.default.createElement(
-                _reactBootstrap.InputGroup.Addon,
-                null,
-                _react2.default.createElement(_reactFontawesome2.default, { name: 'facebook' })
-              ),
-              _react2.default.createElement(_reactBootstrap.FormControl, {
-                id: 'formControlsFacebook',
-                type: 'text',
-                name: 'facebook',
-                value: this.props.page.facebook,
-                onChange: this.props.handleInputChange
-              })
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'LinkedIn *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 8 },
-            _react2.default.createElement(
-              _reactBootstrap.InputGroup,
-              null,
-              _react2.default.createElement(
-                _reactBootstrap.InputGroup.Addon,
-                null,
-                _react2.default.createElement(_reactFontawesome2.default, { name: 'linkedin' })
-              ),
-              _react2.default.createElement(_reactBootstrap.FormControl, {
-                id: 'formControlsLinkedIn',
-                type: 'text',
-                name: 'linkedin',
-                value: this.props.page.linkedin,
-                onChange: this.props.handleInputChange
-              })
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'Phone *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 8 },
-            _react2.default.createElement(
-              _reactBootstrap.InputGroup,
-              null,
-              _react2.default.createElement(
-                _reactBootstrap.InputGroup.Addon,
-                null,
-                _react2.default.createElement(_reactFontawesome2.default, { name: 'phone' })
-              ),
-              _react2.default.createElement(_reactBootstrap.FormControl, {
-                id: 'formControlsPhone',
-                type: 'text',
-                name: 'phone',
-                value: this.props.page.phone,
-                placeholder: '8001234567',
-                onChange: this.props.handleInputChange
-              })
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'City *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 8 },
-            _react2.default.createElement(_reactBootstrap.FormControl, {
-              id: 'formControlsCity',
-              type: 'text',
-              name: 'city',
-              value: this.props.page.city,
-              onChange: this.props.handleInputChange
-            })
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'Country *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 8 },
-            _react2.default.createElement(_reactBootstrap.FormControl, {
-              id: 'formControlsCountry',
-              type: 'text',
-              name: 'country',
-              value: this.props.page.country,
-              onChange: this.props.handleInputChange
-            })
-          )
-        )
-      );
-    }
-  }]);
-
-  return Page2;
-}(_react2.default.Component);
-
-exports.default = Page2;
-
-/***/ }),
-/* 508 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactBootstrap = __webpack_require__(12);
-
-var _reactFontawesome = __webpack_require__(31);
-
-var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
-
-var _reactSelect = __webpack_require__(214);
-
-var _reactSelect2 = _interopRequireDefault(_reactSelect);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Page3 = function (_React$Component) {
-  _inherits(Page3, _React$Component);
-
-  function Page3(props) {
-    _classCallCheck(this, Page3);
-
-    return _possibleConstructorReturn(this, (Page3.__proto__ || Object.getPrototypeOf(Page3)).call(this, props));
-  }
-
-  _createClass(Page3, [{
-    key: 'render',
-    value: function render() {
-      var _this2 = this,
-          _React$createElement;
-
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement(
-          'h3',
-          { className: 'centerForm pageCaption' },
-          'Some background questions'
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'College *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 8 },
-            _react2.default.createElement(
-              _reactBootstrap.InputGroup,
-              null,
-              _react2.default.createElement(
-                _reactBootstrap.InputGroup.Addon,
-                null,
-                _react2.default.createElement(_reactFontawesome2.default, { name: 'graduation-cap' })
-              ),
-              _react2.default.createElement(_reactBootstrap.FormControl, {
-                id: 'formControlsCollege',
-                type: 'text',
-                name: 'college',
-                value: this.props.page.college,
-                onChange: this.props.handleInputChange
-              })
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'What was your college major? *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 8 },
-            _react2.default.createElement(_reactSelect2.default, {
-              name: 'major',
-              value: this.props.page.major,
-              onChange: function onChange(value) {
-                return _this2.props.handleMultiChange(value, 'major');
-              },
-              multi: true,
-              delimiter: '|',
-              simpleValue: true,
-              joinValues: true,
-              options: [{ value: 'Science', label: 'Science' }, { value: 'Engineering', label: 'Engineering' }, { value: 'Communcations, Marketing', label: 'Communcations, Marketing' }, { value: 'Political Science, International Relations', label: 'Political Science, International Relations' }, { value: 'Finance, Economics', label: 'Finance, Economics' }, { value: 'Liberal Arts', label: 'Liberal Arts' }]
-            })
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'Employer *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 8 },
-            _react2.default.createElement(
-              _reactBootstrap.InputGroup,
-              null,
-              _react2.default.createElement(
-                _reactBootstrap.InputGroup.Addon,
-                null,
-                _react2.default.createElement(_reactFontawesome2.default, { name: 'handshake-o' })
-              ),
-              _react2.default.createElement(_reactBootstrap.FormControl, {
-                id: 'formControlsEmployer',
-                type: 'text',
-                name: 'employer',
-                value: this.props.page.employer,
-                onChange: this.props.handleInputChange
-              })
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'In which industry do you work? *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 8 },
-            _react2.default.createElement(_reactSelect2.default, {
-              name: 'industry',
-              value: this.props.page.industry,
-              onChange: function onChange(value) {
-                return _this2.props.handleMultiChange(value, 'industry');
-              },
-              multi: true,
-              delimiter: '|',
-              simpleValue: true,
-              joinValues: true,
-              options: [{ value: 'International Relations, Politics', label: 'International Relations, Politics' }, { value: 'Finance', label: 'Finance' }, { value: 'Accounting, Legal', label: 'Accounting, Legal' }, { value: 'Media', label: 'Media' }, { value: 'Technology', label: 'Technology' }, { value: 'Marketing', label: 'Marketing' }, { value: 'Performing Arts, Sports, Related', label: 'Performing Arts, Sports, Related' }, { value: 'Healthcare', label: 'Healthcare' }, { value: 'Education', label: 'Education' }, { value: 'Agriculture, Forestry, Fishing', label: 'Agriculture, Forestry, Fishing' }]
-            })
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { className: 'centerForm formFontStyle2', componentClass: _reactBootstrap.ControlLabel, sm: 12 },
-            'How important is it to you that a mentee share your major? *'
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { className: 'centerForm', sm: 12 },
-            _react2.default.createElement(
-              'div',
-              { className: 'formFontStyle' },
-              _react2.default.createElement(
-                _reactBootstrap.Radio,
-                {
-                  onChange: this.props.handleInputChange,
-                  name: 'share_major_rank',
-                  value: '0',
-                  checked: this.props.page.share_major_rank === '0',
-                  inline: true
-                },
-                'Not at all'
-              ),
-              _react2.default.createElement(
-                _reactBootstrap.Radio,
-                {
-                  onChange: this.props.handleInputChange,
-                  name: 'share_major_rank',
-                  value: '1',
-                  checked: this.props.page.share_major_rank === '1',
-                  inline: true
-                },
-                'A little'
-              ),
-              _react2.default.createElement(
-                _reactBootstrap.Radio,
-                {
-                  onChange: this.props.handleInputChange,
-                  name: 'share_major_rank',
-                  value: '2',
-                  checked: this.props.page.share_major_rank === '2',
-                  inline: true
-                },
-                'Moderately'
-              ),
-              _react2.default.createElement(
-                _reactBootstrap.Radio,
-                {
-                  onChange: this.props.handleInputChange,
-                  name: 'share_major_rank',
-                  value: '3',
-                  checked: this.props.page.share_major_rank === '3',
-                  inline: true
-                },
-                'Very'
-              ),
-              _react2.default.createElement(
-                _reactBootstrap.Radio,
-                {
-                  onChange: this.props.handleInputChange,
-                  name: 'share_major_rank',
-                  value: '4',
-                  checked: this.props.page.share_major_rank === '4',
-                  inline: true
-                },
-                'Extremely'
-              )
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { className: 'centerForm formFontStyle2', componentClass: _reactBootstrap.ControlLabel, sm: 12 },
-            'How important is it to you that a mentee would want to join your industry? *'
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          { className: 'centerForm', sm: 12 },
-          _react2.default.createElement(
-            'div',
-            { className: 'formFontStyle' },
-            _react2.default.createElement(
-              _reactBootstrap.Radio,
-              {
-                onChange: this.props.handleInputChange,
-                name: 'share_industry_rank',
-                value: '0',
-                checked: this.props.page.share_industry_rank === '0',
-                inline: true
-              },
-              'Not at all'
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Radio,
-              {
-                onChange: this.props.handleInputChange,
-                name: 'share_industry_rank',
-                value: '1',
-                checked: this.props.page.share_industry_rank === '1',
-                inline: true
-              },
-              'A little'
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Radio,
-              {
-                onChange: this.props.handleInputChange,
-                name: 'share_industry_rank',
-                value: '2',
-                checked: this.props.page.share_industry_rank === '2',
-                inline: true
-              },
-              'Moderately'
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Radio,
-              {
-                onChange: this.props.handleInputChange,
-                name: 'share_industry_rank',
-                value: '3',
-                checked: this.props.page.share_industry_rank === '3',
-                inline: true
-              },
-              'Very'
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Radio,
-              {
-                onChange: this.props.handleInputChange,
-                name: 'share_industry_rank',
-                value: '4',
-                checked: this.props.page.share_industry_rank === '4',
-                inline: true
-              },
-              'Extremely'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'Describe your job.'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 8 },
-            _react2.default.createElement('textarea', (_React$createElement = { style: { height: 100 }, id: 'formControlsTextarea', value: this.props.page.job_description, className: 'form-control' }, _defineProperty(_React$createElement, 'id', 'job_description'), _defineProperty(_React$createElement, 'name', 'job_description'), _defineProperty(_React$createElement, 'onChange', this.props.handleInputChange), _React$createElement))
           )
         )
       );
@@ -56342,10 +55817,6 @@ var _reactFontawesome = __webpack_require__(31);
 
 var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
 
-var _reactSelect = __webpack_require__(214);
-
-var _reactSelect2 = _interopRequireDefault(_reactSelect);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -56364,6 +55835,537 @@ var Page4 = function (_React$Component) {
   }
 
   _createClass(Page4, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'h3',
+          { className: 'centerForm pageCaption' },
+          'Let\'s get connected!'
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
+            'Facebook *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 8 },
+            _react2.default.createElement(
+              _reactBootstrap.InputGroup,
+              null,
+              _react2.default.createElement(
+                _reactBootstrap.InputGroup.Addon,
+                null,
+                _react2.default.createElement(_reactFontawesome2.default, { name: 'facebook' })
+              ),
+              _react2.default.createElement(_reactBootstrap.FormControl, {
+                id: 'formControlsFacebook',
+                type: 'text',
+                name: 'facebook',
+                value: this.props.page.facebook,
+                onChange: this.props.handleInputChange
+              })
+            )
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
+            'LinkedIn *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 8 },
+            _react2.default.createElement(
+              _reactBootstrap.InputGroup,
+              null,
+              _react2.default.createElement(
+                _reactBootstrap.InputGroup.Addon,
+                null,
+                _react2.default.createElement(_reactFontawesome2.default, { name: 'linkedin' })
+              ),
+              _react2.default.createElement(_reactBootstrap.FormControl, {
+                id: 'formControlsLinkedIn',
+                type: 'text',
+                name: 'linkedin',
+                value: this.props.page.linkedin,
+                onChange: this.props.handleInputChange
+              })
+            )
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
+            'Phone *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 8 },
+            _react2.default.createElement(
+              _reactBootstrap.InputGroup,
+              null,
+              _react2.default.createElement(
+                _reactBootstrap.InputGroup.Addon,
+                null,
+                _react2.default.createElement(_reactFontawesome2.default, { name: 'phone' })
+              ),
+              _react2.default.createElement(_reactBootstrap.FormControl, {
+                id: 'formControlsPhone',
+                type: 'text',
+                name: 'phone',
+                value: this.props.page.phone,
+                placeholder: '8001234567',
+                onChange: this.props.handleInputChange
+              })
+            )
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
+            'City *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 8 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsCity',
+              type: 'text',
+              name: 'city',
+              value: this.props.page.city,
+              onChange: this.props.handleInputChange
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
+            'Country *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 8 },
+            _react2.default.createElement(_reactBootstrap.FormControl, {
+              id: 'formControlsCountry',
+              type: 'text',
+              name: 'country',
+              value: this.props.page.country,
+              onChange: this.props.handleInputChange
+            })
+          )
+        )
+      );
+    }
+  }]);
+
+  return Page4;
+}(_react2.default.Component);
+
+exports.default = Page4;
+
+/***/ }),
+/* 511 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactBootstrap = __webpack_require__(12);
+
+var _reactFontawesome = __webpack_require__(31);
+
+var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
+
+var _reactSelect = __webpack_require__(214);
+
+var _reactSelect2 = _interopRequireDefault(_reactSelect);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Page5 = function (_React$Component) {
+  _inherits(Page5, _React$Component);
+
+  function Page5(props) {
+    _classCallCheck(this, Page5);
+
+    return _possibleConstructorReturn(this, (Page5.__proto__ || Object.getPrototypeOf(Page5)).call(this, props));
+  }
+
+  _createClass(Page5, [{
+    key: 'render',
+    value: function render() {
+      var _this2 = this,
+          _React$createElement;
+
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'h3',
+          { className: 'centerForm pageCaption' },
+          'Some background questions'
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
+            'College *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 8 },
+            _react2.default.createElement(
+              _reactBootstrap.InputGroup,
+              null,
+              _react2.default.createElement(
+                _reactBootstrap.InputGroup.Addon,
+                null,
+                _react2.default.createElement(_reactFontawesome2.default, { name: 'graduation-cap' })
+              ),
+              _react2.default.createElement(_reactBootstrap.FormControl, {
+                id: 'formControlsCollege',
+                type: 'text',
+                name: 'college',
+                value: this.props.page.college,
+                onChange: this.props.handleInputChange
+              })
+            )
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
+            'What was your college major? *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 8 },
+            _react2.default.createElement(_reactSelect2.default, {
+              name: 'major',
+              value: this.props.page.major,
+              onChange: function onChange(value) {
+                return _this2.props.handleMultiChange(value, 'major');
+              },
+              multi: true,
+              delimiter: '|',
+              simpleValue: true,
+              joinValues: true,
+              options: [{ value: 'Science', label: 'Science' }, { value: 'Engineering', label: 'Engineering' }, { value: 'Communcations, Marketing', label: 'Communcations, Marketing' }, { value: 'Political Science, International Relations', label: 'Political Science, International Relations' }, { value: 'Finance, Economics', label: 'Finance, Economics' }, { value: 'Liberal Arts', label: 'Liberal Arts' }]
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
+            'Employer *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 8 },
+            _react2.default.createElement(
+              _reactBootstrap.InputGroup,
+              null,
+              _react2.default.createElement(
+                _reactBootstrap.InputGroup.Addon,
+                null,
+                _react2.default.createElement(_reactFontawesome2.default, { name: 'handshake-o' })
+              ),
+              _react2.default.createElement(_reactBootstrap.FormControl, {
+                id: 'formControlsEmployer',
+                type: 'text',
+                name: 'employer',
+                value: this.props.page.employer,
+                onChange: this.props.handleInputChange
+              })
+            )
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
+            'In which industry do you work? *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 8 },
+            _react2.default.createElement(_reactSelect2.default, {
+              name: 'industry',
+              value: this.props.page.industry,
+              onChange: function onChange(value) {
+                return _this2.props.handleMultiChange(value, 'industry');
+              },
+              multi: true,
+              delimiter: '|',
+              simpleValue: true,
+              joinValues: true,
+              options: [{ value: 'International Relations, Politics', label: 'International Relations, Politics' }, { value: 'Finance', label: 'Finance' }, { value: 'Accounting, Legal', label: 'Accounting, Legal' }, { value: 'Media', label: 'Media' }, { value: 'Technology', label: 'Technology' }, { value: 'Marketing', label: 'Marketing' }, { value: 'Performing Arts, Sports, Related', label: 'Performing Arts, Sports, Related' }, { value: 'Healthcare', label: 'Healthcare' }, { value: 'Education', label: 'Education' }, { value: 'Agriculture, Forestry, Fishing', label: 'Agriculture, Forestry, Fishing' }]
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { className: 'centerForm formFontStyle2', componentClass: _reactBootstrap.ControlLabel, sm: 12 },
+            'How important is it to you that a mentee share your major? *'
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { className: 'centerForm', sm: 12 },
+            _react2.default.createElement(
+              'div',
+              { className: 'formFontStyle' },
+              _react2.default.createElement(
+                _reactBootstrap.Radio,
+                {
+                  onChange: this.props.handleInputChange,
+                  name: 'share_major_rank',
+                  value: '0',
+                  checked: this.props.page.share_major_rank === '0',
+                  inline: true
+                },
+                'Not at all'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.Radio,
+                {
+                  onChange: this.props.handleInputChange,
+                  name: 'share_major_rank',
+                  value: '1',
+                  checked: this.props.page.share_major_rank === '1',
+                  inline: true
+                },
+                'A little'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.Radio,
+                {
+                  onChange: this.props.handleInputChange,
+                  name: 'share_major_rank',
+                  value: '2',
+                  checked: this.props.page.share_major_rank === '2',
+                  inline: true
+                },
+                'Moderately'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.Radio,
+                {
+                  onChange: this.props.handleInputChange,
+                  name: 'share_major_rank',
+                  value: '3',
+                  checked: this.props.page.share_major_rank === '3',
+                  inline: true
+                },
+                'Very'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.Radio,
+                {
+                  onChange: this.props.handleInputChange,
+                  name: 'share_major_rank',
+                  value: '4',
+                  checked: this.props.page.share_major_rank === '4',
+                  inline: true
+                },
+                'Extremely'
+              )
+            )
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { className: 'centerForm formFontStyle2', componentClass: _reactBootstrap.ControlLabel, sm: 12 },
+            'How important is it to you that a mentee would want to join your industry? *'
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          { className: 'centerForm', sm: 12 },
+          _react2.default.createElement(
+            'div',
+            { className: 'formFontStyle' },
+            _react2.default.createElement(
+              _reactBootstrap.Radio,
+              {
+                onChange: this.props.handleInputChange,
+                name: 'share_industry_rank',
+                value: '0',
+                checked: this.props.page.share_industry_rank === '0',
+                inline: true
+              },
+              'Not at all'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Radio,
+              {
+                onChange: this.props.handleInputChange,
+                name: 'share_industry_rank',
+                value: '1',
+                checked: this.props.page.share_industry_rank === '1',
+                inline: true
+              },
+              'A little'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Radio,
+              {
+                onChange: this.props.handleInputChange,
+                name: 'share_industry_rank',
+                value: '2',
+                checked: this.props.page.share_industry_rank === '2',
+                inline: true
+              },
+              'Moderately'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Radio,
+              {
+                onChange: this.props.handleInputChange,
+                name: 'share_industry_rank',
+                value: '3',
+                checked: this.props.page.share_industry_rank === '3',
+                inline: true
+              },
+              'Very'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Radio,
+              {
+                onChange: this.props.handleInputChange,
+                name: 'share_industry_rank',
+                value: '4',
+                checked: this.props.page.share_industry_rank === '4',
+                inline: true
+              },
+              'Extremely'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
+            'Describe your job.'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 8 },
+            _react2.default.createElement('textarea', (_React$createElement = { style: { height: 100 }, id: 'formControlsTextarea', value: this.props.page.job_description, className: 'form-control' }, _defineProperty(_React$createElement, 'id', 'job_description'), _defineProperty(_React$createElement, 'name', 'job_description'), _defineProperty(_React$createElement, 'onChange', this.props.handleInputChange), _React$createElement))
+          )
+        )
+      );
+    }
+  }]);
+
+  return Page5;
+}(_react2.default.Component);
+
+exports.default = Page5;
+
+/***/ }),
+/* 512 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactBootstrap = __webpack_require__(12);
+
+var _reactFontawesome = __webpack_require__(31);
+
+var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
+
+var _reactSelect = __webpack_require__(214);
+
+var _reactSelect2 = _interopRequireDefault(_reactSelect);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Page6 = function (_React$Component) {
+  _inherits(Page6, _React$Component);
+
+  function Page6(props) {
+    _classCallCheck(this, Page6);
+
+    return _possibleConstructorReturn(this, (Page6.__proto__ || Object.getPrototypeOf(Page6)).call(this, props));
+  }
+
+  _createClass(Page6, [{
     key: 'render',
     value: function render() {
       var _this2 = this;
@@ -56445,515 +56447,10 @@ var Page4 = function (_React$Component) {
     }
   }]);
 
-  return Page4;
-}(_react2.default.Component);
-
-exports.default = Page4;
-
-/***/ }),
-/* 511 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactBootstrap = __webpack_require__(12);
-
-var _reactFontawesome = __webpack_require__(31);
-
-var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Page5 = function (_React$Component) {
-  _inherits(Page5, _React$Component);
-
-  function Page5(props) {
-    _classCallCheck(this, Page5);
-
-    // this.state = {
-    //   videoOptions: { mimeType: 'video/webm; codecs=vp9' },
-    //   mediaSteam: new MediaStream(),
-    //   mediaRecorder: new MediaRecord(mediaStream, options),
-    //   recordedChunks: [],
-    // }
-    // this.state.mediaRecorder.ondataavailable = handleDataAvailable;
-    var _this = _possibleConstructorReturn(this, (Page5.__proto__ || Object.getPrototypeOf(Page5)).call(this, props));
-
-    var mediaSource = new MediaSource();
-    _this.state = {
-      mediaSource: mediaSource,
-      mediaRecorder: null
-    };
-    _this.video = [];
-    _this.button = [];
-    _this.recordedBlobs = [];
-    _this.state.mediaSource.addEventListener('sourceopen', _this.handleSourceOpen, false);
-
-    _this.handleSuccess = _this.handleSuccess.bind(_this);
-    _this.handleError = _this.handleError.bind(_this);
-    _this.handleSourceOpen = _this.handleSourceOpen.bind(_this);
-    _this.handleDataAvailable = _this.handleDataAvailable.bind(_this);
-    _this.toggleRecording = _this.toggleRecording.bind(_this);
-    _this.stopRecording = _this.stopRecording.bind(_this);
-    _this.startRecording = _this.startRecording.bind(_this);
-    _this.handleStop = _this.handleStop.bind(_this);
-    _this.play = _this.play.bind(_this);
-
-    return _this;
-  }
-
-  _createClass(Page5, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      this.gumVideo = this.video[0];
-      this.recordedVideo = this.video[1];
-      console.log(this.recordedVideo);
-      this.recordButton = this.button[0];
-      this.playButton = this.button[1];
-      this.uploadButton = this.button[2];
-
-      this.isSecureOrigin = location.protocol === 'https:' || location.hostname === 'localhost';
-      this.constraints = {
-        audio: true,
-        video: true
-      };
-      // window.isSecureContext could be used for Chrome
-      if (!this.isSecureOrigin) {
-        alert('getUserMedia() must be run from a secure origin: HTTPS or localhost.' + '\n\nChanging protocol to HTTPS');
-        location.protocol = 'HTTPS';
-      }
-
-      this.recordedVideo.addEventListener('error', function (ev) {
-        console.error('MediaRecording.recordedMedia.error()');
-        alert('Your browser can not play\n\n' + recordedVideo.src + '\n\n media clip. event: ' + JSON.stringify(ev));
-      }, true);
-
-      navigator.mediaDevices.getUserMedia(this.constraints).then(this.handleSuccess).catch(this.handleError);
-
-      this.recordButton.onclick = this.toggleRecording;
-      this.playButton.onclick = this.play;
-    }
-  }, {
-    key: 'handleSuccess',
-    value: function handleSuccess(stream) {
-      this.recordButton.disabled = false;
-      console.log('getUserMedia() got stream: ', stream);
-      window.stream = stream;
-      this.gumVideo.srcObject = stream;
-    }
-  }, {
-    key: 'handleError',
-    value: function handleError(error) {
-      console.log('navigator.getUserMedia error: ', error);
-    }
-  }, {
-    key: 'handleSourceOpen',
-    value: function handleSourceOpen(event) {
-      console.log('MediaSource opened');
-    }
-  }, {
-    key: 'handleDataAvailable',
-    value: function handleDataAvailable(event) {
-      if (event.data && event.data.size > 0) {
-        this.recordedBlobs.push(event.data);
-      }
-    }
-  }, {
-    key: 'handleStop',
-    value: function handleStop(event) {
-      console.log('Recorder stopped: ', event);
-    }
-  }, {
-    key: 'toggleRecording',
-    value: function toggleRecording() {
-      if (this.recordButton.textContent === 'Start Recording') {
-        this.startRecording();
-      } else {
-        this.stopRecording();
-        this.recordButton.textContent = 'Start Recording';
-        this.playButton.disabled = false;
-        // uploadButton.disabled = false;
-      }
-    }
-  }, {
-    key: 'startRecording',
-    value: function startRecording() {
-      this.recordedBlobs = [];
-      var options = { mimeType: 'video/webm;codecs=vp9' };
-      if (!MediaRecorder.isTypeSupported(options.mimeType)) {
-        console.log(options.mimeType + ' is not Supported');
-        options = { mimeType: 'video/webm;codecs=vp8' };
-        if (!MediaRecorder.isTypeSupported(options.mimeType)) {
-          console.log(options.mimeType + ' is not Supported');
-          options = { mimeType: 'video/webm' };
-          if (!MediaRecorder.isTypeSupported(options.mimeType)) {
-            console.log(options.mimeType + ' is not Supported');
-            options = { mimeType: '' };
-          }
-        }
-      }
-      try {
-        this.mediaRecorder = new MediaRecorder(window.stream, options);
-      } catch (e) {
-        console.error('Exception while creating MediaRecorder: ' + e);
-        alert('Exception while creating MediaRecorder: ' + e + '. mimeType: ' + options.mimeType);
-        return;
-      }
-      console.log('Created MediaRecorder', this.mediaRecorder, 'with options', options);
-      this.recordButton.textContent = 'Stop Recording';
-      this.playButton.disabled = true;
-      this.uploadButton.disabled = true;
-      this.mediaRecorder.onstop = this.handleStop;
-      this.mediaRecorder.ondataavailable = this.handleDataAvailable;
-      this.mediaRecorder.start(10); // collect 10ms of data
-      console.log('MediaRecorder started', this.mediaRecorder);
-    }
-  }, {
-    key: 'stopRecording',
-    value: function stopRecording() {
-      this.mediaRecorder.stop();
-      console.log('Recorded Blobs: ', this.recordedBlobs);
-      this.recordedVideo.controls = true;
-    }
-  }, {
-    key: 'play',
-    value: function play() {
-      var _this2 = this;
-
-      var superBuffer = new Blob(this.recordedBlobs, { type: 'video/webm' });
-      this.recordedVideo.src = window.URL.createObjectURL(superBuffer);
-      // workaround for non-seekable video taken from
-      // https://bugs.chromium.org/p/chromium/issues/detail?id=642012#c23
-      this.recordedVideo.addEventListener('loadedmetadata', function () {
-        if (_this2.recordedVideo.duration === Infinity) {
-          _this2.recordedVideo.currentTime = 1e101;
-          _this2.recordedVideo.ontimeupdate = function () {
-            _this2.recordedVideo.currentTime = 0;
-            _this2.recordedVideo.ontimeupdate = function () {
-              delete _this2.recordedVideo.ontimeupdate;
-              _this2.recordedVideo.play();
-            };
-          };
-        }
-      });
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this3 = this;
-
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement('video', { ref: function ref(input) {
-            _this3.video[0] = input;
-          }, id: 'gum', autoPlay: true, muted: true }),
-        _react2.default.createElement('video', { ref: function ref(input) {
-            _this3.video[1] = input;
-          }, id: 'recorded', controls: true }),
-        _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(
-            'button',
-            { ref: function ref(input) {
-                _this3.button[0] = input;
-              }, id: 'record', disabled: true },
-            'Start Recording'
-          ),
-          _react2.default.createElement(
-            'button',
-            { ref: function ref(input) {
-                _this3.button[1] = input;
-              }, id: 'play', disabled: true },
-            'Play'
-          ),
-          _react2.default.createElement(
-            'button',
-            {
-              ref: function ref(input) {
-                _this3.button[2] = input;
-              },
-              onClick: this.upload,
-              id: 'upload', disabled: true
-            },
-            'Upload to Youtube'
-          )
-        )
-      );
-    }
-  }]);
-
-  return Page5;
-}(_react2.default.Component);
-
-exports.default = Page5;
-
-/***/ }),
-/* 512 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactBootstrap = __webpack_require__(12);
-
-var _reactFontawesome = __webpack_require__(31);
-
-var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Page6 = function (_React$Component) {
-  _inherits(Page6, _React$Component);
-
-  function Page6(props) {
-    _classCallCheck(this, Page6);
-
-    var _this = _possibleConstructorReturn(this, (Page6.__proto__ || Object.getPrototypeOf(Page6)).call(this, props));
-
-    _this.state = {
-      disclaimerOpen: true
-    };
-    return _this;
-  }
-
-  _createClass(Page6, [{
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
-
-      return _react2.default.createElement(
-        _reactBootstrap.Grid,
-        null,
-        _react2.default.createElement(
-          _reactBootstrap.Panel,
-          { collapsible: true, expanded: this.state.disclaimerOpen },
-          _react2.default.createElement(
-            'p',
-            null,
-            'Hello! Thank you for your interest in the GIRLZ, FTW mentorship program. We\u2019re thrilled to read your application. Before you fill out our form, we\u2019d like to let you in on a little secret. We\u2019re not a regular mentorship program. We\u2019re a community of girlz that are passionate about elevating and celebrating female voices around the world. We don\u2019t expect our mentors to be THAT girl\u2026 you know, the one that always had her shit together and still always managed to blow dry her hair before school / work. We\u2019re looking for real, passionate, #girlbosses that don\u2019t pretend to be perfect, can hustle their way to their dreams, AND still manage to uplift others along the way.'
-          ),
-          _react2.default.createElement(
-            'p',
-            null,
-            'What you should know before submitting your application:'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.ListGroup,
-            null,
-            _react2.default.createElement(
-              _reactBootstrap.ListGroupItem,
-              null,
-              'All of our communication once you join the program happens on Facebook. If you\u2019re accepted as a mentor, you will be added to a Facebook group. This group will be the place where you can connect with other mentors and mentees in the program. We\u2019ll use this group to provide support, encouragement, and advice for each other. You must have a Facebook page if you want to be a part of this program.'
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.ListGroupItem,
-              null,
-              'Every month, we\u2019ll host a call with all mentors and mentees. These calls take place on the first friday of every month. In these calls, we\u2019ll have inspiring women talk to about how they got to where they are today. Each call will be structured differently but is meant to inspire, inform, and mobilize everyone on the call. This means you\u2019ll probably be tapped to speak at one of these calls because we suspect you\u2019re awesome! Attending these calls is mandatory. You can only miss up to 3 calls.'
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.ListGroupItem,
-              null,
-              'You must be willing to commit at least 4 hours a month for a year. Sessions with your mentee should last 1 hour every other week. We suggest you prep for at least 30 minutes before each of your mentee calls. Lastly, you must allot 1 hour for the monthly virtual chats. We will be hosting a mentor training on X DATE. Attending this training is required if you want to be a part of the program.'
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.Button,
-          { bsStyle: 'warning', onClick: function onClick() {
-              return _this2.setState({ disclaimerOpen: !_this2.state.disclaimerOpen });
-            } },
-          'Toggle Disclaimer'
-        )
-      );
-    }
-  }]);
-
   return Page6;
 }(_react2.default.Component);
 
 exports.default = Page6;
-//
-// <label>
-//   <p className="asterix">*</p>City:
-//   <input
-//     name="city"
-//     type="text"
-//     value={this.state.city}
-//     onChange={this.handleInputChange} />
-// </label>
-// <br/>
-// <label>
-//   <p className="asterix">*</p>Country:
-//   <input
-//     name="country"
-//     type="text"
-//     value={this.state.country}
-//     onChange={this.handleInputChange} />
-// </label>
-// <label>
-//   High School:
-//   <input
-//     name="high_school"
-//     type="text"
-//     value={this.state.high_school}
-//     onChange={this.handleInputChange} />
-// </label>
-// <br/>
-// <label>
-//   College:
-//   <input
-//     name="college"
-//     type="text"
-//     value={this.state.college}
-//     onChange={this.handleInputChange} />
-// </label>
-// <br/>
-// <label>
-//   What was your major?
-//   <input
-//     name="major"
-//     type="text"
-//     value={this.state.major}
-//     onChange={this.handleInputChange} />
-// </label>
-// <br/>
-// <label>
-//   Employer:
-//   <input
-//     name="employer"
-//     type="text"
-//     value={this.state.employer}
-//     onChange={this.handleInputChange} />
-// </label>
-// <br/>
-// <FormGroup>
-//   <ControlLabel>How interested are you in giving career advice? *</ControlLabel>
-//   <FormControl
-//     componentClass="select"
-//     placeholder="select"
-//     id="formControlsCareer"
-//     name="career_advice_rank"
-//     value={this.state.career_advice_rank}
-//     onChange={this.handleInputChange}
-//   >
-//     <option value="0">Not at all</option>
-//     <option value="1">Slightly</option>
-//     <option value="2">Moderately</option>
-//     <option value="3">Extremely</option>
-//   </FormControl>
-// </FormGroup>
-// <label>
-//   <p className="asterix">*</p>How interested are you in giving personal advice?
-//   <select name="personal_advice_rank" value={this.state.personal_advice_rank} onChange={this.handleInputChange}>
-//     <option value="0">Not at all</option>
-//     <option value="1">Slightly</option>
-//     <option value="2">Moderately</option>
-//     <option value="3">Extremely</option>
-//   </select>
-// </label>
-// <br/>
-// <label>
-//   <p className="asterix">*</p>How interested are you in providing motivation and inspiration for your mentees?
-//   <select name="motivation_rank" value={this.state.motivation_rank} onChange={this.handleInputChange}>
-//     <option value="0">Not at all</option>
-//     <option value="1">Slightly</option>
-//     <option value="2">Moderately</option>
-//     <option value="3">Extremely</option>
-//   </select>
-// </label>
-// <br/>
-// <label>
-//   Would you prefer a mentee who has or desires to pursue your major?
-//   <select name="share_major_rank" value={this.state.share_major_rank} onChange={this.handleInputChange}>
-//     <option value="0">Not at all</option>
-//     <option value="1">Slightly</option>
-//     <option value="2">Moderately</option>
-//     <option value="3">Extremely</option>
-//   </select>
-// </label>
-// <br/>
-// <label>
-//   Write the Instagram bio you wish you had.
-//   <textarea name="instagram_bio_text" value={this.state.instagram_bio_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-// </label>
-// <br/>
-// <label>
-//   What's getting in the way of you having that dream Instagram bio?
-//   <textarea name="instagram_bio_why_not_text" value={this.state.instagram_bio_why_not_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-// </label>
-// <br/>
-// <label>
-//   Describe your personality:
-//   <textarea name="personality_text" value={this.state.personality_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-// </label>
-// <br/>
-// <label>
-//   What keeps you up at night?
-//   <textarea name="night_text" value={this.state.night_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-// </label>
-// <br/>
-// <label>
-//   What's one thing about you that we can't Google?
-//   <textarea name="not_on_google_text" value={this.state.not_on_google_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-// </label>
-// <br/>
-// <label>
-//   How do you aspire to make a positive impact on others?
-//   <textarea name="how_impact_text" value={this.state.how_impact_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-// </label>
-// <br/>
-// <label>
-//   Is there anything else you'd like to add?
-//   <textarea name="extra_info_text" value={this.state.extra_info_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-// </label>
-// <br/>
-// All mentors are required to set aside __ hours per month. Some other stuff that's needed.
-// Blah blah etc. All of our communications happen over Facebook groups,
-// so you must have a Facebook to be a GirlzFTW mentor.
-// <br/>
-// <label style={{color: this.state.agree_terms_bad_click ? 'red' : 'black'}}>
-//   I have read and agree to these requirements.
-//   <input
-//     name="agree_terms"
-//     type="checkbox"
-//     value={this.state.agree_terms}
-//     onChange={this.handleInputChange} />
-// </label>
 
 /***/ }),
 /* 513 */
@@ -61943,6 +61440,511 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 }());
 
+
+/***/ }),
+/* 556 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactBootstrap = __webpack_require__(12);
+
+var _reactFontawesome = __webpack_require__(31);
+
+var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Page7 = function (_React$Component) {
+  _inherits(Page7, _React$Component);
+
+  function Page7(props) {
+    _classCallCheck(this, Page7);
+
+    // this.state = {
+    //   videoOptions: { mimeType: 'video/webm; codecs=vp9' },
+    //   mediaSteam: new MediaStream(),
+    //   mediaRecorder: new MediaRecord(mediaStream, options),
+    //   recordedChunks: [],
+    // }
+    // this.state.mediaRecorder.ondataavailable = handleDataAvailable;
+    var _this = _possibleConstructorReturn(this, (Page7.__proto__ || Object.getPrototypeOf(Page7)).call(this, props));
+
+    var mediaSource = new MediaSource();
+    _this.state = {
+      mediaSource: mediaSource,
+      mediaRecorder: null
+    };
+    _this.video = [];
+    _this.button = [];
+    _this.recordedBlobs = [];
+    _this.state.mediaSource.addEventListener('sourceopen', _this.handleSourceOpen, false);
+
+    _this.handleSuccess = _this.handleSuccess.bind(_this);
+    _this.handleError = _this.handleError.bind(_this);
+    _this.handleSourceOpen = _this.handleSourceOpen.bind(_this);
+    _this.handleDataAvailable = _this.handleDataAvailable.bind(_this);
+    _this.toggleRecording = _this.toggleRecording.bind(_this);
+    _this.stopRecording = _this.stopRecording.bind(_this);
+    _this.startRecording = _this.startRecording.bind(_this);
+    _this.handleStop = _this.handleStop.bind(_this);
+    _this.play = _this.play.bind(_this);
+
+    return _this;
+  }
+
+  _createClass(Page7, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.gumVideo = this.video[0];
+      this.recordedVideo = this.video[1];
+      console.log(this.recordedVideo);
+      this.recordButton = this.button[0];
+      this.playButton = this.button[1];
+      this.uploadButton = this.button[2];
+
+      this.isSecureOrigin = location.protocol === 'https:' || location.hostname === 'localhost';
+      this.constraints = {
+        audio: true,
+        video: true
+      };
+      // window.isSecureContext could be used for Chrome
+      if (!this.isSecureOrigin) {
+        alert('getUserMedia() must be run from a secure origin: HTTPS or localhost.' + '\n\nChanging protocol to HTTPS');
+        location.protocol = 'HTTPS';
+      }
+
+      this.recordedVideo.addEventListener('error', function (ev) {
+        console.error('MediaRecording.recordedMedia.error()');
+        alert('Your browser can not play\n\n' + recordedVideo.src + '\n\n media clip. event: ' + JSON.stringify(ev));
+      }, true);
+
+      navigator.mediaDevices.getUserMedia(this.constraints).then(this.handleSuccess).catch(this.handleError);
+
+      this.recordButton.onclick = this.toggleRecording;
+      this.playButton.onclick = this.play;
+    }
+  }, {
+    key: 'handleSuccess',
+    value: function handleSuccess(stream) {
+      this.recordButton.disabled = false;
+      console.log('getUserMedia() got stream: ', stream);
+      window.stream = stream;
+      this.gumVideo.srcObject = stream;
+    }
+  }, {
+    key: 'handleError',
+    value: function handleError(error) {
+      console.log('navigator.getUserMedia error: ', error);
+    }
+  }, {
+    key: 'handleSourceOpen',
+    value: function handleSourceOpen(event) {
+      console.log('MediaSource opened');
+    }
+  }, {
+    key: 'handleDataAvailable',
+    value: function handleDataAvailable(event) {
+      if (event.data && event.data.size > 0) {
+        this.recordedBlobs.push(event.data);
+      }
+    }
+  }, {
+    key: 'handleStop',
+    value: function handleStop(event) {
+      console.log('Recorder stopped: ', event);
+    }
+  }, {
+    key: 'toggleRecording',
+    value: function toggleRecording() {
+      if (this.recordButton.textContent === 'Start Recording') {
+        this.startRecording();
+      } else {
+        this.stopRecording();
+        this.recordButton.textContent = 'Start Recording';
+        this.playButton.disabled = false;
+        // uploadButton.disabled = false;
+      }
+    }
+  }, {
+    key: 'startRecording',
+    value: function startRecording() {
+      this.recordedBlobs = [];
+      var options = { mimeType: 'video/webm;codecs=vp9' };
+      if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+        console.log(options.mimeType + ' is not Supported');
+        options = { mimeType: 'video/webm;codecs=vp8' };
+        if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+          console.log(options.mimeType + ' is not Supported');
+          options = { mimeType: 'video/webm' };
+          if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+            console.log(options.mimeType + ' is not Supported');
+            options = { mimeType: '' };
+          }
+        }
+      }
+      try {
+        this.mediaRecorder = new MediaRecorder(window.stream, options);
+      } catch (e) {
+        console.error('Exception while creating MediaRecorder: ' + e);
+        alert('Exception while creating MediaRecorder: ' + e + '. mimeType: ' + options.mimeType);
+        return;
+      }
+      console.log('Created MediaRecorder', this.mediaRecorder, 'with options', options);
+      this.recordButton.textContent = 'Stop Recording';
+      this.playButton.disabled = true;
+      this.uploadButton.disabled = true;
+      this.mediaRecorder.onstop = this.handleStop;
+      this.mediaRecorder.ondataavailable = this.handleDataAvailable;
+      this.mediaRecorder.start(10); // collect 10ms of data
+      console.log('MediaRecorder started', this.mediaRecorder);
+    }
+  }, {
+    key: 'stopRecording',
+    value: function stopRecording() {
+      this.mediaRecorder.stop();
+      console.log('Recorded Blobs: ', this.recordedBlobs);
+      this.recordedVideo.controls = true;
+    }
+  }, {
+    key: 'play',
+    value: function play() {
+      var _this2 = this;
+
+      var superBuffer = new Blob(this.recordedBlobs, { type: 'video/webm' });
+      this.recordedVideo.src = window.URL.createObjectURL(superBuffer);
+      // workaround for non-seekable video taken from
+      // https://bugs.chromium.org/p/chromium/issues/detail?id=642012#c23
+      this.recordedVideo.addEventListener('loadedmetadata', function () {
+        if (_this2.recordedVideo.duration === Infinity) {
+          _this2.recordedVideo.currentTime = 1e101;
+          _this2.recordedVideo.ontimeupdate = function () {
+            _this2.recordedVideo.currentTime = 0;
+            _this2.recordedVideo.ontimeupdate = function () {
+              delete _this2.recordedVideo.ontimeupdate;
+              _this2.recordedVideo.play();
+            };
+          };
+        }
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this3 = this;
+
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement('video', { ref: function ref(input) {
+            _this3.video[0] = input;
+          }, id: 'gum', autoPlay: true, muted: true }),
+        _react2.default.createElement('video', { ref: function ref(input) {
+            _this3.video[1] = input;
+          }, id: 'recorded', controls: true }),
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'button',
+            { ref: function ref(input) {
+                _this3.button[0] = input;
+              }, id: 'record', disabled: true },
+            'Start Recording'
+          ),
+          _react2.default.createElement(
+            'button',
+            { ref: function ref(input) {
+                _this3.button[1] = input;
+              }, id: 'play', disabled: true },
+            'Play'
+          ),
+          _react2.default.createElement(
+            'button',
+            {
+              ref: function ref(input) {
+                _this3.button[2] = input;
+              },
+              onClick: this.upload,
+              id: 'upload', disabled: true
+            },
+            'Upload to Youtube'
+          )
+        )
+      );
+    }
+  }]);
+
+  return Page7;
+}(_react2.default.Component);
+
+exports.default = Page7;
+
+/***/ }),
+/* 557 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactBootstrap = __webpack_require__(12);
+
+var _reactFontawesome = __webpack_require__(31);
+
+var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Page8 = function (_React$Component) {
+  _inherits(Page8, _React$Component);
+
+  function Page8(props) {
+    _classCallCheck(this, Page8);
+
+    var _this = _possibleConstructorReturn(this, (Page8.__proto__ || Object.getPrototypeOf(Page8)).call(this, props));
+
+    _this.state = {
+      disclaimerOpen: true
+    };
+    return _this;
+  }
+
+  _createClass(Page8, [{
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      return _react2.default.createElement(
+        _reactBootstrap.Grid,
+        null,
+        _react2.default.createElement(
+          _reactBootstrap.Panel,
+          { collapsible: true, expanded: this.state.disclaimerOpen },
+          _react2.default.createElement(
+            'p',
+            null,
+            'Hello! Thank you for your interest in the GIRLZ, FTW mentorship program. We\u2019re thrilled to read your application. Before you fill out our form, we\u2019d like to let you in on a little secret. We\u2019re not a regular mentorship program. We\u2019re a community of girlz that are passionate about elevating and celebrating female voices around the world. We don\u2019t expect our mentors to be THAT girl\u2026 you know, the one that always had her shit together and still always managed to blow dry her hair before school / work. We\u2019re looking for real, passionate, #girlbosses that don\u2019t pretend to be perfect, can hustle their way to their dreams, AND still manage to uplift others along the way.'
+          ),
+          _react2.default.createElement(
+            'p',
+            null,
+            'What you should know before submitting your application:'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.ListGroup,
+            null,
+            _react2.default.createElement(
+              _reactBootstrap.ListGroupItem,
+              null,
+              'All of our communication once you join the program happens on Facebook. If you\u2019re accepted as a mentor, you will be added to a Facebook group. This group will be the place where you can connect with other mentors and mentees in the program. We\u2019ll use this group to provide support, encouragement, and advice for each other. You must have a Facebook page if you want to be a part of this program.'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.ListGroupItem,
+              null,
+              'Every month, we\u2019ll host a call with all mentors and mentees. These calls take place on the first friday of every month. In these calls, we\u2019ll have inspiring women talk to about how they got to where they are today. Each call will be structured differently but is meant to inspire, inform, and mobilize everyone on the call. This means you\u2019ll probably be tapped to speak at one of these calls because we suspect you\u2019re awesome! Attending these calls is mandatory. You can only miss up to 3 calls.'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.ListGroupItem,
+              null,
+              'You must be willing to commit at least 4 hours a month for a year. Sessions with your mentee should last 1 hour every other week. We suggest you prep for at least 30 minutes before each of your mentee calls. Lastly, you must allot 1 hour for the monthly virtual chats. We will be hosting a mentor training on X DATE. Attending this training is required if you want to be a part of the program.'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Button,
+          { bsStyle: 'warning', onClick: function onClick() {
+              return _this2.setState({ disclaimerOpen: !_this2.state.disclaimerOpen });
+            } },
+          'Toggle Disclaimer'
+        )
+      );
+    }
+  }]);
+
+  return Page8;
+}(_react2.default.Component);
+
+exports.default = Page8;
+//
+// <label>
+//   <p className="asterix">*</p>City:
+//   <input
+//     name="city"
+//     type="text"
+//     value={this.state.city}
+//     onChange={this.handleInputChange} />
+// </label>
+// <br/>
+// <label>
+//   <p className="asterix">*</p>Country:
+//   <input
+//     name="country"
+//     type="text"
+//     value={this.state.country}
+//     onChange={this.handleInputChange} />
+// </label>
+// <label>
+//   High School:
+//   <input
+//     name="high_school"
+//     type="text"
+//     value={this.state.high_school}
+//     onChange={this.handleInputChange} />
+// </label>
+// <br/>
+// <label>
+//   College:
+//   <input
+//     name="college"
+//     type="text"
+//     value={this.state.college}
+//     onChange={this.handleInputChange} />
+// </label>
+// <br/>
+// <label>
+//   What was your major?
+//   <input
+//     name="major"
+//     type="text"
+//     value={this.state.major}
+//     onChange={this.handleInputChange} />
+// </label>
+// <br/>
+// <label>
+//   Employer:
+//   <input
+//     name="employer"
+//     type="text"
+//     value={this.state.employer}
+//     onChange={this.handleInputChange} />
+// </label>
+// <br/>
+// <FormGroup>
+//   <ControlLabel>How interested are you in giving career advice? *</ControlLabel>
+//   <FormControl
+//     componentClass="select"
+//     placeholder="select"
+//     id="formControlsCareer"
+//     name="career_advice_rank"
+//     value={this.state.career_advice_rank}
+//     onChange={this.handleInputChange}
+//   >
+//     <option value="0">Not at all</option>
+//     <option value="1">Slightly</option>
+//     <option value="2">Moderately</option>
+//     <option value="3">Extremely</option>
+//   </FormControl>
+// </FormGroup>
+// <label>
+//   <p className="asterix">*</p>How interested are you in giving personal advice?
+//   <select name="personal_advice_rank" value={this.state.personal_advice_rank} onChange={this.handleInputChange}>
+//     <option value="0">Not at all</option>
+//     <option value="1">Slightly</option>
+//     <option value="2">Moderately</option>
+//     <option value="3">Extremely</option>
+//   </select>
+// </label>
+// <br/>
+// <label>
+//   <p className="asterix">*</p>How interested are you in providing motivation and inspiration for your mentees?
+//   <select name="motivation_rank" value={this.state.motivation_rank} onChange={this.handleInputChange}>
+//     <option value="0">Not at all</option>
+//     <option value="1">Slightly</option>
+//     <option value="2">Moderately</option>
+//     <option value="3">Extremely</option>
+//   </select>
+// </label>
+// <br/>
+// <label>
+//   Would you prefer a mentee who has or desires to pursue your major?
+//   <select name="share_major_rank" value={this.state.share_major_rank} onChange={this.handleInputChange}>
+//     <option value="0">Not at all</option>
+//     <option value="1">Slightly</option>
+//     <option value="2">Moderately</option>
+//     <option value="3">Extremely</option>
+//   </select>
+// </label>
+// <br/>
+// <label>
+//   Write the Instagram bio you wish you had.
+//   <textarea name="instagram_bio_text" value={this.state.instagram_bio_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
+// </label>
+// <br/>
+// <label>
+//   What's getting in the way of you having that dream Instagram bio?
+//   <textarea name="instagram_bio_why_not_text" value={this.state.instagram_bio_why_not_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
+// </label>
+// <br/>
+// <label>
+//   Describe your personality:
+//   <textarea name="personality_text" value={this.state.personality_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
+// </label>
+// <br/>
+// <label>
+//   What keeps you up at night?
+//   <textarea name="night_text" value={this.state.night_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
+// </label>
+// <br/>
+// <label>
+//   What's one thing about you that we can't Google?
+//   <textarea name="not_on_google_text" value={this.state.not_on_google_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
+// </label>
+// <br/>
+// <label>
+//   How do you aspire to make a positive impact on others?
+//   <textarea name="how_impact_text" value={this.state.how_impact_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
+// </label>
+// <br/>
+// <label>
+//   Is there anything else you'd like to add?
+//   <textarea name="extra_info_text" value={this.state.extra_info_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
+// </label>
+// <br/>
+// All mentors are required to set aside __ hours per month. Some other stuff that's needed.
+// Blah blah etc. All of our communications happen over Facebook groups,
+// so you must have a Facebook to be a GirlzFTW mentor.
+// <br/>
+// <label style={{color: this.state.agree_terms_bad_click ? 'red' : 'black'}}>
+//   I have read and agree to these requirements.
+//   <input
+//     name="agree_terms"
+//     type="checkbox"
+//     value={this.state.agree_terms}
+//     onChange={this.handleInputChange} />
+// </label>
 
 /***/ })
 /******/ ]);
