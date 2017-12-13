@@ -55031,29 +55031,37 @@ var _reactFontawesome = __webpack_require__(31);
 
 var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
 
-var _page = __webpack_require__(508);
+var _page = __webpack_require__(506);
 
 var _page2 = _interopRequireDefault(_page);
 
-var _page3 = __webpack_require__(510);
+var _page3 = __webpack_require__(507);
 
 var _page4 = _interopRequireDefault(_page3);
 
-var _page5 = __webpack_require__(511);
+var _page5 = __webpack_require__(508);
 
 var _page6 = _interopRequireDefault(_page5);
 
-var _page7 = __webpack_require__(512);
+var _page7 = __webpack_require__(510);
 
 var _page8 = _interopRequireDefault(_page7);
 
-var _page9 = __webpack_require__(556);
+var _page9 = __webpack_require__(511);
 
 var _page10 = _interopRequireDefault(_page9);
 
-var _page11 = __webpack_require__(557);
+var _page11 = __webpack_require__(512);
 
 var _page12 = _interopRequireDefault(_page11);
+
+var _page13 = __webpack_require__(556);
+
+var _page14 = _interopRequireDefault(_page13);
+
+var _page15 = __webpack_require__(557);
+
+var _page16 = _interopRequireDefault(_page15);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -55074,6 +55082,8 @@ var MentorApp = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (MentorApp.__proto__ || Object.getPrototypeOf(MentorApp)).call(this, props));
 
     _this.state = {
+      0: {},
+      1: {},
       2: {
         username: "Aaron",
         password: "Meow",
@@ -55229,27 +55239,33 @@ var MentorApp = function (_React$Component) {
 
       var page = function () {
         switch (_this3.state.page) {
+          case 0:
+            return _react2.default.createElement(_page2.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[0] });
+            break;
+          case 1:
+            return _react2.default.createElement(_page4.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[1] });
+            break;
           case 2:
-            return _react2.default.createElement(_page2.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[2] });
+            return _react2.default.createElement(_page6.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[2] });
             break;
           case 3:
-            return _react2.default.createElement(_page4.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[3] });
+            return _react2.default.createElement(_page8.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[3] });
             break;
           case 4:
-            return _react2.default.createElement(_page6.default, {
+            return _react2.default.createElement(_page10.default, {
               handleMultiChange: _this3.handleMultiChange, handleInputChange: _this3.handleInputChange, page: _this3.state[4] });
             break;
           case 5:
-            return _react2.default.createElement(_page8.default, {
+            return _react2.default.createElement(_page12.default, {
               handleInputChange: _this3.handleInputChange,
               handleMultiChange: _this3.handleMultiChange,
               page: _this3.state[5] });
             break;
           case 6:
-            return _react2.default.createElement(_page10.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[6] });
+            return _react2.default.createElement(_page14.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[6] });
             break;
           case 7:
-            return _react2.default.createElement(_page12.default, {
+            return _react2.default.createElement(_page16.default, {
               page: _this3.state[7] });
             break;
         }
@@ -55273,7 +55289,7 @@ var MentorApp = function (_React$Component) {
                 { onClick: this.handleBack, className: 'btn-back' },
                 'Back'
               ),
-              _react2.default.createElement('padder', { className: 'padder' }),
+              _react2.default.createElement('div', { className: 'padder' }),
               _react2.default.createElement(
                 _reactBootstrap.Button,
                 { onClick: this.handleNext, className: 'btn-next' },
@@ -55324,8 +55340,160 @@ exports.default = {
 module.exports = exports['default'];
 
 /***/ }),
-/* 506 */,
-/* 507 */,
+/* 506 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactBootstrap = __webpack_require__(12);
+
+var _reactFontawesome = __webpack_require__(31);
+
+var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Page1 = function (_React$Component) {
+  _inherits(Page1, _React$Component);
+
+  function Page1(props) {
+    _classCallCheck(this, Page1);
+
+    return _possibleConstructorReturn(this, (Page1.__proto__ || Object.getPrototypeOf(Page1)).call(this, props));
+  }
+
+  _createClass(Page1, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { className: 'centerText formFontStyle', sm: 8 },
+            'Hello! Thank you for your interest in the GIRLZ, FTW mentorship program. We\u2019re thrilled to read your application. Before you fill out our form, we\u2019d like to let you in on a little secret. We\u2019re not a regular mentorship program. We\u2019re a community of girlz that are passionate about elevating and celebrating female voices around the world. We don\u2019t expect our mentors to be THAT girl\u2026 you know, the one that always had her shit together and still always managed to blow dry her hair before school / work. We\u2019re looking for real, passionate, #girlbosses that don\u2019t pretend to be perfect, can hustle their way to their dreams, AND still manage to uplift others along the way.'
+          )
+        )
+      );
+    }
+  }]);
+
+  return Page1;
+}(_react2.default.Component);
+
+exports.default = Page1;
+
+/***/ }),
+/* 507 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactBootstrap = __webpack_require__(12);
+
+var _reactFontawesome = __webpack_require__(31);
+
+var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Page2 = function (_React$Component) {
+  _inherits(Page2, _React$Component);
+
+  function Page2(props) {
+    _classCallCheck(this, Page2);
+
+    return _possibleConstructorReturn(this, (Page2.__proto__ || Object.getPrototypeOf(Page2)).call(this, props));
+  }
+
+  _createClass(Page2, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          _reactBootstrap.Grid,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Row,
+            null,
+            _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
+            _react2.default.createElement(
+              _reactBootstrap.Col,
+              { className: 'centerText formFontStyle2', sm: 8 },
+              'What you should know before submitting your application:'
+            )
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Row,
+            null,
+            _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
+            _react2.default.createElement(
+              _reactBootstrap.Col,
+              { className: 'centerText formFontStyle', sm: 8 },
+              '-  All of our communication once you join the program happens on Facebook.'
+            )
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Row,
+            null,
+            _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
+            _react2.default.createElement(
+              _reactBootstrap.Col,
+              { className: 'centerText formFontStyle', sm: 8 },
+              '-   You must be able to free up the first Saturday of every month and commit at least 5 hours a month for 6 months.'
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Page2;
+}(_react2.default.Component);
+
+exports.default = Page2;
+
+/***/ }),
 /* 508 */
 /***/ (function(module, exports, __webpack_require__) {
 

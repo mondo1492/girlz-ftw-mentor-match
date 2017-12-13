@@ -3,6 +3,8 @@ import merge from 'lodash/merge';
 import { Col, Form, Button, Panel, FormControl, ControlLabel, FormGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 
+import Page1 from './appPages/page1';
+import Page2 from './appPages/page2';
 import Page3 from './appPages/page3';
 import Page4 from './appPages/page4';
 import Page5 from './appPages/page5';
@@ -14,6 +16,8 @@ class MentorApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      0: {},
+      1: {},
       2: {
         username: "Aaron",
         password: "Meow",
@@ -131,6 +135,12 @@ class MentorApp extends React.Component {
   render() {
     let page = (() => {
       switch (this.state.page) {
+        case 0:
+          return <Page1 handleInputChange={this.handleInputChange} page={this.state[0]}/>
+        break;
+        case 1:
+          return <Page2 handleInputChange={this.handleInputChange} page={this.state[1]}/>
+        break;
         case 2:
           return <Page3 handleInputChange={this.handleInputChange} page={this.state[2]}/>
           break;
@@ -164,7 +174,7 @@ class MentorApp extends React.Component {
             {page}
             <div  className='centerButton'>
               <Button onClick={this.handleBack} className="btn-back">Back</Button>
-              <padder className='padder'></padder>
+              <div className='padder'></div>
               <Button onClick={this.handleNext} className="btn-next">Next</Button>
             </div>
             {this.allValidate() ? <Button bsStyle="success" type="submit">Apply</Button> : ""}
