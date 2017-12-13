@@ -54798,8 +54798,8 @@ var MentorApp = function (_React$Component) {
       },
       agree_terms: false,
       agree_terms_bad_click: false,
-      page: 0,
-
+      page: 3,
+      gridStyle: 'col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8 centerForm',
       instagram_bio_why_not_text: '',
       high_school: '',
       college: '',
@@ -54942,17 +54942,21 @@ var MentorApp = function (_React$Component) {
         null,
         _react2.default.createElement(
           _reactBootstrap.Form,
-          { horizontal: true, onSubmit: this.handleFormSubmit },
+          { horizontal: true, onSubmit: this.handleFormSubmit, className: this.state.gridStyle },
           page,
           _react2.default.createElement(
-            _reactBootstrap.Button,
-            { onClick: this.handleBack, className: 'btn-back' },
-            'Back'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Button,
-            { onClick: this.handleNext, className: 'btn-next' },
-            'Next'
+            'div',
+            null,
+            _react2.default.createElement(
+              _reactBootstrap.Button,
+              { onClick: this.handleBack, className: 'btn-back' },
+              'Back'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Button,
+              { onClick: this.handleNext, className: 'btn-next' },
+              'Next'
+            )
           ),
           this.allValidate() ? _react2.default.createElement(
             _reactBootstrap.Button,
@@ -55011,7 +55015,14 @@ var Page1 = function (_React$Component) {
   function Page1(props) {
     _classCallCheck(this, Page1);
 
-    return _possibleConstructorReturn(this, (Page1.__proto__ || Object.getPrototypeOf(Page1)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (Page1.__proto__ || Object.getPrototypeOf(Page1)).call(this, props));
+
+    _this.state = {
+      gridStyle: 'col-lg-offset-8 col-lg-8 col-md-offset-8 col-md-8 col-sm-offset-8 col-sm-8',
+      colLeftStyle: '',
+      colRightStyle: ''
+    };
+    return _this;
   }
 
   _createClass(Page1, [{
@@ -55021,8 +55032,8 @@ var Page1 = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(
-          'h2',
-          null,
+          'h3',
+          { className: 'centerForm' },
           'Help us connect you with your ideal mentee.'
         ),
         _react2.default.createElement(
@@ -55030,12 +55041,12 @@ var Page1 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
-            'Username *'
+            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
+            'Username*'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 3 },
+            { sm: 8 },
             _react2.default.createElement(_reactBootstrap.FormControl, {
               id: 'formControlsUsername',
               type: 'text',
@@ -55051,12 +55062,12 @@ var Page1 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
-            'Password *'
+            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
+            'Password*'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 3 },
+            { sm: 8 },
             _react2.default.createElement(_reactBootstrap.FormControl, {
               id: 'formControlsPassword',
               type: 'password',
@@ -55072,12 +55083,12 @@ var Page1 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
-            'First Name *'
+            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
+            'First Name*'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 3 },
+            { sm: 8 },
             _react2.default.createElement(_reactBootstrap.FormControl, {
               id: 'formControlsFirstName',
               type: 'text',
@@ -55092,12 +55103,12 @@ var Page1 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
-            'Last Name *'
+            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
+            'Last Name*'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 3 },
+            { sm: 8 },
             _react2.default.createElement(_reactBootstrap.FormControl, {
               id: 'formControlsLastName',
               type: 'text',
@@ -55112,12 +55123,12 @@ var Page1 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
-            'Age *'
+            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
+            'Age*'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 3 },
+            { sm: 8 },
             _react2.default.createElement(_reactBootstrap.FormControl, {
               id: 'formControlsAge',
               type: 'number',
@@ -55132,12 +55143,12 @@ var Page1 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
-            'Email *'
+            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
+            'Email*'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 3 },
+            { sm: 8 },
             _react2.default.createElement(
               _reactBootstrap.InputGroup,
               null,
@@ -55212,16 +55223,21 @@ var Page2 = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(
+          'h3',
+          { className: 'centerForm' },
+          'Let\'s get connected!'
+        ),
+        _react2.default.createElement(
           _reactBootstrap.FormGroup,
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
             'Facebook *'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 3 },
+            { sm: 8 },
             _react2.default.createElement(
               _reactBootstrap.InputGroup,
               null,
@@ -55245,12 +55261,12 @@ var Page2 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
             'LinkedIn *'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 3 },
+            { sm: 8 },
             _react2.default.createElement(
               _reactBootstrap.InputGroup,
               null,
@@ -55274,12 +55290,12 @@ var Page2 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
             'Phone *'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 3 },
+            { sm: 8 },
             _react2.default.createElement(
               _reactBootstrap.InputGroup,
               null,
@@ -55304,12 +55320,12 @@ var Page2 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
             'City *'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 3 },
+            { sm: 8 },
             _react2.default.createElement(_reactBootstrap.FormControl, {
               id: 'formControlsCity',
               type: 'text',
@@ -55324,12 +55340,12 @@ var Page2 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
             'Country *'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 3 },
+            { sm: 8 },
             _react2.default.createElement(_reactBootstrap.FormControl, {
               id: 'formControlsCountry',
               type: 'text',
@@ -55401,19 +55417,24 @@ var Page3 = function (_React$Component) {
           _React$createElement;
 
       return _react2.default.createElement(
-        _reactBootstrap.Grid,
+        'div',
         null,
+        _react2.default.createElement(
+          'h3',
+          { className: 'centerForm' },
+          'Some background questions'
+        ),
         _react2.default.createElement(
           _reactBootstrap.FormGroup,
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
             'College *'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 3 },
+            { sm: 8 },
             _react2.default.createElement(
               _reactBootstrap.InputGroup,
               null,
@@ -55436,85 +55457,25 @@ var Page3 = function (_React$Component) {
           _reactBootstrap.FormGroup,
           null,
           _react2.default.createElement(
-            _reactBootstrap.ControlLabel,
-            null,
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
             'What was your college major? *'
           ),
-          _react2.default.createElement(_reactSelect2.default, {
-            name: 'major',
-            value: this.props.page.major,
-            onChange: function onChange(value) {
-              return _this2.props.handleMultiChange(value, 'major');
-            },
-            multi: true,
-            delimiter: '|',
-            simpleValue: true,
-            joinValues: true,
-            options: [{ value: 'Science', label: 'Science' }, { value: 'Engineering', label: 'Engineering' }, { value: 'Communcations, Marketing', label: 'Communcations, Marketing' }, { value: 'Political Science, International Relations', label: 'Political Science, International Relations' }, { value: 'Finance, Economics', label: 'Finance, Economics' }, { value: 'Liberal Arts', label: 'Liberal Arts' }]
-          })
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
           _react2.default.createElement(
-            _reactBootstrap.ControlLabel,
-            null,
-            'How important is it to you that a mentee share your major? *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Radio,
-            {
-              onChange: this.props.handleInputChange,
-              name: 'share_major_rank',
-              value: '0',
-              checked: this.props.page.share_major_rank === '0',
-              inline: true
-            },
-            'Not at all'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Radio,
-            {
-              onChange: this.props.handleInputChange,
-              name: 'share_major_rank',
-              value: '1',
-              checked: this.props.page.share_major_rank === '1',
-              inline: true
-            },
-            'A little'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Radio,
-            {
-              onChange: this.props.handleInputChange,
-              name: 'share_major_rank',
-              value: '2',
-              checked: this.props.page.share_major_rank === '2',
-              inline: true
-            },
-            'Moderately'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Radio,
-            {
-              onChange: this.props.handleInputChange,
-              name: 'share_major_rank',
-              value: '3',
-              checked: this.props.page.share_major_rank === '3',
-              inline: true
-            },
-            'Very'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Radio,
-            {
-              onChange: this.props.handleInputChange,
-              name: 'share_major_rank',
-              value: '4',
-              checked: this.props.page.share_major_rank === '4',
-              inline: true
-            },
-            'Extremely'
+            _reactBootstrap.Col,
+            { sm: 8 },
+            _react2.default.createElement(_reactSelect2.default, {
+              name: 'major',
+              value: this.props.page.major,
+              onChange: function onChange(value) {
+                return _this2.props.handleMultiChange(value, 'major');
+              },
+              multi: true,
+              delimiter: '|',
+              simpleValue: true,
+              joinValues: true,
+              options: [{ value: 'Science', label: 'Science' }, { value: 'Engineering', label: 'Engineering' }, { value: 'Communcations, Marketing', label: 'Communcations, Marketing' }, { value: 'Political Science, International Relations', label: 'Political Science, International Relations' }, { value: 'Finance, Economics', label: 'Finance, Economics' }, { value: 'Liberal Arts', label: 'Liberal Arts' }]
+            })
           )
         ),
         _react2.default.createElement(
@@ -55522,12 +55483,12 @@ var Page3 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 1 },
+            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
             'Employer *'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 3 },
+            { sm: 8 },
             _react2.default.createElement(
               _reactBootstrap.InputGroup,
               null,
@@ -55547,106 +55508,190 @@ var Page3 = function (_React$Component) {
           )
         ),
         _react2.default.createElement(
-          _reactBootstrap.ControlLabel,
+          _reactBootstrap.FormGroup,
           null,
-          'In which industry do you work? *'
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
+            'In which industry do you work? *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 8 },
+            _react2.default.createElement(_reactSelect2.default, {
+              name: 'industry',
+              value: this.props.page.industry,
+              onChange: function onChange(value) {
+                return _this2.props.handleMultiChange(value, 'industry');
+              },
+              multi: true,
+              delimiter: '|',
+              simpleValue: true,
+              joinValues: true,
+              options: [{ value: 'International Relations, Politics', label: 'International Relations, Politics' }, { value: 'Finance', label: 'Finance' }, { value: 'Accounting, Legal', label: 'Accounting, Legal' }, { value: 'Media', label: 'Media' }, { value: 'Technology', label: 'Technology' }, { value: 'Marketing', label: 'Marketing' }, { value: 'Performing Arts, Sports, Related', label: 'Performing Arts, Sports, Related' }, { value: 'Healthcare', label: 'Healthcare' }, { value: 'Education', label: 'Education' }, { value: 'Agriculture, Forestry, Fishing', label: 'Agriculture, Forestry, Fishing' }]
+            })
+          )
         ),
-        _react2.default.createElement(_reactSelect2.default, {
-          name: 'industry',
-          value: this.props.page.industry,
-          onChange: function onChange(value) {
-            return _this2.props.handleMultiChange(value, 'industry');
-          },
-          multi: true,
-          delimiter: '|',
-          simpleValue: true,
-          joinValues: true,
-          options: [{ value: 'International Relations, Politics', label: 'International Relations, Politics' }, { value: 'Finance', label: 'Finance' }, { value: 'Accounting, Legal', label: 'Accounting, Legal' }, { value: 'Media', label: 'Media' }, { value: 'Technology', label: 'Technology' }, { value: 'Marketing', label: 'Marketing' }, { value: 'Performing Arts, Sports, Related', label: 'Performing Arts, Sports, Related' }, { value: 'Healthcare', label: 'Healthcare' }, { value: 'Education', label: 'Education' }, { value: 'Agriculture, Forestry, Fishing', label: 'Agriculture, Forestry, Fishing' }]
-        }),
         _react2.default.createElement(
           _reactBootstrap.FormGroup,
           null,
           _react2.default.createElement(
-            _reactBootstrap.ControlLabel,
-            null,
-            'How important is it to you that a mentee would want to join your industry? *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Radio,
-            {
-              onChange: this.props.handleInputChange,
-              name: 'share_industry_rank',
-              value: '0',
-              checked: this.props.page.share_industry_rank === '0',
-              inline: true
-            },
-            'Not at all'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Radio,
-            {
-              onChange: this.props.handleInputChange,
-              name: 'share_industry_rank',
-              value: '1',
-              checked: this.props.page.share_industry_rank === '1',
-              inline: true
-            },
-            'A little'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Radio,
-            {
-              onChange: this.props.handleInputChange,
-              name: 'share_industry_rank',
-              value: '2',
-              checked: this.props.page.share_industry_rank === '2',
-              inline: true
-            },
-            'Moderately'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Radio,
-            {
-              onChange: this.props.handleInputChange,
-              name: 'share_industry_rank',
-              value: '3',
-              checked: this.props.page.share_industry_rank === '3',
-              inline: true
-            },
-            'Very'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Radio,
-            {
-              onChange: this.props.handleInputChange,
-              name: 'share_industry_rank',
-              value: '4',
-              checked: this.props.page.share_industry_rank === '4',
-              inline: true
-            },
-            'Extremely'
+            _reactBootstrap.Col,
+            { className: 'centerForm', componentClass: _reactBootstrap.ControlLabel, sm: 12 },
+            'How important is it to you that a mentee share your major? *'
           )
         ),
         _react2.default.createElement(
-          _reactBootstrap.Row,
+          _reactBootstrap.FormGroup,
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { className: 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
+            { className: 'centerForm', sm: 12 },
             _react2.default.createElement(
-              'label',
-              { 'text-align': 'left' },
-              'Describe your job.'
+              'div',
+              null,
+              _react2.default.createElement(
+                _reactBootstrap.Radio,
+                {
+                  onChange: this.props.handleInputChange,
+                  name: 'share_major_rank',
+                  value: '0',
+                  checked: this.props.page.share_major_rank === '0',
+                  inline: true
+                },
+                'Not at all'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.Radio,
+                {
+                  onChange: this.props.handleInputChange,
+                  name: 'share_major_rank',
+                  value: '1',
+                  checked: this.props.page.share_major_rank === '1',
+                  inline: true
+                },
+                'A little'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.Radio,
+                {
+                  onChange: this.props.handleInputChange,
+                  name: 'share_major_rank',
+                  value: '2',
+                  checked: this.props.page.share_major_rank === '2',
+                  inline: true
+                },
+                'Moderately'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.Radio,
+                {
+                  onChange: this.props.handleInputChange,
+                  name: 'share_major_rank',
+                  value: '3',
+                  checked: this.props.page.share_major_rank === '3',
+                  inline: true
+                },
+                'Very'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.Radio,
+                {
+                  onChange: this.props.handleInputChange,
+                  name: 'share_major_rank',
+                  value: '4',
+                  checked: this.props.page.share_major_rank === '4',
+                  inline: true
+                },
+                'Extremely'
+              )
             )
           )
         ),
         _react2.default.createElement(
-          _reactBootstrap.Row,
+          _reactBootstrap.FormGroup,
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { className: 'col-lg-offset-4 col-lg-4 col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4' },
-            _react2.default.createElement('textarea', (_React$createElement = { id: 'formControlsTextarea', value: this.props.page.job_description, className: 'form-control' }, _defineProperty(_React$createElement, 'id', 'job_description'), _defineProperty(_React$createElement, 'name', 'job_description'), _defineProperty(_React$createElement, 'onChange', this.props.handleInputChange), _React$createElement))
+            { className: 'centerForm', componentClass: _reactBootstrap.ControlLabel, sm: 12 },
+            'How important is it to you that a mentee would want to join your industry? *'
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          { className: 'centerForm', sm: 12 },
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+              _reactBootstrap.Radio,
+              {
+                onChange: this.props.handleInputChange,
+                name: 'share_industry_rank',
+                value: '0',
+                checked: this.props.page.share_industry_rank === '0',
+                inline: true
+              },
+              'Not at all'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Radio,
+              {
+                onChange: this.props.handleInputChange,
+                name: 'share_industry_rank',
+                value: '1',
+                checked: this.props.page.share_industry_rank === '1',
+                inline: true
+              },
+              'A little'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Radio,
+              {
+                onChange: this.props.handleInputChange,
+                name: 'share_industry_rank',
+                value: '2',
+                checked: this.props.page.share_industry_rank === '2',
+                inline: true
+              },
+              'Moderately'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Radio,
+              {
+                onChange: this.props.handleInputChange,
+                name: 'share_industry_rank',
+                value: '3',
+                checked: this.props.page.share_industry_rank === '3',
+                inline: true
+              },
+              'Very'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Radio,
+              {
+                onChange: this.props.handleInputChange,
+                name: 'share_industry_rank',
+                value: '4',
+                checked: this.props.page.share_industry_rank === '4',
+                inline: true
+              },
+              'Extremely'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
+            'Describe your job.'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 8 },
+            _react2.default.createElement('textarea', (_React$createElement = { style: { height: 100 }, id: 'formControlsTextarea', value: this.props.page.job_description, className: 'form-control' }, _defineProperty(_React$createElement, 'id', 'job_description'), _defineProperty(_React$createElement, 'name', 'job_description'), _defineProperty(_React$createElement, 'onChange', this.props.handleInputChange), _React$createElement))
           )
         )
       );
@@ -55711,39 +55756,71 @@ var Page4 = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(
-          'h2',
+          _reactBootstrap.FormGroup,
           null,
-          'We all get in the way of our own success. Which of the following methods do you think you\u2019ve managed to get under control in order to unblock your road to success? (Select the top 3)'
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 12 },
+            _react2.default.createElement(
+              'h4',
+              { className: 'centerText' },
+              'We all get in the way of our own success. Which of the following methods do you think you\u2019ve managed to get under control in order to unblock your road to success? (Select the top 3)'
+            )
+          )
         ),
-        _react2.default.createElement(_reactSelect2.default, {
-          name: 'unblock_methods',
-          value: this.props.page.unblock_methods,
-          onChange: function onChange(value) {
-            return _this2.props.handleMultiChange(value, 'unblock_methods');
-          },
-          multi: true,
-          delimiter: '|',
-          simpleValue: true,
-          joinValues: true,
-          options: [{ value: 'Procrastination', label: 'Procrastination' }, { value: 'Controlling life, people', label: 'Controlling life, people' }, { value: 'Indecision', label: 'Indecision' }, { value: 'Not saying \'yes\'; holding back; not being proactive in seeing opportunities', label: 'Not saying \'yes\'; holding back; not being proactive in seeing opportunities' }, { value: 'Wanting to be right', label: 'Wanting to be right' }, { value: 'Following the goals of other people', label: 'Following the goals of other people' }, { value: 'Acting as \'lone ranger\'; not delegating', label: 'Acting as \'lone ranger\'; not delegating' }, { value: 'Not saying \'no\' to projects that don\'t inspire you', label: 'Not saying \'no\' to projects that don\'t inspire you' }]
-        }),
         _react2.default.createElement(
-          'h2',
+          _reactBootstrap.FormGroup,
           null,
-          'What are you most excited to provide be for your mentee? (Select the top 3)'
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 12 },
+            _react2.default.createElement(_reactSelect2.default, {
+              name: 'unblock_methods',
+              value: this.props.page.unblock_methods,
+              onChange: function onChange(value) {
+                return _this2.props.handleMultiChange(value, 'unblock_methods');
+              },
+              multi: true,
+              delimiter: '|',
+              simpleValue: true,
+              joinValues: true,
+              options: [{ value: 'Procrastination', label: 'Procrastination' }, { value: 'Controlling life, people', label: 'Controlling life, people' }, { value: 'Indecision', label: 'Indecision' }, { value: 'Not saying \'yes\'; holding back; not being proactive in seeing opportunities', label: 'Not saying \'yes\'; holding back; not being proactive in seeing opportunities' }, { value: 'Wanting to be right', label: 'Wanting to be right' }, { value: 'Following the goals of other people', label: 'Following the goals of other people' }, { value: 'Acting as \'lone ranger\'; not delegating', label: 'Acting as \'lone ranger\'; not delegating' }, { value: 'Not saying \'no\' to projects that don\'t inspire you', label: 'Not saying \'no\' to projects that don\'t inspire you' }]
+            })
+          )
         ),
-        _react2.default.createElement(_reactSelect2.default, {
-          name: 'provide',
-          value: this.props.page.provide,
-          onChange: function onChange(value) {
-            return _this2.props.handleMultiChange(value, 'provide');
-          },
-          multi: true,
-          delimiter: '|',
-          simpleValue: true,
-          joinValues: true,
-          options: [{ value: 'Challenge', label: 'Challenge' }, { value: 'Accountability', label: 'Accountability' }, { value: 'Sounding Board', label: 'Sounding Board' }, { value: 'Provide focus and direction', label: 'Provide focus and direction' }, { value: 'Inspiration', label: 'Inspiration' }, { value: 'Ideas, Innovation, and Strategy for new projects', label: 'Ideas, Innovation, and Strategy for new projects' }, { value: 'Confidence booster; provide validation', label: 'Confidence booster; provide validation' }, { value: 'Not saying \'no\' to projects that don\'t inspire you', label: 'Not saying \'no\' to projects that don\'t inspire you' }]
-        })
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 12 },
+            _react2.default.createElement(
+              'h4',
+              { className: 'centerText' },
+              'What are you most excited to provide be for your mentee? (Select the top 3)'
+            )
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 12 },
+            _react2.default.createElement(_reactSelect2.default, {
+              name: 'provide',
+              value: this.props.page.provide,
+              onChange: function onChange(value) {
+                return _this2.props.handleMultiChange(value, 'provide');
+              },
+              multi: true,
+              delimiter: '|',
+              simpleValue: true,
+              joinValues: true,
+              options: [{ value: 'Challenge', label: 'Challenge' }, { value: 'Accountability', label: 'Accountability' }, { value: 'Sounding Board', label: 'Sounding Board' }, { value: 'Provide focus and direction', label: 'Provide focus and direction' }, { value: 'Inspiration', label: 'Inspiration' }, { value: 'Ideas, Innovation, and Strategy for new projects', label: 'Ideas, Innovation, and Strategy for new projects' }, { value: 'Confidence booster; provide validation', label: 'Confidence booster; provide validation' }, { value: 'Not saying \'no\' to projects that don\'t inspire you', label: 'Not saying \'no\' to projects that don\'t inspire you' }]
+            })
+          )
+        )
       );
     }
   }]);
@@ -63558,9 +63635,259 @@ exports.default = AutosizeInput;
 
 /***/ }),
 /* 556 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module build failed: SyntaxError: Unexpected token (13:6)\n\n\u001b[0m \u001b[90m 11 | \u001b[39m      \u001b[36mreturn\u001b[39m(\n \u001b[90m 12 | \u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 | \u001b[39m      )\n \u001b[90m    | \u001b[39m      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 14 | \u001b[39m    }\n \u001b[90m 15 | \u001b[39m  }\n \u001b[90m 16 | \u001b[39m\u001b[0m\n");
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactBootstrap = __webpack_require__(13);
+
+var _reactFontawesome = __webpack_require__(40);
+
+var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Page5 = function (_React$Component) {
+  _inherits(Page5, _React$Component);
+
+  function Page5(props) {
+    _classCallCheck(this, Page5);
+
+    // this.state = {
+    //   videoOptions: { mimeType: 'video/webm; codecs=vp9' },
+    //   mediaSteam: new MediaStream(),
+    //   mediaRecorder: new MediaRecord(mediaStream, options),
+    //   recordedChunks: [],
+    // }
+    // this.state.mediaRecorder.ondataavailable = handleDataAvailable;
+    var _this = _possibleConstructorReturn(this, (Page5.__proto__ || Object.getPrototypeOf(Page5)).call(this, props));
+
+    var mediaSource = new MediaSource();
+    _this.state = {
+      mediaSource: mediaSource,
+      mediaRecorder: null
+    };
+    _this.video = [];
+    _this.button = [];
+    _this.recordedBlobs = [];
+    _this.state.mediaSource.addEventListener('sourceopen', _this.handleSourceOpen, false);
+
+    _this.handleSuccess = _this.handleSuccess.bind(_this);
+    _this.handleError = _this.handleError.bind(_this);
+    _this.handleSourceOpen = _this.handleSourceOpen.bind(_this);
+    _this.handleDataAvailable = _this.handleDataAvailable.bind(_this);
+    _this.toggleRecording = _this.toggleRecording.bind(_this);
+    _this.stopRecording = _this.stopRecording.bind(_this);
+    _this.startRecording = _this.startRecording.bind(_this);
+    _this.handleStop = _this.handleStop.bind(_this);
+    _this.play = _this.play.bind(_this);
+
+    return _this;
+  }
+
+  _createClass(Page5, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.gumVideo = this.video[0];
+      this.recordedVideo = this.video[1];
+      console.log(this.recordedVideo);
+      this.recordButton = this.button[0];
+      this.playButton = this.button[1];
+      this.uploadButton = this.button[2];
+
+      this.isSecureOrigin = location.protocol === 'https:' || location.hostname === 'localhost';
+      this.constraints = {
+        audio: true,
+        video: true
+      };
+      // window.isSecureContext could be used for Chrome
+      if (!this.isSecureOrigin) {
+        alert('getUserMedia() must be run from a secure origin: HTTPS or localhost.' + '\n\nChanging protocol to HTTPS');
+        location.protocol = 'HTTPS';
+      }
+
+      this.recordedVideo.addEventListener('error', function (ev) {
+        console.error('MediaRecording.recordedMedia.error()');
+        alert('Your browser can not play\n\n' + recordedVideo.src + '\n\n media clip. event: ' + JSON.stringify(ev));
+      }, true);
+
+      navigator.mediaDevices.getUserMedia(this.constraints).then(this.handleSuccess).catch(this.handleError);
+
+      this.recordButton.onclick = this.toggleRecording;
+      this.playButton.onclick = this.play;
+    }
+  }, {
+    key: 'handleSuccess',
+    value: function handleSuccess(stream) {
+      this.recordButton.disabled = false;
+      console.log('getUserMedia() got stream: ', stream);
+      window.stream = stream;
+      this.gumVideo.srcObject = stream;
+    }
+  }, {
+    key: 'handleError',
+    value: function handleError(error) {
+      console.log('navigator.getUserMedia error: ', error);
+    }
+  }, {
+    key: 'handleSourceOpen',
+    value: function handleSourceOpen(event) {
+      console.log('MediaSource opened');
+    }
+  }, {
+    key: 'handleDataAvailable',
+    value: function handleDataAvailable(event) {
+      if (event.data && event.data.size > 0) {
+        this.recordedBlobs.push(event.data);
+      }
+    }
+  }, {
+    key: 'handleStop',
+    value: function handleStop(event) {
+      console.log('Recorder stopped: ', event);
+    }
+  }, {
+    key: 'toggleRecording',
+    value: function toggleRecording() {
+      if (this.recordButton.textContent === 'Start Recording') {
+        this.startRecording();
+      } else {
+        this.stopRecording();
+        this.recordButton.textContent = 'Start Recording';
+        this.playButton.disabled = false;
+        // uploadButton.disabled = false;
+      }
+    }
+  }, {
+    key: 'startRecording',
+    value: function startRecording() {
+      this.recordedBlobs = [];
+      var options = { mimeType: 'video/webm;codecs=vp9' };
+      if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+        console.log(options.mimeType + ' is not Supported');
+        options = { mimeType: 'video/webm;codecs=vp8' };
+        if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+          console.log(options.mimeType + ' is not Supported');
+          options = { mimeType: 'video/webm' };
+          if (!MediaRecorder.isTypeSupported(options.mimeType)) {
+            console.log(options.mimeType + ' is not Supported');
+            options = { mimeType: '' };
+          }
+        }
+      }
+      try {
+        this.mediaRecorder = new MediaRecorder(window.stream, options);
+      } catch (e) {
+        console.error('Exception while creating MediaRecorder: ' + e);
+        alert('Exception while creating MediaRecorder: ' + e + '. mimeType: ' + options.mimeType);
+        return;
+      }
+      console.log('Created MediaRecorder', this.mediaRecorder, 'with options', options);
+      this.recordButton.textContent = 'Stop Recording';
+      this.playButton.disabled = true;
+      this.uploadButton.disabled = true;
+      this.mediaRecorder.onstop = this.handleStop;
+      this.mediaRecorder.ondataavailable = this.handleDataAvailable;
+      this.mediaRecorder.start(10); // collect 10ms of data
+      console.log('MediaRecorder started', this.mediaRecorder);
+    }
+  }, {
+    key: 'stopRecording',
+    value: function stopRecording() {
+      this.mediaRecorder.stop();
+      console.log('Recorded Blobs: ', this.recordedBlobs);
+      this.recordedVideo.controls = true;
+    }
+  }, {
+    key: 'play',
+    value: function play() {
+      var _this2 = this;
+
+      var superBuffer = new Blob(this.recordedBlobs, { type: 'video/webm' });
+      this.recordedVideo.src = window.URL.createObjectURL(superBuffer);
+      // workaround for non-seekable video taken from
+      // https://bugs.chromium.org/p/chromium/issues/detail?id=642012#c23
+      this.recordedVideo.addEventListener('loadedmetadata', function () {
+        if (_this2.recordedVideo.duration === Infinity) {
+          _this2.recordedVideo.currentTime = 1e101;
+          _this2.recordedVideo.ontimeupdate = function () {
+            _this2.recordedVideo.currentTime = 0;
+            _this2.recordedVideo.ontimeupdate = function () {
+              delete _this2.recordedVideo.ontimeupdate;
+              _this2.recordedVideo.play();
+            };
+          };
+        }
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this3 = this;
+
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement('video', { ref: function ref(input) {
+            _this3.video[0] = input;
+          }, id: 'gum', autoPlay: true, muted: true }),
+        _react2.default.createElement('video', { ref: function ref(input) {
+            _this3.video[1] = input;
+          }, id: 'recorded', controls: true }),
+        _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'button',
+            { ref: function ref(input) {
+                _this3.button[0] = input;
+              }, id: 'record', disabled: true },
+            'Start Recording'
+          ),
+          _react2.default.createElement(
+            'button',
+            { ref: function ref(input) {
+                _this3.button[1] = input;
+              }, id: 'play', disabled: true },
+            'Play'
+          ),
+          _react2.default.createElement(
+            'button',
+            {
+              ref: function ref(input) {
+                _this3.button[2] = input;
+              },
+              onClick: this.upload,
+              id: 'upload', disabled: true
+            },
+            'Upload to Youtube'
+          )
+        )
+      );
+    }
+  }]);
+
+  return Page5;
+}(_react2.default.Component);
+
+exports.default = Page5;
 
 /***/ }),
 /* 557 */

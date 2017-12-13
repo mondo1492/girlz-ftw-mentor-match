@@ -44,6 +44,19 @@
     color: grey;
   }
 
+  .centerForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .Select.is-open { position: relative; z-index: 1000; }
+
+  .centerText {
+    text-align: center;
+  }
+
 @import './components/unapproved_tees_tors.scss';
 @import './specific_styling/modal';
 @import './components/current_tees_tors.scss';

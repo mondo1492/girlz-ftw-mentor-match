@@ -56,8 +56,8 @@ class MentorApp extends React.Component {
       },
       agree_terms: false,
       agree_terms_bad_click: false,
-      page: 0,
-
+      page: 3,
+      gridStyle: 'col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8 centerForm',
       instagram_bio_why_not_text: '',
       high_school: '',
       college: '',
@@ -159,10 +159,12 @@ class MentorApp extends React.Component {
 
     return (
       <div>
-        <Form horizontal onSubmit={this.handleFormSubmit}>
+        <Form horizontal onSubmit={this.handleFormSubmit} className={this.state.gridStyle}>
           {page}
-          <Button onClick={this.handleBack} className="btn-back">Back</Button>
-          <Button onClick={this.handleNext} className="btn-next">Next</Button>
+          <div>
+            <Button onClick={this.handleBack} className="btn-back">Back</Button>
+            <Button onClick={this.handleNext} className="btn-next">Next</Button>
+          </div>
           {this.allValidate() ? <Button bsStyle="success" type="submit">Apply</Button> : ""}
         </Form>
       </div>
