@@ -11,9 +11,9 @@ class Page2 extends React.Component {
     render() {
       return(
         <div>
-          <h3 className='centerForm'>Let's get connected!</h3>
+          <h3 className='centerForm pageCaption'>Let's get connected!</h3>
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={3}>
+            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
               Facebook *
             </Col>
             <Col sm={8}>
@@ -33,7 +33,7 @@ class Page2 extends React.Component {
           </FormGroup>
 
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={3}>
+            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
               LinkedIn *
             </Col>
             <Col sm={8}>
@@ -52,7 +52,7 @@ class Page2 extends React.Component {
             </Col>
           </FormGroup>
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={3}>
+            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
               Phone *
             </Col>
             <Col sm={8}>
@@ -72,7 +72,7 @@ class Page2 extends React.Component {
             </Col>
           </FormGroup>
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={3}>
+            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
               City *
             </Col>
             <Col sm={8}>
@@ -86,7 +86,7 @@ class Page2 extends React.Component {
             </Col>
           </FormGroup>
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={3}>
+            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
               Country *
             </Col>
             <Col sm={8}>

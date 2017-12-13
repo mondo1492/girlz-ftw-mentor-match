@@ -13,8 +13,9 @@ class Page4 extends React.Component {
       return(
         <div>
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={12}>
-              <h4 className='centerText'>
+            <Col sm={2}></Col>
+            <Col componentClass={ControlLabel} sm={8}>
+              <h4 className='centerText formFontStyle2'>
                 We all get in the way of our own success.
                 Which of the following methods do you think you’ve managed
                 to get under control in order to unblock your road to success?
@@ -23,7 +24,8 @@ class Page4 extends React.Component {
             </Col>
           </FormGroup>
           <FormGroup>
-            <Col sm={12}>
+            <Col sm={2}></Col>
+            <Col sm={8}>
               <Select
                 name="unblock_methods"
                 value={this.props.page.unblock_methods}
@@ -46,8 +48,9 @@ class Page4 extends React.Component {
             </Col>
           </FormGroup>
           <FormGroup >
-            <Col componentClass={ControlLabel} sm={12}>
-              <h4 className='centerText'>
+            <Col sm={2}></Col>
+            <Col componentClass={ControlLabel} sm={8}>
+              <h4 className='centerText formFontStyle2'>
                 What are you most excited to provide be for your mentee?
                 (Select the top 3)
               </h4>
@@ -55,7 +58,8 @@ class Page4 extends React.Component {
             </Col>
           </FormGroup>
           <FormGroup>
-            <Col sm={12}>
+            <Col sm={2}></Col>
+            <Col sm={8}>
               <Select
                 name="provide"
                 value={this.props.page.provide}

@@ -12,9 +12,9 @@ class Page3 extends React.Component {
     render() {
       return(
         <div>
-          <h3 className='centerForm'>Some background questions</h3>
+          <h3 className='centerForm pageCaption'>Some background questions</h3>
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={3}>
+            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
               College *
             </Col>
             <Col sm={8}>
@@ -34,7 +34,7 @@ class Page3 extends React.Component {
           </FormGroup>
 
           <FormGroup>
-          <Col componentClass={ControlLabel} sm={3}>
+          <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
             What was your college major? *
           </Col>
           <Col sm={8}>
@@ -58,12 +58,8 @@ class Page3 extends React.Component {
           </Col>
         </FormGroup>
 
-
-
-
-
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={3}>
+            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
               Employer *
             </Col>
             <Col sm={8}>
@@ -83,7 +79,7 @@ class Page3 extends React.Component {
           </FormGroup>
 
         <FormGroup>
-          <Col componentClass={ControlLabel} sm={3}>
+          <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
             In which industry do you work? *
           </Col>
           <Col sm={8}>
@@ -112,14 +108,14 @@ class Page3 extends React.Component {
         </FormGroup>
 
         <FormGroup >
-          <Col className='centerForm' componentClass={ControlLabel} sm={12}>
+          <Col className='centerForm formFontStyle2' componentClass={ControlLabel} sm={12}>
             How important is it to you that a mentee share your major? *
           </Col>
         </FormGroup>
 
         <FormGroup>
           <Col className='centerForm' sm={12}>
-            <div>
+            <div className='formFontStyle'>
             <Radio
               onChange={this.props.handleInputChange}
               name="share_major_rank"
@@ -170,13 +166,13 @@ class Page3 extends React.Component {
         </FormGroup>
 
         <FormGroup >
-          <Col className='centerForm' componentClass={ControlLabel} sm={12}>
+          <Col className='centerForm formFontStyle2' componentClass={ControlLabel} sm={12}>
               How important is it to you that a mentee would want to join your industry? *
           </Col>
         </FormGroup>
 
           <FormGroup className='centerForm' sm={12}>
-            <div>
+            <div className='formFontStyle'>
             <Radio
               onChange={this.props.handleInputChange}
               name="share_industry_rank"
@@ -226,7 +222,7 @@ class Page3 extends React.Component {
           </FormGroup>
 
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={3}>
+            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
               Describe your job.
             </Col>
             <Col sm={8}>

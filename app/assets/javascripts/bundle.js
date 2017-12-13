@@ -55116,8 +55116,8 @@ var MentorApp = function (_React$Component) {
       },
       agree_terms: false,
       agree_terms_bad_click: false,
-      page: 3,
-      gridStyle: 'col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8 centerForm',
+      page: 0,
+
       instagram_bio_why_not_text: '',
       high_school: '',
       college: '',
@@ -55259,28 +55259,33 @@ var MentorApp = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(
-          _reactBootstrap.Form,
-          { horizontal: true, onSubmit: this.handleFormSubmit, className: this.state.gridStyle },
-          page,
+          'div',
+          null,
           _react2.default.createElement(
-            'div',
-            null,
+            _reactBootstrap.Form,
+            { horizontal: true, onSubmit: this.handleFormSubmit, className: 'centerForm, formBackground' },
+            page,
             _react2.default.createElement(
-              _reactBootstrap.Button,
-              { onClick: this.handleBack, className: 'btn-back' },
-              'Back'
+              'div',
+              { className: 'centerButton' },
+              _react2.default.createElement(
+                _reactBootstrap.Button,
+                { onClick: this.handleBack, className: 'btn-back' },
+                'Back'
+              ),
+              _react2.default.createElement('padder', { className: 'padder' }),
+              _react2.default.createElement(
+                _reactBootstrap.Button,
+                { onClick: this.handleNext, className: 'btn-next' },
+                'Next'
+              )
             ),
-            _react2.default.createElement(
+            this.allValidate() ? _react2.default.createElement(
               _reactBootstrap.Button,
-              { onClick: this.handleNext, className: 'btn-next' },
-              'Next'
-            )
-          ),
-          this.allValidate() ? _react2.default.createElement(
-            _reactBootstrap.Button,
-            { bsStyle: 'success', type: 'submit' },
-            'Apply'
-          ) : ""
+              { bsStyle: 'success', type: 'submit' },
+              'Apply'
+            ) : ""
+          )
         )
       );
     }
@@ -55357,11 +55362,7 @@ var Page1 = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (Page1.__proto__ || Object.getPrototypeOf(Page1)).call(this, props));
 
-    _this.state = {
-      gridStyle: 'col-lg-offset-8 col-lg-8 col-md-offset-8 col-md-8 col-sm-offset-8 col-sm-8',
-      colLeftStyle: '',
-      colRightStyle: ''
-    };
+    _this.gridStyle = 'col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8';
     return _this;
   }
 
@@ -55373,15 +55374,15 @@ var Page1 = function (_React$Component) {
         null,
         _react2.default.createElement(
           'h3',
-          { className: 'centerForm' },
-          'Help us connect you with your ideal mentee.'
+          { className: 'centerForm pageCaption' },
+          ' Help us connect you with your ideal mentee.'
         ),
         _react2.default.createElement(
           _reactBootstrap.FormGroup,
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
             'Username*'
           ),
           _react2.default.createElement(
@@ -55402,7 +55403,7 @@ var Page1 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
             'Password*'
           ),
           _react2.default.createElement(
@@ -55423,7 +55424,7 @@ var Page1 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
             'First Name*'
           ),
           _react2.default.createElement(
@@ -55443,7 +55444,7 @@ var Page1 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
             'Last Name*'
           ),
           _react2.default.createElement(
@@ -55463,7 +55464,7 @@ var Page1 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
             'Age*'
           ),
           _react2.default.createElement(
@@ -55483,7 +55484,7 @@ var Page1 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
             'Email*'
           ),
           _react2.default.createElement(
@@ -55564,7 +55565,7 @@ var Page2 = function (_React$Component) {
         null,
         _react2.default.createElement(
           'h3',
-          { className: 'centerForm' },
+          { className: 'centerForm pageCaption' },
           'Let\'s get connected!'
         ),
         _react2.default.createElement(
@@ -55572,7 +55573,7 @@ var Page2 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
             'Facebook *'
           ),
           _react2.default.createElement(
@@ -55601,7 +55602,7 @@ var Page2 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
             'LinkedIn *'
           ),
           _react2.default.createElement(
@@ -55630,7 +55631,7 @@ var Page2 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
             'Phone *'
           ),
           _react2.default.createElement(
@@ -55660,7 +55661,7 @@ var Page2 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
             'City *'
           ),
           _react2.default.createElement(
@@ -55680,7 +55681,7 @@ var Page2 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
             'Country *'
           ),
           _react2.default.createElement(
@@ -55761,7 +55762,7 @@ var Page3 = function (_React$Component) {
         null,
         _react2.default.createElement(
           'h3',
-          { className: 'centerForm' },
+          { className: 'centerForm pageCaption' },
           'Some background questions'
         ),
         _react2.default.createElement(
@@ -55769,7 +55770,7 @@ var Page3 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
             'College *'
           ),
           _react2.default.createElement(
@@ -55798,7 +55799,7 @@ var Page3 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
             'What was your college major? *'
           ),
           _react2.default.createElement(
@@ -55823,7 +55824,7 @@ var Page3 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
             'Employer *'
           ),
           _react2.default.createElement(
@@ -55852,7 +55853,7 @@ var Page3 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
             'In which industry do you work? *'
           ),
           _react2.default.createElement(
@@ -55877,7 +55878,7 @@ var Page3 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { className: 'centerForm', componentClass: _reactBootstrap.ControlLabel, sm: 12 },
+            { className: 'centerForm formFontStyle2', componentClass: _reactBootstrap.ControlLabel, sm: 12 },
             'How important is it to you that a mentee share your major? *'
           )
         ),
@@ -55889,7 +55890,7 @@ var Page3 = function (_React$Component) {
             { className: 'centerForm', sm: 12 },
             _react2.default.createElement(
               'div',
-              null,
+              { className: 'formFontStyle' },
               _react2.default.createElement(
                 _reactBootstrap.Radio,
                 {
@@ -55953,7 +55954,7 @@ var Page3 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { className: 'centerForm', componentClass: _reactBootstrap.ControlLabel, sm: 12 },
+            { className: 'centerForm formFontStyle2', componentClass: _reactBootstrap.ControlLabel, sm: 12 },
             'How important is it to you that a mentee would want to join your industry? *'
           )
         ),
@@ -55962,7 +55963,7 @@ var Page3 = function (_React$Component) {
           { className: 'centerForm', sm: 12 },
           _react2.default.createElement(
             'div',
-            null,
+            { className: 'formFontStyle' },
             _react2.default.createElement(
               _reactBootstrap.Radio,
               {
@@ -56025,7 +56026,7 @@ var Page3 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 3 },
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
             'Describe your job.'
           ),
           _react2.default.createElement(
@@ -56373,12 +56374,13 @@ var Page4 = function (_React$Component) {
         _react2.default.createElement(
           _reactBootstrap.FormGroup,
           null,
+          _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 12 },
+            { componentClass: _reactBootstrap.ControlLabel, sm: 8 },
             _react2.default.createElement(
               'h4',
-              { className: 'centerText' },
+              { className: 'centerText formFontStyle2' },
               'We all get in the way of our own success. Which of the following methods do you think you\u2019ve managed to get under control in order to unblock your road to success? (Select the top 3)'
             )
           )
@@ -56386,9 +56388,10 @@ var Page4 = function (_React$Component) {
         _react2.default.createElement(
           _reactBootstrap.FormGroup,
           null,
+          _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 12 },
+            { sm: 8 },
             _react2.default.createElement(_reactSelect2.default, {
               name: 'unblock_methods',
               value: this.props.page.unblock_methods,
@@ -56406,12 +56409,13 @@ var Page4 = function (_React$Component) {
         _react2.default.createElement(
           _reactBootstrap.FormGroup,
           null,
+          _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 12 },
+            { componentClass: _reactBootstrap.ControlLabel, sm: 8 },
             _react2.default.createElement(
               'h4',
-              { className: 'centerText' },
+              { className: 'centerText formFontStyle2' },
               'What are you most excited to provide be for your mentee? (Select the top 3)'
             )
           )
@@ -56419,9 +56423,10 @@ var Page4 = function (_React$Component) {
         _react2.default.createElement(
           _reactBootstrap.FormGroup,
           null,
+          _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 12 },
+            { sm: 8 },
             _react2.default.createElement(_reactSelect2.default, {
               name: 'provide',
               value: this.props.page.provide,

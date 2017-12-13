@@ -6,18 +6,14 @@ import FontAwesome from 'react-fontawesome';
 class Page1 extends React.Component {
     constructor(props) {
       super(props);
-      this.state = {
-        gridStyle: 'col-lg-offset-8 col-lg-8 col-md-offset-8 col-md-8 col-sm-offset-8 col-sm-8',
-        colLeftStyle: '',
-        colRightStyle: '',
-      }
+      this.gridStyle = 'col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8';
     }
     render() {
       return(
         <div>
-          <h3 className='centerForm'>Help us connect you with your ideal mentee.</h3>
+          <h3 className='centerForm pageCaption'> Help us connect you with your ideal mentee.</h3>
             <FormGroup>
-              <Col componentClass={ControlLabel} sm={3}>
+              <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
                 Username*
               </Col>
               <Col sm={8}>
@@ -33,7 +29,7 @@ class Page1 extends React.Component {
             </FormGroup>
 
             <FormGroup>
-              <Col componentClass={ControlLabel} sm={3}>
+              <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
                   Password*
               </Col>
               <Col sm={8}>
@@ -49,7 +45,7 @@ class Page1 extends React.Component {
             </FormGroup>
 
             <FormGroup>
-              <Col componentClass={ControlLabel} sm={3}>
+              <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
                   First Name*
               </Col>
               <Col sm={8}>
@@ -64,7 +60,7 @@ class Page1 extends React.Component {
             </FormGroup>
 
             <FormGroup>
-              <Col componentClass={ControlLabel} sm={3}>
+              <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
                   Last Name*
               </Col>
               <Col sm={8}>
@@ -79,7 +75,7 @@ class Page1 extends React.Component {
             </FormGroup>
 
             <FormGroup>
-              <Col componentClass={ControlLabel} sm={3}>
+              <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
                   Age*
               </Col>
               <Col sm={8}>
@@ -94,7 +90,7 @@ class Page1 extends React.Component {
             </FormGroup>
 
             <FormGroup>
-              <Col componentClass={ControlLabel} sm={3}>
+              <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
                   Email*
               </Col>
               <Col sm={8}>
