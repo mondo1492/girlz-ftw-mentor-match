@@ -42415,33 +42415,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var App = function App() {
   return _react2.default.createElement(
     'div',
-    null,
-    _react2.default.createElement(
-      'header',
-      null,
-      _react2.default.createElement(
-        'h1',
-        null,
-        'Welcome to the Girlz FTW\'s application portal!'
-      ),
-      _react2.default.createElement(_LogoutContainer2.default, null)
-    ),
-    _react2.default.createElement(
-      'div',
-      { id: 'all-content' },
-      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Landing2.default }),
-      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/mentee_app', component: _MenteeAppContainer2.default }),
-      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/mentor_app', component: _MentorApp2.default }),
-      _react2.default.createElement(_route_util.ProtectedRoute, { exact: true, path: '/mentor_panel', component: _MentorPanel2.default }),
-      _react2.default.createElement(_route_util.ProtectedRoute, { path: '/mentor_panel/update', component: _MentorUpdate2.default }),
-      _react2.default.createElement(_route_util.AdminRoute, { exact: true, path: '/admin_panel', component: _admin_panel2.default }),
-      _react2.default.createElement(_route_util.AdminRoute, { exact: true, path: '/current_mentors', component: _CurrentMentorsContainer2.default }),
-      _react2.default.createElement(_route_util.AdminRoute, { exact: true, path: '/current_mentees', component: _CurrentMenteesContainer2.default }),
-      _react2.default.createElement(_route_util.AdminRoute, { exact: true, path: '/unapproved_mentors', component: _UnapprovedMentorsContainer2.default }),
-      _react2.default.createElement(_route_util.AdminRoute, { exact: true, path: '/unapproved_mentees', component: _UnapprovedMenteesContainer2.default }),
-      _react2.default.createElement(_route_util.AdminRoute, { exact: true, path: '/rejected_mentors', component: _RejectedMentorsContainer2.default }),
-      _react2.default.createElement(_route_util.AdminRoute, { exact: true, path: '/rejected_mentees', component: _RejectedMenteesContainer2.default })
-    )
+    { id: 'all-content' },
+    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Landing2.default }),
+    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/mentee_app', component: _MenteeAppContainer2.default }),
+    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/mentor_app', component: _MentorApp2.default }),
+    _react2.default.createElement(_route_util.ProtectedRoute, { exact: true, path: '/mentor_panel', component: _MentorPanel2.default }),
+    _react2.default.createElement(_route_util.ProtectedRoute, { path: '/mentor_panel/update', component: _MentorUpdate2.default }),
+    _react2.default.createElement(_route_util.AdminRoute, { exact: true, path: '/admin_panel', component: _admin_panel2.default }),
+    _react2.default.createElement(_route_util.AdminRoute, { exact: true, path: '/current_mentors', component: _CurrentMentorsContainer2.default }),
+    _react2.default.createElement(_route_util.AdminRoute, { exact: true, path: '/current_mentees', component: _CurrentMenteesContainer2.default }),
+    _react2.default.createElement(_route_util.AdminRoute, { exact: true, path: '/unapproved_mentors', component: _UnapprovedMentorsContainer2.default }),
+    _react2.default.createElement(_route_util.AdminRoute, { exact: true, path: '/unapproved_mentees', component: _UnapprovedMenteesContainer2.default }),
+    _react2.default.createElement(_route_util.AdminRoute, { exact: true, path: '/rejected_mentors', component: _RejectedMentorsContainer2.default }),
+    _react2.default.createElement(_route_util.AdminRoute, { exact: true, path: '/rejected_mentees', component: _RejectedMenteesContainer2.default })
   );
 };
 
