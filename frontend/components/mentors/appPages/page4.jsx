@@ -1,88 +1,106 @@
 import React from 'react';
-import { Grid, Row, Col, Form, Button, Panel, InputGroup, FormControl, ControlLabel, FormGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Col, Form, Button, Panel, InputGroup, FormControl, ControlLabel, FormGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
-import Select from 'react-select';
+
 
 
 class Page4 extends React.Component {
     constructor(props) {
       super(props);
     }
-
     render() {
       return(
         <div>
+          <h3 className='centerForm pageCaption'>Let's get connected!</h3>
           <FormGroup>
-            <Col sm={2}></Col>
-            <Col componentClass={ControlLabel} sm={8}>
-              <h4 className='centerText formFontStyle2'>
-                We all get in the way of our own success.
-                Which of the following methods do you think you’ve managed
-                to get under control in order to unblock your road to success?
-                (Select the top 3)
-              </h4>
+            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
+              Facebook *
             </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col sm={2}></Col>
             <Col sm={8}>
-              <Select
-                name="unblock_methods"
-                value={this.props.page.unblock_methods}
-                onChange={(value) => this.props.handleMultiChange(value, 'unblock_methods')}
-                multi
-                delimiter="|"
-                simpleValue
-                joinValues
-                options={[
-                  { value: 'Procrastination', label: 'Procrastination' },
-                  { value: 'Controlling life, people', label: 'Controlling life, people' },
-                  { value: 'Indecision', label: 'Indecision' },
-                  { value: 'Not saying \'yes\'; holding back; not being proactive in seeing opportunities', label: 'Not saying \'yes\'; holding back; not being proactive in seeing opportunities' },
-                  { value: 'Wanting to be right', label: 'Wanting to be right' },
-                  { value: 'Following the goals of other people', label: 'Following the goals of other people' },
-                  { value: 'Acting as \'lone ranger\'; not delegating', label: 'Acting as \'lone ranger\'; not delegating' },
-                  { value: 'Not saying \'no\' to projects that don\'t inspire you', label: 'Not saying \'no\' to projects that don\'t inspire you' },
-                ]}
-              />
+              <InputGroup>
+                <InputGroup.Addon>
+                  <FontAwesome name='facebook'/>
+                </InputGroup.Addon>
+              <FormControl
+                id="formControlsFacebook"
+                type="text"
+                name="facebook"
+                value={this.props.page.facebook}
+                onChange={this.props.handleInputChange}
+                />
+            </InputGroup>
             </Col>
           </FormGroup>
-          <FormGroup >
-            <Col sm={2}></Col>
-            <Col componentClass={ControlLabel} sm={8}>
-              <h4 className='centerText formFontStyle2'>
-                What are you most excited to provide be for your mentee?
-                (Select the top 3)
-              </h4>
 
+          <FormGroup>
+            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
+              LinkedIn *
+            </Col>
+            <Col sm={8}>
+              <InputGroup>
+                <InputGroup.Addon>
+                  <FontAwesome name='linkedin'/>
+                </InputGroup.Addon>
+                <FormControl
+                  id="formControlsLinkedIn"
+                  type="text"
+                  name="linkedin"
+                  value={this.props.page.linkedin}
+                  onChange={this.props.handleInputChange}
+                  />
+              </InputGroup>
             </Col>
           </FormGroup>
           <FormGroup>
-            <Col sm={2}></Col>
+            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
+              Phone *
+            </Col>
             <Col sm={8}>
-              <Select
-                name="provide"
-                value={this.props.page.provide}
-                onChange={(value) => this.props.handleMultiChange(value, 'provide')}
-                multi
-                delimiter="|"
-                simpleValue
-                joinValues
-                options={[
-                  { value: 'Challenge', label: 'Challenge' },
-                  { value: 'Accountability', label: 'Accountability' },
-                  { value: 'Sounding Board', label: 'Sounding Board' },
-                  { value: 'Provide focus and direction', label: 'Provide focus and direction' },
-                  { value: 'Inspiration', label: 'Inspiration' },
-                  { value: 'Ideas, Innovation, and Strategy for new projects', label: 'Ideas, Innovation, and Strategy for new projects' },
-                  { value: 'Confidence booster; provide validation', label: 'Confidence booster; provide validation' },
-                  { value: 'Not saying \'no\' to projects that don\'t inspire you', label: 'Not saying \'no\' to projects that don\'t inspire you' },
-                ]}
-              />
+              <InputGroup>
+               <InputGroup.Addon>
+                 <FontAwesome name='phone'/>
+               </InputGroup.Addon>
+                <FormControl
+                  id="formControlsPhone"
+                  type="text"
+                  name="phone"
+                  value={this.props.page.phone}
+                  placeholder="8001234567"
+                  onChange={this.props.handleInputChange}
+                  />
+              </InputGroup>
+            </Col>
+          </FormGroup>
+          <FormGroup>
+            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
+              City *
+            </Col>
+            <Col sm={8}>
+              <FormControl
+                id="formControlsCity"
+                type="text"
+                name="city"
+                value={this.props.page.city}
+                onChange={this.props.handleInputChange}
+                />
+            </Col>
+          </FormGroup>
+          <FormGroup>
+            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
+              Country *
+            </Col>
+            <Col sm={8}>
+              <FormControl
+                id="formControlsCountry"
+                type="text"
+                name="country"
+                value={this.props.page.country}
+                onChange={this.props.handleInputChange}
+                />
             </Col>
           </FormGroup>
         </div>
-      );
+      )
     }
   }
 

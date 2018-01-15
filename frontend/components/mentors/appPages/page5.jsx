@@ -1,194 +1,237 @@
 import React from 'react';
-import { Col, Row, Grid, Form, Button, Panel, FormControl, ControlLabel, FormGroup, InputGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Grid, Row, Col, Form, Radio, Button, Panel, InputGroup, FormControl, ControlLabel, FormGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
+import Select from 'react-select';
 
 
 class Page5 extends React.Component {
     constructor(props) {
       super(props);
-
-      // this.state = {
-      //   videoOptions: { mimeType: 'video/webm; codecs=vp9' },
-      //   mediaSteam: new MediaStream(),
-      //   mediaRecorder: new MediaRecord(mediaStream, options),
-      //   recordedChunks: [],
-      // }
-      // this.state.mediaRecorder.ondataavailable = handleDataAvailable;
-      let mediaSource = new MediaSource();
-      this.state = {
-        mediaSource: mediaSource,
-        mediaRecorder: null,
-      }
-      this.video = [];
-      this.button = [];
-      this.recordedBlobs = [];
-      this.state.mediaSource.addEventListener('sourceopen', this.handleSourceOpen, false);
-
-      this.handleSuccess = this.handleSuccess.bind(this);
-      this.handleError = this.handleError.bind(this);
-      this.handleSourceOpen = this.handleSourceOpen.bind(this);
-      this.handleDataAvailable = this.handleDataAvailable.bind(this);
-      this.toggleRecording = this.toggleRecording.bind(this);
-      this.stopRecording = this.stopRecording.bind(this);
-      this.startRecording = this.startRecording.bind(this);
-      this.handleStop = this.handleStop.bind(this);
-      this.play = this.play.bind(this);
-
-
-    }
-
-    componentDidMount(){
-      this.gumVideo = this.video[0];
-      this.recordedVideo = this.video[1];
-      console.log(this.recordedVideo);
-      this.recordButton = this.button[0];
-      this.playButton = this.button[1];
-      this.uploadButton = this.button[2];
-
-      this.isSecureOrigin = location.protocol === 'https:' ||
-      location.hostname === 'localhost';
-      this.constraints = {
-        audio: true,
-        video: true
-      };
-      // window.isSecureContext could be used for Chrome
-      if (!this.isSecureOrigin) {
-        alert('getUserMedia() must be run from a secure origin: HTTPS or localhost.' +
-        '\n\nChanging protocol to HTTPS');
-        location.protocol = 'HTTPS';
-      }
-
-      this.recordedVideo.addEventListener('error', function(ev) {
-        console.error('MediaRecording.recordedMedia.error()');
-        alert('Your browser can not play\n\n' + recordedVideo.src
-        + '\n\n media clip. event: ' + JSON.stringify(ev));
-      }, true);
-
-      navigator.mediaDevices.getUserMedia(this.constraints).
-      then(this.handleSuccess).catch(this.handleError);
-
-      this.recordButton.onclick = this.toggleRecording;
-      this.playButton.onclick = this.play;
-      this.OAUTH2_CLIENT_ID = '136481039092-luqsq4h1dm36t97ojkfu8tpb8qe22qul.apps.googleusercontent.com';
-      this.OAUTH2_SCOPES = [
-        'https://www.googleapis.com/auth/youtube'
-      ];
-
-      googleApiClientReady = () => {
-        gapi.auth.init( () => {
-          window.setTimeout( () => {
-            gapi.auth.authorize({
-              client_id: OAUTH2_CLIENT_ID,
-              scope: OAUTH2_SCOPES,
-              immediate: true
-            }, handleAuthResult);
-          }, 1);
-        });
-      }
-
-    }
-
-    handleSuccess(stream) {
-      this.recordButton.disabled = false;
-      console.log('getUserMedia() got stream: ', stream);
-      window.stream = stream;
-      this.gumVideo.srcObject = stream;
-    }
-
-    handleError(error) {
-      console.log('navigator.getUserMedia error: ', error);
-    }
-
-
-    handleSourceOpen(event) {
-      console.log('MediaSource opened');
-    }
-
-    handleDataAvailable(event) {
-      if (event.data && event.data.size > 0) {
-        this.recordedBlobs.push(event.data);
-      }
-    }
-
-    handleStop(event) {
-      console.log('Recorder stopped: ', event);
-    }
-
-    toggleRecording() {
-      if (this.recordButton.textContent === 'Start Recording') {
-        this.startRecording();
-      } else {
-        this.stopRecording();
-        this.recordButton.textContent = 'Start Recording';
-        this.playButton.disabled = false;
-        // uploadButton.disabled = false;
-      }
-    }
-
-    startRecording() {
-      this.recordedBlobs = [];
-      var options = {mimeType: 'video/webm;codecs=vp9'};
-      if (!MediaRecorder.isTypeSupported(options.mimeType)) {
-        console.log(options.mimeType + ' is not Supported');
-        options = {mimeType: 'video/webm;codecs=vp8'};
-        if (!MediaRecorder.isTypeSupported(options.mimeType)) {
-          console.log(options.mimeType + ' is not Supported');
-          options = {mimeType: 'video/webm'};
-          if (!MediaRecorder.isTypeSupported(options.mimeType)) {
-            console.log(options.mimeType + ' is not Supported');
-            options = {mimeType: ''};
-          }
-        }
-      }
-      try {
-        this.mediaRecorder = new MediaRecorder(window.stream, options);
-      } catch (e) {
-        console.error('Exception while creating MediaRecorder: ' + e);
-        alert('Exception while creating MediaRecorder: '
-          + e + '. mimeType: ' + options.mimeType);
-        return;
-      }
-      console.log('Created MediaRecorder', this.mediaRecorder, 'with options', options);
-      this.recordButton.textContent = 'Stop Recording';
-      this.playButton.disabled = true;
-      this.uploadButton.disabled = true;
-      this.mediaRecorder.onstop = this.handleStop;
-      this.mediaRecorder.ondataavailable = this.handleDataAvailable;
-      this.mediaRecorder.start(10); // collect 10ms of data
-      console.log('MediaRecorder started', this.mediaRecorder);
-    }
-
-    stopRecording() {
-      this.mediaRecorder.stop();
-      console.log('Recorded Blobs: ', this.recordedBlobs);
-      this.recordedVideo.controls = true;
-    }
-
-    play() {
-      var superBuffer = new Blob(this.recordedBlobs, {type: 'video/webm'});
-      this.recordedVideo.src = window.URL.createObjectURL(superBuffer);
-      this.recordedVideo.play();
     }
 
     render() {
       return(
         <div>
-          <video ref={(input) => {this.video[0] = input}} id="gum" autoPlay muted></video>
-          <video ref={(input) => {this.video[1] = input}} id="recorded" controls></video>
+          <h3 className='centerForm pageCaption'>Some background questions</h3>
+          <FormGroup>
+            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
+              College *
+            </Col>
+            <Col sm={8}>
+              <InputGroup>
+                <InputGroup.Addon>
+                  <FontAwesome name='graduation-cap'/>
+                </InputGroup.Addon>
+                <FormControl
+                  id="formControlsCollege"
+                  type="text"
+                  name="college"
+                  value={this.props.page.college}
+                  onChange={this.props.handleInputChange}
+                  />
+              </InputGroup>
+            </Col>
+          </FormGroup>
 
-          <div>
-            <button ref={(input) => {this.button[0] = input}} id="record" disabled>Start Recording</button>
-            <button ref={(input) => {this.button[1] = input}} id="play" disabled>Play</button>
-            <button
-              ref={(input) => {this.button[2] = input}}
-              onClick={this.upload}
-              id="upload" disabled
+          <FormGroup>
+          <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
+            What was your college major? *
+          </Col>
+          <Col sm={8}>
+            <Select
+              name="major"
+              value={this.props.page.major}
+              onChange={(value) => this.props.handleMultiChange(value, 'major')}
+              multi
+              delimiter="|"
+              simpleValue
+              joinValues
+              options={[
+                { value: 'Science', label: 'Science' },
+                { value: 'Engineering', label: 'Engineering' },
+                { value: 'Communcations, Marketing', label: 'Communcations, Marketing' },
+                { value: 'Political Science, International Relations', label: 'Political Science, International Relations' },
+                { value: 'Finance, Economics', label: 'Finance, Economics' },
+                { value: 'Liberal Arts', label: 'Liberal Arts' }
+              ]}
+            />
+          </Col>
+        </FormGroup>
+
+          <FormGroup>
+            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
+              Employer *
+            </Col>
+            <Col sm={8}>
+              <InputGroup>
+                <InputGroup.Addon>
+                  <FontAwesome name='handshake-o'/>
+                </InputGroup.Addon>
+                <FormControl
+                  id="formControlsEmployer"
+                  type="text"
+                  name="employer"
+                  value={this.props.page.employer}
+                  onChange={this.props.handleInputChange}
+                  />
+              </InputGroup>
+            </Col>
+          </FormGroup>
+
+        <FormGroup>
+          <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
+            In which industry do you work? *
+          </Col>
+          <Col sm={8}>
+            <Select
+              name="industry"
+              value={this.props.page.industry}
+              onChange={(value) => this.props.handleMultiChange(value, 'industry')}
+              multi
+              delimiter="|"
+              simpleValue
+              joinValues
+              options={[
+                { value: 'International Relations, Politics', label: 'International Relations, Politics' },
+                { value: 'Finance', label: 'Finance' },
+                { value: 'Accounting, Legal', label: 'Accounting, Legal' },
+                { value: 'Media', label: 'Media' },
+                { value: 'Technology', label: 'Technology' },
+                { value: 'Marketing', label: 'Marketing' },
+                { value: 'Performing Arts, Sports, Related', label: 'Performing Arts, Sports, Related' },
+                { value: 'Healthcare', label: 'Healthcare' },
+                { value: 'Education', label: 'Education' },
+                { value: 'Agriculture, Forestry, Fishing', label: 'Agriculture, Forestry, Fishing' }
+              ]}
+            />
+          </Col>
+        </FormGroup>
+
+        <FormGroup >
+          <Col className='centerForm formFontStyle2' componentClass={ControlLabel} sm={12}>
+            How important is it to you that a mentee share your major? *
+          </Col>
+        </FormGroup>
+
+        <FormGroup>
+          <Col className='centerForm' sm={12}>
+            <div className='formFontStyle'>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_major_rank"
+              value='0'
+              checked={this.props.page.share_major_rank === '0'}
+              inline
               >
-              Upload to Youtube
-            </button>
-          </div>
+              Not at all
+            </Radio>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_major_rank"
+              value='1'
+              checked={this.props.page.share_major_rank === '1'}
+              inline
+              >
+              A little
+            </Radio>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_major_rank"
+              value='2'
+              checked={this.props.page.share_major_rank === '2'}
+              inline
+              >
+              Moderately
+            </Radio>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_major_rank"
+              value='3'
+              checked={this.props.page.share_major_rank === '3'}
+              inline
+              >
+              Very
+            </Radio>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_major_rank"
+              value='4'
+              checked={this.props.page.share_major_rank === '4'}
+              inline
+              >
+              Extremely
+            </Radio>
+            </div>
+          </Col>
+        </FormGroup>
+
+        <FormGroup >
+          <Col className='centerForm formFontStyle2' componentClass={ControlLabel} sm={12}>
+              How important is it to you that a mentee would want to join your industry? *
+          </Col>
+        </FormGroup>
+
+          <FormGroup className='centerForm' sm={12}>
+            <div className='formFontStyle'>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_industry_rank"
+              value='0'
+              checked={this.props.page.share_industry_rank === '0'}
+              inline
+              >
+              Not at all
+            </Radio>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_industry_rank"
+              value='1'
+              checked={this.props.page.share_industry_rank === '1'}
+              inline
+              >
+              A little
+            </Radio>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_industry_rank"
+              value='2'
+              checked={this.props.page.share_industry_rank === '2'}
+              inline
+              >
+              Moderately
+            </Radio>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_industry_rank"
+              value='3'
+              checked={this.props.page.share_industry_rank === '3'}
+              inline
+              >
+              Very
+            </Radio>
+            <Radio
+              onChange={this.props.handleInputChange}
+              name="share_industry_rank"
+              value='4'
+              checked={this.props.page.share_industry_rank === '4'}
+              inline
+              >
+              Extremely
+            </Radio>
+            </div>
+          </FormGroup>
+
+          <FormGroup>
+            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
+              Describe your job.
+            </Col>
+            <Col sm={8}>
+                <textarea style={{ height: 100 }} id='formControlsTextarea' value={this.props.page.job_description} className="form-control" id="job_description" name="job_description" onChange={this.props.handleInputChange}/>
+            </Col>
+          </FormGroup>
+
         </div>
-)
+      )
     }
   }
 

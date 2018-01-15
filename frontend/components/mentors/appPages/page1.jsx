@@ -1,114 +1,22 @@
 import React from 'react';
-import { Grid, Row, Col, Form, Button, Panel, FormControl, ControlLabel, FormGroup, InputGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
+import { Col, Row, Grid, Form, Button, Panel, FormControl, ControlLabel, FormGroup, InputGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome';
 
 
 class Page1 extends React.Component {
     constructor(props) {
       super(props);
-      this.gridStyle = 'col-lg-offset-2 col-lg-8 col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8';
     }
     render() {
       return(
-        <div>
-          <h3 className='centerForm pageCaption'> Help us connect you with your ideal mentee.</h3>
+          <div>
             <FormGroup>
-              <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
-                Username*
-              </Col>
-              <Col sm={8}>
-                <FormControl
-                  id="formControlsUsername"
-                  type="text"
-                  name="username"
-                  value={this.props.page.username}
-                  placeholder=""
-                  onChange={this.props.handleInputChange}
-                  />
+              <Col sm={2}></Col>
+              <Col className='centerText formFontStyle' sm={8}>
+                Hello! Thank you for your interest in the GIRLZ, FTW mentorship program. We’re thrilled to read your application. Before you fill out our form, we’d like to let you in on a little secret. We’re not a regular mentorship program. We’re a community of girlz that are passionate about elevating and celebrating female voices around the world. We don’t expect our mentors to be THAT girl… you know, the one that always had her shit together and still always managed to blow dry her hair before school / work. We’re looking for real, passionate, #girlbosses that don’t pretend to be perfect, can hustle their way to their dreams, AND still manage to uplift others along the way.
               </Col>
             </FormGroup>
-
-            <FormGroup>
-              <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
-                  Password*
-              </Col>
-              <Col sm={8}>
-                <FormControl
-                  id="formControlsPassword"
-                  type="password"
-                  name="password"
-                  value={this.props.page.password}
-                  placeholder=""
-                  onChange={this.props.handleInputChange}
-                  />
-              </Col>
-            </FormGroup>
-
-            <FormGroup>
-              <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
-                  First Name*
-              </Col>
-              <Col sm={8}>
-                <FormControl
-                  id="formControlsFirstName"
-                  type="text"
-                  name="first_name"
-                  value={this.props.page.first_name}
-                  onChange={this.props.handleInputChange}
-                  />
-              </Col>
-            </FormGroup>
-
-            <FormGroup>
-              <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
-                  Last Name*
-              </Col>
-              <Col sm={8}>
-                <FormControl
-                  id="formControlsLastName"
-                  type="text"
-                  name="last_name"
-                  value={this.props.page.last_name}
-                  onChange={this.props.handleInputChange}
-                  />
-              </Col>
-            </FormGroup>
-
-            <FormGroup>
-              <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
-                  Age*
-              </Col>
-              <Col sm={8}>
-                <FormControl
-                  id="formControlsAge"
-                  type="number"
-                  value={this.props.page.age}
-                  name="age"
-                  onChange={this.props.handleInputChange}
-                  />
-              </Col>
-            </FormGroup>
-
-            <FormGroup>
-              <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
-                  Email*
-              </Col>
-              <Col sm={8}>
-                <InputGroup>
-                  <InputGroup.Addon>
-                    <FontAwesome name='envelope-o'/>
-                  </InputGroup.Addon>
-                  <FormControl
-                    id="formControlsEmail"
-                    type="email"
-                    name="email"
-                    value={this.props.page.email}
-                    onChange={this.props.handleInputChange}
-                  />
-              </InputGroup>
-              </Col>
-            </FormGroup>
-        </div>
+          </div>
       );
     }
   }
