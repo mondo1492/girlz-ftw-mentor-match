@@ -42432,13 +42432,6 @@ var App = function App() {
 };
 
 exports.default = App;
-// <iframe width="560" height="315" src="https://www.youtube.com/embed/ycAVwzDhmaU?autoplay=1" frameborder="0" allowfullscreen></iframe>
-
-// <Switch>
-//   // <Route exact path="/" component={  A } />
-//   // <ProtectedRoute exact path="/create" component={ B }/>
-//   // <ProtectedRoute path="/listings/:id" component={ C }/>
-// </Switch>
 
 /***/ }),
 /* 353 */
