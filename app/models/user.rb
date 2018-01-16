@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   validates :username, :password_digest, :session_token, presence: true
   validates :username, uniqueness: true
-  validates :password, length: {minimum: 6, allow_nil: true}
+  validates :password, length: { minimum: 6, allow_nil: true }
 
   attr_reader :password
 
@@ -10,13 +10,12 @@ class User < ApplicationRecord
   has_many :mentees
 
   def mentee_names
-    self.mentees.map { |mentee| "#{mentee.first_name} #{mentee.last_name}"}.join(", ")
+    self.mentees.map { |mentee| "#{mentee.first_name} #{mentee.last_name}"}.join(', ')
   end
 
-
-    def mentee_count
-      self.mentees.count
-    end
+  def mentee_count
+    self.mentees.count
+  end
 
   def self.find_by_credentials(username, password)
     @user = User.find_by_username(username)
@@ -40,8 +39,8 @@ class User < ApplicationRecord
   end
 
   private
+
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64(16)
   end
-
 end

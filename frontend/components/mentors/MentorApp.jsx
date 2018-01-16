@@ -171,11 +171,11 @@ class MentorApp extends React.Component {
     })();
 
     return (
-      <div >
+      <div>
         <div>
           <Form horizontal onSubmit={this.handleFormSubmit} className={`centerForm, formBackground`}>
             {page}
-            <div  className='centerButton'>
+            <div className='centerButton'>
               <Button onClick={this.handleBack} className="btn-back">Back</Button>
               <div className='padder'></div>
               <Button onClick={this.handleNext} className="btn-next">Next</Button>
