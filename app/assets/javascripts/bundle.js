@@ -2714,7 +2714,7 @@ var createMentor = exports.createMentor = function createMentor(mentor) {
   return function (dispatch) {
     return APIUtil.createMentor(mentor).then(function (mentor) {
       return dispatch(receiveMentor(mentor));
-    }, function (err) {});
+    });
   };
 };
 
@@ -42366,9 +42366,9 @@ var _MenteeAppContainer = __webpack_require__(494);
 
 var _MenteeAppContainer2 = _interopRequireDefault(_MenteeAppContainer);
 
-var _MentorApp = __webpack_require__(506);
+var _MentorAppContainer = __webpack_require__(560);
 
-var _MentorApp2 = _interopRequireDefault(_MentorApp);
+var _MentorAppContainer2 = _interopRequireDefault(_MentorAppContainer);
 
 var _Landing = __webpack_require__(517);
 
@@ -42418,7 +42418,7 @@ var App = function App() {
     { id: 'all-content' },
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Landing2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/mentee_app', component: _MenteeAppContainer2.default }),
-    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/mentor_app', component: _MentorApp2.default }),
+    _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/mentor_app', component: _MentorAppContainer2.default }),
     _react2.default.createElement(_route_util.ProtectedRoute, { exact: true, path: '/mentor_panel', component: _MentorPanel2.default }),
     _react2.default.createElement(_route_util.ProtectedRoute, { path: '/mentor_panel/update', component: _MentorUpdate2.default }),
     _react2.default.createElement(_route_util.AdminRoute, { exact: true, path: '/admin_panel', component: _admin_panel2.default }),
@@ -57308,12 +57308,12 @@ var MentorApp = function (_React$Component) {
       0: {},
       1: {},
       2: {
-        username: "Aaron",
-        password: "Meow",
-        first_name: "Aaron",
-        last_name: "Mondshine",
-        age: '2',
-        email: 'a'
+        username: "RaviMentortest",
+        password: "ravimentorpw",
+        first_name: "Ravi",
+        last_name: "Raval",
+        age: '27',
+        email: 'raviraval@gmail.com'
       },
       3: {
         facebook: 'fab',
@@ -57336,21 +57336,9 @@ var MentorApp = function (_React$Component) {
         provide: ''
       },
       6: {
-        q1: '',
-        q2: '',
-        q3: '',
-        q4: '',
-        q5: '',
-        q6: '',
-        q7: '',
-        q8: '',
-        q9: '',
-        q10: ''
-      },
-      7: {
         videoURL: ''
       },
-      agree_terms: false,
+      agree_terms: true,
       agree_terms_bad_click: false,
       page: 0,
 
@@ -57447,7 +57435,8 @@ var MentorApp = function (_React$Component) {
   }, {
     key: 'allValidate',
     value: function allValidate() {
-      return false;
+      return true;
+      // return false;
     }
   }, {
     key: 'badNext',
@@ -57497,6 +57486,8 @@ var MentorApp = function (_React$Component) {
         }
       }();
 
+      console.log(this.props);
+      console.log(this.state.page);
       return _react2.default.createElement(
         'div',
         null,
@@ -64351,6 +64342,43 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 }());
 
+
+/***/ }),
+/* 560 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(19);
+
+var _MentorApp = __webpack_require__(506);
+
+var _MentorApp2 = _interopRequireDefault(_MentorApp);
+
+var _mentor_actions = __webpack_require__(47);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    currentUser: state.session.currentUser
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    createMentor: function createMentor(mentorInfo) {
+      return dispatch((0, _mentor_actions.createMentor)(mentorInfo));
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_MentorApp2.default);
 
 /***/ })
 /******/ ]);

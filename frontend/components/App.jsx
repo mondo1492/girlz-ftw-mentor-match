@@ -4,7 +4,7 @@ import { AuthRoute, ProtectedRoute, AdminRoute } from '../util/route_util';
 
 import AdminPanel from './admin_panel';
 import MenteeApp from './mentees/MenteeAppContainer';
-import MentorApp from './mentors/MentorApp';
+import MentorApp from './mentors/MentorAppContainer';
 import Landing from './Landing';
 import MentorPanel from './mentors/MentorPanel';
 import MentorUpdate from './mentors/MentorUpdate';

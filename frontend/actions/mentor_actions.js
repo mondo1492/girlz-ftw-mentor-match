@@ -33,12 +33,9 @@ export const fetchMentor = id => dispatch => (
 );
 
 export const createMentor = mentor => dispatch => (
-  APIUtil.createMentor(mentor).then(mentor => {
-    return (
-      dispatch(receiveMentor(mentor))
-    );
-  }, err => {
-  })
+  APIUtil.createMentor(mentor).then(mentor => (
+    dispatch(receiveMentor(mentor))
+  ))
 );
 
 export const updateMentor = mentor => dispatch => (

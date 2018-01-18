@@ -19,12 +19,12 @@ class MentorApp extends React.Component {
       0: {},
       1: {},
       2: {
-        username: "Aaron",
-        password: "Meow",
-        first_name: "Aaron",
-        last_name: "Mondshine",
-        age: '2',
-        email: 'a'
+        username: "RaviMentortest",
+        password: "ravimentorpw",
+        first_name: "Ravi",
+        last_name: "Raval",
+        age: '27',
+        email: 'raviraval@gmail.com'
       },
       3: {
         facebook: 'fab',
@@ -47,21 +47,9 @@ class MentorApp extends React.Component {
         provide: '',
       },
       6: {
-        q1: '',
-        q2: '',
-        q3: '',
-        q4: '',
-        q5: '',
-        q6: '',
-        q7: '',
-        q8: '',
-        q9: '',
-        q10: ''
-      },
-      7: {
         videoURL: '',
       },
-      agree_terms: false,
+      agree_terms: true,
       agree_terms_bad_click: false,
       page: 0,
 
@@ -123,7 +111,8 @@ class MentorApp extends React.Component {
   }
 
   allValidate() {
-    return false;
+    return true;
+    // return false;
   }
 
   badNext() {
@@ -170,6 +159,8 @@ class MentorApp extends React.Component {
       }
     })();
 
+    console.log(this.props);
+    console.log(this.state.page);
     return (
       <div>
         <div>
