@@ -57463,16 +57463,12 @@ var MentorApp = function (_React$Component) {
       var nextButton = function () {
         if (_this3.state.page !== 6) {
           if (_this3.validate()) {
-            // TODO: next valid
-            console.log('next valid');
             return _react2.default.createElement(
               _reactBootstrap.Button,
               { onClick: _this3.handleNext, className: 'btn-next' },
               'Next'
             );
           } else {
-            // TODO: grey out next
-            console.log('TODO:grey out next');
             return _react2.default.createElement(
               _reactBootstrap.Button,
               { disabled: true, onClick: _this3.handleNext, className: 'btn-next' },
@@ -57503,7 +57499,7 @@ var MentorApp = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'centerButton' },
-              _react2.default.createElement(
+              this.state.page === 0 ? '' : _react2.default.createElement(
                 _reactBootstrap.Button,
                 { onClick: this.handleBack, className: 'btn-back' },
                 'Back'

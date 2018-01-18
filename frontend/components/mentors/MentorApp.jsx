@@ -137,13 +137,9 @@ class MentorApp extends React.Component {
     const nextButton = ( () => {
       if (this.state.page !== 6) {
         if (this.validate()) {
-          // TODO: next valid
-          console.log('next valid');
           return <Button onClick={this.handleNext} className="btn-next">Next</Button>
         }
         else {
-          // TODO: grey out next
-          console.log('TODO:grey out next');
           return <Button disabled onClick={this.handleNext} className="btn-next">Next</Button>
         }
       } else {
@@ -163,7 +159,11 @@ class MentorApp extends React.Component {
           <Form horizontal className={`centerForm, formBackground`}>
             {page}
             <div className='centerButton'>
-              <Button onClick={this.handleBack} className="btn-back">Back</Button>
+              { this.state.page === 0 ? '' :
+                <Button onClick={this.handleBack} className="btn-back">
+                  Back
+                </Button>
+              }
               <div className='padder'></div>
               { nextButton }
             </div>
