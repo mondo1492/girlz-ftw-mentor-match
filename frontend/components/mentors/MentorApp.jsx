@@ -111,8 +111,7 @@ class MentorApp extends React.Component {
   }
 
   allValidate() {
-    return true;
-    // return false;
+    return false;
   }
 
   badNext() {
@@ -152,24 +151,31 @@ class MentorApp extends React.Component {
         case 6:
           return <Page7 handleInputChange={this.handleInputChange} page={this.state[6]}/>
           break;
-        case 7:
-          return <Page8
-            page={this.state[7]}/>
-          break;
       }
     })();
-
-    console.log(this.props);
-    console.log(this.state.page);
+    const nextButton = ( () => {
+      if (this.state.page !== 6) {
+        if (this.validate()) {
+          console.log('next valid');
+          return <Button onClick={this.handleNext} className="btn-next">Next</Button>
+        }
+        else {
+          console.log('grey out next');
+          return <Button onClick={this.handleNext} className="btn-next">Next</Button>
+        }
+      } else if (this.state['6'].videoURL !== '') {
+        return <Button bsStyle="success" onClick={this.handleFormSubmit} type="button">Apply</Button>
+      }
+    })();
     return (
       <div>
         <div>
-          <Form horizontal onSubmit={this.handleFormSubmit} className={`centerForm, formBackground`}>
+          <Form horizontal className={`centerForm, formBackground`}>
             {page}
             <div className='centerButton'>
               <Button onClick={this.handleBack} className="btn-back">Back</Button>
               <div className='padder'></div>
-              <Button onClick={this.handleNext} className="btn-next">Next</Button>
+              { nextButton }
             </div>
             {this.allValidate() ? <Button bsStyle="success" type="submit">Apply</Button> : ""}
           </Form>

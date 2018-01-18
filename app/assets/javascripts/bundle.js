@@ -57435,8 +57435,7 @@ var MentorApp = function (_React$Component) {
   }, {
     key: 'allValidate',
     value: function allValidate() {
-      return true;
-      // return false;
+      return false;
     }
   }, {
     key: 'badNext',
@@ -57479,15 +57478,33 @@ var MentorApp = function (_React$Component) {
           case 6:
             return _react2.default.createElement(_page14.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[6] });
             break;
-          case 7:
-            return _react2.default.createElement(_page16.default, {
-              page: _this3.state[7] });
-            break;
         }
       }();
-
-      console.log(this.props);
-      console.log(this.state.page);
+      var nextButton = function () {
+        if (_this3.state.page !== 6) {
+          if (_this3.validate()) {
+            console.log('next valid');
+            return _react2.default.createElement(
+              _reactBootstrap.Button,
+              { onClick: _this3.handleNext, className: 'btn-next' },
+              'Next'
+            );
+          } else {
+            console.log('grey out next');
+            return _react2.default.createElement(
+              _reactBootstrap.Button,
+              { onClick: _this3.handleNext, className: 'btn-next' },
+              'Next'
+            );
+          }
+        } else if (_this3.state['6'].videoURL !== '') {
+          return _react2.default.createElement(
+            _reactBootstrap.Button,
+            { bsStyle: 'success', onClick: _this3.handleFormSubmit, type: 'button' },
+            'Apply'
+          );
+        }
+      }();
       return _react2.default.createElement(
         'div',
         null,
@@ -57496,7 +57513,7 @@ var MentorApp = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Form,
-            { horizontal: true, onSubmit: this.handleFormSubmit, className: 'centerForm, formBackground' },
+            { horizontal: true, className: 'centerForm, formBackground' },
             page,
             _react2.default.createElement(
               'div',
@@ -57507,11 +57524,7 @@ var MentorApp = function (_React$Component) {
                 'Back'
               ),
               _react2.default.createElement('div', { className: 'padder' }),
-              _react2.default.createElement(
-                _reactBootstrap.Button,
-                { onClick: this.handleNext, className: 'btn-next' },
-                'Next'
-              )
+              nextButton
             ),
             this.allValidate() ? _react2.default.createElement(
               _reactBootstrap.Button,
