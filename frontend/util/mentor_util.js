@@ -13,11 +13,11 @@ export const fetchMentor = (id, success, error) => (
   })
 );
 
-export const createMentor = mentor => (
+export const createMentor = user => (
   $.ajax({
     method: 'POST',
     url: '/api/users',
-    data: {mentor}
+    data: {user}
   })
 );
 

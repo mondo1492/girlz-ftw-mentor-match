@@ -39315,11 +39315,11 @@ var fetchMentor = exports.fetchMentor = function fetchMentor(id, success, error)
   });
 };
 
-var createMentor = exports.createMentor = function createMentor(mentor) {
+var createMentor = exports.createMentor = function createMentor(user) {
   return $.ajax({
     method: 'POST',
     url: '/api/users',
-    data: { mentor: mentor }
+    data: { user: user }
   });
 };
 
@@ -57295,6 +57295,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+// currently not using page8 - applying directly from 7
+
 
 var MentorApp = function (_React$Component) {
   _inherits(MentorApp, _React$Component);
@@ -57374,43 +57376,71 @@ var MentorApp = function (_React$Component) {
       var _this2 = this;
 
       event.preventDefault();
-      this.props.createMentor(this.state).then(function () {
+
+      // flatten state
+      var flattenedState = {};
+      for (var i = 2; i < 7; i++) {
+        var _iteratorNormalCompletion = true;
+        var _didIteratorError = false;
+        var _iteratorError = undefined;
+
+        try {
+          for (var _iterator = Object.keys(this.state[i])[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+            var key = _step.value;
+
+            flattenedState[key] = this.state[i][key];
+          }
+        } catch (err) {
+          _didIteratorError = true;
+          _iteratorError = err;
+        } finally {
+          try {
+            if (!_iteratorNormalCompletion && _iterator.return) {
+              _iterator.return();
+            }
+          } finally {
+            if (_didIteratorError) {
+              throw _iteratorError;
+            }
+          }
+        }
+      }
+      this.props.createMentor(flattenedState).then(function () {
         return _this2.props.history.push('/');
       });
     }
   }, {
     key: 'handleBack',
     value: function handleBack() {
-      if (this.state.page === 0) return;
       this.setState({ page: this.state.page - 1 });
     }
   }, {
     key: 'validate',
     value: function validate() {
       var pass = true;
-      var _iteratorNormalCompletion = true;
-      var _didIteratorError = false;
-      var _iteratorError = undefined;
+      var _iteratorNormalCompletion2 = true;
+      var _didIteratorError2 = false;
+      var _iteratorError2 = undefined;
 
       try {
-        for (var _iterator = Object.keys(this.state[this.state.page])[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-          var key = _step.value;
+        for (var _iterator2 = Object.keys(this.state[this.state.page])[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+          var key = _step2.value;
 
           if (this.state[this.state.page][key] === '') {
             pass = false;
           }
         }
       } catch (err) {
-        _didIteratorError = true;
-        _iteratorError = err;
+        _didIteratorError2 = true;
+        _iteratorError2 = err;
       } finally {
         try {
-          if (!_iteratorNormalCompletion && _iterator.return) {
-            _iterator.return();
+          if (!_iteratorNormalCompletion2 && _iterator2.return) {
+            _iterator2.return();
           }
         } finally {
-          if (_didIteratorError) {
-            throw _iteratorError;
+          if (_didIteratorError2) {
+            throw _iteratorError2;
           }
         }
       }
@@ -57423,6 +57453,7 @@ var MentorApp = function (_React$Component) {
   }, {
     key: 'handleNext',
     value: function handleNext() {
+      // TODO: if user clicks next when greyed, flash error
       this.validate(this.state.page);
       this.setState({ page: this.state.page + 1 });
     }
@@ -57517,11 +57548,6 @@ var MentorApp = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = MentorApp;
-//
-// {this.validate() ?
-//   <Button onClick={this.handleNext} className="btn-next">Next</Button> :
-//   <Button onClick={this.badNext} disabled className="btn-next">Next</Button>
-// }
 
 /***/ }),
 /* 507 */
@@ -59168,7 +59194,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // not in use
+
 
 var Page8 = function (_React$Component) {
   _inherits(Page8, _React$Component);

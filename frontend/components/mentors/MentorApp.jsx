@@ -10,7 +10,9 @@ import Page4 from './appPages/page4';
 import Page5 from './appPages/page5';
 import Page6 from './appPages/page6';
 import Page7 from './appPages/page7';
+// currently not using page8 - applying directly from 7
 import Page8 from './appPages/page8';
+
 
 class MentorApp extends React.Component {
   constructor(props) {
@@ -76,12 +78,19 @@ class MentorApp extends React.Component {
 
   handleFormSubmit(event) {
     event.preventDefault();
-    this.props.createMentor(this.state).then(
+
+    // flatten state
+    const flattenedState = {};
+    for (let i = 2; i < 7; i++) {
+      for (const key of Object.keys(this.state[i])) {
+        flattenedState[key] = this.state[i][key];
+      }
+    }
+    this.props.createMentor(flattenedState).then(
       () => this.props.history.push('/'));
   }
 
   handleBack() {
-    if (this.state.page === 0) return;
     this.setState({page: this.state.page - 1});
   }
 
@@ -100,6 +109,7 @@ class MentorApp extends React.Component {
   }
 
   handleNext() {
+    // TODO: if user clicks next when greyed, flash error
     this.validate(this.state.page);
     this.setState({page: this.state.page + 1});
   }
@@ -174,10 +184,4 @@ class MentorApp extends React.Component {
   }
 }
 
-
 export default MentorApp;
-//
-// {this.validate() ?
-//   <Button onClick={this.handleNext} className="btn-next">Next</Button> :
-//   <Button onClick={this.badNext} disabled className="btn-next">Next</Button>
-// }
