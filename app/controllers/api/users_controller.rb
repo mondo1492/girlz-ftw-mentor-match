@@ -7,7 +7,7 @@ class Api::UsersController < ApplicationController
     if @user.save
       MentorAppMailer.signup_success(@user).deliver_now
       login(@user)
-      render "api/users/show"
+      render 'api/users/show'
     else
       render json: @user.errors.full_messages, status: 422
     end
@@ -15,12 +15,12 @@ class Api::UsersController < ApplicationController
 
   def index
     @users = User.all
-    render "api/users/index"
+    render 'api/users/index'
   end
 
   def show
     @user = User.find(params[:id])
-    render "api/users/show"
+    render 'api/users/show'
   end
 
   def destroy
@@ -35,7 +35,7 @@ class Api::UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(admin_user_params)
-      render "api/users/show"
+      render 'api/users/show'
     else
       render json: @user.errors.full_messages, status: 422
     end
@@ -54,7 +54,12 @@ class Api::UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:username, :password, :status, :age, :city, :country, :first_name, :last_name, :phone, :facebook,
-    :email, :picture_url, :high_school, :college, :major, :employer, :career_advice_rank, :personal_advice_rank, :motivation_rank, :personality_text, :why_mentor_text, :extra_info_text, :created_at)
+    params.require(:user).permit(
+      :username, :password, :status, :age, :city, :country, :first_name,
+      :last_name, :phone, :facebook, :email, :picture_url, :high_school,
+      :college, :major, :employer, :career_advice_rank,
+      :personal_advice_rank, :motivation_rank, :personality_text,
+      :why_mentor_text, :extra_info_text, :created_at
+    )
   end
 end

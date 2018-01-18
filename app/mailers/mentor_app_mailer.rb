@@ -1,5 +1,5 @@
 class MentorAppMailer < ApplicationMailer
-  default sender: "amimecbeepbop@gmail.com"
+  default sender: 'amimecbeepbop@gmail.com'
 
   def signup_success(user)
     @user = user

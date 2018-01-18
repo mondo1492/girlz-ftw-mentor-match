@@ -14,25 +14,26 @@ class Page7 extends React.Component {
           <Col sm={2}></Col>
           <Col className='centerText formFontStyle2' sm={8}>
             Please submit a video on the following three prompts. Videos should be between 60 and 90 seconds.
+            Provide the link in the field below.
              We’re excited to meet you, superstar!
           </Col>
         </Row>
         <Row className="videoListItem">
           <Col sm={2}></Col>
           <Col className='centerText formFontStyle' sm={8}>
-            Share a little bit about yourself and your passions.
+            1. Share a little bit about yourself and your passions.
           </Col>
         </Row>
         <Row className="videoListItem">
           <Col sm={2}></Col>
           <Col className='centerText formFontStyle' sm={8}>
-            Why do you want to be a GIRLZ, FTW mentor?
+            2. Why do you want to be a GIRLZ, FTW mentor?
           </Col>
         </Row>
         <Row className="videoListItem">
           <Col sm={2}></Col>
           <Col className='centerText formFontStyle' sm={8}>
-            How do you support others?
+            3. How do you support others?
           </Col>
         </Row>
         <Row className="inputRow">

@@ -57339,14 +57339,7 @@ var MentorApp = function (_React$Component) {
         videoURL: ''
       },
       agree_terms: true,
-      agree_terms_bad_click: false,
-      page: 0,
-
-      instagram_bio_why_not_text: '',
-      high_school: '',
-      college: '',
-      instagram_bio_text: '',
-      major: ''
+      page: 0
     };
     _this.handleInputChange = _this.handleInputChange.bind(_this);
     _this.handleMultiChange = _this.handleMultiChange.bind(_this);
@@ -57381,17 +57374,9 @@ var MentorApp = function (_React$Component) {
       var _this2 = this;
 
       event.preventDefault();
-      if (this.state.agree_terms) {
-        console.log("success");
-
-        this.props.createMentor(this.state).then(function () {
-          return _this2.props.history.push('/');
-        });
-      } else {
-        this.setState({ agree_terms_bad_click: true }, function () {
-          console.log('failure');
-        });
-      }
+      this.props.createMentor(this.state).then(function () {
+        return _this2.props.history.push('/');
+      });
     }
   }, {
     key: 'handleBack',
@@ -57431,11 +57416,6 @@ var MentorApp = function (_React$Component) {
       }
 
       return pass;
-    }
-  }, {
-    key: 'allValidate',
-    value: function allValidate() {
-      return false;
     }
   }, {
     key: 'badNext',
@@ -57483,6 +57463,7 @@ var MentorApp = function (_React$Component) {
       var nextButton = function () {
         if (_this3.state.page !== 6) {
           if (_this3.validate()) {
+            // TODO: next valid
             console.log('next valid');
             return _react2.default.createElement(
               _reactBootstrap.Button,
@@ -57490,17 +57471,21 @@ var MentorApp = function (_React$Component) {
               'Next'
             );
           } else {
-            console.log('grey out next');
+            // TODO: grey out next
+            console.log('TODO:grey out next');
             return _react2.default.createElement(
               _reactBootstrap.Button,
-              { onClick: _this3.handleNext, className: 'btn-next' },
+              { disabled: true, onClick: _this3.handleNext, className: 'btn-next' },
               'Next'
             );
           }
-        } else if (_this3.state['6'].videoURL !== '') {
+        } else {
           return _react2.default.createElement(
             _reactBootstrap.Button,
-            { bsStyle: 'success', onClick: _this3.handleFormSubmit, type: 'button' },
+            {
+              bsStyle: 'success',
+              disabled: _this3.state['6'].videoURL === '',
+              onClick: _this3.handleFormSubmit, type: 'button' },
             'Apply'
           );
         }
@@ -57525,12 +57510,7 @@ var MentorApp = function (_React$Component) {
               ),
               _react2.default.createElement('div', { className: 'padder' }),
               nextButton
-            ),
-            this.allValidate() ? _react2.default.createElement(
-              _reactBootstrap.Button,
-              { bsStyle: 'success', type: 'submit' },
-              'Apply'
-            ) : ""
+            )
           )
         )
       );
@@ -58903,7 +58883,7 @@ var Page7 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { className: 'centerText formFontStyle2', sm: 8 },
-            'Please submit a video on the following three prompts. Videos should be between 60 and 90 seconds. We\u2019re excited to meet you, superstar!'
+            'Please submit a video on the following three prompts. Videos should be between 60 and 90 seconds. Provide the link in the field below. We\u2019re excited to meet you, superstar!'
           )
         ),
         _react2.default.createElement(
@@ -58913,7 +58893,7 @@ var Page7 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { className: 'centerText formFontStyle', sm: 8 },
-            'Share a little bit about yourself and your passions.'
+            '1. Share a little bit about yourself and your passions.'
           )
         ),
         _react2.default.createElement(
@@ -58923,7 +58903,7 @@ var Page7 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { className: 'centerText formFontStyle', sm: 8 },
-            'Why do you want to be a GIRLZ, FTW mentor?'
+            '2. Why do you want to be a GIRLZ, FTW mentor?'
           )
         ),
         _react2.default.createElement(
@@ -58933,7 +58913,7 @@ var Page7 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { className: 'centerText formFontStyle', sm: 8 },
-            'How do you support others?'
+            '3. How do you support others?'
           )
         ),
         _react2.default.createElement(

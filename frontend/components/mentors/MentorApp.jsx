@@ -50,14 +50,7 @@ class MentorApp extends React.Component {
         videoURL: '',
       },
       agree_terms: true,
-      agree_terms_bad_click: false,
       page: 0,
-
-      instagram_bio_why_not_text: '',
-      high_school: '',
-      college: '',
-      instagram_bio_text: '',
-      major: '',
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleMultiChange = this.handleMultiChange.bind(this);
@@ -83,16 +76,8 @@ class MentorApp extends React.Component {
 
   handleFormSubmit(event) {
     event.preventDefault();
-    if (this.state.agree_terms) {
-      console.log("success");
-
-      this.props.createMentor(this.state).then(
-        () => this.props.history.push('/'));
-    } else {
-      this.setState({agree_terms_bad_click: true}, () => {
-        console.log('failure');
-      });
-    }
+    this.props.createMentor(this.state).then(
+      () => this.props.history.push('/'));
   }
 
   handleBack() {
@@ -108,10 +93,6 @@ class MentorApp extends React.Component {
       }
     }
     return pass;
-  }
-
-  allValidate() {
-    return false;
   }
 
   badNext() {
@@ -156,15 +137,24 @@ class MentorApp extends React.Component {
     const nextButton = ( () => {
       if (this.state.page !== 6) {
         if (this.validate()) {
+          // TODO: next valid
           console.log('next valid');
           return <Button onClick={this.handleNext} className="btn-next">Next</Button>
         }
         else {
-          console.log('grey out next');
-          return <Button onClick={this.handleNext} className="btn-next">Next</Button>
+          // TODO: grey out next
+          console.log('TODO:grey out next');
+          return <Button disabled onClick={this.handleNext} className="btn-next">Next</Button>
         }
-      } else if (this.state['6'].videoURL !== '') {
-        return <Button bsStyle="success" onClick={this.handleFormSubmit} type="button">Apply</Button>
+      } else {
+        return (
+          <Button
+             bsStyle="success"
+             disabled={ this.state['6'].videoURL === '' }
+             onClick={this.handleFormSubmit} type="button">
+              Apply
+          </Button>
+        );
       }
     })();
     return (
@@ -177,7 +167,6 @@ class MentorApp extends React.Component {
               <div className='padder'></div>
               { nextButton }
             </div>
-            {this.allValidate() ? <Button bsStyle="success" type="submit">Apply</Button> : ""}
           </Form>
         </div>
       </div>
