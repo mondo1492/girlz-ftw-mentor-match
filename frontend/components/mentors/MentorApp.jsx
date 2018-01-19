@@ -10,7 +10,6 @@ import Page4 from './appPages/page4';
 import Page5 from './appPages/page5';
 import Page6 from './appPages/page6';
 import Page7 from './appPages/page7';
-// currently not using page8 - applying directly from 7
 import Page8 from './appPages/page8';
 
 
@@ -89,7 +88,9 @@ class MentorApp extends React.Component {
 
     this.props.createMentor(flattenedState).then(
       // TODO: send to confirmation page? which lists all info?
-      () => this.props.history.push('/'));
+      // () => this.props.history.push('/'));
+      () => this.setState({page: this.state.page + 1})
+    );
   }
 
   handleBack() {
@@ -144,10 +145,15 @@ class MentorApp extends React.Component {
         case 6:
           return <Page7 handleInputChange={this.handleInputChange} page={this.state[6]}/>
           break;
+        case 7:
+          return <Page8 page={this.state[7]}/>
+          break;
       }
     })();
     const nextButton = ( () => {
-      if (this.state.page !== 6) {
+      if (this.state.page === 7) {
+        return '';
+      } else if (this.state.page !== 6) {
         if (this.validate()) {
           return <Button onClick={this.handleNext} className="btn-next">Next</Button>
         }
@@ -158,7 +164,7 @@ class MentorApp extends React.Component {
         return (
           <Button
              bsStyle="success"
-             disabled={ this.state['6'].videoURL === '' }
+             disabled={ this.state['6'].video_URL === '' }
              onClick={this.handleFormSubmit} type="button">
               Apply
           </Button>
@@ -171,7 +177,7 @@ class MentorApp extends React.Component {
           <Form horizontal className={`centerForm, formBackground`}>
             {page}
             <div className='centerButton'>
-              { this.state.page === 0 ? '' :
+              { this.state.page === 0 || this.state.page === 7 ? '' :
                 <Button onClick={this.handleBack} className="btn-back">
                   Back
                 </Button>
