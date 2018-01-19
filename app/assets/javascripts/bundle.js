@@ -59268,13 +59268,13 @@ var Page8 = function (_React$Component) {
         _react2.default.createElement(
           'p',
           null,
-          'Feel free to log in ',
+          'Feel free to log in',
           _react2.default.createElement(
             'a',
-            { href: '#' },
+            { href: 'https://girlzftwportal.herokuapp.com/#/' },
             'here'
           ),
-          ' to view and update your application.'
+          'to view and update your application.'
         )
       );
     }
@@ -59623,6 +59623,8 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
+// TODO: update state and fields
+// TODO: make an update container
 var MentorUpdate = function (_React$Component) {
   _inherits(MentorUpdate, _React$Component);
 
@@ -59697,6 +59699,11 @@ var MentorUpdate = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
+        _react2.default.createElement(
+          'h1',
+          null,
+          'this needs to be completely updated'
+        ),
         _react2.default.createElement(
           _reactBootstrap.Panel,
           { collapsible: true, expanded: this.state.disclaimer },

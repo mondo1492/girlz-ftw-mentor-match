@@ -1,6 +1,8 @@
 import React from 'react';
 import { Col, Form, Button, Panel, FormControl, ControlLabel, FormGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
 
+// TODO: update state and fields
+// TODO: make an update container
 class MentorUpdate extends React.Component {
   constructor(props) {
     super(props);
@@ -64,6 +66,7 @@ class MentorUpdate extends React.Component {
   render() {
     return (
       <div>
+        <h1>this needs to be completely updated</h1>
 
         <Panel collapsible expanded={this.state.disclaimer}>
 

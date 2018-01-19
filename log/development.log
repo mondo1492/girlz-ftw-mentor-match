@@ -19588,3 +19588,25 @@ ou prep for at least 30 minutes before each of your mentee calls. Lastly,=
 Completed 200 OK in 1393ms (Views: 8.2ms | ActiveRecord: 3.7ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-01-18 18:01:17 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "q_Rv3tOOyTKJ1Yqg2OXjgQ"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  Rendered api/users/_user.json.jbuilder (2.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 452ms (Views: 449.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-18 18:01:21 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "q_Rv3tOOyTKJ1Yqg2OXjgQ"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  Rendered api/users/_user.json.jbuilder (2.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 33ms (Views: 31.2ms | ActiveRecord: 1.0ms)
+
+
