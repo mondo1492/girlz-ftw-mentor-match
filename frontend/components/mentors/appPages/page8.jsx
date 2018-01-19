@@ -15,7 +15,7 @@ class Page8 extends React.Component {
             </h3>
             <h5>You should receive a confirmation email shortly.</h5>
             <p>Feel free to log in
-              <a href="https://girlzftwportal.herokuapp.com/#/">here</a>
+              <a href="https://girlzftwportal.herokuapp.com/#/"> here </a>
                to view and update your application.</p>
           </div>
       )
