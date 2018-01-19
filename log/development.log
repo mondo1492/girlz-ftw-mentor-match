@@ -17619,3 +17619,464 @@ Unpermitted parameters: :2, :3, :4, :5, :6, :agree_terms, :page
 Completed 422 Unprocessable Entity in 5ms (Views: 0.2ms | ActiveRecord: 0.6ms)
 
 
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started POST "/api/session" for 127.0.0.1 at 2018-01-18 16:03:53 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"user4", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "user4"], ["LIMIT", 1]]
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (17.1ms)
+  Rendered api/users/show.json.jbuilder (17.9ms)
+Completed 500 Internal Server Error in 109ms (ActiveRecord: 0.3ms)
+
+
+
+NoMethodError - undefined method `industry' for #<User:0x007f98ff501848>:
+  activemodel (5.1.4) lib/active_model/attribute_methods.rb:432:in `method_missing'
+  jbuilder (2.7.0) lib/jbuilder.rb:260:in `block in _extract_method_values'
+  jbuilder (2.7.0) lib/jbuilder.rb:260:in `_extract_method_values'
+  jbuilder (2.7.0) lib/jbuilder.rb:219:in `extract!'
+  app/views/api/users/_user.json.jbuilder:1:in `_app_views_api_users__user_json_jbuilder___2723350532804406338_70147547762240'
+  actionview (5.1.4) lib/action_view/template.rb:157:in `block in render'
+  activesupport (5.1.4) lib/active_support/notifications.rb:168:in `instrument'
+  actionview (5.1.4) lib/action_view/template.rb:352:in `instrument_render_template'
+  actionview (5.1.4) lib/action_view/template.rb:155:in `render'
+  actionview (5.1.4) lib/action_view/renderer/partial_renderer.rb:342:in `block in render_partial'
+  actionview (5.1.4) lib/action_view/renderer/abstract_renderer.rb:42:in `block in instrument'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (5.1.4) lib/action_view/renderer/abstract_renderer.rb:41:in `instrument'
+  actionview (5.1.4) lib/action_view/renderer/partial_renderer.rb:331:in `render_partial'
+  actionview (5.1.4) lib/action_view/renderer/partial_renderer.rb:310:in `render'
+  actionview (5.1.4) lib/action_view/renderer/renderer.rb:47:in `render_partial'
+  actionview (5.1.4) lib/action_view/renderer/renderer.rb:21:in `render'
+  actionview (5.1.4) lib/action_view/helpers/rendering_helper.rb:32:in `render'
+  jbuilder (2.7.0) lib/jbuilder/jbuilder_template.rb:128:in `_render_partial'
+  jbuilder (2.7.0) lib/jbuilder/jbuilder_template.rb:122:in `_render_partial_with_options'
+  jbuilder (2.7.0) lib/jbuilder/jbuilder_template.rb:215:in `_render_explicit_partial'
+  jbuilder (2.7.0) lib/jbuilder/jbuilder_template.rb:22:in `partial!'
+  app/views/api/users/show.json.jbuilder:1:in `_app_views_api_users_show_json_jbuilder__1200276251833168589_70147547695760'
+  actionview (5.1.4) lib/action_view/template.rb:157:in `block in render'
+  activesupport (5.1.4) lib/active_support/notifications.rb:168:in `instrument'
+  actionview (5.1.4) lib/action_view/template.rb:352:in `instrument_render_template'
+  actionview (5.1.4) lib/action_view/template.rb:155:in `render'
+  actionview (5.1.4) lib/action_view/renderer/template_renderer.rb:52:in `block (2 levels) in render_template'
+  actionview (5.1.4) lib/action_view/renderer/abstract_renderer.rb:42:in `block in instrument'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+  actionview (5.1.4) lib/action_view/renderer/abstract_renderer.rb:41:in `instrument'
+  actionview (5.1.4) lib/action_view/renderer/template_renderer.rb:51:in `block in render_template'
+  actionview (5.1.4) lib/action_view/renderer/template_renderer.rb:59:in `render_with_layout'
+  actionview (5.1.4) lib/action_view/renderer/template_renderer.rb:50:in `render_template'
+  actionview (5.1.4) lib/action_view/renderer/template_renderer.rb:14:in `render'
+  actionview (5.1.4) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (5.1.4) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (5.1.4) lib/action_view/rendering.rb:103:in `_render_template'
+  actionpack (5.1.4) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (5.1.4) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (5.1.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+  actionpack (5.1.4) lib/action_controller/metal/renderers.rb:141:in `render_to_body'
+  actionpack (5.1.4) lib/abstract_controller/rendering.rb:24:in `render'
+  actionpack (5.1.4) lib/action_controller/metal/rendering.rb:36:in `render'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (5.1.4) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/Ravi/.rbenv/versions/2.3.1/lib/ruby/2.3.0/benchmark.rb:308:in `realtime'
+  activesupport (5.1.4) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:29:in `cleanup_view_runtime'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  app/controllers/api/sessions_controller.rb:8:in `create'
+  actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+  activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+  actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+  actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.4) lib/rails/engine.rb:522:in `call'
+  puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+  puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+  puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+  puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+  puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+  [1m[35m (18.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5798284281019468560)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RenameUsersAttributes (20180119004044)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (31.7ms)[0m  [1m[35mALTER TABLE "users" DROP "picture_url"[0m
+  [1m[35m (1.6ms)[0m  [1m[35mALTER TABLE "users" DROP "youtube_url"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" DROP "high_school"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "users" DROP "career_advice_rank"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" DROP "personal_advice_rank"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" DROP "motivation_rank"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" DROP "personality_text"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" DROP "why_mentor_text"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" DROP "extra_info_text"[0m
+  [1m[35m (2.3ms)[0m  [1m[35mALTER TABLE "users" ADD "industry" text[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "share_industry_rank" integer[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "job_description" text[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "linkedin" text[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "users" ADD "provide" text[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "unblock_methods" text[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180119004044"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5798284281019468560)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (8521.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "girlz-ftw-mentor-match_development"[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (202.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "girlz-ftw-mentor-match_development"[0m
+  [1m[35m (194.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "girlz-ftw-mentor-match_test"[0m
+  [1m[35m (488.2ms)[0m  [1m[35mCREATE DATABASE "girlz-ftw-mentor-match_development" ENCODING = 'unicode'[0m
+  [1m[35m (404.8ms)[0m  [1m[35mCREATE DATABASE "girlz-ftw-mentor-match_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "mentees" CASCADE[0m
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "mentees" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "approved" boolean DEFAULT 'f' NOT NULL, "status" boolean DEFAULT 'f' NOT NULL, "age" integer NOT NULL, "city" character varying NOT NULL, "country" character varying NOT NULL, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "phone" character varying, "facebook" character varying NOT NULL, "email" character varying NOT NULL, "high_school" character varying, "college" character varying, "major" character varying, "employer" character varying, "career_advice_rank" integer NOT NULL, "personal_advice_rank" integer NOT NULL, "motivation_rank" integer NOT NULL, "instagram_bio_text" text, "instagram_bio_why_not_text" text, "share_major_rank" integer, "personality_text" text, "night_text" text, "not_on_google_text" text, "how_impact_text" text, "no_discuss_text" text, "extra_info_text" text, "user_id" integer, "tier" integer, "youtube_url" character varying, "headshot_url" character varying)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "session_token" character varying NOT NULL, "password_digest" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "admin" boolean, "approved" boolean, "status" boolean DEFAULT 'f' NOT NULL, "age" integer NOT NULL, "city" character varying NOT NULL, "country" character varying NOT NULL, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "phone" character varying, "facebook" character varying NOT NULL, "email" character varying NOT NULL, "college" character varying, "major" character varying, "employer" character varying, "share_major_rank" integer, "headshot_url" character varying, "industry" text, "share_industry_rank" integer, "job_description" text, "linkedin" text, "provide" text, "unblock_methods" text)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180119004044)[0m
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20171011200148),
+(20171011211521),
+(20171011212746),
+(20171013192113),
+(20171013193833),
+(20171018220713),
+(20171031204256),
+(20171031230326),
+(20171101003212);
+
+[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-01-19 01:12:57.170824"], ["updated_at", "2018-01-19 01:12:57.170824"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "mentees" CASCADE[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "mentees" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "approved" boolean DEFAULT 'f' NOT NULL, "status" boolean DEFAULT 'f' NOT NULL, "age" integer NOT NULL, "city" character varying NOT NULL, "country" character varying NOT NULL, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "phone" character varying, "facebook" character varying NOT NULL, "email" character varying NOT NULL, "high_school" character varying, "college" character varying, "major" character varying, "employer" character varying, "career_advice_rank" integer NOT NULL, "personal_advice_rank" integer NOT NULL, "motivation_rank" integer NOT NULL, "instagram_bio_text" text, "instagram_bio_why_not_text" text, "share_major_rank" integer, "personality_text" text, "night_text" text, "not_on_google_text" text, "how_impact_text" text, "no_discuss_text" text, "extra_info_text" text, "user_id" integer, "tier" integer, "youtube_url" character varying, "headshot_url" character varying)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "session_token" character varying NOT NULL, "password_digest" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "admin" boolean, "approved" boolean, "status" boolean DEFAULT 'f' NOT NULL, "age" integer NOT NULL, "city" character varying NOT NULL, "country" character varying NOT NULL, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "phone" character varying, "facebook" character varying NOT NULL, "email" character varying NOT NULL, "college" character varying, "major" character varying, "employer" character varying, "share_major_rank" integer, "headshot_url" character varying, "industry" text, "share_industry_rank" integer, "job_description" text, "linkedin" text, "provide" text, "unblock_methods" text)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180119004044)[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20171011200148),
+(20171011211521),
+(20171011212746),
+(20171013192113),
+(20171013193833),
+(20171018220713),
+(20171031204256),
+(20171031230326),
+(20171101003212);
+
+[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-01-19 01:12:57.237953"], ["updated_at", "2018-01-19 01:12:57.237953"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mMentee Load (0.7ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (122.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "girlz-ftw-mentor-match_development"[0m
+  [1m[35m (188.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "girlz-ftw-mentor-match_test"[0m
+  [1m[35m (390.4ms)[0m  [1m[35mCREATE DATABASE "girlz-ftw-mentor-match_development" ENCODING = 'unicode'[0m
+  [1m[35m (394.0ms)[0m  [1m[35mCREATE DATABASE "girlz-ftw-mentor-match_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "mentees" CASCADE[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE "mentees" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "approved" boolean DEFAULT 'f' NOT NULL, "status" boolean DEFAULT 'f' NOT NULL, "age" integer NOT NULL, "city" character varying NOT NULL, "country" character varying NOT NULL, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "phone" character varying, "facebook" character varying NOT NULL, "email" character varying NOT NULL, "high_school" character varying, "college" character varying, "major" character varying, "employer" character varying, "career_advice_rank" integer NOT NULL, "personal_advice_rank" integer NOT NULL, "motivation_rank" integer NOT NULL, "instagram_bio_text" text, "instagram_bio_why_not_text" text, "share_major_rank" integer, "personality_text" text, "night_text" text, "not_on_google_text" text, "how_impact_text" text, "no_discuss_text" text, "extra_info_text" text, "user_id" integer, "tier" integer, "youtube_url" character varying, "headshot_url" character varying)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "session_token" character varying NOT NULL, "password_digest" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "admin" boolean, "approved" boolean, "status" boolean DEFAULT 'f' NOT NULL, "age" integer NOT NULL, "city" character varying NOT NULL, "country" character varying NOT NULL, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "phone" character varying, "facebook" character varying NOT NULL, "email" character varying NOT NULL, "college" character varying, "major" character varying, "employer" character varying, "share_major_rank" integer, "headshot_url" character varying, "industry" text, "share_industry_rank" integer, "job_description" text, "linkedin" text, "provide" text, "unblock_methods" text)[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180119004044)[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20171011200148),
+(20171011211521),
+(20171011212746),
+(20171013192113),
+(20171013193833),
+(20171018220713),
+(20171031204256),
+(20171031230326),
+(20171101003212);
+
+[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-01-19 01:13:30.915756"], ["updated_at", "2018-01-19 01:13:30.915756"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "mentees" CASCADE[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "mentees" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "approved" boolean DEFAULT 'f' NOT NULL, "status" boolean DEFAULT 'f' NOT NULL, "age" integer NOT NULL, "city" character varying NOT NULL, "country" character varying NOT NULL, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "phone" character varying, "facebook" character varying NOT NULL, "email" character varying NOT NULL, "high_school" character varying, "college" character varying, "major" character varying, "employer" character varying, "career_advice_rank" integer NOT NULL, "personal_advice_rank" integer NOT NULL, "motivation_rank" integer NOT NULL, "instagram_bio_text" text, "instagram_bio_why_not_text" text, "share_major_rank" integer, "personality_text" text, "night_text" text, "not_on_google_text" text, "how_impact_text" text, "no_discuss_text" text, "extra_info_text" text, "user_id" integer, "tier" integer, "youtube_url" character varying, "headshot_url" character varying)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (14.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "session_token" character varying NOT NULL, "password_digest" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "admin" boolean, "approved" boolean, "status" boolean DEFAULT 'f' NOT NULL, "age" integer NOT NULL, "city" character varying NOT NULL, "country" character varying NOT NULL, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "phone" character varying, "facebook" character varying NOT NULL, "email" character varying NOT NULL, "college" character varying, "major" character varying, "employer" character varying, "share_major_rank" integer, "headshot_url" character varying, "industry" text, "share_industry_rank" integer, "job_description" text, "linkedin" text, "provide" text, "unblock_methods" text)[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180119004044)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20171011200148),
+(20171011211521),
+(20171011212746),
+(20171013192113),
+(20171013193833),
+(20171018220713),
+(20171031204256),
+(20171031230326),
+(20171101003212);
+
+[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-01-19 01:13:31.009939"], ["updated_at", "2018-01-19 01:13:31.009939"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mMentee Load (0.8ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5798284281019468560)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddVideoUrlToUsers (20180119011359)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "video_URL" text[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180119011359"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5798284281019468560)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (193.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "girlz-ftw-mentor-match_development"[0m
+  [1m[35m (198.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "girlz-ftw-mentor-match_test"[0m
+  [1m[35m (396.5ms)[0m  [1m[35mCREATE DATABASE "girlz-ftw-mentor-match_development" ENCODING = 'unicode'[0m
+  [1m[35m (389.0ms)[0m  [1m[35mCREATE DATABASE "girlz-ftw-mentor-match_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "mentees" CASCADE[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "mentees" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "approved" boolean DEFAULT 'f' NOT NULL, "status" boolean DEFAULT 'f' NOT NULL, "age" integer NOT NULL, "city" character varying NOT NULL, "country" character varying NOT NULL, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "phone" character varying, "facebook" character varying NOT NULL, "email" character varying NOT NULL, "high_school" character varying, "college" character varying, "major" character varying, "employer" character varying, "career_advice_rank" integer NOT NULL, "personal_advice_rank" integer NOT NULL, "motivation_rank" integer NOT NULL, "instagram_bio_text" text, "instagram_bio_why_not_text" text, "share_major_rank" integer, "personality_text" text, "night_text" text, "not_on_google_text" text, "how_impact_text" text, "no_discuss_text" text, "extra_info_text" text, "user_id" integer, "tier" integer, "youtube_url" character varying, "headshot_url" character varying)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "session_token" character varying NOT NULL, "password_digest" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "admin" boolean, "approved" boolean, "status" boolean DEFAULT 'f' NOT NULL, "age" integer NOT NULL, "city" character varying NOT NULL, "country" character varying NOT NULL, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "phone" character varying, "facebook" character varying NOT NULL, "email" character varying NOT NULL, "college" character varying, "major" character varying, "employer" character varying, "share_major_rank" integer, "headshot_url" character varying, "industry" text, "share_industry_rank" integer, "job_description" text, "linkedin" text, "provide" text, "unblock_methods" text, "video_URL" text)[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180119011359)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20171011200148),
+(20171011211521),
+(20171011212746),
+(20171013192113),
+(20171013193833),
+(20171018220713),
+(20171031204256),
+(20171031230326),
+(20171101003212),
+(20180119004044);
+
+[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-01-19 01:14:32.535522"], ["updated_at", "2018-01-19 01:14:32.535522"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "mentees" CASCADE[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE "mentees" ("id" bigserial primary key, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "approved" boolean DEFAULT 'f' NOT NULL, "status" boolean DEFAULT 'f' NOT NULL, "age" integer NOT NULL, "city" character varying NOT NULL, "country" character varying NOT NULL, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "phone" character varying, "facebook" character varying NOT NULL, "email" character varying NOT NULL, "high_school" character varying, "college" character varying, "major" character varying, "employer" character varying, "career_advice_rank" integer NOT NULL, "personal_advice_rank" integer NOT NULL, "motivation_rank" integer NOT NULL, "instagram_bio_text" text, "instagram_bio_why_not_text" text, "share_major_rank" integer, "personality_text" text, "night_text" text, "not_on_google_text" text, "how_impact_text" text, "no_discuss_text" text, "extra_info_text" text, "user_id" integer, "tier" integer, "youtube_url" character varying, "headshot_url" character varying)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "username" character varying NOT NULL, "session_token" character varying NOT NULL, "password_digest" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "admin" boolean, "approved" boolean, "status" boolean DEFAULT 'f' NOT NULL, "age" integer NOT NULL, "city" character varying NOT NULL, "country" character varying NOT NULL, "first_name" character varying NOT NULL, "last_name" character varying NOT NULL, "phone" character varying, "facebook" character varying NOT NULL, "email" character varying NOT NULL, "college" character varying, "major" character varying, "employer" character varying, "share_major_rank" integer, "headshot_url" character varying, "industry" text, "share_industry_rank" integer, "job_description" text, "linkedin" text, "provide" text, "unblock_methods" text, "video_URL" text)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20180119011359)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20171011200148),
+(20171011211521),
+(20171011212746),
+(20171013192113),
+(20171013193833),
+(20171018220713),
+(20171031204256),
+(20171031230326),
+(20171101003212),
+(20180119004044);
+
+[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-01-19 01:14:32.604998"], ["updated_at", "2018-01-19 01:14:32.604998"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mMentee Load (0.8ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at", "admin", "approved", "status", "age", "city", "country", "first_name", "last_name", "phone", "facebook", "email", "college", "major", "employer", "share_major_rank", "industry", "share_industry_rank", "job_description", "linkedin", "provide", "unblock_methods", "video_URL") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27) RETURNING "id"[0m  [["username", "admin"], ["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["password_digest", "$2a$10$xOuh8SvLSK7XJV04Wyr40.nTUgc3NHebbgb8BWLJLw6idCz4q.5iK"], ["created_at", "2018-01-19 01:14:32.723238"], ["updated_at", "2018-01-19 01:14:32.723238"], ["admin", "t"], ["approved", "t"], ["status", "t"], ["age", 25], ["city", "admin city"], ["country", "admin country"], ["first_name", "admin first_name"], ["last_name", "admin last_name"], ["phone", "admin phone"], ["facebook", "admin facebook"], ["email", "admin email"], ["college", "admin college"], ["major", "admin major"], ["employer", "admin employer"], ["share_major_rank", 2], ["industry", "admin industry"], ["share_industry_rank", 1], ["job_description", "admin job_description"], ["linkedin", "admin linkedin"], ["provide", "admin provide"], ["unblock_methods", "admin unblock_methods"], ["video_URL", "admin video_URL"]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "fmentor1"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at", "admin", "approved", "age", "city", "country", "first_name", "last_name", "phone", "facebook", "email", "college", "major", "employer", "share_major_rank", "industry", "share_industry_rank", "job_description", "linkedin", "provide", "unblock_methods", "video_URL") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26) RETURNING "id"[0m  [["username", "fmentor1"], ["session_token", "NBPpdWFr4ImcWlYyqlFqsQ"], ["password_digest", "$2a$10$6EnOWOZbto.vpC95jV6gk.4aFcA1LfSr2fu5xKicSRzVvZlXfum/u"], ["created_at", "2018-01-19 01:14:32.792711"], ["updated_at", "2018-01-19 01:14:32.792711"], ["admin", "f"], ["approved", "f"], ["age", 25], ["city", "fmentor city"], ["country", "fmentor country"], ["first_name", "fmentor first_name"], ["last_name", "fmentor last_name"], ["phone", "fmentor phone"], ["facebook", "fmentor facebook"], ["email", "fmentor email"], ["college", "fmentor college"], ["major", "fmentor major"], ["employer", "fmentor employer"], ["share_major_rank", 2], ["industry", "fmentor industry"], ["share_industry_rank", 1], ["job_description", "fmentor job_description"], ["linkedin", "fmentor linkedin"], ["provide", "fmentor provide"], ["unblock_methods", "fmentor unblock_methods"], ["video_URL", "fmentor video_URL"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "fmentor2"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at", "admin", "approved", "age", "city", "country", "first_name", "last_name", "phone", "facebook", "email", "college", "major", "employer", "share_major_rank", "industry", "share_industry_rank", "job_description", "linkedin", "provide", "unblock_methods", "video_URL") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26) RETURNING "id"[0m  [["username", "fmentor2"], ["session_token", "K5WiiR93BPxSXhcwpjSluA"], ["password_digest", "$2a$10$h.e5wurAvXZOZ.E8yJK9sOth1QkiHlI8vhNFmALP9Man/gr/FHeNO"], ["created_at", "2018-01-19 01:14:32.861209"], ["updated_at", "2018-01-19 01:14:32.861209"], ["admin", "f"], ["approved", "f"], ["age", 25], ["city", "fmentor city"], ["country", "fmentor country"], ["first_name", "fmentor first_name"], ["last_name", "fmentor last_name"], ["phone", "fmentor phone"], ["facebook", "fmentor facebook"], ["email", "fmentor email"], ["college", "fmentor college"], ["major", "fmentor major"], ["employer", "fmentor employer"], ["share_major_rank", 2], ["industry", "fmentor industry"], ["share_industry_rank", 1], ["job_description", "fmentor job_description"], ["linkedin", "fmentor linkedin"], ["provide", "fmentor provide"], ["unblock_methods", "fmentor unblock_methods"], ["video_URL", "fmentor video_URL"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "fmentor3"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at", "admin", "approved", "age", "city", "country", "first_name", "last_name", "phone", "facebook", "email", "college", "major", "employer", "share_major_rank", "industry", "share_industry_rank", "job_description", "linkedin", "provide", "unblock_methods", "video_URL") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26) RETURNING "id"[0m  [["username", "fmentor3"], ["session_token", "3vPONUD3NLgA4A4COrPwsg"], ["password_digest", "$2a$10$wRyuUDXT/yRGqezzPeZwMO7QC6VMZ4Kkp967yJRyrw8EJ8YHoxpZK"], ["created_at", "2018-01-19 01:14:32.926392"], ["updated_at", "2018-01-19 01:14:32.926392"], ["admin", "f"], ["approved", "f"], ["age", 25], ["city", "fmentor city"], ["country", "fmentor country"], ["first_name", "fmentor first_name"], ["last_name", "fmentor last_name"], ["phone", "fmentor phone"], ["facebook", "fmentor facebook"], ["email", "fmentor email"], ["college", "fmentor college"], ["major", "fmentor major"], ["employer", "fmentor employer"], ["share_major_rank", 2], ["industry", "fmentor industry"], ["share_industry_rank", 1], ["job_description", "fmentor job_description"], ["linkedin", "fmentor linkedin"], ["provide", "fmentor provide"], ["unblock_methods", "fmentor unblock_methods"], ["video_URL", "fmentor video_URL"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "fmentor4"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at", "admin", "approved", "age", "city", "country", "first_name", "last_name", "phone", "facebook", "email", "college", "major", "employer", "share_major_rank", "industry", "share_industry_rank", "job_description", "linkedin", "provide", "unblock_methods", "video_URL") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26) RETURNING "id"[0m  [["username", "fmentor4"], ["session_token", "tQYZjJS6Otpnb40kUTvsnA"], ["password_digest", "$2a$10$QgDKoQfJe77O1SAnqYAz.uyvLk/cEshKnTT.fOJ42WPP9jF73zx5a"], ["created_at", "2018-01-19 01:14:32.990570"], ["updated_at", "2018-01-19 01:14:32.990570"], ["admin", "f"], ["approved", "f"], ["age", 25], ["city", "fmentor city"], ["country", "fmentor country"], ["first_name", "fmentor first_name"], ["last_name", "fmentor last_name"], ["phone", "fmentor phone"], ["facebook", "fmentor facebook"], ["email", "fmentor email"], ["college", "fmentor college"], ["major", "fmentor major"], ["employer", "fmentor employer"], ["share_major_rank", 2], ["industry", "fmentor industry"], ["share_industry_rank", 1], ["job_description", "fmentor job_description"], ["linkedin", "fmentor linkedin"], ["provide", "fmentor provide"], ["unblock_methods", "fmentor unblock_methods"], ["video_URL", "fmentor video_URL"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "fmentor5"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("username", "session_token", "password_digest", "created_at", "updated_at", "admin", "approved", "age", "city", "country", "first_name", "last_name", "phone", "facebook", "email", "college", "major", "employer", "share_major_rank", "industry", "share_industry_rank", "job_description", "linkedin", "provide", "unblock_methods", "video_URL") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26) RETURNING "id"[0m  [["username", "fmentor5"], ["session_token", "8DOxf5Vm_f9dnFK74yUVLA"], ["password_digest", "$2a$10$DLZU5.l5FynwyeTOa2Izfu6dqTEOZd.FJUDZLyb8eDEEoHytwBORq"], ["created_at", "2018-01-19 01:14:33.055324"], ["updated_at", "2018-01-19 01:14:33.055324"], ["admin", "f"], ["approved", "f"], ["age", 25], ["city", "fmentor city"], ["country", "fmentor country"], ["first_name", "fmentor first_name"], ["last_name", "fmentor last_name"], ["phone", "fmentor phone"], ["facebook", "fmentor facebook"], ["email", "fmentor email"], ["college", "fmentor college"], ["major", "fmentor major"], ["employer", "fmentor employer"], ["share_major_rank", 2], ["industry", "fmentor industry"], ["share_industry_rank", 1], ["job_description", "fmentor job_description"], ["linkedin", "fmentor linkedin"], ["provide", "fmentor provide"], ["unblock_methods", "fmentor unblock_methods"], ["video_URL", "fmentor video_URL"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "mentees" ("created_at", "updated_at", "status", "age", "city", "country", "first_name", "last_name", "facebook", "email", "career_advice_rank", "personal_advice_rank", "motivation_rank") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", "2018-01-19 01:14:33.085110"], ["updated_at", "2018-01-19 01:14:33.085110"], ["status", "t"], ["age", 25], ["city", "Miami"], ["country", "USA"], ["first_name", "Aaron"], ["last_name", "Mondshine"], ["facebook", "facebook"], ["email", "some_email"], ["career_advice_rank", 2], ["personal_advice_rank", 1], ["motivation_rank", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mentees" ("created_at", "updated_at", "status", "age", "city", "country", "first_name", "last_name", "facebook", "email", "career_advice_rank", "personal_advice_rank", "motivation_rank") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", "2018-01-19 01:14:33.087607"], ["updated_at", "2018-01-19 01:14:33.087607"], ["status", "t"], ["age", 25], ["city", "San Francisco"], ["country", "USA"], ["first_name", "Ravi"], ["last_name", "Raval"], ["facebook", "google"], ["email", "some_email"], ["career_advice_rank", 2], ["personal_advice_rank", 1], ["motivation_rank", 3]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mentees" ("created_at", "updated_at", "status", "age", "city", "country", "first_name", "last_name", "facebook", "email", "career_advice_rank", "personal_advice_rank", "motivation_rank") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", "2018-01-19 01:14:33.089391"], ["updated_at", "2018-01-19 01:14:33.089391"], ["status", "t"], ["age", 25], ["city", "Denver"], ["country", "USA"], ["first_name", "Mentee3"], ["last_name", "Mentee3Last"], ["facebook", "youtube"], ["email", "some_email"], ["career_advice_rank", 2], ["personal_advice_rank", 1], ["motivation_rank", 3]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mentees" ("created_at", "updated_at", "status", "age", "city", "country", "first_name", "last_name", "facebook", "email", "career_advice_rank", "personal_advice_rank", "motivation_rank") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", "2018-01-19 01:14:33.091241"], ["updated_at", "2018-01-19 01:14:33.091241"], ["status", "t"], ["age", 25], ["city", "Houston"], ["country", "USA"], ["first_name", "Mentee4"], ["last_name", "Mentee4Last"], ["facebook", "facebook"], ["email", "some_email"], ["career_advice_rank", 2], ["personal_advice_rank", 1], ["motivation_rank", 3]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mentees" ("created_at", "updated_at", "status", "age", "city", "country", "first_name", "last_name", "facebook", "email", "career_advice_rank", "personal_advice_rank", "motivation_rank") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", "2018-01-19 01:14:33.093067"], ["updated_at", "2018-01-19 01:14:33.093067"], ["status", "t"], ["age", 25], ["city", "Boston"], ["country", "USA"], ["first_name", "Mentee5"], ["last_name", "Mentee5Last"], ["facebook", "facebook"], ["email", "some_email"], ["career_advice_rank", 2], ["personal_advice_rank", 1], ["motivation_rank", 3]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mentees" ("created_at", "updated_at", "status", "age", "city", "country", "first_name", "last_name", "facebook", "email", "career_advice_rank", "personal_advice_rank", "motivation_rank") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", "2018-01-19 01:14:33.094733"], ["updated_at", "2018-01-19 01:14:33.094733"], ["status", "t"], ["age", 25], ["city", "Dover"], ["country", "USA"], ["first_name", "Mentee6"], ["last_name", "Mentee6Last"], ["facebook", "facebook"], ["email", "some_email"], ["career_advice_rank", 2], ["personal_advice_rank", 1], ["motivation_rank", 3]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mentees" ("created_at", "updated_at", "status", "age", "city", "country", "first_name", "last_name", "facebook", "email", "career_advice_rank", "personal_advice_rank", "motivation_rank") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", "2018-01-19 01:14:33.096499"], ["updated_at", "2018-01-19 01:14:33.096499"], ["status", "t"], ["age", 25], ["city", "Rio"], ["country", "Brazil"], ["first_name", "Mentee7"], ["last_name", "Mentee7Last"], ["facebook", "facebook"], ["email", "some_email"], ["career_advice_rank", 2], ["personal_advice_rank", 1], ["motivation_rank", 3]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mentees" ("created_at", "updated_at", "status", "age", "city", "country", "first_name", "last_name", "facebook", "email", "career_advice_rank", "personal_advice_rank", "motivation_rank") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", "2018-01-19 01:14:33.098204"], ["updated_at", "2018-01-19 01:14:33.098204"], ["status", "t"], ["age", 25], ["city", "Seattle"], ["country", "USA"], ["first_name", "Mentee8"], ["last_name", "Mentee8Last"], ["facebook", "facebook"], ["email", "some_email"], ["career_advice_rank", 2], ["personal_advice_rank", 1], ["motivation_rank", 3]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mentees" ("created_at", "updated_at", "status", "age", "city", "country", "first_name", "last_name", "facebook", "email", "career_advice_rank", "personal_advice_rank", "motivation_rank") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", "2018-01-19 01:14:33.099886"], ["updated_at", "2018-01-19 01:14:33.099886"], ["status", "t"], ["age", 25], ["city", "Austin"], ["country", "USA"], ["first_name", "Mentee9"], ["last_name", "Mentee9Last"], ["facebook", "facebook"], ["email", "some_email"], ["career_advice_rank", 2], ["personal_advice_rank", 1], ["motivation_rank", 3]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mentees" ("created_at", "updated_at", "status", "age", "city", "country", "first_name", "last_name", "facebook", "email", "career_advice_rank", "personal_advice_rank", "motivation_rank") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", "2018-01-19 01:14:33.101552"], ["updated_at", "2018-01-19 01:14:33.101552"], ["status", "t"], ["age", 25], ["city", "New York"], ["country", "USA"], ["first_name", "Mentee10"], ["last_name", "Mentee10Last"], ["facebook", "facebook"], ["email", "some_email"], ["career_advice_rank", 2], ["personal_advice_rank", 1], ["motivation_rank", 3]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mentees" ("created_at", "updated_at", "status", "age", "city", "country", "first_name", "last_name", "facebook", "email", "career_advice_rank", "personal_advice_rank", "motivation_rank") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", "2018-01-19 01:14:33.103164"], ["updated_at", "2018-01-19 01:14:33.103164"], ["status", "t"], ["age", 25], ["city", "Richmond"], ["country", "USA"], ["first_name", "Mentee11"], ["last_name", "Mentee11Last"], ["facebook", "facebook"], ["email", "some_email"], ["career_advice_rank", 2], ["personal_advice_rank", 1], ["motivation_rank", 3]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mentees" ("created_at", "updated_at", "status", "age", "city", "country", "first_name", "last_name", "facebook", "email", "career_advice_rank", "personal_advice_rank", "motivation_rank") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", "2018-01-19 01:14:33.104856"], ["updated_at", "2018-01-19 01:14:33.104856"], ["status", "t"], ["age", 25], ["city", "Belmont"], ["country", "USA"], ["first_name", "Mentee12"], ["last_name", "Mentee12Last"], ["facebook", "facebook"], ["email", "some_email"], ["career_advice_rank", 2], ["personal_advice_rank", 1], ["motivation_rank", 3]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "mentees" ("created_at", "updated_at", "status", "age", "city", "country", "first_name", "last_name", "facebook", "email", "career_advice_rank", "personal_advice_rank", "motivation_rank") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", "2018-01-19 01:14:33.106414"], ["updated_at", "2018-01-19 01:14:33.106414"], ["status", "t"], ["age", 25], ["city", "St. Augustine"], ["country", "USA"], ["first_name", "Mentee13"], ["last_name", "MenteeLast"], ["facebook", "facebook"], ["email", "some_email"], ["career_advice_rank", 2], ["personal_advice_rank", 1], ["motivation_rank", 3]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "mentees" ("created_at", "updated_at", "status", "age", "city", "country", "first_name", "last_name", "facebook", "email", "career_advice_rank", "personal_advice_rank", "motivation_rank") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING "id"[0m  [["created_at", "2018-01-19 01:14:33.108268"], ["updated_at", "2018-01-19 01:14:33.108268"], ["status", "t"], ["age", 25], ["city", "Ft. Lauderdale"], ["country", "USA"], ["first_name", "Mentee14"], ["last_name", "MenteeLast"], ["facebook", "facebook"], ["email", "some_email"], ["career_advice_rank", 2], ["personal_advice_rank", 1], ["motivation_rank", 3]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m

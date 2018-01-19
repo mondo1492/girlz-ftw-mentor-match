@@ -49,7 +49,7 @@ class MentorApp extends React.Component {
         provide: '',
       },
       6: {
-        videoURL: '',
+        video_URL: '',
       },
       agree_terms: true,
       page: 0,

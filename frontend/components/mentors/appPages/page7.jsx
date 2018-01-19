@@ -46,8 +46,8 @@ class Page7 extends React.Component {
                 <FormControl
                   id="formControlsVideo"
                   type="text"
-                  name="videoURL"
-                  value={this.props.page.videoURL}
+                  name="video_URL"
+                  value={this.props.page.video_URL}
                   onChange={this.props.handleInputChange}
                   />
               </InputGroup>

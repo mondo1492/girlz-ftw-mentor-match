@@ -57338,7 +57338,7 @@ var MentorApp = function (_React$Component) {
         provide: ''
       },
       6: {
-        videoURL: ''
+        video_URL: ''
       },
       agree_terms: true,
       page: 0
@@ -58961,8 +58961,8 @@ var Page7 = function (_React$Component) {
                 _react2.default.createElement(_reactBootstrap.FormControl, {
                   id: 'formControlsVideo',
                   type: 'text',
-                  name: 'videoURL',
-                  value: this.props.page.videoURL,
+                  name: 'video_URL',
+                  value: this.props.page.video_URL,
                   onChange: this.props.handleInputChange
                 })
               )

@@ -8,39 +8,82 @@
 User.destroy_all
 Mentee.destroy_all
 
-
 user_list = [
-  [ "user1", "fakeuserpw", false, nil, false, 25, "Belmont", "USA", "User", "1", "facebook",
-  "some_email", 2, 1, 3],
-  [ "user2", "fakeuserpw", false, nil, false, 25, "Belmont", "USA", "User", "2", "facebook",
-  "some_email", 2, 1, 3],
-  [ "user3", "fakeuserpw", false, nil, false, 25, "Belmont", "USA", "User", "3", "facebook",
-  "some_email", 2, 1, 3],
-  [ "user4", "fakeuserpw", false, nil, false, 25, "Belmont", "USA", "User", "4", "facebook",
-  "some_email", 2, 1, 3],
-  [ "user5", "fakeuserpw", false, nil, false, 25, "Belmont", "USA", "User", "5", "facebook",
-  "some_email", 2, 1, 3],
-  [ "admin", "adminpassword", true, true, false, 25, "Belmont", "USA", "adminfirst", "adminlast", "facebook",
-  "some_email", 2, 1, 3],
-  [ "user6", "fakeuserpw", false, nil, false, 25, "Belmont", "USA", "User", "6", "facebook",
-  "some_email", 2, 1, 3],
-  [ "user7", "fakeuserpw", false, nil, false, 25, "Belmont", "USA", "User", "7", "facebook",
-  "some_email", 2, 1, 3],
-  [ "user8", "fakeuserpw", false, nil, false, 25, "Belmont", "USA", "User", "8", "facebook",
-  "some_email", 2, 1, 3],
-  [ "user9", "fakeuserpw", false, nil, false, 25, "Belmont", "USA", "User", "9", "facebook",
-  "some_email", 2, 1, 3],
-  [ "user10", "fakeuserpw", false, nil, false, 25, "Belmont", "USA", "User", "10", "facebook",
-  "some_email", 2, 1, 3]
+  # [
+  #   admin, age, approved, city, college, country, created_at, email,
+  #   employer, facebook, first_name, industry, job_description, last_name,
+  #   linkedin, major, mentee_count, mentee_names, password, phone, provide,
+  #   share_industry_rank, share_major_rank, status, unblock_methods,
+  #   username, video_URL
+  # ],
+  [
+    true, 25, true, 'admin city', 'admin college', 'admin country',
+    'admin email', 'admin employer', 'admin facebook', 'admin first_name',
+    'admin industry', 'admin job_description', 'admin last_name',
+    'admin linkedin', 'admin major', 'adminpassword',
+    'admin phone', 'admin provide', 1, 2, true, 'admin unblock_methods',
+    'admin', 'admin video_URL'
+  ],
+  [
+    false, 25, false, 'fmentor city', 'fmentor college', 'fmentor country',
+    'fmentor email', 'fmentor employer', 'fmentor facebook', 'fmentor first_name',
+    'fmentor industry', 'fmentor job_description', 'fmentor last_name',
+    'fmentor linkedin', 'fmentor major', 'fakeuserpw',
+    'fmentor phone', 'fmentor provide', 1, 2, false, 'fmentor unblock_methods',
+    'fmentor1', 'fmentor video_URL'
+  ],
+  [
+    false, 25, false, 'fmentor city', 'fmentor college', 'fmentor country',
+    'fmentor email', 'fmentor employer', 'fmentor facebook', 'fmentor first_name',
+    'fmentor industry', 'fmentor job_description', 'fmentor last_name',
+    'fmentor linkedin', 'fmentor major', 'fakeuserpw',
+    'fmentor phone', 'fmentor provide', 1, 2, false, 'fmentor unblock_methods',
+    'fmentor2', 'fmentor video_URL'
+  ],
+  [
+    false, 25, false, 'fmentor city', 'fmentor college', 'fmentor country',
+    'fmentor email', 'fmentor employer', 'fmentor facebook', 'fmentor first_name',
+    'fmentor industry', 'fmentor job_description', 'fmentor last_name',
+    'fmentor linkedin', 'fmentor major', 'fakeuserpw',
+    'fmentor phone', 'fmentor provide', 1, 2, false, 'fmentor unblock_methods',
+    'fmentor3', 'fmentor video_URL'
+  ],
+  [
+    false, 25, false, 'fmentor city', 'fmentor college', 'fmentor country',
+    'fmentor email', 'fmentor employer', 'fmentor facebook', 'fmentor first_name',
+    'fmentor industry', 'fmentor job_description', 'fmentor last_name',
+    'fmentor linkedin', 'fmentor major', 'fakeuserpw',
+    'fmentor phone', 'fmentor provide', 1, 2, false, 'fmentor unblock_methods',
+    'fmentor4', 'fmentor video_URL'
+  ],
+  [
+    false, 25, false, 'fmentor city', 'fmentor college', 'fmentor country',
+    'fmentor email', 'fmentor employer', 'fmentor facebook', 'fmentor first_name',
+    'fmentor industry', 'fmentor job_description', 'fmentor last_name',
+    'fmentor linkedin', 'fmentor major', 'fakeuserpw',
+    'fmentor phone', 'fmentor provide', 1, 2, false, 'fmentor unblock_methods',
+    'fmentor5', 'fmentor video_URL'
+  ]
 ]
-user_list.each do |username, password, admin, approved, status, age, city, country,
-  first_name, last_name, facebook, email, career_advice_rank,
-  personal_advice_rank, motivation_rank|
-  User.create!( username: username, password: password, approved: approved,
-    admin: admin, status: status, age: age, city: city, country: country,
-    first_name: first_name, last_name: last_name, facebook: facebook,
-    email: email, motivation_rank: motivation_rank,
-    personal_advice_rank: personal_advice_rank, career_advice_rank: career_advice_rank)
+user_list.each do |admin, age, approved, city, college, country,
+                    email, employer, facebook, first_name,
+                    industry, job_description, last_name, linkedin, major,
+                    password, phone, provide,
+                    share_industry_rank, share_major_rank, status,
+                    unblock_methods, username, video_URL|
+  User.create!(
+    admin: admin, age: age, approved: approved, city: city,
+    college: college, country: country,
+    email: email, employer: employer, facebook: facebook,
+    first_name: first_name, industry: industry,
+    job_description: job_description, last_name: last_name,
+    linkedin: linkedin, major: major,
+    password: password, phone: phone,
+    provide: provide, share_industry_rank: share_industry_rank,
+    share_major_rank: share_major_rank, status: status,
+    unblock_methods: unblock_methods, username: username,
+    video_URL: video_URL
+  )
 end
 
 mentee_list = [

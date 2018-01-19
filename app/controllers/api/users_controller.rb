@@ -51,7 +51,7 @@ class Api::UsersController < ApplicationController
             :industry, :id, :job_description, :last_name, :linkedin,
             :major, :mentee_count, :mentee_names, :phone, :provide,
             :share_industry_rank, :share_major_rank, :status,
-            :unblock_methods, :username, :videoURL
+            :unblock_methods, :username, :video_URL
           )
   end
 
@@ -63,7 +63,7 @@ class Api::UsersController < ApplicationController
             :job_description, :last_name, :linkedin, :major,
             :mentee_count, :mentee_names, :password, :phone, :provide,
             :share_industry_rank, :share_major_rank, :status,
-            :unblock_methods, :username, :videoURL
+            :unblock_methods, :username, :video_URL
           )
   end
 end
