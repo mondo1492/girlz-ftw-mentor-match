@@ -44,22 +44,26 @@ class Api::UsersController < ApplicationController
   private
 
   def admin_user_params
-    params.require(:user).permit(
-      :username, :admin, :approved, :status, :age, :city, :country,
-      :first_name, :last_name, :phone, :facebook, :email, :picture_url,
-      :high_school, :college, :major, :employer, :career_advice_rank,
-      :personal_advice_rank, :motivation_rank, :personality_text,
-      :why_mentor_text, :extra_info_text, :created_at
-    )
+    params.require(:user)
+          .permit(
+            :admin, :age, :approved, :city, :college, :country,
+            :created_at, :email, :employer, :facebook, :first_name,
+            :industry, :id, :job_description, :last_name, :linkedin,
+            :major, :mentee_count, :mentee_names, :phone, :provide,
+            :share_industry_rank, :share_major_rank, :status,
+            :unblock_methods, :username, :videoURL
+          )
   end
 
   def user_params
-    params.require(:user).permit(
-      :username, :password, :status, :age, :city, :country, :first_name,
-      :last_name, :phone, :facebook, :email, :picture_url, :high_school,
-      :college, :major, :employer, :career_advice_rank,
-      :personal_advice_rank, :motivation_rank, :personality_text,
-      :why_mentor_text, :extra_info_text, :created_at
-    )
+    params.require(:user)
+          .permit(
+            :age, :city, :college, :country, :created_at, :email,
+            :employer, :facebook, :first_name, :industry, :id,
+            :job_description, :last_name, :linkedin, :major,
+            :mentee_count, :mentee_names, :password, :phone, :provide,
+            :share_industry_rank, :share_major_rank, :status,
+            :unblock_methods, :username, :videoURL
+          )
   end
 end

@@ -86,7 +86,9 @@ class MentorApp extends React.Component {
         flattenedState[key] = this.state[i][key];
       }
     }
+
     this.props.createMentor(flattenedState).then(
+      // TODO: send to confirmation page? which lists all info?
       () => this.props.history.push('/'));
   }
 

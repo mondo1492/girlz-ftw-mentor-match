@@ -57405,7 +57405,10 @@ var MentorApp = function (_React$Component) {
           }
         }
       }
-      this.props.createMentor(flattenedState).then(function () {
+
+      this.props.createMentor(flattenedState).then(
+      // TODO: send to confirmation page? which lists all info?
+      function () {
         return _this2.props.history.push('/');
       });
     }
