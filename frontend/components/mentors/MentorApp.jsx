@@ -91,8 +91,6 @@ class MentorApp extends React.Component {
       // () => this.props.history.push('/'));
       () => this.setState({page: this.state.page + 1})
     );
-    // remove below when gmail auth fixed
-    this.setState({page: this.state.page + 1});
   }
 
   handleBack() {
