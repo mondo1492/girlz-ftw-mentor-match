@@ -87,8 +87,6 @@ class MentorApp extends React.Component {
     }
 
     this.props.createMentor(flattenedState).then(
-      // TODO: send to confirmation page? which lists all info?
-      // () => this.props.history.push('/'));
       () => this.setState({page: this.state.page + 1})
     );
   }
