@@ -54752,6 +54752,12 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(15);
 
+var _reactBootstrap = __webpack_require__(18);
+
+var _MenteeShow = __webpack_require__(123);
+
+var _MenteeShow2 = _interopRequireDefault(_MenteeShow);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -54768,14 +54774,46 @@ var MentorPanel = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (MentorPanel.__proto__ || Object.getPrototypeOf(MentorPanel)).call(this, props));
 
-    _this.state = {};
+    _this.state = {
+      isModalOpen: false
+    };
+    _this.openModal = _this.openModal.bind(_this);
     return _this;
   }
 
   _createClass(MentorPanel, [{
+    key: 'openModal',
+    value: function openModal(mentee) {
+      this.setState({ isModalOpen: true, mentee: mentee });
+    }
+  }, {
+    key: 'closeModal',
+    value: function closeModal() {
+      this.setState({ isModalOpen: false });
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       console.log(this.props);
+      var mentor = this.props.currentUser;
+      var mentees = this.props.mentees;
+      var approval = function () {
+        if (mentor.approved) {
+          return _react2.default.createElement(
+            'p',
+            null,
+            'You are an approved mentor'
+          );
+        } else {
+          return _react2.default.createElement(
+            'p',
+            null,
+            'Your application is pending'
+          );
+        }
+      }();
       return _react2.default.createElement(
         'div',
         null,
@@ -54784,10 +54822,78 @@ var MentorPanel = function (_React$Component) {
           null,
           'Mentor Panel'
         ),
+        approval,
         _react2.default.createElement(
-          'p',
+          _reactBootstrap.Modal,
+          { className: 'modal', show: this.state.isModalOpen, onHide: function onHide() {
+              return _this2.closeModal();
+            } },
+          _react2.default.createElement(_MenteeShow2.default, { mentee: this.state.mentee })
+        ),
+        _react2.default.createElement(
+          'h3',
           null,
-          'You are an approved mentor!'
+          'Your Mentees'
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Table,
+          { responsive: true },
+          _react2.default.createElement(
+            'thead',
+            null,
+            _react2.default.createElement(
+              'tr',
+              null,
+              _react2.default.createElement(
+                'th',
+                null,
+                'Video'
+              ),
+              _react2.default.createElement(
+                'th',
+                null,
+                'Name'
+              ),
+              _react2.default.createElement(
+                'th',
+                null,
+                'Full Profile'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'tbody',
+            null,
+            Object.keys(mentees).map(function (key) {
+              return _react2.default.createElement(
+                'tr',
+                { key: key },
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  'Video placeholder ayyyy'
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  mentees[key].first_name,
+                  ' ',
+                  mentees[key].last_name
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement(
+                    'span',
+                    { className: 'generic_link', onClick: function onClick() {
+                        return _this2.openModal(mentees[key]);
+                      } },
+                    'Full Profile'
+                  )
+                )
+              );
+            })
+          )
         ),
         _react2.default.createElement(
           _reactRouterDom.Link,
