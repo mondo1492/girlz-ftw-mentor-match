@@ -10,24 +10,23 @@ class MentorShow extends React.Component {
     return(
       <div>
         <h1>{mentor.first_name} {mentor.last_name}</h1>
-        <p>Facebook: {mentor.facebook}</p>
         <p>Email: {mentor.email}</p>
         <p>Phone: {mentor.phone}</p>
         <p>Age: {mentor.age}</p>
+        <p>Facebook: {mentor.facebook}</p>
+        <p>LinkedIn: {mentor.linkedin}</p>
         <p>City: {mentor.city}</p>
         <p>Country: {mentor.country}</p>
-        <p>High School: {mentor.high_school}</p>
         <p>College: {mentor.college}</p>
         <p>Employer: {mentor.employer}</p>
         <p>Major: {mentor.major}</p>
-        <p>How interested are you in giving career advice (0 - 3): {mentor.carorr_advice_rank}</p>
-        <p>How interested are you in giving personal advice (0 - 3): {mentor.personal_advice_rank}</p>
-        <p>Prefers mentee with same major (0 - 3): {mentor.share_major_rank}</p>
-        <p>Ideal instagram bio: {mentor.instagram_bio_text}</p>
-        <p>What's getting in the way of that bio: {mentor.instagram_bio_why_not_text}</p>
-        <p>Describe your personality: {mentor.personality_text}</p>
-        <p>Why do you want to be a mentor: {mentor.why_mentor_text}</p>
-        <p>Anything else you'd like to add: {mentor.extra_info_text}</p>
+        <p>Prefers mentee with same major (0 - 4): {mentor.share_major_rank}</p>
+        <p>Industry: {mentor.industry}</p>
+        <p>Prefers mentee with same industry (0 - 4): {mentor.share_industry_rank}</p>
+        <p>Job Description: {mentor.job_description}</p>
+        <p>Provide: {mentor.provide}</p>
+        <p>Unblock Methods: {mentor.unblock_methods}</p>
+        <p>Application Video URL: {mentor.video_URL}</p>
         <p>Mentees: {mentor.mentee_names}</p>
       </div>
     );

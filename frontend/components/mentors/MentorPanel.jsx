@@ -1,7 +1,16 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-class MentorApp extends React.Component {
+class MentorPanel extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    };
+  }
+
+  
+
   render() {
     return(
       <div>
@@ -16,4 +25,4 @@ class MentorApp extends React.Component {
   }
 }
 
-export default MentorApp;
+export default MentorPanel;

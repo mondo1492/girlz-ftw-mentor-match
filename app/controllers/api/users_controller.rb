@@ -49,7 +49,7 @@ class Api::UsersController < ApplicationController
             :admin, :age, :approved, :city, :college, :country,
             :created_at, :email, :employer, :facebook, :first_name,
             :industry, :id, :job_description, :last_name, :linkedin,
-            :major, :mentee_count, :mentee_names, :phone, :provide,
+            :major, :phone, :provide,
             :share_industry_rank, :share_major_rank, :status,
             :unblock_methods, :username, :video_URL
           )
@@ -61,7 +61,7 @@ class Api::UsersController < ApplicationController
             :age, :city, :college, :country, :created_at, :email,
             :employer, :facebook, :first_name, :industry, :id,
             :job_description, :last_name, :linkedin, :major,
-            :mentee_count, :mentee_names, :password, :phone, :provide,
+            :password, :phone, :provide,
             :share_industry_rank, :share_major_rank, :status,
             :unblock_methods, :username, :video_URL
           )
