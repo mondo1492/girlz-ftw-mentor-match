@@ -3,4 +3,4 @@ json.extract! user, :admin, :age, :approved, :city, :college, :country,
               :industry, :id, :job_description, :last_name, :linkedin,
               :major, :mentee_count, :mentee_names, :phone, :provide,
               :share_industry_rank, :share_major_rank, :status,
-              :unblock_methods, :username, :video_URL
+              :unblock_methods, :username, :video_URL, :mentees

@@ -39637,9 +39637,9 @@ var _Landing = __webpack_require__(504);
 
 var _Landing2 = _interopRequireDefault(_Landing);
 
-var _MentorPanel = __webpack_require__(507);
+var _MentorPanelContainer = __webpack_require__(561);
 
-var _MentorPanel2 = _interopRequireDefault(_MentorPanel);
+var _MentorPanelContainer2 = _interopRequireDefault(_MentorPanelContainer);
 
 var _MentorUpdate = __webpack_require__(508);
 
@@ -39682,7 +39682,7 @@ var App = function App() {
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _Landing2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/mentee_app', component: _MenteeAppContainer2.default }),
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/mentor_app', component: _MentorAppContainer2.default }),
-    _react2.default.createElement(_route_util.ProtectedRoute, { exact: true, path: '/mentor_panel', component: _MentorPanel2.default }),
+    _react2.default.createElement(_route_util.ProtectedRoute, { exact: true, path: '/mentor_panel', component: _MentorPanelContainer2.default }),
     _react2.default.createElement(_route_util.ProtectedRoute, { path: '/mentor_panel/update', component: _MentorUpdate2.default }),
     _react2.default.createElement(_route_util.AdminRoute, { exact: true, path: '/admin_panel', component: _admin_panel2.default }),
     _react2.default.createElement(_route_util.AdminRoute, { exact: true, path: '/current_mentors', component: _CurrentMentorsContainer2.default }),
@@ -54775,6 +54775,7 @@ var MentorPanel = function (_React$Component) {
   _createClass(MentorPanel, [{
     key: 'render',
     value: function render() {
+      console.log(this.props);
       return _react2.default.createElement(
         'div',
         null,
@@ -64229,6 +64230,38 @@ var Page8 = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Page8;
+
+/***/ }),
+/* 561 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(19);
+
+var _values = __webpack_require__(40);
+
+var _values2 = _interopRequireDefault(_values);
+
+var _MentorPanel = __webpack_require__(507);
+
+var _MentorPanel2 = _interopRequireDefault(_MentorPanel);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    mentees: (0, _values2.default)(state.session.currentUser.mentees),
+    currentUser: state.session.currentUser
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(_MentorPanel2.default);
 
 /***/ })
 /******/ ]);

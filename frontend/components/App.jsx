@@ -6,7 +6,7 @@ import AdminPanel from './admin_panel';
 import MenteeApp from './mentees/MenteeAppContainer';
 import MentorApp from './mentors/MentorAppContainer';
 import Landing from './Landing';
-import MentorPanel from './mentors/MentorPanel';
+import MentorPanel from './mentors/MentorPanelContainer';
 import MentorUpdate from './mentors/MentorUpdate';
 
 import CurrentMentees from './admin/CurrentMenteesContainer';

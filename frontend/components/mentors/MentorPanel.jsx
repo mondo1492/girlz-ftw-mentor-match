@@ -9,9 +9,8 @@ class MentorPanel extends React.Component {
     };
   }
 
-  
-
   render() {
+    console.log(this.props);
     return(
       <div>
         <h1>Mentor Panel</h1>
