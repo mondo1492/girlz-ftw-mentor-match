@@ -7,7 +7,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  createMentee: menteeInfo => dispatch(createMentee(menteeInfo))
+  createMentee: (menteeInfo) => dispatch(createMentee(menteeInfo))
 });
 
 export default connect(

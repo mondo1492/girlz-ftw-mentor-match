@@ -1,330 +1,191 @@
 import React from 'react';
 import merge from 'lodash/merge';
-import Dropzone from 'react-dropzone';
-import request from 'superagent';
+import { Col, Form, Button, Panel, FormControl, ControlLabel, FormGroup, ListGroup, ListGroupItem } from 'react-bootstrap';
+import FontAwesome from 'react-fontawesome';
 
-const CLOUDINARY_UPLOAD_PRESET = 'girlzftw';
-const CLOUDINARY_UPLOAD_URL = 'https://api.cloudinary.com/v1_1/girlzftw/upload';
+import Page1 from './appPages/page1';
+import Page2 from './appPages/page2';
+import Page3 from './appPages/page3';
+import Page4 from './appPages/page4';
+import Page5 from './appPages/page5';
+import Page6 from './appPages/page6';
+import Page7 from './appPages/page7';
+import Page8 from './appPages/page8';
+
 
 class MenteeApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      first_name: "",
-      last_name: "",
-      age: '',
-      city: '',
-      country: '',
-      phone: '',
-      facebook: '',
-      email: '',
-      high_school: '',
-      college: '',
-      employer: '',
-      major: '',
-      career_advice_rank: '',
-      personal_advice_rank: '',
-      motivation_rank: '',
-      instagram_bio_text: '',
-      instagram_bio_why_not_text: '',
-      share_major_rank: '',
-      personality_text: '',
-      night_text: '',
-      not_on_google_text: '',
-      how_impact_text: '',
-      no_discuss_text: '',
-      extra_info_text: '',
-      agree_terms: false,
-      agree_terms_bad_click: false,
-      uploadedFileCloudinaryUrl: ''
+      0: {},
+      1: {},
+      2: {
+        username: "RaviMenteetest",
+        password: "ravimenteepw",
+        first_name: "Ravi",
+        last_name: "Raval",
+        age: '27',
+        email: 'raviraval@gmail.com'
+      },
+      3: {
+        facebook: 'fab',
+        linkedin: 'link',
+        phone: '1234567890',
+        city: 'Belmont',
+        country: 'Albania',
+      },
+      4: {
+        college: 'stanvard',
+        major: '',
+        share_major_rank: '',
+        employer: 'googlebook',
+        industry: '',
+        share_industry_rank: '',
+        job_description: 'friggen sick',
+      },
+      5: {
+        unblock_methods: '',
+        provide: '',
+      },
+      6: {
+        video_URL: '',
+      },
+      agree_terms: true,
+      page: 0,
     };
-
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleMultiChange = this.handleMultiChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.handleBack = this.handleBack.bind(this);
+    this.handleNext = this.handleNext.bind(this);
   }
 
-  onImageDrop(files) {
-    this.setState({
-      uploadedFile: files[0]
-    });
-
-    this.handleImageUpload(files[0]);
+  handleMultiChange(value, name, pageNum = this.state.page) {
+    if (value.split("|").length === 4) return;
+    let nextState = merge({}, {[pageNum]: this.state[pageNum]}, {[pageNum]: {[name]: value}});
+    this.setState({ [pageNum]: nextState[pageNum] });
   }
 
-  handleImageUpload(file) {
-    let upload = request.post(CLOUDINARY_UPLOAD_URL)
-                        .field('upload_preset', CLOUDINARY_UPLOAD_PRESET)
-                        .field('file', file);
-
-    upload.end((err, response) => {
-      if (err) {
-        console.error(err);
-      }
-
-      if (response.body.secure_url !== '') {
-        this.setState({
-          uploadedFileCloudinaryUrl: response.body.secure_url
-        });
-      }
-    });
-  }
-
-  handleInputChange(event) {
+  handleInputChange(event, pageNum = this.state.page) {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-    let nextState = merge({}, {'page_0': this.state['page_0']}, {'page_0': {[name]: value}});
-    console.log(nextState);
-    console.log("");
+    let nextState = merge({}, {[pageNum]: this.state[pageNum]}, {[pageNum]: {[target.name]: value}});
     this.setState({
-      "page_0": nextState
+      [pageNum]: nextState[pageNum]
     });
   }
 
   handleFormSubmit(event) {
     event.preventDefault();
-    if (this.state.agree_terms) {
-      console.log("success");
-      this.props.createMentee(this.state).then(
-        () => this.props.history.push('/'));
-    } else {
-      this.setState({agree_terms_bad_click: true}, () => {
-        console.log('failure');
-      });
+
+    // flatten state
+    const flattenedState = {};
+    for (let i = 2; i < 7; i++) {
+      for (const key of Object.keys(this.state[i])) {
+        flattenedState[key] = this.state[i][key];
+      }
     }
+
+    this.props.createMentee(flattenedState).then(
+      () => this.setState({page: this.state.page + 1})
+    );
+  }
+
+  handleBack() {
+    this.setState({page: this.state.page - 1});
+  }
+
+  validate() {
+    let pass = true;
+    for (const key of Object.keys(this.state[this.state.page])) {
+      if (this.state[this.state.page][key] === '') {
+        pass = false;
+      }
+    }
+    return pass;
+  }
+
+  badNext() {
+
+  }
+
+  handleNext() {
+    // TODO: if user clicks next when greyed, flash error
+    this.validate(this.state.page);
+    this.setState({page: this.state.page + 1});
   }
 
   render() {
+    let page = (() => {
+      switch (this.state.page) {
+        case 0:
+          return <Page1 handleInputChange={this.handleInputChange} page={this.state[0]}/>
+        break;
+        case 1:
+          return <Page2 handleInputChange={this.handleInputChange} page={this.state[1]}/>
+        break;
+        case 2:
+          return <Page3 handleInputChange={this.handleInputChange} page={this.state[2]}/>
+          break;
+        case 3:
+          return <Page4 handleInputChange={this.handleInputChange} page={this.state[3]}/>
+          break;
+        case 4:
+          return <Page5
+            handleMultiChange={this.handleMultiChange} handleInputChange={this.handleInputChange} page={this.state[4]}/>
+          break;
+        case 5:
+          return <Page6
+            handleInputChange={this.handleInputChange}
+            handleMultiChange={this.handleMultiChange}
+            page={this.state[5]}/>
+          break;
+        case 6:
+          return <Page7 handleInputChange={this.handleInputChange} page={this.state[6]}/>
+          break;
+        case 7:
+          return <Page8 page={this.state[7]}/>
+          break;
+      }
+    })();
+    const nextButton = ( () => {
+      if (this.state.page === 7) {
+        return '';
+      } else if (this.state.page !== 6) {
+        if (this.validate()) {
+          return <Button onClick={this.handleNext} className="btn-next">Next</Button>
+        }
+        else {
+          return <Button disabled onClick={this.handleNext} className="btn-next">Next</Button>
+        }
+      } else {
+        return (
+          <Button
+             bsStyle="success"
+             disabled={ this.state['6'].video_URL === '' }
+             onClick={this.handleFormSubmit} type="button">
+              Apply
+          </Button>
+        );
+      }
+    })();
     return (
       <div>
-        <div className="parental_form_disclaimer">
-          <p>***Before Filling Out Application, make sure to {}
-          {<a href="http://res.cloudinary.com/dluh2fsyd/image/upload/v1502571356/sandwhich_f7gbm3.png" download="Sushi">download</a>}
-          {} the parental form and have it signed by your parent/s (if you are under 18 years of age).
-          You will need to upload this document in order to submit your application.
-          </p>
-        </div>
-
-      <form onSubmit={this.handleFormSubmit}>
-        <label>
-          <p className="asterix">*</p>First Name:
-          <input
-            name="first_name"
-            type="text"
-            onChange={this.handleInputChange} />
-        </label>
-        <br/>
-        <label>
-          <p className="asterix">*</p>Last Name:
-          <input
-            name="last_name"
-            type="text"
-            onChange={this.handleInputChange} />
-        </label>
-        <br/>
-        <label>
-          <p className="asterix">*</p>Age:
-          <input
-            name="age"
-            type="number"
-            value={this.state.age}
-            onChange={this.handleInputChange} />
-        </label>
-        <br/>
-        <label>
-          <p className="asterix">*</p>Email:
-          <input
-            name="email"
-            type="email"
-            value={this.state.email}
-            onChange={this.handleInputChange} />
-        </label>
-        <br/>
-        <label>
-          <p className="asterix">*</p>City:
-          <input
-            name="city"
-            type="text"
-            value={this.state.city}
-            onChange={this.handleInputChange} />
-        </label>
-        <br/>
-        <label>
-          <p className="asterix">*</p>Country:
-          <input
-            name="country"
-            type="text"
-            value={this.state.country}
-            onChange={this.handleInputChange} />
-        </label>
-        <br/>
-        <label>
-          <p className="asterix">*</p>Facebook:
-          <input
-            name="facebook"
-            type="text"
-            value={this.state.facebook}
-            onChange={this.handleInputChange} />
-        </label>
-        <br/>
-        <label>
-          Phone:
-          <input
-            name="phone"
-            type="text"
-            value={this.state.phone}
-            onChange={this.handleInputChange} />
-        </label>
-        <br/>
-        <label>
-          High School:
-          <input
-            name="high_school"
-            type="text"
-            value={this.state.high_school}
-            onChange={this.handleInputChange} />
-        </label>
-        <br/>
-        <label>
-          College:
-          <input
-            name="college"
-            type="text"
-            value={this.state.college}
-            onChange={this.handleInputChange} />
-        </label>
-        <br/>
-        <label>
-          What is your major, or if not applicable, what do you intend to study?
-          <input
-            name="major"
-            type="text"
-            value={this.state.major}
-            onChange={this.handleInputChange} />
-        </label>
-        <br/>
-        <label>
-          Employer:
-          <input
-            name="employer"
-            type="text"
-            value={this.state.employer}
-            onChange={this.handleInputChange} />
-        </label>
-        <br/>
-        <label>
-          <p className="asterix">*</p>How interested are you in career advice?
-          <select name="career_advice_rank" value={this.state.career_advice_rank} onChange={this.handleInputChange}>
-            <option value="0">Not at all</option>
-            <option value="1">Slightly</option>
-            <option value="2">Moderately</option>
-            <option value="3">Extremely</option>
-          </select>
-        </label>
-        <br/>
-        <label>
-          <p className="asterix">*</p>How interested are you in personal advice?
-          <select name="personal_advice_rank" value={this.state.personal_advice_rank} onChange={this.handleInputChange}>
-            <option value="0">Not at all</option>
-            <option value="1">Slightly</option>
-            <option value="2">Moderately</option>
-            <option value="3">Extremely</option>
-          </select>
-        </label>
-        <br/>
-        <label>
-          <p className="asterix">*</p>How interested are you in finding motivation and inspiration from your mentor?
-          <select name="motivation_rank" value={this.state.motivation_rank} onChange={this.handleInputChange}>
-            <option value="0">Not at all</option>
-            <option value="1">Slightly</option>
-            <option value="2">Moderately</option>
-            <option value="3">Extremely</option>
-          </select>
-        </label>
-        <br/>
-        <label>
-          Would you prefer a mentor who had your major, or desired major?
-          <select name="share_major_rank" value={this.state.share_major_rank} onChange={this.handleInputChange}>
-            <option value="0">Not at all</option>
-            <option value="1">Slightly</option>
-            <option value="2">Moderately</option>
-            <option value="3">Extremely</option>
-          </select>
-        </label>
-        <br/>
-        <label>
-          Write the Instagram bio you wish you had.
-          <textarea name="instagram_bio_text" value={this.state.instagram_bio_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-        </label>
-        <br/>
-        <label>
-          What's getting in the way of you having that dream Instagram bio?
-          <textarea name="instagram_bio_why_not_text" value={this.state.instagram_bio_why_not_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-        </label>
-        <br/>
-        <label>
-          Describe your personality:
-          <textarea name="personality_text" value={this.state.personality_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-        </label>
-        <br/>
-        <label>
-          What keeps you up at night?
-          <textarea name="night_text" value={this.state.night_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-        </label>
-        <br/>
-        <label>
-          What's one thing about you that we can't Google?
-          <textarea name="not_on_google_text" value={this.state.not_on_google_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-        </label>
-        <br/>
-        <label>
-          How do you aspire to make a positive impact on others?
-          <textarea name="how_impact_text" value={this.state.how_impact_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-        </label>
-        <br/>
-        <label>
-          Are there any topics you would not feel comfortable discussing with your mentor?
-          <textarea name="no_discuss_text" value={this.state.no_discuss_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-        </label>
-        <br/>
-        <label>
-          Is there anything else you'd like to add?
-          <textarea name="extra_info_text" value={this.state.extra_info_text} onChange={this.handleInputChange} rows="10" cols="30"></textarea>
-        </label>
-        <br/>
-        All mentees have certain requirements that Nicol will tell us later.
-        <br/>
-        <div className="FileUpload">
-          {this.state.uploadedFileCloudinaryUrl === '' ?
-            <Dropzone
-              multiple={false}
-              accept="image/*"
-              onDrop={this.onImageDrop.bind(this)}>
-              <p>Drop an image or click to select a file to upload.</p>
-            </Dropzone>
-            :
-            <div>
-              <p>Parental Form Snapshot</p>
-              <img src={this.state.uploadedFileCloudinaryUrl} />
-            </div>
-          }
-        </div>
-        <label style={{color: this.state.agree_terms_bad_click ? 'red' : 'black'}}>
-          I have read and agree to these requirements.
-          <input
-            name="agree_terms"
-            type="checkbox"
-            value={this.state.agree_terms}
-            onChange={this.handleInputChange} />
-        </label>
-
-        <button type="submit">Apply</button>
-      </form>
-
         <div>
-
+          <Form horizontal className={`centerForm, formBackground`}>
+            {page}
+            <div className='centerButton'>
+              { this.state.page === 0 || this.state.page === 7 ? '' :
+                <Button onClick={this.handleBack} className="btn-back">
+                  Back
+                </Button>
+              }
+              <div className='padder'></div>
+              { nextButton }
+            </div>
+          </Form>
+        </div>
       </div>
-    </div>
     );
   }
 }
