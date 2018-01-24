@@ -16,10 +16,8 @@ class Page6 extends React.Component {
             <Col sm={2}></Col>
             <Col componentClass={ControlLabel} sm={8}>
               <h4 className='centerText formFontStyle2'>
-                We all get in the way of our own success.
-                Which of the following methods do you think you’ve managed
-                to get under control in order to unblock your road to success?
-                (Select the top 3)
+                What's getting in the way of you having that dream bio?
+                (Select up to 3)
               </h4>
             </Col>
           </FormGroup>
@@ -27,9 +25,9 @@ class Page6 extends React.Component {
             <Col sm={2}></Col>
             <Col sm={8}>
               <Select
-                name="unblock_methods"
-                value={this.props.page.unblock_methods}
-                onChange={(value) => this.props.handleMultiChange(value, 'unblock_methods')}
+                name="instagram_bio_why_not_text"
+                value={this.props.page.instagram_bio_why_not_text}
+                onChange={(value) => this.props.handleMultiChange(value, 'instagram_bio_why_not_text')}
                 multi
                 delimiter="|"
                 simpleValue
@@ -51,8 +49,8 @@ class Page6 extends React.Component {
             <Col sm={2}></Col>
             <Col componentClass={ControlLabel} sm={8}>
               <h4 className='centerText formFontStyle2'>
-                What are you most excited to provide be for your mentee?
-                (Select the top 3)
+                What are you most excited to get from a mentor?
+                (Select up to 3)
               </h4>
 
             </Col>

@@ -54650,7 +54650,7 @@ var Page1 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { className: 'centerText formFontStyle', sm: 8 },
-            'Hello! Thank you for your interest in the GIRLZ, FTW mentorship program. We\u2019re thrilled to read your application. Before you fill out our form, we\u2019d like to let you in on a little secret. We\u2019re not a regular mentorship program. We\u2019re a community of girlz that are passionate about elevating and celebrating female voices around the world. We don\u2019t expect our mentors to be THAT girl\u2026 you know, the one that always had her shit together and still always managed to blow dry her hair before school / work. We\u2019re looking for real, passionate, #girlbosses that don\u2019t pretend to be perfect, can hustle their way to their dreams, AND still manage to uplift others along the way.'
+            'Hello! Thank you for your interest in the GIRLZ, FTW mentorship program. We\u2019re thrilled to read your application. Before you fill out our form, we\u2019d like to let you in on a little secret. We\u2019re not a regular mentorship program. We\u2019re a community of girlz who are passionate about elevating and celebrating female voices around the world. We don\u2019t expect our mentors to be THAT girl\u2026 you know, the one that always had her shit together and still always managed to blow dry her hair before school / work. We\u2019re looking for real, passionate, #girlbosses that don\u2019t pretend to be perfect, can hustle their way to their dreams, AND still manage to uplift others along the way.'
           )
         )
       );
@@ -61413,7 +61413,7 @@ var Page1 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { className: 'centerText formFontStyle', sm: 8 },
-            'Hello! Thank you for your interest in the GIRLZ, FTW mentorship program. We\u2019re thrilled to read your application. Before you fill out our form, we\u2019d like to let you in on a little secret. We\u2019re not a regular mentorship program. We\u2019re a community of girlz that are passionate about elevating and celebrating female voices around the world. We don\u2019t expect our mentors to be THAT girl\u2026 you know, the one that always had her shit together and still always managed to blow dry her hair before school / work. We\u2019re looking for real, passionate, #girlbosses that don\u2019t pretend to be perfect, can hustle their way to their dreams, AND still manage to uplift others along the way.'
+            'Hello! Thank you for your interest in the GIRLZ, FTW mentorship program. We\u2019re thrilled to read your application. Before you fill out our form, we\u2019d like to let you in on a little secret. We\u2019re not a regular mentorship program. We\u2019re a community of girlz who are passionate about elevating and celebrating female voices around the world. In this program, you won\u2019t be paired with THAT girl\u2026 you know, the one that always had her shit together and still always managed to blow dry her hair before school / work. The mentors in our program are real, passionate, #girlbosses that don\u2019t pretend to be perfect, can hustle their way to their dreams, and still manage to uplift others along the way.'
           )
         )
       );
@@ -61491,7 +61491,7 @@ var Page2 = function (_React$Component) {
             _react2.default.createElement(
               _reactBootstrap.Col,
               { className: 'centerText formFontStyle', sm: 8 },
-              '-  All of our communication once you join the program happens on Facebook.'
+              '-  All of our communication once you join the program happens on Facebook. If you\u2019re accepted as a mentee, you will be added to a Facebook group. This group will be the place where you can connect with other mentors and mentees in the program. We\u2019ll use this group to provide support, encouragement, and advice for each other. You must have a Facebook profile if you want to be a part of this program.'
             )
           ),
           _react2.default.createElement(
@@ -61501,7 +61501,17 @@ var Page2 = function (_React$Component) {
             _react2.default.createElement(
               _reactBootstrap.Col,
               { className: 'centerText formFontStyle', sm: 8 },
-              '-   You must be able to free up the first Saturday of every month and commit at least 4 hours a month for 6 months.'
+              '-   Every month, we\u2019ll host a call with all mentors and mentees. These calls take place on the first saturday of every month. In these calls, we\u2019ll have inspiring women talk to about how they got to where they are today. Each call will be structured differently but is meant to inspire, inform, and mobilize everyone on the call. Attending these calls is mandatory. You can only miss up to 2 calls (with advanced notice).'
+            )
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Row,
+            null,
+            _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
+            _react2.default.createElement(
+              _reactBootstrap.Col,
+              { className: 'centerText formFontStyle', sm: 8 },
+              '-   You must be willing to commit at least 4 hours a month for 6 months. Sessions with your mentor should last 1 hour every other week. We\u2019ll also ask that you write 1 blog post a month about what you\u2019ve learned from your mentor and/or what you\u2019re working on. Lastly, you must allot 1 hour for the monthly virtual chats.'
             )
           )
         )
@@ -61566,49 +61576,7 @@ var Page3 = function (_React$Component) {
         _react2.default.createElement(
           'h3',
           { className: 'centerForm pageCaption' },
-          ' Help us connect you with your ideal mentee.'
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'Username*'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 8 },
-            _react2.default.createElement(_reactBootstrap.FormControl, {
-              id: 'formControlsUsername',
-              type: 'text',
-              name: 'username',
-              value: this.props.page.username,
-              placeholder: '',
-              onChange: this.props.handleInputChange
-            })
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'Password*'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 8 },
-            _react2.default.createElement(_reactBootstrap.FormControl, {
-              id: 'formControlsPassword',
-              type: 'password',
-              name: 'password',
-              value: this.props.page.password,
-              placeholder: '',
-              onChange: this.props.handleInputChange
-            })
-          )
+          ' Help us connect you with your ideal mentor.'
         ),
         _react2.default.createElement(
           _reactBootstrap.FormGroup,
@@ -61794,35 +61762,6 @@ var Page4 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'LinkedIn *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 8 },
-            _react2.default.createElement(
-              _reactBootstrap.InputGroup,
-              null,
-              _react2.default.createElement(
-                _reactBootstrap.InputGroup.Addon,
-                null,
-                _react2.default.createElement(_reactFontawesome2.default, { name: 'linkedin' })
-              ),
-              _react2.default.createElement(_reactBootstrap.FormControl, {
-                id: 'formControlsLinkedIn',
-                type: 'text',
-                name: 'linkedin',
-                value: this.props.page.linkedin,
-                onChange: this.props.handleInputChange
-              })
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
             'Phone *'
           ),
           _react2.default.createElement(
@@ -61962,7 +61901,36 @@ var Page5 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'College *'
+            'High School *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 8 },
+            _react2.default.createElement(
+              _reactBootstrap.InputGroup,
+              null,
+              _react2.default.createElement(
+                _reactBootstrap.InputGroup.Addon,
+                null,
+                _react2.default.createElement(_reactFontawesome2.default, { name: 'graduation-cap' })
+              ),
+              _react2.default.createElement(_reactBootstrap.FormControl, {
+                id: 'formControlsHighSchool',
+                type: 'text',
+                name: 'high_school',
+                value: this.props.page.high_school,
+                onChange: this.props.handleInputChange
+              })
+            )
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
+            'College (if applicable)'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
@@ -61991,7 +61959,7 @@ var Page5 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'What was your college major? *'
+            'What is/might be your college major? *'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
@@ -62016,36 +61984,7 @@ var Page5 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'Employer *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 8 },
-            _react2.default.createElement(
-              _reactBootstrap.InputGroup,
-              null,
-              _react2.default.createElement(
-                _reactBootstrap.InputGroup.Addon,
-                null,
-                _react2.default.createElement(_reactFontawesome2.default, { name: 'handshake-o' })
-              ),
-              _react2.default.createElement(_reactBootstrap.FormControl, {
-                id: 'formControlsEmployer',
-                type: 'text',
-                name: 'employer',
-                value: this.props.page.employer,
-                onChange: this.props.handleInputChange
-              })
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'In which industry do you work? *'
+            'In which industry do you want to work? *'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
@@ -62070,7 +62009,7 @@ var Page5 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { className: 'centerForm formFontStyle2', componentClass: _reactBootstrap.ControlLabel, sm: 12 },
-            'How important is it to you that a mentee share your major? *'
+            'How important is it to you that a mentor share your (desired) college major? *'
           )
         ),
         _react2.default.createElement(
@@ -62146,7 +62085,7 @@ var Page5 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { className: 'centerForm formFontStyle2', componentClass: _reactBootstrap.ControlLabel, sm: 12 },
-            'How important is it to you that a mentee would want to join your industry? *'
+            'How important is it to you that a mentor be employed in your desired industry? *'
           )
         ),
         _react2.default.createElement(
@@ -62218,12 +62157,12 @@ var Page5 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'Describe your job.'
+            'Write the Instagram bio you wish you had.'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
             { sm: 8 },
-            _react2.default.createElement('textarea', (_React$createElement = { style: { height: 100 }, id: 'formControlsTextarea', value: this.props.page.job_description, className: 'form-control' }, _defineProperty(_React$createElement, 'id', 'job_description'), _defineProperty(_React$createElement, 'name', 'job_description'), _defineProperty(_React$createElement, 'onChange', this.props.handleInputChange), _React$createElement))
+            _react2.default.createElement('textarea', (_React$createElement = { style: { height: 100 }, id: 'formControlsTextarea', value: this.props.page.instagram_bio_text, className: 'form-control' }, _defineProperty(_React$createElement, 'id', 'instagram_bio_text'), _defineProperty(_React$createElement, 'name', 'instagram_bio_text'), _defineProperty(_React$createElement, 'onChange', this.props.handleInputChange), _React$createElement))
           )
         )
       );
@@ -62297,7 +62236,7 @@ var Page6 = function (_React$Component) {
             _react2.default.createElement(
               'h4',
               { className: 'centerText formFontStyle2' },
-              'We all get in the way of our own success. Which of the following methods do you think you\u2019ve managed to get under control in order to unblock your road to success? (Select the top 3)'
+              'What\'s getting in the way of you having that dream bio? (Select up to 3)'
             )
           )
         ),
@@ -62309,10 +62248,10 @@ var Page6 = function (_React$Component) {
             _reactBootstrap.Col,
             { sm: 8 },
             _react2.default.createElement(_reactSelect2.default, {
-              name: 'unblock_methods',
-              value: this.props.page.unblock_methods,
+              name: 'instagram_bio_why_not_text',
+              value: this.props.page.instagram_bio_why_not_text,
               onChange: function onChange(value) {
-                return _this2.props.handleMultiChange(value, 'unblock_methods');
+                return _this2.props.handleMultiChange(value, 'instagram_bio_why_not_text');
               },
               multi: true,
               delimiter: '|',
@@ -62332,7 +62271,7 @@ var Page6 = function (_React$Component) {
             _react2.default.createElement(
               'h4',
               { className: 'centerText formFontStyle2' },
-              'What are you most excited to provide be for your mentee? (Select the top 3)'
+              'What are you most excited to get from a mentor? (Select up to 3)'
             )
           )
         ),
@@ -62429,7 +62368,7 @@ var Page7 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { className: 'centerText formFontStyle', sm: 8 },
-            '1. Share a little bit about yourself and your passions.'
+            '1. What keeps you up at night?'
           )
         ),
         _react2.default.createElement(
@@ -62439,7 +62378,7 @@ var Page7 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { className: 'centerText formFontStyle', sm: 8 },
-            '2. Why do you want to be a GIRLZ, FTW mentor?'
+            '2. Why do you think girls should support each other?'
           )
         ),
         _react2.default.createElement(
@@ -62449,7 +62388,7 @@ var Page7 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { className: 'centerText formFontStyle', sm: 8 },
-            '3. How do you support others?'
+            '3. What impact do you want to have in the world?'
           )
         ),
         _react2.default.createElement(

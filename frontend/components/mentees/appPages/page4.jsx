@@ -34,25 +34,6 @@ class Page4 extends React.Component {
 
           <FormGroup>
             <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
-              LinkedIn *
-            </Col>
-            <Col sm={8}>
-              <InputGroup>
-                <InputGroup.Addon>
-                  <FontAwesome name='linkedin'/>
-                </InputGroup.Addon>
-                <FormControl
-                  id="formControlsLinkedIn"
-                  type="text"
-                  name="linkedin"
-                  value={this.props.page.linkedin}
-                  onChange={this.props.handleInputChange}
-                  />
-              </InputGroup>
-            </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
               Phone *
             </Col>
             <Col sm={8}>

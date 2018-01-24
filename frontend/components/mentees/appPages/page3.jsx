@@ -11,38 +11,7 @@ class Page3 extends React.Component {
     render() {
       return(
         <div>
-          <h3 className='centerForm pageCaption'> Help us connect you with your ideal mentee.</h3>
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
-              Username*
-            </Col>
-            <Col sm={8}>
-              <FormControl
-                id="formControlsUsername"
-                type="text"
-                name="username"
-                value={this.props.page.username}
-                placeholder=""
-                onChange={this.props.handleInputChange}
-                />
-            </Col>
-          </FormGroup>
-
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
-                Password*
-            </Col>
-            <Col sm={8}>
-              <FormControl
-                id="formControlsPassword"
-                type="password"
-                name="password"
-                value={this.props.page.password}
-                placeholder=""
-                onChange={this.props.handleInputChange}
-                />
-            </Col>
-          </FormGroup>
+          <h3 className='centerForm pageCaption'> Help us connect you with your ideal mentor.</h3>
 
           <FormGroup>
             <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>

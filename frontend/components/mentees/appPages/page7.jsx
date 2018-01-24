@@ -21,19 +21,19 @@ class Page7 extends React.Component {
         <Row className="videoListItem">
           <Col sm={2}></Col>
           <Col className='centerText formFontStyle' sm={8}>
-            1. Share a little bit about yourself and your passions.
+            1. What keeps you up at night?
           </Col>
         </Row>
         <Row className="videoListItem">
           <Col sm={2}></Col>
           <Col className='centerText formFontStyle' sm={8}>
-            2. Why do you want to be a GIRLZ, FTW mentor?
+            2. Why do you think girls should support each other?
           </Col>
         </Row>
         <Row className="videoListItem">
           <Col sm={2}></Col>
           <Col className='centerText formFontStyle' sm={8}>
-            3. How do you support others?
+            3. What impact do you want to have in the world?
           </Col>
         </Row>
         <Row className="inputRow">

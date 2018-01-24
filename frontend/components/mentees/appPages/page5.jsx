@@ -15,7 +15,26 @@ class Page5 extends React.Component {
           <h3 className='centerForm pageCaption'>Some background questions</h3>
           <FormGroup>
             <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
-              College *
+              High School *
+            </Col>
+            <Col sm={8}>
+              <InputGroup>
+                <InputGroup.Addon>
+                  <FontAwesome name='graduation-cap'/>
+                </InputGroup.Addon>
+                <FormControl
+                  id="formControlsHighSchool"
+                  type="text"
+                  name="high_school"
+                  value={this.props.page.high_school}
+                  onChange={this.props.handleInputChange}
+                  />
+              </InputGroup>
+            </Col>
+          </FormGroup>
+          <FormGroup>
+            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
+              College (if applicable)
             </Col>
             <Col sm={8}>
               <InputGroup>
@@ -35,7 +54,7 @@ class Page5 extends React.Component {
 
           <FormGroup>
           <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
-            What was your college major? *
+            What is/might be your college major? *
           </Col>
           <Col sm={8}>
             <Select
@@ -58,29 +77,9 @@ class Page5 extends React.Component {
           </Col>
         </FormGroup>
 
-          <FormGroup>
-            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
-              Employer *
-            </Col>
-            <Col sm={8}>
-              <InputGroup>
-                <InputGroup.Addon>
-                  <FontAwesome name='handshake-o'/>
-                </InputGroup.Addon>
-                <FormControl
-                  id="formControlsEmployer"
-                  type="text"
-                  name="employer"
-                  value={this.props.page.employer}
-                  onChange={this.props.handleInputChange}
-                  />
-              </InputGroup>
-            </Col>
-          </FormGroup>
-
         <FormGroup>
           <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
-            In which industry do you work? *
+            In which industry do you want to work? *
           </Col>
           <Col sm={8}>
             <Select
@@ -109,7 +108,7 @@ class Page5 extends React.Component {
 
         <FormGroup >
           <Col className='centerForm formFontStyle2' componentClass={ControlLabel} sm={12}>
-            How important is it to you that a mentee share your major? *
+            How important is it to you that a mentor share your (desired) college major? *
           </Col>
         </FormGroup>
 
@@ -167,7 +166,7 @@ class Page5 extends React.Component {
 
         <FormGroup >
           <Col className='centerForm formFontStyle2' componentClass={ControlLabel} sm={12}>
-              How important is it to you that a mentee would want to join your industry? *
+              How important is it to you that a mentor be employed in your desired industry? *
           </Col>
         </FormGroup>
 
@@ -223,10 +222,10 @@ class Page5 extends React.Component {
 
           <FormGroup>
             <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
-              Describe your job.
+              Write the Instagram bio you wish you had.
             </Col>
             <Col sm={8}>
-                <textarea style={{ height: 100 }} id='formControlsTextarea' value={this.props.page.job_description} className="form-control" id="job_description" name="job_description" onChange={this.props.handleInputChange}/>
+                <textarea style={{ height: 100 }} id='formControlsTextarea' value={this.props.page.instagram_bio_text} className="form-control" id="instagram_bio_text" name="instagram_bio_text" onChange={this.props.handleInputChange}/>
             </Col>
           </FormGroup>
 
