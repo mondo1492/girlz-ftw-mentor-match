@@ -25227,3 +25227,6 @@ must allot 1 hour for the monthly virtual chats.
 Completed 200 OK in 1662ms (Views: 7.8ms | ActiveRecord: 2.7ms)
 
 
+  [1m[36mMentee Load (0.7ms)[0m  [1m[34mSELECT  "mentees".* FROM "mentees" ORDER BY "mentees"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mMentee Load (0.6ms)[0m  [1m[34mSELECT  "mentees".* FROM "mentees" ORDER BY "mentees"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35mSQL (2.5ms)[0m  [1m[31mDELETE FROM "mentees" WHERE "mentees"."id" = $1[0m  [["id", 18]]
