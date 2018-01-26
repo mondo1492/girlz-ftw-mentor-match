@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180119011359) do
+ActiveRecord::Schema.define(version: 20180126064634) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,26 +28,17 @@ ActiveRecord::Schema.define(version: 20180119011359) do
     t.string "phone"
     t.string "facebook", null: false
     t.string "email", null: false
-    t.string "high_school"
     t.string "college"
     t.string "major"
-    t.string "employer"
-    t.integer "career_advice_rank", null: false
-    t.integer "personal_advice_rank", null: false
-    t.integer "motivation_rank", null: false
     t.text "instagram_bio_text"
     t.text "instagram_bio_why_not_text"
     t.integer "share_major_rank"
-    t.text "personality_text"
-    t.text "night_text"
-    t.text "not_on_google_text"
-    t.text "how_impact_text"
-    t.text "no_discuss_text"
-    t.text "extra_info_text"
     t.integer "user_id"
     t.integer "tier"
-    t.string "youtube_url"
-    t.string "headshot_url"
+    t.text "industry"
+    t.integer "share_industry_rank"
+    t.text "provide"
+    t.text "video_URL"
   end
 
   create_table "users", force: :cascade do |t|

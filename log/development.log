@@ -24318,3 +24318,435 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 485ms (Views: 479.7ms | ActiveRecord: 1.7ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-01-25 22:36:19 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NBPpdWFr4ImcWlYyqlFqsQ"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered api/users/_user.json.jbuilder (3.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 516ms (Views: 512.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-25 22:36:20 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NBPpdWFr4ImcWlYyqlFqsQ"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered api/users/_user.json.jbuilder (4.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 41ms (Views: 36.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-25 22:36:20 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+Started GET "/" for 127.0.0.1 at 2018-01-25 22:36:20 -0800
+Processing by StaticPagesController#root as HTML
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NBPpdWFr4ImcWlYyqlFqsQ"], ["LIMIT", 1]]
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mMentee Load (1.2ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered api/users/_user.json.jbuilder (6.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 50ms (Views: 43.0ms | ActiveRecord: 5.4ms)
+
+
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NBPpdWFr4ImcWlYyqlFqsQ"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered api/users/_user.json.jbuilder (3.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (55.2ms)
+Completed 200 OK in 82ms (Views: 56.3ms | ActiveRecord: 23.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-25 22:36:21 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NBPpdWFr4ImcWlYyqlFqsQ"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mMentee Load (0.8ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered api/users/_user.json.jbuilder (6.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 47ms (Views: 43.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-25 22:36:21 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NBPpdWFr4ImcWlYyqlFqsQ"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mMentee Load (0.6ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered api/users/_user.json.jbuilder (4.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 38ms (Views: 34.1ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/api/mentees" for 127.0.0.1 at 2018-01-25 22:36:43 -0800
+Processing by Api::MenteesController#create as JSON
+  Parameters: {"mentee"=>{"first_name"=>"Ravi", "last_name"=>"Raval", "age"=>"27", "email"=>"raviraval@gmail.com", "facebook"=>"fab", "phone"=>"1234567890", "city"=>"Belmont", "country"=>"Albania", "high_school"=>"sdfg", "college"=>"stanvard", "major"=>"Engineering", "share_major_rank"=>"2", "industry"=>"Accounting, Legal", "share_industry_rank"=>"4", "instagram_bio_text"=>"asdf", "instagram_bio_why_not_text"=>"Controlling life, people", "provide"=>"Sounding Board", "video_URL"=>"asdf"}}
+Unpermitted parameters: :industry, :share_industry_rank, :provide, :video_URL
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "mentees" ("created_at", "updated_at", "age", "city", "country", "first_name", "last_name", "phone", "facebook", "email", "high_school", "college", "major", "instagram_bio_text", "instagram_bio_why_not_text", "share_major_rank") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16) RETURNING "id"[0m  [["created_at", "2018-01-26 06:36:43.827064"], ["updated_at", "2018-01-26 06:36:43.827064"], ["age", 27], ["city", "Belmont"], ["country", "Albania"], ["first_name", "Ravi"], ["last_name", "Raval"], ["phone", "1234567890"], ["facebook", "fab"], ["email", "raviraval@gmail.com"], ["high_school", "sdfg"], ["college", "stanvard"], ["major", "Engineering"], ["instagram_bio_text", "asdf"], ["instagram_bio_why_not_text", "Controlling life, people"], ["share_major_rank", 2]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.5ms)
+
+
+
+PG::NotNullViolation - ERROR:  null value in column "career_advice_rank" violates not-null constraint
+DETAIL:  Failing row contains (16, 2018-01-26 06:36:43.827064, 2018-01-26 06:36:43.827064, f, f, 27, Belmont, Albania, Ravi, Raval, 1234567890, fab, raviraval@gmail.com, sdfg, stanvard, Engineering, null, null, null, null, asdf, Controlling life, people, 2, null, null, null, null, null, null, null, null, null, null).
+:
+  activerecord (5.1.4) lib/active_record/connection_adapters/postgresql_adapter.rb:614:in `block (2 levels) in exec_no_cache'
+  activesupport (5.1.4) lib/active_support/dependencies/interlock.rb:46:in `block in permit_concurrent_loads'
+  activesupport (5.1.4) lib/active_support/concurrency/share_lock.rb:185:in `yield_shares'
+  activesupport (5.1.4) lib/active_support/dependencies/interlock.rb:45:in `permit_concurrent_loads'
+  activerecord (5.1.4) lib/active_record/connection_adapters/postgresql_adapter.rb:613:in `block in exec_no_cache'
+  activerecord (5.1.4) lib/active_record/connection_adapters/abstract_adapter.rb:612:in `block (2 levels) in log'
+  /Users/Ravi/.rbenv/versions/2.3.1/lib/ruby/2.3.0/monitor.rb:214:in `mon_synchronize'
+  activerecord (5.1.4) lib/active_record/connection_adapters/abstract_adapter.rb:611:in `block in log'
+  activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activerecord (5.1.4) lib/active_record/connection_adapters/abstract_adapter.rb:603:in `log'
+  activerecord (5.1.4) lib/active_record/connection_adapters/postgresql_adapter.rb:612:in `exec_no_cache'
+  activerecord (5.1.4) lib/active_record/connection_adapters/postgresql_adapter.rb:601:in `execute_and_clear'
+  activerecord (5.1.4) lib/active_record/connection_adapters/postgresql/database_statements.rb:79:in `exec_query'
+  activerecord (5.1.4) lib/active_record/connection_adapters/abstract/database_statements.rb:102:in `exec_insert'
+  activerecord (5.1.4) lib/active_record/connection_adapters/postgresql/database_statements.rb:113:in `exec_insert'
+  activerecord (5.1.4) lib/active_record/connection_adapters/abstract/database_statements.rb:133:in `insert'
+  activerecord (5.1.4) lib/active_record/connection_adapters/abstract/query_cache.rb:17:in `insert'
+  activerecord (5.1.4) lib/active_record/relation.rb:61:in `insert'
+  activerecord (5.1.4) lib/active_record/persistence.rb:589:in `_create_record'
+  activerecord (5.1.4) lib/active_record/counter_cache.rb:178:in `_create_record'
+  activerecord (5.1.4) lib/active_record/locking/optimistic.rb:76:in `_create_record'
+  activerecord (5.1.4) lib/active_record/attribute_methods/dirty.rb:296:in `_create_record'
+  activerecord (5.1.4) lib/active_record/callbacks.rb:340:in `block in _create_record'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:827:in `_run_create_callbacks'
+  activerecord (5.1.4) lib/active_record/callbacks.rb:340:in `_create_record'
+  activerecord (5.1.4) lib/active_record/timestamp.rb:95:in `_create_record'
+  activerecord (5.1.4) lib/active_record/persistence.rb:563:in `create_or_update'
+  activerecord (5.1.4) lib/active_record/callbacks.rb:336:in `block in create_or_update'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:827:in `_run_save_callbacks'
+  activerecord (5.1.4) lib/active_record/callbacks.rb:336:in `create_or_update'
+  activerecord (5.1.4) lib/active_record/persistence.rb:129:in `save'
+  activerecord (5.1.4) lib/active_record/validations.rb:44:in `save'
+  activerecord (5.1.4) lib/active_record/attribute_methods/dirty.rb:35:in `save'
+  activerecord (5.1.4) lib/active_record/transactions.rb:308:in `block (2 levels) in save'
+  activerecord (5.1.4) lib/active_record/transactions.rb:384:in `block in with_transaction_returning_status'
+  activerecord (5.1.4) lib/active_record/connection_adapters/abstract/database_statements.rb:235:in `block in transaction'
+  activerecord (5.1.4) lib/active_record/connection_adapters/abstract/transaction.rb:194:in `block in within_new_transaction'
+  /Users/Ravi/.rbenv/versions/2.3.1/lib/ruby/2.3.0/monitor.rb:214:in `mon_synchronize'
+  activerecord (5.1.4) lib/active_record/connection_adapters/abstract/transaction.rb:191:in `within_new_transaction'
+  activerecord (5.1.4) lib/active_record/connection_adapters/abstract/database_statements.rb:235:in `transaction'
+  activerecord (5.1.4) lib/active_record/transactions.rb:210:in `transaction'
+  activerecord (5.1.4) lib/active_record/transactions.rb:381:in `with_transaction_returning_status'
+  activerecord (5.1.4) lib/active_record/transactions.rb:308:in `block in save'
+  activerecord (5.1.4) lib/active_record/transactions.rb:323:in `rollback_active_record_state!'
+  activerecord (5.1.4) lib/active_record/transactions.rb:307:in `save'
+  activerecord (5.1.4) lib/active_record/suppressor.rb:42:in `save'
+  app/controllers/api/mentees_controller.rb:8:in `create'
+  actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+  activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+  actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+  actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.4) lib/rails/engine.rb:522:in `call'
+  puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+  puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+  puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+  puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+  puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started GET "/api/mentees" for 127.0.0.1 at 2018-01-25 22:37:58 -0800
+Processing by Api::MenteesController#index as JSON
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NBPpdWFr4ImcWlYyqlFqsQ"], ["LIMIT", 1]]
+  Rendering api/mentees/index.json.jbuilder
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees"[0m
+  Rendered api/mentees/_mentee.json.jbuilder (0.6ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendered api/mentees/_mentee.json.jbuilder (4.7ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered api/mentees/_mentee.json.jbuilder (1.4ms)
+  Rendered api/mentees/index.json.jbuilder (20.8ms)
+Completed 200 OK in 29ms (Views: 22.9ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/api/mentors" for 127.0.0.1 at 2018-01-25 22:38:14 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/api/mentors"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/api/users" for 127.0.0.1 at 2018-01-25 22:38:26 -0800
+Processing by Api::UsersController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NBPpdWFr4ImcWlYyqlFqsQ"], ["LIMIT", 1]]
+Filter chain halted as :require_admin rendered or redirected
+Completed 401 Unauthorized in 2ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/mentees" for 127.0.0.1 at 2018-01-25 22:38:31 -0800
+Processing by Api::MenteesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NBPpdWFr4ImcWlYyqlFqsQ"], ["LIMIT", 1]]
+  Rendering api/mentees/index.json.jbuilder
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees"[0m
+  Rendered api/mentees/_mentee.json.jbuilder (0.5ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  Rendered api/mentees/_mentee.json.jbuilder (1.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered api/mentees/_mentee.json.jbuilder (1.1ms)
+  Rendered api/mentees/index.json.jbuilder (13.7ms)
+Completed 200 OK in 19ms (Views: 16.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/" for 127.0.0.1 at 2018-01-25 22:38:35 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/api"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/favicon.io" for 127.0.0.1 at 2018-01-25 22:41:14 -0800
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.io"):
+  
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2018-01-25 22:51:40 -0800
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+:
+  activerecord (5.1.4) lib/active_record/migration.rb:576:in `check_pending!'
+  activerecord (5.1.4) lib/active_record/migration.rb:553:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.4) lib/rails/engine.rb:522:in `call'
+  puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+  puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+  puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+  puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+  puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/a61a0cdb6a547009/variables" for 127.0.0.1 at 2018-01-25 22:51:40 -0800
+  [1m[35m (18.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5798284281019468560)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeMenteesJanApp (20180126064634)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (28.6ms)[0m  [1m[35mALTER TABLE "mentees" DROP "career_advice_rank"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "mentees" DROP "personal_advice_rank"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "mentees" DROP "motivation_rank"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "mentees" DROP "personality_text"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "mentees" DROP "night_text"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "mentees" DROP "how_impact_text"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "mentees" DROP "no_discuss_text"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "mentees" DROP "extra_info_text"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "mentees" DROP "not_on_google_text"[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "mentees" DROP "extra_info_text"[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5798284281019468560)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5798284281019468560)[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangeMenteesJanApp (20180126064634)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "mentees" DROP "career_advice_rank"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "mentees" DROP "personal_advice_rank"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "mentees" DROP "motivation_rank"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "mentees" DROP "personality_text"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "mentees" DROP "night_text"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "mentees" DROP "how_impact_text"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "mentees" DROP "no_discuss_text"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "mentees" DROP "extra_info_text"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "mentees" DROP "not_on_google_text"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "mentees" DROP "headshot_url"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "mentees" DROP "youtube_url"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "mentees" DROP "high_school"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "mentees" DROP "employer"[0m
+  [1m[35m (3.5ms)[0m  [1m[35mALTER TABLE "mentees" ADD "industry" text[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "mentees" ADD "share_industry_rank" integer[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "mentees" ADD "provide" text[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "mentees" ADD "video_URL" text[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180126064634"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5798284281019468560)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
