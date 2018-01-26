@@ -20,17 +20,17 @@
      font-weight: normal;
      font-style: normal;
  }
+ 
+ @font-face {
+     font-family: 'Museo_Slab_100-web';
+     src: url('Museo Slab W01 100.woff2') format('woff2'),
+          url('Museo Slab W01 100.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+ }
 
- // * {
- //    font-family: sans-serif;
- //    outline: none;
- //    margin: 0;
- //    padding: 0;
- //    /*position: relative;*/
- //    /*z-index: 50;*/
- //  }
  * {
-    font-family: 'Museo_Slab_500_2', Arial, sans-serif;
+    font-family: 'Museo_Slab_100-web', Arial, sans-serif;
     outline: none;
     margin: 0;
     padding: 0;
