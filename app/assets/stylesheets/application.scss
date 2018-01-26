@@ -13,9 +13,24 @@
  *= require_tree .
  *= require_self
  */
+ @font-face {
+     font-family: 'Museo_Slab_500_2';
+     src: url('Museo_Slab_500_2-webfont.woff2') format('woff2'),
+          url('Museo_Slab_500_2-webfont.woff') format('woff');
+     font-weight: normal;
+     font-style: normal;
+ }
 
+ // * {
+ //    font-family: sans-serif;
+ //    outline: none;
+ //    margin: 0;
+ //    padding: 0;
+ //    /*position: relative;*/
+ //    /*z-index: 50;*/
+ //  }
  * {
-    font-family: sans-serif;
+    font-family: 'Museo_Slab_500_2', Arial, sans-serif;
     outline: none;
     margin: 0;
     padding: 0;
