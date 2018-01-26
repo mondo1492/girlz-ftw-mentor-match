@@ -13,21 +13,6 @@
  *= require_tree .
  *= require_self
  */
- @font-face {
-     font-family: 'Museo_Slab_500_2';
-     src: url('Museo_Slab_500_2-webfont.woff2') format('woff2'),
-          url('Museo_Slab_500_2-webfont.woff') format('woff');
-     font-weight: normal;
-     font-style: normal;
- }
- 
- @font-face {
-     font-family: 'Museo_Slab_100-web';
-     src: url('Museo Slab W01 100.woff2') format('woff2'),
-          url('Museo Slab W01 100.woff') format('woff');
-     font-weight: normal;
-     font-style: normal;
- }
 
  * {
     font-family: 'Museo_Slab_100-web', Arial, sans-serif;
@@ -112,6 +97,22 @@
     font-weight: lighter;
   }
 
+  @font-face {
+    font-family: 'Museo_Slab_500_2';
+    src: url('Museo_Slab_500_2-webfont.woff2') format('woff2'),
+    url('Museo_Slab_500_2-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Museo_Slab_100-web';
+    src: url('Museo Slab W01 100.woff2') format('woff2'),
+    url('Museo Slab W01 100.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
 @import './components/unapproved_tees_tors.scss';
 @import './specific_styling/modal';
 @import './components/current_tees_tors.scss';

@@ -13,6 +13,15 @@ class Page6 extends React.Component {
       return(
         <div>
           <FormGroup>
+            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
+              Write the Instagram bio you wish you had.
+            </Col>
+            <Col sm={8}>
+                <textarea style={{ height: 100 }} id='formControlsTextarea' value={this.props.page.instagram_bio_text} className="form-control" id="instagram_bio_text" name="instagram_bio_text" onChange={this.props.handleInputChange}/>
+            </Col>
+          </FormGroup>
+          
+          <FormGroup>
             <Col sm={2}></Col>
             <Col componentClass={ControlLabel} sm={8}>
               <h4 className='centerText formFontStyle2'>

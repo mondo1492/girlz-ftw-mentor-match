@@ -20,8 +20,6 @@ class MenteeApp extends React.Component {
       0: {},
       1: {},
       2: {
-        username: "RaviMenteetest",
-        password: "ravimenteepw",
         first_name: "Ravi",
         last_name: "Raval",
         age: '27',
@@ -29,23 +27,22 @@ class MenteeApp extends React.Component {
       },
       3: {
         facebook: 'fab',
-        linkedin: 'link',
         phone: '1234567890',
         city: 'Belmont',
         country: 'Albania',
       },
       4: {
+        high_school: '',
         college: 'stanvard',
         major: '',
         share_major_rank: '',
-        employer: 'googlebook',
         industry: '',
         share_industry_rank: '',
-        job_description: 'friggen sick',
       },
       5: {
-        unblock_methods: '',
-        provide: '',
+        instagram_bio_text: '',
+        instagram_bio_why_not_text: '',
+        provide: ''
       },
       6: {
         video_URL: '',

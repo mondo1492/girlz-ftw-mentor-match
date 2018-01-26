@@ -53956,8 +53956,6 @@ var MenteeApp = function (_React$Component) {
       0: {},
       1: {},
       2: {
-        username: "RaviMenteetest",
-        password: "ravimenteepw",
         first_name: "Ravi",
         last_name: "Raval",
         age: '27',
@@ -53965,22 +53963,21 @@ var MenteeApp = function (_React$Component) {
       },
       3: {
         facebook: 'fab',
-        linkedin: 'link',
         phone: '1234567890',
         city: 'Belmont',
         country: 'Albania'
       },
       4: {
+        high_school: '',
         college: 'stanvard',
         major: '',
         share_major_rank: '',
-        employer: 'googlebook',
         industry: '',
-        share_industry_rank: '',
-        job_description: 'friggen sick'
+        share_industry_rank: ''
       },
       5: {
-        unblock_methods: '',
+        instagram_bio_text: '',
+        instagram_bio_why_not_text: '',
         provide: ''
       },
       6: {
@@ -54727,8 +54724,6 @@ var _reactSelect2 = _interopRequireDefault(_reactSelect);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -54747,8 +54742,7 @@ var Page5 = function (_React$Component) {
   _createClass(Page5, [{
     key: 'render',
     value: function render() {
-      var _this2 = this,
-          _React$createElement;
+      var _this2 = this;
 
       return _react2.default.createElement(
         'div',
@@ -55012,20 +55006,6 @@ var Page5 = function (_React$Component) {
               },
               'Extremely'
             )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'Write the Instagram bio you wish you had.'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 8 },
-            _react2.default.createElement('textarea', (_React$createElement = { style: { height: 100 }, id: 'formControlsTextarea', value: this.props.page.instagram_bio_text, className: 'form-control' }, _defineProperty(_React$createElement, 'id', 'instagram_bio_text'), _defineProperty(_React$createElement, 'name', 'instagram_bio_text'), _defineProperty(_React$createElement, 'onChange', this.props.handleInputChange), _React$createElement))
           )
         )
       );
@@ -55341,6 +55321,8 @@ var _reactSelect2 = _interopRequireDefault(_reactSelect);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -55359,11 +55341,26 @@ var Page6 = function (_React$Component) {
   _createClass(Page6, [{
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _React$createElement,
+          _this2 = this;
 
       return _react2.default.createElement(
         'div',
         null,
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
+            'Write the Instagram bio you wish you had.'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { sm: 8 },
+            _react2.default.createElement('textarea', (_React$createElement = { style: { height: 100 }, id: 'formControlsTextarea', value: this.props.page.instagram_bio_text, className: 'form-control' }, _defineProperty(_React$createElement, 'id', 'instagram_bio_text'), _defineProperty(_React$createElement, 'name', 'instagram_bio_text'), _defineProperty(_React$createElement, 'onChange', this.props.handleInputChange), _React$createElement))
+          )
+        ),
         _react2.default.createElement(
           _reactBootstrap.FormGroup,
           null,
@@ -55811,17 +55808,6 @@ var Page8 = function (_React$Component) {
           'h5',
           null,
           'You should receive a confirmation email shortly.'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Feel free to log in',
-          _react2.default.createElement(
-            'a',
-            { href: 'https://girlzftwportal.herokuapp.com/#/' },
-            ' here '
-          ),
-          'to view and update your application.'
         )
       );
     }
