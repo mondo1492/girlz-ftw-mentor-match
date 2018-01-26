@@ -7317,17 +7317,11 @@ var MenteeShow = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(
-          'h1',
+          'h2',
           null,
           mentee.first_name,
           ' ',
           mentee.last_name
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Facebook: ',
-          mentee.facebook
         ),
         _react2.default.createElement(
           'p',
@@ -7346,6 +7340,12 @@ var MenteeShow = function (_React$Component) {
           null,
           'Age: ',
           mentee.age
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Facebook: ',
+          mentee.facebook
         ),
         _react2.default.createElement(
           'p',
@@ -7386,62 +7386,44 @@ var MenteeShow = function (_React$Component) {
         _react2.default.createElement(
           'p',
           null,
-          'How interested are you in career advice (0 - 3): ',
-          mentee.career_advice_rank
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'How interested are you in personal advice (0 - 3): ',
-          mentee.personal_advice_rank
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Would you prefer a mentor who had your major, or desired major: ',
+          'Prefers mentor with same major (0 - 4): ',
           mentee.share_major_rank
         ),
         _react2.default.createElement(
           'p',
           null,
-          'Ideal instagram bio: ',
+          'Desires to pursue this industry: ',
+          mentee.industry
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Prefers mentor with this industry (0 - 4): ',
+          mentee.share_industry_rank
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Dream Instagram Bio: ',
           mentee.instagram_bio_text
         ),
         _react2.default.createElement(
           'p',
           null,
-          'What\'s getting in the way of that bio: ',
-          mentee.instagram_bio_why_not_text
+          'What gets in the way of achieving that bio: ',
+          mentee.unblock_methods
         ),
         _react2.default.createElement(
           'p',
           null,
-          'Describe your personality: ',
-          mentee.personality_text
+          'Most excited to get from a mentor: ',
+          mentee.provide
         ),
         _react2.default.createElement(
           'p',
           null,
-          'What\'s one thing about you that we can\'t Google: ',
-          mentee.not_on_google_text
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'How do you aspire to make a positive impact on others: ',
-          mentee.how_impact_text
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Any topics you wouldn\'t feel comfortable discussing with your mentor: ',
-          mentee.no_discuss_text
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Anything else you\'d like to add: ',
-          mentee.extra_info_text
+          'Application Video URL: ',
+          mentee.video_URL
         ),
         _react2.default.createElement(
           'p',
@@ -9586,7 +9568,7 @@ var MentorShow = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(
-          'h1',
+          'h2',
           null,
           mentor.first_name,
           ' ',
@@ -9679,7 +9661,7 @@ var MentorShow = function (_React$Component) {
         _react2.default.createElement(
           'p',
           null,
-          'Provide: ',
+          'Most excited to provide for mentee: ',
           mentor.provide
         ),
         _react2.default.createElement(

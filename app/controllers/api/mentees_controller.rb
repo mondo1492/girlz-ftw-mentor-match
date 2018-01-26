@@ -45,13 +45,12 @@ class Api::MenteesController < ApplicationController
 
   def mentee_params
     params.require(:mentee)
-          .permit(:approved, :status, :age, :city, :country,
-                  :first_name, :last_name, :phone, :facebook, :email,
-                  :high_school, :college, :major, :career_advice_rank,
-                  :personal_advice_rank, :instagram_bio_text,
-                  :instagram_bio_why_not_text, :share_major_rank,
-                  :personal_advice_rank, :night_text,
-                  :how_impact_text, :user_id,
-                  :tier)
+          .permit(:age, :approved, :city, :college, :country,
+                  :created_at, :email, :facebook, :first_name,
+                  :high_school, :industry, :id, :instagram_bio_text,
+                  :instagram_bio_why_not_text, :last_name, :major,
+                  :phone, :provide, :share_industry_rank,
+                  :share_major_rank, :status, :tier, :unblock_methods,
+                  :video_URL)
   end
 end

@@ -9,7 +9,7 @@ class MentorShow extends React.Component {
     const mentor = this.props.mentor;
     return(
       <div>
-        <h1>{mentor.first_name} {mentor.last_name}</h1>
+        <h2>{mentor.first_name} {mentor.last_name}</h2>
         <p>Email: {mentor.email}</p>
         <p>Phone: {mentor.phone}</p>
         <p>Age: {mentor.age}</p>
@@ -24,7 +24,7 @@ class MentorShow extends React.Component {
         <p>Industry: {mentor.industry}</p>
         <p>Prefers mentee with same industry (0 - 4): {mentor.share_industry_rank}</p>
         <p>Job Description: {mentor.job_description}</p>
-        <p>Provide: {mentor.provide}</p>
+        <p>Most excited to provide for mentee: {mentor.provide}</p>
         <p>Unblock Methods: {mentor.unblock_methods}</p>
         <p>Application Video URL: {mentor.video_URL}</p>
         <p>Mentees: {mentor.mentee_names}</p>
