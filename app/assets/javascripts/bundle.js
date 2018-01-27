@@ -54156,24 +54156,25 @@ var MenteeApp = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
+        _react2.default.createElement('header', { className: 'header' }),
         _react2.default.createElement(
-          'div',
-          null,
+          _reactBootstrap.Form,
+          { horizontal: true, className: 'mainForm centerForm' },
+          page
+        ),
+        _react2.default.createElement(
+          'footer',
+          { className: 'footer' },
           _react2.default.createElement(
-            _reactBootstrap.Form,
-            { horizontal: true, className: 'centerForm, formBackground' },
-            page,
-            _react2.default.createElement(
-              'div',
-              { className: 'centerButton' },
-              this.state.page === 0 || this.state.page === 7 ? '' : _react2.default.createElement(
-                _reactBootstrap.Button,
-                { onClick: this.handleBack, className: 'btn-back' },
-                'Back'
-              ),
-              _react2.default.createElement('div', { className: 'padder' }),
-              nextButton
-            )
+            'div',
+            { className: 'centerButton' },
+            this.state.page === 0 || this.state.page === 7 ? '' : _react2.default.createElement(
+              _reactBootstrap.Button,
+              { onClick: this.handleBack, className: 'btn-back' },
+              'Back'
+            ),
+            _react2.default.createElement('div', { className: 'padder' }),
+            nextButton
           )
         )
       );
@@ -54254,14 +54255,15 @@ var Page1 = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { className: 'centerText formFontStyle', sm: 8 },
-            'Hello! Thank you for your interest in the GIRLZ, FTW mentorship program. We\u2019re thrilled to read your application. Before you fill out our form, we\u2019d like to let you in on a little secret. We\u2019re not a regular mentorship program. We\u2019re a community of girlz who are passionate about elevating and celebrating female voices around the world. In this program, you won\u2019t be paired with THAT girl\u2026 you know, the one that always had her shit together and still always managed to blow dry her hair before school / work. The mentors in our program are real, passionate, #girlbosses that don\u2019t pretend to be perfect, can hustle their way to their dreams, and still manage to uplift others along the way.'
-          )
+          _reactBootstrap.Col,
+          { className: 'centerText formFontStyle',
+            smOffset: 1, sm: 10,
+            mdOffset: 1, md: 10,
+            lgOffset: 1, lg: 10,
+            xsOffset: 1, xs: 10
+
+          },
+          'Hello! Thank you for your interest in the GIRLZ, FTW mentorship program. We\u2019re thrilled to read your application. Before you fill out our form, we\u2019d like to let you in on a little secret. We\u2019re not a regular mentorship program. We\u2019re a community of girlz who are passionate about elevating and celebrating female voices around the world. In this program, you won\u2019t be paired with THAT girl\u2026 you know, the one that always had her shit together and still always managed to blow dry her hair before school / work. The mentors in our program are real, passionate, #girlbosses that don\u2019t pretend to be perfect, can hustle their way to their dreams, and still manage to uplift others along the way.'
         )
       );
     }
@@ -54324,20 +54326,23 @@ var Page2 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Row,
             null,
-            _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
             _react2.default.createElement(
               _reactBootstrap.Col,
-              { className: 'centerText formFontStyle2', sm: 8 },
+              { className: 'centerText formFontStyle2',
+                sm: 8, smOffset: 2
+              },
               'What you should know before submitting your application:'
             )
           ),
           _react2.default.createElement(
             _reactBootstrap.Row,
             null,
-            _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
             _react2.default.createElement(
               _reactBootstrap.Col,
-              { className: 'centerText formFontStyle', sm: 8 },
+              { className: 'centerText formFontStyle',
+                sm: 8, smOffset: 2,
+                md: 8, mdOffset: 2
+              },
               '-  All of our communication once you join the program happens on Facebook. If you\u2019re accepted as a mentee, you will be added to a Facebook group. This group will be the place where you can connect with other mentors and mentees in the program. We\u2019ll use this group to provide support, encouragement, and advice for each other. You must have a Facebook profile if you want to be a part of this program.'
             )
           ),
@@ -55348,7 +55353,7 @@ var Page6 = function (_React$Component) {
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { xsOffset: 5, xs: 3, smOffset: 2, sm: 8 },
+            { smOffset: 2, sm: 8 },
             _react2.default.createElement('textarea', (_React$createElement = { style: { height: 100 }, id: 'formControlsTextarea', value: this.props.page.instagram_bio_text, className: 'form-control' }, _defineProperty(_React$createElement, 'id', 'instagram_bio_text'), _defineProperty(_React$createElement, 'name', 'instagram_bio_text'), _defineProperty(_React$createElement, 'onChange', this.props.handleInputChange), _React$createElement))
           )
         ),
@@ -56143,24 +56148,25 @@ var MentorApp = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
+        _react2.default.createElement('header', { className: 'header' }),
         _react2.default.createElement(
-          'div',
-          null,
+          _reactBootstrap.Form,
+          { horizontal: true, className: 'mainForm centerForm' },
+          page
+        ),
+        _react2.default.createElement(
+          'footer',
+          { className: 'footer' },
           _react2.default.createElement(
-            _reactBootstrap.Form,
-            { horizontal: true, className: 'centerForm, formBackground' },
-            page,
-            _react2.default.createElement(
-              'div',
-              { className: 'centerButton' },
-              this.state.page === 0 || this.state.page === 7 ? '' : _react2.default.createElement(
-                _reactBootstrap.Button,
-                { onClick: this.handleBack, className: 'btn-back' },
-                'Back'
-              ),
-              _react2.default.createElement('div', { className: 'padder' }),
-              nextButton
-            )
+            'div',
+            { className: 'centerButton' },
+            this.state.page === 0 || this.state.page === 7 ? '' : _react2.default.createElement(
+              _reactBootstrap.Button,
+              { onClick: this.handleBack, className: 'btn-back' },
+              'Back'
+            ),
+            _react2.default.createElement('div', { className: 'padder' }),
+            nextButton
           )
         )
       );
@@ -56221,10 +56227,10 @@ var Page1 = function (_React$Component) {
         _react2.default.createElement(
           _reactBootstrap.FormGroup,
           null,
-          _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
+          _react2.default.createElement(_reactBootstrap.Col, null),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { className: 'centerText formFontStyle', sm: 8 },
+            { className: 'centerText formFontStyle' },
             'Hello! Thank you for your interest in the GIRLZ, FTW mentorship program. We\u2019re thrilled to read your application. Before you fill out our form, we\u2019d like to let you in on a little secret. We\u2019re not a regular mentorship program. We\u2019re a community of girlz who are passionate about elevating and celebrating female voices around the world. We don\u2019t expect our mentors to be THAT girl\u2026 you know, the one that always had her shit together and still always managed to blow dry her hair before school / work. We\u2019re looking for real, passionate, #girlbosses that don\u2019t pretend to be perfect, can hustle their way to their dreams, AND still manage to uplift others along the way.'
           )
         )
@@ -57346,7 +57352,7 @@ var Page8 = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'white_text centerText' },
+        { className: 'centerText' },
         _react2.default.createElement(
           'h3',
           null,

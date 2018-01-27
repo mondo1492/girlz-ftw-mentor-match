@@ -171,20 +171,22 @@ class MentorApp extends React.Component {
     })();
     return (
       <div>
-        <div>
-          <Form horizontal className={`centerForm, formBackground`}>
-            {page}
-            <div className='centerButton'>
-              { this.state.page === 0 || this.state.page === 7 ? '' :
-                <Button onClick={this.handleBack} className="btn-back">
-                  Back
-                </Button>
-              }
-              <div className='padder'></div>
-              { nextButton }
-            </div>
-          </Form>
-        </div>
+        <header className='header'>
+        </header>
+        <Form horizontal className={`mainForm centerForm`}>
+          {page}
+        </Form>
+        <footer className="footer">
+          <div className='centerButton'>
+            { this.state.page === 0 || this.state.page === 7 ? '' :
+              <Button onClick={this.handleBack} className="btn-back">
+                Back
+              </Button>
+            }
+            <div className='padder'></div>
+            { nextButton }
+          </div>
+        </footer>
       </div>
     );
   }
