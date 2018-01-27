@@ -13,7 +13,7 @@ class Page3 extends React.Component {
         <div>
           <h3 className='centerForm pageCaption'> Help us connect you with your ideal mentor.</h3>
 
-          <FormGroup>
+          <FormGroup className='test'>
             <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
                 First Name*
             </Col>

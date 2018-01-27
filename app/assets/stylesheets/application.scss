@@ -13,106 +13,123 @@
  *= require_tree .
  *= require_self
  */
+// .test {
+//   min-height: 50px;
+// }
 
- * {
-    font-family: 'Museo_Slab_100-web', Arial, sans-serif;
-    outline: none;
-    margin: 0;
-    padding: 0;
-    /*position: relative;*/
-    /*z-index: 50;*/
+@media screen and (max-width: 700px) {
+  * {
   }
+}
 
-  .modal-container {
-    position: relative;
+@media screen and (min-width: 721px) and (max-width: 900px) {
+  * {
   }
-  .modal-container .modal, .modal-container .modal-backdrop {
-    position: absolute;
-  }
+}
 
-  .generic_link {
-    color: blue;
-    cursor:pointer;
-    text-decoration: underline;
+@media screen and (min-width: 901px) {
+  * {
   }
+}
 
-  .generic_link:hover {
+* {
+  font-family: 'Museo_Slab_100-web', Arial, sans-serif;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  /*position: relative;*/
+  /*z-index: 50;*/
+}
 
-  }
+.modal-container {
+  position: relative;
+}
+.modal-container .modal, .modal-container .modal-backdrop {
+  position: absolute;
+}
 
-  .btn-next-bad {
-    color: grey;
-  }
+.generic_link {
+  color: blue;
+  cursor:pointer;
+  text-decoration: underline;
+}
 
-  .centerForm {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
+.generic_link:hover {
 
-  .pageCaption {
-    color: white;
-    font-size: 26px;
-    font-weight: normal;
-    padding-bottom: 20px;
-  }
+}
 
-  .centerButton {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding: 5px;
-    align-items: center;
-  }
+.btn-next-bad {
+  color: grey;
+}
 
-  .Select.is-open { position: relative; z-index: 1000; }
+.centerForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
 
-  .centerText {
-    text-align: center;
-  }
-  .padder {
-    padding: 10px;
-  }
+.pageCaption {
+  color: white;
+  font-size: 26px;
+  font-weight: normal;
+  padding-bottom: 20px;
+}
 
-  .formBackground {
-    padding-top: 5%;
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 80vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('http://res.cloudinary.com/girlzftw/image/upload/v1513121776/pexels-photo-569163_wvl4rq.jpg');
-  }
+.centerButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 5px;
+  align-items: center;
+}
 
-  .formFontStyle {
-    color: white;
-    font-size: 16px;
-    font-weight: lighter;
-  }
-  .formFontStyle2 {
-    color: white;
-    font-size: 20px;
-    font-weight: lighter;
-  }
+.Select.is-open { position: relative; z-index: 1000; }
 
-  @font-face {
-    font-family: 'Museo_Slab_500_2';
-    src: url('Museo_Slab_500_2-webfont.woff2') format('woff2'),
-    url('Museo_Slab_500_2-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
+.centerText {
+  text-align: center;
+}
+.padder {
+  padding: 10px;
+  min-width: 48px;
+}
 
-  @font-face {
-    font-family: 'Museo_Slab_100-web';
-    src: url('Museo Slab W01 100.woff2') format('woff2'),
-    url('Museo Slab W01 100.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
+.formBackground {
+  padding-top: 5%;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 80vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('http://res.cloudinary.com/girlzftw/image/upload/v1513121776/pexels-photo-569163_wvl4rq.jpg');
+}
+
+.formFontStyle {
+  color: white;
+  font-weight: lighter;
+}
+.formFontStyle2 {
+  color: white;
+  font-weight: lighter;
+}
+
+@font-face {
+  font-family: 'Museo_Slab_500_2';
+  src: url('Museo_Slab_500_2-webfont.woff2') format('woff2'),
+  url('Museo_Slab_500_2-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Museo_Slab_100-web';
+  src: url('Museo Slab W01 100.woff2') format('woff2'),
+  url('Museo Slab W01 100.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @import './components/unapproved_tees_tors.scss';
 @import './specific_styling/modal';
 @import './components/current_tees_tors.scss';

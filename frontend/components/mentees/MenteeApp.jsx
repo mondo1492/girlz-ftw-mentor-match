@@ -57,6 +57,10 @@ class MenteeApp extends React.Component {
     this.handleNext = this.handleNext.bind(this);
   }
 
+  componentDidMount() {
+    window.addEventListener('resize', console.log('window', window));
+  }
+
   handleMultiChange(value, name, pageNum = this.state.page) {
     if (value.split("|").length === 4) return;
     let nextState = merge({}, {[pageNum]: this.state[pageNum]}, {[pageNum]: {[name]: value}});
