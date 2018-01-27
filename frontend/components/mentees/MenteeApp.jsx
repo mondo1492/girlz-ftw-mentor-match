@@ -186,6 +186,8 @@ class MenteeApp extends React.Component {
             }
             <div className='padder'></div>
             { nextButton }
+            <div className='padder'></div>
+            <p>{`${Math.round(100 * this.state.page / 7)}% complete`}</p>
           </div>
         </footer>
       </div>
