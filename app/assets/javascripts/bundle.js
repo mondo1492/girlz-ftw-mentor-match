@@ -56172,7 +56172,13 @@ var MentorApp = function (_React$Component) {
               'Back'
             ),
             _react2.default.createElement('div', { className: 'padder' }),
-            nextButton
+            nextButton,
+            _react2.default.createElement('div', { className: 'padder' }),
+            _react2.default.createElement(
+              'p',
+              null,
+              Math.round(100 * this.state.page / 7) + '% complete'
+            )
           )
         )
       );

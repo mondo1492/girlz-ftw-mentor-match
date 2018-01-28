@@ -100,16 +100,34 @@
   margin-bottom: 70px;
 }
 
+// .header {
+//   background-size: 100% 100%;
+//   background-position: top;
+//   background-repeat: no-repeat;
+//   // width: 100%;
+//   // height: calc(40vh);
+//   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/runaway-today/image/upload/v1517164403/27398610_10155323927168806_730778552_o_gficdq.png');
+// }
 .header {
-  background-size: 100% 100%;
-  background-position: top;
+  background-size: cover;
+  background-position: left;
   background-repeat: no-repeat;
-  width: 100%;
-  height: 20vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('http://res.cloudinary.com/girlzftw/image/upload/v1513121776/pexels-photo-569163_wvl4rq.jpg');
+  padding-bottom: 40%;
+  height: 0;
+  background-image: url('https://res.cloudinary.com/runaway-today/image/upload/c_scale,w_1939/v1517164403/27398610_10155323927168806_730778552_o_gficdq.png');
+
+}
+
+@media (min-width: 600px) {
+  .header {
+    padding: 0;
+    height: 240px;
+    background-image: url('https://res.cloudinary.com/runaway-today/image/upload/v1517164403/27398610_10155323927168806_730778552_o_gficdq.png');
+  }
 }
 
 .footer {
+  z-index: 99;
   margin-top: 70px;
   position: fixed;
   bottom: 0;

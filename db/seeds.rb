@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Mentee.destroy_all
+# admin = User.new({ 'username' => 'admin', 'password' => 'badgalriri', 'age' => 99, 'city' => 'womanland', 'country' => 'womanlandia', 'first_name' => 'admin_first', 'last_name' => 'admin_last', 'facebook' => 'adminfbook','email' => 'girlzftw@gmail.com'})
 
 user_list = [
   # [
