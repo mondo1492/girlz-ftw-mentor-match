@@ -14,9 +14,9 @@ class Page6 extends React.Component {
         <div>
           <h2 className="pageCaption">Looking Forward</h2>
           <div className='green-spacer'></div>
+
           <FormGroup>
-              <Col sm={2}></Col>
-              <Col componentClass={ControlLabel} sm={8}>
+              <Col componentClass={ControlLabel} smOffset={2} sm={8}>
                   <h4 className='formFontStyle2'>
                     Write the Instagram bio you wish you had.
                   </h4>
@@ -27,17 +27,13 @@ class Page6 extends React.Component {
           </FormGroup>
 
           <FormGroup>
-            <Col sm={2}></Col>
-            <Col componentClass={ControlLabel} sm={8}>
+            <Col componentClass={ControlLabel} smOffset={2} sm={8}>
               <h4 className='formFontStyle2'>
                 What's getting in the way of you having that dream bio?
                 (Select up to 3)
               </h4>
             </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col sm={2}></Col>
-            <Col sm={8}>
+            <Col smOffset={2} sm={8}>
               <Select
                 name="instagram_bio_why_not_text"
                 value={this.props.page.instagram_bio_why_not_text}
@@ -60,8 +56,7 @@ class Page6 extends React.Component {
             </Col>
           </FormGroup>
           <FormGroup >
-            <Col sm={2}></Col>
-            <Col componentClass={ControlLabel} sm={8}>
+            <Col componentClass={ControlLabel} smOffset={2} sm={8}>
               <h4 className='formFontStyle2'>
                 What are you most excited to get from a mentor?
                 (Select up to 3)
@@ -70,8 +65,7 @@ class Page6 extends React.Component {
             </Col>
           </FormGroup>
           <FormGroup>
-            <Col sm={2}></Col>
-            <Col sm={8}>
+            <Col smOffset={2} sm={8}>
               <Select
                 name="provide"
                 value={this.props.page.provide}

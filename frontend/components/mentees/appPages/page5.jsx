@@ -16,10 +16,12 @@ class Page5 extends React.Component {
           <div className='green-spacer'></div>
 
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
-              High School *
+            <Col componentClass={ControlLabel} smOffset={4} sm={8}>
+              <h4 className='formFontStyle2'>
+                High School *
+              </h4>
             </Col>
-            <Col sm={8}>
+            <Col smOffset={4} sm={4}>
               <InputGroup>
                 <InputGroup.Addon>
                   <FontAwesome name='graduation-cap'/>
@@ -35,10 +37,12 @@ class Page5 extends React.Component {
             </Col>
           </FormGroup>
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
-              College (if applicable)
+            <Col componentClass={ControlLabel} smOffset={4} sm={8}>
+              <h4 className='formFontStyle2'>
+                College (if applicable) *
+              </h4>
             </Col>
-            <Col sm={8}>
+            <Col smOffset={4} sm={4}>
               <InputGroup>
                 <InputGroup.Addon>
                   <FontAwesome name='graduation-cap'/>
@@ -55,10 +59,10 @@ class Page5 extends React.Component {
           </FormGroup>
 
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
+            <Col componentClass={ControlLabel} smOffset={4} sm={4} className='formFontStyle'>
               What is/might be your college major? *
             </Col>
-            <Col sm={8}>
+            <Col smOffset={4} sm={4}>
               <Select
                 name="major"
                 value={this.props.page.major}
@@ -80,10 +84,10 @@ class Page5 extends React.Component {
           </FormGroup>
 
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
+            <Col componentClass={ControlLabel} smOffset={4} sm={8} className='formFontStyle'>
               In which industry do you want to work? *
             </Col>
-            <Col sm={8}>
+            <Col smOffset={4} sm={4}>
               <Select
                 name="industry"
                 value={this.props.page.industry}
@@ -112,9 +116,7 @@ class Page5 extends React.Component {
             <Col className='centerForm formFontStyle2' componentClass={ControlLabel} sm={12}>
               How important is it to you that a mentor share your (desired) college major? *
             </Col>
-          </FormGroup>
-
-          <FormGroup>
+            
             <Col className='centerForm' sm={12}>
               <div className='formFontStyle'>
                 <Radio

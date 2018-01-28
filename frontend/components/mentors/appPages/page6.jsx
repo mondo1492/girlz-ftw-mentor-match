@@ -12,9 +12,10 @@ class Page6 extends React.Component {
     render() {
       return(
         <div>
+          <h2 className="pageCaption">Uniquely you</h2>
+          <div className='green-spacer'></div>
           <FormGroup>
-            <Col sm={2}></Col>
-            <Col componentClass={ControlLabel} sm={8}>
+            <Col componentClass={ControlLabel} smOffset={2} sm={8}>
               <h4 className='centerText formFontStyle2'>
                 We all get in the way of our own success.
                 Which of the following methods do you think you’ve managed
@@ -24,8 +25,7 @@ class Page6 extends React.Component {
             </Col>
           </FormGroup>
           <FormGroup>
-            <Col sm={2}></Col>
-            <Col sm={8}>
+            <Col smOffset={2} sm={8}>
               <Select
                 name="unblock_methods"
                 value={this.props.page.unblock_methods}
@@ -48,18 +48,13 @@ class Page6 extends React.Component {
             </Col>
           </FormGroup>
           <FormGroup >
-            <Col sm={2}></Col>
-            <Col componentClass={ControlLabel} sm={8}>
+            <Col componentClass={ControlLabel} smOffset={2} sm={8}>
               <h4 className='centerText formFontStyle2'>
                 What are you most excited to provide be for your mentee?
                 (Select the top 3)
               </h4>
-
             </Col>
-          </FormGroup>
-          <FormGroup>
-            <Col sm={2}></Col>
-            <Col sm={8}>
+            <Col smOffset={2} sm={8}>
               <Select
                 name="provide"
                 value={this.props.page.provide}

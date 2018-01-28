@@ -10,23 +10,29 @@ class Page2 extends React.Component {
     render() {
       return(
           <div>
+            <h3 className='pageCaption'>Before we begin</h3>
+            <div className='green-spacer'></div>
             <Grid>
               <Row>
-                <Col sm={2}></Col>
-                <Col className='centerText formFontStyle2' sm={8}>
-                  What you should know before submitting your application:
+                <Col className='formFontStyle' smOffset={2} sm={8}>
+                  <li>
+                    You must be willing to commit at least 5 hours a month for 6 months. Sessions with your mentee should last 1 hour every other week, and we suggest you spend half an hour prepping beforehand.
+                  </li>
                 </Col>
               </Row>
               <Row>
-                <Col sm={2}></Col>
-                <Col className='centerText formFontStyle' sm={8}>
-                  - 	All of our communication once you join the program happens on Facebook.
+                <Col className='formFontStyle' smOffset={2} sm={8}>
+                  <li>
+                    As all of our communication during the program happens on Facebook, you must have a Facebook profile to join.
+                  </li>
                 </Col>
               </Row>
               <Row>
-                <Col sm={2}></Col>
-                <Col className='centerText formFontStyle' sm={8}>
-                  -   You must be able to free up the first Saturday of every month and commit at least 4 hours a month for 6 months.
+                <Col className='formFontStyle' smOffset={2} sm={8}>
+                  <li>
+                    We have mandatory, virtual chats with inspiring women on the first Saturday of every month.
+                    You can only miss up to 2 calls (with advanced notice).
+                  </li>
                 </Col>
               </Row>
             </Grid>

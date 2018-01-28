@@ -12,9 +12,10 @@ class Page7 extends React.Component {
       <Grid>
         <h2 className="pageCaption">We’re excited to meet you, superstar!</h2>
         <div className='green-spacer'></div>
+        
         <Row className="videoHeader">
           <Col className='centerText formFontStyle2' sm={12}>
-            Please submit a <strong>video or an essay</strong> on the following three prompts.
+            Please submit a <strong>video</strong> or an <strong>essay</strong> on the following three prompts.
             Videos should be between 60 and 90 seconds.
           </Col>
         </Row>

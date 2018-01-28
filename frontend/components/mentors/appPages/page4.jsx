@@ -11,12 +11,15 @@ class Page4 extends React.Component {
     render() {
       return(
         <div>
-          <h3 className='centerForm pageCaption'>Let's get connected!</h3>
+          <h3 className='centerForm pageCaption'>Let's get connected</h3>
+          <div className='green-spacer'></div>
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
-              Facebook *
+            <Col componentClass={ControlLabel} smOffset={4} sm={8}>
+              <h4 className='formFontStyle2'>
+                Facebook *
+              </h4>
             </Col>
-            <Col sm={8}>
+            <Col smOffset={4} sm={4}>
               <InputGroup>
                 <InputGroup.Addon>
                   <FontAwesome name='facebook'/>
@@ -33,10 +36,12 @@ class Page4 extends React.Component {
           </FormGroup>
 
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
-              LinkedIn *
+            <Col componentClass={ControlLabel} smOffset={4} sm={8}>
+              <h4 className='formFontStyle2'>
+                LinkedIn *
+              </h4>
             </Col>
-            <Col sm={8}>
+            <Col smOffset={4} sm={4}>
               <InputGroup>
                 <InputGroup.Addon>
                   <FontAwesome name='linkedin'/>
@@ -52,10 +57,12 @@ class Page4 extends React.Component {
             </Col>
           </FormGroup>
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
-              Phone *
+            <Col componentClass={ControlLabel} smOffset={4} sm={8}>
+              <h4 className='formFontStyle2'>
+                Phone *
+              </h4>
             </Col>
-            <Col sm={8}>
+            <Col smOffset={4} sm={4}>
               <InputGroup>
                <InputGroup.Addon>
                  <FontAwesome name='phone'/>
@@ -72,10 +79,12 @@ class Page4 extends React.Component {
             </Col>
           </FormGroup>
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
-              City *
+            <Col componentClass={ControlLabel} smOffset={4} sm={8}>
+              <h4 className='formFontStyle2'>
+                City *
+              </h4>
             </Col>
-            <Col sm={8}>
+            <Col smOffset={4} sm={4}>
               <FormControl
                 id="formControlsCity"
                 type="text"
@@ -86,10 +95,12 @@ class Page4 extends React.Component {
             </Col>
           </FormGroup>
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
-              Country *
+            <Col componentClass={ControlLabel} smOffset={4} sm={8}>
+              <h4 className='formFontStyle2'>
+                Country *
+              </h4>
             </Col>
-            <Col sm={8}>
+            <Col smOffset={4} sm={4}>
               <FormControl
                 id="formControlsCountry"
                 type="text"

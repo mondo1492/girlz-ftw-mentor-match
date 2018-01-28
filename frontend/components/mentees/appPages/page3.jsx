@@ -11,14 +11,16 @@ class Page3 extends React.Component {
     render() {
       return(
         <div>
-          <h3 className='centerForm pageCaption'> Help us connect you with your ideal mentor.</h3>
+          <h3 className='centerForm pageCaption'> Help us connect you with your ideal mentor</h3>
           <div className='green-spacer'></div>
 
-          <FormGroup className='test'>
-            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
-                First Name*
+          <FormGroup>
+            <Col componentClass={ControlLabel} smOffset={4} sm={8}>
+              <h4 className='formFontStyle2'>
+                First Name *
+              </h4>
             </Col>
-            <Col sm={8}>
+            <Col smOffset={4} sm={4}>
               <FormControl
                 id="formControlsFirstName"
                 type="text"
@@ -30,10 +32,12 @@ class Page3 extends React.Component {
           </FormGroup>
 
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
-                Last Name*
+            <Col componentClass={ControlLabel} smOffset={4} sm={8}>
+              <h4 className='formFontStyle2'>
+                Last Name *
+              </h4>
             </Col>
-            <Col sm={8}>
+            <Col smOffset={4} sm={4}>
               <FormControl
                 id="formControlsLastName"
                 type="text"
@@ -45,10 +49,12 @@ class Page3 extends React.Component {
           </FormGroup>
 
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
-                Age*
+            <Col componentClass={ControlLabel} smOffset={4} sm={8}>
+              <h4 className='formFontStyle2'>
+                Age *
+              </h4>
             </Col>
-            <Col sm={8}>
+            <Col smOffset={4} sm={4}>
               <FormControl
                 id="formControlsAge"
                 type="number"
@@ -60,10 +66,12 @@ class Page3 extends React.Component {
           </FormGroup>
 
           <FormGroup>
-            <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
-                Email*
+            <Col componentClass={ControlLabel} smOffset={4} sm={8}>
+              <h4 className='formFontStyle2'>
+                Email *
+              </h4>
             </Col>
-            <Col sm={8}>
+            <Col smOffset={4} sm={4}>
               <InputGroup>
                 <InputGroup.Addon>
                   <FontAwesome name='envelope-o'/>

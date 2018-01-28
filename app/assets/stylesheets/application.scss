@@ -75,7 +75,7 @@
   text-align: center;
   text-transform: uppercase;
   font-weight: normal;
-  margin: 20px 0;
+  margin: 16px 0;
 }
 
 .centerButton {
@@ -132,12 +132,12 @@
 
 .green-spacer {
   width: 40px;
-  margin: 20px auto;
+  margin: 16px auto;
   border-bottom: 3px solid rgba(177, 230, 214, 1);
   text-align: center;
 }
 .formFontStyle {
-  text-align: left;
+  text-align: left !important;
   font-weight: lighter;
 }
 .formFontStyle2 {

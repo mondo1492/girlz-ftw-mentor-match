@@ -54261,7 +54261,7 @@ var Page1 = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(
-          'h2',
+          'h3',
           { className: 'pageCaption' },
           'Our Mentee Application'
         ),
@@ -54269,11 +54269,9 @@ var Page1 = function (_React$Component) {
         _react2.default.createElement(
           _reactBootstrap.Col,
           { className: 'formFontStyle',
-            smOffset: 1, sm: 10,
-            mdOffset: 1, md: 10,
-            lgOffset: 1, lg: 10,
-            xsOffset: 1, xs: 10
-
+            smOffset: 2, sm: 8,
+            mdOffset: 2, md: 8,
+            lgOffset: 2, lg: 8
           },
           'Hello! Thank you for your interest in the GIRLZ, FTW mentorship program. We\u2019re thrilled to read your application. Before you fill out our form, we\u2019d like to let you in on a little secret. We\u2019re not a regular mentorship program. We\u2019re a community of girlz who are passionate about elevating and celebrating female voices around the world. In this program, you won\u2019t be paired with THAT girl\u2026 you know, the one that always had her shit together and still always managed to blow dry her hair before school / work. The mentors in our program are real, passionate, #girlbosses that don\u2019t pretend to be perfect, can hustle their way to their dreams, and still manage to uplift others along the way.'
         )
@@ -54334,7 +54332,7 @@ var Page2 = function (_React$Component) {
         null,
         _react2.default.createElement(
           'h3',
-          { className: 'centerForm pageCaption' },
+          { className: 'pageCaption' },
           'Before we begin'
         ),
         _react2.default.createElement('div', { className: 'green-spacer' }),
@@ -54344,11 +54342,14 @@ var Page2 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Row,
             null,
-            _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
             _react2.default.createElement(
               _reactBootstrap.Col,
-              { className: 'formFontStyle', sm: 8 },
-              'You must be willing to commit at least 4 hours a month for 6 months. Sessions with your mentor should last 1 hour every other week. We\u2019ll also ask that you write 1 blog post a month about what you\u2019ve learned from your mentor and/or what you\u2019re working on. Lastly, you must allot 1 hour for the monthly virtual chats.'
+              { className: 'formFontStyle', smOffset: 2, sm: 8 },
+              _react2.default.createElement(
+                'li',
+                null,
+                'You must be willing to commit at least 4 hours a month for 6 months. Sessions with your mentor should last 1 hour every other week. We\u2019ll also ask that you write 1 blog post a month about what you\u2019ve learned from your mentor and/or what you\u2019re working on.'
+              )
             )
           ),
           _react2.default.createElement(
@@ -54357,20 +54358,26 @@ var Page2 = function (_React$Component) {
             _react2.default.createElement(
               _reactBootstrap.Col,
               { className: 'formFontStyle',
-                sm: 8, smOffset: 2,
-                md: 8, mdOffset: 2
+                sm: 8, smOffset: 2
               },
-              'You must have a Facebook profile if you want to be a part of this program. All of our communication once you join the program happens on Facebook.'
+              _react2.default.createElement(
+                'li',
+                null,
+                'As all of our communication during the program happens on Facebook, you must have a Facebook profile to join.'
+              )
             )
           ),
           _react2.default.createElement(
             _reactBootstrap.Row,
             null,
-            _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
             _react2.default.createElement(
               _reactBootstrap.Col,
-              { className: 'formFontStyle', sm: 8 },
-              'We have mandatory, virtual chats with inspiring women on the first Saturday of every month. You can only miss up to 2 calls (with advanced notice).'
+              { className: 'formFontStyle', smOffset: 2, sm: 8 },
+              _react2.default.createElement(
+                'li',
+                null,
+                'We have mandatory, virtual chats with inspiring women on the first Saturday of every month. You can only miss up to 2 calls (with advanced notice).'
+              )
             )
           )
         )
@@ -54435,20 +54442,24 @@ var Page3 = function (_React$Component) {
         _react2.default.createElement(
           'h3',
           { className: 'centerForm pageCaption' },
-          ' Help us connect you with your ideal mentor.'
+          ' Help us connect you with your ideal mentor'
         ),
         _react2.default.createElement('div', { className: 'green-spacer' }),
         _react2.default.createElement(
           _reactBootstrap.FormGroup,
-          { className: 'test' },
+          null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'First Name*'
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8 },
+            _react2.default.createElement(
+              'h4',
+              { className: 'formFontStyle2' },
+              'First Name *'
+            )
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 4, sm: 4 },
             _react2.default.createElement(_reactBootstrap.FormControl, {
               id: 'formControlsFirstName',
               type: 'text',
@@ -54463,12 +54474,16 @@ var Page3 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'Last Name*'
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8 },
+            _react2.default.createElement(
+              'h4',
+              { className: 'formFontStyle2' },
+              'Last Name *'
+            )
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 4, sm: 4 },
             _react2.default.createElement(_reactBootstrap.FormControl, {
               id: 'formControlsLastName',
               type: 'text',
@@ -54483,12 +54498,16 @@ var Page3 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'Age*'
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8 },
+            _react2.default.createElement(
+              'h4',
+              { className: 'formFontStyle2' },
+              'Age *'
+            )
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 4, sm: 4 },
             _react2.default.createElement(_reactBootstrap.FormControl, {
               id: 'formControlsAge',
               type: 'number',
@@ -54503,12 +54522,16 @@ var Page3 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'Email*'
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8 },
+            _react2.default.createElement(
+              'h4',
+              { className: 'formFontStyle2' },
+              'Email *'
+            )
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 4, sm: 4 },
             _react2.default.createElement(
               _reactBootstrap.InputGroup,
               null,
@@ -54585,7 +54608,7 @@ var Page4 = function (_React$Component) {
         _react2.default.createElement(
           'h3',
           { className: 'centerForm pageCaption' },
-          'Let\'s get connected!'
+          'Let\'s get connected'
         ),
         _react2.default.createElement('div', { className: 'green-spacer' }),
         _react2.default.createElement(
@@ -54593,12 +54616,16 @@ var Page4 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'Facebook *'
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8 },
+            _react2.default.createElement(
+              'h4',
+              { className: 'formFontStyle2' },
+              'Facebook *'
+            )
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 4, sm: 4 },
             _react2.default.createElement(
               _reactBootstrap.InputGroup,
               null,
@@ -54622,12 +54649,16 @@ var Page4 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'Phone *'
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8 },
+            _react2.default.createElement(
+              'h4',
+              { className: 'formFontStyle2' },
+              'Phone *'
+            )
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 4, sm: 4 },
             _react2.default.createElement(
               _reactBootstrap.InputGroup,
               null,
@@ -54652,12 +54683,16 @@ var Page4 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'City *'
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8 },
+            _react2.default.createElement(
+              'h4',
+              { className: 'formFontStyle2' },
+              'City *'
+            )
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 4, sm: 4 },
             _react2.default.createElement(_reactBootstrap.FormControl, {
               id: 'formControlsCity',
               type: 'text',
@@ -54672,12 +54707,16 @@ var Page4 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'Country *'
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8 },
+            _react2.default.createElement(
+              'h4',
+              { className: 'formFontStyle2' },
+              'Country *'
+            )
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 4, sm: 4 },
             _react2.default.createElement(_reactBootstrap.FormControl, {
               id: 'formControlsCountry',
               type: 'text',
@@ -54759,12 +54798,16 @@ var Page5 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'High School *'
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8 },
+            _react2.default.createElement(
+              'h4',
+              { className: 'formFontStyle2' },
+              'High School *'
+            )
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 4, sm: 4 },
             _react2.default.createElement(
               _reactBootstrap.InputGroup,
               null,
@@ -54788,12 +54831,16 @@ var Page5 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'College (if applicable)'
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8 },
+            _react2.default.createElement(
+              'h4',
+              { className: 'formFontStyle2' },
+              'College (if applicable) *'
+            )
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 4, sm: 4 },
             _react2.default.createElement(
               _reactBootstrap.InputGroup,
               null,
@@ -54817,12 +54864,12 @@ var Page5 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 4, className: 'formFontStyle' },
             'What is/might be your college major? *'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 4, sm: 4 },
             _react2.default.createElement(_reactSelect2.default, {
               name: 'major',
               value: this.props.page.major,
@@ -54842,12 +54889,12 @@ var Page5 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8, className: 'formFontStyle' },
             'In which industry do you want to work? *'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 4, sm: 4 },
             _react2.default.createElement(_reactSelect2.default, {
               name: 'industry',
               value: this.props.page.industry,
@@ -54869,11 +54916,7 @@ var Page5 = function (_React$Component) {
             _reactBootstrap.Col,
             { className: 'centerForm formFontStyle2', componentClass: _reactBootstrap.ControlLabel, sm: 12 },
             'How important is it to you that a mentor share your (desired) college major? *'
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
+          ),
           _react2.default.createElement(
             _reactBootstrap.Col,
             { className: 'centerForm', sm: 12 },
@@ -55340,10 +55383,9 @@ var Page6 = function (_React$Component) {
         _react2.default.createElement(
           _reactBootstrap.FormGroup,
           null,
-          _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 8 },
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 2, sm: 8 },
             _react2.default.createElement(
               'h4',
               { className: 'formFontStyle2' },
@@ -55359,24 +55401,18 @@ var Page6 = function (_React$Component) {
         _react2.default.createElement(
           _reactBootstrap.FormGroup,
           null,
-          _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 8 },
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 2, sm: 8 },
             _react2.default.createElement(
               'h4',
               { className: 'formFontStyle2' },
               'What\'s getting in the way of you having that dream bio? (Select up to 3)'
             )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
+          ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 2, sm: 8 },
             _react2.default.createElement(_reactSelect2.default, {
               name: 'instagram_bio_why_not_text',
               value: this.props.page.instagram_bio_why_not_text,
@@ -55394,10 +55430,9 @@ var Page6 = function (_React$Component) {
         _react2.default.createElement(
           _reactBootstrap.FormGroup,
           null,
-          _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 8 },
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 2, sm: 8 },
             _react2.default.createElement(
               'h4',
               { className: 'formFontStyle2' },
@@ -55408,10 +55443,9 @@ var Page6 = function (_React$Component) {
         _react2.default.createElement(
           _reactBootstrap.FormGroup,
           null,
-          _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 2, sm: 8 },
             _react2.default.createElement(_reactSelect2.default, {
               name: 'provide',
               value: this.props.page.provide,
@@ -55501,7 +55535,13 @@ var Page7 = function (_React$Component) {
             _react2.default.createElement(
               'strong',
               null,
-              'video or an essay'
+              'video'
+            ),
+            ' or an ',
+            _react2.default.createElement(
+              'strong',
+              null,
+              'essay'
             ),
             ' on the following three prompts. Videos should be between 60 and 90 seconds.'
           )
@@ -55961,7 +56001,7 @@ var MentorApp = function (_React$Component) {
         video_URL: ''
       },
       agree_terms: true,
-      page: 0
+      page: 5
     };
     _this.handleInputChange = _this.handleInputChange.bind(_this);
     _this.handleMultiChange = _this.handleMultiChange.bind(_this);
@@ -56229,14 +56269,15 @@ var Page1 = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(_reactBootstrap.Col, null),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { className: 'centerText formFontStyle' },
-            'Hello! Thank you for your interest in the GIRLZ, FTW mentorship program. We\u2019re thrilled to read your application. Before you fill out our form, we\u2019d like to let you in on a little secret. We\u2019re not a regular mentorship program. We\u2019re a community of girlz who are passionate about elevating and celebrating female voices around the world. We don\u2019t expect our mentors to be THAT girl\u2026 you know, the one that always had her shit together and still always managed to blow dry her hair before school / work. We\u2019re looking for real, passionate, #girlbosses that don\u2019t pretend to be perfect, can hustle their way to their dreams, AND still manage to uplift others along the way.'
-          )
+          'h3',
+          { className: 'pageCaption' },
+          'Our Mentor Application'
+        ),
+        _react2.default.createElement('div', { className: 'green-spacer' }),
+        _react2.default.createElement(
+          _reactBootstrap.Col,
+          { className: 'formFontStyle', smOffset: 2, sm: 8 },
+          'Hello! Thank you for your interest in the GIRLZ, FTW mentorship program. We\u2019re thrilled to read your application. Before you fill out our form, we\u2019d like to let you in on a little secret. We\u2019re not a regular mentorship program. We\u2019re a community of girlz who are passionate about elevating and celebrating female voices around the world. We don\u2019t expect our mentors to be THAT girl\u2026 you know, the one that always had her shit together and still always managed to blow dry her hair before school / work. We\u2019re looking for real, passionate, #girlbosses that don\u2019t pretend to be perfect, can hustle their way to their dreams, AND still manage to uplift others along the way.'
         )
       );
     }
@@ -56294,36 +56335,51 @@ var Page2 = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(
+          'h3',
+          { className: 'pageCaption' },
+          'Before we begin'
+        ),
+        _react2.default.createElement('div', { className: 'green-spacer' }),
+        _react2.default.createElement(
           _reactBootstrap.Grid,
           null,
           _react2.default.createElement(
             _reactBootstrap.Row,
             null,
-            _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
             _react2.default.createElement(
               _reactBootstrap.Col,
-              { className: 'centerText formFontStyle2', sm: 8 },
-              'What you should know before submitting your application:'
+              { className: 'formFontStyle', smOffset: 2, sm: 8 },
+              _react2.default.createElement(
+                'li',
+                null,
+                'You must be willing to commit at least 5 hours a month for 6 months. Sessions with your mentee should last 1 hour every other week, and we suggest you spend half an hour prepping beforehand.'
+              )
             )
           ),
           _react2.default.createElement(
             _reactBootstrap.Row,
             null,
-            _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
             _react2.default.createElement(
               _reactBootstrap.Col,
-              { className: 'centerText formFontStyle', sm: 8 },
-              '-  All of our communication once you join the program happens on Facebook.'
+              { className: 'formFontStyle', smOffset: 2, sm: 8 },
+              _react2.default.createElement(
+                'li',
+                null,
+                'As all of our communication during the program happens on Facebook, you must have a Facebook profile to join.'
+              )
             )
           ),
           _react2.default.createElement(
             _reactBootstrap.Row,
             null,
-            _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
             _react2.default.createElement(
               _reactBootstrap.Col,
-              { className: 'centerText formFontStyle', sm: 8 },
-              '-   You must be able to free up the first Saturday of every month and commit at least 4 hours a month for 6 months.'
+              { className: 'formFontStyle', smOffset: 2, sm: 8 },
+              _react2.default.createElement(
+                'li',
+                null,
+                'We have mandatory, virtual chats with inspiring women on the first Saturday of every month. You can only miss up to 2 calls (with advanced notice).'
+              )
             )
           )
         )
@@ -56388,19 +56444,24 @@ var Page3 = function (_React$Component) {
         _react2.default.createElement(
           'h3',
           { className: 'centerForm pageCaption' },
-          ' Help us connect you with your ideal mentee.'
+          ' Help us connect you with your ideal mentee'
         ),
+        _react2.default.createElement('div', { className: 'green-spacer' }),
         _react2.default.createElement(
           _reactBootstrap.FormGroup,
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'Username*'
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8 },
+            _react2.default.createElement(
+              'h4',
+              { className: 'formFontStyle2' },
+              'Username *'
+            )
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 4, sm: 4 },
             _react2.default.createElement(_reactBootstrap.FormControl, {
               id: 'formControlsUsername',
               type: 'text',
@@ -56416,12 +56477,16 @@ var Page3 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'Password*'
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8 },
+            _react2.default.createElement(
+              'h4',
+              { className: 'formFontStyle2' },
+              'Password *'
+            )
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 4, sm: 4 },
             _react2.default.createElement(_reactBootstrap.FormControl, {
               id: 'formControlsPassword',
               type: 'password',
@@ -56437,12 +56502,16 @@ var Page3 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'First Name*'
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8 },
+            _react2.default.createElement(
+              'h4',
+              { className: 'formFontStyle2' },
+              'First Name *'
+            )
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 4, sm: 4 },
             _react2.default.createElement(_reactBootstrap.FormControl, {
               id: 'formControlsFirstName',
               type: 'text',
@@ -56457,12 +56526,16 @@ var Page3 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'Last Name*'
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8 },
+            _react2.default.createElement(
+              'h4',
+              { className: 'formFontStyle2' },
+              'Last Name *'
+            )
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 4, sm: 4 },
             _react2.default.createElement(_reactBootstrap.FormControl, {
               id: 'formControlsLastName',
               type: 'text',
@@ -56477,12 +56550,16 @@ var Page3 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'Age*'
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8 },
+            _react2.default.createElement(
+              'h4',
+              { className: 'formFontStyle2' },
+              'Age *'
+            )
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 4, sm: 4 },
             _react2.default.createElement(_reactBootstrap.FormControl, {
               id: 'formControlsAge',
               type: 'number',
@@ -56497,12 +56574,16 @@ var Page3 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'Email*'
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8 },
+            _react2.default.createElement(
+              'h4',
+              { className: 'formFontStyle2' },
+              'Email *'
+            )
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 4, sm: 4 },
             _react2.default.createElement(
               _reactBootstrap.InputGroup,
               null,
@@ -56579,19 +56660,24 @@ var Page4 = function (_React$Component) {
         _react2.default.createElement(
           'h3',
           { className: 'centerForm pageCaption' },
-          'Let\'s get connected!'
+          'Let\'s get connected'
         ),
+        _react2.default.createElement('div', { className: 'green-spacer' }),
         _react2.default.createElement(
           _reactBootstrap.FormGroup,
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'Facebook *'
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8 },
+            _react2.default.createElement(
+              'h4',
+              { className: 'formFontStyle2' },
+              'Facebook *'
+            )
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 4, sm: 4 },
             _react2.default.createElement(
               _reactBootstrap.InputGroup,
               null,
@@ -56615,12 +56701,16 @@ var Page4 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'LinkedIn *'
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8 },
+            _react2.default.createElement(
+              'h4',
+              { className: 'formFontStyle2' },
+              'LinkedIn *'
+            )
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 4, sm: 4 },
             _react2.default.createElement(
               _reactBootstrap.InputGroup,
               null,
@@ -56644,12 +56734,16 @@ var Page4 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'Phone *'
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8 },
+            _react2.default.createElement(
+              'h4',
+              { className: 'formFontStyle2' },
+              'Phone *'
+            )
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 4, sm: 4 },
             _react2.default.createElement(
               _reactBootstrap.InputGroup,
               null,
@@ -56674,12 +56768,16 @@ var Page4 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'City *'
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8 },
+            _react2.default.createElement(
+              'h4',
+              { className: 'formFontStyle2' },
+              'City *'
+            )
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 4, sm: 4 },
             _react2.default.createElement(_reactBootstrap.FormControl, {
               id: 'formControlsCity',
               type: 'text',
@@ -56694,12 +56792,16 @@ var Page4 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'Country *'
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8 },
+            _react2.default.createElement(
+              'h4',
+              { className: 'formFontStyle2' },
+              'Country *'
+            )
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 4, sm: 4 },
             _react2.default.createElement(_reactBootstrap.FormControl, {
               id: 'formControlsCountry',
               type: 'text',
@@ -56778,17 +56880,22 @@ var Page5 = function (_React$Component) {
           { className: 'centerForm pageCaption' },
           'Some background questions'
         ),
+        _react2.default.createElement('div', { className: 'green-spacer' }),
         _react2.default.createElement(
           _reactBootstrap.FormGroup,
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'College *'
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8 },
+            _react2.default.createElement(
+              'h4',
+              { className: 'formFontStyle2' },
+              'College *'
+            )
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 4, sm: 4 },
             _react2.default.createElement(
               _reactBootstrap.InputGroup,
               null,
@@ -56812,12 +56919,12 @@ var Page5 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 4, className: 'formFontStyle' },
             'What was your college major? *'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 4, sm: 4 },
             _react2.default.createElement(_reactSelect2.default, {
               name: 'major',
               value: this.props.page.major,
@@ -56837,67 +56944,9 @@ var Page5 = function (_React$Component) {
           null,
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'Employer *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 8 },
-            _react2.default.createElement(
-              _reactBootstrap.InputGroup,
-              null,
-              _react2.default.createElement(
-                _reactBootstrap.InputGroup.Addon,
-                null,
-                _react2.default.createElement(_reactFontawesome2.default, { name: 'handshake-o' })
-              ),
-              _react2.default.createElement(_reactBootstrap.FormControl, {
-                id: 'formControlsEmployer',
-                type: 'text',
-                name: 'employer',
-                value: this.props.page.employer,
-                onChange: this.props.handleInputChange
-              })
-            )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'In which industry do you work? *'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 8 },
-            _react2.default.createElement(_reactSelect2.default, {
-              name: 'industry',
-              value: this.props.page.industry,
-              onChange: function onChange(value) {
-                return _this2.props.handleMultiChange(value, 'industry');
-              },
-              multi: true,
-              delimiter: '|',
-              simpleValue: true,
-              joinValues: true,
-              options: [{ value: 'International Relations, Politics', label: 'International Relations, Politics' }, { value: 'Finance', label: 'Finance' }, { value: 'Accounting, Legal', label: 'Accounting, Legal' }, { value: 'Media', label: 'Media' }, { value: 'Technology', label: 'Technology' }, { value: 'Marketing', label: 'Marketing' }, { value: 'Performing Arts, Sports, Related', label: 'Performing Arts, Sports, Related' }, { value: 'Healthcare', label: 'Healthcare' }, { value: 'Education', label: 'Education' }, { value: 'Agriculture, Forestry, Fishing', label: 'Agriculture, Forestry, Fishing' }]
-            })
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
             { className: 'centerForm formFontStyle2', componentClass: _reactBootstrap.ControlLabel, sm: 12 },
             'How important is it to you that a mentee share your major? *'
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
+          ),
           _react2.default.createElement(
             _reactBootstrap.Col,
             { className: 'centerForm', sm: 12 },
@@ -56949,6 +56998,78 @@ var Page5 = function (_React$Component) {
                 'Very'
               )
             )
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8 },
+            _react2.default.createElement(
+              'h4',
+              { className: 'formFontStyle2' },
+              'Employer *'
+            )
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { smOffset: 4, sm: 4 },
+            _react2.default.createElement(
+              _reactBootstrap.InputGroup,
+              null,
+              _react2.default.createElement(
+                _reactBootstrap.InputGroup.Addon,
+                null,
+                _react2.default.createElement(_reactFontawesome2.default, { name: 'handshake-o' })
+              ),
+              _react2.default.createElement(_reactBootstrap.FormControl, {
+                id: 'formControlsEmployer',
+                type: 'text',
+                name: 'employer',
+                value: this.props.page.employer,
+                onChange: this.props.handleInputChange
+              })
+            )
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8, className: 'formFontStyle' },
+            'In which industry do you to work? *'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { smOffset: 4, sm: 4 },
+            _react2.default.createElement(_reactSelect2.default, {
+              name: 'industry',
+              value: this.props.page.industry,
+              onChange: function onChange(value) {
+                return _this2.props.handleMultiChange(value, 'industry');
+              },
+              multi: true,
+              delimiter: '|',
+              simpleValue: true,
+              joinValues: true,
+              options: [{ value: 'International Relations, Politics', label: 'International Relations, Politics' }, { value: 'Finance', label: 'Finance' }, { value: 'Accounting, Legal', label: 'Accounting, Legal' }, { value: 'Media', label: 'Media' }, { value: 'Technology', label: 'Technology' }, { value: 'Marketing', label: 'Marketing' }, { value: 'Performing Arts, Sports, Related', label: 'Performing Arts, Sports, Related' }, { value: 'Healthcare', label: 'Healthcare' }, { value: 'Education', label: 'Education' }, { value: 'Agriculture, Forestry, Fishing', label: 'Agriculture, Forestry, Fishing' }]
+            })
+          )
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.FormGroup,
+          null,
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8, className: 'formFontStyle' },
+            'Describe your job.'
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Col,
+            { smOffset: 4, sm: 4 },
+            _react2.default.createElement('textarea', (_React$createElement = { style: { height: 100 }, id: 'formControlsTextarea', value: this.props.page.job_description, className: 'form-control' }, _defineProperty(_React$createElement, 'id', 'job_description'), _defineProperty(_React$createElement, 'name', 'job_description'), _defineProperty(_React$createElement, 'onChange', this.props.handleInputChange), _React$createElement))
           )
         ),
         _react2.default.createElement(
@@ -57010,20 +57131,6 @@ var Page5 = function (_React$Component) {
               },
               'Very'
             )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 2, className: 'formFontStyle' },
-            'Describe your job.'
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Col,
-            { sm: 8 },
-            _react2.default.createElement('textarea', (_React$createElement = { style: { height: 100 }, id: 'formControlsTextarea', value: this.props.page.job_description, className: 'form-control' }, _defineProperty(_React$createElement, 'id', 'job_description'), _defineProperty(_React$createElement, 'name', 'job_description'), _defineProperty(_React$createElement, 'onChange', this.props.handleInputChange), _React$createElement))
           )
         )
       );
@@ -57088,12 +57195,17 @@ var Page6 = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(
+          'h2',
+          { className: 'pageCaption' },
+          'Uniquely you'
+        ),
+        _react2.default.createElement('div', { className: 'green-spacer' }),
+        _react2.default.createElement(
           _reactBootstrap.FormGroup,
           null,
-          _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 8 },
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 2, sm: 8 },
             _react2.default.createElement(
               'h4',
               { className: 'centerText formFontStyle2' },
@@ -57104,10 +57216,9 @@ var Page6 = function (_React$Component) {
         _react2.default.createElement(
           _reactBootstrap.FormGroup,
           null,
-          _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 2, sm: 8 },
             _react2.default.createElement(_reactSelect2.default, {
               name: 'unblock_methods',
               value: this.props.page.unblock_methods,
@@ -57125,24 +57236,18 @@ var Page6 = function (_React$Component) {
         _react2.default.createElement(
           _reactBootstrap.FormGroup,
           null,
-          _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { componentClass: _reactBootstrap.ControlLabel, sm: 8 },
+            { componentClass: _reactBootstrap.ControlLabel, smOffset: 2, sm: 8 },
             _react2.default.createElement(
               'h4',
               { className: 'centerText formFontStyle2' },
               'What are you most excited to provide be for your mentee? (Select the top 3)'
             )
-          )
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.FormGroup,
-          null,
-          _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
+          ),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { sm: 8 },
+            { smOffset: 2, sm: 8 },
             _react2.default.createElement(_reactSelect2.default, {
               name: 'provide',
               value: this.props.page.provide,
@@ -57213,13 +57318,18 @@ var Page7 = function (_React$Component) {
         _reactBootstrap.Grid,
         null,
         _react2.default.createElement(
+          'h2',
+          { className: 'pageCaption' },
+          'We\u2019re excited to meet you, superstar!'
+        ),
+        _react2.default.createElement('div', { className: 'green-spacer' }),
+        _react2.default.createElement(
           _reactBootstrap.Row,
           { className: 'videoHeader' },
-          _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { className: 'centerText formFontStyle2', sm: 8 },
-            'Please submit a video on the following three prompts. Videos should be between 60 and 90 seconds. Provide the link in the field below. We\u2019re excited to meet you, superstar!'
+            { className: 'centerText formFontStyle2', sm: 12 },
+            'Please submit a video on the following three prompts. Videos should be between 60 and 90 seconds.'
           )
         ),
         _react2.default.createElement(
@@ -57228,7 +57338,7 @@ var Page7 = function (_React$Component) {
           _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { className: 'centerText formFontStyle', sm: 8 },
+            { className: 'centerText formFontStyle', sm: 10 },
             '1. Share a little bit about yourself and your passions.'
           )
         ),
@@ -57238,7 +57348,7 @@ var Page7 = function (_React$Component) {
           _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { className: 'centerText formFontStyle', sm: 8 },
+            { className: 'centerText formFontStyle', sm: 10 },
             '2. Why do you want to be a GIRLZ, FTW mentor?'
           )
         ),
@@ -57248,7 +57358,7 @@ var Page7 = function (_React$Component) {
           _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { className: 'centerText formFontStyle', sm: 8 },
+            { className: 'centerText formFontStyle', sm: 10 },
             '3. How do you support others?'
           )
         ),
