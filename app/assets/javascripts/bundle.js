@@ -54261,6 +54261,11 @@ var Page1 = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(
+          'h2',
+          { className: 'page1-title' },
+          'Our Mentee Application'
+        ),
+        _react2.default.createElement(
           _reactBootstrap.Col,
           { className: 'centerText formFontStyle',
             smOffset: 1, sm: 10,
@@ -54919,17 +54924,6 @@ var Page5 = function (_React$Component) {
                   inline: true
                 },
                 'Very'
-              ),
-              _react2.default.createElement(
-                _reactBootstrap.Radio,
-                {
-                  onChange: this.props.handleInputChange,
-                  name: 'share_major_rank',
-                  value: '4',
-                  checked: this.props.page.share_major_rank === '4',
-                  inline: true
-                },
-                'Extremely'
               )
             )
           )
@@ -54947,62 +54941,55 @@ var Page5 = function (_React$Component) {
           _reactBootstrap.FormGroup,
           { className: 'centerForm', sm: 12 },
           _react2.default.createElement(
-            'div',
-            { className: 'formFontStyle' },
+            _reactBootstrap.Col,
+            { className: 'centerForm' },
             _react2.default.createElement(
-              _reactBootstrap.Radio,
-              {
-                onChange: this.props.handleInputChange,
-                name: 'share_industry_rank',
-                value: '0',
-                checked: this.props.page.share_industry_rank === '0',
-                inline: true
-              },
-              'Not at all'
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Radio,
-              {
-                onChange: this.props.handleInputChange,
-                name: 'share_industry_rank',
-                value: '1',
-                checked: this.props.page.share_industry_rank === '1',
-                inline: true
-              },
-              'A little'
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Radio,
-              {
-                onChange: this.props.handleInputChange,
-                name: 'share_industry_rank',
-                value: '2',
-                checked: this.props.page.share_industry_rank === '2',
-                inline: true
-              },
-              'Moderately'
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Radio,
-              {
-                onChange: this.props.handleInputChange,
-                name: 'share_industry_rank',
-                value: '3',
-                checked: this.props.page.share_industry_rank === '3',
-                inline: true
-              },
-              'Very'
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Radio,
-              {
-                onChange: this.props.handleInputChange,
-                name: 'share_industry_rank',
-                value: '4',
-                checked: this.props.page.share_industry_rank === '4',
-                inline: true
-              },
-              'Extremely'
+              'div',
+              { className: 'formFontStyle' },
+              _react2.default.createElement(
+                _reactBootstrap.Radio,
+                {
+                  onChange: this.props.handleInputChange,
+                  name: 'share_industry_rank',
+                  value: '0',
+                  checked: this.props.page.share_industry_rank === '0',
+                  inline: true
+                },
+                'Not at all'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.Radio,
+                {
+                  onChange: this.props.handleInputChange,
+                  name: 'share_industry_rank',
+                  value: '1',
+                  checked: this.props.page.share_industry_rank === '1',
+                  inline: true
+                },
+                'A little'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.Radio,
+                {
+                  onChange: this.props.handleInputChange,
+                  name: 'share_industry_rank',
+                  value: '2',
+                  checked: this.props.page.share_industry_rank === '2',
+                  inline: true
+                },
+                'Moderately'
+              ),
+              _react2.default.createElement(
+                _reactBootstrap.Radio,
+                {
+                  onChange: this.props.handleInputChange,
+                  name: 'share_industry_rank',
+                  value: '3',
+                  checked: this.props.page.share_industry_rank === '3',
+                  inline: true
+                },
+                'Very'
+              )
             )
           )
         )
@@ -56955,17 +56942,6 @@ var Page5 = function (_React$Component) {
                   inline: true
                 },
                 'Very'
-              ),
-              _react2.default.createElement(
-                _reactBootstrap.Radio,
-                {
-                  onChange: this.props.handleInputChange,
-                  name: 'share_major_rank',
-                  value: '4',
-                  checked: this.props.page.share_major_rank === '4',
-                  inline: true
-                },
-                'Extremely'
               )
             )
           )
@@ -57028,17 +57004,6 @@ var Page5 = function (_React$Component) {
                 inline: true
               },
               'Very'
-            ),
-            _react2.default.createElement(
-              _reactBootstrap.Radio,
-              {
-                onChange: this.props.handleInputChange,
-                name: 'share_industry_rank',
-                value: '4',
-                checked: this.props.page.share_industry_rank === '4',
-                inline: true
-              },
-              'Extremely'
             )
           )
         ),

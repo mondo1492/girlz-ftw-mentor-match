@@ -152,15 +152,6 @@ class Page5 extends React.Component {
               >
               Very
             </Radio>
-            <Radio
-              onChange={this.props.handleInputChange}
-              name="share_major_rank"
-              value='4'
-              checked={this.props.page.share_major_rank === '4'}
-              inline
-              >
-              Extremely
-            </Radio>
             </div>
           </Col>
         </FormGroup>
@@ -208,15 +199,6 @@ class Page5 extends React.Component {
               inline
               >
               Very
-            </Radio>
-            <Radio
-              onChange={this.props.handleInputChange}
-              name="share_industry_rank"
-              value='4'
-              checked={this.props.page.share_industry_rank === '4'}
-              inline
-              >
-              Extremely
             </Radio>
             </div>
           </FormGroup>

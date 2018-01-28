@@ -151,15 +151,6 @@ class Page5 extends React.Component {
                   >
                   Very
                 </Radio>
-                <Radio
-                  onChange={this.props.handleInputChange}
-                  name="share_major_rank"
-                  value='4'
-                  checked={this.props.page.share_major_rank === '4'}
-                  inline
-                  >
-                  Extremely
-                </Radio>
                 </div>
             </Col>
           </FormGroup>
@@ -171,53 +162,46 @@ class Page5 extends React.Component {
           </FormGroup>
 
           <FormGroup className='centerForm' sm={12}>
-            <div className='formFontStyle'>
-              <Radio
-                onChange={this.props.handleInputChange}
-                name="share_industry_rank"
-                value='0'
-                checked={this.props.page.share_industry_rank === '0'}
-                inline
-                >
-                Not at all
-              </Radio>
-              <Radio
-                onChange={this.props.handleInputChange}
-                name="share_industry_rank"
-                value='1'
-                checked={this.props.page.share_industry_rank === '1'}
-                inline
-                >
-                A little
-              </Radio>
-              <Radio
-                onChange={this.props.handleInputChange}
-                name="share_industry_rank"
-                value='2'
-                checked={this.props.page.share_industry_rank === '2'}
-                inline
-                >
-                Moderately
-              </Radio>
-              <Radio
-                onChange={this.props.handleInputChange}
-                name="share_industry_rank"
-                value='3'
-                checked={this.props.page.share_industry_rank === '3'}
-                inline
-                >
-                Very
-              </Radio>
-              <Radio
-                onChange={this.props.handleInputChange}
-                name="share_industry_rank"
-                value='4'
-                checked={this.props.page.share_industry_rank === '4'}
-                inline
-                >
-                Extremely
-              </Radio>
-            </div>
+            <Col className='centerForm'>
+              <div className='formFontStyle'>
+                <Radio
+                  onChange={this.props.handleInputChange}
+                  name="share_industry_rank"
+                  value='0'
+                  checked={this.props.page.share_industry_rank === '0'}
+                  inline
+                  >
+                  Not at all
+                </Radio>
+                <Radio
+                  onChange={this.props.handleInputChange}
+                  name="share_industry_rank"
+                  value='1'
+                  checked={this.props.page.share_industry_rank === '1'}
+                  inline
+                  >
+                  A little
+                </Radio>
+                <Radio
+                  onChange={this.props.handleInputChange}
+                  name="share_industry_rank"
+                  value='2'
+                  checked={this.props.page.share_industry_rank === '2'}
+                  inline
+                  >
+                  Moderately
+                </Radio>
+                <Radio
+                  onChange={this.props.handleInputChange}
+                  name="share_industry_rank"
+                  value='3'
+                  checked={this.props.page.share_industry_rank === '3'}
+                  inline
+                  >
+                  Very
+                </Radio>
+              </div>
+            </Col>
           </FormGroup>
         </div>
       )

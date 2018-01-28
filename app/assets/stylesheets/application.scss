@@ -100,14 +100,6 @@
   margin-bottom: 70px;
 }
 
-// .header {
-//   background-size: 100% 100%;
-//   background-position: top;
-//   background-repeat: no-repeat;
-//   // width: 100%;
-//   // height: calc(40vh);
-//   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://res.cloudinary.com/runaway-today/image/upload/v1517164403/27398610_10155323927168806_730778552_o_gficdq.png');
-// }
 .header {
   background-size: cover;
   background-position: left;
@@ -140,7 +132,14 @@
   align-items: center;
 }
 
+.page1-title {
+  font-family: 'Arial Black';
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .formFontStyle {
+  text-align: left;
   font-weight: lighter;
 }
 .formFontStyle2 {

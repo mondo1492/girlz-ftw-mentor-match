@@ -10,6 +10,7 @@ class Page1 extends React.Component {
     render() {
       return(
         <div>
+          <h2 className="page1-title">Our Mentee Application</h2>
           <Col className='centerText formFontStyle'
              smOffset={1} sm={10}
              mdOffset={1} md={10}
