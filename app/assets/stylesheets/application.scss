@@ -136,8 +136,15 @@
   font-family: 'Arial Black';
   text-align: center;
   margin-bottom: 20px;
+  text-transform: uppercase;
 }
 
+.green-spacer {
+  width: 40px;
+  margin: 20px auto;
+  border-bottom: 3px solid rgba(177, 230, 214, 1);
+  text-align: center;
+}
 .formFontStyle {
   text-align: left;
   font-weight: lighter;
