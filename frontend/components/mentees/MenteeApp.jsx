@@ -20,20 +20,20 @@ class MenteeApp extends React.Component {
       0: {},
       1: {},
       2: {
-        first_name: "Ravi",
-        last_name: "Raval",
-        age: '27',
-        email: 'raviraval@gmail.com'
+        first_name: '',
+        last_name: '',
+        age: '',
+        email: ''
       },
       3: {
-        facebook: 'fab',
-        phone: '1234567890',
-        city: 'Belmont',
-        country: 'Albania',
+        facebook: '',
+        phone: '',
+        city: '',
+        country: '',
       },
       4: {
         high_school: '',
-        college: 'stanvard',
+        college: '',
         major: '',
         share_major_rank: '',
         industry: '',

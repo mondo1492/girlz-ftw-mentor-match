@@ -20,28 +20,28 @@ class MentorApp extends React.Component {
       0: {},
       1: {},
       2: {
-        username: "RaviMentortest",
-        password: "ravimentorpw",
-        first_name: "Ravi",
-        last_name: "Raval",
-        age: '27',
-        email: 'raviraval@gmail.com'
+        username: '',
+        password: '',
+        first_name: '',
+        last_name: '',
+        age: '',
+        email: ''
       },
       3: {
-        facebook: 'fab',
-        linkedin: 'link',
-        phone: '1234567890',
-        city: 'Belmont',
-        country: 'Albania',
+        facebook: '',
+        linkedin: '',
+        phone: '',
+        city: '',
+        country: '',
       },
       4: {
-        college: 'stanvard',
+        college: '',
         major: '',
         share_major_rank: '',
-        employer: 'googlebook',
+        employer: '',
         industry: '',
         share_industry_rank: '',
-        job_description: 'friggen sick',
+        job_description: '',
       },
       5: {
         unblock_methods: '',
@@ -51,7 +51,7 @@ class MentorApp extends React.Component {
         video_URL: '',
       },
       agree_terms: true,
-      page: 5,
+      page: 0,
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleMultiChange = this.handleMultiChange.bind(this);
