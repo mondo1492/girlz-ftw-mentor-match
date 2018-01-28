@@ -10,9 +10,9 @@ class Page1 extends React.Component {
     render() {
       return(
         <div>
-          <h2 className="page1-title">Our Mentee Application</h2>
+          <h2 className="pageCaption">Our Mentee Application</h2>
           <div className='green-spacer'></div>
-          <Col className='centerText formFontStyle'
+          <Col className='formFontStyle'
              smOffset={1} sm={10}
              mdOffset={1} md={10}
              lgOffset={1} lg={10}

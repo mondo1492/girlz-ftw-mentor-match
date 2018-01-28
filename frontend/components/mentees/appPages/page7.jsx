@@ -10,29 +10,29 @@ class Page7 extends React.Component {
   render() {
     return(
       <Grid>
+        <h2 className="pageCaption">We’re excited to meet you, superstar!</h2>
+        <div className='green-spacer'></div>
         <Row className="videoHeader">
-          <Col sm={2}></Col>
-          <Col className='centerText formFontStyle2' sm={8}>
+          <Col className='centerText formFontStyle2' sm={12}>
             Please submit a <strong>video or an essay</strong> on the following three prompts.
             Videos should be between 60 and 90 seconds.
-            We’re excited to meet you, superstar!
           </Col>
         </Row>
         <Row className="videoListItem">
-          <Col sm={2}></Col>
-          <Col className='centerText formFontStyle' sm={8}>
+          <Col sm={1}></Col>
+          <Col className='centerText formFontStyle' sm={10}>
             1. What keeps you up at night?
           </Col>
         </Row>
         <Row className="videoListItem">
-          <Col sm={2}></Col>
-          <Col className='centerText formFontStyle' sm={8}>
+          <Col sm={1}></Col>
+          <Col className='centerText formFontStyle' sm={10}>
             2. Why do you think girls should support each other?
           </Col>
         </Row>
         <Row className="videoListItem">
-          <Col sm={2}></Col>
-          <Col className='centerText formFontStyle' sm={8}>
+          <Col sm={1}></Col>
+          <Col className='centerText formFontStyle' sm={10}>
             3. What impact do you want to have in the world?
           </Col>
         </Row>

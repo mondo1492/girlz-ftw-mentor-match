@@ -71,10 +71,11 @@
 }
 
 .pageCaption {
-  font-size: 26px;
+  font-family: 'Arial Black';
+  text-align: center;
+  text-transform: uppercase;
   font-weight: normal;
-  padding-bottom: 20px;
-  margin: 0;
+  margin: 20px 0;
 }
 
 .centerButton {
@@ -87,9 +88,6 @@
 
 .Select.is-open { position: relative; z-index: 1000; }
 
-.centerText {
-  text-align: center;
-}
 .padder {
   padding: 10px;
   min-width: 48px;
@@ -132,13 +130,6 @@
   align-items: center;
 }
 
-.page1-title {
-  font-family: 'Arial Black';
-  text-align: center;
-  margin-bottom: 20px;
-  text-transform: uppercase;
-}
-
 .green-spacer {
   width: 40px;
   margin: 20px auto;
@@ -150,9 +141,13 @@
   font-weight: lighter;
 }
 .formFontStyle2 {
+  text-align: left;
   font-weight: lighter;
 }
 
+.centerText {
+  text-align: center;
+}
 @font-face {
   font-family: 'Museo_Slab_500_2';
   src: url('Museo_Slab_500_2-webfont.woff2') format('woff2'),

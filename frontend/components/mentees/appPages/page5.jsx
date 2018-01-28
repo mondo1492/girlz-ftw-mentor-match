@@ -13,6 +13,8 @@ class Page5 extends React.Component {
       return(
         <div>
           <h3 className='centerForm pageCaption'>Some background questions</h3>
+          <div className='green-spacer'></div>
+
           <FormGroup>
             <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
               High School *

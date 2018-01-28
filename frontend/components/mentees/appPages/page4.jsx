@@ -12,6 +12,8 @@ class Page4 extends React.Component {
       return(
         <div>
           <h3 className='centerForm pageCaption'>Let's get connected!</h3>
+          <div className='green-spacer'></div>
+
           <FormGroup>
             <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
               Facebook *

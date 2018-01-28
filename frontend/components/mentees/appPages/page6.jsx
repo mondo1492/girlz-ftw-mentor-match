@@ -12,21 +12,24 @@ class Page6 extends React.Component {
     render() {
       return(
         <div>
+          <h2 className="pageCaption">Looking Forward</h2>
+          <div className='green-spacer'></div>
           <FormGroup>
-            <Row>
-            <Col componentClass={ControlLabel} smOffset={2} sm={2} className='formFontStyle'>
-              Write the Instagram bio you wish you had.
-            </Col>
-            </Row>
+              <Col sm={2}></Col>
+              <Col componentClass={ControlLabel} sm={8}>
+                  <h4 className='formFontStyle2'>
+                    Write the Instagram bio you wish you had.
+                  </h4>
+              </Col>
             <Col smOffset={2} sm={8}>
-                <textarea style={{ height: 100 }} id='formControlsTextarea' value={this.props.page.instagram_bio_text} className="form-control" id="instagram_bio_text" name="instagram_bio_text" onChange={this.props.handleInputChange}/>
+                <textarea style={{ height: 35 }} id='formControlsTextarea' value={this.props.page.instagram_bio_text} className="form-control" id="instagram_bio_text" name="instagram_bio_text" onChange={this.props.handleInputChange}/>
             </Col>
           </FormGroup>
 
           <FormGroup>
             <Col sm={2}></Col>
             <Col componentClass={ControlLabel} sm={8}>
-              <h4 className='centerText formFontStyle2'>
+              <h4 className='formFontStyle2'>
                 What's getting in the way of you having that dream bio?
                 (Select up to 3)
               </h4>
@@ -59,7 +62,7 @@ class Page6 extends React.Component {
           <FormGroup >
             <Col sm={2}></Col>
             <Col componentClass={ControlLabel} sm={8}>
-              <h4 className='centerText formFontStyle2'>
+              <h4 className='formFontStyle2'>
                 What are you most excited to get from a mentor?
                 (Select up to 3)
               </h4>

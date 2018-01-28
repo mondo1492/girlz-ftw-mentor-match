@@ -54262,13 +54262,13 @@ var Page1 = function (_React$Component) {
         null,
         _react2.default.createElement(
           'h2',
-          { className: 'page1-title' },
+          { className: 'pageCaption' },
           'Our Mentee Application'
         ),
         _react2.default.createElement('div', { className: 'green-spacer' }),
         _react2.default.createElement(
           _reactBootstrap.Col,
-          { className: 'centerText formFontStyle',
+          { className: 'formFontStyle',
             smOffset: 1, sm: 10,
             mdOffset: 1, md: 10,
             lgOffset: 1, lg: 10,
@@ -54333,17 +54333,22 @@ var Page2 = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(
+          'h3',
+          { className: 'centerForm pageCaption' },
+          'Before we begin'
+        ),
+        _react2.default.createElement('div', { className: 'green-spacer' }),
+        _react2.default.createElement(
           _reactBootstrap.Grid,
           null,
           _react2.default.createElement(
             _reactBootstrap.Row,
             null,
+            _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
             _react2.default.createElement(
               _reactBootstrap.Col,
-              { className: 'centerText formFontStyle2',
-                sm: 8, smOffset: 2
-              },
-              'What you should know before submitting your application:'
+              { className: 'formFontStyle', sm: 8 },
+              'You must be willing to commit at least 4 hours a month for 6 months. Sessions with your mentor should last 1 hour every other week. We\u2019ll also ask that you write 1 blog post a month about what you\u2019ve learned from your mentor and/or what you\u2019re working on. Lastly, you must allot 1 hour for the monthly virtual chats.'
             )
           ),
           _react2.default.createElement(
@@ -54351,11 +54356,11 @@ var Page2 = function (_React$Component) {
             null,
             _react2.default.createElement(
               _reactBootstrap.Col,
-              { className: 'centerText formFontStyle',
+              { className: 'formFontStyle',
                 sm: 8, smOffset: 2,
                 md: 8, mdOffset: 2
               },
-              '-  All of our communication once you join the program happens on Facebook. If you\u2019re accepted as a mentee, you will be added to a Facebook group. This group will be the place where you can connect with other mentors and mentees in the program. We\u2019ll use this group to provide support, encouragement, and advice for each other. You must have a Facebook profile if you want to be a part of this program.'
+              'You must have a Facebook profile if you want to be a part of this program. All of our communication once you join the program happens on Facebook.'
             )
           ),
           _react2.default.createElement(
@@ -54364,18 +54369,8 @@ var Page2 = function (_React$Component) {
             _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
             _react2.default.createElement(
               _reactBootstrap.Col,
-              { className: 'centerText formFontStyle', sm: 8 },
-              '-   Every month, we\u2019ll host a call with all mentors and mentees. These calls take place on the first saturday of every month. In these calls, we\u2019ll have inspiring women talk to about how they got to where they are today. Each call will be structured differently but is meant to inspire, inform, and mobilize everyone on the call. Attending these calls is mandatory. You can only miss up to 2 calls (with advanced notice).'
-            )
-          ),
-          _react2.default.createElement(
-            _reactBootstrap.Row,
-            null,
-            _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
-            _react2.default.createElement(
-              _reactBootstrap.Col,
-              { className: 'centerText formFontStyle', sm: 8 },
-              '-   You must be willing to commit at least 4 hours a month for 6 months. Sessions with your mentor should last 1 hour every other week. We\u2019ll also ask that you write 1 blog post a month about what you\u2019ve learned from your mentor and/or what you\u2019re working on. Lastly, you must allot 1 hour for the monthly virtual chats.'
+              { className: 'formFontStyle', sm: 8 },
+              'We have mandatory, virtual chats with inspiring women on the first Saturday of every month. You can only miss up to 2 calls (with advanced notice).'
             )
           )
         )
@@ -54442,6 +54437,7 @@ var Page3 = function (_React$Component) {
           { className: 'centerForm pageCaption' },
           ' Help us connect you with your ideal mentor.'
         ),
+        _react2.default.createElement('div', { className: 'green-spacer' }),
         _react2.default.createElement(
           _reactBootstrap.FormGroup,
           { className: 'test' },
@@ -54591,6 +54587,7 @@ var Page4 = function (_React$Component) {
           { className: 'centerForm pageCaption' },
           'Let\'s get connected!'
         ),
+        _react2.default.createElement('div', { className: 'green-spacer' }),
         _react2.default.createElement(
           _reactBootstrap.FormGroup,
           null,
@@ -54756,6 +54753,7 @@ var Page5 = function (_React$Component) {
           { className: 'centerForm pageCaption' },
           'Some background questions'
         ),
+        _react2.default.createElement('div', { className: 'green-spacer' }),
         _react2.default.createElement(
           _reactBootstrap.FormGroup,
           null,
@@ -55334,21 +55332,28 @@ var Page6 = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(
+          'h2',
+          { className: 'pageCaption' },
+          'Looking Forward'
+        ),
+        _react2.default.createElement('div', { className: 'green-spacer' }),
+        _react2.default.createElement(
           _reactBootstrap.FormGroup,
           null,
+          _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
           _react2.default.createElement(
-            _reactBootstrap.Row,
-            null,
+            _reactBootstrap.Col,
+            { componentClass: _reactBootstrap.ControlLabel, sm: 8 },
             _react2.default.createElement(
-              _reactBootstrap.Col,
-              { componentClass: _reactBootstrap.ControlLabel, smOffset: 2, sm: 2, className: 'formFontStyle' },
+              'h4',
+              { className: 'formFontStyle2' },
               'Write the Instagram bio you wish you had.'
             )
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
             { smOffset: 2, sm: 8 },
-            _react2.default.createElement('textarea', (_React$createElement = { style: { height: 100 }, id: 'formControlsTextarea', value: this.props.page.instagram_bio_text, className: 'form-control' }, _defineProperty(_React$createElement, 'id', 'instagram_bio_text'), _defineProperty(_React$createElement, 'name', 'instagram_bio_text'), _defineProperty(_React$createElement, 'onChange', this.props.handleInputChange), _React$createElement))
+            _react2.default.createElement('textarea', (_React$createElement = { style: { height: 35 }, id: 'formControlsTextarea', value: this.props.page.instagram_bio_text, className: 'form-control' }, _defineProperty(_React$createElement, 'id', 'instagram_bio_text'), _defineProperty(_React$createElement, 'name', 'instagram_bio_text'), _defineProperty(_React$createElement, 'onChange', this.props.handleInputChange), _React$createElement))
           )
         ),
         _react2.default.createElement(
@@ -55360,7 +55365,7 @@ var Page6 = function (_React$Component) {
             { componentClass: _reactBootstrap.ControlLabel, sm: 8 },
             _react2.default.createElement(
               'h4',
-              { className: 'centerText formFontStyle2' },
+              { className: 'formFontStyle2' },
               'What\'s getting in the way of you having that dream bio? (Select up to 3)'
             )
           )
@@ -55395,7 +55400,7 @@ var Page6 = function (_React$Component) {
             { componentClass: _reactBootstrap.ControlLabel, sm: 8 },
             _react2.default.createElement(
               'h4',
-              { className: 'centerText formFontStyle2' },
+              { className: 'formFontStyle2' },
               'What are you most excited to get from a mentor? (Select up to 3)'
             )
           )
@@ -55481,48 +55486,53 @@ var Page7 = function (_React$Component) {
         _reactBootstrap.Grid,
         null,
         _react2.default.createElement(
+          'h2',
+          { className: 'pageCaption' },
+          'We\u2019re excited to meet you, superstar!'
+        ),
+        _react2.default.createElement('div', { className: 'green-spacer' }),
+        _react2.default.createElement(
           _reactBootstrap.Row,
           { className: 'videoHeader' },
-          _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { className: 'centerText formFontStyle2', sm: 8 },
+            { className: 'centerText formFontStyle2', sm: 12 },
             'Please submit a ',
             _react2.default.createElement(
               'strong',
               null,
               'video or an essay'
             ),
-            ' on the following three prompts. Videos should be between 60 and 90 seconds. We\u2019re excited to meet you, superstar!'
+            ' on the following three prompts. Videos should be between 60 and 90 seconds.'
           )
         ),
         _react2.default.createElement(
           _reactBootstrap.Row,
           { className: 'videoListItem' },
-          _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
+          _react2.default.createElement(_reactBootstrap.Col, { sm: 1 }),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { className: 'centerText formFontStyle', sm: 8 },
+            { className: 'centerText formFontStyle', sm: 10 },
             '1. What keeps you up at night?'
           )
         ),
         _react2.default.createElement(
           _reactBootstrap.Row,
           { className: 'videoListItem' },
-          _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
+          _react2.default.createElement(_reactBootstrap.Col, { sm: 1 }),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { className: 'centerText formFontStyle', sm: 8 },
+            { className: 'centerText formFontStyle', sm: 10 },
             '2. Why do you think girls should support each other?'
           )
         ),
         _react2.default.createElement(
           _reactBootstrap.Row,
           { className: 'videoListItem' },
-          _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
+          _react2.default.createElement(_reactBootstrap.Col, { sm: 1 }),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { className: 'centerText formFontStyle', sm: 8 },
+            { className: 'centerText formFontStyle', sm: 10 },
             '3. What impact do you want to have in the world?'
           )
         ),

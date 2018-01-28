@@ -12,6 +12,7 @@ class Page3 extends React.Component {
       return(
         <div>
           <h3 className='centerForm pageCaption'> Help us connect you with your ideal mentor.</h3>
+          <div className='green-spacer'></div>
 
           <FormGroup className='test'>
             <Col componentClass={ControlLabel} sm={2} className='formFontStyle'>
