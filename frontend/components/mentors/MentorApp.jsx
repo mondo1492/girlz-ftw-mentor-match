@@ -120,6 +120,7 @@ class MentorApp extends React.Component {
   }
 
   handleNext() {
+    // TODO: move page back up to top of form w/ anchor
     // TODO: if user clicks next when greyed, flash error
     this.validate(this.state.page);
     this.setState({page: this.state.page + 1});

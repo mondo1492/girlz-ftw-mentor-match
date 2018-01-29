@@ -22,8 +22,8 @@ class Page9 extends React.Component {
             </p>
             <br/>
             <p>
-              If you have any bursting questions, head over to our
-              <a href='www.girlzftw.com/faq'>FAQs</a>. If you can't find your question on our FAQs, send us an email and we'll do our best to answer your question!
+              If you have any bursting questions, head over to our <a href='www.girlzftw.com/faq'>FAQs</a>.
+              If you can't find your question on our FAQs, send us an email and we'll do our best to answer your question!
             </p>
             <br/>
             <h4>
