@@ -18,7 +18,7 @@ class Page5 extends React.Component {
           <FormGroup>
             <Col componentClass={ControlLabel} smOffset={4} sm={8}>
               <h4 className='formFontStyle2'>
-                High School *
+                High School
               </h4>
             </Col>
             <Col smOffset={4} sm={4}>
@@ -39,7 +39,7 @@ class Page5 extends React.Component {
           <FormGroup>
             <Col componentClass={ControlLabel} smOffset={4} sm={8}>
               <h4 className='formFontStyle2'>
-                College (if applicable) *
+                College (if applicable)
               </h4>
             </Col>
             <Col smOffset={4} sm={4}>
@@ -60,7 +60,7 @@ class Page5 extends React.Component {
 
           <FormGroup>
             <Col componentClass={ControlLabel} smOffset={4} sm={4} className='formFontStyle'>
-              What is/might be your college major? *
+              What is/might be your college major?
             </Col>
             <Col smOffset={4} sm={4}>
               <Select
@@ -77,7 +77,8 @@ class Page5 extends React.Component {
                   { value: 'Communcations, Marketing', label: 'Communcations, Marketing' },
                   { value: 'Political Science, International Relations', label: 'Political Science, International Relations' },
                   { value: 'Finance, Economics', label: 'Finance, Economics' },
-                  { value: 'Liberal Arts', label: 'Liberal Arts' }
+                  { value: 'Humanites', label: 'Humanites' },
+                  { value: 'Arts', label: 'Arts' }
                 ]}
               />
             </Col>
@@ -85,7 +86,7 @@ class Page5 extends React.Component {
 
           <FormGroup>
             <Col componentClass={ControlLabel} smOffset={4} sm={8} className='formFontStyle'>
-              In which industry do you want to work? *
+              In which industry do you want to work?
             </Col>
             <Col smOffset={4} sm={4}>
               <Select
@@ -106,7 +107,9 @@ class Page5 extends React.Component {
                   { value: 'Performing Arts, Sports, Related', label: 'Performing Arts, Sports, Related' },
                   { value: 'Healthcare', label: 'Healthcare' },
                   { value: 'Education', label: 'Education' },
-                  { value: 'Agriculture, Forestry, Fishing', label: 'Agriculture, Forestry, Fishing' }
+                  { value: 'Agriculture, Forestry, Fishing', label: 'Agriculture, Forestry, Fishing' },
+                  { value: 'Service, Hospitality', label: 'Service, Hospitality' },
+                  { value: 'Law Enforcement', label: 'Law Enforcement' }
                 ]}
               />
             </Col>
@@ -114,9 +117,9 @@ class Page5 extends React.Component {
 
           <FormGroup >
             <Col className='centerForm formFontStyle2' componentClass={ControlLabel} sm={12}>
-              How important is it to you that a mentor share your (desired) college major? *
+              How important is it to you that a mentor share your (desired) college major?
             </Col>
-            
+
             <Col className='centerForm' sm={12}>
               <div className='formFontStyle'>
                 <Radio
@@ -161,7 +164,7 @@ class Page5 extends React.Component {
 
           <FormGroup >
             <Col className='centerForm formFontStyle2' componentClass={ControlLabel} sm={12}>
-                How important is it to you that a mentor be employed in your desired industry? *
+              How important is it to you that a mentor be employed in your desired industry?
             </Col>
           </FormGroup>
 

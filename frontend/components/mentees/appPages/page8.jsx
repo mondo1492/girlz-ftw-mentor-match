@@ -9,7 +9,7 @@ class Page8 extends React.Component {
     }
     render() {
       return(
-          <div className='white_text centerText'>
+          <div className='centerText'>
             <h3>
               Thanks for applying! We're excited to read your application!
             </h3>

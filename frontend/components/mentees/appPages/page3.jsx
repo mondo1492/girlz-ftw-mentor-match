@@ -17,7 +17,7 @@ class Page3 extends React.Component {
           <FormGroup>
             <Col componentClass={ControlLabel} smOffset={4} sm={8}>
               <h4 className='formFontStyle2'>
-                First Name *
+                First Name
               </h4>
             </Col>
             <Col smOffset={4} sm={4}>
@@ -34,7 +34,7 @@ class Page3 extends React.Component {
           <FormGroup>
             <Col componentClass={ControlLabel} smOffset={4} sm={8}>
               <h4 className='formFontStyle2'>
-                Last Name *
+                Last Name
               </h4>
             </Col>
             <Col smOffset={4} sm={4}>
@@ -51,7 +51,7 @@ class Page3 extends React.Component {
           <FormGroup>
             <Col componentClass={ControlLabel} smOffset={4} sm={8}>
               <h4 className='formFontStyle2'>
-                Age *
+                Age
               </h4>
             </Col>
             <Col smOffset={4} sm={4}>
@@ -68,7 +68,7 @@ class Page3 extends React.Component {
           <FormGroup>
             <Col componentClass={ControlLabel} smOffset={4} sm={8}>
               <h4 className='formFontStyle2'>
-                Email *
+                Email
               </h4>
             </Col>
             <Col smOffset={4} sm={4}>

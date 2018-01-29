@@ -18,7 +18,7 @@ class Page4 extends React.Component {
           <FormGroup>
             <Col componentClass={ControlLabel} smOffset={4} sm={8}>
               <h4 className='formFontStyle2'>
-                Facebook *
+                Facebook
               </h4>
             </Col>
             <Col smOffset={4} sm={4}>
@@ -40,7 +40,7 @@ class Page4 extends React.Component {
           <FormGroup>
             <Col componentClass={ControlLabel} smOffset={4} sm={8}>
               <h4 className='formFontStyle2'>
-                Phone *
+                Phone
               </h4>
             </Col>
             <Col smOffset={4} sm={4}>
@@ -63,7 +63,7 @@ class Page4 extends React.Component {
           <FormGroup>
             <Col componentClass={ControlLabel} smOffset={4} sm={8}>
               <h4 className='formFontStyle2'>
-                City *
+                City
               </h4>
             </Col>
             <Col smOffset={4} sm={4}>
@@ -79,7 +79,7 @@ class Page4 extends React.Component {
           <FormGroup>
             <Col componentClass={ControlLabel} smOffset={4} sm={8}>
               <h4 className='formFontStyle2'>
-                Country *
+                Country
               </h4>
             </Col>
             <Col smOffset={4} sm={4}>

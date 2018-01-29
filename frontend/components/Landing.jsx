@@ -5,9 +5,7 @@ import SessionContainer from './session/session_forms_container';
 const Landing = () => (
   <div>
     <div id="all-content">
-      <Link to="/mentee_app">Mentee App</Link>
-      <Link to="/mentor_app">Mentor App</Link>
-      <h4>Already a Mentor? Sign in below</h4>
+      <h4>Mentor Sign In</h4>
       <SessionContainer/>
     </div>
   </div>

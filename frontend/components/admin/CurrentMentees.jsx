@@ -34,7 +34,6 @@ class CurrentMentees extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log("PRRRRRROOOPS");
     let approvedMentees = [];
     let openMentors = [];
     let allMentors = [];

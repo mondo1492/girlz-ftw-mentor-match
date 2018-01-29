@@ -17,9 +17,7 @@ class Page6 extends React.Component {
           <FormGroup>
             <Col componentClass={ControlLabel} smOffset={2} sm={8}>
               <h4 className='centerText formFontStyle2'>
-                We all get in the way of our own success.
-                Which of the following methods do you think you’ve managed
-                to get under control in order to unblock your road to success?
+                We all get in the way of our own success. Which of the following challenges do you think you’ve managed to control in order to unblock your road to success?
                 (Select the top 3)
               </h4>
             </Col>
@@ -36,13 +34,12 @@ class Page6 extends React.Component {
                 joinValues
                 options={[
                   { value: 'Procrastination', label: 'Procrastination' },
-                  { value: 'Controlling life, people', label: 'Controlling life, people' },
+                  { value: 'Lack of Support', label: 'Lack of Support' },
                   { value: 'Indecision', label: 'Indecision' },
-                  { value: 'Not saying \'yes\'; holding back; not being proactive in seeing opportunities', label: 'Not saying \'yes\'; holding back; not being proactive in seeing opportunities' },
-                  { value: 'Wanting to be right', label: 'Wanting to be right' },
-                  { value: 'Following the goals of other people', label: 'Following the goals of other people' },
-                  { value: 'Acting as \'lone ranger\'; not delegating', label: 'Acting as \'lone ranger\'; not delegating' },
-                  { value: 'Not saying \'no\' to projects that don\'t inspire you', label: 'Not saying \'no\' to projects that don\'t inspire you' },
+                  { value: 'Lack of Resources', label: 'Lack of Resources' },
+                  { value: 'Unclear Goals', label: 'Unclear Goals' },
+                  { value: 'Time Management', label: 'Time Management' },
+                  { value: 'Lack of Confidence', label: 'Lack of Confidence' }
                 ]}
               />
             </Col>
@@ -66,12 +63,11 @@ class Page6 extends React.Component {
                 options={[
                   { value: 'Challenge', label: 'Challenge' },
                   { value: 'Accountability', label: 'Accountability' },
-                  { value: 'Sounding Board', label: 'Sounding Board' },
+                  { value: 'A Listening Ear', label: 'A Listening Ear' },
                   { value: 'Provide focus and direction', label: 'Provide focus and direction' },
                   { value: 'Inspiration', label: 'Inspiration' },
-                  { value: 'Ideas, Innovation, and Strategy for new projects', label: 'Ideas, Innovation, and Strategy for new projects' },
-                  { value: 'Confidence booster; provide validation', label: 'Confidence booster; provide validation' },
-                  { value: 'Not saying \'no\' to projects that don\'t inspire you', label: 'Not saying \'no\' to projects that don\'t inspire you' },
+                  { value: 'Ideas, Innovation, and Strategy for New Projects', label: 'Ideas, Innovation, and Strategy for New Projects' },
+                  { value: 'Confidence booster; provide validation', label: 'Confidence booster; provide validation' }
                 ]}
               />
             </Col>

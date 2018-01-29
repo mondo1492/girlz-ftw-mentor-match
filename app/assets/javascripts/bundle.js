@@ -53972,11 +53972,6 @@ var MenteeApp = function (_React$Component) {
   }
 
   _createClass(MenteeApp, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      window.addEventListener('resize', console.log('window', window));
-    }
-  }, {
     key: 'handleMultiChange',
     value: function handleMultiChange(value, name) {
       var pageNum = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : this.state.page;
@@ -54268,7 +54263,7 @@ var Page1 = function (_React$Component) {
             mdOffset: 2, md: 8,
             lgOffset: 2, lg: 8
           },
-          'Hello! Thank you for your interest in the GIRLZ, FTW mentorship program. We\u2019re thrilled to read your application. Before you fill out our form, we\u2019d like to let you in on a little secret. We\u2019re not a regular mentorship program. We\u2019re a community of girlz who are passionate about elevating and celebrating female voices around the world. In this program, you won\u2019t be paired with THAT girl\u2026 you know, the one that always had her shit together and still always managed to blow dry her hair before school / work. The mentors in our program are real, passionate, #girlbosses that don\u2019t pretend to be perfect, can hustle their way to their dreams, and still manage to uplift others along the way.'
+          'Hello! Thank you for your interest in the GIRLZ, FTW mentorship program. We\u2019d like to let you in on a little secret. We\u2019re not a regular mentorship program. We\u2019re a community of girlz who are passionate about elevating and celebrating female voices around the world. The mentors in our program are real, passionate, #girlbosses that don\u2019t pretend to be perfect, can hustle their way to their dreams, and still manage to uplift others along the way.'
         )
       );
     }
@@ -54343,7 +54338,7 @@ var Page2 = function (_React$Component) {
               _react2.default.createElement(
                 'li',
                 null,
-                'You must be willing to commit at least 4 hours a month for 6 months. Sessions with your mentor should last 1 hour every other week. We\u2019ll also ask that you write 1 blog post a month about what you\u2019ve learned from your mentor and/or what you\u2019re working on.'
+                'The program is six months long. The first three months you\'ll have bi-weekly calls with your mentor (once every other week). The last three months you\'ll have a monthly call. This is the minimum requirement for the program, but you\'re more than welcome to chat with your mentor on a more regular basis.'
               )
             )
           ),
@@ -54371,7 +54366,7 @@ var Page2 = function (_React$Component) {
               _react2.default.createElement(
                 'li',
                 null,
-                'We have mandatory, virtual chats with inspiring women on the first Saturday of every month. You can only miss up to 2 calls (with advanced notice).'
+                'We have mandatory, virtual chats with inspiring women on the first Saturday of every month. You can only miss up to two calls (with advanced notice).'
               )
             )
           )
@@ -54449,7 +54444,7 @@ var Page3 = function (_React$Component) {
             _react2.default.createElement(
               'h4',
               { className: 'formFontStyle2' },
-              'First Name *'
+              'First Name'
             )
           ),
           _react2.default.createElement(
@@ -54473,7 +54468,7 @@ var Page3 = function (_React$Component) {
             _react2.default.createElement(
               'h4',
               { className: 'formFontStyle2' },
-              'Last Name *'
+              'Last Name'
             )
           ),
           _react2.default.createElement(
@@ -54497,7 +54492,7 @@ var Page3 = function (_React$Component) {
             _react2.default.createElement(
               'h4',
               { className: 'formFontStyle2' },
-              'Age *'
+              'Age'
             )
           ),
           _react2.default.createElement(
@@ -54521,7 +54516,7 @@ var Page3 = function (_React$Component) {
             _react2.default.createElement(
               'h4',
               { className: 'formFontStyle2' },
-              'Email *'
+              'Email'
             )
           ),
           _react2.default.createElement(
@@ -54615,7 +54610,7 @@ var Page4 = function (_React$Component) {
             _react2.default.createElement(
               'h4',
               { className: 'formFontStyle2' },
-              'Facebook *'
+              'Facebook'
             )
           ),
           _react2.default.createElement(
@@ -54648,7 +54643,7 @@ var Page4 = function (_React$Component) {
             _react2.default.createElement(
               'h4',
               { className: 'formFontStyle2' },
-              'Phone *'
+              'Phone'
             )
           ),
           _react2.default.createElement(
@@ -54682,7 +54677,7 @@ var Page4 = function (_React$Component) {
             _react2.default.createElement(
               'h4',
               { className: 'formFontStyle2' },
-              'City *'
+              'City'
             )
           ),
           _react2.default.createElement(
@@ -54706,7 +54701,7 @@ var Page4 = function (_React$Component) {
             _react2.default.createElement(
               'h4',
               { className: 'formFontStyle2' },
-              'Country *'
+              'Country'
             )
           ),
           _react2.default.createElement(
@@ -54797,7 +54792,7 @@ var Page5 = function (_React$Component) {
             _react2.default.createElement(
               'h4',
               { className: 'formFontStyle2' },
-              'High School *'
+              'High School'
             )
           ),
           _react2.default.createElement(
@@ -54830,7 +54825,7 @@ var Page5 = function (_React$Component) {
             _react2.default.createElement(
               'h4',
               { className: 'formFontStyle2' },
-              'College (if applicable) *'
+              'College (if applicable)'
             )
           ),
           _react2.default.createElement(
@@ -54860,7 +54855,7 @@ var Page5 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 4, className: 'formFontStyle' },
-            'What is/might be your college major? *'
+            'What is/might be your college major?'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
@@ -54875,7 +54870,7 @@ var Page5 = function (_React$Component) {
               delimiter: '|',
               simpleValue: true,
               joinValues: true,
-              options: [{ value: 'Science', label: 'Science' }, { value: 'Engineering', label: 'Engineering' }, { value: 'Communcations, Marketing', label: 'Communcations, Marketing' }, { value: 'Political Science, International Relations', label: 'Political Science, International Relations' }, { value: 'Finance, Economics', label: 'Finance, Economics' }, { value: 'Liberal Arts', label: 'Liberal Arts' }]
+              options: [{ value: 'Science', label: 'Science' }, { value: 'Engineering', label: 'Engineering' }, { value: 'Communcations, Marketing', label: 'Communcations, Marketing' }, { value: 'Political Science, International Relations', label: 'Political Science, International Relations' }, { value: 'Finance, Economics', label: 'Finance, Economics' }, { value: 'Humanites', label: 'Humanites' }, { value: 'Arts', label: 'Arts' }]
             })
           )
         ),
@@ -54885,7 +54880,7 @@ var Page5 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8, className: 'formFontStyle' },
-            'In which industry do you want to work? *'
+            'In which industry do you want to work?'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
@@ -54900,7 +54895,7 @@ var Page5 = function (_React$Component) {
               delimiter: '|',
               simpleValue: true,
               joinValues: true,
-              options: [{ value: 'International Relations, Politics', label: 'International Relations, Politics' }, { value: 'Finance', label: 'Finance' }, { value: 'Accounting, Legal', label: 'Accounting, Legal' }, { value: 'Media', label: 'Media' }, { value: 'Technology', label: 'Technology' }, { value: 'Marketing', label: 'Marketing' }, { value: 'Performing Arts, Sports, Related', label: 'Performing Arts, Sports, Related' }, { value: 'Healthcare', label: 'Healthcare' }, { value: 'Education', label: 'Education' }, { value: 'Agriculture, Forestry, Fishing', label: 'Agriculture, Forestry, Fishing' }]
+              options: [{ value: 'International Relations, Politics', label: 'International Relations, Politics' }, { value: 'Finance', label: 'Finance' }, { value: 'Accounting, Legal', label: 'Accounting, Legal' }, { value: 'Media', label: 'Media' }, { value: 'Technology', label: 'Technology' }, { value: 'Marketing', label: 'Marketing' }, { value: 'Performing Arts, Sports, Related', label: 'Performing Arts, Sports, Related' }, { value: 'Healthcare', label: 'Healthcare' }, { value: 'Education', label: 'Education' }, { value: 'Agriculture, Forestry, Fishing', label: 'Agriculture, Forestry, Fishing' }, { value: 'Service, Hospitality', label: 'Service, Hospitality' }, { value: 'Law Enforcement', label: 'Law Enforcement' }]
             })
           )
         ),
@@ -54910,7 +54905,7 @@ var Page5 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { className: 'centerForm formFontStyle2', componentClass: _reactBootstrap.ControlLabel, sm: 12 },
-            'How important is it to you that a mentor share your (desired) college major? *'
+            'How important is it to you that a mentor share your (desired) college major?'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
@@ -54971,7 +54966,7 @@ var Page5 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { className: 'centerForm formFontStyle2', componentClass: _reactBootstrap.ControlLabel, sm: 12 },
-            'How important is it to you that a mentor be employed in your desired industry? *'
+            'How important is it to you that a mentor be employed in your desired industry?'
           )
         ),
         _react2.default.createElement(
@@ -55418,7 +55413,7 @@ var Page6 = function (_React$Component) {
               delimiter: '|',
               simpleValue: true,
               joinValues: true,
-              options: [{ value: 'Procrastination', label: 'Procrastination' }, { value: 'Controlling life, people', label: 'Controlling life, people' }, { value: 'Indecision', label: 'Indecision' }, { value: 'Not saying \'yes\'; holding back; not being proactive in seeing opportunities', label: 'Not saying \'yes\'; holding back; not being proactive in seeing opportunities' }, { value: 'Wanting to be right', label: 'Wanting to be right' }, { value: 'Following the goals of other people', label: 'Following the goals of other people' }, { value: 'Acting as \'lone ranger\'; not delegating', label: 'Acting as \'lone ranger\'; not delegating' }, { value: 'Not saying \'no\' to projects that don\'t inspire you', label: 'Not saying \'no\' to projects that don\'t inspire you' }]
+              options: [{ value: 'Procrastination', label: 'Procrastination' }, { value: 'Lack of Support', label: 'Lack of Support' }, { value: 'Indecision', label: 'Indecision' }, { value: 'Lack of Resources', label: 'Lack of Resources' }, { value: 'Unclear Goals', label: 'Unclear Goals' }, { value: 'Time Management', label: 'Time Management' }, { value: 'Lack of Confidence', label: 'Lack of Confidence' }]
             })
           )
         ),
@@ -55451,7 +55446,7 @@ var Page6 = function (_React$Component) {
               delimiter: '|',
               simpleValue: true,
               joinValues: true,
-              options: [{ value: 'Challenge', label: 'Challenge' }, { value: 'Accountability', label: 'Accountability' }, { value: 'Sounding Board', label: 'Sounding Board' }, { value: 'Provide focus and direction', label: 'Provide focus and direction' }, { value: 'Inspiration', label: 'Inspiration' }, { value: 'Ideas, Innovation, and Strategy for new projects', label: 'Ideas, Innovation, and Strategy for new projects' }, { value: 'Confidence booster; provide validation', label: 'Confidence booster; provide validation' }, { value: 'Not saying \'no\' to projects that don\'t inspire you', label: 'Not saying \'no\' to projects that don\'t inspire you' }]
+              options: [{ value: 'Challenge', label: 'Challenge' }, { value: 'Accountability', label: 'Accountability' }, { value: 'A Listening Ear', label: 'A Listening Ear' }, { value: 'Provide focus and direction', label: 'Provide focus and direction' }, { value: 'Inspiration', label: 'Inspiration' }, { value: 'Ideas, Innovation, and Strategy for New Projects', label: 'Ideas, Innovation, and Strategy for New Projects' }, { value: 'Confidence booster; provide validation', label: 'Confidence booster; provide validation' }]
             })
           )
         )
@@ -55538,7 +55533,7 @@ var Page7 = function (_React$Component) {
               null,
               'essay'
             ),
-            ' on the following three prompts. Videos should be between 60 and 90 seconds.'
+            ' on the following three prompts. If you decide to do a video, it should be between 60 and 90 seconds.'
           )
         ),
         _react2.default.createElement(
@@ -55592,196 +55587,6 @@ var Page7 = function (_React$Component) {
 
 exports.default = Page7;
 
-// class Page7 extends React.Component {
-//     constructor(props) {
-//       super(props);
-//
-//       // this.state = {
-//       //   videoOptions: { mimeType: 'video/webm; codecs=vp9' },
-//       //   mediaSteam: new MediaStream(),
-//       //   mediaRecorder: new MediaRecord(mediaStream, options),
-//       //   recordedChunks: [],
-//       // }
-//       // this.state.mediaRecorder.ondataavailable = handleDataAvailable;
-//       let mediaSource = new MediaSource();
-//       this.state = {
-//         mediaSource: mediaSource,
-//         mediaRecorder: null,
-//       }
-//       this.video = [];
-//       this.button = [];
-//       this.recordedBlobs = [];
-//       this.state.mediaSource.addEventListener('sourceopen', this.handleSourceOpen, false);
-//
-//       this.handleSuccess = this.handleSuccess.bind(this);
-//       this.handleError = this.handleError.bind(this);
-//       this.handleSourceOpen = this.handleSourceOpen.bind(this);
-//       this.handleDataAvailable = this.handleDataAvailable.bind(this);
-//       this.toggleRecording = this.toggleRecording.bind(this);
-//       this.stopRecording = this.stopRecording.bind(this);
-//       this.startRecording = this.startRecording.bind(this);
-//       this.handleStop = this.handleStop.bind(this);
-//       this.play = this.play.bind(this);
-//
-//     }
-//
-//     componentDidMount(){
-//       this.gumVideo = this.video[0];
-//       this.recordedVideo = this.video[1];
-//       console.log(this.recordedVideo);
-//       this.recordButton = this.button[0];
-//       this.playButton = this.button[1];
-//       this.uploadButton = this.button[2];
-//
-//       this.isSecureOrigin = location.protocol === 'https:' ||
-//       location.hostname === 'localhost';
-//       this.constraints = {
-//         audio: true,
-//         video: true
-//       };
-//       // window.isSecureContext could be used for Chrome
-//       if (!this.isSecureOrigin) {
-//         alert('getUserMedia() must be run from a secure origin: HTTPS or localhost.' +
-//         '\n\nChanging protocol to HTTPS');
-//         location.protocol = 'HTTPS';
-//       }
-//
-//       this.recordedVideo.addEventListener('error', function(ev) {
-//         console.error('MediaRecording.recordedMedia.error()');
-//         alert('Your browser can not play\n\n' + recordedVideo.src
-//         + '\n\n media clip. event: ' + JSON.stringify(ev));
-//       }, true);
-//
-//       navigator.mediaDevices.getUserMedia(this.constraints).
-//       then(this.handleSuccess).catch(this.handleError);
-//
-//       this.recordButton.onclick = this.toggleRecording;
-//       this.playButton.onclick = this.play;
-//     }
-//
-//     handleSuccess(stream) {
-//       this.recordButton.disabled = false;
-//       console.log('getUserMedia() got stream: ', stream);
-//       window.stream = stream;
-//       this.gumVideo.srcObject = stream;
-//     }
-//
-//     handleError(error) {
-//       console.log('navigator.getUserMedia error: ', error);
-//     }
-//
-//
-//     handleSourceOpen(event) {
-//       console.log('MediaSource opened');
-//     }
-//
-//     handleDataAvailable(event) {
-//       if (event.data && event.data.size > 0) {
-//         this.recordedBlobs.push(event.data);
-//       }
-//     }
-//
-//     handleStop(event) {
-//       console.log('Recorder stopped: ', event);
-//     }
-//
-//     toggleRecording() {
-//       if (this.recordButton.textContent === 'Start Recording') {
-//         this.startRecording();
-//       } else {
-//         this.stopRecording();
-//         this.recordButton.textContent = 'Start Recording';
-//         this.playButton.disabled = false;
-//         // uploadButton.disabled = false;
-//       }
-//     }
-//
-//     startRecording() {
-//       this.recordedBlobs = [];
-//       var options = {mimeType: 'video/webm;codecs=vp9'};
-//       if (!MediaRecorder.isTypeSupported(options.mimeType)) {
-//         console.log(options.mimeType + ' is not Supported');
-//         options = {mimeType: 'video/webm;codecs=vp8'};
-//         if (!MediaRecorder.isTypeSupported(options.mimeType)) {
-//           console.log(options.mimeType + ' is not Supported');
-//           options = {mimeType: 'video/webm'};
-//           if (!MediaRecorder.isTypeSupported(options.mimeType)) {
-//             console.log(options.mimeType + ' is not Supported');
-//             options = {mimeType: ''};
-//           }
-//         }
-//       }
-//       try {
-//         this.mediaRecorder = new MediaRecorder(window.stream, options);
-//       } catch (e) {
-//         console.error('Exception while creating MediaRecorder: ' + e);
-//         alert('Exception while creating MediaRecorder: '
-//           + e + '. mimeType: ' + options.mimeType);
-//         return;
-//       }
-//       console.log('Created MediaRecorder', this.mediaRecorder, 'with options', options);
-//       this.recordButton.textContent = 'Stop Recording';
-//       this.playButton.disabled = true;
-//       this.uploadButton.disabled = true;
-//       this.mediaRecorder.onstop = this.handleStop;
-//       this.mediaRecorder.ondataavailable = this.handleDataAvailable;
-//       this.mediaRecorder.start(10); // collect 10ms of data
-//       console.log('MediaRecorder started', this.mediaRecorder);
-//     }
-//
-//     stopRecording() {
-//       this.mediaRecorder.stop();
-//       console.log('Recorded Blobs: ', this.recordedBlobs);
-//       this.recordedVideo.controls = true;
-//     }
-//
-//     play() {
-//       var superBuffer = new Blob(this.recordedBlobs, {type: 'video/webm'});
-//       this.recordedVideo.src = window.URL.createObjectURL(superBuffer);
-//       this.recordedVideo.play();
-//     }
-//
-//     render() {
-//       return(
-//         <div>
-//           <video ref={(input) => {this.video[0] = input}} id="gum" autoPlay muted></video>
-//           <video ref={(input) => {this.video[1] = input}} id="recorded" controls></video>
-//
-//           <div>
-//             <button ref={(input) => {this.button[0] = input}} id="record" disabled>Start Recording</button>
-//             <button ref={(input) => {this.button[1] = input}} id="play" disabled>Play</button>
-//             <button
-//               ref={(input) => {this.button[2] = input}}
-//               onClick={this.upload}
-//               id="upload" disabled
-//               >
-//               Upload
-//             </button>
-//           </div>
-//         </div>
-// )
-//     }
-//   }
-//
-// export default Page7;
-
-// <FormGroup>
-//   <Col sm={8}>
-//     <InputGroup>
-//       <InputGroup.Addon>
-//         <FontAwesome name='file-video-o'/>
-//       </InputGroup.Addon>
-//       <FormControl
-//         id="formControlsVideo"
-//         type="text"
-//         name="videoURL"
-//         value={this.props.page.videoURL}
-//         onChange={this.props.handleInputChange}
-//         />
-//     </InputGroup>
-//   </Col>
-// </FormGroup>
-
 /***/ }),
 /* 504 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -55827,7 +55632,7 @@ var Page8 = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'white_text centerText' },
+        { className: 'centerText' },
         _react2.default.createElement(
           'h3',
           null,
@@ -56272,7 +56077,7 @@ var Page1 = function (_React$Component) {
         _react2.default.createElement(
           _reactBootstrap.Col,
           { className: 'formFontStyle', smOffset: 2, sm: 8 },
-          'Hello! Thank you for your interest in the GIRLZ, FTW mentorship program. We\u2019re thrilled to read your application. Before you fill out our form, we\u2019d like to let you in on a little secret. We\u2019re not a regular mentorship program. We\u2019re a community of girlz who are passionate about elevating and celebrating female voices around the world. We don\u2019t expect our mentors to be THAT girl\u2026 you know, the one that always had her shit together and still always managed to blow dry her hair before school / work. We\u2019re looking for real, passionate, #girlbosses that don\u2019t pretend to be perfect, can hustle their way to their dreams, AND still manage to uplift others along the way.'
+          "Hello! Thank you for your interest in the GIRLZ, FTW mentorship program. We’d like to let you in on a little secret. We’re not a regular mentorship program. We’re a community of girlz who are passionate about elevating and celebrating female voices around the world. We're looking for real, passionate, #girlbosses that don’t pretend to be perfect, can hustle their way to their dreams, and still manage to uplift others along the way."
         )
       );
     }
@@ -56347,7 +56152,7 @@ var Page2 = function (_React$Component) {
               _react2.default.createElement(
                 'li',
                 null,
-                'You must be willing to commit at least 5 hours a month for 6 months. Sessions with your mentee should last 1 hour every other week, and we suggest you spend half an hour prepping beforehand.'
+                'The program is six months long. The first three months you\'ll have bi-weekly calls with your mentee (once every other week). The last three months you\'ll have monthly calls.'
               )
             )
           ),
@@ -56374,6 +56179,19 @@ var Page2 = function (_React$Component) {
                 'li',
                 null,
                 'We have mandatory, virtual chats with inspiring women on the first Saturday of every month. You can only miss up to 2 calls (with advanced notice).'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            _reactBootstrap.Row,
+            null,
+            _react2.default.createElement(
+              _reactBootstrap.Col,
+              { className: 'formFontStyle', smOffset: 2, sm: 8 },
+              _react2.default.createElement(
+                'li',
+                null,
+                "In the next page you'll be asked to create a username and password. You'll need this info to log back into our portal and choose your mentee."
               )
             )
           )
@@ -56451,7 +56269,7 @@ var Page3 = function (_React$Component) {
             _react2.default.createElement(
               'h4',
               { className: 'formFontStyle2' },
-              'Username *'
+              'Username'
             )
           ),
           _react2.default.createElement(
@@ -56476,7 +56294,7 @@ var Page3 = function (_React$Component) {
             _react2.default.createElement(
               'h4',
               { className: 'formFontStyle2' },
-              'Password *'
+              'Password'
             )
           ),
           _react2.default.createElement(
@@ -56501,7 +56319,7 @@ var Page3 = function (_React$Component) {
             _react2.default.createElement(
               'h4',
               { className: 'formFontStyle2' },
-              'First Name *'
+              'First Name'
             )
           ),
           _react2.default.createElement(
@@ -56525,7 +56343,7 @@ var Page3 = function (_React$Component) {
             _react2.default.createElement(
               'h4',
               { className: 'formFontStyle2' },
-              'Last Name *'
+              'Last Name'
             )
           ),
           _react2.default.createElement(
@@ -56549,7 +56367,7 @@ var Page3 = function (_React$Component) {
             _react2.default.createElement(
               'h4',
               { className: 'formFontStyle2' },
-              'Age *'
+              'Age'
             )
           ),
           _react2.default.createElement(
@@ -56573,7 +56391,7 @@ var Page3 = function (_React$Component) {
             _react2.default.createElement(
               'h4',
               { className: 'formFontStyle2' },
-              'Email *'
+              'Email'
             )
           ),
           _react2.default.createElement(
@@ -56667,7 +56485,7 @@ var Page4 = function (_React$Component) {
             _react2.default.createElement(
               'h4',
               { className: 'formFontStyle2' },
-              'Facebook *'
+              'Facebook'
             )
           ),
           _react2.default.createElement(
@@ -56700,7 +56518,7 @@ var Page4 = function (_React$Component) {
             _react2.default.createElement(
               'h4',
               { className: 'formFontStyle2' },
-              'LinkedIn *'
+              'LinkedIn'
             )
           ),
           _react2.default.createElement(
@@ -56733,7 +56551,7 @@ var Page4 = function (_React$Component) {
             _react2.default.createElement(
               'h4',
               { className: 'formFontStyle2' },
-              'Phone *'
+              'Phone'
             )
           ),
           _react2.default.createElement(
@@ -56767,7 +56585,7 @@ var Page4 = function (_React$Component) {
             _react2.default.createElement(
               'h4',
               { className: 'formFontStyle2' },
-              'City *'
+              'City'
             )
           ),
           _react2.default.createElement(
@@ -56791,7 +56609,7 @@ var Page4 = function (_React$Component) {
             _react2.default.createElement(
               'h4',
               { className: 'formFontStyle2' },
-              'Country *'
+              'Country'
             )
           ),
           _react2.default.createElement(
@@ -56885,7 +56703,7 @@ var Page5 = function (_React$Component) {
             _react2.default.createElement(
               'h4',
               { className: 'formFontStyle2' },
-              'College *'
+              'College'
             )
           ),
           _react2.default.createElement(
@@ -56915,7 +56733,7 @@ var Page5 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 4, className: 'formFontStyle' },
-            'What was your college major? *'
+            'What was your college major?'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
@@ -56930,7 +56748,7 @@ var Page5 = function (_React$Component) {
               delimiter: '|',
               simpleValue: true,
               joinValues: true,
-              options: [{ value: 'Science', label: 'Science' }, { value: 'Engineering', label: 'Engineering' }, { value: 'Communcations, Marketing', label: 'Communcations, Marketing' }, { value: 'Political Science, International Relations', label: 'Political Science, International Relations' }, { value: 'Finance, Economics', label: 'Finance, Economics' }, { value: 'Liberal Arts', label: 'Liberal Arts' }]
+              options: [{ value: 'Science', label: 'Science' }, { value: 'Engineering', label: 'Engineering' }, { value: 'Communcations, Marketing', label: 'Communcations, Marketing' }, { value: 'Political Science, International Relations', label: 'Political Science, International Relations' }, { value: 'Finance, Economics', label: 'Finance, Economics' }, { value: 'Humanites', label: 'Humanites' }, { value: 'Arts', label: 'Arts' }]
             })
           )
         ),
@@ -56940,7 +56758,7 @@ var Page5 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { className: 'centerForm formFontStyle2', componentClass: _reactBootstrap.ControlLabel, sm: 12 },
-            'How important is it to you that a mentee share your major? *'
+            'How important is it to you that a mentee share your major?'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
@@ -57004,7 +56822,7 @@ var Page5 = function (_React$Component) {
             _react2.default.createElement(
               'h4',
               { className: 'formFontStyle2' },
-              'Employer *'
+              'Employer'
             )
           ),
           _react2.default.createElement(
@@ -57034,7 +56852,7 @@ var Page5 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8, className: 'formFontStyle' },
-            'In which industry do you to work? *'
+            'In which industry do you to work?'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
@@ -57049,7 +56867,7 @@ var Page5 = function (_React$Component) {
               delimiter: '|',
               simpleValue: true,
               joinValues: true,
-              options: [{ value: 'International Relations, Politics', label: 'International Relations, Politics' }, { value: 'Finance', label: 'Finance' }, { value: 'Accounting, Legal', label: 'Accounting, Legal' }, { value: 'Media', label: 'Media' }, { value: 'Technology', label: 'Technology' }, { value: 'Marketing', label: 'Marketing' }, { value: 'Performing Arts, Sports, Related', label: 'Performing Arts, Sports, Related' }, { value: 'Healthcare', label: 'Healthcare' }, { value: 'Education', label: 'Education' }, { value: 'Agriculture, Forestry, Fishing', label: 'Agriculture, Forestry, Fishing' }]
+              options: [{ value: 'International Relations, Politics', label: 'International Relations, Politics' }, { value: 'Finance', label: 'Finance' }, { value: 'Accounting, Legal', label: 'Accounting, Legal' }, { value: 'Media', label: 'Media' }, { value: 'Technology', label: 'Technology' }, { value: 'Marketing', label: 'Marketing' }, { value: 'Performing Arts, Sports, Related', label: 'Performing Arts, Sports, Related' }, { value: 'Healthcare', label: 'Healthcare' }, { value: 'Education', label: 'Education' }, { value: 'Agriculture, Forestry', label: 'Agriculture, Forestry' }, { value: 'Service, Hospitality', label: 'Service, Hospitality' }, { value: 'Law Enforcement', label: 'Law Enforcement' }]
             })
           )
         ),
@@ -57073,7 +56891,7 @@ var Page5 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { className: 'centerForm formFontStyle2', componentClass: _reactBootstrap.ControlLabel, sm: 12 },
-            'How important is it to you that a mentee would want to join your industry? *'
+            'How important is it to you that a mentee would want to join your industry?'
           )
         ),
         _react2.default.createElement(
@@ -57204,7 +57022,7 @@ var Page6 = function (_React$Component) {
             _react2.default.createElement(
               'h4',
               { className: 'centerText formFontStyle2' },
-              'We all get in the way of our own success. Which of the following methods do you think you\u2019ve managed to get under control in order to unblock your road to success? (Select the top 3)'
+              'We all get in the way of our own success. Which of the following challenges do you think you\u2019ve managed to control in order to unblock your road to success? (Select the top 3)'
             )
           )
         ),
@@ -57224,7 +57042,7 @@ var Page6 = function (_React$Component) {
               delimiter: '|',
               simpleValue: true,
               joinValues: true,
-              options: [{ value: 'Procrastination', label: 'Procrastination' }, { value: 'Controlling life, people', label: 'Controlling life, people' }, { value: 'Indecision', label: 'Indecision' }, { value: 'Not saying \'yes\'; holding back; not being proactive in seeing opportunities', label: 'Not saying \'yes\'; holding back; not being proactive in seeing opportunities' }, { value: 'Wanting to be right', label: 'Wanting to be right' }, { value: 'Following the goals of other people', label: 'Following the goals of other people' }, { value: 'Acting as \'lone ranger\'; not delegating', label: 'Acting as \'lone ranger\'; not delegating' }, { value: 'Not saying \'no\' to projects that don\'t inspire you', label: 'Not saying \'no\' to projects that don\'t inspire you' }]
+              options: [{ value: 'Procrastination', label: 'Procrastination' }, { value: 'Lack of Support', label: 'Lack of Support' }, { value: 'Indecision', label: 'Indecision' }, { value: 'Lack of Resources', label: 'Lack of Resources' }, { value: 'Unclear Goals', label: 'Unclear Goals' }, { value: 'Time Management', label: 'Time Management' }, { value: 'Lack of Confidence', label: 'Lack of Confidence' }]
             })
           )
         ),
@@ -57253,7 +57071,7 @@ var Page6 = function (_React$Component) {
               delimiter: '|',
               simpleValue: true,
               joinValues: true,
-              options: [{ value: 'Challenge', label: 'Challenge' }, { value: 'Accountability', label: 'Accountability' }, { value: 'Sounding Board', label: 'Sounding Board' }, { value: 'Provide focus and direction', label: 'Provide focus and direction' }, { value: 'Inspiration', label: 'Inspiration' }, { value: 'Ideas, Innovation, and Strategy for new projects', label: 'Ideas, Innovation, and Strategy for new projects' }, { value: 'Confidence booster; provide validation', label: 'Confidence booster; provide validation' }, { value: 'Not saying \'no\' to projects that don\'t inspire you', label: 'Not saying \'no\' to projects that don\'t inspire you' }]
+              options: [{ value: 'Challenge', label: 'Challenge' }, { value: 'Accountability', label: 'Accountability' }, { value: 'A Listening Ear', label: 'A Listening Ear' }, { value: 'Provide focus and direction', label: 'Provide focus and direction' }, { value: 'Inspiration', label: 'Inspiration' }, { value: 'Ideas, Innovation, and Strategy for New Projects', label: 'Ideas, Innovation, and Strategy for New Projects' }, { value: 'Confidence booster; provide validation', label: 'Confidence booster; provide validation' }]
             })
           )
         )
@@ -57501,19 +57319,9 @@ var Landing = function Landing() {
       'div',
       { id: 'all-content' },
       _react2.default.createElement(
-        _reactRouterDom.Link,
-        { to: '/mentee_app' },
-        'Mentee App'
-      ),
-      _react2.default.createElement(
-        _reactRouterDom.Link,
-        { to: '/mentor_app' },
-        'Mentor App'
-      ),
-      _react2.default.createElement(
         'h4',
         null,
-        'Already a Mentor? Sign in below'
+        'Mentor Sign In'
       ),
       _react2.default.createElement(_session_forms_container2.default, null)
     )
@@ -57630,7 +57438,6 @@ var SessionForm = function (_React$Component) {
       if (nextProps.loggedIn) {
         this.props.resetErrors();
         if (this.state.user.username === "admin") {
-          console.log('going to admin');
           this.props.history.push('/admin_panel');
         } else {
           this.props.history.push('/mentor_panel');
@@ -57952,7 +57759,6 @@ var MentorPanel = function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
-      console.log(this.props);
       var mentor = this.props.currentUser;
       var mentees = this.props.mentees;
       var approval = function () {
@@ -58154,12 +57960,8 @@ var MentorUpdate = function (_React$Component) {
     key: 'handleFormSubmit',
     value: function handleFormSubmit(event) {
       event.preventDefault();
-      if (this.state.agree_terms) {
-        console.log("success");
-      } else {
-        this.setState({ agree_terms_bad_click: true }, function () {
-          console.log('failure');
-        });
+      if (this.state.agree_terms) {} else {
+        this.setState({ agree_terms_bad_click: true }, function () {});
       }
     }
   }, {
@@ -58819,7 +58621,6 @@ var CurrentMentees = function (_React$Component) {
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
-      console.log("PRRRRRROOOPS");
       var approvedMentees = [];
       var openMentors = [];
       var allMentors = [];

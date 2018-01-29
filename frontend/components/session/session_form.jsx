@@ -28,7 +28,6 @@ class SessionForm extends React.Component {
     if (nextProps.loggedIn) {
       this.props.resetErrors();
       if (this.state.user.username === "admin") {
-        console.log('going to admin');
         this.props.history.push('/admin_panel');
       } else {
         this.props.history.push('/mentor_panel');

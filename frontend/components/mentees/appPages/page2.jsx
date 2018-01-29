@@ -16,7 +16,7 @@ class Page2 extends React.Component {
               <Row>
                 <Col className='formFontStyle' smOffset={2} sm={8}>
                   <li>
-                    You must be willing to commit at least 4 hours a month for 6 months. Sessions with your mentor should last 1 hour every other week. We’ll also ask that you write 1 blog post a month about what you’ve learned from your mentor and/or what you’re working on.
+                    The program is six months long. The first three months you'll have bi-weekly calls with your mentor (once every other week). The last three months you'll have a monthly call. This is the minimum requirement for the program, but you're more than welcome to chat with your mentor on a more regular basis.
                   </li>
                 </Col>
               </Row>
@@ -32,8 +32,7 @@ class Page2 extends React.Component {
               <Row>
                 <Col className='formFontStyle' smOffset={2} sm={8}>
                   <li>
-                    We have mandatory, virtual chats with inspiring women on the first Saturday of every month.
-                    You can only miss up to 2 calls (with advanced notice).
+                    We have mandatory, virtual chats with inspiring women on the first Saturday of every month. You can only miss up to two calls (with advanced notice).
                   </li>
                 </Col>
               </Row>

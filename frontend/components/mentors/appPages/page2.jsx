@@ -16,7 +16,7 @@ class Page2 extends React.Component {
               <Row>
                 <Col className='formFontStyle' smOffset={2} sm={8}>
                   <li>
-                    You must be willing to commit at least 5 hours a month for 6 months. Sessions with your mentee should last 1 hour every other week, and we suggest you spend half an hour prepping beforehand.
+                    The program is six months long. The first three months you'll have bi-weekly calls with your mentee (once every other week). The last three months you'll have monthly calls.
                   </li>
                 </Col>
               </Row>
@@ -32,6 +32,13 @@ class Page2 extends React.Component {
                   <li>
                     We have mandatory, virtual chats with inspiring women on the first Saturday of every month.
                     You can only miss up to 2 calls (with advanced notice).
+                  </li>
+                </Col>
+              </Row>
+              <Row>
+                <Col className='formFontStyle' smOffset={2} sm={8}>
+                  <li>
+                    {"In the next page you'll be asked to create a username and password. You'll need this info to log back into our portal and choose your mentee."}
                   </li>
                 </Col>
               </Row>

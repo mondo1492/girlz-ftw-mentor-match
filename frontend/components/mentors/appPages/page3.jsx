@@ -13,11 +13,11 @@ class Page3 extends React.Component {
         <div>
           <h3 className='centerForm pageCaption'> Help us connect you with your ideal mentee</h3>
           <div className='green-spacer'></div>
-          
+
           <FormGroup>
             <Col componentClass={ControlLabel} smOffset={4} sm={8}>
               <h4 className='formFontStyle2'>
-                Username *
+                Username
               </h4>
             </Col>
             <Col smOffset={4} sm={4}>
@@ -35,7 +35,7 @@ class Page3 extends React.Component {
           <FormGroup>
             <Col componentClass={ControlLabel} smOffset={4} sm={8}>
               <h4 className='formFontStyle2'>
-                Password *
+                Password
               </h4>
             </Col>
             <Col smOffset={4} sm={4}>
@@ -53,7 +53,7 @@ class Page3 extends React.Component {
           <FormGroup>
             <Col componentClass={ControlLabel} smOffset={4} sm={8}>
               <h4 className='formFontStyle2'>
-                First Name *
+                First Name
               </h4>
             </Col>
             <Col smOffset={4} sm={4}>
@@ -70,7 +70,7 @@ class Page3 extends React.Component {
           <FormGroup>
             <Col componentClass={ControlLabel} smOffset={4} sm={8}>
               <h4 className='formFontStyle2'>
-                Last Name *
+                Last Name
               </h4>
             </Col>
             <Col smOffset={4} sm={4}>
@@ -87,7 +87,7 @@ class Page3 extends React.Component {
           <FormGroup>
             <Col componentClass={ControlLabel} smOffset={4} sm={8}>
               <h4 className='formFontStyle2'>
-                Age *
+                Age
               </h4>
             </Col>
             <Col smOffset={4} sm={4}>
@@ -104,7 +104,7 @@ class Page3 extends React.Component {
           <FormGroup>
             <Col componentClass={ControlLabel} smOffset={4} sm={8}>
               <h4 className='formFontStyle2'>
-                Email *
+                Email
               </h4>
             </Col>
             <Col smOffset={4} sm={4}>

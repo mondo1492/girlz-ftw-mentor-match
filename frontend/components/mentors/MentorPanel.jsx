@@ -21,7 +21,6 @@ class MentorPanel extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const mentor = this.props.currentUser;
     const mentees = this.props.mentees;
     const approval = ( () => {
