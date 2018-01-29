@@ -28,6 +28,7 @@ class SessionForm extends React.Component {
     if (nextProps.loggedIn) {
       this.props.resetErrors();
       if (this.state.user.username === "admin") {
+        console.log('going to admin');
         this.props.history.push('/admin_panel');
       } else {
         this.props.history.push('/mentor_panel');
@@ -41,9 +42,9 @@ class SessionForm extends React.Component {
   }
 
   update(field) {
-  return e => this.setState({
-    user: Object.assign(this.state.user, { [field]: e.currentTarget.value })
-  });
+    return e => this.setState({
+      user: Object.assign(this.state.user, { [field]: e.currentTarget.value })
+    });
   }
 
   renderErrors() {

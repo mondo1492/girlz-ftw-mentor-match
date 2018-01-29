@@ -23,7 +23,6 @@ const AdminPanel = () => (
       </div>
       <div>
         <h3>Admin Actions</h3>
-        <button>Launch Applications</button>
         <button>Generate Matches</button>
       </div>
     </div>

@@ -42546,11 +42546,6 @@ var AdminPanel = function AdminPanel() {
         _react2.default.createElement(
           'button',
           null,
-          'Launch Applications'
-        ),
-        _react2.default.createElement(
-          'button',
-          null,
           'Generate Matches'
         )
       )
@@ -57635,6 +57630,7 @@ var SessionForm = function (_React$Component) {
       if (nextProps.loggedIn) {
         this.props.resetErrors();
         if (this.state.user.username === "admin") {
+          console.log('going to admin');
           this.props.history.push('/admin_panel');
         } else {
           this.props.history.push('/mentor_panel');
