@@ -21,7 +21,7 @@ plugins = plugins.concat(
   process.env.NODE_ENV === 'production' ? prodPlugins : devPlugins
 )
 
-include plugins config
+// include plugins config
 module.exports = {
   context: __dirname,
   entry: "./frontend/app",
