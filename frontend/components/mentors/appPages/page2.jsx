@@ -38,7 +38,7 @@ class Page2 extends React.Component {
               <Row>
                 <Col className='formFontStyle' smOffset={2} sm={8}>
                   <li>
-                    {"In the next page you'll be asked to create a username and password. You'll need this info to log back into our portal and choose your mentee."}
+                    {"In the next page you'll be asked to create a username and password. You'll need this info to log back into our portal and choose your mentee if you're accepted."}
                   </li>
                 </Col>
               </Row>

@@ -37228,3 +37228,158 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 460ms (Views: 458.2ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-01-28 19:46:39 -0800
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.2ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (23.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (66.4ms)
+Completed 200 OK in 1308ms (Views: 1298.3ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-28 19:47:00 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (3.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 482ms (Views: 479.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-28 19:50:35 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (3.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 436ms (Views: 433.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-28 19:51:30 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (2.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 446ms (Views: 443.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-28 19:51:35 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.6ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (4.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 58ms (Views: 54.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-28 19:51:42 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (5.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 603ms (Views: 599.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-28 19:51:44 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (2.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 480ms (Views: 477.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-28 19:51:47 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (2.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 31ms (Views: 28.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-28 19:51:54 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (3.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 39ms (Views: 36.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-28 19:51:56 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (3.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 485ms (Views: 482.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-28 19:52:34 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (3.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 108ms (Views: 106.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-28 19:52:51 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.2ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (2.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-28 19:53:43 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (2.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 663ms (Views: 660.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-01-28 19:53:45 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (2.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 31ms (Views: 29.2ms | ActiveRecord: 0.9ms)
+
+

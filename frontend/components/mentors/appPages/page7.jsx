@@ -19,20 +19,17 @@ class Page7 extends React.Component {
           </Col>
         </Row>
         <Row className="videoListItem">
-          <Col sm={2}></Col>
-          <Col className='centerText formFontStyle' sm={10}>
+          <Col className='centerText formFontStyle' smOffset={1} sm={10}>
             1. Share a little bit about yourself and your passions.
           </Col>
         </Row>
         <Row className="videoListItem">
-          <Col sm={2}></Col>
-          <Col className='centerText formFontStyle' sm={10}>
+          <Col className='centerText formFontStyle' smOffset={1} sm={10}>
             2. Why do you want to be a GIRLZ, FTW mentor?
           </Col>
         </Row>
         <Row className="videoListItem">
-          <Col sm={2}></Col>
-          <Col className='centerText formFontStyle' sm={10}>
+          <Col className='centerText formFontStyle' smOffset={1} sm={10}>
             3. How do you support others?
           </Col>
         </Row>
@@ -49,6 +46,7 @@ class Page7 extends React.Component {
                   name="video_URL"
                   value={this.props.page.video_URL}
                   onChange={this.props.handleInputChange}
+                  placeholder='Include a youtube, vimeo, google drive, etc. link here'
                   />
               </InputGroup>
             </Col>

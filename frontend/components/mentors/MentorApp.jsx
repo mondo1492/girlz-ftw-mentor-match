@@ -51,7 +51,7 @@ class MentorApp extends React.Component {
         video_URL: '',
       },
       agree_terms: true,
-      page: 0,
+      page: 6,
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleMultiChange = this.handleMultiChange.bind(this);

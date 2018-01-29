@@ -55539,30 +55539,27 @@ var Page7 = function (_React$Component) {
         _react2.default.createElement(
           _reactBootstrap.Row,
           { className: 'videoListItem' },
-          _react2.default.createElement(_reactBootstrap.Col, { sm: 1 }),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { className: 'centerText formFontStyle', sm: 10 },
+            { className: 'centerText formFontStyle', smOffset: 1, sm: 10 },
             '1. What keeps you up at night?'
           )
         ),
         _react2.default.createElement(
           _reactBootstrap.Row,
           { className: 'videoListItem' },
-          _react2.default.createElement(_reactBootstrap.Col, { sm: 1 }),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { className: 'centerText formFontStyle', sm: 10 },
+            { className: 'centerText formFontStyle', smOffset: 1, sm: 10 },
             '2. Why do you think girls should support each other?'
           )
         ),
         _react2.default.createElement(
           _reactBootstrap.Row,
           { className: 'videoListItem' },
-          _react2.default.createElement(_reactBootstrap.Col, { sm: 1 }),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { className: 'centerText formFontStyle', sm: 10 },
+            { className: 'centerText formFontStyle', smOffset: 1, sm: 10 },
             '3. What impact do you want to have in the world?'
           )
         ),
@@ -55801,7 +55798,7 @@ var MentorApp = function (_React$Component) {
         video_URL: ''
       },
       agree_terms: true,
-      page: 0
+      page: 6
     };
     _this.handleInputChange = _this.handleInputChange.bind(_this);
     _this.handleMultiChange = _this.handleMultiChange.bind(_this);
@@ -56191,7 +56188,7 @@ var Page2 = function (_React$Component) {
               _react2.default.createElement(
                 'li',
                 null,
-                "In the next page you'll be asked to create a username and password. You'll need this info to log back into our portal and choose your mentee."
+                "In the next page you'll be asked to create a username and password. You'll need this info to log back into our portal and choose your mentee if you're accepted."
               )
             )
           )
@@ -57148,30 +57145,27 @@ var Page7 = function (_React$Component) {
         _react2.default.createElement(
           _reactBootstrap.Row,
           { className: 'videoListItem' },
-          _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { className: 'centerText formFontStyle', sm: 10 },
+            { className: 'centerText formFontStyle', smOffset: 1, sm: 10 },
             '1. Share a little bit about yourself and your passions.'
           )
         ),
         _react2.default.createElement(
           _reactBootstrap.Row,
           { className: 'videoListItem' },
-          _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { className: 'centerText formFontStyle', sm: 10 },
+            { className: 'centerText formFontStyle', smOffset: 1, sm: 10 },
             '2. Why do you want to be a GIRLZ, FTW mentor?'
           )
         ),
         _react2.default.createElement(
           _reactBootstrap.Row,
           { className: 'videoListItem' },
-          _react2.default.createElement(_reactBootstrap.Col, { sm: 2 }),
           _react2.default.createElement(
             _reactBootstrap.Col,
-            { className: 'centerText formFontStyle', sm: 10 },
+            { className: 'centerText formFontStyle', smOffset: 1, sm: 10 },
             '3. How do you support others?'
           )
         ),
@@ -57197,7 +57191,8 @@ var Page7 = function (_React$Component) {
                   type: 'text',
                   name: 'video_URL',
                   value: this.props.page.video_URL,
-                  onChange: this.props.handleInputChange
+                  onChange: this.props.handleInputChange,
+                  placeholder: 'Include a youtube, vimeo, google drive, etc. link here'
                 })
               )
             )

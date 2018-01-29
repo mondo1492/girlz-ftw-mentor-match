@@ -20,20 +20,17 @@ class Page7 extends React.Component {
           </Col>
         </Row>
         <Row className="videoListItem">
-          <Col sm={1}></Col>
-          <Col className='centerText formFontStyle' sm={10}>
+          <Col className='centerText formFontStyle' smOffset={1} sm={10}>
             1. What keeps you up at night?
           </Col>
         </Row>
         <Row className="videoListItem">
-          <Col sm={1}></Col>
-          <Col className='centerText formFontStyle' sm={10}>
+          <Col className='centerText formFontStyle' smOffset={1} sm={10}>
             2. Why do you think girls should support each other?
           </Col>
         </Row>
         <Row className="videoListItem">
-          <Col sm={1}></Col>
-          <Col className='centerText formFontStyle' sm={10}>
+          <Col className='centerText formFontStyle' smOffset={1} sm={10}>
             3. What impact do you want to have in the world?
           </Col>
         </Row>
