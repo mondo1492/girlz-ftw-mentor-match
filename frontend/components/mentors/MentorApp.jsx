@@ -11,7 +11,7 @@ import Page5 from './appPages/page5';
 import Page6 from './appPages/page6';
 import Page7 from './appPages/page7';
 import Page8 from './appPages/page8';
-
+import Page9 from './appPages/page9';
 
 class MentorApp extends React.Component {
   constructor(props) {
@@ -93,9 +93,12 @@ class MentorApp extends React.Component {
       }
     }
 
-    this.props.createMentor(flattenedState).then(
-      () => this.setState({page: this.state.page + 1})
-    );
+    // this.props.createMentor(flattenedState).then(
+    //   () => this.setState({page: this.state.page + 1})
+    // );
+    // until mailer is fixed jump pages
+    this.props.createMentor(flattenedState);
+    this.setState({ page: this.state.page + 2 })
   }
 
   handleBack() {
@@ -165,19 +168,20 @@ class MentorApp extends React.Component {
           return <Page7 handleInputChange={this.handleInputChange} page={this.state[6]}/>
           break;
         case 7:
-          return <Page8 page={this.state[7]}/>
+          return <Page8 page={this.state[7]} name={this.state[2].first_name}/>
+          break;
+        case 8:
+          return <Page9 page={this.state[8]} name={this.state[2].first_name}/>
           break;
       }
     })();
-    
+
     // TODO: better validation process for pw
+    this.failUniqueUsername();
     const nextButton = ( () => {
-      if (this.state.page === 2) {
-        this.failUniqueUsername();
-        if (this.badUsername) {
-          return <p>Sorry, that username is in use.</p>
-        }
-      } else if (this.state.page === 7) {
+      if (this.state.page === 2 && this.badUsername) {
+        return <p style={{ color: 'red' }}>Sorry, that username is in use.</p>
+      } else if (this.state.page > 6) {
         return '';
       } else if (this.state.page !== 6) {
         if (this.validate()) {
@@ -189,14 +193,17 @@ class MentorApp extends React.Component {
       } else {
         return (
           <Button
-             bsStyle="success"
-             disabled={ this.state['6'].video_URL === '' }
-             onClick={this.handleFormSubmit} type="button">
-              Apply
+            bsStyle="success"
+            disabled={ this.state['6'].video_URL === '' }
+            onClick={this.handleFormSubmit} type="button">
+            Apply
           </Button>
         );
       }
     })();
+
+    let percent = Math.round(100 * this.state.page / 7);
+    if (percent > 100) percent = 100;
     return (
       <div>
         <header className='header'>
@@ -214,7 +221,7 @@ class MentorApp extends React.Component {
             <div className='padder'></div>
             { nextButton }
             <div className='padder'></div>
-            <p>{`${Math.round(100 * this.state.page / 7)}% complete`}</p>
+            <p>{`${percent}% complete`}</p>
           </div>
         </footer>
       </div>

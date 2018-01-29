@@ -11,6 +11,7 @@ import Page5 from './appPages/page5';
 import Page6 from './appPages/page6';
 import Page7 from './appPages/page7';
 import Page8 from './appPages/page8';
+import Page9 from './appPages/page9';
 
 
 class MenteeApp extends React.Component {
@@ -83,9 +84,12 @@ class MenteeApp extends React.Component {
       }
     }
 
-    this.props.createMentee(flattenedState).then(
-      () => this.setState({page: this.state.page + 1})
-    );
+    // this.props.createMentee(flattenedState).then(
+    //   () => this.setState({page: this.state.page + 1})
+    // );
+    // revert when mailer fixed
+    this.props.createMentee(flattenedState);
+    this.setState({page: this.state.page + 2});
   }
 
   handleBack() {
@@ -141,12 +145,15 @@ class MenteeApp extends React.Component {
           return <Page7 handleInputChange={this.handleInputChange} page={this.state[6]}/>
           break;
         case 7:
-          return <Page8 page={this.state[7]}/>
+          return <Page8 page={this.state[7]} name={this.state[2].first_name}/>
+          break;
+        case 8:
+          return <Page9 page={this.state[8]} name={this.state[2].first_name}/>
           break;
       }
     })();
     const nextButton = ( () => {
-      if (this.state.page === 7) {
+      if (this.state.page > 7) {
         return '';
       } else if (this.state.page !== 6) {
         if (this.validate()) {
@@ -166,6 +173,9 @@ class MenteeApp extends React.Component {
         );
       }
     })();
+
+    let percent = Math.round(100 * this.state.page / 7);
+    if (percent > 100) percent = 100;
     return (
       <div>
         <header className='header'>
@@ -183,7 +193,7 @@ class MenteeApp extends React.Component {
             <div className='padder'></div>
             { nextButton }
             <div className='padder'></div>
-            <p>{`${Math.round(100 * this.state.page / 7)}% complete`}</p>
+            <p>{`${percent}% complete`}</p>
           </div>
         </footer>
       </div>
