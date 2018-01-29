@@ -25,7 +25,7 @@ class MenteeShow extends React.Component {
         <p>Prefers mentor with this industry (0 - 4): {mentee.share_industry_rank}</p>
         <p>Dream Instagram Bio: {mentee.instagram_bio_text}</p>
         <p>
-          What gets in the way of achieving that bio: {mentee.unblock_methods}
+          What gets in the way of achieving that bio: {mentee.instagram_bio_why_not_text}
         </p>
         <p>Most excited to get from a mentor: {mentee.provide}</p>
         <p>Application Video URL: {mentee.video_URL}</p>

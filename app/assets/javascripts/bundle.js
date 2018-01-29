@@ -7411,7 +7411,7 @@ var MenteeShow = function (_React$Component) {
           'p',
           null,
           'What gets in the way of achieving that bio: ',
-          mentee.unblock_methods
+          mentee.instagram_bio_why_not_text
         ),
         _react2.default.createElement(
           'p',
@@ -55728,7 +55728,7 @@ var Page9 = function (_React$Component) {
         _react2.default.createElement(
           'p',
           null,
-          'If you have any bursting questions, head over to our',
+          'If you have any bursting questions, head over to our ',
           _react2.default.createElement(
             'a',
             { href: 'www.girlzftw.com/faq' },
@@ -56194,6 +56194,7 @@ var MentorApp = function (_React$Component) {
   }, {
     key: 'handleNext',
     value: function handleNext() {
+      // TODO: move page back up to top of form w/ anchor
       // TODO: if user clicks next when greyed, flash error
       this.validate(this.state.page);
       this.setState({ page: this.state.page + 1 });
@@ -57666,7 +57667,7 @@ var Page9 = function (_React$Component) {
         _react2.default.createElement(
           'p',
           null,
-          'If you have any bursting questions, head over to our',
+          'If you have any bursting questions, head over to our ',
           _react2.default.createElement(
             'a',
             { href: 'www.girlzftw.com/faq' },
