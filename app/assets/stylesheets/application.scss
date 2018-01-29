@@ -150,7 +150,7 @@
 }
 @font-face {
   font-family: 'Museo_Slab_500_2';
-  src: url('Museo_Slab_500_2-webfont.woff2') format('woff2'),
+  src: font-url('Museo_Slab_500_2-webfont.woff2') format('woff2'),
   url('Museo_Slab_500_2-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
@@ -158,8 +158,8 @@
 
 @font-face {
   font-family: 'Museo_Slab_100-web';
-  src: url('Museo Slab W01 100.woff2') format('woff2'),
-  url('Museo Slab W01 100.woff') format('woff');
+  src: font-url('Museo_Slab_W01_100.woff2') format('woff2'),
+  url('Museo_Slab_W01_100.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
