@@ -6,7 +6,6 @@ import { fetchMentors, updateMentor } from '../../actions/mentor_actions';
 // import { allMentees } from '../../reducers/selectors';
 
 const mapStateToProps = state => {
-  console.log(state.mentors);
   return ({
     mentees: values(state.mentees),
     mentors: values(state.mentors),

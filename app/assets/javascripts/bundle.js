@@ -55662,6 +55662,10 @@ Object.defineProperty(exports, "__esModule", {
 
 var _reactRedux = __webpack_require__(20);
 
+var _values = __webpack_require__(33);
+
+var _values2 = _interopRequireDefault(_values);
+
 var _MentorApp = __webpack_require__(506);
 
 var _MentorApp2 = _interopRequireDefault(_MentorApp);
@@ -55672,6 +55676,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
+    mentors: (0, _values2.default)(state.mentors),
     currentUser: state.session.currentUser
   };
 };
@@ -55680,6 +55685,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     createMentor: function createMentor(mentorInfo) {
       return dispatch((0, _mentor_actions.createMentor)(mentorInfo));
+    },
+    fetchMentors: function fetchMentors() {
+      return dispatch((0, _mentor_actions.fetchMentors)());
     }
   };
 };
@@ -55800,15 +55808,23 @@ var MentorApp = function (_React$Component) {
       agree_terms: true,
       page: 0
     };
+    _this.badUsername = false;
+
     _this.handleInputChange = _this.handleInputChange.bind(_this);
     _this.handleMultiChange = _this.handleMultiChange.bind(_this);
     _this.handleFormSubmit = _this.handleFormSubmit.bind(_this);
     _this.handleBack = _this.handleBack.bind(_this);
     _this.handleNext = _this.handleNext.bind(_this);
+    _this.failUniqueUsername = _this.failUniqueUsername.bind(_this);
     return _this;
   }
 
   _createClass(MentorApp, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.props.fetchMentors();
+    }
+  }, {
     key: 'handleMultiChange',
     value: function handleMultiChange(value, name) {
       var pageNum = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : this.state.page;
@@ -55916,56 +55932,84 @@ var MentorApp = function (_React$Component) {
       this.setState({ page: this.state.page + 1 });
     }
   }, {
-    key: 'render',
-    value: function render() {
+    key: 'failUniqueUsername',
+    value: function failUniqueUsername() {
       var _this3 = this;
 
+      // refactor this for O(1) time by putting all usernames into a set
+      this.flipped = false;
+      this.props.mentors.forEach(function (mentor) {
+        if (mentor.username === _this3.state[2].username) {
+          _this3.badUsername = true;
+          _this3.flipped = true;
+          return '';
+        }
+      });
+      if (this.flipped) return;
+      this.badUsername = false;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this4 = this;
+
       var page = function () {
-        switch (_this3.state.page) {
+        switch (_this4.state.page) {
           case 0:
-            return _react2.default.createElement(_page2.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[0] });
+            return _react2.default.createElement(_page2.default, { handleInputChange: _this4.handleInputChange, page: _this4.state[0] });
             break;
           case 1:
-            return _react2.default.createElement(_page4.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[1] });
+            return _react2.default.createElement(_page4.default, { handleInputChange: _this4.handleInputChange, page: _this4.state[1] });
             break;
           case 2:
-            return _react2.default.createElement(_page6.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[2] });
+            return _react2.default.createElement(_page6.default, { handleInputChange: _this4.handleInputChange, page: _this4.state[2] });
             break;
           case 3:
-            return _react2.default.createElement(_page8.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[3] });
+            return _react2.default.createElement(_page8.default, { handleInputChange: _this4.handleInputChange, page: _this4.state[3] });
             break;
           case 4:
             return _react2.default.createElement(_page10.default, {
-              handleMultiChange: _this3.handleMultiChange, handleInputChange: _this3.handleInputChange, page: _this3.state[4] });
+              handleMultiChange: _this4.handleMultiChange, handleInputChange: _this4.handleInputChange, page: _this4.state[4] });
             break;
           case 5:
             return _react2.default.createElement(_page12.default, {
-              handleInputChange: _this3.handleInputChange,
-              handleMultiChange: _this3.handleMultiChange,
-              page: _this3.state[5] });
+              handleInputChange: _this4.handleInputChange,
+              handleMultiChange: _this4.handleMultiChange,
+              page: _this4.state[5] });
             break;
           case 6:
-            return _react2.default.createElement(_page14.default, { handleInputChange: _this3.handleInputChange, page: _this3.state[6] });
+            return _react2.default.createElement(_page14.default, { handleInputChange: _this4.handleInputChange, page: _this4.state[6] });
             break;
           case 7:
-            return _react2.default.createElement(_page16.default, { page: _this3.state[7] });
+            return _react2.default.createElement(_page16.default, { page: _this4.state[7] });
             break;
         }
       }();
+
+      // TODO: better validation process for pw
       var nextButton = function () {
-        if (_this3.state.page === 7) {
+        if (_this4.state.page === 2) {
+          _this4.failUniqueUsername();
+          if (_this4.badUsername) {
+            return _react2.default.createElement(
+              'p',
+              null,
+              'Sorry, that username is in use.'
+            );
+          }
+        } else if (_this4.state.page === 7) {
           return '';
-        } else if (_this3.state.page !== 6) {
-          if (_this3.validate()) {
+        } else if (_this4.state.page !== 6) {
+          if (_this4.validate()) {
             return _react2.default.createElement(
               _reactBootstrap.Button,
-              { onClick: _this3.handleNext, className: 'btn-next' },
+              { onClick: _this4.handleNext, className: 'btn-next' },
               'Next'
             );
           } else {
             return _react2.default.createElement(
               _reactBootstrap.Button,
-              { disabled: true, onClick: _this3.handleNext, className: 'btn-next' },
+              { disabled: true, onClick: _this4.handleNext, className: 'btn-next' },
               'Next'
             );
           }
@@ -55974,8 +56018,8 @@ var MentorApp = function (_React$Component) {
             _reactBootstrap.Button,
             {
               bsStyle: 'success',
-              disabled: _this3.state['6'].video_URL === '',
-              onClick: _this3.handleFormSubmit, type: 'button' },
+              disabled: _this4.state['6'].video_URL === '',
+              onClick: _this4.handleFormSubmit, type: 'button' },
             'Apply'
           );
         }
@@ -56302,7 +56346,7 @@ var Page3 = function (_React$Component) {
               type: 'password',
               name: 'password',
               value: this.props.page.password,
-              placeholder: '',
+              placeholder: 'at least 6 characters',
               onChange: this.props.handleInputChange
             })
           )
@@ -58510,7 +58554,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // import { allMentees } from '../../reducers/selectors';
 
 var mapStateToProps = function mapStateToProps(state) {
-  console.log(state.mentors);
   return {
     mentees: (0, _values2.default)(state.mentees),
     mentors: (0, _values2.default)(state.mentors),

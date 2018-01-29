@@ -44,7 +44,7 @@ class Page3 extends React.Component {
                 type="password"
                 name="password"
                 value={this.props.page.password}
-                placeholder=""
+                placeholder="at least 6 characters"
                 onChange={this.props.handleInputChange}
                 />
             </Col>

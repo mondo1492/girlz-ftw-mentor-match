@@ -53,11 +53,18 @@ class MentorApp extends React.Component {
       agree_terms: true,
       page: 0,
     };
+    this.badUsername = false;
+
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleMultiChange = this.handleMultiChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.handleBack = this.handleBack.bind(this);
     this.handleNext = this.handleNext.bind(this);
+    this.failUniqueUsername = this.failUniqueUsername.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.fetchMentors()
   }
 
   handleMultiChange(value, name, pageNum = this.state.page) {
@@ -115,6 +122,20 @@ class MentorApp extends React.Component {
     this.setState({page: this.state.page + 1});
   }
 
+  failUniqueUsername() {
+    // refactor this for O(1) time by putting all usernames into a set
+    this.flipped = false;
+    this.props.mentors.forEach(mentor => {
+      if (mentor.username === this.state[2].username) {
+        this.badUsername = true;
+        this.flipped = true;
+        return '';
+      }
+    });
+    if (this.flipped) return;
+    this.badUsername = false;
+  }
+
   render() {
     let page = (() => {
       switch (this.state.page) {
@@ -148,8 +169,15 @@ class MentorApp extends React.Component {
           break;
       }
     })();
+    
+    // TODO: better validation process for pw
     const nextButton = ( () => {
-      if (this.state.page === 7) {
+      if (this.state.page === 2) {
+        this.failUniqueUsername();
+        if (this.badUsername) {
+          return <p>Sorry, that username is in use.</p>
+        }
+      } else if (this.state.page === 7) {
         return '';
       } else if (this.state.page !== 6) {
         if (this.validate()) {
