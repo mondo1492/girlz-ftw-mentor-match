@@ -15,7 +15,8 @@ class Page7 extends React.Component {
 
         <Row className="videoHeader">
           <Col className='centerText formFontStyle2' sm={12}>
-            Please submit a video on the following three prompts. Videos should be between 60 and 90 seconds.
+            Please submit a <strong>video</strong> or an <strong>essay</strong> on the following three prompts.
+            If you decide to do a video, it should be between 60 and 90 seconds.
           </Col>
         </Row>
         <Row className="videoListItem">
@@ -33,24 +34,16 @@ class Page7 extends React.Component {
             3. How do you support others?
           </Col>
         </Row>
-        <Row className="inputRow">
-          <FormGroup>
-            <Col sm={4} smOffset={4}>
-              <InputGroup>
-                <InputGroup.Addon>
-                  <FontAwesome name='file-video-o'/>
-                </InputGroup.Addon>
-                <FormControl
-                  id="formControlsVideo"
-                  type="text"
-                  name="video_URL"
-                  value={this.props.page.video_URL}
-                  onChange={this.props.handleInputChange}
-                  placeholder='Include a youtube, vimeo, google drive, etc. link here'
-                  />
-              </InputGroup>
-            </Col>
-          </FormGroup>
+        <Row>
+          <Col smOffset={1} sm={10}>
+            <textarea
+              style={{ height: 300 }} id='formControlsTextarea'
+              value={this.props.page.video_URL}
+              className="form-control" id="video_URL" name="video_URL"
+              onChange={this.props.handleInputChange}
+              placeholder="Include a youtube, vimeo, google drive, etc. link or write your answers to the questions."
+              />
+          </Col>
         </Row>
       </Grid>
     )

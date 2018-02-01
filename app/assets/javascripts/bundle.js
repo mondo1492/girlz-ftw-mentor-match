@@ -57422,6 +57422,8 @@ var _reactFontawesome2 = _interopRequireDefault(_reactFontawesome);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -57440,6 +57442,8 @@ var Page7 = function (_React$Component) {
   _createClass(Page7, [{
     key: 'render',
     value: function render() {
+      var _React$createElement;
+
       return _react2.default.createElement(
         _reactBootstrap.Grid,
         null,
@@ -57455,7 +57459,19 @@ var Page7 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { className: 'centerText formFontStyle2', sm: 12 },
-            'Please submit a video on the following three prompts. Videos should be between 60 and 90 seconds.'
+            'Please submit a ',
+            _react2.default.createElement(
+              'strong',
+              null,
+              'video'
+            ),
+            ' or an ',
+            _react2.default.createElement(
+              'strong',
+              null,
+              'essay'
+            ),
+            ' on the following three prompts. If you decide to do a video, it should be between 60 and 90 seconds.'
           )
         ),
         _react2.default.createElement(
@@ -57487,31 +57503,14 @@ var Page7 = function (_React$Component) {
         ),
         _react2.default.createElement(
           _reactBootstrap.Row,
-          { className: 'inputRow' },
+          null,
           _react2.default.createElement(
-            _reactBootstrap.FormGroup,
-            null,
-            _react2.default.createElement(
-              _reactBootstrap.Col,
-              { sm: 4, smOffset: 4 },
-              _react2.default.createElement(
-                _reactBootstrap.InputGroup,
-                null,
-                _react2.default.createElement(
-                  _reactBootstrap.InputGroup.Addon,
-                  null,
-                  _react2.default.createElement(_reactFontawesome2.default, { name: 'file-video-o' })
-                ),
-                _react2.default.createElement(_reactBootstrap.FormControl, {
-                  id: 'formControlsVideo',
-                  type: 'text',
-                  name: 'video_URL',
-                  value: this.props.page.video_URL,
-                  onChange: this.props.handleInputChange,
-                  placeholder: 'Include a youtube, vimeo, google drive, etc. link here'
-                })
-              )
-            )
+            _reactBootstrap.Col,
+            { smOffset: 1, sm: 10 },
+            _react2.default.createElement('textarea', (_React$createElement = {
+              style: { height: 300 }, id: 'formControlsTextarea',
+              value: this.props.page.video_URL,
+              className: 'form-control' }, _defineProperty(_React$createElement, 'id', 'video_URL'), _defineProperty(_React$createElement, 'name', 'video_URL'), _defineProperty(_React$createElement, 'onChange', this.props.handleInputChange), _defineProperty(_React$createElement, 'placeholder', 'Include a youtube, vimeo, google drive, etc. link or write your answers to the questions.'), _React$createElement))
           )
         )
       );
