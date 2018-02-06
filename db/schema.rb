@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180126071731) do
+ActiveRecord::Schema.define(version: 20180206225157) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "matches", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "mentee_id", null: false
+    t.integer "match_percent"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "mentees", force: :cascade do |t|
     t.datetime "created_at", null: false

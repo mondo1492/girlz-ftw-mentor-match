@@ -8,6 +8,7 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   has_many :mentees
+  has_many :matches
 
   def mentee_names
     self.mentees.map { |mentee| "#{mentee.first_name} #{mentee.last_name}"}.join(', ')
