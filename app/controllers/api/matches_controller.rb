@@ -79,7 +79,6 @@ class Api::MatchesController < ApplicationController
     end
 
     def determine_match_percentage(mentor, mentee)
-      p mentee
       # rewrite these to deal with mentors AND mentees having multiple of these fields
 
       # handle mentee bio why not
@@ -128,7 +127,10 @@ class Api::MatchesController < ApplicationController
 
       match_sum = (unblock_methods_matched + industry_matched + major_matched + provide_matched)
       total_sum = (unblock_methods_total + industry_total + major_total + provide_total)
-      puts "percentage: #{match_sum.fdiv(total_sum) * 100}%"
+      puts "#{mentor.first_name} and #{mentee.first_name} match analysis:"
+      puts "  percentage: #{match_sum.fdiv(total_sum) * 100}%"
+      puts
+      puts
 
 
 

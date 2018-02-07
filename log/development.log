@@ -50968,3 +50968,30 @@ Processing by Api::MatchesController#index as JSON
 Completed 200 OK in 45ms (Views: 5.0ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/api/matches" for 127.0.0.1 at 2018-02-06 18:57:22 -0800
+Processing by Api::MatchesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."approved" = $1[0m  [["approved", "t"]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."approved" = $1[0m  [["approved", "t"]]
+  Rendering api/matches/index.json.jbuilder
+  Rendered api/matches/index.json.jbuilder (4.8ms)
+Completed 200 OK in 7369ms (Views: 10.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/matches" for 127.0.0.1 at 2018-02-06 18:58:38 -0800
+Processing by Api::MatchesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."approved" = $1[0m  [["approved", "t"]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."approved" = $1[0m  [["approved", "t"]]
+  Rendering api/matches/index.json.jbuilder
+  Rendered api/matches/index.json.jbuilder (2.9ms)
+Completed 200 OK in 53ms (Views: 6.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/matches" for 127.0.0.1 at 2018-02-06 18:58:53 -0800
+Processing by Api::MatchesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."approved" = $1[0m  [["approved", "t"]]
+  [1m[36mMentee Load (0.6ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."approved" = $1[0m  [["approved", "t"]]
+  Rendering api/matches/index.json.jbuilder
+  Rendered api/matches/index.json.jbuilder (3.1ms)
+Completed 200 OK in 63ms (Views: 7.2ms | ActiveRecord: 1.1ms)
+
+
