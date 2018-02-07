@@ -50538,3 +50538,12 @@ Processing by Api::MatchesController#index as JSON
 Completed 200 OK in 11ms (Views: 8.4ms | ActiveRecord: 0.7ms)
 
 
+Started GET "/api/matches" for 127.0.0.1 at 2018-02-06 16:29:25 -0800
+Processing by Api::MatchesController#index as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."approved" = $1[0m  [["approved", "t"]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."approved" = $1[0m  [["approved", "t"]]
+  Rendering api/matches/index.json.jbuilder
+  Rendered api/matches/index.json.jbuilder (2.0ms)
+Completed 200 OK in 54ms (Views: 5.4ms | ActiveRecord: 8.2ms)
+
+

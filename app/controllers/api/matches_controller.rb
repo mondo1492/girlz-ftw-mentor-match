@@ -6,6 +6,11 @@ class Api::MatchesController < ApplicationController
   def index
     @users = User.where(approved: true)
     @mentees = Mentee.where(approved: true)
+    @users.each do |mentor|
+      @mentees.each do |mentee|
+        determine_match_percentage(mentor, mentee)
+      end
+    end
   end
 
   # GET /matches/1
@@ -71,5 +76,12 @@ class Api::MatchesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def match_params
       params.fetch(:match, {})
+    end
+
+    def determine_match_percentage(mentor, mentee)
+      puts "im making a match with #{mentor.first_name} and #{mentee.first_name}"
+
+
+
     end
 end
