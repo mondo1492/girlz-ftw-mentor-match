@@ -50547,3 +50547,424 @@ Processing by Api::MatchesController#index as JSON
 Completed 200 OK in 54ms (Views: 5.4ms | ActiveRecord: 8.2ms)
 
 
+Started GET "/api/matches" for 127.0.0.1 at 2018-02-06 16:32:26 -0800
+Processing by Api::MatchesController#index as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."approved" = $1[0m  [["approved", "t"]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."approved" = $1[0m  [["approved", "t"]]
+  Rendering api/matches/index.json.jbuilder
+  Rendered api/matches/index.json.jbuilder (1.8ms)
+Completed 200 OK in 49ms (Views: 5.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/matches" for 127.0.0.1 at 2018-02-06 16:46:48 -0800
+Processing by Api::MatchesController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."approved" = $1[0m  [["approved", "t"]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."approved" = $1[0m  [["approved", "t"]]
+  Rendering api/matches/index.json.jbuilder
+  Rendered api/matches/index.json.jbuilder (2.1ms)
+Completed 200 OK in 50ms (Views: 5.4ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT  "mentees".* FROM "mentees" ORDER BY "mentees"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/api/matches" for 127.0.0.1 at 2018-02-06 16:48:29 -0800
+Processing by Api::MatchesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."approved" = $1[0m  [["approved", "t"]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."approved" = $1[0m  [["approved", "t"]]
+  Rendering api/matches/index.json.jbuilder
+  Rendered api/matches/index.json.jbuilder (2.0ms)
+Completed 200 OK in 51ms (Views: 5.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/matches" for 127.0.0.1 at 2018-02-06 16:48:37 -0800
+Processing by Api::MatchesController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."approved" = $1[0m  [["approved", "t"]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."approved" = $1[0m  [["approved", "t"]]
+  Rendering api/matches/index.json.jbuilder
+  Rendered api/matches/index.json.jbuilder (1.8ms)
+Completed 200 OK in 11ms (Views: 4.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/matches" for 127.0.0.1 at 2018-02-06 16:48:56 -0800
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::MatchesController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."approved" = $1[0m  [["approved", "t"]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."approved" = $1[0m  [["approved", "t"]]
+  Rendering api/matches/index.json.jbuilder
+  Rendered api/matches/index.json.jbuilder (4.7ms)
+Completed 200 OK in 74ms (Views: 13.9ms | ActiveRecord: 10.0ms)
+
+
+Started GET "/api/matches" for 127.0.0.1 at 2018-02-06 16:50:04 -0800
+Processing by Api::MatchesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."approved" = $1[0m  [["approved", "t"]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."approved" = $1[0m  [["approved", "t"]]
+  Rendering api/matches/index.json.jbuilder
+  Rendered api/matches/index.json.jbuilder (2.7ms)
+Completed 200 OK in 52ms (Views: 7.3ms | ActiveRecord: 0.9ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "mentees" SET "updated_at" = $1, "approved" = $2 WHERE "mentees"."id" = $3[0m  [["updated_at", "2018-02-07 00:51:15.041539"], ["approved", "t"], ["id", 21]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."approved" = $1[0m  [["approved", "t"]]
+Started GET "/api/matches" for 127.0.0.1 at 2018-02-06 16:51:41 -0800
+Processing by Api::MatchesController#index as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."approved" = $1[0m  [["approved", "t"]]
+  [1m[36mMentee Load (0.6ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."approved" = $1[0m  [["approved", "t"]]
+  Rendering api/matches/index.json.jbuilder
+  Rendered api/matches/index.json.jbuilder (2.2ms)
+Completed 200 OK in 12ms (Views: 5.3ms | ActiveRecord: 1.5ms)
+
+
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (2.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "fmentor1"], ["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = $1, "unblock_methods" = $2 WHERE "users"."id" = $3[0m  [["updated_at", "2018-02-07 00:52:28.029262"], ["unblock_methods", "Indecision"], ["id", 2]]
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/api/matches" for 127.0.0.1 at 2018-02-06 16:52:32 -0800
+Processing by Api::MatchesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."approved" = $1[0m  [["approved", "t"]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."approved" = $1[0m  [["approved", "t"]]
+  Rendering api/matches/index.json.jbuilder
+  Rendered api/matches/index.json.jbuilder (2.6ms)
+Completed 200 OK in 12ms (Views: 6.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/matches" for 127.0.0.1 at 2018-02-06 16:58:56 -0800
+Processing by Api::MatchesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."approved" = $1[0m  [["approved", "t"]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."approved" = $1[0m  [["approved", "t"]]
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 0.8ms)
+
+
+
+NoMethodError - undefined method `split' for nil:NilClass:
+  app/controllers/api/matches_controller.rb:97:in `determine_match_percentage'
+  app/controllers/api/matches_controller.rb:11:in `block (2 levels) in index'
+  activerecord (5.1.4) lib/active_record/relation/delegation.rb:39:in `each'
+  app/controllers/api/matches_controller.rb:10:in `block in index'
+  activerecord (5.1.4) lib/active_record/relation/delegation.rb:39:in `each'
+  app/controllers/api/matches_controller.rb:9:in `index'
+  actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+  activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+  actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+  actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.4) lib/rails/engine.rb:522:in `call'
+  puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+  puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+  puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+  puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+  puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/f947d7e3c5dda574/variables" for 127.0.0.1 at 2018-02-06 16:58:56 -0800
+Started GET "/api/matches" for 127.0.0.1 at 2018-02-06 17:06:24 -0800
+Processing by Api::MatchesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."approved" = $1[0m  [["approved", "t"]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."approved" = $1[0m  [["approved", "t"]]
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.7ms)
+
+
+
+NoMethodError - undefined method `split' for nil:NilClass:
+  app/controllers/api/matches_controller.rb:97:in `determine_match_percentage'
+  app/controllers/api/matches_controller.rb:11:in `block (2 levels) in index'
+  activerecord (5.1.4) lib/active_record/relation/delegation.rb:39:in `each'
+  app/controllers/api/matches_controller.rb:10:in `block in index'
+  activerecord (5.1.4) lib/active_record/relation/delegation.rb:39:in `each'
+  app/controllers/api/matches_controller.rb:9:in `index'
+  actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+  activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+  actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+  actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.4) lib/rails/engine.rb:522:in `call'
+  puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+  puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+  puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+  puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+  puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/ef58c069001c8697/variables" for 127.0.0.1 at 2018-02-06 17:06:24 -0800
+Started GET "/api/matches" for 127.0.0.1 at 2018-02-06 17:06:27 -0800
+Processing by Api::MatchesController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."approved" = $1[0m  [["approved", "t"]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."approved" = $1[0m  [["approved", "t"]]
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 1.1ms)
+
+
+
+NoMethodError - undefined method `split' for nil:NilClass:
+  app/controllers/api/matches_controller.rb:97:in `determine_match_percentage'
+  app/controllers/api/matches_controller.rb:11:in `block (2 levels) in index'
+  activerecord (5.1.4) lib/active_record/relation/delegation.rb:39:in `each'
+  app/controllers/api/matches_controller.rb:10:in `block in index'
+  activerecord (5.1.4) lib/active_record/relation/delegation.rb:39:in `each'
+  app/controllers/api/matches_controller.rb:9:in `index'
+  actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+  activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+  actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+  actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.4) lib/rails/engine.rb:522:in `call'
+  puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+  puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+  puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+  puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+  puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/92276393d9bd027a/variables" for 127.0.0.1 at 2018-02-06 17:06:27 -0800
+Started GET "/api/matches" for 127.0.0.1 at 2018-02-06 17:30:04 -0800
+Processing by Api::MatchesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."approved" = $1[0m  [["approved", "t"]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."approved" = $1[0m  [["approved", "t"]]
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.8ms)
+
+
+
+NoMethodError - undefined method `split' for nil:NilClass:
+  app/controllers/api/matches_controller.rb:118:in `determine_match_percentage'
+  app/controllers/api/matches_controller.rb:11:in `block (2 levels) in index'
+  activerecord (5.1.4) lib/active_record/relation/delegation.rb:39:in `each'
+  app/controllers/api/matches_controller.rb:10:in `block in index'
+  activerecord (5.1.4) lib/active_record/relation/delegation.rb:39:in `each'
+  app/controllers/api/matches_controller.rb:9:in `index'
+  actionpack (5.1.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.1.4) lib/abstract_controller/base.rb:186:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:131:in `run_callbacks'
+  actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+  activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+  actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+  activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+  actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+  actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+  actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+  actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+  actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:25:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+  activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+  actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.3.0) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.1.4) lib/rails/engine.rb:522:in `call'
+  puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+  puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+  puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+  puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+  puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started POST "/__better_errors/c5df20f15578934c/variables" for 127.0.0.1 at 2018-02-06 17:30:04 -0800
+Started GET "/api/matches" for 127.0.0.1 at 2018-02-06 17:30:32 -0800
+Processing by Api::MatchesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."approved" = $1[0m  [["approved", "t"]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."approved" = $1[0m  [["approved", "t"]]
+  Rendering api/matches/index.json.jbuilder
+  Rendered api/matches/index.json.jbuilder (1.9ms)
+Completed 200 OK in 47ms (Views: 5.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/matches" for 127.0.0.1 at 2018-02-06 17:31:58 -0800
+Processing by Api::MatchesController#index as JSON
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."approved" = $1[0m  [["approved", "t"]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."approved" = $1[0m  [["approved", "t"]]
+  Rendering api/matches/index.json.jbuilder
+  Rendered api/matches/index.json.jbuilder (1.9ms)
+Completed 200 OK in 45ms (Views: 5.0ms | ActiveRecord: 0.8ms)
+
+
