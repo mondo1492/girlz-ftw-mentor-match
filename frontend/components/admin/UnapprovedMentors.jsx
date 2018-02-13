@@ -74,7 +74,6 @@ class UnapprovedMentors extends React.Component {
         <Table responsive striped>
           <thead>
             <tr>
-              <th>Video</th>
               <th>Name</th>
               <th>Show Full Profile</th>
             </tr>
@@ -82,9 +81,6 @@ class UnapprovedMentors extends React.Component {
           <tbody>
             {Object.keys(this.state.mentors).map((key) => (
               <tr className="unapproved_box_container" key={key}>
-                <td>
-                  It's a video ayyy
-                </td>
                 <td>
                   {this.state.mentors[key].first_name} {this.state.mentors[key].last_name}
                 </td>

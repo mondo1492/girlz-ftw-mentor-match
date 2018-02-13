@@ -62,7 +62,6 @@ class RejectedMentors extends React.Component {
         <Table responsive condensed>
           <thead>
             <tr>
-              <th>Video</th>
               <th>Name</th>
               <th>Full Profile</th>
             </tr>
@@ -70,10 +69,6 @@ class RejectedMentors extends React.Component {
           <tbody>
           {Object.keys(this.state.mentors).map((key) => (
              <tr key={key}>
-               
-               <td>
-                 Video placeholder ayyy
-               </td>
 
                <td>
                  {this.state.mentors[key].first_name} {this.state.mentors[key].last_name}

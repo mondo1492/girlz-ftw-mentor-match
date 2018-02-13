@@ -124,7 +124,7 @@ class Api::MatchesController < ApplicationController
           end
         end
       end
-
+      
       match_sum = (unblock_methods_matched + industry_matched + major_matched + provide_matched)
       total_sum = (unblock_methods_total + industry_total + major_total + provide_total)
       puts "#{mentor.first_name} and #{mentee.first_name} match analysis:"

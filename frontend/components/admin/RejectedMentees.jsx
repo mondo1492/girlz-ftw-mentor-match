@@ -73,7 +73,6 @@ class RejectedMentees extends React.Component {
         <Table responsive>
           <thead>
             <tr>
-              <th>Video</th>
               <th>Name</th>
               <th>Full Profile</th>
               <th>Rank Mentee</th>
@@ -82,7 +81,6 @@ class RejectedMentees extends React.Component {
           <tbody>
             {Object.keys(this.state.mentees).map((key) => (
               <tr key={key}>
-                <td>Video placeholder ayyyy</td>
 
                 <td>
                   {this.state.mentees[key].first_name} {this.state.mentees[key].last_name}
