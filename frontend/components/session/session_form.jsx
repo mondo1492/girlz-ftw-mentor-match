@@ -30,6 +30,7 @@ class SessionForm extends React.Component {
       if (this.state.user.username === "admin") {
         this.props.history.push('/admin_panel');
       } else {
+        // TODO: fix mentor login
         this.props.history.push('/mentor_panel');
       }
     }
@@ -65,20 +66,20 @@ class SessionForm extends React.Component {
         <div className="login-form-box">
           {this.renderErrors()}
           <form onSubmit={(e)=>e.preventDefault} className="login-form">
-                <input autoFocus
-                  type="text"
-                  value={this.state.user.username}
-                  onChange={this.update('username')}
-                  className="login-input"
-                  placeholder="Username"
-                />
-                <input type="password"
-                  value={this.state.user.password}
-                  onChange={this.update('password')}
-                  className="login-input"
-                  placeholder="Password"
-                />
-              <Button onClick={this.handleSubmit}>Login</Button>
+            <input autoFocus
+              type="text"
+              value={this.state.user.username}
+              onChange={this.update('username')}
+              className="login-input"
+              placeholder="Username"
+            />
+            <input type="password"
+              value={this.state.user.password}
+              onChange={this.update('password')}
+              className="login-input"
+              placeholder="Password"
+            />
+            <Button onClick={this.handleSubmit}>Login</Button>
             </form>
           </div>
       </div>
