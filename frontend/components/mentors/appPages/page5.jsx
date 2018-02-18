@@ -134,7 +134,7 @@ class Page5 extends React.Component {
 
           <FormGroup>
             <Col componentClass={ControlLabel} smOffset={4} sm={8} className='formFontStyle'>
-              In which industry do you to work?
+              In which industry do you work?
             </Col>
             <Col smOffset={4} sm={4}>
               <Select
