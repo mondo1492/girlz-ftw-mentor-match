@@ -7315,7 +7315,7 @@ var MenteeShow = function (_React$Component) {
       var mentee = this.props.mentee;
       return _react2.default.createElement(
         'div',
-        null,
+        { style: { padding: '0 5%' } },
         _react2.default.createElement(
           'h2',
           null,
@@ -7386,7 +7386,7 @@ var MenteeShow = function (_React$Component) {
         _react2.default.createElement(
           'p',
           null,
-          'Prefers mentor with same major (0 - 4): ',
+          'Prefers mentor with same major (0 - 3): ',
           mentee.share_major_rank
         ),
         _react2.default.createElement(
@@ -7398,7 +7398,7 @@ var MenteeShow = function (_React$Component) {
         _react2.default.createElement(
           'p',
           null,
-          'Prefers mentor with this industry (0 - 4): ',
+          'Prefers mentor with this industry (0 - 3): ',
           mentee.share_industry_rank
         ),
         _react2.default.createElement(
@@ -9566,7 +9566,7 @@ var MentorShow = function (_React$Component) {
       var mentor = this.props.mentor;
       return _react2.default.createElement(
         'div',
-        null,
+        { style: { padding: '0 5%' } },
         _react2.default.createElement(
           'h2',
           null,
@@ -9637,7 +9637,7 @@ var MentorShow = function (_React$Component) {
         _react2.default.createElement(
           'p',
           null,
-          'Prefers mentee with same major (0 - 4): ',
+          'Prefers mentee with same major (0 - 3): ',
           mentor.share_major_rank
         ),
         _react2.default.createElement(
@@ -9649,7 +9649,7 @@ var MentorShow = function (_React$Component) {
         _react2.default.createElement(
           'p',
           null,
-          'Prefers mentee with same industry (0 - 4): ',
+          'Prefers mentee with same industry (0 - 3): ',
           mentor.share_industry_rank
         ),
         _react2.default.createElement(
@@ -58977,7 +58977,7 @@ var CurrentMentees = function (_React$Component) {
     value: function render() {
       var _this3 = this;
 
-      // TODO: permit exiting tierchange modal by clicking out of modal
+      // TODO: permit exiting tier change modal by clicking out of modal
       return _react2.default.createElement(
         'div',
         null,
@@ -59097,6 +59097,7 @@ var CurrentMentees = function (_React$Component) {
                     {
                       bsStyle: 'primary',
                       bsSize: 'small',
+                      style: { width: 'fit-content' },
                       onClick: function onClick() {
                         return _this3.openModalTwo(mentee);
                       } },
@@ -60363,6 +60364,7 @@ var UnapprovedMentees = function (_React$Component) {
           _reactBootstrap.Button,
           {
             bsStyle: 'success',
+            style: { width: 'fit-content' },
             onClick: this.approve },
           'Approve Changes'
         ),

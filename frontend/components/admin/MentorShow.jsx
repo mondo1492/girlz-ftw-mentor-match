@@ -8,7 +8,7 @@ class MentorShow extends React.Component {
   render() {
     const mentor = this.props.mentor;
     return(
-      <div>
+      <div style={{ padding: `0 5%`}}>
         <h2>{mentor.first_name} {mentor.last_name}</h2>
         <p>Email: {mentor.email}</p>
         <p>Phone: {mentor.phone}</p>

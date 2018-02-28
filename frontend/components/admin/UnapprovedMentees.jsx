@@ -87,6 +87,7 @@ class UnapprovedMentees extends React.Component {
 
         <Button
           bsStyle="success"
+          style={{ width: 'fit-content' }}
           onClick={this.approve}>
           Approve Changes
         </Button>

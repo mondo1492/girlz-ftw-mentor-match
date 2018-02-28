@@ -8,7 +8,7 @@ class MenteeShow extends React.Component {
   render() {
     const mentee = this.props.mentee;
     return(
-      <div>
+      <div style={{ padding: `0 5%`}}>
         <h2>{mentee.first_name} {mentee.last_name}</h2>
         <p>Email: {mentee.email}</p>
         <p>Phone: {mentee.phone}</p>

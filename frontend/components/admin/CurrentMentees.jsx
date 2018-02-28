@@ -96,7 +96,7 @@ class CurrentMentees extends React.Component {
   }
 
   render() {
-    // TODO: permit exiting tierchange modal by clicking out of modal
+    // TODO: permit exiting tier change modal by clicking out of modal
     return(
       <div>
         <Link to='admin_panel'>Back to Admin Panel</Link>
@@ -154,6 +154,7 @@ class CurrentMentees extends React.Component {
                   <Button
                     bsStyle="primary"
                     bsSize="small"
+                    style={{ width: 'fit-content' }}
                     onClick={() => this.openModalTwo(mentee)}>
                     { mentee.mentor_name === "" ? "Choose A Mentor?" : "Select A New Mentor?"}
                   </Button>
