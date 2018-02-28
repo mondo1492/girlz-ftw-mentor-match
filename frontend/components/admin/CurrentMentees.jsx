@@ -96,7 +96,7 @@ class CurrentMentees extends React.Component {
   }
 
   render() {
-    // TODO: permit exiting tier change modal by clicking out of modal
+    // TODO: permit exiting tierchange modal by clicking out of modal
     return(
       <div>
         <Link to='admin_panel'>Back to Admin Panel</Link>

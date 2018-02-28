@@ -58977,7 +58977,7 @@ var CurrentMentees = function (_React$Component) {
     value: function render() {
       var _this3 = this;
 
-      // TODO: permit exiting tier change modal by clicking out of modal
+      // TODO: permit exiting tierchange modal by clicking out of modal
       return _react2.default.createElement(
         'div',
         null,
@@ -59664,25 +59664,34 @@ var TierChangeView = function (_React$Component) {
             case _this3.state.mentee.tier.toString() === '4':
               return _react2.default.createElement(
                 _reactBootstrap.Button,
-                { onClick: function onClick() {
+                {
+                  style: { width: 'fit-content' },
+                  onClick: function onClick() {
                     return _this3.handleSubmit();
-                  } },
+                  }
+                },
                 'Change Tier and Reject'
               );
             case _this3.state.madeChange && _this3.state.originalTier !== _this3.state.mentee.tier:
               return _react2.default.createElement(
                 _reactBootstrap.Button,
-                { onClick: function onClick() {
+                {
+                  style: { width: 'fit-content' },
+                  onClick: function onClick() {
                     return _this3.handleSubmit();
-                  } },
+                  }
+                },
                 'Change Tier!!!'
               );
             default:
               return _react2.default.createElement(
                 _reactBootstrap.Button,
-                { onClick: function onClick() {
+                {
+                  style: { width: 'fit-content' },
+                  onClick: function onClick() {
                     return _this3.props.closeModal();
-                  } },
+                  }
+                },
                 'No thanks, I\'ll leave it as is'
               );
           }

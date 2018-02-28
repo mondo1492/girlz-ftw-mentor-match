@@ -52531,3 +52531,1236 @@ Processing by Api::UsersController#index as JSON
 Completed 200 OK in 53ms (Views: 39.6ms | ActiveRecord: 12.8ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-02-27 17:50:23 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (2.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 556ms (Views: 553.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2018-02-27 17:50:24 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (2.3ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered api/users/_user.json.jbuilder (2.8ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  Rendered api/users/_user.json.jbuilder (2.0ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  Rendered api/users/_user.json.jbuilder (1.7ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  Rendered api/users/_user.json.jbuilder (1.6ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  Rendered api/users/_user.json.jbuilder (1.5ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  Rendered api/users/_user.json.jbuilder (1.8ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  Rendered api/users/_user.json.jbuilder (1.7ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  [1m[36mMentee Load (2.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  Rendered api/users/_user.json.jbuilder (5.0ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  Rendered api/users/_user.json.jbuilder (3.1ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mMentee Load (0.6ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered api/users/_user.json.jbuilder (3.6ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  [1m[36mMentee Load (0.7ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  Rendered api/users/_user.json.jbuilder (3.3ms)
+  Rendered api/users/index.json.jbuilder (44.6ms)
+Completed 200 OK in 50ms (Views: 37.7ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/api/mentees" for 127.0.0.1 at 2018-02-27 17:50:27 -0800
+Processing by Api::MenteesController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  Rendering api/mentees/index.json.jbuilder
+  [1m[36mMentee Load (0.6ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees"[0m
+  Rendered api/mentees/_mentee.json.jbuilder (0.5ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.4ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/index.json.jbuilder (19.5ms)
+Completed 200 OK in 27ms (Views: 24.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2018-02-27 17:50:29 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (2.7ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered api/users/_user.json.jbuilder (2.2ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  Rendered api/users/_user.json.jbuilder (2.0ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  Rendered api/users/_user.json.jbuilder (2.8ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  Rendered api/users/_user.json.jbuilder (2.2ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  Rendered api/users/_user.json.jbuilder (2.1ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  Rendered api/users/_user.json.jbuilder (2.5ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  Rendered api/users/_user.json.jbuilder (2.3ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  Rendered api/users/_user.json.jbuilder (2.5ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  Rendered api/users/_user.json.jbuilder (1.9ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered api/users/_user.json.jbuilder (2.4ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  Rendered api/users/_user.json.jbuilder (1.7ms)
+  Rendered api/users/index.json.jbuilder (39.2ms)
+Completed 200 OK in 45ms (Views: 34.9ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2018-02-27 17:50:30 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (2.8ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered api/users/_user.json.jbuilder (2.1ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  Rendered api/users/_user.json.jbuilder (2.0ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  Rendered api/users/_user.json.jbuilder (2.4ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  Rendered api/users/_user.json.jbuilder (2.4ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  Rendered api/users/_user.json.jbuilder (1.9ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  Rendered api/users/_user.json.jbuilder (2.0ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  Rendered api/users/_user.json.jbuilder (1.9ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  Rendered api/users/_user.json.jbuilder (2.6ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  Rendered api/users/_user.json.jbuilder (2.4ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered api/users/_user.json.jbuilder (2.0ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  Rendered api/users/_user.json.jbuilder (1.7ms)
+  Rendered api/users/index.json.jbuilder (38.1ms)
+Completed 200 OK in 44ms (Views: 35.3ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2018-02-27 17:50:32 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (3.0ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered api/users/_user.json.jbuilder (2.4ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  Rendered api/users/_user.json.jbuilder (2.2ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  Rendered api/users/_user.json.jbuilder (2.1ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  Rendered api/users/_user.json.jbuilder (2.1ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  Rendered api/users/_user.json.jbuilder (1.7ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  Rendered api/users/_user.json.jbuilder (1.7ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  Rendered api/users/_user.json.jbuilder (1.7ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  Rendered api/users/_user.json.jbuilder (1.6ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  Rendered api/users/_user.json.jbuilder (1.6ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered api/users/_user.json.jbuilder (1.7ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  Rendered api/users/_user.json.jbuilder (1.6ms)
+  Rendered api/users/index.json.jbuilder (34.2ms)
+Completed 200 OK in 40ms (Views: 31.2ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/api/mentees" for 127.0.0.1 at 2018-02-27 17:50:33 -0800
+Processing by Api::MenteesController#index as JSON
+Started GET "/api/users" for 127.0.0.1 at 2018-02-27 17:50:33 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (6.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  Rendering api/mentees/index.json.jbuilder
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mMentee Load (2.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees"[0m
+  Rendered api/mentees/_mentee.json.jbuilder (0.4ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (7.3ms)
+  [1m[35m (11.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[36mMentee Load (1.0ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  Rendered api/users/_user.json.jbuilder (15.6ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[36mMentee Load (1.7ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered api/users/_user.json.jbuilder (5.5ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.4ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.4ms)
+  [1m[36mMentee Load (0.6ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (3.7ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/index.json.jbuilder (35.7ms)
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+Completed 200 OK in 51ms (Views: 38.6ms | ActiveRecord: 9.4ms)
+
+
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  Rendered api/users/_user.json.jbuilder (5.1ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  Rendered api/users/_user.json.jbuilder (2.2ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  Rendered api/users/_user.json.jbuilder (1.9ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  Rendered api/users/_user.json.jbuilder (2.6ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  Rendered api/users/_user.json.jbuilder (2.1ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  Rendered api/users/_user.json.jbuilder (1.8ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  Rendered api/users/_user.json.jbuilder (1.9ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered api/users/_user.json.jbuilder (2.1ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  Rendered api/users/_user.json.jbuilder (1.7ms)
+  Rendered api/users/index.json.jbuilder (68.5ms)
+Completed 200 OK in 76ms (Views: 45.9ms | ActiveRecord: 29.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-27 17:51:23 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (2.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 34ms (Views: 31.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2018-02-27 17:51:24 -0800
+Processing by Api::UsersController#index as JSON
+Started GET "/api/mentees" for 127.0.0.1 at 2018-02-27 17:51:24 -0800
+Processing by Api::MenteesController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  Rendering api/mentees/index.json.jbuilder
+  [1m[36mUser Load (5.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mMentee Load (2.9ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees"[0m
+  Rendered api/mentees/_mentee.json.jbuilder (0.5ms)
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  [1m[36mMentee Load (0.7ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (5.5ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (3.0ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  [1m[36mMentee Load (0.7ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (2.9ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.7ms)
+  [1m[36mMentee Load (5.0ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  Rendered api/users/_user.json.jbuilder (8.6ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  [1m[36mMentee Load (0.7ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (4.6ms)
+  Rendered api/mentees/index.json.jbuilder (37.5ms)
+Completed 200 OK in 45ms (Views: 39.7ms | ActiveRecord: 3.3ms)
+
+
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  [1m[36mMentee Load (13.1ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  Rendered api/users/_user.json.jbuilder (16.0ms)
+  [1m[35m (4.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  [1m[36mMentee Load (1.2ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  Rendered api/users/_user.json.jbuilder (8.4ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  [1m[36mMentee Load (0.6ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  Rendered api/users/_user.json.jbuilder (3.3ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  [1m[36mMentee Load (0.7ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  Rendered api/users/_user.json.jbuilder (3.3ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  [1m[36mMentee Load (0.7ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  Rendered api/users/_user.json.jbuilder (3.0ms)
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mMentee Load (0.6ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered api/users/_user.json.jbuilder (4.3ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  [1m[36mMentee Load (1.1ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  Rendered api/users/_user.json.jbuilder (3.6ms)
+  Rendered api/users/index.json.jbuilder (96.7ms)
+Completed 200 OK in 103ms (Views: 57.5ms | ActiveRecord: 45.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-27 17:51:30 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (3.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 31ms (Views: 28.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/mentees" for 127.0.0.1 at 2018-02-27 17:51:32 -0800
+Processing by Api::MenteesController#index as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  Rendering api/mentees/index.json.jbuilder
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees"[0m
+  Rendered api/mentees/_mentee.json.jbuilder (0.7ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/index.json.jbuilder (18.4ms)
+Completed 200 OK in 27ms (Views: 24.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/mentees" for 127.0.0.1 at 2018-02-27 17:51:38 -0800
+Started GET "/api/users" for 127.0.0.1 at 2018-02-27 17:51:38 -0800
+Processing by Api::MenteesController#index as JSON
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  Rendering api/mentees/index.json.jbuilder
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mMentee Load (2.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees"[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.4ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[36mMentee Load (2.6ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/users/_user.json.jbuilder (6.7ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[36mMentee Load (0.8ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered api/users/_user.json.jbuilder (4.0ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  [1m[36mMentee Load (1.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (4.4ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/index.json.jbuilder (26.3ms)
+Completed 200 OK in 41ms (Views: 29.2ms | ActiveRecord: 7.1ms)
+
+
+  [1m[36mMentee Load (2.8ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  Rendered api/users/_user.json.jbuilder (5.5ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  Rendered api/users/_user.json.jbuilder (1.9ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  Rendered api/users/_user.json.jbuilder (1.8ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  Rendered api/users/_user.json.jbuilder (1.8ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  Rendered api/users/_user.json.jbuilder (1.8ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  Rendered api/users/_user.json.jbuilder (2.6ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  Rendered api/users/_user.json.jbuilder (2.2ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered api/users/_user.json.jbuilder (1.8ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  Rendered api/users/_user.json.jbuilder (1.6ms)
+  Rendered api/users/index.json.jbuilder (56.6ms)
+Completed 200 OK in 64ms (Views: 42.1ms | ActiveRecord: 21.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-27 17:52:30 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (2.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 89ms (Views: 86.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/mentees" for 127.0.0.1 at 2018-02-27 17:52:30 -0800
+Processing by Api::MenteesController#index as JSON
+Started GET "/api/users" for 127.0.0.1 at 2018-02-27 17:52:30 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  Rendering api/mentees/index.json.jbuilder
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mMentee Load (2.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees"[0m
+  Rendered api/mentees/_mentee.json.jbuilder (0.5ms)
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[36mMentee Load (1.0ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (6.7ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  [1m[36mMentee Load (0.7ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered api/users/_user.json.jbuilder (5.0ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  [1m[36mMentee Load (0.8ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  Rendered api/users/_user.json.jbuilder (6.0ms)
+  Rendered api/mentees/index.json.jbuilder (28.5ms)
+Completed 200 OK in 41ms (Views: 31.2ms | ActiveRecord: 6.0ms)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  Rendered api/users/_user.json.jbuilder (3.3ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  Rendered api/users/_user.json.jbuilder (2.7ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  [1m[36mMentee Load (0.6ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  Rendered api/users/_user.json.jbuilder (3.2ms)
+  [1m[35m (14.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  [1m[36mMentee Load (4.6ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  Rendered api/users/_user.json.jbuilder (21.7ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  Rendered api/users/_user.json.jbuilder (3.3ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  [1m[36mMentee Load (0.6ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  Rendered api/users/_user.json.jbuilder (3.2ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  [1m[36mMentee Load (0.6ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  Rendered api/users/_user.json.jbuilder (3.2ms)
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mMentee Load (0.8ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered api/users/_user.json.jbuilder (4.5ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  [1m[36mMentee Load (0.6ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  Rendered api/users/_user.json.jbuilder (3.7ms)
+  Rendered api/users/index.json.jbuilder (96.4ms)
+Completed 200 OK in 101ms (Views: 59.0ms | ActiveRecord: 42.0ms)
+
+
+Started PATCH "/api/mentees/1" for 127.0.0.1 at 2018-02-27 17:54:29 -0800
+Processing by Api::MenteesController#update as JSON
+  Parameters: {"mentee"=>{"age"=>"25", "approved"=>"true", "city"=>"Miami", "college"=>"", "country"=>"USA", "created_at"=>"2018-01-19T01:14:33.085Z", "email"=>"some_email", "facebook"=>"facebook", "first_name"=>"Aaron", "high_school"=>"", "industry"=>"", "id"=>"1", "instagram_bio_text"=>"", "instagram_bio_why_not_text"=>"", "last_name"=>"Mondshine", "major"=>"", "phone"=>"", "provide"=>"", "share_industry_rank"=>"", "share_major_rank"=>"", "status"=>"true", "tier"=>"1", "video_URL"=>"", "user_id"=>"21"}, "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  [1m[36mMentee Load (2.2ms)[0m  [1m[34mSELECT  "mentees".* FROM "mentees" WHERE "mentees"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Unpermitted parameter: :user_id
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "mentees" SET "created_at" = $1, "high_school" = $2, "industry" = $3, "provide" = $4, "video_URL" = $5, "updated_at" = $6 WHERE "mentees"."id" = $7[0m  [["created_at", "2018-01-19 01:14:33.085000"], ["high_school", ""], ["industry", ""], ["provide", ""], ["video_URL", ""], ["updated_at", "2018-02-28 01:54:29.455724"], ["id", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/mentees/show.json.jbuilder
+  Rendered api/mentees/_mentee.json.jbuilder (0.4ms)
+  Rendered api/mentees/show.json.jbuilder (1.5ms)
+Completed 200 OK in 16ms (Views: 5.9ms | ActiveRecord: 4.4ms)
+
+
+Started PATCH "/api/users/21" for 127.0.0.1 at 2018-02-27 17:54:29 -0800
+Processing by Api::UsersController#update as JSON
+  Parameters: {"user"=>{"admin"=>"", "age"=>"5", "approved"=>"true", "city"=>"asdf", "college"=>"asdf", "country"=>"asdf", "created_at"=>"2018-01-29T06:01:53.419Z", "email"=>"asdfasdf", "employer"=>"adsf", "facebook"=>"asdf", "first_name"=>"adsflkj", "industry"=>"Finance", "id"=>"21", "job_description"=>"adsf", "last_name"=>"asdlfkj", "linkedin"=>"adsf", "major"=>"Engineering", "mentee_count"=>"0", "mentee_names"=>"", "phone"=>"asdf", "provide"=>"A Listening Ear", "share_industry_rank"=>"2", "share_major_rank"=>"2", "status"=>"true", "unblock_methods"=>"Indecision", "username"=>"rasdlfk", "video_URL"=>"asdf"}, "id"=>"21"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 21], ["LIMIT", 1]]
+Unpermitted parameters: :mentee_count, :mentee_names
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["username", "rasdlfk"], ["id", 21], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "status" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["status", "t"], ["updated_at", "2018-02-28 01:54:29.488307"], ["id", 21]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  Rendered api/users/_user.json.jbuilder (2.5ms)
+  Rendered api/users/show.json.jbuilder (3.6ms)
+Completed 200 OK in 16ms (Views: 7.4ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2018-02-27 17:54:29 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (2.3ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered api/users/_user.json.jbuilder (2.0ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  Rendered api/users/_user.json.jbuilder (2.9ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  Rendered api/users/_user.json.jbuilder (2.1ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  Rendered api/users/_user.json.jbuilder (1.9ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  Rendered api/users/_user.json.jbuilder (1.9ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  Rendered api/users/_user.json.jbuilder (2.2ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  Rendered api/users/_user.json.jbuilder (2.1ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  Rendered api/users/_user.json.jbuilder (2.9ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  Rendered api/users/_user.json.jbuilder (2.2ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered api/users/_user.json.jbuilder (2.2ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  Rendered api/users/_user.json.jbuilder (2.1ms)
+  Rendered api/users/index.json.jbuilder (38.6ms)
+Completed 200 OK in 43ms (Views: 33.8ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-27 17:54:36 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (2.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 433ms (Views: 430.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/mentees" for 127.0.0.1 at 2018-02-27 17:54:37 -0800
+Processing by Api::MenteesController#index as JSON
+Started GET "/api/users" for 127.0.0.1 at 2018-02-27 17:54:37 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  Rendering api/mentees/index.json.jbuilder
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees"[0m
+  Rendered api/mentees/_mentee.json.jbuilder (0.5ms)
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  [1m[36mMentee Load (1.2ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (4.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[36mMentee Load (0.8ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (4.4ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.4ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/index.json.jbuilder (29.0ms)
+  [1m[36mMentee Load (7.2ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+Completed 200 OK in 41ms (Views: 33.0ms | ActiveRecord: 4.5ms)
+
+
+  Rendered api/users/_user.json.jbuilder (11.2ms)
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[36mMentee Load (0.8ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  Rendered api/users/_user.json.jbuilder (4.6ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  [1m[36mMentee Load (1.0ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  Rendered api/users/_user.json.jbuilder (4.1ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  [1m[36mMentee Load (0.9ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  Rendered api/users/_user.json.jbuilder (4.5ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  [1m[36mMentee Load (0.6ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  Rendered api/users/_user.json.jbuilder (3.1ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  Rendered api/users/_user.json.jbuilder (3.4ms)
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  [1m[36mMentee Load (1.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  Rendered api/users/_user.json.jbuilder (5.8ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  [1m[36mMentee Load (0.7ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  Rendered api/users/_user.json.jbuilder (2.8ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered api/users/_user.json.jbuilder (3.1ms)
+  [1m[35m (8.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  [1m[36mMentee Load (5.1ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  Rendered api/users/_user.json.jbuilder (15.3ms)
+  Rendered api/users/index.json.jbuilder (109.9ms)
+Completed 200 OK in 115ms (Views: 75.0ms | ActiveRecord: 39.9ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2018-02-27 17:54:46 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (4.6ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[36mMentee Load (1.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered api/users/_user.json.jbuilder (4.1ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  Rendered api/users/_user.json.jbuilder (2.6ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  Rendered api/users/_user.json.jbuilder (2.5ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  Rendered api/users/_user.json.jbuilder (2.2ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  Rendered api/users/_user.json.jbuilder (2.0ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  Rendered api/users/_user.json.jbuilder (2.3ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  Rendered api/users/_user.json.jbuilder (2.2ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  Rendered api/users/_user.json.jbuilder (2.4ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  Rendered api/users/_user.json.jbuilder (2.0ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered api/users/_user.json.jbuilder (2.2ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  Rendered api/users/_user.json.jbuilder (1.8ms)
+  Rendered api/users/index.json.jbuilder (50.0ms)
+Completed 200 OK in 58ms (Views: 45.2ms | ActiveRecord: 12.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-27 17:55:15 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (3.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 36ms (Views: 32.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2018-02-27 17:55:18 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.7ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (3.7ms)
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[36mMentee Load (1.0ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered api/users/_user.json.jbuilder (4.6ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  [1m[36mMentee Load (0.6ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  Rendered api/users/_user.json.jbuilder (3.3ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[36mMentee Load (0.6ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  Rendered api/users/_user.json.jbuilder (3.2ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  [1m[36mMentee Load (0.7ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  Rendered api/users/_user.json.jbuilder (2.9ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  [1m[36mMentee Load (0.6ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  Rendered api/users/_user.json.jbuilder (3.1ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  Rendered api/users/_user.json.jbuilder (2.8ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  Rendered api/users/_user.json.jbuilder (1.9ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  Rendered api/users/_user.json.jbuilder (2.2ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  Rendered api/users/_user.json.jbuilder (1.9ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered api/users/_user.json.jbuilder (2.1ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  Rendered api/users/_user.json.jbuilder (1.9ms)
+  Rendered api/users/index.json.jbuilder (48.0ms)
+Completed 200 OK in 54ms (Views: 41.0ms | ActiveRecord: 12.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-27 17:56:19 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (2.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 557ms (Views: 554.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2018-02-27 17:56:20 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (3.0ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[36mMentee Load (0.6ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered api/users/_user.json.jbuilder (3.1ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  Rendered api/users/_user.json.jbuilder (2.8ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  Rendered api/users/_user.json.jbuilder (1.9ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  [1m[36mMentee Load (0.6ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  Rendered api/users/_user.json.jbuilder (2.8ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  Rendered api/users/_user.json.jbuilder (3.0ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  Rendered api/users/_user.json.jbuilder (2.6ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  Rendered api/users/_user.json.jbuilder (2.6ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  Rendered api/users/_user.json.jbuilder (2.4ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  Rendered api/users/_user.json.jbuilder (2.1ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered api/users/_user.json.jbuilder (2.1ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  [1m[36mMentee Load (0.6ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  Rendered api/users/_user.json.jbuilder (2.8ms)
+  Rendered api/users/index.json.jbuilder (44.4ms)
+Completed 200 OK in 50ms (Views: 38.6ms | ActiveRecord: 11.2ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2018-02-27 17:56:45 -0800
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"admin", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "admin"], ["LIMIT", 1]]
+  Rendering api/users/show.json.jbuilder
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (2.5ms)
+  Rendered api/users/show.json.jbuilder (3.6ms)
+Completed 200 OK in 68ms (Views: 6.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/mentees" for 127.0.0.1 at 2018-02-27 17:56:46 -0800
+Processing by Api::MenteesController#index as JSON
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  Rendering api/mentees/index.json.jbuilder
+  [1m[36mMentee Load (0.8ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees"[0m
+  Rendered api/mentees/_mentee.json.jbuilder (0.8ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.5ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/index.json.jbuilder (22.1ms)
+Completed 200 OK in 29ms (Views: 26.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2018-02-27 17:56:47 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (3.7ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[36mMentee Load (0.8ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered api/users/_user.json.jbuilder (3.0ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  Rendered api/users/_user.json.jbuilder (2.3ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  Rendered api/users/_user.json.jbuilder (2.4ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  Rendered api/users/_user.json.jbuilder (2.0ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  Rendered api/users/_user.json.jbuilder (1.9ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  Rendered api/users/_user.json.jbuilder (1.8ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  Rendered api/users/_user.json.jbuilder (1.7ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  Rendered api/users/_user.json.jbuilder (1.7ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  Rendered api/users/_user.json.jbuilder (1.8ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mMentee Load (0.6ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered api/users/_user.json.jbuilder (2.2ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  Rendered api/users/_user.json.jbuilder (3.0ms)
+  Rendered api/users/index.json.jbuilder (43.3ms)
+Completed 200 OK in 49ms (Views: 39.0ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/api/users" for 127.0.0.1 at 2018-02-27 17:56:48 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.6ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (4.5ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered api/users/_user.json.jbuilder (2.5ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  Rendered api/users/_user.json.jbuilder (3.0ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  Rendered api/users/_user.json.jbuilder (2.4ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  Rendered api/users/_user.json.jbuilder (2.1ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  Rendered api/users/_user.json.jbuilder (2.1ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  Rendered api/users/_user.json.jbuilder (2.2ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  Rendered api/users/_user.json.jbuilder (2.0ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  Rendered api/users/_user.json.jbuilder (2.1ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  Rendered api/users/_user.json.jbuilder (7.0ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered api/users/_user.json.jbuilder (2.1ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  Rendered api/users/_user.json.jbuilder (1.7ms)
+  Rendered api/users/index.json.jbuilder (47.6ms)
+Completed 200 OK in 54ms (Views: 44.3ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/api/mentees" for 127.0.0.1 at 2018-02-27 17:56:50 -0800
+Processing by Api::MenteesController#index as JSON
+Started GET "/api/users" for 127.0.0.1 at 2018-02-27 17:56:50 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (7.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  Rendering api/mentees/index.json.jbuilder
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mMentee Load (2.8ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees"[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.6ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[36mMentee Load (1.2ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (6.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[36mMentee Load (0.9ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (4.3ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[36mMentee Load (0.7ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (4.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[36mMentee Load (0.7ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (4.3ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[36mMentee Load (1.6ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (4.0ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/index.json.jbuilder (36.3ms)
+Completed 200 OK in 51ms (Views: 38.3ms | ActiveRecord: 9.9ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  Rendered api/users/_user.json.jbuilder (2.5ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  Rendered api/users/_user.json.jbuilder (2.1ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  Rendered api/users/_user.json.jbuilder (2.1ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  Rendered api/users/_user.json.jbuilder (1.9ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  Rendered api/users/_user.json.jbuilder (2.1ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered api/users/_user.json.jbuilder (2.4ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  Rendered api/users/_user.json.jbuilder (2.0ms)
+  Rendered api/users/index.json.jbuilder (65.1ms)
+Completed 200 OK in 71ms (Views: 53.8ms | ActiveRecord: 17.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-27 17:56:53 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (2.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 35ms (Views: 32.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/mentees" for 127.0.0.1 at 2018-02-27 17:56:53 -0800
+Processing by Api::MenteesController#index as JSON
+Started GET "/api/users" for 127.0.0.1 at 2018-02-27 17:56:53 -0800
+Processing by Api::UsersController#index as JSON
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  Rendering api/users/index.json.jbuilder
+  Rendering api/mentees/index.json.jbuilder
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees"[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  Rendered api/mentees/_mentee.json.jbuilder (0.4ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  [1m[36mMentee Load (0.9ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (4.6ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.4ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[36mMentee Load (0.8ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (5.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.4ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.4ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[36mMentee Load (1.2ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  Rendered api/users/_user.json.jbuilder (5.7ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.5ms)
+  [1m[36mMentee Load (0.7ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (4.5ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/index.json.jbuilder (39.7ms)
+Completed 200 OK in 52ms (Views: 44.0ms | ActiveRecord: 2.4ms)
+
+
+  [1m[36mMentee Load (4.2ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  Rendered api/users/_user.json.jbuilder (7.7ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  [1m[36mMentee Load (0.9ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  Rendered api/users/_user.json.jbuilder (3.5ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  Rendered api/users/_user.json.jbuilder (2.8ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  Rendered api/users/_user.json.jbuilder (2.3ms)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  Rendered api/users/_user.json.jbuilder (2.7ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  Rendered api/users/_user.json.jbuilder (2.2ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mMentee Load (0.8ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered api/users/_user.json.jbuilder (3.1ms)
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  [1m[36mMentee Load (0.7ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  Rendered api/users/_user.json.jbuilder (4.1ms)
+  Rendered api/users/index.json.jbuilder (74.0ms)
+Completed 200 OK in 84ms (Views: 63.4ms | ActiveRecord: 20.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-02-27 17:58:55 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (3.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 499ms (Views: 496.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/mentees" for 127.0.0.1 at 2018-02-27 17:58:55 -0800
+Processing by Api::MenteesController#index as JSON
+Started GET "/api/users" for 127.0.0.1 at 2018-02-27 17:58:55 -0800
+Processing by Api::UsersController#index as JSON
+  Rendering api/users/index.json.jbuilder
+  [1m[36mUser Load (4.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "unY2KDzdMEHs3nic-iUHgA"], ["LIMIT", 1]]
+  Rendering api/mentees/index.json.jbuilder
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mMentee Load (2.1ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees"[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.4ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  [1m[36mMentee Load (1.8ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (6.7ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.1ms)
+  [1m[36mMentee Load (1.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered api/users/_user.json.jbuilder (6.0ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  [1m[36mMentee Load (1.2ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 4]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/users/_user.json.jbuilder (4.9ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  [1m[36mMentee Load (0.8ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 5]]
+  Rendered api/users/_user.json.jbuilder (3.9ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.3ms)
+  Rendered api/mentees/_mentee.json.jbuilder (0.2ms)
+  Rendered api/mentees/index.json.jbuilder (33.3ms)
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+Completed 200 OK in 45ms (Views: 35.5ms | ActiveRecord: 6.9ms)
+
+
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 6]]
+  Rendered api/users/_user.json.jbuilder (5.3ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 15]]
+  Rendered api/users/_user.json.jbuilder (2.1ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 16]]
+  Rendered api/users/_user.json.jbuilder (2.9ms)
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 17]]
+  Rendered api/users/_user.json.jbuilder (3.3ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  [1m[36mMentee Load (0.5ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 20]]
+  Rendered api/users/_user.json.jbuilder (2.4ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 22]]
+  Rendered api/users/_user.json.jbuilder (1.9ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  [1m[36mMentee Load (0.4ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 2]]
+  Rendered api/users/_user.json.jbuilder (2.1ms)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  [1m[36mMentee Load (0.3ms)[0m  [1m[34mSELECT "mentees".* FROM "mentees" WHERE "mentees"."user_id" = $1[0m  [["user_id", 21]]
+  Rendered api/users/_user.json.jbuilder (1.8ms)
+  Rendered api/users/index.json.jbuilder (65.1ms)
+Completed 200 OK in 70ms (Views: 47.8ms | ActiveRecord: 22.3ms)
+
+

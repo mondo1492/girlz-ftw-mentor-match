@@ -70,11 +70,26 @@ class TierChangeView extends React.Component {
         {(() => {
             switch(true) {
                 case this.state.mentee.tier.toString() === '4':
-                  return <Button onClick={() => this.handleSubmit()}>Change Tier and Reject</Button>;
+                  return <Button
+                            style={{ width: 'fit-content' }}
+                            onClick={() => this.handleSubmit()}
+                          >
+                          Change Tier and Reject
+                        </Button>;
                 case this.state.madeChange && this.state.originalTier !== this.state.mentee.tier:
-                  return <Button onClick={() => this.handleSubmit()}>Change Tier!!!</Button> ;
+                  return <Button
+                            style={{ width: 'fit-content' }}
+                            onClick={() => this.handleSubmit()}
+                          >
+                          Change Tier!!!
+                        </Button> ;
                 default:
-                  return <Button onClick={() => this.props.closeModal()}>No thanks, I'll leave it as is</Button>;
+                  return <Button
+                            style={{ width: 'fit-content' }}
+                            onClick={() => this.props.closeModal()}
+                          >
+                          No thanks, I'll leave it as is
+                        </Button>;
             }
         })()}
       </div>
