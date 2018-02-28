@@ -57165,7 +57165,7 @@ var Page5 = function (_React$Component) {
           _react2.default.createElement(
             _reactBootstrap.Col,
             { componentClass: _reactBootstrap.ControlLabel, smOffset: 4, sm: 8, className: 'formFontStyle' },
-            'In which industry do you to work?'
+            'In which industry do you work?'
           ),
           _react2.default.createElement(
             _reactBootstrap.Col,
@@ -57858,6 +57858,7 @@ var SessionForm = function (_React$Component) {
         if (this.state.user.username === "admin") {
           this.props.history.push('/admin_panel');
         } else {
+          // TODO: fix mentor login
           this.props.history.push('/mentor_panel');
         }
       }
@@ -60110,11 +60111,6 @@ var UnapprovedMentors = function (_React$Component) {
               _react2.default.createElement(
                 'th',
                 null,
-                'Video'
-              ),
-              _react2.default.createElement(
-                'th',
-                null,
                 'Name'
               ),
               _react2.default.createElement(
@@ -60131,11 +60127,6 @@ var UnapprovedMentors = function (_React$Component) {
               return _react2.default.createElement(
                 'tr',
                 { className: 'unapproved_box_container', key: key },
-                _react2.default.createElement(
-                  'td',
-                  null,
-                  'It\'s a video ayyy'
-                ),
                 _react2.default.createElement(
                   'td',
                   null,
@@ -60387,11 +60378,6 @@ var UnapprovedMentees = function (_React$Component) {
               _react2.default.createElement(
                 'th',
                 null,
-                'Video'
-              ),
-              _react2.default.createElement(
-                'th',
-                null,
                 'Name'
               ),
               _react2.default.createElement(
@@ -60413,11 +60399,6 @@ var UnapprovedMentees = function (_React$Component) {
               return _react2.default.createElement(
                 'tr',
                 { key: key, className: 'unapproved_box_container' },
-                _react2.default.createElement(
-                  'td',
-                  null,
-                  'Video Placeholder'
-                ),
                 _react2.default.createElement(
                   'td',
                   null,
@@ -60657,11 +60638,6 @@ var RejectedMentors = function (_React$Component) {
               _react2.default.createElement(
                 'th',
                 null,
-                'Video'
-              ),
-              _react2.default.createElement(
-                'th',
-                null,
                 'Name'
               ),
               _react2.default.createElement(
@@ -60678,11 +60654,6 @@ var RejectedMentors = function (_React$Component) {
               return _react2.default.createElement(
                 'tr',
                 { key: key },
-                _react2.default.createElement(
-                  'td',
-                  null,
-                  'Video placeholder ayyy'
-                ),
                 _react2.default.createElement(
                   'td',
                   null,
@@ -60908,11 +60879,6 @@ var RejectedMentees = function (_React$Component) {
               _react2.default.createElement(
                 'th',
                 null,
-                'Video'
-              ),
-              _react2.default.createElement(
-                'th',
-                null,
                 'Name'
               ),
               _react2.default.createElement(
@@ -60934,11 +60900,6 @@ var RejectedMentees = function (_React$Component) {
               return _react2.default.createElement(
                 'tr',
                 { key: key },
-                _react2.default.createElement(
-                  'td',
-                  null,
-                  'Video placeholder ayyyy'
-                ),
                 _react2.default.createElement(
                   'td',
                   null,

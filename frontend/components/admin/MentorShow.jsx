@@ -20,9 +20,9 @@ class MentorShow extends React.Component {
         <p>College: {mentor.college}</p>
         <p>Employer: {mentor.employer}</p>
         <p>Major: {mentor.major}</p>
-        <p>Prefers mentee with same major (0 - 4): {mentor.share_major_rank}</p>
+        <p>Prefers mentee with same major (0 - 3): {mentor.share_major_rank}</p>
         <p>Industry: {mentor.industry}</p>
-        <p>Prefers mentee with same industry (0 - 4): {mentor.share_industry_rank}</p>
+        <p>Prefers mentee with same industry (0 - 3): {mentor.share_industry_rank}</p>
         <p>Job Description: {mentor.job_description}</p>
         <p>Most excited to provide for mentee: {mentor.provide}</p>
         <p>Unblock Methods: {mentor.unblock_methods}</p>

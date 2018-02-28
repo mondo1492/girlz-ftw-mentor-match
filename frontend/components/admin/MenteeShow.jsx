@@ -20,9 +20,9 @@ class MenteeShow extends React.Component {
         <p>College: {mentee.college}</p>
         <p>Employer: {mentee.employer}</p>
         <p>Major: {mentee.major}</p>
-        <p>Prefers mentor with same major (0 - 4): {mentee.share_major_rank}</p>
+        <p>Prefers mentor with same major (0 - 3): {mentee.share_major_rank}</p>
         <p>Desires to pursue this industry: {mentee.industry}</p>
-        <p>Prefers mentor with this industry (0 - 4): {mentee.share_industry_rank}</p>
+        <p>Prefers mentor with this industry (0 - 3): {mentee.share_industry_rank}</p>
         <p>Dream Instagram Bio: {mentee.instagram_bio_text}</p>
         <p>
           What gets in the way of achieving that bio: {mentee.instagram_bio_why_not_text}

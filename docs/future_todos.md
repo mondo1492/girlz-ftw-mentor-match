@@ -1,11 +1,5 @@
 allow mentors to set which age of mentee they prefer and vice versa
 
-
-
-
-
-
-
 Aaron:
 -----------
 Get modal and button for logging in on front page
