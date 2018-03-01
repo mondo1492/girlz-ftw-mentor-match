@@ -27,7 +27,7 @@ user_list = [
   ],
   [
     false, 25, false, 'fmentor city', 'fmentor college', 'fmentor country',
-    'fmentor email', 'fmentor employer', 'fmentor facebook', 'fmentor first_name',
+    'fmentor email', 'fmentor employer', 'fmentor facebook', 'fmentor1',
     'fmentor industry', 'fmentor job_description', 'fmentor last_name',
     'fmentor linkedin', 'fmentor major', 'fakeuserpw',
     'fmentor phone', 'fmentor provide', 1, 2, false, 'fmentor unblock_methods',
@@ -35,7 +35,7 @@ user_list = [
   ],
   [
     false, 25, false, 'fmentor city', 'fmentor college', 'fmentor country',
-    'fmentor email', 'fmentor employer', 'fmentor facebook', 'fmentor first_name',
+    'fmentor email', 'fmentor employer', 'fmentor facebook', 'fmentor1',
     'fmentor industry', 'fmentor job_description', 'fmentor last_name',
     'fmentor linkedin', 'fmentor major', 'fakeuserpw',
     'fmentor phone', 'fmentor provide', 1, 2, false, 'fmentor unblock_methods',
@@ -43,7 +43,7 @@ user_list = [
   ],
   [
     false, 25, false, 'fmentor city', 'fmentor college', 'fmentor country',
-    'fmentor email', 'fmentor employer', 'fmentor facebook', 'fmentor first_name',
+    'fmentor email', 'fmentor employer', 'fmentor facebook', 'fmentor2',
     'fmentor industry', 'fmentor job_description', 'fmentor last_name',
     'fmentor linkedin', 'fmentor major', 'fakeuserpw',
     'fmentor phone', 'fmentor provide', 1, 2, false, 'fmentor unblock_methods',
@@ -51,7 +51,7 @@ user_list = [
   ],
   [
     false, 25, false, 'fmentor city', 'fmentor college', 'fmentor country',
-    'fmentor email', 'fmentor employer', 'fmentor facebook', 'fmentor first_name',
+    'fmentor email', 'fmentor employer', 'fmentor facebook', 'fmentor3',
     'fmentor industry', 'fmentor job_description', 'fmentor last_name',
     'fmentor linkedin', 'fmentor major', 'fakeuserpw',
     'fmentor phone', 'fmentor provide', 1, 2, false, 'fmentor unblock_methods',
@@ -59,7 +59,7 @@ user_list = [
   ],
   [
     false, 25, false, 'fmentor city', 'fmentor college', 'fmentor country',
-    'fmentor email', 'fmentor employer', 'fmentor facebook', 'fmentor first_name',
+    'fmentor email', 'fmentor employer', 'fmentor facebook', 'fmentor4',
     'fmentor industry', 'fmentor job_description', 'fmentor last_name',
     'fmentor linkedin', 'fmentor major', 'fakeuserpw',
     'fmentor phone', 'fmentor provide', 1, 2, false, 'fmentor unblock_methods',
@@ -89,40 +89,37 @@ end
 
 mentee_list = [
   [ false, true, 25, "Miami", "USA", "Aaron", "Mondshine", "facebook",
-    "some_email", 2, 1, 3, nil],
+    "some_email" ],
   [ false, true, 25, "San Francisco", "USA", "Ravi", "Raval", "google",
-  "some_email", 2, 1, 3, nil],
+  "some_email" ],
   [ false, true, 25, "Denver", "USA", "Mentee3", "Mentee3Last", "youtube",
-  "some_email", 2, 1, 3, nil],
+  "some_email" ],
   [ false, true, 25, "Houston", "USA", "Mentee4", "Mentee4Last", "facebook",
-  "some_email", 2, 1, 3, nil],
+  "some_email" ],
   [ false, true, 25, "Boston", "USA", "Mentee5", "Mentee5Last", "facebook",
-  "some_email", 2, 1, 3, nil],
+  "some_email" ],
   [ false, true, 25, "Dover", "USA", "Mentee6", "Mentee6Last", "facebook",
-  "some_email", 2, 1, 3, nil],
+  "some_email" ],
   [ false, true, 25, "Rio", "Brazil", "Mentee7", "Mentee7Last", "facebook",
-  "some_email", 2, 1, 3, nil],
+  "some_email" ],
   [ false, true, 25, "Seattle", "USA", "Mentee8", "Mentee8Last", "facebook",
-  "some_email", 2, 1, 3, nil],
+  "some_email" ],
   [ false, true, 25, "Austin", "USA", "Mentee9", "Mentee9Last", "facebook",
-  "some_email", 2, 1, 3, nil],
+  "some_email" ],
   [ false, true, 25, "New York", "USA", "Mentee10", "Mentee10Last", "facebook",
-  "some_email", 2, 1, 3, nil],
+  "some_email" ],
   [ false, true, 25, "Richmond", "USA", "Mentee11", "Mentee11Last", "facebook",
-  "some_email", 2, 1, 3, nil],
+  "some_email" ],
   [ false, true, 25, "Belmont", "USA", "Mentee12", "Mentee12Last", "facebook",
-  "some_email", 2, 1, 3, nil],
+  "some_email" ],
   [ false, true, 25, "St. Augustine", "USA", "Mentee13", "MenteeLast", "facebook",
-  "some_email", 2, 1, 3, nil],
+  "some_email" ],
   [ false, true, 25, "Ft. Lauderdale", "USA", "Mentee14", "MenteeLast", "facebook",
-  "some_email", 2, 1, 3, nil]
+  "some_email" ]
 ]
 mentee_list.each do |approved, status, age, city, country,
-  first_name, last_name, facebook, email, career_advice_rank,
-  personal_advice_rank, motivation_rank, user_id|
+  first_name, last_name, facebook, email|
   Mentee.create!( approved: approved, status: status, age: age, city: city, country: country,
     first_name: first_name, last_name: last_name, facebook: facebook,
-    email: email, motivation_rank: motivation_rank,
-    personal_advice_rank: personal_advice_rank, career_advice_rank: career_advice_rank,
-  user_id: user_id)
+    email: email)
 end

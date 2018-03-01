@@ -97,8 +97,18 @@ class MentorChangeView extends React.Component {
             </select>
             <h4>???</h4>
             {this.state.madeChange && this.state.original !== this.state.mentee.user_id ?
-              <Button onClick={() => this.handleSubmit()}>SUBMIT!!!</Button> :
-              <Button onClick={() => this.props.closeModal()}>No thanks, I'll leave it as is</Button>
+              <Button
+                style={{ width: 'fit-content' }}
+                onClick={() => this.handleSubmit()}
+              >
+                SUBMIT!!!
+              </Button> :
+              <Button
+                style={{ width: 'fit-content' }}
+                onClick={() => this.props.closeModal()}
+              >
+                No thanks, I'll leave it as is
+              </Button>
             }
       </div>
     );

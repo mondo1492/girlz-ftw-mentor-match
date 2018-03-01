@@ -59491,15 +59491,21 @@ var MentorChangeView = function (_React$Component) {
         ),
         this.state.madeChange && this.state.original !== this.state.mentee.user_id ? _react2.default.createElement(
           _reactBootstrap.Button,
-          { onClick: function onClick() {
+          {
+            style: { width: 'fit-content' },
+            onClick: function onClick() {
               return _this3.handleSubmit();
-            } },
+            }
+          },
           'SUBMIT!!!'
         ) : _react2.default.createElement(
           _reactBootstrap.Button,
-          { onClick: function onClick() {
+          {
+            style: { width: 'fit-content' },
+            onClick: function onClick() {
               return _this3.props.closeModal();
-            } },
+            }
+          },
           'No thanks, I\'ll leave it as is'
         )
       );
@@ -60962,13 +60968,17 @@ var RejectedMentees = function (_React$Component) {
                   ),
                   _this2.state.mentees[key].tier !== 4 ? _react2.default.createElement(
                     _reactBootstrap.Button,
-                    { bsStyle: 'success', onClick: function onClick() {
+                    {
+                      bsStyle: 'success',
+                      style: { width: 'fit-content' },
+                      onClick: function onClick() {
                         return approve(_this2.state.mentees[key]);
-                      } },
+                      }
+                    },
                     'Unreject & Set Tier!'
                   ) : _react2.default.createElement(
                     _reactBootstrap.Button,
-                    { disabled: true },
+                    { style: { width: 'fit-content' }, disabled: true },
                     'Unreject & Set Tier!'
                   )
                 )
