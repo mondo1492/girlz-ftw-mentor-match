@@ -8,7 +8,9 @@ class Api::MatchesController < ApplicationController
     @mentees = Mentee.where(approved: true)
     @users.each do |mentor|
       @mentees.each do |mentee|
-        determine_match_percentage(mentor, mentee)
+        match_percent = determine_match_percentage(mentor, mentee)
+        @match = Match.new({user_id: mentor.id, mentee_id: mentee.id, match_percent: match_percent})
+        @match.save
       end
     end
   end
@@ -124,13 +126,19 @@ class Api::MatchesController < ApplicationController
           end
         end
       end
-      
+
       match_sum = (unblock_methods_matched + industry_matched + major_matched + provide_matched)
       total_sum = (unblock_methods_total + industry_total + major_total + provide_total)
       puts "#{mentor.first_name} and #{mentee.first_name} match analysis:"
       puts "  percentage: #{match_sum.fdiv(total_sum) * 100}%"
       puts
       puts
+
+      # ((param1 * param1_multiplier) + (param2 * param2_multiplier)... )/ num_params
+      # if both people say a param has 0 importance, num_params -= 1
+
+
+
 
 
 
