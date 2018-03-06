@@ -62831,6 +62831,7 @@ var MenteeSelection = function (_React$Component) {
       modalMentee: null
 
     };
+
     _this.openModal = _this.openModal.bind(_this);
     _this.closeModal = _this.closeModal.bind(_this);
     return _this;
@@ -62902,7 +62903,8 @@ var MenteeSelection = function (_React$Component) {
                 'th',
                 null,
                 'Full Profile'
-              )
+              ),
+              _react2.default.createElement('th', null)
             )
           ),
           _react2.default.createElement(

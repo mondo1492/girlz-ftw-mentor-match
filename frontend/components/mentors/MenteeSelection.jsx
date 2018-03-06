@@ -14,6 +14,7 @@ class MenteeSelection extends React.Component {
       modalMentee: null
 
     };
+    
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
@@ -50,6 +51,7 @@ class MenteeSelection extends React.Component {
             <tr>
               <th>Mentee</th>
               <th>Full Profile</th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
