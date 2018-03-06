@@ -7318,7 +7318,7 @@ var MenteeShow = function (_React$Component) {
         { style: { padding: '0 5%' } },
         _react2.default.createElement(
           'h2',
-          null,
+          { style: { textAlign: 'center' } },
           mentee.first_name,
           ' ',
           mentee.last_name
@@ -9563,7 +9563,7 @@ var MentorShow = function (_React$Component) {
         { style: { padding: '0 5%' } },
         _react2.default.createElement(
           'h2',
-          null,
+          { style: { textAlign: 'center' } },
           mentor.first_name,
           ' ',
           mentor.last_name
@@ -59115,7 +59115,7 @@ var PotentialMenteeShow = function (_React$Component) {
         { style: { padding: '0 5%' } },
         _react2.default.createElement(
           'h2',
-          null,
+          { style: { textAlign: 'center' } },
           mentee.first_name,
           ' ',
           mentee.last_name
@@ -59172,24 +59172,24 @@ var PotentialMenteeShow = function (_React$Component) {
           'p',
           null,
           'Major: ',
-          mentee.major
+          mentee.major.split('|').join(', ')
         ),
         _react2.default.createElement(
           'p',
           null,
-          'Prefers mentor with same major (0 - 3): ',
+          'Prefers mentor with same major (0 is least, 3 is most): ',
           mentee.share_major_rank
         ),
         _react2.default.createElement(
           'p',
           null,
           'Desires to pursue this industry: ',
-          mentee.industry
+          mentee.industry.split('|').join(', ')
         ),
         _react2.default.createElement(
           'p',
           null,
-          'Prefers mentor with this industry (0 - 3): ',
+          'Prefers mentor with this industry (0 is least, 3 is most): ',
           mentee.share_industry_rank
         ),
         _react2.default.createElement(
@@ -59202,25 +59202,19 @@ var PotentialMenteeShow = function (_React$Component) {
           'p',
           null,
           'What gets in the way of achieving that bio: ',
-          mentee.instagram_bio_why_not_text
+          mentee.instagram_bio_why_not_text.split('|').join(', ')
         ),
         _react2.default.createElement(
           'p',
           null,
           'Most excited to get from a mentor: ',
-          mentee.provide
+          mentee.provide.split('|').join(', ')
         ),
         _react2.default.createElement(
           'p',
           null,
-          'Application Video URL: ',
+          'Application Essay or Video URL: ',
           mentee.video_URL
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Mentor: ',
-          mentee.mentor_name
         )
       );
     }
