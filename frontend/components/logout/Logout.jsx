@@ -2,8 +2,6 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 
-
-
 class Logout extends React.Component {
   constructor(props) {
     super(props);

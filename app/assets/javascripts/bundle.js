@@ -42469,6 +42469,10 @@ var _reactRouterDom = __webpack_require__(17);
 
 var _reactBootstrap = __webpack_require__(10);
 
+var _LogoutContainer = __webpack_require__(543);
+
+var _LogoutContainer2 = _interopRequireDefault(_LogoutContainer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var AdminPanel = function AdminPanel() {
@@ -42547,7 +42551,8 @@ var AdminPanel = function AdminPanel() {
           'button',
           null,
           'Generate Matches'
-        )
+        ),
+        _react2.default.createElement(_LogoutContainer2.default, null)
       )
     )
   );

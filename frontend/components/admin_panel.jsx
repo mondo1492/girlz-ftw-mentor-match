@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Table } from 'react-bootstrap';
+import Logout from './logout/LogoutContainer';
 
 
 const AdminPanel = () => (
@@ -24,6 +25,7 @@ const AdminPanel = () => (
       <div>
         <h3>Admin Actions</h3>
         <button>Generate Matches</button>
+        <Logout />
       </div>
     </div>
   </div>
