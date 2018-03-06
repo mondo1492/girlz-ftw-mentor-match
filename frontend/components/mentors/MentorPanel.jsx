@@ -1,7 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import { Modal, Button, Table } from 'react-bootstrap';
-import PotentialMenteeShow from './PotentialMenteeShow.jsx';
 import MenteeShow from '../admin/MenteeShow.jsx';
 
 class MentorPanel extends React.Component {
@@ -29,7 +28,7 @@ class MentorPanel extends React.Component {
       <div>
         <h1>Mentor Panel</h1>
 
-        <Link to="mentor_panel/mentee_selection">Mentee Selection Page</Link>
+        <Link to='mentor_panel/mentee_selection'>Mentee Selection Page</Link>
 
         <Modal className="modal" show={this.state.isModalOpen} onHide={() => this.closeModal()}>
           <MenteeShow mentee={this.state.mentee}/>

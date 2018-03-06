@@ -42336,9 +42336,9 @@ var _MentorUpdate = __webpack_require__(527);
 
 var _MentorUpdate2 = _interopRequireDefault(_MentorUpdate);
 
-var _MenteeSelection = __webpack_require__(562);
+var _MenteeSelectionContainer = __webpack_require__(563);
 
-var _MenteeSelection2 = _interopRequireDefault(_MenteeSelection);
+var _MenteeSelectionContainer2 = _interopRequireDefault(_MenteeSelectionContainer);
 
 var _CurrentMenteesContainer = __webpack_require__(528);
 
@@ -42379,7 +42379,7 @@ var App = function App() {
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/mentor_app', component: _MentorAppContainer2.default }),
     _react2.default.createElement(_route_util.ProtectedRoute, { exact: true, path: '/mentor_panel', component: _MentorPanelContainer2.default }),
     _react2.default.createElement(_route_util.ProtectedRoute, { path: '/mentor_panel/update', component: _MentorUpdate2.default }),
-    _react2.default.createElement(_route_util.ProtectedRoute, { path: '/mentor_panel/mentee_selection', component: _MenteeSelection2.default }),
+    _react2.default.createElement(_route_util.ProtectedRoute, { path: '/mentor_panel/mentee_selection', component: _MenteeSelectionContainer2.default }),
     _react2.default.createElement(_route_util.AdminRoute, { exact: true, path: '/admin_panel', component: _admin_panel2.default }),
     _react2.default.createElement(_route_util.AdminRoute, { exact: true, path: '/current_mentors', component: _CurrentMentorsContainer2.default }),
     _react2.default.createElement(_route_util.AdminRoute, { exact: true, path: '/current_mentees', component: _CurrentMenteesContainer2.default }),
@@ -58002,10 +58002,6 @@ var _reactRouterDom = __webpack_require__(17);
 
 var _reactBootstrap = __webpack_require__(10);
 
-var _PotentialMenteeShow = __webpack_require__(561);
-
-var _PotentialMenteeShow2 = _interopRequireDefault(_PotentialMenteeShow);
-
 var _MenteeShow = __webpack_require__(86);
 
 var _MenteeShow2 = _interopRequireDefault(_MenteeShow);
@@ -62803,6 +62799,16 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(17);
 
+var _reactBootstrap = __webpack_require__(10);
+
+var _values = __webpack_require__(28);
+
+var _values2 = _interopRequireDefault(_values);
+
+var _PotentialMenteeShow = __webpack_require__(561);
+
+var _PotentialMenteeShow2 = _interopRequireDefault(_PotentialMenteeShow);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -62817,21 +62823,50 @@ var MenteeSelection = function (_React$Component) {
   function MenteeSelection(props) {
     _classCallCheck(this, MenteeSelection);
 
-    return _possibleConstructorReturn(this, (MenteeSelection.__proto__ || Object.getPrototypeOf(MenteeSelection)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (MenteeSelection.__proto__ || Object.getPrototypeOf(MenteeSelection)).call(this, props));
+
+    _this.state = {
+      potentialMentees: [],
+      showModal: false,
+      modalMentee: null
+
+    };
+    _this.openModal = _this.openModal.bind(_this);
+    _this.closeModal = _this.closeModal.bind(_this);
+    return _this;
   }
 
   _createClass(MenteeSelection, [{
+    key: 'openModal',
+    value: function openModal(modalMentee) {
+      this.setState({ showModal: true, modalMentee: modalMentee });
+    }
+  }, {
+    key: 'closeModal',
+    value: function closeModal() {
+      this.setState({ showModal: false });
+    }
+  }, {
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      var _this2 = this;
+
+      $.ajax({
+        method: 'GET',
+        url: './api/matches/index/' + this.props.currentUser.id
+      }).then(function (res) {
+        return _this2.setState({ potentialMentees: (0, _values2.default)(res) });
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this3 = this;
+
       var menteeSelectionH2 = _react2.default.createElement(
         'h2',
         null,
         'Mentee Selection'
-      );
-      var menteeInfo = _react2.default.createElement(
-        'p',
-        null,
-        'placeholder for mentee\'s info'
       );
 
       return _react2.default.createElement(
@@ -62842,7 +62877,62 @@ var MenteeSelection = function (_React$Component) {
           { to: '/mentor_panel' },
           'Back to Mentor Panel'
         ),
-        true ? menteeSelectionH2 : menteeInfo
+        _react2.default.createElement(
+          _reactBootstrap.Modal,
+          { className: 'modal', show: this.state.isModalOpen, onHide: function onHide() {
+              return _this3.closeModal();
+            } },
+          _react2.default.createElement(_PotentialMenteeShow2.default, { mentee: this.state.modalMentee })
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Table,
+          { responsive: true, striped: true, hover: true },
+          _react2.default.createElement(
+            'thead',
+            null,
+            _react2.default.createElement(
+              'tr',
+              null,
+              _react2.default.createElement(
+                'th',
+                null,
+                'Mentee'
+              ),
+              _react2.default.createElement(
+                'th',
+                null,
+                'Full Profile'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'tbody',
+            null,
+            this.state.potentialMentees.map(function (mentee) {
+              return _react2.default.createElement(
+                'tr',
+                { className: 'current_mentors_list_item', key: mentee.id },
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  mentee.first_name,
+                  '\xA0',
+                  mentee.last_name,
+                  '  '
+                ),
+                _react2.default.createElement(
+                  'td',
+                  {
+                    className: 'generic_link',
+                    onClick: function onClick() {
+                      return _this3.openModal(mentee);
+                    } },
+                  'Full Profile'
+                )
+              );
+            })
+          )
+        )
       );
     }
   }]);
@@ -62851,6 +62941,38 @@ var MenteeSelection = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = MenteeSelection;
+
+/***/ }),
+/* 563 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(20);
+
+var _values = __webpack_require__(28);
+
+var _values2 = _interopRequireDefault(_values);
+
+var _MenteeSelection = __webpack_require__(562);
+
+var _MenteeSelection2 = _interopRequireDefault(_MenteeSelection);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    mentees: (0, _values2.default)(state.session.currentUser.mentees),
+    currentUser: state.session.currentUser
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(_MenteeSelection2.default);
 
 /***/ })
 /******/ ]);

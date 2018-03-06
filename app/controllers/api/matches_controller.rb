@@ -1,9 +1,7 @@
 class Api::MatchesController < ApplicationController
   # before_action :set_match, only: [:show, :edit, :update, :destroy]
   before_action :require_admin, only: [:generate]
-  before_action :require_signed_in
-
-
+  # before_action :require_signed_in
 
   def generate
     @users = User.where(approved: true)
@@ -19,7 +17,7 @@ class Api::MatchesController < ApplicationController
 
   def index
     # to scale: order this query by match_percent, then limit
-    @matches = Match.where(user_id: 4).includes(:mentee).where(mentees: {user_id: nil})
+    @matches = Match.where(user_id: params[:id]).includes(:mentee).where(mentees: {user_id: nil})
     @mentees = []
 
     @matches.each do |match|
