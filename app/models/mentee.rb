@@ -1,5 +1,5 @@
 class Mentee < ApplicationRecord
-
+  attr_accessor :match_percent
   belongs_to :user, optional: true
   has_many :matches
 
