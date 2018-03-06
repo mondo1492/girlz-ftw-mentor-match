@@ -6,7 +6,8 @@ import { fetchMentor } from '../../actions/mentor_actions';
 
 const mapStateToProps = state => ({
   mentees: values(state.session.currentUser.mentees),
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  mentor: values(state.mentors)
 });
 
 const mapDispatchToProps = dispatch => ({

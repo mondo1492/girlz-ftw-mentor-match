@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { Table, Modal, Alert, Button } from 'react-bootstrap';
 import values from "lodash/values";
 import PotentialMenteeShow from './PotentialMenteeShow.jsx';
@@ -48,10 +48,11 @@ class MenteeSelection extends React.Component {
     delete menteeToUpdate.mentor_name;
 
     this.props.updateMentee(menteeToUpdate)
-      .then(
-        response => this.props.history.push('/mentor_panel'),
+      .then(res => {
+        this.props.fetchMentor(this.props.currentUser.id);
+      },
         error => console.log(error)
-      );
+      ).then(res => this.props.history.push('/mentor_panel'));
   }
 
   componentWillMount() {

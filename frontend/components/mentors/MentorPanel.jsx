@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Modal, Button, Table } from 'react-bootstrap';
-import MenteeShow from '../admin/MenteeShow.jsx';
+import PotentialMenteeShow from './PotentialMenteeShow.jsx';
 import Logout from '../logout/LogoutContainer';
 
 class MentorPanel extends React.Component {
@@ -21,14 +21,13 @@ class MentorPanel extends React.Component {
     this.setState({ isModalOpen: false });
   }
 
-  // componentWillMount() {
-  //   this.props.fetchMentor(this.props.currentUser.id);
-  // }
+  componentWillMount() {
+    this.props.fetchMentor(this.props.currentUser.id);
+  }
 
   render() {
-    // console.log('here', this);
-    const mentor = this.props.currentUser;
-    const mentees = this.props.mentees;
+    const mentor = this.props.mentor.length > 0 ? this.props.mentor[0] : this.props.currentUser;
+    const mentees = mentor.mentees || [];
 
     const selectOrShowMentees = () => {
       if (mentees.length === 0 ) {
@@ -77,7 +76,7 @@ class MentorPanel extends React.Component {
         <Logout />
 
         <Modal className="modal" show={this.state.isModalOpen} onHide={() => this.closeModal()}>
-          <MenteeShow mentee={this.state.mentee}/>
+          <PotentialMenteeShow mentee={this.state.mentee}/>
         </Modal>
 
         {selectOrShowMentees() }
