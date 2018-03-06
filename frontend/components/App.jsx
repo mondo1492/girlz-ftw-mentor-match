@@ -8,6 +8,7 @@ import MentorApp from './mentors/MentorAppContainer';
 import Landing from './Landing';
 import MentorPanel from './mentors/MentorPanelContainer';
 import MentorUpdate from './mentors/MentorUpdate';
+import MenteeSelection from './mentors/MenteeSelection';
 
 import CurrentMentees from './admin/CurrentMenteesContainer';
 import CurrentMentors from './admin/CurrentMentorsContainer';
@@ -25,6 +26,7 @@ const App = () => (
     <Route exact path="/mentor_app" component={MentorApp}/>
     <ProtectedRoute exact path="/mentor_panel" component={MentorPanel}/>
     <ProtectedRoute path="/mentor_panel/update" component={MentorUpdate}/>
+    <ProtectedRoute path="/mentor_panel/mentee_selection" component={MenteeSelection}/>
 
     <AdminRoute exact path="/admin_panel" component={AdminPanel}/>
     <AdminRoute exact path="/current_mentors" component={CurrentMentors}/>

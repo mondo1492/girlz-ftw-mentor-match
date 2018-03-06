@@ -25,13 +25,11 @@ class SessionForm extends React.Component {
         }
       });
     }
-    console.log(nextProps);
     if (nextProps.loggedIn) {
       this.props.resetErrors();
       if (this.state.user.username === "admin") {
         this.props.history.push('/admin_panel');
       } else {
-        // TODO: fix mentor login
         this.props.history.push('/mentor_panel');
       }
     }

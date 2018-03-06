@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import { Modal, Button, Table } from 'react-bootstrap';
+import PotentialMenteeShow from './PotentialMenteeShow.jsx';
 import MenteeShow from '../admin/MenteeShow.jsx';
 
 class MentorPanel extends React.Component {
@@ -23,18 +24,12 @@ class MentorPanel extends React.Component {
   render() {
     const mentor = this.props.currentUser;
     const mentees = this.props.mentees;
-    const approval = ( () => {
-      if (mentor.approved) {
-        return <p>You are an approved mentor</p>
-      } else {
-        return <p>Your application is pending</p>
-      }
-    })();
+
     return(
       <div>
         <h1>Mentor Panel</h1>
 
-        { approval }
+        <Link to="mentor_panel/mentee_selection">Mentee Selection Page</Link>
 
         <Modal className="modal" show={this.state.isModalOpen} onHide={() => this.closeModal()}>
           <MenteeShow mentee={this.state.mentee}/>
@@ -68,8 +63,6 @@ class MentorPanel extends React.Component {
               ))}
           </tbody>
         </Table>
-
-        <Link to="mentor_panel/update">Update Your Info</Link>
 
       </div>
     );

@@ -42336,6 +42336,10 @@ var _MentorUpdate = __webpack_require__(527);
 
 var _MentorUpdate2 = _interopRequireDefault(_MentorUpdate);
 
+var _MenteeSelection = __webpack_require__(562);
+
+var _MenteeSelection2 = _interopRequireDefault(_MenteeSelection);
+
 var _CurrentMenteesContainer = __webpack_require__(528);
 
 var _CurrentMenteesContainer2 = _interopRequireDefault(_CurrentMenteesContainer);
@@ -42375,6 +42379,7 @@ var App = function App() {
     _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/mentor_app', component: _MentorAppContainer2.default }),
     _react2.default.createElement(_route_util.ProtectedRoute, { exact: true, path: '/mentor_panel', component: _MentorPanelContainer2.default }),
     _react2.default.createElement(_route_util.ProtectedRoute, { path: '/mentor_panel/update', component: _MentorUpdate2.default }),
+    _react2.default.createElement(_route_util.ProtectedRoute, { path: '/mentor_panel/mentee_selection', component: _MenteeSelection2.default }),
     _react2.default.createElement(_route_util.AdminRoute, { exact: true, path: '/admin_panel', component: _admin_panel2.default }),
     _react2.default.createElement(_route_util.AdminRoute, { exact: true, path: '/current_mentors', component: _CurrentMentorsContainer2.default }),
     _react2.default.createElement(_route_util.AdminRoute, { exact: true, path: '/current_mentees', component: _CurrentMenteesContainer2.default }),
@@ -57858,13 +57863,11 @@ var SessionForm = function (_React$Component) {
           }
         });
       }
-      console.log(nextProps);
       if (nextProps.loggedIn) {
         this.props.resetErrors();
         if (this.state.user.username === "admin") {
           this.props.history.push('/admin_panel');
         } else {
-          // TODO: fix mentor login
           this.props.history.push('/mentor_panel');
         }
       }
@@ -57999,6 +58002,10 @@ var _reactRouterDom = __webpack_require__(17);
 
 var _reactBootstrap = __webpack_require__(10);
 
+var _PotentialMenteeShow = __webpack_require__(561);
+
+var _PotentialMenteeShow2 = _interopRequireDefault(_PotentialMenteeShow);
+
 var _MenteeShow = __webpack_require__(86);
 
 var _MenteeShow2 = _interopRequireDefault(_MenteeShow);
@@ -58043,21 +58050,7 @@ var MentorPanel = function (_React$Component) {
 
       var mentor = this.props.currentUser;
       var mentees = this.props.mentees;
-      var approval = function () {
-        if (mentor.approved) {
-          return _react2.default.createElement(
-            'p',
-            null,
-            'You are an approved mentor'
-          );
-        } else {
-          return _react2.default.createElement(
-            'p',
-            null,
-            'Your application is pending'
-          );
-        }
-      }();
+
       return _react2.default.createElement(
         'div',
         null,
@@ -58066,7 +58059,11 @@ var MentorPanel = function (_React$Component) {
           null,
           'Mentor Panel'
         ),
-        approval,
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: 'mentor_panel/mentee_selection' },
+          'Mentee Selection Page'
+        ),
         _react2.default.createElement(
           _reactBootstrap.Modal,
           { className: 'modal', show: this.state.isModalOpen, onHide: function onHide() {
@@ -58138,11 +58135,6 @@ var MentorPanel = function (_React$Component) {
               );
             })
           )
-        ),
-        _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: 'mentor_panel/update' },
-          'Update Your Info'
         )
       );
     }
@@ -62626,6 +62618,239 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/*!
 
 }());
 
+
+/***/ }),
+/* 561 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var PotentialMenteeShow = function (_React$Component) {
+  _inherits(PotentialMenteeShow, _React$Component);
+
+  function PotentialMenteeShow(props) {
+    _classCallCheck(this, PotentialMenteeShow);
+
+    return _possibleConstructorReturn(this, (PotentialMenteeShow.__proto__ || Object.getPrototypeOf(PotentialMenteeShow)).call(this, props));
+  }
+
+  _createClass(PotentialMenteeShow, [{
+    key: 'render',
+    value: function render() {
+      var mentee = this.props.mentee;
+      return _react2.default.createElement(
+        'div',
+        { style: { padding: '0 5%' } },
+        _react2.default.createElement(
+          'h2',
+          null,
+          mentee.first_name,
+          ' ',
+          mentee.last_name
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Email: ',
+          mentee.email
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Phone: ',
+          mentee.phone
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Age: ',
+          mentee.age
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Facebook: ',
+          mentee.facebook
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'City: ',
+          mentee.city
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Country: ',
+          mentee.country
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'High School: ',
+          mentee.high_school
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'College: ',
+          mentee.college
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Employer: ',
+          mentee.employer
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Major: ',
+          mentee.major
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Prefers mentor with same major (0 - 3): ',
+          mentee.share_major_rank
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Desires to pursue this industry: ',
+          mentee.industry
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Prefers mentor with this industry (0 - 3): ',
+          mentee.share_industry_rank
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Dream Instagram Bio: ',
+          mentee.instagram_bio_text
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'What gets in the way of achieving that bio: ',
+          mentee.instagram_bio_why_not_text
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Most excited to get from a mentor: ',
+          mentee.provide
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Application Video URL: ',
+          mentee.video_URL
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Mentor: ',
+          mentee.mentor_name
+        )
+      );
+    }
+  }]);
+
+  return PotentialMenteeShow;
+}(_react2.default.Component);
+
+exports.default = PotentialMenteeShow;
+
+/***/ }),
+/* 562 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(17);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var MenteeSelection = function (_React$Component) {
+  _inherits(MenteeSelection, _React$Component);
+
+  function MenteeSelection(props) {
+    _classCallCheck(this, MenteeSelection);
+
+    return _possibleConstructorReturn(this, (MenteeSelection.__proto__ || Object.getPrototypeOf(MenteeSelection)).call(this, props));
+  }
+
+  _createClass(MenteeSelection, [{
+    key: 'render',
+    value: function render() {
+      var menteeSelectionH2 = _react2.default.createElement(
+        'h2',
+        null,
+        'Mentee Selection'
+      );
+      var menteeInfo = _react2.default.createElement(
+        'p',
+        null,
+        'placeholder for mentee\'s info'
+      );
+
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/mentor_panel' },
+          'Back to Mentor Panel'
+        ),
+        true ? menteeSelectionH2 : menteeInfo
+      );
+    }
+  }]);
+
+  return MenteeSelection;
+}(_react2.default.Component);
+
+exports.default = MenteeSelection;
 
 /***/ })
 /******/ ]);
