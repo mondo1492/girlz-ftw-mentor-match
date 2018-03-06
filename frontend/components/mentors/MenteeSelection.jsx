@@ -14,7 +14,7 @@ class MenteeSelection extends React.Component {
       modalMentee: null
 
     };
-    
+
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
@@ -32,7 +32,13 @@ class MenteeSelection extends React.Component {
       method: 'GET',
       url: `./api/matches/index/${this.props.currentUser.id}`
     })
-    .then(res => this.setState({ potentialMentees: values(res) }) );
+    .then(res => {
+      let potentialMentees = values(res)
+      .sort((a,b) => b.match_percent - a.match_percent)
+      .slice(0,5)
+
+      this.setState({ potentialMentees });
+    });
   }
 
   render() {

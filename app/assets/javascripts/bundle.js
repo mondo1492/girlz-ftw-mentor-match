@@ -58980,7 +58980,11 @@ var MenteeSelection = function (_React$Component) {
         method: 'GET',
         url: './api/matches/index/' + this.props.currentUser.id
       }).then(function (res) {
-        return _this2.setState({ potentialMentees: (0, _values2.default)(res) });
+        var potentialMentees = (0, _values2.default)(res).sort(function (a, b) {
+          return b.match_percent - a.match_percent;
+        }).slice(0, 5);
+
+        _this2.setState({ potentialMentees: potentialMentees });
       });
     }
   }, {

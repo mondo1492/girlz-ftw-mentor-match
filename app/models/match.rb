@@ -63,13 +63,6 @@ class Match < ApplicationRecord
     weighted_major = major_matched * major_sum
     weighted_industry = industry_matched * industry_sum
 
-    puts "unblock_methods_matched, #{unblock_methods_matched}"
-    puts "provide_matched, #{provide_matched}"
-    puts "weighted_industry, #{weighted_industry}"
-    puts "industry_matched, #{industry_matched}"
-    puts "weighted_major, #{weighted_major}"
-    puts "major_matched, #{major_matched}"
-
     total = weighted_major + weighted_industry + unblock_methods_matched + provide_matched
 
     total.fdiv(total_params)
