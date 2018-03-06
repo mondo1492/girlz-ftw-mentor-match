@@ -58154,17 +58154,17 @@ var MentorPanel = function (_React$Component) {
     value: function closeModal() {
       this.setState({ isModalOpen: false });
     }
-  }, {
-    key: 'componentWillMount',
-    value: function componentWillMount() {
-      this.props.fetchMentor(this.props.currentUser.id);
-    }
+
+    // componentWillMount() {
+    //   this.props.fetchMentor(this.props.currentUser.id);
+    // }
+
   }, {
     key: 'render',
     value: function render() {
       var _this2 = this;
 
-      console.log('here', this);
+      // console.log('here', this);
       var mentor = this.props.currentUser;
       var mentees = this.props.mentees;
 
@@ -58933,13 +58933,405 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(
 
 /***/ }),
 /* 531 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-throw new Error("Module build failed: SyntaxError: Unexpected token (57:7)\n\n\u001b[0m \u001b[90m 55 | \u001b[39m        error \u001b[33m=>\u001b[39m console\u001b[33m.\u001b[39mlog(\u001b[32m'sad'\u001b[39m\u001b[33m,\u001b[39m error)\n \u001b[90m 56 | \u001b[39m      )\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 57 | \u001b[39m      })\u001b[33m;\u001b[39m\n \u001b[90m    | \u001b[39m       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 58 | \u001b[39m  }\n \u001b[90m 59 | \u001b[39m\n \u001b[90m 60 | \u001b[39m  componentWillMount() {\u001b[0m\n");
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(16);
+
+var _reactBootstrap = __webpack_require__(10);
+
+var _values = __webpack_require__(24);
+
+var _values2 = _interopRequireDefault(_values);
+
+var _PotentialMenteeShow = __webpack_require__(532);
+
+var _PotentialMenteeShow2 = _interopRequireDefault(_PotentialMenteeShow);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var MenteeSelection = function (_React$Component) {
+  _inherits(MenteeSelection, _React$Component);
+
+  function MenteeSelection(props) {
+    _classCallCheck(this, MenteeSelection);
+
+    var _this = _possibleConstructorReturn(this, (MenteeSelection.__proto__ || Object.getPrototypeOf(MenteeSelection)).call(this, props));
+
+    _this.state = {
+      potentialMentees: [],
+      showModal: false,
+      modalMentee: null,
+      showalert: false,
+      alertMentee: null
+    };
+
+    _this.openModal = _this.openModal.bind(_this);
+    _this.closeModal = _this.closeModal.bind(_this);
+    _this.openAlert = _this.openAlert.bind(_this);
+    _this.closeAlert = _this.closeAlert.bind(_this);
+    _this.selectMentee = _this.selectMentee.bind(_this);
+    return _this;
+  }
+
+  _createClass(MenteeSelection, [{
+    key: 'closeAlert',
+    value: function closeAlert() {
+      this.setState({ showAlert: false });
+    }
+  }, {
+    key: 'openAlert',
+    value: function openAlert(alertMentee) {
+      this.setState({ showAlert: true, alertMentee: alertMentee });
+    }
+  }, {
+    key: 'openModal',
+    value: function openModal(modalMentee) {
+      this.setState({ showModal: true, modalMentee: modalMentee });
+    }
+  }, {
+    key: 'closeModal',
+    value: function closeModal() {
+      this.setState({ showModal: false });
+    }
+  }, {
+    key: 'selectMentee',
+    value: function selectMentee(mentee) {
+      var _this2 = this;
+
+      var menteeToUpdate = mentee;
+      menteeToUpdate.user_id = this.props.currentUser.id;
+
+      // to avoid unpermitted params error
+      delete menteeToUpdate.match_percent;
+      delete menteeToUpdate.mentor_name;
+
+      this.props.updateMentee(menteeToUpdate).then(function (response) {
+        return _this2.props.history.push('/mentor_panel');
+      }, function (error) {
+        return console.log(error);
+      });
+    }
+  }, {
+    key: 'componentWillMount',
+    value: function componentWillMount() {
+      var _this3 = this;
+
+      $.ajax({
+        method: 'GET',
+        url: './api/matches/index/' + this.props.currentUser.id
+      }).then(function (res) {
+        var potentialMentees = (0, _values2.default)(res).sort(function (a, b) {
+          return b.match_percent - a.match_percent;
+        }).slice(0, 5);
+
+        _this3.setState({ potentialMentees: potentialMentees });
+      });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this4 = this;
+
+      var alertMentee = this.state.alertMentee;
+
+
+      var alert = function alert() {
+        if (_this4.state.showAlert) {
+          return _react2.default.createElement(
+            _reactBootstrap.Alert,
+            { bsStyle: 'danger', onDismiss: _this4.closeAlert },
+            _react2.default.createElement(
+              'h2',
+              null,
+              'Are you sure you want to select ',
+              alertMentee.first_name,
+              '?'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Button,
+              { onClick: function onClick() {
+                  return _this4.selectMentee(alertMentee);
+                }, bsStyle: 'success' },
+              'Yes!'
+            ),
+            _react2.default.createElement(
+              'span',
+              null,
+              ' or '
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Button,
+              { style: { width: 'fit-content' }, onClick: _this4.closeAlert, bsStyle: 'danger' },
+              'Let me reconsider.'
+            )
+          );
+        }
+      };
+
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/mentor_panel' },
+          'Back to Mentor Panel'
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Modal,
+          { className: 'modal', show: this.state.showModal, onHide: function onHide() {
+              return _this4.closeModal();
+            } },
+          _react2.default.createElement(_PotentialMenteeShow2.default, { mentee: this.state.modalMentee })
+        ),
+        _react2.default.createElement(
+          'h2',
+          null,
+          'Mentee Selection'
+        ),
+        _react2.default.createElement(
+          _reactBootstrap.Table,
+          { responsive: true, striped: true, hover: true },
+          _react2.default.createElement(
+            'thead',
+            null,
+            _react2.default.createElement(
+              'tr',
+              null,
+              _react2.default.createElement(
+                'th',
+                null,
+                'Potential Mentees'
+              ),
+              _react2.default.createElement('th', null),
+              _react2.default.createElement('th', null)
+            )
+          ),
+          _react2.default.createElement(
+            'tbody',
+            null,
+            this.state.potentialMentees.map(function (mentee) {
+              return _react2.default.createElement(
+                'tr',
+                { className: 'current_mentors_list_item', key: mentee.id },
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  mentee.first_name,
+                  '\xA0',
+                  mentee.last_name,
+                  '  '
+                ),
+                _react2.default.createElement(
+                  'td',
+                  {
+                    className: 'generic_link',
+                    onClick: function onClick() {
+                      return _this4.openModal(mentee);
+                    } },
+                  'Full Profile'
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement(
+                    _reactBootstrap.Button,
+                    {
+                      onClick: function onClick() {
+                        return _this4.openAlert(mentee);
+                      },
+                      bsStyle: 'primary',
+                      style: { width: 'fit-content' }
+                    },
+                    'Select this Mentee!'
+                  )
+                )
+              );
+            })
+          )
+        ),
+        alert()
+      );
+    }
+  }]);
+
+  return MenteeSelection;
+}(_react2.default.Component);
+
+exports.default = MenteeSelection;
 
 /***/ }),
-/* 532 */,
+/* 532 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var PotentialMenteeShow = function (_React$Component) {
+  _inherits(PotentialMenteeShow, _React$Component);
+
+  function PotentialMenteeShow(props) {
+    _classCallCheck(this, PotentialMenteeShow);
+
+    return _possibleConstructorReturn(this, (PotentialMenteeShow.__proto__ || Object.getPrototypeOf(PotentialMenteeShow)).call(this, props));
+  }
+
+  _createClass(PotentialMenteeShow, [{
+    key: 'render',
+    value: function render() {
+      var mentee = this.props.mentee;
+      return _react2.default.createElement(
+        'div',
+        { style: { padding: '0 5%' } },
+        _react2.default.createElement(
+          'h2',
+          { style: { textAlign: 'center' } },
+          mentee.first_name,
+          ' ',
+          mentee.last_name
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Email: ',
+          mentee.email
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Phone: ',
+          mentee.phone
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Age: ',
+          mentee.age
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Facebook: ',
+          mentee.facebook
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'City: ',
+          mentee.city
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Country: ',
+          mentee.country
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'High School: ',
+          mentee.high_school
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'College: ',
+          mentee.college
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Major: ',
+          mentee.major.split('|').join(', ')
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Prefers mentor with same major (0 is least, 3 is most): ',
+          mentee.share_major_rank
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Desires to pursue this industry: ',
+          mentee.industry.split('|').join(', ')
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Prefers mentor with this industry (0 is least, 3 is most): ',
+          mentee.share_industry_rank
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Dream Instagram Bio: ',
+          mentee.instagram_bio_text
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'What gets in the way of achieving that bio: ',
+          mentee.instagram_bio_why_not_text.split('|').join(', ')
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Most excited to get from a mentor: ',
+          mentee.provide.split('|').join(', ')
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          'Application Essay or Video URL: ',
+          mentee.video_URL
+        )
+      );
+    }
+  }]);
+
+  return PotentialMenteeShow;
+}(_react2.default.Component);
+
+exports.default = PotentialMenteeShow;
+
+/***/ }),
 /* 533 */
 /***/ (function(module, exports, __webpack_require__) {
 

@@ -49,12 +49,9 @@ class MenteeSelection extends React.Component {
 
     this.props.updateMentee(menteeToUpdate)
       .then(
-        // response => this.props.history.push('/mentor_panel'),/
-        // TODO: what to do here.. hmm
-        response => console.log('that worked'),
-        error => console.log('sad', error)
-      )
-      });
+        response => this.props.history.push('/mentor_panel'),
+        error => console.log(error)
+      );
   }
 
   componentWillMount() {
@@ -72,8 +69,8 @@ class MenteeSelection extends React.Component {
   }
 
   render() {
-    const menteeSelectionH2 = <h2>Mentee Selection</h2>;
     const { alertMentee } = this.state;
+
     const alert = () => {
       if (this.state.showAlert) {
         return (
@@ -103,6 +100,8 @@ class MenteeSelection extends React.Component {
           <PotentialMenteeShow mentee={this.state.modalMentee}/>
         </Modal>
 
+        <h2>Mentee Selection</h2>
+
         <Table responsive striped hover>
           <thead>
             <tr>
@@ -130,7 +129,7 @@ class MenteeSelection extends React.Component {
                     onClick={() => this.openAlert(mentee)}
                     bsStyle="primary"
                     style={{ width: 'fit-content' }}
-                    >
+                  >
                     Select this Mentee!
                   </Button>
                 </td>

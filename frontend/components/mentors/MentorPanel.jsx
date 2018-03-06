@@ -21,12 +21,12 @@ class MentorPanel extends React.Component {
     this.setState({ isModalOpen: false });
   }
 
-  componentWillMount() {
-    this.props.fetchMentor(this.props.currentUser.id);
-  }
+  // componentWillMount() {
+  //   this.props.fetchMentor(this.props.currentUser.id);
+  // }
 
   render() {
-    console.log('here', this);
+    // console.log('here', this);
     const mentor = this.props.currentUser;
     const mentees = this.props.mentees;
 
