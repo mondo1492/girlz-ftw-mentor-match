@@ -23,8 +23,6 @@ const AdminPanel = () => (
         <Link to="/rejected_mentees">View Rejected Mentees</Link>
       </div>
       <div>
-        <h3>Admin Actions</h3>
-        <button>Generate Matches</button>
         <Logout />
       </div>
     </div>

@@ -1,7 +1,8 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Modal, Button, Table } from 'react-bootstrap';
 import MenteeShow from '../admin/MenteeShow.jsx';
+import Logout from '../logout/LogoutContainer';
 
 class MentorPanel extends React.Component {
   constructor(props) {
@@ -20,11 +21,16 @@ class MentorPanel extends React.Component {
     this.setState({ isModalOpen: false });
   }
 
+  componentWillMount() {
+    this.props.fetchMentor(this.props.currentUser.id);
+  }
+
   render() {
+    console.log('here', this);
     const mentor = this.props.currentUser;
     const mentees = this.props.mentees;
 
-    const toRender = () => {
+    const selectOrShowMentees = () => {
       if (mentees.length === 0 ) {
         return (
           <Link to='mentor_panel/mentee_selection'>
@@ -45,8 +51,6 @@ class MentorPanel extends React.Component {
               <tbody>
                 {Object.keys(mentees).map((key) => (
                   <tr key={key}>
-                    <td>Video placeholder ayyyy</td>
-
                     <td>
                       {mentees[key].first_name} {mentees[key].last_name}
                     </td>
@@ -70,14 +74,13 @@ class MentorPanel extends React.Component {
       <div>
         <h1>Mentor Panel</h1>
         {<h2>Hi {mentor.first_name}!</h2>}
+        <Logout />
 
         <Modal className="modal" show={this.state.isModalOpen} onHide={() => this.closeModal()}>
           <MenteeShow mentee={this.state.mentee}/>
         </Modal>
 
-        {toRender() }
-
-
+        {selectOrShowMentees() }
       </div>
     );
   }

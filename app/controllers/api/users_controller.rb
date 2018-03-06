@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-  before_action :require_admin, except: [:create, :index]
+  before_action :require_admin, except: [:create, :index, :show]
 
   def create
     @user = User.new(user_params)

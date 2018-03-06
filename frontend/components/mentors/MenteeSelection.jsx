@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Table, Modal } from 'react-bootstrap';
+import { Table, Modal, Alert, Button } from 'react-bootstrap';
 import values from "lodash/values";
 import PotentialMenteeShow from './PotentialMenteeShow.jsx';
 
@@ -11,20 +11,50 @@ class MenteeSelection extends React.Component {
     this.state = {
       potentialMentees: [],
       showModal: false,
-      modalMentee: null
-
+      modalMentee: null,
+      showalert: false,
+      alertMentee: null
     };
 
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.openAlert = this.openAlert.bind(this);
+    this.closeAlert = this.closeAlert.bind(this);
+    this.selectMentee = this.selectMentee.bind(this);
+  }
+
+  closeAlert() {
+    this.setState({ showAlert: false });
+  }
+
+  openAlert(alertMentee) {
+    this.setState({ showAlert: true, alertMentee });
   }
 
   openModal(modalMentee) {
-    this.setState({ showModal: true, modalMentee: modalMentee });
+    this.setState({ showModal: true, modalMentee });
   }
 
   closeModal() {
     this.setState({ showModal: false });
+  }
+
+  selectMentee(mentee) {
+    const menteeToUpdate = mentee;
+    menteeToUpdate.user_id = this.props.currentUser.id;
+
+    // to avoid unpermitted params error
+    delete menteeToUpdate.match_percent;
+    delete menteeToUpdate.mentor_name;
+
+    this.props.updateMentee(menteeToUpdate)
+      .then(
+        // response => this.props.history.push('/mentor_panel'),/
+        // TODO: what to do here.. hmm
+        response => console.log('that worked'),
+        error => console.log('sad', error)
+      )
+      });
   }
 
   componentWillMount() {
@@ -43,6 +73,27 @@ class MenteeSelection extends React.Component {
 
   render() {
     const menteeSelectionH2 = <h2>Mentee Selection</h2>;
+    const { alertMentee } = this.state;
+    const alert = () => {
+      if (this.state.showAlert) {
+        return (
+          <Alert bsStyle="danger" onDismiss={this.closeAlert}>
+            <h2>
+              Are you sure you want to select {alertMentee.first_name}?
+            </h2>
+
+            <Button onClick={() => this.selectMentee(alertMentee)} bsStyle="success">
+              Yes!
+            </Button>
+            <span> or </span>
+            <Button style={{ width: 'fit-content' }} onClick={this.closeAlert} bsStyle="danger">
+              Let me reconsider.
+            </Button>
+
+          </Alert>
+        )
+      }
+    };
 
     return(
       <div>
@@ -55,7 +106,8 @@ class MenteeSelection extends React.Component {
         <Table responsive striped hover>
           <thead>
             <tr>
-              <th>Mentee</th>
+              <th>Potential Mentees</th>
+              <th></th>
               <th></th>
             </tr>
           </thead>
@@ -74,11 +126,13 @@ class MenteeSelection extends React.Component {
                 </td>
 
                 <td>
-                  <button
-                    onClick={this.acceptMentee}
+                  <Button
+                    onClick={() => this.openAlert(mentee)}
+                    bsStyle="primary"
+                    style={{ width: 'fit-content' }}
                     >
                     Select this Mentee!
-                  </button>
+                  </Button>
                 </td>
 
               </tr>
@@ -86,6 +140,7 @@ class MenteeSelection extends React.Component {
           </tbody>
         </Table>
 
+        { alert() }
       </div>
     )
   }
