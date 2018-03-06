@@ -12,7 +12,6 @@ class Api::MatchesController < ApplicationController
         match_percent = Match.determine_match_percentage(mentor, mentee)
         puts "#{mentor.first_name} and #{mentee.first_name}: #{match_percent}"
         puts
-        puts
         # @match = Match.new({user_id: mentor.id, mentee_id: mentee.id, match_percent: match_percent})
         # @match.save
       end

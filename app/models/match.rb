@@ -41,8 +41,8 @@ class Match < ApplicationRecord
     # industry_matched = 3.5 if industry_matched = 2
     # industry_matched = 4 if industry_matched = 3
 
-    industry_avg = (mentee.share_industry_rank + mentor.share_industry_rank).fdiv(2)
-    total_params -= 1 if industry_avg = 0
+    industry_sum = mentee.share_industry_rank + mentor.share_industry_rank
+    total_params -= 1 if industry_sum == 0
 
     # Major
     major_matched = 0
@@ -57,11 +57,11 @@ class Match < ApplicationRecord
     # major_matched = 3.5 if major_matched = 2
     # major_matched = 4 if major_matched = 3
 
-    major_avg = (mentee.share_major_rank + mentor.share_major_rank).fdiv(2)
-    total_params -= 1 if major_avg = 0
+    major_sum = mentee.share_major_rank + mentor.share_major_rank
+    total_params -= 1 if major_sum == 0
 
-    weighted_major = major_matched * major_avg
-    weighted_industry = industry_matched * industry_avg
+    weighted_major = major_matched * major_sum
+    weighted_industry = industry_matched * industry_sum
 
     puts "unblock_methods_matched, #{unblock_methods_matched}"
     puts "provide_matched, #{provide_matched}"
