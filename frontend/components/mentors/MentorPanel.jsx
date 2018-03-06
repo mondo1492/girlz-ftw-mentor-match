@@ -24,44 +24,59 @@ class MentorPanel extends React.Component {
     const mentor = this.props.currentUser;
     const mentees = this.props.mentees;
 
+    const toRender = () => {
+      if (mentees.length === 0 ) {
+        return (
+          <Link to='mentor_panel/mentee_selection'>
+            <h2>Mentee Selection Page</h2>
+          </Link>
+        )
+      } else {
+        return (
+          <div>
+            <h3>Your Mentees</h3>
+            <Table responsive>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Full Profile</th>
+                </tr>
+              </thead>
+              <tbody>
+                {Object.keys(mentees).map((key) => (
+                  <tr key={key}>
+                    <td>Video placeholder ayyyy</td>
+
+                    <td>
+                      {mentees[key].first_name} {mentees[key].last_name}
+                    </td>
+
+                    <td>
+                      <span className="generic_link" onClick={() => this.openModal(mentees[key])} >
+                        Full Profile
+                      </span>
+                    </td>
+
+                  </tr>
+                  ))}
+              </tbody>
+            </Table>
+          </div>
+        )
+      }
+    };
+
     return(
       <div>
         <h1>Mentor Panel</h1>
-
-        <Link to='mentor_panel/mentee_selection'>Mentee Selection Page</Link>
+        {<h2>Hi {mentor.first_name}!</h2>}
 
         <Modal className="modal" show={this.state.isModalOpen} onHide={() => this.closeModal()}>
           <MenteeShow mentee={this.state.mentee}/>
         </Modal>
 
-        <h3>Your Mentees</h3>
-        <Table responsive>
-          <thead>
-            <tr>
-              <th>Video</th>
-              <th>Name</th>
-              <th>Full Profile</th>
-            </tr>
-          </thead>
-          <tbody>
-            {Object.keys(mentees).map((key) => (
-              <tr key={key}>
-                <td>Video placeholder ayyyy</td>
+        {toRender() }
 
-                <td>
-                  {mentees[key].first_name} {mentees[key].last_name}
-                </td>
-
-                <td>
-                  <span className="generic_link" onClick={() => this.openModal(mentees[key])} >
-                    Full Profile
-                  </span>
-                </td>
-
-              </tr>
-              ))}
-          </tbody>
-        </Table>
 
       </div>
     );

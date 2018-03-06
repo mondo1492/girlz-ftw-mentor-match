@@ -58158,6 +58158,85 @@ var MentorPanel = function (_React$Component) {
       var mentor = this.props.currentUser;
       var mentees = this.props.mentees;
 
+      var toRender = function toRender() {
+        if (mentees.length === 0) {
+          return _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: 'mentor_panel/mentee_selection' },
+            _react2.default.createElement(
+              'h2',
+              null,
+              'Mentee Selection Page'
+            )
+          );
+        } else {
+          return _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement(
+              'h3',
+              null,
+              'Your Mentees'
+            ),
+            _react2.default.createElement(
+              _reactBootstrap.Table,
+              { responsive: true },
+              _react2.default.createElement(
+                'thead',
+                null,
+                _react2.default.createElement(
+                  'tr',
+                  null,
+                  _react2.default.createElement(
+                    'th',
+                    null,
+                    'Name'
+                  ),
+                  _react2.default.createElement(
+                    'th',
+                    null,
+                    'Full Profile'
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                'tbody',
+                null,
+                Object.keys(mentees).map(function (key) {
+                  return _react2.default.createElement(
+                    'tr',
+                    { key: key },
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      'Video placeholder ayyyy'
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      mentees[key].first_name,
+                      ' ',
+                      mentees[key].last_name
+                    ),
+                    _react2.default.createElement(
+                      'td',
+                      null,
+                      _react2.default.createElement(
+                        'span',
+                        { className: 'generic_link', onClick: function onClick() {
+                            return _this2.openModal(mentees[key]);
+                          } },
+                        'Full Profile'
+                      )
+                    )
+                  );
+                })
+              )
+            )
+          );
+        }
+      };
+
       return _react2.default.createElement(
         'div',
         null,
@@ -58167,9 +58246,11 @@ var MentorPanel = function (_React$Component) {
           'Mentor Panel'
         ),
         _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: 'mentor_panel/mentee_selection' },
-          'Mentee Selection Page'
+          'h2',
+          null,
+          'Hi ',
+          mentor.first_name,
+          '!'
         ),
         _react2.default.createElement(
           _reactBootstrap.Modal,
@@ -58178,71 +58259,7 @@ var MentorPanel = function (_React$Component) {
             } },
           _react2.default.createElement(_MenteeShow2.default, { mentee: this.state.mentee })
         ),
-        _react2.default.createElement(
-          'h3',
-          null,
-          'Your Mentees'
-        ),
-        _react2.default.createElement(
-          _reactBootstrap.Table,
-          { responsive: true },
-          _react2.default.createElement(
-            'thead',
-            null,
-            _react2.default.createElement(
-              'tr',
-              null,
-              _react2.default.createElement(
-                'th',
-                null,
-                'Video'
-              ),
-              _react2.default.createElement(
-                'th',
-                null,
-                'Name'
-              ),
-              _react2.default.createElement(
-                'th',
-                null,
-                'Full Profile'
-              )
-            )
-          ),
-          _react2.default.createElement(
-            'tbody',
-            null,
-            Object.keys(mentees).map(function (key) {
-              return _react2.default.createElement(
-                'tr',
-                { key: key },
-                _react2.default.createElement(
-                  'td',
-                  null,
-                  'Video placeholder ayyyy'
-                ),
-                _react2.default.createElement(
-                  'td',
-                  null,
-                  mentees[key].first_name,
-                  ' ',
-                  mentees[key].last_name
-                ),
-                _react2.default.createElement(
-                  'td',
-                  null,
-                  _react2.default.createElement(
-                    'span',
-                    { className: 'generic_link', onClick: function onClick() {
-                        return _this2.openModal(mentees[key]);
-                      } },
-                    'Full Profile'
-                  )
-                )
-              );
-            })
-          )
-        )
+        toRender()
       );
     }
   }]);
