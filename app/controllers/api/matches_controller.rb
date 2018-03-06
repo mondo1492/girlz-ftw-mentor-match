@@ -10,10 +10,8 @@ class Api::MatchesController < ApplicationController
       next if mentor.admin
       @mentees.each do |mentee|
         match_percent = Match.determine_match_percentage(mentor, mentee)
-        puts "#{mentor.first_name} and #{mentee.first_name}: #{match_percent}"
-        puts
-        # @match = Match.new({user_id: mentor.id, mentee_id: mentee.id, match_percent: match_percent})
-        # @match.save
+        @match = Match.new({user_id: mentor.id, mentee_id: mentee.id, match_percent: match_percent})
+        @match.save
       end
     end
   end
