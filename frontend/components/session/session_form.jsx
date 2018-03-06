@@ -25,6 +25,7 @@ class SessionForm extends React.Component {
         }
       });
     }
+    console.log(nextProps);
     if (nextProps.loggedIn) {
       this.props.resetErrors();
       if (this.state.user.username === "admin") {

@@ -57853,6 +57853,7 @@ var SessionForm = function (_React$Component) {
           }
         });
       }
+      console.log(nextProps);
       if (nextProps.loggedIn) {
         this.props.resetErrors();
         if (this.state.user.username === "admin") {
