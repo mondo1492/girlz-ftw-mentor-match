@@ -48,7 +48,7 @@ class MenteeSelection extends React.Component {
       <div>
         <Link to="/mentor_panel">Back to Mentor Panel</Link>
 
-        <Modal className="modal" show={this.state.isModalOpen} onHide={() => this.closeModal()}>
+        <Modal className="modal" show={this.state.showModal} onHide={() => this.closeModal()}>
           <PotentialMenteeShow mentee={this.state.modalMentee}/>
         </Modal>
 
@@ -56,7 +56,6 @@ class MenteeSelection extends React.Component {
           <thead>
             <tr>
               <th>Mentee</th>
-              <th>Full Profile</th>
               <th></th>
             </tr>
           </thead>
@@ -72,6 +71,14 @@ class MenteeSelection extends React.Component {
                   className="generic_link"
                   onClick={() => this.openModal(mentee)}>
                   Full Profile
+                </td>
+
+                <td>
+                  <button
+                    onClick={this.acceptMentee}
+                    >
+                    Select this Mentee!
+                  </button>
                 </td>
 
               </tr>

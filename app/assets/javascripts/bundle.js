@@ -7374,12 +7374,6 @@ var MenteeShow = function (_React$Component) {
         _react2.default.createElement(
           'p',
           null,
-          'Employer: ',
-          mentee.employer
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
           'Major: ',
           mentee.major
         ),
@@ -59008,7 +59002,7 @@ var MenteeSelection = function (_React$Component) {
         ),
         _react2.default.createElement(
           _reactBootstrap.Modal,
-          { className: 'modal', show: this.state.isModalOpen, onHide: function onHide() {
+          { className: 'modal', show: this.state.showModal, onHide: function onHide() {
               return _this3.closeModal();
             } },
           _react2.default.createElement(_PotentialMenteeShow2.default, { mentee: this.state.modalMentee })
@@ -59026,11 +59020,6 @@ var MenteeSelection = function (_React$Component) {
                 'th',
                 null,
                 'Mentee'
-              ),
-              _react2.default.createElement(
-                'th',
-                null,
-                'Full Profile'
               ),
               _react2.default.createElement('th', null)
             )
@@ -59058,6 +59047,17 @@ var MenteeSelection = function (_React$Component) {
                       return _this3.openModal(mentee);
                     } },
                   'Full Profile'
+                ),
+                _react2.default.createElement(
+                  'td',
+                  null,
+                  _react2.default.createElement(
+                    'button',
+                    {
+                      onClick: _this3.acceptMentee
+                    },
+                    'Select this Mentee!'
+                  )
                 )
               );
             })
@@ -59167,12 +59167,6 @@ var PotentialMenteeShow = function (_React$Component) {
           null,
           'College: ',
           mentee.college
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Employer: ',
-          mentee.employer
         ),
         _react2.default.createElement(
           'p',

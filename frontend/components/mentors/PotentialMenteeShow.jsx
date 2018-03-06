@@ -18,7 +18,6 @@ class PotentialMenteeShow extends React.Component {
         <p>Country: {mentee.country}</p>
         <p>High School: {mentee.high_school}</p>
         <p>College: {mentee.college}</p>
-        <p>Employer: {mentee.employer}</p>
         <p>Major: {mentee.major}</p>
         <p>Prefers mentor with same major (0 - 3): {mentee.share_major_rank}</p>
         <p>Desires to pursue this industry: {mentee.industry}</p>
