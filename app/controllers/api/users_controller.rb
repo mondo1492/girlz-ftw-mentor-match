@@ -14,7 +14,7 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.all.includes(:mentees)
     render 'api/users/index'
   end
 

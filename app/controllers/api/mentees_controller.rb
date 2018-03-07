@@ -14,7 +14,7 @@ class Api::MenteesController < ApplicationController
   end
 
   def index
-    @mentees = Mentee.all
+    @mentees = Mentee.all.includes(:user)
     render 'api/mentees/index'
   end
 
