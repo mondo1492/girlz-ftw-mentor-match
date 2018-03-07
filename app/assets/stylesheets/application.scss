@@ -106,7 +106,15 @@
   padding-bottom: 40%;
   height: 0;
   background-image: url('https://res.cloudinary.com/runaway-today/image/upload/c_scale,w_1939/v1517164403/27398610_10155323927168806_730778552_o_gficdq.png');
+}
 
+.mentor-panel-header {
+  background-size: cover;
+  background-position: left;
+  background-repeat: no-repeat;
+  padding-bottom: 40%;
+  height: 0;
+  background-image: url('https://res.cloudinary.com/runaway-today/image/upload/v1520398834/girlz_mentor_header_bnobys.jpg');
 }
 
 @media (min-width: 600px) {
@@ -114,6 +122,11 @@
     padding: 0;
     height: 240px;
     background-image: url('https://res.cloudinary.com/runaway-today/image/upload/v1517164403/27398610_10155323927168806_730778552_o_gficdq.png');
+  }
+  .mentor-panel-header {
+    padding: 0;
+    height: 240px;
+    background-image: url('https://res.cloudinary.com/runaway-today/image/upload/v1520398834/girlz_mentor_header_bnobys.jpg');
   }
 }
 

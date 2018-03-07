@@ -71,6 +71,8 @@ class MentorPanel extends React.Component {
 
     return(
       <div>
+        <header className='mentor-panel-header'>
+        </header>
         <h1>Mentor Panel</h1>
         {<h2>Hi {mentor.first_name}!</h2>}
         <Logout />

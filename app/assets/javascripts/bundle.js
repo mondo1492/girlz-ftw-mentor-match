@@ -58008,6 +58008,7 @@ var Landing = function Landing() {
     _react2.default.createElement(
       'div',
       { id: 'all-content' },
+      _react2.default.createElement('header', { className: 'mentor-panel-header' }),
       _react2.default.createElement(
         'h4',
         null,
@@ -58406,6 +58407,7 @@ var MentorPanel = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         null,
+        _react2.default.createElement('header', { className: 'mentor-panel-header' }),
         _react2.default.createElement(
           'h1',
           null,

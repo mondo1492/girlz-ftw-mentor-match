@@ -39,7 +39,7 @@ class Api::MenteesController < ApplicationController
     # otherwise don't
 
     if !@mentee.user_id.nil?
-      render plain: 'Someone must have just taken this Mentee :/', status: 478
+      render plain: 'Someone must have just taken this mentee :/ Please select another mentee.', status: 478
       # render json: @mentee.errors.full_messages, status: 422
     elsif @mentee.update(mentee_params)
       render 'api/mentees/show'
