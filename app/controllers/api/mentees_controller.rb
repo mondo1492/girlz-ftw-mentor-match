@@ -34,7 +34,14 @@ class Api::MenteesController < ApplicationController
 
   def update
     @mentee = Mentee.find(params[:id])
-    if @mentee.update(mentee_params)
+
+    # better logic - if only difference is user_id, do this check
+    # otherwise don't
+
+    if !@mentee.user_id.nil?
+      render plain: 'Someone must have just taken this Mentee :/', status: 478
+      # render json: @mentee.errors.full_messages, status: 422
+    elsif @mentee.update(mentee_params)
       render 'api/mentees/show'
     else
       render json: @mentee.errors.full_messages, status: 422

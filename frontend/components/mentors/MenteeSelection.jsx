@@ -13,7 +13,8 @@ class MenteeSelection extends React.Component {
       showModal: false,
       modalMentee: null,
       showalert: false,
-      alertMentee: null
+      alertMentee: null,
+      errors: ''
     };
 
     this.openModal = this.openModal.bind(this);
@@ -21,6 +22,7 @@ class MenteeSelection extends React.Component {
     this.openAlert = this.openAlert.bind(this);
     this.closeAlert = this.closeAlert.bind(this);
     this.selectMentee = this.selectMentee.bind(this);
+    this.getMatches = this.getMatches.bind(this);
   }
 
   closeAlert() {
@@ -28,10 +30,12 @@ class MenteeSelection extends React.Component {
   }
 
   openAlert(alertMentee) {
+    this.props.resetErrors();
     this.setState({ showAlert: true, alertMentee });
   }
 
   openModal(modalMentee) {
+    this.props.resetErrors();
     this.setState({ showModal: true, modalMentee });
   }
 
@@ -48,14 +52,32 @@ class MenteeSelection extends React.Component {
     delete menteeToUpdate.mentor_name;
 
     this.props.updateMentee(menteeToUpdate)
+      .then(
+        res => this.props.fetchMentor(this.props.currentUser.id)
+      )
       .then(res => {
-        this.props.fetchMentor(this.props.currentUser.id);
-      },
-        error => console.log(error)
-      ).then(res => this.props.history.push('/mentor_panel'));
+        if (!this.state.errors) {
+          this.props.history.push('/mentor_panel');
+        } else {
+          this.getMatches();
+          this.closeAlert();
+        }
+      })
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors.responseText});
+    } else {
+      this.setState({ errors: ''});
+    }
   }
 
   componentWillMount() {
+    this.getMatches();
+  }
+
+  getMatches() {
     $.ajax({
       method: 'GET',
       url: `./api/matches/index/${this.props.currentUser.id}`
@@ -71,6 +93,7 @@ class MenteeSelection extends React.Component {
 
   render() {
     const { alertMentee } = this.state;
+    const errorMsg = this.state.errors;
 
     const alert = () => {
       if (this.state.showAlert) {
@@ -141,6 +164,7 @@ class MenteeSelection extends React.Component {
         </Table>
 
         { alert() }
+        <div style={{ color: 'red' }}>{ errorMsg }</div>
       </div>
     )
   }

@@ -3,6 +3,7 @@ import * as APIUtil from '../util/mentee_util';
 export const RECEIVE_MENTEES = 'RECEIVE_MENTEES';
 export const RECEIVE_MENTEE = 'RECEIVE_MENTEE';
 export const REMOVE_MENTEE = "REMOVE_MENTEE";
+export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 // export const REQUEST_MENTEE = 'REQUEST_MENTEE';
 
 export const receiveMentees = mentees => ({
@@ -18,6 +19,11 @@ export const receiveMentee = mentee => ({
 export const removeMentee = mentee => ({
   type: REMOVE_MENTEE,
   mentee
+});
+
+export const receiveErrors = errors => ({
+  type: RECEIVE_ERRORS,
+  errors
 });
 
 export const fetchMentees = () => dispatch => (
@@ -42,7 +48,10 @@ export const createMentee = mentee => dispatch => (
 );
 
 export const updateMentee = mentee => dispatch => (
-  APIUtil.updateMentee(mentee).then(mentee => dispatch(receiveMentee(mentee)))
+  APIUtil.updateMentee(mentee).then(
+    mentee => dispatch(receiveMentee(mentee)),
+    errors => dispatch(receiveErrors(errors))
+  )
 );
 
 export const deleteMentee = mentee => dispatch => (

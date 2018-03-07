@@ -1,11 +1,10 @@
 import merge from 'lodash/merge';
 
-import {RECEIVE_ERRORS} from '../actions/session_actions';
-
 import {
   RECEIVE_MENTEES,
   RECEIVE_MENTEE,
-  REMOVE_MENTEE
+  REMOVE_MENTEE,
+  RECEIVE_ERRORS
 } from '../actions/mentee_actions';
 
 const MenteeReducer = (state = {}, action) => {
