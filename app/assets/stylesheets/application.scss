@@ -1,0 +1,185 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+// .test {
+//   min-height: 50px;
+// }
+
+@media screen and (max-width: 700px) {
+  * {
+  }
+}
+
+@media screen and (min-width: 721px) and (max-width: 900px) {
+  * {
+  }
+}
+
+@media screen and (min-width: 901px) {
+  * {
+  }
+}
+
+* {
+  font-family: 'Museo_Slab_100-web', Arial, sans-serif;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  /*position: relative;*/
+  /*z-index: 50;*/
+}
+
+.modal-container {
+  position: relative;
+}
+.modal-container .modal, .modal-container .modal-backdrop {
+  position: absolute;
+}
+
+
+.generic_link {
+  color: blue;
+  cursor:pointer;
+  text-decoration: underline;
+}
+
+.generic_link:hover {
+
+}
+
+.btn-next-bad {
+  color: grey;
+}
+
+.centerForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.pageCaption {
+  font-family: 'Arial Black';
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: normal;
+  margin: 16px 0;
+}
+
+.centerButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 5px;
+  align-items: center;
+}
+
+.Select.is-open { position: relative; z-index: 1000; }
+
+.padder {
+  padding: 10px;
+  min-width: 48px;
+}
+
+.mainForm {
+  padding: 15px;
+  margin-bottom: 70px;
+}
+
+.header {
+  background-size: cover;
+  background-position: left;
+  background-repeat: no-repeat;
+  padding-bottom: 40%;
+  height: 0;
+  background-image: url('https://res.cloudinary.com/runaway-today/image/upload/c_scale,w_1939/v1517164403/27398610_10155323927168806_730778552_o_gficdq.png');
+}
+
+.mentor-panel-header {
+  background-size: cover;
+  background-position: left;
+  background-repeat: no-repeat;
+  padding-bottom: 40%;
+  height: 0;
+  background-image: url('https://res.cloudinary.com/runaway-today/image/upload/v1520398834/girlz_mentor_header_bnobys.jpg');
+}
+
+@media (min-width: 600px) {
+  .header {
+    padding: 0;
+    height: 240px;
+    background-image: url('https://res.cloudinary.com/runaway-today/image/upload/v1517164403/27398610_10155323927168806_730778552_o_gficdq.png');
+  }
+  .mentor-panel-header {
+    padding: 0;
+    height: 240px;
+    background-image: url('https://res.cloudinary.com/runaway-today/image/upload/v1520398834/girlz_mentor_header_bnobys.jpg');
+  }
+}
+
+.footer {
+  z-index: 99;
+  margin-top: 70px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
+  border-top: 2px solid black;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.green-spacer {
+  width: 40px;
+  margin: 16px auto;
+  border-bottom: 3px solid rgba(177, 230, 214, 1);
+  text-align: center;
+}
+.formFontStyle {
+  text-align: left !important;
+  font-weight: lighter;
+}
+.formFontStyle2 {
+  text-align: left;
+  font-weight: lighter;
+}
+
+.centerText {
+  text-align: center !important;
+}
+@font-face {
+  font-family: 'Museo_Slab_500_2';
+  src: font-url('Museo_Slab_500_2-webfont.woff2') format('woff2'),
+  url('Museo_Slab_500_2-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Museo_Slab_100-web';
+  src: font-url('Museo_Slab_W01_100.woff2') format('woff2'),
+  url('Museo_Slab_W01_100.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import './components/unapproved_tees_tors.scss';
+@import './specific_styling/modal';
+@import './components/current_tees_tors.scss';
+@import './components/current_tors.scss';
+@import './components/admin_panel.scss';
